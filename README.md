@@ -1,6 +1,6 @@
 # johannschopplich.com
 
-This website is written using the [Kirby](https://getkirby.com) CMS. [Vite](https://vitejs.dev) is used for handling CSS and JavaScript assets.
+This website is based on the [Kirby](https://getkirby.com) CMS. [Vite](https://vitejs.dev) is used for handling CSS and JavaScript assets.
 
 This is one of the few websites at the moment to display the capabilities of my CSS framework [Buldy](https://github.com/johannschopplich/buldy).
 
@@ -49,13 +49,13 @@ Build the frontend assets (CSS & JS files):
 npm run build
 ```
 
-If you have caching enabled, make sure to whipe the cache after each build:
+If you have caching enabled, make sure to wipe the cache after each build:
 
 ```bash
 rm -rf storage/cache/johannschopplich.com
 ```
 
-> ℹ️ If you have set up the server, just run `./scripts/deploy.sh`. It will take care of pulling latest changes and building the latest assets.
+> ℹ️ If you have set up the project on a server, just run `./scripts/deploy.sh`. It will take care of pulling latest changes and building the assets.
 
 ### Deployment
 
