@@ -1,0 +1,5 @@
+@use "../abstracts/mixins";
+
+.block {
+  @extend %block;
+}

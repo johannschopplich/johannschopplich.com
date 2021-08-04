@@ -1,0 +1,7 @@
+type: fields
+fields:
+  text:
+    label: Text
+    type: textarea
+    font: monospace
+    size: small

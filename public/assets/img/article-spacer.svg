@@ -1,0 +1,8 @@
+<svg width="100%" height="18" aria-hidden="true">
+  <defs>
+    <pattern id="pattern-1" patternUnits="userSpaceOnUse" width="6" height="6">
+      <circle cx="3" cy="3" r="1" fill="var(--color-contrast-lower)"></circle>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#pattern-1)"></rect>
+</svg>

@@ -1,0 +1,10 @@
+title:
+  de: Datei
+  en: File
+
+fields:
+  alt:
+    label:
+      de: Alternativtext
+      en: Alternative Text
+    type: text

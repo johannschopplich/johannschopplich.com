@@ -1,0 +1,33 @@
+{
+  "name": "johannschopplich/kirby-blurry-placeholder",
+  "description": "Blurry image placeholders and lazy loading for better UX",
+  "type": "kirby-plugin",
+  "keywords": [
+    "kirby",
+    "placeholder",
+    "lazyload",
+    "image",
+    "seo"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Johann Schopplich",
+      "email": "pkg@johannschopplich.com",
+      "homepage": "https://johannschopplich.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.3.0",
+    "getkirby/composer-installer": "^1.2"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "KirbyExtended\\": "classes/KirbyExtended/"
+    }
+  }
+}

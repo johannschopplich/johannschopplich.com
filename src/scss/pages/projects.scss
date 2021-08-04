@@ -1,0 +1,21 @@
+@use "../abstracts/breakpoints";
+
+.project-item {
+  position: relative;
+
+  @media (hover: hover) {
+    figure {
+      box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 transparent;
+      transition: box-shadow 100ms linear;
+    }
+
+    &:hover figure {
+      // transform: translate(-2px, -2px);
+      box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 currentColor;
+    }
+  }
+}
+
+.project-subtitle {
+  word-spacing: 0.2em;
+}

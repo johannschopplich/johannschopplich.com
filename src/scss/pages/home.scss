@@ -1,0 +1,30 @@
+@use "../abstracts/breakpoints";
+
+.carousel.is-photography {
+  height: clamp(35 * var(--vh, 1vh), 50vw, 75 * var(--vh, 1vh));
+}
+
+.carousel-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: var(--space-xs);
+}
+
+.carousel-link {
+  width: min(65vw, 25rem);
+}
+
+.cell-image {
+  max-width: 100vw;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+
+  &.flickity-lazyloaded,
+  &.flickity-lazyerror {
+    opacity: 1;
+  }
+}

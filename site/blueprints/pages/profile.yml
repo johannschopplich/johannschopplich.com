@@ -1,0 +1,33 @@
+title:
+  de: Profil
+  en: Profile
+
+icon: 👤
+
+columns:
+  - width: 2/3
+    sections:
+      main:
+        type: fields
+        fields:
+          profileText:
+            label:
+              de: Profiltest
+              en: Profile Text
+            type: textarea
+            font: monospace
+          bio:
+            label:
+              de: Inhalt
+              en: Content
+            type: structure
+            fields:
+              text:
+                label: Text
+                type: textarea
+                font: monospace
+
+  - width: 1/3
+    sections:
+      meta: sections/meta
+      images: sections/images

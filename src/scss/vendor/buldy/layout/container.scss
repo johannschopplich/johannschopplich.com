@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "../abstracts/breakpoints";
+
+.container {
+  position: relative;
+  &:not(.is-decentered) {
+    width: calc(100% - 2 * var(--component-spacer));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.is-decentered {
+    padding-left: var(--component-spacer);
+    padding-right: var(--component-spacer);
+  }
+
+  &.is-fullwidth {
+    width: 100%;
+  }
+
+  &.for-content {
+    max-width: var(--content-width);
+  }
+
+  @each $breakpoint in map.keys(breakpoints.$default) {
+    $width: map.get(breakpoints.$default, $breakpoint);
+
+    @if $width != 0 {
+      &.is-#{$breakpoint} {
+        max-width: $width;
+      }
+    }
+  }
+}
+
+// Alternative container implementation
+// .container {
+//   padding: 0 max(var(--component-spacer), 50vw - var(--content-width) / 2);
+// }

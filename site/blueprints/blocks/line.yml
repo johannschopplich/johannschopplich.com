@@ -1,0 +1,10 @@
+name:
+  de: Linie
+  en: Line
+icon: dots
+fields:
+  info:
+    type: info
+    text:
+      de: Keine zu bearbeitenden Felder.
+      en: No fields to edit.

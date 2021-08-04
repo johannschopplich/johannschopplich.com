@@ -1,0 +1,92 @@
+@use "../abstracts/breakpoints";
+
+.section-bio > .container {
+  display: grid;
+  align-items: center;
+  gap: var(--space-xl);
+
+  @include breakpoints.media-above(sm) {
+    grid-template-columns: 8fr 4fr;
+    padding-bottom: var(--space-xl);
+  }
+}
+
+.bio-content {
+  z-index: 1;
+
+  h2 {
+    font-size: var(--text-hero);
+    letter-spacing: 0;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  strong {
+    position: relative;
+    font-weight: inherit;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5%;
+      left: -5%;
+      width: 110%;
+      height: 110%;
+      background-size: 100% 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    &:nth-child(1)::after {
+      background-image: url("/assets/img/highlight-1.svg");
+      [data-theme="dark"] & {
+        background-image: url("/assets/img/highlight-1-dark.svg");
+      }
+    }
+
+    &:nth-child(2)::after {
+      background-image: url("/assets/img/highlight-2.svg");
+      [data-theme="dark"] & {
+        background-image: url("/assets/img/highlight-2-dark.svg");
+      }
+    }
+
+    &:nth-child(3)::after {
+      background-image: url("/assets/img/highlight-3.svg");
+      [data-theme="dark"] & {
+        background-image: url("/assets/img/highlight-3-dark.svg");
+      }
+    }
+  }
+}
+
+.bio-picture {
+  @include breakpoints.media-above(md) {
+    // border: 2px solid var(--color-accent);
+    // box-shadow: 2px 2px 0 var(--color-background), 4px 4px 0 var(--color-accent);
+    box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 currentColor;
+  }
+}
+
+.section-cv > .container {
+  display: grid;
+  column-gap: var(--space-xl);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(
+      calc(22ch - var(--space-xl)),
+      1fr
+    )
+  );
+}
+
+.cv-content {
+  h2 {
+    color: var(--color-accent);
+    font-size: var(--text-6);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: var(--space-xl) !important;
+    margin-bottom: var(--space-xs) !important;
+  }
+}

@@ -1,0 +1,49 @@
+name: field.blocks.image.name
+icon: image
+preview: image
+fields:
+  location:
+    label: field.blocks.image.location
+    type: radio
+    columns: 2
+    default: "kirby"
+    options:
+      kirby: Kirby
+      web: Web
+  image:
+    label: field.blocks.image.name
+    type: files
+    multiple: false
+    image:
+      back: black
+    uploads:
+      template: image
+    when:
+      location: kirby
+  src:
+    label: field.blocks.image.url
+    type: url
+    when:
+      location: web
+  alt:
+    label: field.blocks.image.alt
+    type: text
+    icon: title
+  caption:
+    label: field.blocks.image.caption
+    type: writer
+    icon: text
+    inline: true
+  link:
+    label: field.blocks.image.link
+    type: text
+    icon: url
+  properties:
+    label:
+      de: Eigenschaften
+      en: Properties
+    type: select
+    options:
+      is-outset: Outset
+      is-pulled-left: Left-aligned
+      is-pulled-right: Right-aligned

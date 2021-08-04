@@ -1,0 +1,138 @@
+@use "sass:map";
+@use "../abstracts/breakpoints";
+
+.content {
+  figure,
+  hr {
+    &:not(:first-child) {
+      margin-top: calc(var(--space-l) * var(--block-vspace-multiplier, 1));
+    }
+
+    &:not(:last-child) {
+      margin-bottom: calc(var(--space-l) * var(--block-vspace-multiplier, 1));
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: var(--text-5);
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-family-heading);
+    letter-spacing: 0.025em;
+
+    a {
+      color: inherit;
+      text-decoration-line: none;
+    }
+  }
+
+  a {
+    text-decoration-color: currentColor;
+  }
+
+  hr {
+    background-color: transparent;
+    border-top: 1px dashed var(--color-contrast-low);
+  }
+
+  blockquote {
+    border-left-color: var(--color-accent);
+    border-left-style: dotted;
+  }
+
+  figure,
+  .grid-masonry {
+    // Expand element to full viewport width
+    @include breakpoints.media-below(md) {
+      border-radius: 0;
+      margin-right: calc(-1 * var(--component-spacer));
+      margin-left: calc(-1 * var(--component-spacer));
+    }
+  }
+
+  figure {
+    @include breakpoints.media-above(sm) {
+      &.is-pulled-left,
+      &.is-pulled-right {
+        width: 45%;
+        margin-top: calc(var(--space-xxs) * var(--block-vspace-multiplier, 1));
+      }
+
+      &.is-pulled-left {
+        float: left;
+        margin-right: var(--space-l);
+      }
+
+      &.is-pulled-right {
+        float: right;
+        margin-left: var(--space-l);
+      }
+    }
+
+    @include breakpoints.media-above(xl) {
+      &.is-pulled-left,
+      &.is-pulled-right {
+        width: 50%;
+      }
+
+      &.is-outset,
+      &.is-pulled-left {
+        margin-left: calc(-1 * var(--space-xl));
+      }
+
+      &.is-outset,
+      &.is-pulled-right {
+        margin-right: calc(-1 * var(--space-xl));
+      }
+    }
+
+    figcaption {
+      color: var(--color-contrast-medium);
+      font-size: var(--text-7);
+      text-align: left;
+
+      @include breakpoints.media-below(md) {
+        padding: 0 var(--component-spacer);
+      }
+    }
+
+    &.background-pattern {
+      background-repeat: repeat;
+
+      figcaption {
+        align-self: flex-end;
+        background-color: var(--color-background);
+        padding-top: calc(var(--space-xs) * var(--block-vspace-multiplier, 1));
+      }
+    }
+  }
+
+  .grid-masonry {
+    --masonry-max-width: 100vw;
+
+    figure {
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+
+      figcaption {
+        margin-top: calc(var(--space-s) * var(--block-vspace-multiplier, 1));
+      }
+    }
+
+    @include breakpoints.media-above(sm) {
+      --masonry-max-width: 25vw
+    }
+
+    // Copied from `is-outset` figure class
+    @include breakpoints.media-above(xl) {
+      margin-right: calc(-1 * var(--space-xl));
+      margin-left: calc(-1 * var(--space-xl));
+    }
+  }
+}

@@ -1,0 +1,50 @@
+title:
+  de: Projekt
+  en: Project
+
+status:
+  draft: true
+  unlisted: true
+  listed: true
+
+columns:
+  - width: 2/3
+    sections:
+      main:
+        type: fields
+        fields:
+          subtitle:
+            label:
+              de: Untertitel
+              en: Subtitle
+            type: text
+            required: true
+            width: 1/2
+          thumbnail:
+            label:
+              de: Titelbild
+              en: Cover Image
+            type: files
+            query: page.files.template('image')
+            uploads:
+              template: image
+            multiple: false
+            translate: false
+            required: true
+            width: 1/2
+          gallery:
+            label:
+              de: Galerie
+              en: Gallery
+            type: files
+            layout: cards
+            translate: false
+          text:
+            label: Text
+            type: textarea
+            font: monospace
+            size: small
+
+  - width: 1/3
+    sections:
+      images: sections/images

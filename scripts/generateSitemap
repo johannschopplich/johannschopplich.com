@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+// Check if we are indeed on the command line
+if (php_sapi_name() !== 'cli') exit();
+
+$base = dirname(__DIR__);
+require $base . '/vendor/autoload.php';
+
+$kirby = new \Kirby\Cms\App([
+    'roots' => [
+        'index'    => $base . '/public',
+        'base'     => $base,
+        'site'     => $base . '/site',
+        'storage'  => $storage = $base . '/storage',
+        'content'  => $storage . '/content',
+        'accounts' => $storage . '/accounts',
+        'cache'    => $storage . '/cache',
+        'logs'     => $storage . '/logs',
+        'sessions' => $storage . '/sessions'
+    ]
+]);
+
+echo "\033[1mGenerating sitemap…\033[0m\n";
+
+\KirbyExtended\SiteMeta::sitemap();
+
+echo "\033[32mSuccessfully indexed and cached sitemap.\033[0m\n";

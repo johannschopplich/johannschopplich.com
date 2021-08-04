@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "plugins": ["jsdoc"],
+  "extends": ["eslint:recommended", "plugin:jsdoc/recommended", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "jsdoc": {
+      "mode": "typescript"
+    }
+  }
+}

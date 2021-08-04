@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "assets:head": "esbuild --minify --format=esm --outfile=public/dist/assets/inline-head.js src/js/inline-head.js",
+    "assets:worker": "node scripts/buildServiceWorker.js",
+    "dev": "shx touch src/.lock && vite",
+    "build": "shx rm -f src/.lock && vite build && npm run assets:head && npm run assets:worker",
+    "lint": "eslint \"src/**/*.js\"",
+    "lint:fix": "npm run lint -- --fix",
+    "cleanup": "prettier --write \"src/**/*.js\""
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "animere": "^1.10.9",
+    "flickity": "^2.2.2",
+    "medium-zoom": "^1.0.6",
+    "nanoid": "^3.1.23"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jsdoc": "^36.0.6",
+    "fast-glob": "^3.2.7",
+    "prettier": "^2.3.2",
+    "sass": "^1.37.5",
+    "shx": "^0.3.3",
+    "vite": "^2.4.4",
+    "vite-plugin-live-reload": "^2.1.0"
+  }
+}

@@ -1,0 +1,3 @@
+type: pages
+template: project
+info: "{{ page.subtitle }}"

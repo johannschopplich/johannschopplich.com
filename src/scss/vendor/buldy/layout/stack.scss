@@ -1,0 +1,12 @@
+.stack,
+.v-stacked {
+  > *:not(:last-child) {
+    margin-bottom: var(--stack-gap, var(--component-spacer));
+  }
+}
+
+.h-stacked {
+  > *:not(:last-child) {
+    margin-right: var(--stack-gap, var(--component-spacer));
+  }
+}

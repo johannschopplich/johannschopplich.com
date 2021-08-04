@@ -1,0 +1,62 @@
+title:
+  de: Projekte
+  en: Projects
+
+options:
+  changeStatus: false
+  delete: false
+
+icon: 🌄
+
+tabs:
+  projects:
+    label:
+      de: Projekte
+      en: Projects
+    icon: dashboard
+    columns:
+      - width: 1/2
+        sections:
+          drafts:
+            extends: sections/projects
+            headline:
+              de: Entwürfe
+              en: Drafts
+            status: draft
+
+          unlisted:
+            extends: sections/projects
+            headline:
+              de: Ungelistet
+              en: Unlisted
+            status: unlisted
+
+      - width: 1/2
+        sections:
+          listed:
+            extends: sections/projects
+            headline:
+              de: Veröffentlichte Projekte
+              en: Published Projects
+            status: listed
+            layout: cards
+            image:
+              query: page.thumbnail.toFile
+              back: white
+              cover: true
+
+  settings:
+    label:
+      de: Seite
+      en: Page
+    icon: page
+    columns:
+      - width: 2/3
+        sections:
+          main: sections/main
+
+      - width: 1/3
+        sections:
+          meta: sections/meta
+
+  images: tabs/images

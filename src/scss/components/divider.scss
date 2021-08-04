@@ -1,0 +1,41 @@
+.section-divider {
+  position: relative;
+  height: min(calc(25 * var(--vh, 1vh)), 15rem);
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background-color: currentColor;
+    transform: translate3d(-50%, 0, 0);
+    z-index: -1;
+  }
+
+  // &.is-intro::after {
+  //   top: -1.05em;
+  //   font-size: var(--text-hero);
+  // }
+}
+
+@keyframes GrowSectionDivider {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__GrowSectionDivider {
+  &::after {
+    animation-duration: var(--animate-duration);
+    animation-delay: 500ms;
+    animation-fill-mode: both;
+    animation-name: GrowSectionDivider;
+  }
+}

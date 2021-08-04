@@ -1,0 +1,15 @@
+type: fields
+fields:
+  typoHelp:
+    label:
+      de: Kleine Typohilfe
+      en: Lil Typo Helper
+    type: clipboard
+    theme: none
+    text: |
+      Apostroph: <button type="button">’</button>
+      Gedankenstrich: <button type="button">–</button>
+      Dt. Anführungszeichen: <button type="button">„</button> <button type="button">‚</button> <button type="button">‘</button> <button type="button">“</button>
+      Engl. Anführungszeichen: <button type="button">“</button> <button type="button">‘</button> <button type="button">’</button> <button type="button">”</button>
+      Guillemets: <button type="button">»</button> <button type="button">›</button> <button type="button">‹</button> <button type="button">«</button>
+      Sonstiges: <button type="button">…</button> <button type="button">×</button>

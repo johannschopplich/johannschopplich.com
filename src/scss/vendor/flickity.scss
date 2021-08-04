@@ -1,0 +1,80 @@
+.flickity-enabled {
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.flickity-viewport {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.flickity-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.flickity-enabled.is-draggable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: pan-x;
+
+  .flickity-viewport {
+    cursor: grab;
+
+    &.is-pointer-down {
+      cursor: grabbing;
+    }
+  }
+}
+
+.flickity-button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background: hsla(0, 100%, 100%, 0.35);
+  border: none;
+  color: hsl(0, 0%, 12%);
+
+  &:hover {
+    background: hsla(0, 100%, 100%, 0.5);
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: 0;
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+
+.flickity-prev-next-button {
+  top: 50%;
+  width: var(--space-l);
+  height: 10rem;
+  transform: translateY(-50%);
+
+  &.previous {
+    left: 0;
+  }
+
+  &.next {
+    right: 0;
+  }
+
+  .flickity-button-icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .flickity-button {
+    display: none;
+  }
+}

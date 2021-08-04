@@ -1,0 +1,45 @@
+title:
+  de: Fotografie
+  en: Photography
+
+icon: 📷
+
+options:
+  changeStatus: false
+  delete: false
+
+tabs:
+  pages:
+    label:
+      en: Page
+      de: Seite
+    icon: document
+    columns:
+      - width: 2/3
+        sections:
+          main: sections/blocks
+          gallery:
+            type: fields
+            fields:
+              gallery:
+                label:
+                  de: Galerie
+                  en: Gallery
+                type: files
+                query: page.files.template('image')
+                uploads:
+                  template: image
+                layout: cards
+                image:
+                  back: white
+                translate: false
+
+      - width: 1/3
+        sections:
+          meta:
+            extends: sections/meta
+            fields:
+              thumbnail:
+                query: page.files.template('image')
+
+  images: tabs/images
