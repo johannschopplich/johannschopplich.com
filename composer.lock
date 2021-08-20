@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
-            "version": "1.3.10",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-feed.git",
-                "reference": "01012ba3540af12de5e6964d0df2b86fc7e8aaee"
+                "reference": "95975879e51b29cd8575e84f4d479a61aa0900aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/01012ba3540af12de5e6964d0df2b86fc7e8aaee",
-                "reference": "01012ba3540af12de5e6964d0df2b86fc7e8aaee",
+                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/95975879e51b29cd8575e84f4d479a61aa0900aa",
+                "reference": "95975879e51b29cd8575e84f4d479a61aa0900aa",
                 "shasum": ""
             },
             "require": {
@@ -32,8 +32,7 @@
             "suggest": {
                 "bnomei/kirby3-htmlhead": "Best-practice HTML Head Element extendable with snippets.",
                 "bnomei/kirby3-robots-txt": "Automatic robots.txt. Detects xmlsitemap.",
-                "bnomei/kirby3-security-headers": "CPS headers to make the the web a saver place. Sensible defaults with zero configuration.",
-                "omz13/kirby3-xmlsitemap": "Adds a xml sitemap"
+                "bnomei/kirby3-security-headers": "CPS headers to make the the web a saver place. Sensible defaults with zero configuration."
             },
             "type": "kirby-plugin",
             "extra": {
@@ -54,8 +53,9 @@
                     "email": "b@bnomei.com"
                 }
             ],
-            "description": "Generate a RSS/JSON-Feed from a Pages-Collection",
+            "description": "Generate a RSS/JSON/Sitemap-Feed from a Pages-Collection",
             "keywords": [
+                "Sitemap",
                 "feed",
                 "json",
                 "kirby3",
@@ -66,15 +66,27 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-feed/issues",
-                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.3.10"
+                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.4.2"
             },
             "funding": [
                 {
+                    "url": "https://buymeacoff.ee/bnomei",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://paypal.me/bnomei",
+                    "type": "custom"
+                },
+                {
                     "url": "https://github.com/bnomei",
                     "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/bnomei",
+                    "type": "patreon"
                 }
             ],
-            "time": "2021-05-16T13:38:06+00:00"
+            "time": "2021-08-14T16:50:47+00:00"
         },
         {
             "name": "claviska/simpleimage",

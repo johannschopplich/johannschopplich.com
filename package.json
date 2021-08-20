@@ -13,18 +13,18 @@
     "animere": "^1.10.9",
     "flickity": "^2.2.2",
     "medium-zoom": "^1.0.6",
-    "nanoid": "^3.1.23"
+    "nanoid": "^3.1.25"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsdoc": "^36.0.6",
+    "eslint-plugin-jsdoc": "^36.0.7",
     "fast-glob": "^3.2.7",
     "prettier": "^2.3.2",
-    "sass": "^1.37.5",
+    "sass": "^1.38.0",
     "shx": "^0.3.3",
-    "vite": "^2.4.4",
+    "vite": "^2.5.0",
     "vite-plugin-live-reload": "^2.1.0"
   }
 }
