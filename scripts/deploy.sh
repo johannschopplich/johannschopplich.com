@@ -17,6 +17,7 @@ echo "--- Deploying latest changes…"
 ssh -tt $user@$host "\
   cd /var/www/virtual/$user/sites/$website; \
   git pull; \
+  composer install; \
   npm i; \
   npm run build; \
   rm -rf storage/cache/$website; \
