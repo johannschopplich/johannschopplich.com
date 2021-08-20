@@ -1,12 +1,10 @@
 <?php
 
-return function (\Kirby\Cms\App $kirby) {
-    return $kirby
-        ->site()
-        ->popularArticles()
-        ->toPages()
-        ->sortBy(
-            fn($i) => $i->published()->toDate(),
-            'desc'
-        );
-};
+return fn (\Kirby\Cms\App $kirby) => $kirby
+    ->site()
+    ->popularArticles()
+    ->toPages()
+    ->sortBy(
+        fn ($i) => $i->published()->toDate(),
+        'desc'
+    );
