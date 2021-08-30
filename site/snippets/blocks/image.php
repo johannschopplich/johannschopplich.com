@@ -1,5 +1,6 @@
 <?php
 
+use Kirby\Http\Url;
 use Kirby\Toolkit\Html;
 
 /** @var \Kirby\Cms\Block $block */
@@ -8,6 +9,8 @@ $caption = $block->caption();
 $link    = $block->link();
 $props   = $block->properties();
 $img     = null;
+$urlPath = Url::path(Url::current());
+$isFeed  = preg_match('/^feeds?\/(?:rss|json)/', $urlPath);
 
 if ($block->location() === 'web') {
   $img = Html::img($block->src(), ['alt' => $alt]);
@@ -15,14 +18,18 @@ if ($block->location() === 'web') {
   if ($alt->isEmpty()) $alt = $image->alt();
   if ($caption->isEmpty()) $caption = $image->caption();
 
-  $img = Html::img($image->placeholderUri(), [
-    'alt' => $alt,
-    'data-srcset' => $image->srcset(),
-    'data-sizes' => 'auto',
-    'data-lazyload' => 'true',
-    'width' => $image->width(),
-    'height' => $image->height()
-  ]);
+  $img = Html::img(
+    // Disable blurry images images for feeds
+    $isFeed ? $image->resize(1024)->url() : $image->placeholderUri(),
+    [
+      'alt' => $alt,
+      'data-srcset' => $image->srcset(),
+      'data-sizes' => 'auto',
+      'data-lazyload' => 'true',
+      'width' => $image->width(),
+      'height' => $image->height()
+    ]
+  );
 }
 
 if ($img === null) return;
