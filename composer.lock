@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3af9a1817873a03e9c1b682b8959583c",
+    "content-hash": "39fa2efe5e829164d701654583de0bd1",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
