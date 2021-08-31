@@ -1,9 +1,9 @@
-import { useLazyload } from "../hooks";
+import Loadeer from "loadeer";
 
 const SELECTOR = "[data-lazyload]";
 
-const observer = useLazyload(SELECTOR, {
-  loaded: (element) => {
+const observer = new Loadeer(SELECTOR, {
+  onLoaded: (element) => {
     if (import.meta.env.DEV) {
       console.log("Lazily loaded image:", element);
     }

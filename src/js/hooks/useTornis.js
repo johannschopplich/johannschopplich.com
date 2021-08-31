@@ -93,31 +93,33 @@ class Tornis {
    * @returns {object} The stored data
    */
   formatData() {
+    const floor = Math.floor;
+
     return {
       scroll: {
         changed: this.scrollChange,
-        left: Math.floor(this.lastX),
-        right: Math.floor(this.lastX + this.lastWidth),
-        top: Math.floor(this.lastY),
-        bottom: Math.floor(this.lastY + this.lastHeight),
+        left: floor(this.lastX),
+        right: floor(this.lastX + this.lastWidth),
+        top: floor(this.lastY),
+        bottom: floor(this.lastY + this.lastHeight),
       },
       size: {
         changed: this.sizeChange,
-        x: Math.floor(this.lastWidth),
-        y: Math.floor(this.lastHeight),
-        docY: Math.floor(this.scrollHeight),
+        x: floor(this.lastWidth),
+        y: floor(this.lastHeight),
+        docY: floor(this.scrollHeight),
       },
       mouse: {
         changed: this.mouseChange,
-        x: Math.floor(this.lastMouseX),
-        y: Math.floor(this.lastMouseY),
+        x: floor(this.lastMouseX),
+        y: floor(this.lastMouseY),
       },
       position: {
         changed: this.positionChange,
-        left: Math.floor(this.lastWindowX),
-        right: Math.floor(this.lastWindowX + this.lastWidth),
-        top: Math.floor(this.lastWindowY),
-        bottom: Math.floor(this.lastWindowY + this.lastHeight),
+        left: floor(this.lastWindowX),
+        right: floor(this.lastWindowX + this.lastWidth),
+        top: floor(this.lastWindowY),
+        bottom: floor(this.lastWindowY + this.lastHeight),
       },
     };
   }
