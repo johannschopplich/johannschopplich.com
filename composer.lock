@@ -390,27 +390,28 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "v1.2.1",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "eae815f529fee70cf421e884c922d8321facd75e"
+                "reference": "3cd4fd7845096de7b04548d170209a4a7047bbd7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/eae815f529fee70cf421e884c922d8321facd75e",
-                "reference": "eae815f529fee70cf421e884c922d8321facd75e",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/3cd4fd7845096de7b04548d170209a4a7047bbd7",
+                "reference": "3cd4fd7845096de7b04548d170209a4a7047bbd7",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
                 "php": ">=7.3.0"
             },
+            "require-dev": {
+                "getkirby/cms": "^3.0"
+            },
             "type": "kirby-plugin",
-            "autoload": {
-                "psr-4": {
-                    "KirbyExtended\\": "classes/KirbyExtended/"
-                }
+            "extra": {
+                "kirby-cms-path": false
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -433,9 +434,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.2.1"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.3.0"
             },
-            "time": "2021-03-04T20:57:11+00:00"
+            "time": "2021-09-01T08:23:24+00:00"
         },
         {
             "name": "johannschopplich/kirby-extended",
