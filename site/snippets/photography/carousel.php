@@ -8,9 +8,8 @@
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <div class="carousel-cell">
       <img
-        src="<?= $image->url() ?>"
-        loading="lazy"
         class="cell-image"
+        data-flickity-lazyload-src="<?= $image->url() ?>"
         alt="<?= $image->alt()->escape() ?>"
       >
     </div>

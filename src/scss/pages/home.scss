@@ -20,5 +20,11 @@
   max-width: 100vw;
   max-height: 100%;
   object-fit: contain;
+  opacity: 0;
   transition: opacity 250ms ease-in;
+
+  &.flickity-lazyloaded,
+  &.flickity-lazyerror {
+    opacity: 1;
+  }
 }
