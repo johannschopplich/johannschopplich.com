@@ -8,7 +8,7 @@
 export default function (fn, delay = 250) {
   let timeoutId;
   return (...args) => {
-    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId && clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       timeoutId = null;
       fn(...args);
