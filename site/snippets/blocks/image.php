@@ -9,6 +9,7 @@ $caption = $block->caption();
 $link    = $block->link();
 $props   = $block->properties();
 $img     = null;
+
 $urlPath = Url::path(Url::current());
 $isFeed  = preg_match('/^feeds?\/(?:rss|json)/', $urlPath);
 
@@ -22,17 +23,17 @@ if ($block->location() === 'web') {
     // Disable blurry images images for feeds
     $isFeed ? $image->resize(1024)->url() : $image->placeholderUri(),
     [
-      'alt' => $alt,
+      'loading' => 'lazy',
       'data-srcset' => $image->srcset(),
       'data-sizes' => 'auto',
-      'data-lazyload' => 'true',
       'width' => $image->width(),
-      'height' => $image->height()
+      'height' => $image->height(),
+      'alt' => $alt
     ]
   );
+} else {
+  return;
 }
-
-if ($img === null) return;
 
 ?>
 <figure<?= attr(['class' => $props], ' ') ?>>

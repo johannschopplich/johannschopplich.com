@@ -15,9 +15,9 @@
       <figure class="bio-picture stretched-fullwidth@md">
         <img
           src="<?= $image->url() ?>"
+          width="<?= $image->width() ?>"
+          height="<?= $image->height() ?>"
           alt="<?= $image->alt() ?>"
-          width=<?= $image->width() ?>
-          height=<?= $image->height() ?>
         >
       </figure>
     <?php endif ?>

@@ -12,7 +12,6 @@
     "animate.css": "^4.1.1",
     "animere": "^1.14.0",
     "flickity": "^2.2.2",
-    "loadeer": "^1.0.4",
     "medium-zoom": "^1.0.6",
     "nanoid": "^3.1.25"
   },

@@ -1,18 +1,11 @@
-import Loadeer from "loadeer";
+for (const element of document.querySelectorAll('img[loading="lazy"]')) {
+  const data = element.dataset;
 
-const SELECTOR = "[data-lazyload]";
+  if (data.srcset) {
+    element.srcset = data.srcset;
+  }
 
-const observer = new Loadeer(SELECTOR, {
-  onLoaded: (element) => {
-    if (import.meta.env.DEV) {
-      console.log("Lazily loaded image:", element);
-    }
-  },
-});
-
-observer.observe();
-
-// Preload all images
-for (const image of document.querySelectorAll(SELECTOR)) {
-  observer.triggerLoad(image);
+  if (data.sizes === "auto") {
+    element.sizes = `${element.offsetWidth}px`;
+  }
 }

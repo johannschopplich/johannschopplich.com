@@ -6,10 +6,11 @@
   <?php foreach ($query as $image):
   ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
-    <div class="carousel-cell" data-ratio="<?= number_format($image->ratio(), 2, '.', '') ?>">
+    <div class="carousel-cell">
       <img
+        src="<?= $image->url() ?>"
+        loading="lazy"
         class="cell-image"
-        data-flickity-lazyload-src="<?= $image->url() ?>"
         alt="<?= $image->alt()->escape() ?>"
       >
     </div>
