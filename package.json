@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "animere": "^1.13.0",
+    "animere": "^1.14.0",
     "flickity": "^2.2.2",
-    "loadeer": "^1.0.3",
+    "loadeer": "^1.0.4",
     "medium-zoom": "^1.0.6",
     "nanoid": "^3.1.25"
   },
@@ -23,9 +23,9 @@
     "eslint-plugin-jsdoc": "^36.0.8",
     "fast-glob": "^3.2.7",
     "prettier": "^2.3.2",
-    "sass": "^1.38.2",
+    "sass": "^1.39.0",
     "shx": "^0.3.3",
-    "vite": "^2.5.2",
+    "vite": "^2.5.3",
     "vite-plugin-live-reload": "^2.1.0"
   }
 }
