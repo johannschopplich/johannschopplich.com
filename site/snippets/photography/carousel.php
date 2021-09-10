@@ -3,8 +3,7 @@
 /** @var \Kirby\Cms\Files $query */
 ?>
 <div class="carousel is-photography">
-  <?php foreach ($query as $image):
-  ?>
+  <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <div class="carousel-cell">
       <img
