@@ -1,7 +1,7 @@
 [data-template="default"],
 [data-template="error"] {
   display: grid;
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
   grid-template-rows: auto 1fr auto;
 
   > * {

@@ -1,7 +1,7 @@
 @use "../abstracts/breakpoints";
 
 .carousel.is-photography {
-  height: clamp(35 * var(--vh, 1vh), 50vw, 75 * var(--vh, 1vh));
+  height: clamp(35vh, 50vw, 75vh);
 }
 
 .carousel-cell {

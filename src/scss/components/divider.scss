@@ -1,6 +1,6 @@
 .section-divider {
   position: relative;
-  height: min(calc(25 * var(--vh, 1vh)), 15rem);
+  height: min(25vh, 15rem);
   overflow: hidden;
 
   &::after {
