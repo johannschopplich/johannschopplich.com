@@ -4,7 +4,7 @@
     "getkirby/cms": "^3.0",
     "symfony/yaml": "^5.0",
     "johannschopplich/kirby-extended": "^2.0",
-    "johannschopplich/kirby-blurry-placeholder": "^1.2",
+    "johannschopplich/kirby-blurry-placeholder": "^1.4",
     "bnomei/kirby3-feed": "^1.4"
   },
   "scripts": {

@@ -1,4 +1,4 @@
-![Preview of Kirby blurry placeholder plugin](./.github/social-preview.png)
+![Preview of Kirby blurry placeholder plugin](./.github/kirby-blurry-placeholder-plugin.png)
 
 # Kirby Blurry Placeholder
 
@@ -12,10 +12,10 @@ How it works:
 ## Key Features
 
 - ✨ Avoids content jumping (keeping aspect ratio)
-- 🏗 Available as [image block](blocks/image.php)
-- 🖼 Available as Kirbytag
+- 🏗 Available as [image block](./snippets/blocks/image.php)
+- 🖼 Available in KirbyText with custom Kirbytag
 - 🔍 SEO-friendly
-- 🗃 Extends `Kirby\Cms\File` methods
+- 🗃 Extends [file methods](https://getkirby.com/docs/reference/plugins/extensions/file-methods)
 - ⚡️ Vanilla JavaScript lazy loading library included
 
 ## Requirements
@@ -29,7 +29,7 @@ How it works:
 
 Download and copy this repository to `/site/plugins/kirby-blurry-placeholder`.
 
-### Git submodule
+### Git Submodule
 
 ```
 git submodule add https://github.com/johannschopplich/kirby-blurry-placeholder.git site/plugins/kirby-blurry-placeholder
@@ -45,9 +45,39 @@ composer require johannschopplich/kirby-blurry-placeholder
 
 ### As Kirby Image Block
 
-Each Kirby site is tailored to its own use-case, thus this plugin won't add a Kirby block by default. Instead, take a look into the provided [image block example](blocks/image.php) to get an idea of how to implement blurry placeholders within blocks.
+Each Kirby site is tailored to its own use-case, thus this plugin won't add a Kirby block by default. Instead, take a look into the provided [image block example](./snippets/blocks/image.php) to get an idea of how to implement blurry placeholders within blocks.
 
-Of course, you can just copy the block into your `site/snippets/blocks` folder of your current Kirby project and adapt it to your needs!
+Of course, you can just copy the block into your `site/snippets/blocks` folder of your current Kirby project, use it as is or adapt it to your needs!
+
+### As File Method
+
+`$file->placeholderUri()` creates and returns the URI-encoded SVG placeholder.
+
+```php
+<!-- Using the `placeholderUri` for an inlined image in the `src` attribute -->
+<img
+    src="<?= $image->placeholderUri() ?>"
+    data-src="<?= $image->url() ?>"
+    data-lazyload
+    alt="<?= $image->alt() ?>"
+/>
+```
+
+#### Cropped Images
+
+> Kirby doesn't support file methods on cropped files/images, because the latter inherit the `Kirby\Cms\FileVersion` class.
+
+Pass the ratio of a cropped image to the placeholder method to generate a cropped preview:
+
+```php
+<?php $cropped = $original->crop(500, 400) ?>
+<img
+  src="<?= $original->placeholderUri(5/4) ?>"
+  data-src="<?= $cropped->url() ?>"
+  data-lazyload
+  alt="<?= $original->alt() ?>"
+/>
+```
 
 ### As `(blurryimage: …)` Kirbytag
 
@@ -69,25 +99,13 @@ Example use within a [KirbyText](https://getkirby.com/docs/reference/text/kirbyt
 
 If you have enabled `srcset`'s in the options, the Kirbytag syntax stays the same. Just the output changes.
 
-### As File Method
-
-`$file->placeholderUri()` creates and returns the URI-encoded SVG placeholder.
-
-```html
-// Using the `placeholderUri` for an inlined image in the `src` attribute
-<img
-    src="<?= $image->placeholderUri() ?>"
-    data-src="<?= $image->url() ?>"
-    data-lazyload
-    alt="<?= $image->alt() ?>"
-/>
-```
-
 ## Lazy Loading in the Frontend
 
 To lazily load the images once they get apparent in the viewport, a JavaScript library is necessary.
 
-I strongly recommend [🦌 Loadeer.js](https://github.com/johannschopplich/loadeer). In a nutshell, it's a tiny, performant, SEO-friendly lazy loading library and can be used with or without a build step if you don't have a frontend asset build chain.
+I strongly recommend [🦌 Loadeer.js](https://github.com/johannschopplich/loadeer). It has been written with this Kirby plugin in mind. In a nutshell, it's a tiny, performant, SEO-friendly lazy loading library and can be used with or without a build step if you don't have a frontend asset build chain.
+
+> ℹ️ Since v1.3.0, the [lazy loading hook](./src/useLazyload.js) provided by this plugin has been replaced by Loadeer.js – a rewritten version of the former hook.
 
 ### Without Build Step & Auto Initialization
 
@@ -118,8 +136,6 @@ Loadeer.js supports setting the `sizes` attribute automatically, corresponding t
 ### Use a Lazy Loader of Your Choice
 
 Each parsed Kirbytag adds the `data-lazyload` attribute to the `img` element. Consequently, you can let a lazy loader of choice select these elements by passing `[data-lazyload]` as selector.
-
-> Note: A `.lazyload` class is intentionally not added to avoid potential naming conflicts. I prefer data attributes over classes for selectors only used for JavaScript manipulation. 🤷‍♂️
 
 ## Options
 

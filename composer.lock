@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39fa2efe5e829164d701654583de0bd1",
+    "content-hash": "e3d29d7beac013a028103fa2787488b8",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -390,16 +390,16 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "3cd4fd7845096de7b04548d170209a4a7047bbd7"
+                "reference": "d12d4c8580d9a5d9d104967edb058ee2ecd96ab7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/3cd4fd7845096de7b04548d170209a4a7047bbd7",
-                "reference": "3cd4fd7845096de7b04548d170209a4a7047bbd7",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/d12d4c8580d9a5d9d104967edb058ee2ecd96ab7",
+                "reference": "d12d4c8580d9a5d9d104967edb058ee2ecd96ab7",
                 "shasum": ""
             },
             "require": {
@@ -434,9 +434,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.3.0"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.4.0"
             },
-            "time": "2021-09-01T08:23:24+00:00"
+            "time": "2021-09-20T11:02:18+00:00"
         },
         {
             "name": "johannschopplich/kirby-extended",

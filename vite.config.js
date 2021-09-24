@@ -3,9 +3,11 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import liveReload from "vite-plugin-live-reload";
 
+const root = "src/js";
+
 export default ({ mode }) =>
   defineConfig({
-    root: "src/js",
+    root,
     base: mode === "development" ? "/" : "/dist/",
 
     build: {
@@ -13,7 +15,7 @@ export default ({ mode }) =>
       emptyOutDir: true,
       manifest: true,
       rollupOptions: {
-        input: "/index.js",
+        input: resolve(root, "index.js"),
       },
     },
 
