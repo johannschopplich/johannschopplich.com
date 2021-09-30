@@ -1,4 +1,6 @@
 /* eslint-env node */
+// @ts-check
+
 require("dotenv").config();
 const fs = require("fs");
 const fg = require("fast-glob");

@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
-            "version": "1.4.2",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-feed.git",
-                "reference": "95975879e51b29cd8575e84f4d479a61aa0900aa"
+                "reference": "75dc09ac1611e43d85cdd2df726accc7ebc11374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/95975879e51b29cd8575e84f4d479a61aa0900aa",
-                "reference": "95975879e51b29cd8575e84f4d479a61aa0900aa",
+                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/75dc09ac1611e43d85cdd2df726accc7ebc11374",
+                "reference": "75dc09ac1611e43d85cdd2df726accc7ebc11374",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-feed/issues",
-                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.4.2"
+                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.5.1"
             },
             "funding": [
                 {
@@ -86,7 +86,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-08-14T16:50:47+00:00"
+            "time": "2021-09-29T17:03:51+00:00"
         },
         {
             "name": "claviska/simpleimage",

@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "animere": "^1.14.0",
+    "animere": "^1.14.1",
     "flickity": "^2.2.2",
     "medium-zoom": "^1.0.6",
-    "nanoid": "^3.1.25"
+    "nanoid": "^3.1.28"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
@@ -24,7 +24,7 @@
     "prettier": "^2.4.1",
     "sass": "^1.42.1",
     "shx": "^0.3.3",
-    "vite": "^2.5.10",
+    "vite": "^2.6.1",
     "vite-plugin-live-reload": "^2.1.0"
   }
 }

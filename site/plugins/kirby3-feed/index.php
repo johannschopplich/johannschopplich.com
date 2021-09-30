@@ -12,6 +12,7 @@ Kirby::plugin('bnomei/feed', [
         'feed/rss' => __DIR__ . '/snippets/feed/rss.php',
         'feed/json' => __DIR__ . '/snippets/feed/json.php',
         'feed/sitemap' => __DIR__ . '/snippets/feed/sitemap.php',
+        'feed/sitemapxsl' => __DIR__ . '/snippets/feed/sitemap.xsl.php',
     ],
     'pagesMethods' => [ // PAGES not PAGE
         'feed' => function ($options = [], $force = null) {
@@ -22,6 +23,7 @@ Kirby::plugin('bnomei/feed', [
         'sitemap' => function ($options = [], $force = null) {
             if (!A::get($options, 'snippet')) {
                 $options['snippet'] = 'feed/sitemap';
+                $options['dateformat'] = 'c';
             }
             $response = \Bnomei\Feed::feed($this->filterBy('intendedTemplate', '!=', 'error'), $options, $force);
             kirby()->response()->type($response->type());
