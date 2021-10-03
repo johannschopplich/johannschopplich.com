@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "assets:head": "esbuild --minify --format=esm --outfile=public/dist/assets/inline-head.js src/js/inline-head.js",
+    "assets:head": "esbuild src/js/inline-head.js --minify --format=iife --outfile=public/dist/assets/inline-head.js",
     "assets:worker": "node scripts/buildServiceWorker.js",
     "dev": "shx touch src/.lock && vite",
     "build": "shx rm -f src/.lock && vite build && npm run assets:head && npm run assets:worker",
