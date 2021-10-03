@@ -16,6 +16,7 @@
     "nanoid": "^3.1.28"
   },
   "devDependencies": {
+    "colorette": "^2.0.13",
     "dotenv": "^10.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -24,7 +25,7 @@
     "prettier": "^2.4.1",
     "sass": "^1.42.1",
     "shx": "^0.3.3",
-    "vite": "^2.6.1",
+    "vite": "^2.6.2",
     "vite-plugin-live-reload": "^2.1.0"
   }
 }

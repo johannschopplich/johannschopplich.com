@@ -1,5 +1,5 @@
 /* eslint-env serviceworker */
-/* global VERSION, PANEL_SLUG, API_SLUG */
+/* global VERSION, KIRBY_PANEL_SLUG, KIRBY_API_SLUG */
 
 const LANG = navigator.language.startsWith("de") ? "de" : "en";
 const MAX_CACHED_PAGES = false;
@@ -15,9 +15,9 @@ const CACHE_KEYS = {
 const ALLOWED_HOSTS = [self.location.host];
 
 const EXCLUDED_PATH_PREFIXES = [
-  `/${API_SLUG}/`,
-  `/${PANEL_SLUG}/`,
-  `/media/${PANEL_SLUG}/`,
+  `/${KIRBY_API_SLUG}/`,
+  `/${KIRBY_PANEL_SLUG}/`,
+  `/media/${KIRBY_PANEL_SLUG}/`,
   "/media/plugins/",
 ];
 
