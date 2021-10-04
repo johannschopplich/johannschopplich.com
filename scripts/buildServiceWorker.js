@@ -25,8 +25,8 @@ async function main() {
   const bundle = `
     self.__PRECACHE_MANIFEST = [${assets.map((i) => `"${i}"`).join(",")}]
     const VERSION = "${nanoid()}"
-    const KIRBY_PANEL_SLUG = "${process.env.KIRBY_PANEL_SLUG ?? "panel"}"
-    const KIRBY_API_SLUG = "${process.env.KIRBY_API_SLUG ?? "api"}"
+    const KIRBY_PANEL_SLUG = "${process.env.KIRBY_PANEL_SLUG || "panel"}"
+    const KIRBY_API_SLUG = "${process.env.KIRBY_API_SLUG || "api"}"
     ${await readFile(swSrcPath)}
   `;
 
