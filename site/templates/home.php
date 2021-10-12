@@ -4,6 +4,7 @@
 /** @var \Kirby\Cms\Page $page */
 ?>
 <?php snippet('header') ?>
+
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
 <div class="container is-lg pb-xl">

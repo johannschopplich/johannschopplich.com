@@ -5,7 +5,10 @@
 ?>
 <?php snippet('header') ?>
 
-<?php snippet('intro', ['title' => $page->text()->kti()]) ?>
+<?php snippet('intro', [
+  'title' => $page->text()->kti(),
+  'props' => 'mb-xs'
+]) ?>
 
 <section class="container is-md text-center pb-xl">
   <?php /*
