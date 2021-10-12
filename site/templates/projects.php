@@ -8,9 +8,11 @@
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
 <section class="container is-md text-center pb-xl">
+  <?php /*
   <h2 class="title text-3 sm:text-1 text-accent text-center mb-xxl">
     <?= t('projects.title') ?>
   </h2>
+  */ ?>
 
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
@@ -19,12 +21,12 @@
       'data-animere-duration' => '750ms'
     ], ' ') ?>>
       <p class="project-subtitle text-medium">
-        <?= $project->subtitle() ?>
+        <?= $project->subtitle()->escape() ?>
       </p>
 
       <h2 class="title text-2 sm:text-1 mb-m">
         <a href="<?= $project->url() ?>" class="text-underline stretched-link">
-          <?= $project->title() ?>
+          <?= $project->title()->escape() ?>
         </a>
       </h2>
 
