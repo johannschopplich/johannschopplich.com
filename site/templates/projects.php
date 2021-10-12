@@ -14,7 +14,10 @@
 
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
-    <div class="project-item<?php e(!$project->isLast($children), ' mb-xxl') ?>" data-animere="fadeInUpSmall">
+    <div class="project-item<?php e(!$project->isLast($children), ' mb-xxl') ?>"<?= attr([
+      'data-animere' => !$project->isFirst($children) ? 'fadeInUpSmall' : null,
+      'data-animere-duration' => '750ms'
+    ], ' ') ?>>
       <p class="project-subtitle text-medium">
         <?= $project->subtitle() ?>
       </p>
