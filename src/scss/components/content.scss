@@ -126,7 +126,7 @@
     }
 
     @include breakpoints.media-above(sm) {
-      --masonry-max-width: 25vw
+      --masonry-max-width: 25vw;
     }
 
     // Copied from `is-outset` figure class
