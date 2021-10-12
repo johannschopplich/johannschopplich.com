@@ -10,13 +10,13 @@
 [data-theme="light"] {
   --color-background:        hsl(35, 80%, 98.5%);
   --color-link:              var(--color-text);
-  --color-link-hover:        var(--color-primary);
+  --color-link-hover:        var(--color-accent);
 }
 
 [data-theme="dark"] {
   --color-background:        hsl(0, 0%, 10%);
   --color-link:              var(--color-text);
-  --color-link-hover:        var(--color-primary);
+  --color-link-hover:        var(--color-accent);
 }
 
 @media (prefers-reduced-motion: no-preference) {

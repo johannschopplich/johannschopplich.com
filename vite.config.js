@@ -5,31 +5,30 @@ import liveReload from "vite-plugin-live-reload";
 
 const root = "src/js";
 
-export default ({ mode }) =>
-  defineConfig({
-    root,
-    base: mode === "development" ? "/" : "/dist/",
+export default defineConfig(({ mode }) => ({
+  root,
+  base: mode === "development" ? "/" : "/dist/",
 
-    build: {
-      outDir: resolve(__dirname, "public/dist"),
-      emptyOutDir: true,
-      manifest: true,
-      rollupOptions: {
-        input: resolve(root, "index.js"),
-      },
+  build: {
+    outDir: resolve(__dirname, "public/dist"),
+    emptyOutDir: true,
+    manifest: true,
+    rollupOptions: {
+      input: resolve(root, "index.js"),
     },
+  },
 
-    plugins: [
-      liveReload("site/(controllers|models|snippets|templates)/**/*.php"),
-    ],
+  plugins: [
+    liveReload("site/(controllers|models|snippets|templates)/**/*.php"),
+  ],
 
-    server: {
-      cors: true,
-      port: 3000,
-      strictPort: true,
-    },
+  server: {
+    cors: true,
+    port: 3000,
+    strictPort: true,
+  },
 
-    optimizeDeps: {
-      include: ["animere", "flickity", "medium-zoom"],
-    },
-  });
+  optimizeDeps: {
+    include: ["animere", "flickity", "medium-zoom"],
+  },
+}));
