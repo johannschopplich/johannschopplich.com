@@ -12,7 +12,7 @@ columns:
         fields:
           profileText:
             label:
-              de: Profiltest
+              de: Profiltext
               en: Profile Text
             type: textarea
             font: monospace
