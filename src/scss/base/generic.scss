@@ -31,11 +31,18 @@ h2 a.text-underline {
   font-size: var(--text-intro);
   line-height: calc(1ex / 0.5);
 
+  a {
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.1em;
+
+    &:hover {
+      color: var(--color-accent);
+      text-decoration-color: currentColor;
+    }
+  }
+
   @include breakpoints.media-above(md) {
     line-height: calc(1ex / 0.6);
   }
-
-  // Line height clamped when using both properties in conjunction on Windows:
-  // display: inline;
-  // background-color: var(--color-background);
 }
