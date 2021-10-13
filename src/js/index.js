@@ -5,8 +5,8 @@ import "./partials/theming";
 import "./partials/registerServiceWorker";
 
 import Animere from "animere";
-import MasonryGrid from "../components/masonryGrid";
-import MediumZoom from "../components/mediumZoom";
+import MasonryGrid from "./components/masonryGrid";
+import MediumZoom from "./components/mediumZoom";
 
 new Animere();
 new MasonryGrid();
