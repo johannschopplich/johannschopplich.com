@@ -45,7 +45,7 @@ async function stashInCache(cacheName, request, response) {
  *
  * @param {string} cacheName Name of cache
  * @param {number} maxItems Limit of images to cache
- * @returns {Function} Run until limit is fullfilled
+ * @returns {Promise<Function>} Run until limit is fullfilled
  */
 async function trimCache(cacheName, maxItems) {
   const cache = await caches.open(cacheName);
