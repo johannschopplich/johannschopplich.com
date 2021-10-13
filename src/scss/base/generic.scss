@@ -4,8 +4,8 @@ a:not([class]),
 a.text-underline {
   text-decoration-line: underline;
   text-decoration-color: var(--color-accent);
-  text-decoration-thickness: max(1px, 0.1em);
-  text-underline-offset: max(1px, 0.1em);
+  text-decoration-thickness: max(2px, 0.1em);
+  text-underline-offset: max(2px, 0.1em);
   text-decoration-skip-ink: auto;
 
   &:hover {
