@@ -10,8 +10,8 @@
         <li class="splide__slide">
           <img
             class="splide__slide__image"
-            src="<?= $image->url() ?>"
-            loading="lazy"
+            src="<?= $image->placeholderUri() ?>"
+            data-splide-lazy="<?= $image->url() ?>"
             alt="<?= $image->alt()->escape() ?>"
           >
         </li>
