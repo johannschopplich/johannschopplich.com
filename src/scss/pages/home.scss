@@ -1,30 +1,13 @@
 @use "../abstracts/breakpoints";
 
-.carousel.is-photography {
+.splide__slide {
   height: clamp(35vh, 50vw, 75vh);
-}
-
-.carousel-cell {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  margin-right: var(--space-xs);
 }
 
-.carousel-link {
-  width: min(65vw, 25rem);
-}
-
-.cell-image {
-  max-width: 100vw;
+.splide__slide__image {
   max-height: 100%;
   object-fit: contain;
-  opacity: 0;
-  transition: opacity 250ms ease-in;
-
-  &.flickity-lazyloaded,
-  &.flickity-lazyerror {
-    opacity: 1;
-  }
 }

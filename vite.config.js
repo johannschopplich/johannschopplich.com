@@ -29,6 +29,6 @@ export default defineConfig(({ mode }) => ({
   },
 
   optimizeDeps: {
-    include: ["animere", "flickity", "medium-zoom"],
+    include: ["animere", "medium-zoom"],
   },
 }));

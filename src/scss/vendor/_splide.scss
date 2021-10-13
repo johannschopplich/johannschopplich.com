@@ -1,0 +1,36 @@
+$main: var(--color-accent) !default;
+$main-light: var(--color-accent-hover) !default;
+
+@use "splide/template/default/foundation/colors" with
+  (
+    $main: $main,
+    $sub01: $main,
+    $sub02: $main,
+    $background: var(--color-background),
+    $background-active: $main
+  );
+
+@use "splide/template/default/object/modifiers/nav" with
+  ($opacity: 0.7, $opacity-active: 1);
+
+@use "splide/template/default/object/objects/arrow" with
+  (
+    $size: 2.5rem,
+    $opacity: false,
+    $opacity-hover: false,
+    $fill-hover: $main-light,
+    $transition: fill 0.2s linear,
+    $button-size: false,
+    $button-background: transparent
+  );
+
+@use "splide/template/default/object/objects/pagination" with
+  (
+    $dot-width: 10px,
+    $dot-height: 10px,
+    $dot-opacity: false,
+    $dot-transition: all 0.2s linear,
+    $dot-background-hover: $main-light
+  );
+
+@forward "splide/template/default";

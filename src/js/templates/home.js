@@ -1,13 +1,12 @@
 export default async () => {
-  const { default: Flickity } = await import("flickity");
-  new Flickity(".carousel.is-photography", {
-    contain: true,
-    cellSelector: ".carousel-cell",
-    cellAlign: "center",
-    setGallerySize: false,
-    lazyLoad: 3,
-    autoPlay: false,
-    pauseAutoPlayOnHover: true,
-    pageDots: false,
+  const { default: Splide } = await import("@splidejs/splide");
+  const splide = new Splide(".carousel.is-photography", {
+    gap: "var(--space-s)",
+    autoWidth: true,
+    focus: "center",
+    lazyLoad: "nearby",
+    pagination: false,
   });
+
+  splide.mount();
 };
