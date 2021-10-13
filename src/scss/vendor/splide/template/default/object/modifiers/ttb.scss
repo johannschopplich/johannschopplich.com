@@ -9,10 +9,10 @@ $pagination-dot-height: false !default;
   $root: &;
 
   &--ttb {
-    > #{ $root }__slider > #{ $root }__track > #{ $root }__arrows,
-    > #{ $root }__track > #{ $root }__arrows,
-    > #{ $root }__arrows {
-      #{ $root }__arrow {
+    > #{$root}__slider > #{$root}__track > #{$root}__arrows,
+    > #{$root}__track > #{$root}__arrows,
+    > #{$root}__arrows {
+      #{$root}__arrow {
         left: 50%;
         transform: translate(-50%, 0);
 
@@ -35,8 +35,8 @@ $pagination-dot-height: false !default;
       }
     }
 
-    > #{ $root }__pagination,
-    > #{ $root }__slider > #{ $root }__pagination {
+    > #{$root}__pagination,
+    > #{$root}__slider > #{$root}__pagination {
       bottom: 0;
       display: flex;
       flex-direction: column;
@@ -45,7 +45,7 @@ $pagination-dot-height: false !default;
       right: $pagination-right;
       top: 0;
 
-      #{ $root }__pagination__page {
+      #{$root}__pagination__page {
         @if $pagination-dot-width {
           width: $pagination-dot-width;
         }

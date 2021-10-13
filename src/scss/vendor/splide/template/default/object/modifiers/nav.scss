@@ -10,10 +10,10 @@ $opacity-active: false !default;
   $root: &;
 
   &--nav {
-    > #{ $root }__slider > #{ $root }__track,
-    > #{ $root }__track {
-      > #{ $root }__list {
-        > #{ $root }__slide {
+    > #{$root}__slider > #{$root}__track,
+    > #{$root}__track {
+      > #{$root}__list {
+        > #{$root}__slide {
           border: $border;
           cursor: pointer;
 

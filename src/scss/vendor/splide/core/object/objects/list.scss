@@ -11,7 +11,7 @@
   }
 
   &.is-initialized:not(.is-active) {
-    #{ $root }__list {
+    #{$root}__list {
       display: block;
     }
   }

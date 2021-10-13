@@ -4,7 +4,6 @@ export default async () => {
     gap: "var(--space-s)",
     autoWidth: true,
     focus: "center",
-    lazyLoad: "nearby",
     pagination: false,
   });
 

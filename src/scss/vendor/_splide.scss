@@ -15,22 +15,24 @@ $main-light: var(--color-accent-hover) !default;
 
 @use "splide/template/default/object/objects/arrow" with
   (
-    $size: 2.5rem,
+    $size: clamp(1.5rem, 4vw, 2.5rem),
     $opacity: false,
     $opacity-hover: false,
     $fill-hover: $main-light,
     $transition: fill 0.2s linear,
     $button-size: false,
-    $button-background: transparent
+    $button-background: transparent,
+    $left: var(--space-xs),
+    $right: var(--space-xs)
   );
 
-@use "splide/template/default/object/objects/pagination" with
-  (
-    $dot-width: 10px,
-    $dot-height: 10px,
-    $dot-opacity: false,
-    $dot-transition: all 0.2s linear,
-    $dot-background-hover: $main-light
-  );
+// @use "splide/template/default/object/objects/pagination" with
+//   (
+//     $dot-width: 10px,
+//     $dot-height: 10px,
+//     $dot-opacity: false,
+//     $dot-transition: all 0.2s linear,
+//     $dot-background-hover: $main-light
+//   );
 
 @forward "splide/template/default";
