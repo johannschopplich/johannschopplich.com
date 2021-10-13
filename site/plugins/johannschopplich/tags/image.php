@@ -2,7 +2,6 @@
 
 use Kirby\Cms\Html;
 use Kirby\Cms\Url;
-use Kirby\Toolkit\A;
 
 return [
     'attr' => [
@@ -25,7 +24,7 @@ return [
         }
 
         $link = function ($img) use ($tag) {
-            if (empty($tag->link) === true) {
+            if (empty($tag->link)) {
                 return $img;
             }
 
