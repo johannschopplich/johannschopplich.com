@@ -8,10 +8,8 @@ $alt     = $block->alt();
 $caption = $block->caption();
 $link    = $block->link();
 $props   = $block->properties();
+$isFeed  = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 $img     = null;
-
-$urlPath = Url::path(Url::current());
-$isFeed  = preg_match('/^feeds?\/(?:rss|json)/', $urlPath);
 
 if ($block->location() === 'web') {
   $img = Html::img($block->src(), ['alt' => $alt]);

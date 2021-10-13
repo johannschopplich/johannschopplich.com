@@ -21,5 +21,4 @@
 
 # Build assets
 /public/service-worker.js
-/public/assets/js
 /public/dist

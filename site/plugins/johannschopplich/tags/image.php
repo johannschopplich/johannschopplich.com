@@ -9,20 +9,16 @@ return [
         'alt',
         'caption',
         'class',
-        'height',
         'imgclass',
         'link',
         'linkclass',
         'rel',
-        'target',
-        'title',
-        'width'
+        'target'
     ],
     'html' => function ($tag) {
         if ($tag->file = $tag->file($tag->value)) {
             $tag->src     = $tag->file->url();
-            $tag->alt     = $tag->alt     ?? $tag->file->alt()->or(' ')->value();
-            $tag->title   = $tag->title   ?? $tag->file->title()->value();
+            $tag->alt     = $tag->alt     ?? $tag->file->alt()->value();
             $tag->caption = $tag->caption ?? $tag->file->caption()->value();
         } else {
             $tag->src = Url::to($tag->value);
@@ -46,38 +42,33 @@ return [
             ]);
         };
 
-        $imageAttr = [
-            'width'  => $tag->width,
-            'height' => $tag->height,
-            'class'  => $tag->imgclass,
-            'title'  => $tag->title,
-            'alt'    => $tag->alt ?? ' '
-        ];
-
-        if ($tag->file !== null) {
-            $dataUri = $tag->file->placeholderUri();
-            $useSrcset = $tag->kirby()->option('kirbytext.image.srcset', false);
-
-            $image = Html::img($dataUri, A::merge($imageAttr, [
-                'data-src' => !$useSrcset ? $tag->src : null,
-                'data-srcset' => $useSrcset ? $tag->file->srcset() : null,
-                'data-sizes' => $useSrcset ? 'auto' : null,
-                'data-lazyload' => 'true',
-            ]));
+        if ($tag->file) {
+            $isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
+            $img = Html::img(
+                $isFeed ? $tag->file->resize(1024)->url() : $tag->file->placeholderUri(),
+                [
+                    'loading' => 'lazy',
+                    'data-srcset' => $tag->file->srcset(),
+                    'data-sizes' => 'auto',
+                    'width' => $tag->file->width(),
+                    'height' => $tag->file->height(),
+                    'class'  => $tag->imgclass,
+                    'alt'    => $tag->alt
+                ]
+            );
         } else {
-            $image = Html::img($tag->src, $imageAttr);
+            $img = Html::img($tag->src, [
+                'class'  => $tag->imgclass,
+                'alt'    => $tag->alt
+            ]);
         }
 
-        if ($tag->kirby()->option('kirbytext.image.figure', true) === false) {
-            return $link($image);
-        }
-
-        // render KirbyText in caption
+        // Render KirbyText in caption
         if ($tag->caption) {
             $tag->caption = [$tag->kirby()->kirbytext($tag->caption, [], true)];
         }
 
-        return Html::figure([$link($image)], $tag->caption, [
+        return Html::figure([$link($img)], $tag->caption, [
             'class' => $tag->class
         ]);
     }
