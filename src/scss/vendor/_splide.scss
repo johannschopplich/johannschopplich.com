@@ -10,30 +10,18 @@ $main-light: var(--color-accent-hover) !default;
     $background-active: $main
   );
 
-@use "splide/template/default/object/modifiers/nav" with
-  ($opacity: 0.7, $opacity-active: 1);
-
 @use "splide/template/default/object/objects/arrow" with
   (
-    $size: clamp(1.5rem, 4vw, 2.5rem),
+    $size: clamp(1rem, 4vw, 2rem),
     $opacity: false,
     $opacity-hover: false,
-    $fill: var(--color-background),
-    $fill-hover: $main,
+    $fill: $main,
+    $fill-hover: $main-light,
     $transition: fill 0.15s linear,
     $button-size: false,
     $button-background: transparent,
     $left: var(--space-xs),
     $right: var(--space-xs)
   );
-
-// @use "splide/template/default/object/objects/pagination" with
-//   (
-//     $dot-width: 10px,
-//     $dot-height: 10px,
-//     $dot-opacity: false,
-//     $dot-transition: all 0.15s linear,
-//     $dot-background-hover: $main-light
-//   );
 
 @forward "splide/template/default";
