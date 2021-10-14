@@ -19,7 +19,7 @@
 
       <li class="splide__slide carousel-link centered-content">
         <a href="<?= $image->parent()->url() ?>" class="stretched-link button is-text">
-          <?= substr(t('photography.morePhotos'), 0, -7) ?>
+          <?= substr(($t = t('photography.morePhotos')), 0, strrpos($t, ' ')) ?>
         </a>
       </li>
     </ul>
