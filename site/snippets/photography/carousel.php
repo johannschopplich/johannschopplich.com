@@ -17,9 +17,9 @@
         </li>
       <?php endforeach ?>
 
-      <li class="splide__slide splide__slide__link" style="width: min(65vw, 25rem);">
-        <a href="<?= $image->parent()->url() ?>" class="button is-text">
-          <?= t('photography.morePhotos') ?>
+      <li class="splide__slide splide__slide__link">
+        <a href="<?= $image->parent()->url() ?>" class="stretched-link button is-text">
+          <?= substr(t('photography.morePhotos'), 0, -7) ?>
         </a>
       </li>
     </ul>

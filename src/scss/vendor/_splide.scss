@@ -17,11 +17,11 @@ $main-light: var(--color-accent-hover) !default;
     $opacity-hover: false,
     $fill: $main,
     $fill-hover: $main-light,
-    $transition: fill 0.15s linear,
     $button-size: false,
     $button-background: transparent,
-    $left: var(--space-xs),
-    $right: var(--space-xs)
+    $button-padding: var(--space-s),
+    $left: 0,
+    $right: 0
   );
 
 @forward "splide/template/default";

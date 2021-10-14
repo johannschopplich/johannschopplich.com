@@ -32,10 +32,10 @@ $right: 1em !default;
     }
 
     @if $button-size {
-      align-items: center;
-      border-radius: $button-border-radius;
       display: flex;
+      align-items: center;
       justify-content: center;
+      border-radius: $button-border-radius;
       height: $button-size;
       width: $button-size;
     }
