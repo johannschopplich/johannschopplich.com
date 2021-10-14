@@ -9,7 +9,7 @@
         <?php /** @var \Kirby\Cms\File $image */ ?>
         <li class="splide__slide">
           <img
-            class="splide__slide__image"
+            class="carousel-image"
             src="<?= $image->placeholderUri() ?>"
             data-splide-lazy="<?= $image->url() ?>"
             alt="<?= $image->alt()->escape() ?>"
@@ -17,7 +17,7 @@
         </li>
       <?php endforeach ?>
 
-      <li class="splide__slide splide__slide__link">
+      <li class="splide__slide carousel-link centered-content">
         <a href="<?= $image->parent()->url() ?>" class="stretched-link button is-text">
           <?= substr(t('photography.morePhotos'), 0, -7) ?>
         </a>
