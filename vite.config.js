@@ -1,7 +1,6 @@
 /* eslint-env node */
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import liveReload from "vite-plugin-live-reload";
 
 const root = "src/js";
 
@@ -17,10 +16,6 @@ export default defineConfig(({ mode }) => ({
       input: resolve(root, "index.js"),
     },
   },
-
-  plugins: [
-    liveReload("site/(controllers|models|snippets|templates)/**/*.php"),
-  ],
 
   server: {
     cors: true,
