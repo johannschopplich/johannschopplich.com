@@ -1,11 +1,4 @@
 .carousel.is-photography {
-  .splide__slide {
-    height: clamp(35vh, 50vw, 75vh);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
   .splide__slide__image {
     max-height: 100%;
     object-fit: contain;
@@ -13,6 +6,9 @@
 
   .splide__slide__link {
     width: min(65vw, 25rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid;
 
     .stretched-link {
