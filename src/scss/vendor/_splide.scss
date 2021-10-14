@@ -18,8 +18,9 @@ $main-light: var(--color-accent-hover) !default;
     $size: clamp(1.5rem, 4vw, 2.5rem),
     $opacity: false,
     $opacity-hover: false,
-    $fill-hover: $main-light,
-    $transition: fill 0.2s linear,
+    $fill: var(--color-background),
+    $fill-hover: $main,
+    $transition: fill 0.15s linear,
     $button-size: false,
     $button-background: transparent,
     $left: var(--space-xs),
@@ -31,7 +32,7 @@ $main-light: var(--color-accent-hover) !default;
 //     $dot-width: 10px,
 //     $dot-height: 10px,
 //     $dot-opacity: false,
-//     $dot-transition: all 0.2s linear,
+//     $dot-transition: all 0.15s linear,
 //     $dot-background-hover: $main-light
 //   );
 

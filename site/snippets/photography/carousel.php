@@ -17,13 +17,11 @@
         </li>
       <?php endforeach ?>
 
-      <?php /*
       <li class="splide__slide splide__slide__link" style="width: min(65vw, 25rem);">
-        <a href="<?= page('photography')->url() ?>" class="button is-accent is-outlined px-s">
+        <a href="<?= $image->parent()->url() ?>" class="button is-text">
           <?= t('photography.morePhotos') ?>
         </a>
       </li>
-      */ ?>
     </ul>
   </div>
 </div>
