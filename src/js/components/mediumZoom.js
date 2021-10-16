@@ -1,9 +1,11 @@
+import { useBreakpoints } from "../hooks";
+
 export default class {
   constructor(selector = "[data-zoomable]") {
-    const isBelowMd = !matchMedia("(min-width: 768px)").matches;
+    const { isAbove } = useBreakpoints();
     const elements = [...document.querySelectorAll(selector)];
 
-    if (!isBelowMd && elements.length !== 0) {
+    if (isAbove("md") && elements.length !== 0) {
       this.init(elements);
     }
   }

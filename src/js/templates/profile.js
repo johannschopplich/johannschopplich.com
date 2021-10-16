@@ -1,4 +1,9 @@
+import { useBreakpoints } from "../hooks";
+
 export default async () => {
+  const { isBelow } = useBreakpoints();
+  if (isBelow("md")) return;
+
   const { createDrauu } = await import("drauu");
 
   createDrauu({
@@ -6,7 +11,7 @@ export default async () => {
     brush: {
       mode: "stylus",
       color: "var(--color-accent)",
-      size: 2,
+      size: 3,
     },
   });
 };

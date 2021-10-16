@@ -1,3 +1,4 @@
+export { default as useBreakpoints } from "./useBreakpoints";
 export { default as useDebounceFn } from "./useDebounceFn";
 export { default as useFitText } from "./useFitText";
 export { default as useServiceWorker } from "./useServiceWorker";

@@ -23,8 +23,7 @@ export default function (selector = "[data-fit-text]", autoWidth = false) {
       [data-fit-text] {
         font-size: calc(
           var(--fit-text-width, 100vw) /
-          (var(--fit-text-length, 1) * 0.5) *
-          var(--fit-text-scale, 1)
+          (var(--fit-text-length, 1) * 0.5) * var(--fit-text-scale, 1)
         );
       }
     `

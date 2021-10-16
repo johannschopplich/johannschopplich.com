@@ -16,9 +16,6 @@ function throttled(delay, fn) {
   };
 }
 
-/**
- * Main Tornis singleton class
- */
 class Tornis {
   // Set a whole load of initial values
   constructor() {
@@ -213,10 +210,6 @@ class Tornis {
    * @param {boolean} callOnWatch Call the function on subscribe? defaults to true
    */
   watch(callback, callOnWatch = true) {
-    if (typeof callback !== "function") {
-      throw new Error("Value passed to `watch` is not a function");
-    }
-
     if (callOnWatch) {
       // Get a copy of the store
       const firstRunData = this.formatData();
@@ -242,10 +235,6 @@ class Tornis {
    * @param {Function} callback The function to be removed
    */
   unwatch(callback) {
-    if (typeof callback !== "function") {
-      throw new Error("Value passed to `unwatch` is not a function");
-    }
-
     // Remove the callback from the list
     this.callbacks = this.callbacks.filter((cb) => cb !== callback);
   }
