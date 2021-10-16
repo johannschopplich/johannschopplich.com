@@ -66,6 +66,15 @@
     // box-shadow: 2px 2px 0 var(--color-background), 4px 4px 0 var(--color-accent);
     box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 currentColor;
   }
+
+  .drauu {
+    cursor: crosshair;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .section-cv > .container {
@@ -73,10 +82,7 @@
   column-gap: var(--space-xl);
   grid-template-columns: repeat(
     auto-fit,
-    minmax(
-      calc(22ch - var(--space-xl)),
-      1fr
-    )
+    minmax(calc(22ch - var(--space-xl)), 1fr)
   );
 }
 
