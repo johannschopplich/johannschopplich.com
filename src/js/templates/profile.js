@@ -7,7 +7,7 @@ export default async () => {
   const { createDrauu } = await import("drauu");
 
   createDrauu({
-    el: ".drauu",
+    el: ".bio-draw-area",
     brush: {
       mode: "stylus",
       color: "var(--color-accent)",

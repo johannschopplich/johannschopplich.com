@@ -66,15 +66,16 @@
     // box-shadow: 2px 2px 0 var(--color-background), 4px 4px 0 var(--color-accent);
     box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 currentColor;
   }
+}
 
-  .drauu {
-    cursor: crosshair;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+.bio-draw-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: pinch-zoom;
 }
 
 .section-cv > .container {
