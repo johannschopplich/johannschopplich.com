@@ -18,7 +18,7 @@ const documentLoaded = new Promise((resolve) => {
 /**
  * Handle the service worker registration process
  */
-(async () => {
+export const install = async () => {
   if (!("serviceWorker" in navigator)) return;
 
   const hasExistingWorker = !!navigator.serviceWorker.controller;
@@ -65,4 +65,4 @@ const documentLoaded = new Promise((resolve) => {
   } else if (hasExistingWorker) {
     unregister();
   }
-})();
+};

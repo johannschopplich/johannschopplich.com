@@ -11,14 +11,14 @@ export default class {
   }
 
   async init(elements) {
-    const rem = parseFloat(
+    const margin = parseFloat(
       getComputedStyle(document.body).getPropertyValue("font-size")
     );
 
     const { default: mediumZoom } = await import("medium-zoom");
     mediumZoom(elements, {
       background: "var(--color-background)",
-      margin: rem,
+      margin,
     });
   }
 }
