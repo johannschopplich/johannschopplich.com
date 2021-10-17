@@ -68,16 +68,6 @@
   }
 }
 
-.bio-draw-area {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: crosshair;
-  touch-action: pinch-zoom;
-}
-
 .section-cv > .container {
   display: grid;
   column-gap: var(--space-xl);

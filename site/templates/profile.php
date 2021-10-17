@@ -12,15 +12,25 @@
     </div>
 
     <?php if ($image = $page->thumbnail()->toFile()): ?>
-      <figure class="position-relative bio-picture stretched-fullwidth@md">
-        <svg class="bio-draw-area d-none md:d-block"></svg>
-        <img
-          src="<?= $image->url() ?>"
-          width="<?= $image->width() ?>"
-          height="<?= $image->height() ?>"
-          alt="<?= $image->alt() ?>"
-        >
-      </figure>
+      <div>
+        <figure class="position-relative bio-picture stretched-fullwidth@md">
+          <svg class="drauu-canvas unselectable d-none md:d-block"></svg>
+          <img
+            src="<?= $image->url() ?>"
+            width="<?= $image->width() ?>"
+            height="<?= $image->height() ?>"
+            alt="<?= $image->alt() ?>"
+          >
+        </figure>
+
+        <div class="drauu-app mt-s d-none md:d-flex">
+          <button id="m-stylus" class="is-active" title="Stylus">✍️</button>
+          <button id="m-draw" title="Draw">✏️</button>
+          <button id="m-line" title="Line">⁄</button>
+          <button id="clear" title="Clear">🗑</button>
+          <button id="download" title="Download">📥</button>
+        </div>
+      </div>
     <?php endif ?>
   </div>
 </div>

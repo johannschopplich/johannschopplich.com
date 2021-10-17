@@ -9,7 +9,7 @@
     "format": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
-    "@splidejs/splide": "^3.1.6",
+    "@splidejs/splide": "^3.1.7",
     "animate.css": "^4.1.1",
     "animere": "^1.14.1",
     "drauu": "^0.2.1",
@@ -18,13 +18,12 @@
   "devDependencies": {
     "colorette": "^2.0.16",
     "dotenv": "^10.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsdoc": "^36.1.1",
     "fast-glob": "^3.2.7",
-    "nanoid": "^3.1.29",
+    "nanoid": "^3.1.30",
     "prettier": "^2.4.1",
-    "sass": "^1.42.1",
+    "sass": "^1.43.2",
     "shx": "^0.3.3",
     "vite": "^2.6.7"
   }
