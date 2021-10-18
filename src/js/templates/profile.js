@@ -65,11 +65,14 @@ export default async () => {
     document.body.removeChild(el);
   });
 
+  // const sizeEl = $("size");
+  // sizeEl?.addEventListener("input", () => (drauu.brush.size = +sizeEl.value));
+
   /** @type {{el: HTMLElement, brush: Partial<import("drauu").Brush>}[]} */
   const modes = [
-    { el: $("m-stylus"), brush: { mode: "stylus", arrowEnd: false } },
-    { el: $("m-draw"), brush: { mode: "draw", arrowEnd: false } },
-    { el: $("m-line"), brush: { mode: "line", arrowEnd: false } },
+    { el: $("m-stylus"), brush: { mode: "stylus" } },
+    { el: $("m-draw"), brush: { mode: "draw" } },
+    { el: $("m-line"), brush: { mode: "line" } },
   ];
 
   for (const { el, brush } of modes) {

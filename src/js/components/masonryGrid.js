@@ -1,4 +1,4 @@
-import { useDebounceFn } from "../hooks";
+import { debounce } from "@github/mini-throttle";
 
 export default class {
   constructor() {
@@ -30,7 +30,7 @@ export default class {
       mod: 0,
     }));
 
-    const debounced = useDebounceFn(() => this.calcLayout(), 100);
+    const debounced = debounce(() => this.calcLayout(), 100);
     window.addEventListener("resize", debounced);
     window.addEventListener("load", () => this.calcLayout());
   }

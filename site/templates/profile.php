@@ -29,6 +29,7 @@
           <button id="m-line" title="Line">⁄</button>
           <button id="clear" title="Clear">🗑</button>
           <button id="download" title="Download">📥</button>
+          <!-- <input id="size" type="range" min="1" max="10" value="3" step="0.5" title="Size"> -->
         </div>
       </div>
     <?php endif ?>

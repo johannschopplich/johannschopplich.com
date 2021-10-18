@@ -9,6 +9,7 @@
     "format": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
+    "@github/mini-throttle": "^2.1.0",
     "@splidejs/splide": "^3.1.7",
     "animate.css": "^4.1.1",
     "animere": "^1.14.1",

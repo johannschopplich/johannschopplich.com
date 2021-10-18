@@ -1,20 +1,4 @@
-/**
- * Limit a function to only run once every {delay}ms
- *
- * @param {number} delay The delay in ms
- * @param {Function} fn The function to throttle
- * @returns {Function} The throttled function
- */
-function throttled(delay, fn) {
-  let lastCall = 0;
-
-  return function (...args) {
-    const now = Date.now();
-    if (now - lastCall < delay) return;
-    lastCall = now;
-    return fn(...args);
-  };
-}
+import { throttle } from "@github/mini-throttle";
 
 class Tornis {
   // Set a whole load of initial values
@@ -44,7 +28,7 @@ class Tornis {
     this.updating = false;
 
     // Initialise the watched function queue
-    this.callbacks = [];
+    this.callbacks = new Set();
 
     // Bind this to ease class methods
     this.update = this.update.bind(this);
@@ -55,8 +39,8 @@ class Tornis {
     this.unwatch = this.unwatch.bind(this);
 
     // Throttled event handlers
-    this.handleResize = throttled(100, this.handleResize);
-    this.handleMouse = throttled(75, this.handleMouse);
+    this.handleResize = throttle(this.handleResize, 100);
+    this.handleMouse = throttle(this.handleMouse, 75);
 
     // Bind event handlers to the window
     window.addEventListener("resize", this.handleResize);
@@ -194,7 +178,7 @@ class Tornis {
       this.positionChange
     ) {
       // Pass the formatted data into each watched function
-      this.callbacks.forEach((cb) => cb(this.formatData()));
+      [...this.callbacks].forEach((cb) => cb(this.formatData()));
     }
 
     // Reset and loop this method
@@ -226,17 +210,17 @@ class Tornis {
     }
 
     // Push the callback to the queue to ensure it runs on future updates
-    this.callbacks.push(callback);
+    this.callbacks.add(callback);
   }
 
   /**
-   * Unsubscribe a function from the 'watched functions' list
+   * Unsubscribe a function from the watched functions list
    *
    * @param {Function} callback The function to be removed
    */
   unwatch(callback) {
     // Remove the callback from the list
-    this.callbacks = this.callbacks.filter((cb) => cb !== callback);
+    this.callbacks = this.callbacks.delete(callback);
   }
 }
 
