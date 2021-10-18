@@ -27,9 +27,9 @@
           <button id="m-stylus" class="is-active" title="Stylus">✍️</button>
           <button id="m-draw" title="Draw">✏️</button>
           <button id="m-line" title="Line">⁄</button>
-          <button id="clear" title="Clear">🗑</button>
+          <input id="size" type="number" min="1" max="9" value="3" step="1" title="Size">
+          <button id="clear" class="ml-auto" title="Clear">🗑</button>
           <button id="download" title="Download">📥</button>
-          <!-- <input id="size" type="range" min="1" max="10" value="3" step="0.5" title="Size"> -->
         </div>
       </div>
     <?php endif ?>

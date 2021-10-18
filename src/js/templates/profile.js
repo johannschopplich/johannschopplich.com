@@ -65,8 +65,7 @@ export default async () => {
     document.body.removeChild(el);
   });
 
-  // const sizeEl = $("size");
-  // sizeEl?.addEventListener("input", () => (drauu.brush.size = +sizeEl.value));
+  $("size")?.addEventListener("input", (evt) => (drauu.brush.size = +evt.target.value));
 
   /** @type {{el: HTMLElement, brush: Partial<import("drauu").Brush>}[]} */
   const modes = [
