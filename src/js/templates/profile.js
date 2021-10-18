@@ -1,7 +1,7 @@
 import { useBreakpoints } from "../hooks";
 
-/** @param {string} s */
-const $ = (s) => document.getElementById(s);
+/** @param {string} id */
+const $ = (id) => document.getElementById(id);
 
 /** @param {import("drauu").Drauu} drauu */
 const registerKeyboardShortcuts = (drauu) => {
@@ -42,7 +42,7 @@ export default async () => {
     el: ".drauu-canvas",
     brush: {
       mode: "stylus",
-      color: "var(--color-accent)",
+      color: "hsl(357, 43%, 63%)",
       size: 3,
     },
   });
@@ -65,7 +65,10 @@ export default async () => {
     document.body.removeChild(el);
   });
 
-  $("size")?.addEventListener("input", (evt) => (drauu.brush.size = +evt.target.value));
+  $("size")?.addEventListener(
+    "input",
+    (evt) => (drauu.brush.size = +evt.target.value)
+  );
 
   /** @type {{el: HTMLElement, brush: Partial<import("drauu").Brush>}[]} */
   const modes = [
