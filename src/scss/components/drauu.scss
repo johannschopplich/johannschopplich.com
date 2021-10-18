@@ -25,13 +25,9 @@
     }
   }
 
-  input {
-    width: 100%;
-    flex: 0 1 2.75rem;
-    border-color: transparent;
-    padding-top: 0;
+  select {
+    border: 0;
     padding-right: 0;
-    padding-bottom: 0;
   }
 
   .drauu-app-divider {

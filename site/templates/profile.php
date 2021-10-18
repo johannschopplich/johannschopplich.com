@@ -27,7 +27,17 @@
           <button id="m-stylus" class="is-active" title="Stylus">✍️</button>
           <button id="m-draw" title="Draw">✏️</button>
           <button id="m-line" title="Line">⁄</button>
-          <input id="size" type="number" min="1" max="9" value="3" step="1" title="Size">
+          <select id="size" title="Size">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3" selected>3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
           <button id="clear" class="ml-auto" title="Clear">🗑</button>
           <button id="download" title="Download">📥</button>
         </div>
