@@ -24,10 +24,10 @@
         </figure>
 
         <div class="drauu-app mt-s d-none md:d-flex">
-          <button id="m-stylus" class="is-active" title="Stylus">✍️</button>
-          <button id="m-draw" title="Draw">✏️</button>
-          <button id="m-line" title="Line">⁄</button>
-          <select id="size" title="Size">
+          <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
+          <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
+          <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>
+          <select id="size" title="<?= t('drauu.size') ?>">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3" selected>3</option>
@@ -38,7 +38,7 @@
             <option value="8">8</option>
             <option value="9">9</option>
           </select>
-          <button id="clear" class="ml-auto" title="Clear">🗑</button>
+          <button id="clear" class="ml-auto" title="<?= t('drauu.clear') ?>">🗑</button>
           <button id="download" title="Download">📥</button>
         </div>
       </div>
