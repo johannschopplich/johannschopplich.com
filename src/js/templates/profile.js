@@ -1,10 +1,13 @@
 import { useBreakpoints } from "../hooks";
 
+/** @param {string} s */
+const $ = (s) => document.getElementById(s);
+
 /** @param {import("drauu").Drauu} drauu */
 const registerKeyboardShortcuts = (drauu) => {
-  window.addEventListener("keydown", (e) => {
-    if (e.code === "KeyZ" && (e.ctrlKey || e.metaKey)) {
-      if (e.shiftKey) {
+  window.addEventListener("keydown", (evt) => {
+    if (evt.code === "KeyZ" && (evt.ctrlKey || evt.metaKey)) {
+      if (evt.shiftKey) {
         drauu.redo();
       } else {
         drauu.undo();
@@ -13,16 +16,20 @@ const registerKeyboardShortcuts = (drauu) => {
       return;
     }
 
-    if (e.shiftKey || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (evt.shiftKey || evt.ctrlKey || evt.metaKey || evt.altKey) return;
 
-    if (e.code === "KeyL") drauu.mode = "line";
-    else if (e.code === "KeyD") drauu.mode = "draw";
-    else if (e.code === "KeyS") drauu.mode = "stylus";
-    else if (e.code === "KeyR") drauu.mode = "rectangle";
-    else if (e.code === "KeyE") drauu.mode = "ellipse";
-    else if (e.code === "KeyC") drauu.clear();
-    else if (e.code === "Equal") drauu.brush.size += 0.5;
-    else if (e.code === "Minus") drauu.brush.size -= 0.5;
+    const actions = {
+      KeyL: () => (drauu.mode = "line"),
+      KeyD: () => (drauu.mode = "draw"),
+      KeyS: () => (drauu.mode = "stylus"),
+      KeyR: () => (drauu.mode = "rectangle"),
+      KeyE: () => (drauu.mode = "ellipse"),
+      KeyC: () => (drauu.mode = drauu.clear()),
+      Equal: () => (drauu.brush.size += 0.5),
+      Minus: () => (drauu.brush.size -= 0.5),
+    };
+
+    actions[evt.code]?.();
   });
 };
 
@@ -42,17 +49,11 @@ export default async () => {
 
   registerKeyboardShortcuts(drauu);
 
-  document
-    .getElementById("undo")
-    ?.addEventListener("click", () => drauu.undo());
-  document
-    .getElementById("redo")
-    ?.addEventListener("click", () => drauu.redo());
-  document
-    .getElementById("clear")
-    ?.addEventListener("click", () => drauu.clear());
+  $("undo")?.addEventListener("click", () => drauu.undo());
+  $("redo")?.addEventListener("click", () => drauu.redo());
+  $("clear")?.addEventListener("click", () => drauu.clear());
 
-  document.getElementById("download")?.addEventListener("click", () => {
+  $("download")?.addEventListener("click", () => {
     drauu.el.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     const data = drauu.el.outerHTML || "";
     const blob = new Blob([data], { type: "image/svg+xml" });
@@ -66,18 +67,9 @@ export default async () => {
 
   /** @type {{el: HTMLElement, brush: Partial<import("drauu").Brush>}[]} */
   const modes = [
-    {
-      el: document.getElementById("m-stylus"),
-      brush: { mode: "stylus", arrowEnd: false },
-    },
-    {
-      el: document.getElementById("m-draw"),
-      brush: { mode: "draw", arrowEnd: false },
-    },
-    {
-      el: document.getElementById("m-line"),
-      brush: { mode: "line", arrowEnd: false },
-    },
+    { el: $("m-stylus"), brush: { mode: "stylus", arrowEnd: false } },
+    { el: $("m-draw"), brush: { mode: "draw", arrowEnd: false } },
+    { el: $("m-line"), brush: { mode: "line", arrowEnd: false } },
   ];
 
   for (const { el, brush } of modes) {
