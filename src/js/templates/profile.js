@@ -24,7 +24,7 @@ const registerKeyboardShortcuts = (drauu) => {
       KeyS: () => (drauu.mode = "stylus"),
       KeyR: () => (drauu.mode = "rectangle"),
       KeyE: () => (drauu.mode = "ellipse"),
-      KeyC: () => (drauu.mode = drauu.clear()),
+      KeyC: () => drauu.clear(),
       Equal: () => (drauu.brush.size += 0.5),
       Minus: () => (drauu.brush.size -= 0.5),
     };
