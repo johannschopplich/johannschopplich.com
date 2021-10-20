@@ -34,8 +34,8 @@
   <link rel="alternate" type="application/rss+xml" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/rss') ?>">
   <link rel="alternate" type="application/json" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/json') ?>">
 
-  <?= vite()->client() ?>
   <?= vite()->css() ?>
+  <?= vite()->js() ?>
 
   <?= css([
     'assets/fonts/Inter.css',

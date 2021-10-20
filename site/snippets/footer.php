@@ -33,7 +33,5 @@
     </div>
   </footer>
 
-<?= vite()->js() ?>
-
 </body>
 </html>

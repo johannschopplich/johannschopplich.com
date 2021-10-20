@@ -12,14 +12,18 @@ class Vite
     protected static array $manifest;
 
     /**
-     * Checks for `.lock` file in `/src` as indicator for development mode
+     * Checks for development mode by either `KIRBY_MODE` env var or
+     * if a `.lock` file in `/src` exists
      *
      * @return bool
      */
     protected function isDev(): bool
     {
-        $lockFile = kirby()->root('base') . '/src/.lock';
+        if (env('KIRBY_MODE') === 'development') {
+            return true;
+        }
 
+        $lockFile = kirby()->root('base') . '/src/.lock';
         return F::exists($lockFile);
     }
 
@@ -39,7 +43,7 @@ class Vite
 
         if (!F::exists($manifestFile)) {
             if (option('debug')) {
-                throw new Exception('The `manifest.json` does not exist. Run `npm run build`.');
+                throw new Exception('manifest.json not found. Run `npm run build` first.');
             }
 
             return [];
@@ -61,7 +65,7 @@ class Vite
         $manifestEntry = $this->useManifest()[$entry] ?? null;
         if (!$manifestEntry) {
             if (option('debug')) {
-                throw new Exception("`$entry` is not a manifest entry.");
+                throw new Exception("{$entry} is not a manifest entry");
             }
 
             return;
@@ -70,7 +74,7 @@ class Vite
         $value = $manifestEntry[$key] ?? null;
         if (!$value) {
             if (option('debug')) {
-                throw new Exception("Manifest entry `$entry` does not have property `$key`.");
+                throw new Exception("{$key} not found in manifest entry {$entry}");
             }
 
             return;
@@ -87,7 +91,7 @@ class Vite
      */
     protected function assetDev(string $file): string
     {
-        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . "/$file";
+        return option('kirby-extended.vite.devServer', 'http://localhost:3000') . '/' . "{$file}";
     }
 
     /**
@@ -98,19 +102,7 @@ class Vite
      */
     protected function assetProd(string $file): string
     {
-        return kirby()->url('index') . '/' . option('kirby-extended.vite.outDir', 'dist') . "/$file";
-    }
-
-    /**
-     * Includes Vite's client in development mode
-     *
-     * @return string|null
-     */
-    public function client(): ?string
-    {
-        return $this->isDev()
-            ? js($this->assetDev('@vite/client'), ['type' => 'module'])
-            : null;
+        return '/' . option('kirby-extended.vite.outDir', 'dist') . '/' . "{$file}";
     }
 
     /**
@@ -123,18 +115,21 @@ class Vite
      */
     public function css(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('kirby-extended.vite.entry', 'index.js');
+        $entry ??= option('johannschopplich.kirby-vite.entry', 'index.js');
+
+        $attr = array_merge($options, [
+            'href' => $this->assetProd($this->getManifestProperty($entry, 'css')[0]),
+            'rel'  => 'stylesheet'
+        ]);
 
         return !$this->isDev()
-            ? css(
-                    $this->assetProd($this->getManifestProperty($entry, 'css')[0]),
-                    $options
-                )
+            ? '<link ' . attr($attr) . '>'
             : null;
     }
 
     /**
-     * Includes the JS file for the specified entry
+     * Includes the JS file for the specified entry and
+     * Vite's client in development mode as well
      *
      * @param string|null $entry
      * @param array $options
@@ -143,15 +138,19 @@ class Vite
      */
     public function js(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('kirby-extended.vite.entry', 'index.js');
+        $entry ??= option('johannschopplich.kirby-vite.entry', 'index.js');
 
+        $client = $this->isDev() ? js($this->assetDev('@vite/client'), ['type' => 'module']) : '';
         $file = $this->isDev()
             ? $this->assetDev($entry)
             : $this->assetProd($this->getManifestProperty($entry, 'file'));
 
-        $options = array_merge(['type' => 'module'], $options);
+        $attr = array_merge($options, [
+            'type' => 'module',
+            'src' => $file
+        ]);
 
-        return js($file, $options);
+        return $client . '<script async ' . attr($attr) . '></script>';
     }
 
     /**

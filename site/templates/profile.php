@@ -13,8 +13,8 @@
 
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="position-relative bio-picture stretched-fullwidth@md">
-          <svg class="drauu-canvas unselectable d-none md:d-block"></svg>
+        <figure class="position-relative unselectable bio-picture stretched-fullwidth@md">
+          <svg class="drauu-canvas d-none md:d-block"></svg>
           <img
             src="<?= $image->url() ?>"
             width="<?= $image->width() ?>"
