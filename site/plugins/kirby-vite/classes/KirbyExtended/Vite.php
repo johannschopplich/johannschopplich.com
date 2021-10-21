@@ -28,7 +28,7 @@ class Vite
     }
 
     /**
-     * Read and parse manifest file created by Vite
+     * Reads and parses the manifest file created by Vite
      *
      * @return array|null
      * @throws Exception
@@ -84,7 +84,7 @@ class Vite
     }
 
     /**
-     * Gets the URL for the specified file for development mode
+     * Gets the URL for the specified file in development mode
      *
      * @param string $file
      * @return string
@@ -95,7 +95,7 @@ class Vite
     }
 
     /**
-     * Gets the URL for the specified file for production mode
+     * Gets the URL for the specified file in production mode
      *
      * @param string $file
      * @return string
@@ -115,7 +115,7 @@ class Vite
      */
     public function css(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('johannschopplich.kirby-vite.entry', 'index.js');
+        $entry ??= option('kirby-extended.vite.entry', 'index.js');
 
         $attr = array_merge($options, [
             'href' => $this->assetProd($this->getManifestProperty($entry, 'css')[0]),
@@ -138,7 +138,7 @@ class Vite
      */
     public function js(string $entry = null, array $options = []): ?string
     {
-        $entry ??= option('johannschopplich.kirby-vite.entry', 'index.js');
+        $entry ??= option('kirby-extended.vite.entry', 'index.js');
 
         $client = $this->isDev() ? js($this->assetDev('@vite/client'), ['type' => 'module']) : '';
         $file = $this->isDev()
