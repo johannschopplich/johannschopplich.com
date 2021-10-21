@@ -35,7 +35,6 @@
   <link rel="alternate" type="application/json" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/json') ?>">
 
   <?= vite()->css() ?>
-  <?= vite()->js() ?>
 
   <?= css([
     'assets/fonts/Inter.css',
