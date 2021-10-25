@@ -34,6 +34,7 @@
   <link rel="alternate" type="application/rss+xml" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/rss') ?>">
   <link rel="alternate" type="application/json" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/json') ?>">
 
+  <?= vite()->js() ?>
   <?= vite()->css() ?>
 
   <?= css([
