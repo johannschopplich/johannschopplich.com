@@ -2,8 +2,8 @@
   "prrivate": true,
   "scripts": {
     "assets:head": "esbuild src/inline-head.ts --minify --format=iife --outdir=public/dist/assets",
-    "assets:worker": "esmo scripts/generateServiceWorker.ts",
-    "assets:unocss": "esmo scripts/generateUnoCSS.ts",
+    "assets:worker": "node scripts/generateServiceWorker.mjs",
+    "assets:unocss": "node scripts/generateUnoCSS.mjs",
     "dev": "shx touch src/.lock && concurrently \"npm run assets:unocss\" \"vite\"",
     "build": "shx rm -f src/.lock && NODE_ENV=production npm run assets:unocss && vite build && npm run assets:head && npm run assets:worker",
     "lint": "eslint \"src/**/*.js\"",
@@ -28,7 +28,6 @@
     "dotenv": "^10.0.0",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
-    "esmo": "^0.11.0",
     "fast-glob": "^3.2.7",
     "nanoid": "^3.1.30",
     "prettier": "^2.4.1",
