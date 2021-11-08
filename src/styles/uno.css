@@ -38,14 +38,14 @@
 .font-size-4{font-size:var(--text-4);}
 .font-size-5{font-size:var(--text-5);}
 .font-size-7{font-size:var(--text-7);}
-@media (min-width: 768px){
-.md\:block{display:block;}
-.md\:text-center{text-align:center;}
-.md\:flex{display:flex;}
-}
 @media (min-width: 640px){
 .sm\:inline{display:inline;}
 .sm\:flex{display:flex;}
 .sm\:font-size-1{font-size:var(--text-1);}
 .sm\:font-size-3{font-size:var(--text-3);}
+}
+@media (min-width: 768px){
+.md\:block{display:block;}
+.md\:text-center{text-align:center;}
+.md\:flex{display:flex;}
 }
