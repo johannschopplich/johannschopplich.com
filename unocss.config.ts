@@ -1,7 +1,7 @@
 import { defineConfig, presetUno } from "unocss";
 import presetIcons from "@unocss/preset-icons";
 
-export function createConfig({ dev = true } = {}) {
+export function createConfig({ dev = false } = {}) {
   return defineConfig({
     envMode: dev ? "dev" : "build",
     theme: {
@@ -22,7 +22,6 @@ export function createConfig({ dev = true } = {}) {
         heading: "var(--font-family-heading)",
       },
       lineHeight: {
-        none: "1",
         normal: "var(--line-height-normal)",
         heading: "var(--line-height-heading)",
       },
