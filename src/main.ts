@@ -2,7 +2,7 @@ import "./styles/main.scss";
 
 // Remove temporary CSS (to prevent FOUC) in development mode
 if (import.meta.env.DEV) {
-  for (const el of document.querySelectorAll<HTMLElement>("[id*=vite-dev]")) {
+  for (const el of document.querySelectorAll(`[id*="vite-dev"]`)) {
     el.remove();
   }
 }

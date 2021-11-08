@@ -6,7 +6,7 @@ import { white, green, yellow, dim } from "colorette";
 import { watch } from "chokidar";
 
 const distPath = "src/styles/uno.css";
-const watchPaths = "site/{snippets,templates}/**/*.php";
+const watchPaths = "site/{snippets,templates}/**/*";
 const mode = process.env.NODE_ENV as "development" | "production" | undefined;
 
 async function main() {
@@ -38,7 +38,8 @@ async function main() {
     });
 
     console.log(
-      yellow("Watching for changes in ") +
+      yellow("Watching for changes in") +
+        " " +
         white(
           dim(Array.isArray(watchPaths) ? watchPaths.join(", ") : watchPaths)
         )

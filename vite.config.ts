@@ -1,5 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import FullReload from "vite-plugin-full-reload";
 
 export default defineConfig(({ mode }) => ({
   root: "src",
@@ -14,8 +15,11 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
+  plugins: [
+    FullReload(["site/{snippets,templates}/**/*"], { root: __dirname }),
+  ],
+
   server: {
-    fs: { strict: true },
     cors: true,
     port: 3000,
     strictPort: true,

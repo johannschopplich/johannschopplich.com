@@ -21,7 +21,7 @@
   </div>
 
   <div class="container is-lg">
-    <div class="v-stacked">
+    <div class="space-y-5">
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
         <figure>
           <?php snippet('image', [

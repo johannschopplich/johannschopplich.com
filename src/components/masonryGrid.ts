@@ -2,7 +2,7 @@ import { debounce } from "@github/mini-throttle";
 
 export default class {
   grids: {
-    _el: HTMLElement;
+    el: HTMLElement;
     gap: number;
     items: HTMLElement[];
     ncol: number;
@@ -25,7 +25,7 @@ export default class {
 
   init(elements: HTMLElement[]) {
     this.grids = elements.map((grid) => ({
-      _el: grid,
+      el: grid,
       gap: parseFloat(getComputedStyle(grid).rowGap),
       items: ([...grid.childNodes] as HTMLElement[])
         // Make sure the child nodes are element nodes
@@ -48,7 +48,7 @@ export default class {
   calcLayout() {
     for (const grid of this.grids) {
       // Get the post relayout number of columns
-      const ncol = getComputedStyle(grid._el).gridTemplateColumns.split(
+      const ncol = getComputedStyle(grid.el).gridTemplateColumns.split(
         " "
       ).length;
 
