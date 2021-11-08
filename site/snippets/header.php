@@ -37,6 +37,10 @@
   <?= vite()->js() ?>
   <?= vite()->css() ?>
 
+  <?php if (vite()->isDev()): ?>
+    <?= css('assets/dev/index.css', ['id' => 'vite-dev-css']) ?>
+  <?php endif ?>
+
   <?= css([
     'assets/fonts/Inter.css',
     'assets/fonts/UxumGrotesque.css'
@@ -52,7 +56,7 @@
 </head>
 
 <body data-template="<?= $page->intendedTemplate()->name() ?>">
-  <header class="container pt-m">
+  <header class="container pt-5">
     <?php snippet('navigation') ?>
   </header>
 
