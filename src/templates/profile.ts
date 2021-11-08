@@ -1,10 +1,9 @@
 import { useBreakpoints } from "../hooks";
+import type { Drauu, Brush } from "drauu";
 
-/** @param {string} id */
-const $ = (id) => document.getElementById(id);
+const $ = (id: string) => document.getElementById(id);
 
-/** @param {import("drauu").Drauu} drauu */
-const registerKeyboardShortcuts = (drauu) => {
+const registerKeyboardShortcuts = (drauu: Drauu) => {
   window.addEventListener("keydown", (evt) => {
     if (evt.code === "KeyZ" && (evt.ctrlKey || evt.metaKey)) {
       if (evt.shiftKey) {
@@ -18,7 +17,7 @@ const registerKeyboardShortcuts = (drauu) => {
 
     if (evt.shiftKey || evt.ctrlKey || evt.metaKey || evt.altKey) return;
 
-    const actions = {
+    const actions: Record<string, () => void> = {
       KeyL: () => (drauu.mode = "line"),
       KeyD: () => (drauu.mode = "draw"),
       KeyS: () => (drauu.mode = "stylus"),
@@ -54,6 +53,7 @@ export default async () => {
   $("clear")?.addEventListener("click", () => drauu.clear());
 
   $("download")?.addEventListener("click", () => {
+    if (!drauu.el) return;
     drauu.el.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     const data = drauu.el.outerHTML || "";
     const blob = new Blob([data], { type: "image/svg+xml" });
@@ -67,14 +67,15 @@ export default async () => {
 
   $("size")?.addEventListener(
     "input",
-    (evt) => (drauu.brush.size = +evt.target.value)
+    (evt) =>
+      // @ts-expect-error: event target is an HTML element
+      (drauu.brush.size = +evt.target.value)
   );
 
-  /** @type {{el: HTMLElement, brush: Partial<import("drauu").Brush>}[]} */
-  const modes = [
-    { el: $("m-stylus"), brush: { mode: "stylus" } },
-    { el: $("m-draw"), brush: { mode: "draw" } },
-    { el: $("m-line"), brush: { mode: "line" } },
+  const modes: { el: HTMLElement; brush: Partial<Brush> }[] = [
+    { el: $("m-stylus")!, brush: { mode: "stylus" } },
+    { el: $("m-draw")!, brush: { mode: "draw" } },
+    { el: $("m-line")!, brush: { mode: "line" } },
   ];
 
   for (const { el, brush } of modes) {

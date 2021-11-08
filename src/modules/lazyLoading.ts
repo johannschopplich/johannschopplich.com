@@ -1,5 +1,7 @@
 export const install = () => {
-  for (const element of document.querySelectorAll('img[loading="lazy"]')) {
+  for (const element of document.querySelectorAll<HTMLImageElement>(
+    'img[loading="lazy"]'
+  )) {
     const data = element.dataset;
 
     if (data.srcset) {

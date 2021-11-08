@@ -3,7 +3,7 @@ export const install = () => {
   const themes = ["light", "dark"];
 
   // Handle switching themes
-  document.querySelector("#theme-switcher").addEventListener("click", () => {
+  document.querySelector("#theme-switcher")?.addEventListener("click", () => {
     const currentIndex = themes.findIndex(
       (i) => (root.dataset.theme || "light") === i
     );
@@ -14,8 +14,10 @@ export const install = () => {
   });
 
   // Handle themed containers
-  const inverseContainers = document.querySelectorAll("[data-theme-inverse]");
-  const handleInvertedContainers = (elements) => {
+  const inverseContainers = [
+    ...document.querySelectorAll<HTMLElement>("[data-theme-inverse]"),
+  ];
+  const handleInvertedContainers = (elements: HTMLElement[]) => {
     for (const element of elements) {
       if (root.dataset.theme === "dark") {
         element.classList.add("bg-contrast-lowest");

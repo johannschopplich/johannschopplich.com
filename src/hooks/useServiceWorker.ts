@@ -1,22 +1,31 @@
+export type ServiveWorkerHook =
+  | "registered"
+  | "updated"
+  | "updatefound"
+  | "ready"
+  | "cached"
+  | "offline"
+  | "error";
+
+export interface ServiveWorkerHookOptions {
+  [key: string]: (...args: unknown[]) => void;
+}
+
 /**
  * The new service worker waiting to be installed
  */
-let newWorker;
+let newWorker: ServiceWorker | null = null;
 
 /**
  * Registers a service worker
- *
- * @param {string} [swUrl="/service-worker.js"] Absolute URL for the worker to register
- * @param {object} [hooks={}] Object of hooks for registration events
  */
-const register = async (swUrl = "/service-worker.js", hooks = {}) => {
-  const { registrationOptions = {} } = hooks;
-  delete hooks.registrationOptions;
-
-  const emit = (hook, ...args) => {
-    if (hooks && hooks[hook]) {
-      hooks[hook](...args);
-    }
+const register = async (
+  swUrl = "/service-worker.js",
+  hooks: ServiveWorkerHookOptions = {},
+  registrationOptions: RegistrationOptions = {}
+) => {
+  const emit = (hook: ServiveWorkerHook, ...args: unknown[]) => {
+    hooks?.[hook]?.(...args);
   };
 
   try {
@@ -37,7 +46,7 @@ const register = async (swUrl = "/service-worker.js", hooks = {}) => {
         const installingWorker = registration.installing;
 
         // Handle state changes of new service worker
-        installingWorker.addEventListener("statechange", () => {
+        installingWorker?.addEventListener("statechange", () => {
           // Make sure new service worker installation is complete
           if (installingWorker.state !== "installed") return;
 
@@ -62,9 +71,8 @@ const register = async (swUrl = "/service-worker.js", hooks = {}) => {
     emit("error", error);
   }
 
-  navigator.serviceWorker.ready.then((registration) => {
-    emit("ready", registration);
-  });
+  const registration = await navigator.serviceWorker.ready;
+  emit("ready", registration);
 };
 
 /**
@@ -77,8 +85,6 @@ const unregister = async () => {
 
 /**
  * Handles service worker registration and updates
- *
- * @returns {object} Service worker related methods
  */
 export default () => ({
   register,

@@ -7,7 +7,7 @@ const { register, unregister } = useServiceWorker();
  * A promise resolving when the document and all sub-resources have
  * finished loading
  */
-const documentLoaded = new Promise((resolve) => {
+const documentLoaded = new Promise<void>((resolve: () => void) => {
   if (document.readyState === "complete") {
     resolve();
   } else {
@@ -60,7 +60,9 @@ export const install = async () => {
     });
 
     if (hasExistingWorker) {
-      navigator.serviceWorker.controller.postMessage({ command: "trimCaches" });
+      navigator.serviceWorker?.controller?.postMessage({
+        command: "trimCaches",
+      });
     }
   } else if (hasExistingWorker) {
     unregister();

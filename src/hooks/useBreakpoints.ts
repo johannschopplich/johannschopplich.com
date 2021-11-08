@@ -1,4 +1,6 @@
-const breakpoints = {
+type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
+
+const breakpoints: Record<Breakpoint, number> = {
   xs: 0,
   sm: 640,
   md: 768,
@@ -8,11 +10,8 @@ const breakpoints = {
 
 /**
  * Indicates if the viewport is above the given breakpoint
- *
- * @param {string} breakpoint Avaliable breakpoint
- * @returns {boolean} True if above
  */
-function isAbove(breakpoint) {
+function isAbove(breakpoint: Breakpoint): boolean {
   if (!(breakpoint in breakpoints)) {
     throw new Error(`${breakpoint} is not a valid breakpoint`);
   }
@@ -22,11 +21,8 @@ function isAbove(breakpoint) {
 
 /**
  * Indicates if the viewport is below the given breakpoint
- *
- * @param {string} breakpoint Avaliable breakpoint
- * @returns {boolean} True if below
  */
-function isBelow(breakpoint) {
+function isBelow(breakpoint: Breakpoint): boolean {
   return !isAbove(breakpoint);
 }
 

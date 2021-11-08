@@ -1,11 +1,8 @@
-/* eslint-env node */
-import { defineConfig } from "vite";
 import { resolve } from "path";
-
-const root = "src/js";
+import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => ({
-  root,
+  root: "src",
   base: mode === "development" ? "/" : "/dist/",
 
   build: {
@@ -13,11 +10,12 @@ export default defineConfig(({ mode }) => ({
     emptyOutDir: true,
     manifest: true,
     rollupOptions: {
-      input: resolve(root, "index.js"),
+      input: [resolve(__dirname, "src/main.ts")],
     },
   },
 
   server: {
+    fs: { strict: true },
     cors: true,
     port: 3000,
     strictPort: true,

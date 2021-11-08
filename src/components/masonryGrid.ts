@@ -1,23 +1,33 @@
 import { debounce } from "@github/mini-throttle";
 
 export default class {
+  grids: {
+    _el: HTMLElement;
+    gap: number;
+    items: HTMLElement[];
+    ncol: number;
+    mod: number;
+  }[] = [];
+
   constructor() {
-    this.grids = [...document.querySelectorAll(".grid-masonry")];
+    const elements = [
+      ...document.querySelectorAll<HTMLElement>(".grid-masonry"),
+    ];
 
     // Bail if no elements where found
-    if (this.grids.length === 0) return;
+    if (elements.length === 0) return;
 
     // Bail if masonry layouts are already supported by the browser
-    if (getComputedStyle(this.grids[0]).gridTemplateRows === "masonry") return;
+    if (getComputedStyle(elements[0]).gridTemplateRows === "masonry") return;
 
-    this.init();
+    this.init(elements);
   }
 
-  init() {
-    this.grids = this.grids.map((grid) => ({
+  init(elements: HTMLElement[]) {
+    this.grids = elements.map((grid) => ({
       _el: grid,
       gap: parseFloat(getComputedStyle(grid).rowGap),
-      items: [...grid.childNodes]
+      items: ([...grid.childNodes] as HTMLElement[])
         // Make sure the child nodes are element nodes
         .filter((c) => c.nodeType === 1)
         // Optionally stretch the first element across the grid
@@ -44,9 +54,10 @@ export default class {
 
       for (const c of grid.items) {
         const { height } = c.getBoundingClientRect();
+        const h = height.toString();
 
-        if (height !== +c.dataset.h) {
-          c.dataset.h = height;
+        if (h !== c.dataset?.h) {
+          c.dataset.h = h;
           grid.mod++;
         }
       }
