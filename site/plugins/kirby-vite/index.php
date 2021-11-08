@@ -6,7 +6,7 @@ load([
 
 \Kirby\Cms\App::plugin('kirby-extended/vite', [
     'options' => [
-        'entry' => 'index.js',
+        'entry' => 'main.js',
         'outDir' => 'dist',
         'devServer' => 'http://localhost:3000'
     ]
