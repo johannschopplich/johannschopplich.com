@@ -1,5 +1,3 @@
-// @ts-check
-
 import "dotenv/config";
 import fg from "fast-glob";
 import { readFile, writeFile } from "fs/promises";

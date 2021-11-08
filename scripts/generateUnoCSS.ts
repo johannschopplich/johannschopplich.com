@@ -1,5 +1,3 @@
-// @ts-check
-
 import fg from "fast-glob";
 import { readFile, writeFile } from "fs/promises";
 import { createGenerator } from "unocss";
@@ -8,7 +6,7 @@ import { white, green, dim } from "colorette";
 
 const distPath = "src/styles/uno.css";
 const watchPaths = "site/{snippets,templates}/**/*";
-const cache = new Map();
+const cache = new Map<string, string>();
 const isDev = process.env.NODE_ENV === "development";
 
 async function main() {
