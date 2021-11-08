@@ -1,7 +1,7 @@
 <?php /** @var \Kirby\Cms\Page $page */ ?>
 <div class="section">
-  <div class="container for-content mb-xl">
-    <h1 class="title text-hero text-bold lh-1">
+  <div class="container for-content mb-13">
+    <h1 class="title text-hero font-bold lh-none">
       <?= $page->title()->escape() ?>
     </h1>
 
@@ -15,7 +15,7 @@
       </p>
     <?php endif ?>
 
-    <div class="mt-s">
+    <div class="mt-3">
       <?= asset('assets/img/article-spacer.svg')->read() ?>
     </div>
   </div>

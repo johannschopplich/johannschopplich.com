@@ -47,6 +47,9 @@ return [
         ],
         'sitemap' => [
             'enable' => true
+        ],
+        'vite' => [
+            'entry' => 'main.ts'
         ]
     ]
 

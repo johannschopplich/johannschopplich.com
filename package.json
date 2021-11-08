@@ -1,31 +1,40 @@
 {
+  "prrivate": true,
   "scripts": {
-    "assets:head": "esbuild src/js/inline-head.js --minify --format=iife --outdir=public/dist/assets",
-    "assets:worker": "node scripts/buildServiceWorker.js",
-    "dev": "shx touch src/.lock && vite",
-    "build": "shx rm -f src/.lock && vite build && npm run assets:head && npm run assets:worker",
+    "assets:head": "esbuild src/inline-head.ts --minify --format=iife --outdir=public/dist/assets",
+    "assets:worker": "esmo scripts/generateServiceWorker.ts",
+    "assets:unocss": "esmo scripts/generateUnoCSS.ts",
+    "dev": "shx touch src/.lock && concurrently \"npm run assets:unocss\" \"vite\"",
+    "build": "shx rm -f src/.lock && NODE_ENV=production npm run assets:unocss && vite build && npm run assets:head && npm run assets:worker",
     "lint": "eslint \"src/**/*.js\"",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write \"src/**/*.js\""
   },
   "dependencies": {
     "@github/mini-throttle": "^2.1.0",
-    "@splidejs/splide": "^3.1.7",
+    "@splidejs/splide": "^3.2.6",
     "animate.css": "^4.1.1",
     "animere": "^1.14.1",
     "drauu": "^0.2.1",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "@unocss/preset-icons": "^0.6.6",
     "colorette": "^2.0.16",
+    "concurrently": "^6.3.0",
     "dotenv": "^10.0.0",
-    "eslint": "^8.0.1",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
+    "esmo": "^0.11.0",
     "fast-glob": "^3.2.7",
     "nanoid": "^3.1.30",
     "prettier": "^2.4.1",
-    "sass": "^1.43.2",
+    "sass": "^1.43.4",
     "shx": "^0.3.3",
-    "vite": "^2.6.10"
+    "unocss": "^0.6.6",
+    "vite": "^2.6.13"
   }
 }

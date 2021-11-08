@@ -4,7 +4,7 @@
     <div class="container is-lg">
       <p>© <?= date('Y') ?> Johann Schopplich</p>
 
-      <div class="footer-links d-flex h-stacked">
+      <div class="footer-links flex h-stacked">
         <?php foreach ($site->footerPages()->toPages() as $p): ?>
           <a href="<?= $p->url() ?>">
             <?= $p->title() ?>

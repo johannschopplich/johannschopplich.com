@@ -8,7 +8,7 @@
 
 <div class="container is-lg section">
   <h1 class="sr-only"><?= $page->title() ?></h1>
-  <h2 class="title text-2 sm:text-1 text-accent text-center mb-xl">
+  <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-13">
     <?= t('articles.all') ?>
   </h2>
 

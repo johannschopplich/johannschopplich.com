@@ -1,25 +1,19 @@
-// @ts-check
-/* eslint-env node */
+import "dotenv/config";
+import fg from "fast-glob";
+import { readFile, writeFile } from "fs/promises";
+import { transform } from "esbuild";
+import { nanoid } from "nanoid";
+import { green } from "colorette";
 
-require("dotenv").config();
-const fg = require("fast-glob");
-const { readFile, writeFile } = require("fs/promises");
-const { transform } = require("esbuild");
-const { nanoid } = require("nanoid");
-const { green } = require("colorette");
-
-const swSrcPath = "src/js/service-worker.js";
+const swSrcPath = "src/service-worker.js";
 const swDistPath = "public/service-worker.js";
 
-/**
- * Main entry point
- */
 async function main() {
   if (process.env.VITE_SERVICE_WORKER !== "true") return;
 
   console.log(green("Building service worker..."));
 
-  const inputFiles = fg.sync("public/{assets,dist}/**/*.{css,js,woff2}");
+  const inputFiles = await fg("public/{assets,dist}/**/*.{css,js,woff2}");
 
   const assets = inputFiles.map((path) => path.replace(/^public/, ""));
   const bundle = `

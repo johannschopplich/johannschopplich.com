@@ -5,7 +5,7 @@
 ?>
 <?php snippet('header') ?>
 
-<div class="section-bio pt-xl">
+<div class="section-bio pt-13">
   <div class="container is-lg">
     <div class="bio-content content">
       <?= $page->profileText()->kt() ?>
@@ -13,8 +13,8 @@
 
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="position-relative unselectable bio-picture stretched-fullwidth@md">
-          <svg class="drauu-canvas d-none md:d-block"></svg>
+        <figure class="relative unselectable bio-picture stretched-fullwidth@md">
+          <svg class="drauu-canvas hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"
             width="<?= $image->width() ?>"
@@ -23,7 +23,7 @@
           >
         </figure>
 
-        <div class="drauu-app mt-s d-none md:d-flex">
+        <div class="drauu-app mt-3 hidden md:flex">
           <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>
@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<div class="section-cv pb-xl">
+<div class="section-cv pb-13">
   <div class="container is-md">
     <?php foreach ($page->bio()->toStructure() as $section): ?>
       <div class="cv-content content">
