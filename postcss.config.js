@@ -3,6 +3,9 @@ const path = require("path");
 const fs = require("fs");
 
 /**
+ * Prevent FOUC in development mode before Vite
+ * injects the CSS into the page
+ *
  * @returns {import('postcss').Plugin}
  */
 const postCssWriteFile = () => ({
