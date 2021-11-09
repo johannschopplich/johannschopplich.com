@@ -12,13 +12,6 @@ for (const m of Object.values(import.meta.globEager("./modules/*.ts"))) {
   m.install?.();
 }
 
-// Auto-load components
-for (const { default: Component } of Object.values(
-  import.meta.globEager("./components/*.ts")
-)) {
-  new Component();
-}
-
 // Auto-load templates
 const templates = Object.fromEntries(
   Object.entries(import.meta.glob("./templates/*.ts")).map(([key, value]) => [
