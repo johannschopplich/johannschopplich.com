@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useServiceWorker } from "../hooks";
 
 const { register, unregister } = useServiceWorker();

@@ -6,9 +6,9 @@
     "assets:unocss": "esmo scripts/generateUnoCSS.ts",
     "dev": "shx touch src/.lock && concurrently \"npm run assets:unocss\" \"vite\"",
     "build": "shx rm -f src/.lock && NODE_ENV=production npm run assets:unocss && vite build && npm run assets:head && npm run assets:worker",
-    "lint": "eslint \"src/**/*.js\"",
+    "lint": "eslint \"src/**/*.ts\"",
     "lint:fix": "npm run lint -- --fix",
-    "format": "prettier --write \"src/**/*.js\""
+    "format": "prettier --write \"src/**/*.ts\""
   },
   "dependencies": {
     "@github/mini-throttle": "^2.1.0",
