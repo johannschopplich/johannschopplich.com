@@ -43,8 +43,6 @@ $gaps: s, m, l !default;
   > .column {
     display: block;
     flex: 1; // Shorthand for `flex: 1 1 0`
-    padding-left: var(--column-gap, 0);
-    padding-bottom: var(--column-gap, 0);
 
     @each $breakpoint in map.keys(breakpoints.$default) {
       @include breakpoints.media-above($breakpoint, breakpoints.$default) {
