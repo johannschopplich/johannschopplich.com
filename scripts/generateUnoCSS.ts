@@ -7,7 +7,7 @@ import { white, green, dim } from "colorette";
 const distPath = "src/styles/uno.css";
 const watchPaths = "site/{snippets,templates}/**/*";
 const cache = new Map<string, string>();
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.NODE_ENV !== "production";
 
 async function main() {
   console.log(
@@ -24,8 +24,7 @@ async function main() {
 
   await Promise.all(
     files.map(async (file) => {
-      const content = await readFile(file, "utf8");
-      cache.set(file, content);
+      cache.set(file, await readFile(file, "utf8"));
     })
   );
 
@@ -55,7 +54,13 @@ async function main() {
 
     watcher.on("all", async (type, file) => {
       console.log(green(`${type}:`) + " " + white(dim(file)));
-      cache.set(file, await readFile(file, "utf8"));
+
+      if (type.startsWith("unlink")) {
+        cache.delete(file);
+      } else {
+        cache.set(file, await readFile(file, "utf8"));
+      }
+
       await generate();
     });
   }
