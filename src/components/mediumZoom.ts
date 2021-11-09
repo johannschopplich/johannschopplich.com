@@ -1,22 +1,24 @@
 import { useBreakpoints } from "../hooks";
 
 export default class {
-  constructor(selector = "[data-zoomable]") {
-    const { isAbove } = useBreakpoints();
-    const elements = [...document.querySelectorAll<HTMLElement>(selector)];
+  elements: HTMLElement[] = [];
 
-    if (isAbove("md") && elements.length !== 0) {
-      this.init(elements);
+  constructor(selector = "[data-zoomable]") {
+    this.elements = [...document.querySelectorAll<HTMLElement>(selector)];
+
+    const { isAbove } = useBreakpoints();
+    if (isAbove("md") && this.elements.length !== 0) {
+      this.init();
     }
   }
 
-  async init(elements: HTMLElement[]) {
+  async init() {
     const margin = parseFloat(
       getComputedStyle(document.body).getPropertyValue("font-size")
     );
 
     const { default: mediumZoom } = await import("medium-zoom");
-    mediumZoom(elements, {
+    mediumZoom(this.elements, {
       background: "var(--color-background)",
       margin,
     });

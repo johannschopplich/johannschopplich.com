@@ -1,30 +1,34 @@
 import { debounce } from "@github/mini-throttle";
 
+interface Grid {
+  el: HTMLElement;
+  gap: number;
+  items: HTMLElement[];
+  columns: number;
+  mod: number;
+}
+
 export default class {
-  grids: {
-    el: HTMLElement;
-    gap: number;
-    items: HTMLElement[];
-    ncol: number;
-    mod: number;
-  }[] = [];
+  elements: HTMLElement[] = [];
+  grids: Grid[] = [];
 
   constructor() {
-    const elements = [
+    this.elements = [
       ...document.querySelectorAll<HTMLElement>(".grid-masonry"),
     ];
 
     // Bail if no elements where found
-    if (elements.length === 0) return;
+    if (this.elements.length === 0) return;
 
     // Bail if masonry layouts are already supported by the browser
-    if (getComputedStyle(elements[0]).gridTemplateRows === "masonry") return;
+    if (getComputedStyle(this.elements[0]).gridTemplateRows === "masonry")
+      return;
 
-    this.init(elements);
+    this.init();
   }
 
-  init(elements: HTMLElement[]) {
-    this.grids = elements.map((grid) => ({
+  init() {
+    this.grids = this.elements.map((grid) => ({
       el: grid,
       gap: parseFloat(getComputedStyle(grid).rowGap),
       items: ([...grid.childNodes] as HTMLElement[])
@@ -36,7 +40,7 @@ export default class {
             !grid.dataset.stretchFirstElement &&
             +getComputedStyle(c).gridColumnEnd !== -1
         ),
-      ncol: 0,
+      columns: 0,
       mod: 0,
     }));
 
@@ -48,7 +52,7 @@ export default class {
   calcLayout() {
     for (const grid of this.grids) {
       // Get the post relayout number of columns
-      const ncol = getComputedStyle(grid.el).gridTemplateColumns.split(
+      const columns = getComputedStyle(grid.el).gridTemplateColumns.split(
         " "
       ).length;
 
@@ -63,16 +67,16 @@ export default class {
       }
 
       // If the number of columns has changed
-      if (grid.ncol !== ncol || grid.mod) {
+      if (grid.columns !== columns || grid.mod) {
         // Update the number of columns
-        grid.ncol = ncol;
+        grid.columns = columns;
 
         // Revert to initial positioning, no margin
         grid.items.forEach((c) => c.style.removeProperty("margin-top"));
 
         // If we have more than one column
-        if (grid.ncol > 1) {
-          grid.items.slice(ncol).forEach((c, i) => {
+        if (grid.columns > 1) {
+          grid.items.slice(columns).forEach((c, i) => {
             // Bottom edge of item above
             const { bottom: prevBottom } =
               grid.items[i].getBoundingClientRect();
