@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c46a6c472b19c1160b00d88b3fbf4b35",
+    "content-hash": "ec64ce445118adcd782671f7cf0b5811",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -440,16 +440,16 @@
         },
         {
             "name": "johannschopplich/kirby-extended",
-            "version": "2.10.0",
+            "version": "v2.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-extended.git",
-                "reference": "a374e896dde567ad3c6307da78084cbf23949bae"
+                "reference": "2d3e30fdb26d9d131b84bfde2ad92607d2b66186"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/a374e896dde567ad3c6307da78084cbf23949bae",
-                "reference": "a374e896dde567ad3c6307da78084cbf23949bae",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/2d3e30fdb26d9d131b84bfde2ad92607d2b66186",
+                "reference": "2d3e30fdb26d9d131b84bfde2ad92607d2b66186",
                 "shasum": ""
             },
             "require": {
@@ -495,9 +495,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-extended/issues",
-                "source": "https://github.com/johannschopplich/kirby-extended/tree/2.10.0"
+                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.10.1"
             },
-            "time": "2021-08-25T12:59:12+00:00"
+            "time": "2021-10-21T06:43:53+00:00"
         },
         {
             "name": "johannschopplich/kirby-vite",
@@ -1465,16 +1465,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v5.3.1",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "accaddf133651d4b5cf81a119f25296736ffc850"
+                "reference": "d4394d044ed69a8f244f3445bcedf8a0d7fe2403"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/accaddf133651d4b5cf81a119f25296736ffc850",
-                "reference": "accaddf133651d4b5cf81a119f25296736ffc850",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/d4394d044ed69a8f244f3445bcedf8a0d7fe2403",
+                "reference": "d4394d044ed69a8f244f3445bcedf8a0d7fe2403",
                 "shasum": ""
             },
             "require": {
@@ -1497,7 +1497,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.3-dev"
+                    "dev-master": "5.4-dev"
                 }
             },
             "autoload": {
@@ -1527,7 +1527,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/v5.3.1"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.0"
             },
             "funding": [
                 {
@@ -1539,7 +1539,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-02T19:24:42+00:00"
+            "time": "2021-11-10T01:08:39+00:00"
         }
     ],
     "packages-dev": [],
