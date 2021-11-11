@@ -1,5 +1,9 @@
 @use "../abstracts/mixins";
 
+.block {
+  @extend %block;
+}
+
 .unselectable {
   @extend %unselectable;
 }

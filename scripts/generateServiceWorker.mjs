@@ -1,9 +1,11 @@
+// @ts-check
+
 import "dotenv/config";
 import fg from "fast-glob";
 import { readFile, writeFile } from "fs/promises";
 import { transform } from "esbuild";
 import { nanoid } from "nanoid";
-import { green } from "colorette";
+import consola from "consola";
 
 const swSrcPath = "src/service-worker.ts";
 const swDistPath = "public/service-worker.js";
@@ -11,7 +13,7 @@ const swDistPath = "public/service-worker.js";
 async function main() {
   if (process.env.VITE_SERVICE_WORKER !== "true") return;
 
-  console.log(green("building service worker..."));
+  consola.start("building service worker...");
 
   const inputFiles = await fg("public/{assets,dist}/**/*.{css,js,woff2}");
 
@@ -24,14 +26,10 @@ async function main() {
     ${await readFile(swSrcPath)}
   `;
 
-  const { code } = await transform(bundle, { minify: true });
+  const { code } = await transform(bundle, { loader: "ts", minify: true });
   await writeFile(swDistPath, code);
 
-  console.log(
-    `${green("✓")} ${
-      assets.length
-    } additional service worker assets to precache.`
-  );
+  consola.success(`${assets.length} assets added to precache`);
 }
 
 main();

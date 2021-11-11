@@ -1,10 +1,4 @@
-import { defineConfig, presetUno } from "unocss";
-import presetIcons from "@unocss/preset-icons";
-
-export const cliConfig = {
-  outDir: "src/styles",
-  watchPaths: ["site/snippets/**/*", "site/templates/**/*"],
-};
+import { defineConfig } from "unocss";
 
 export default defineConfig({
   theme: {
@@ -31,11 +25,5 @@ export default defineConfig({
   },
   rules: [
     [/^font-size-(\d+)$/, ([, d]) => ({ "font-size": `var(--text-${d})` })],
-  ],
-  presets: [
-    presetUno(),
-    presetIcons({
-      scale: 1.2,
-    }),
   ],
 });

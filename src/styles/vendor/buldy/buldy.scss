@@ -22,6 +22,4 @@
 @use "components/title";
 
 // Helpers
-@use "helpers/block";
-@use "helpers/miscellaneous";
-@use "helpers/screen-reader";
+@use "helpers/all";
