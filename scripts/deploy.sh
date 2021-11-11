@@ -18,7 +18,7 @@ ssh -tt $user@$host "\
   cd /var/www/virtual/$user/sites/$website; \
   git pull; \
   composer install; \
-  npm i; \
-  npm run build; \
+  pnpm i; \
+  pnpm run build; \
   rm -rf storage/cache/$website; \
 "
