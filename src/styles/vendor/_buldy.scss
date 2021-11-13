@@ -1,9 +1,9 @@
 // Base
-@use "buldy/base/resets";
 @use "buldy/base/root";
 @use "buldy/base/themes";
 @use "buldy/base/generic";
 @use "buldy/base/accessibility";
+@use "buldy/base/helpers";
 
 // Layout
 // @use "buldy/layout/columns";
@@ -20,6 +20,3 @@
 @use "buldy/components/modal";
 @use "buldy/components/table";
 @use "buldy/components/title";
-
-// Helpers
-@use "buldy/helpers/all";

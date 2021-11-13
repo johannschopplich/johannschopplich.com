@@ -13,6 +13,7 @@
   "dependencies": {
     "@github/mini-throttle": "^2.1.0",
     "@splidejs/splide": "^3.3.1",
+    "@unocss/reset": "^0.9.0",
     "animate.css": "^4.1.1",
     "animere": "^1.14.1",
     "drauu": "^0.2.1",
@@ -22,8 +23,8 @@
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
-    "@unocss/cli": "^0.8.0",
-    "concurrently": "^6.3.0",
+    "@unocss/cli": "^0.9.0",
+    "concurrently": "^6.4.0",
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
     "esbuild": "^0.13.13",
@@ -31,11 +32,12 @@
     "eslint-config-prettier": "^8.3.0",
     "fast-glob": "^3.2.7",
     "nanoid": "^3.1.30",
+    "postcss": "^8.3.11",
     "prettier": "^2.4.1",
     "sass": "^1.43.4",
     "shx": "^0.3.3",
     "typescript": "^4.4.4",
-    "unocss": "^0.8.0",
+    "unocss": "^0.9.0",
     "vite": "^2.6.14",
     "vite-plugin-full-reload": "^0.2.2"
   }

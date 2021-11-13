@@ -1,9 +1,9 @@
 // Base
-@use "base/resets";
 @use "base/root";
 @use "base/themes";
 @use "base/generic";
 @use "base/accessibility";
+@use "base/helpers";
 
 // Layout
 @use "layout/columns";
@@ -20,6 +20,3 @@
 @use "components/modal";
 @use "components/table";
 @use "components/title";
-
-// Helpers
-@use "helpers/all";

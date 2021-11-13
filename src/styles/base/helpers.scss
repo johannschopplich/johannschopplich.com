@@ -18,21 +18,9 @@
   hyphenate-limit-zone: 8%;
 }
 
-.text-hero {
-  font-size: var(--text-hero);
-}
-
 .text-uppercase {
   text-transform: uppercase;
   letter-spacing: 0.1ch;
-}
-
-.contained {
-  object-fit: contain;
-}
-
-.covered {
-  object-fit: cover;
 }
 
 // Expand element to full viewport width

@@ -19,23 +19,25 @@ html {
 //
 
 body {
+  block-size: -webkit-fill-available;
+  block-size: -moz-available;
+  block-size: stretch;
   font-family: var(--font-family-normal);
   line-height: var(--line-height-normal);
   color: var(--color-text);
-}
-
-[id] {
-  scroll-margin-top: 2ex;
 }
 
 //
 // Grouping content
 //
 
+[id] {
+  scroll-margin-top: 2ex;
+}
+
 hr {
-  background-color: var(--color-border);
+  border-top-color: var(--color-border);
   margin: var(--component-spacer) auto;
-  opacity: 1;
 }
 
 //
@@ -88,8 +90,34 @@ pre {
 }
 
 //
-// User experience
+// Embedded content
 //
+
+// Change the fill color to match the text color
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+//
+// Form-associated content
+//
+
+// Allow labels to use `margin` for spacing
+label {
+  display: inline-block;
+}
+
+// Change the inconsistent appearance
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: 1px solid WindowFrame;
+  color: inherit;
+  font: inherit;
+  padding: 0.25em 0.375em;
+}
 
 button {
   touch-action: manipulation;

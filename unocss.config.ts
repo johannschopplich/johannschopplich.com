@@ -24,6 +24,6 @@ export default defineConfig({
     },
   },
   rules: [
-    [/^font-size-(\d+)$/, ([, d]) => ({ "font-size": `var(--text-${d})` })],
+    [/^font-size-(\w+)$/, ([, w]) => ({ "font-size": `var(--text-${w})` })],
   ],
 });

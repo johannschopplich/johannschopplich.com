@@ -11,7 +11,7 @@
       <?= $page->subtitle()->escape() ?>
     </p>
 
-    <h1 class="title text-hero font-bold lh-none">
+    <h1 class="title font-size-hero font-bold lh-none">
       <?= $page->title()->escape() ?>
     </h1>
 

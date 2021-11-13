@@ -37,7 +37,7 @@
         <figure class="project-figure stretched-fullwidth@md aspect-ratio-fixed is-4:3">
           <?php snippet('image', [
             'image' => $image,
-            'class' => 'covered'
+            'class' => 'object-cover'
           ]) ?>
         </figure>
       <?php endif ?>
