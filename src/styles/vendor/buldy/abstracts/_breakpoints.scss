@@ -11,7 +11,7 @@ $default: (
   // 2xl: 1536px,
 ) !default;
 
-// Name of the next breakpoint, or null for the last breakpoint
+// Returns the name of the next breakpoint, or null for the last breakpoint
 @function next(
   $name,
   $breakpoints: $default,
@@ -28,13 +28,13 @@ $default: (
   );
 }
 
-// Minimum breakpoint width, or null for the smallest (first) breakpoint
+// Returns the minimum breakpoint width, or null for the smallest (first) breakpoint
 @function minimum($name, $breakpoints: $default) {
   $min: map.get($breakpoints, $name);
   @return if($min != 0, $min, null);
 }
 
-// Maximum breakpoint width, or null for the largest (last) breakpoint
+// Returns the maximum breakpoint width, or null for the largest (last) breakpoint
 // The maximum value is calculated as the minimum of the next one less 0.02px
 // to work around the limitations of `min-` and `max-` prefixes and viewports
 // with fractional widths
@@ -47,7 +47,6 @@ $default: (
 }
 
 // Returns a blank string if smallest breakpoint, otherwise returns the name with a dash in front
-// Useful for making responsive utilities
 @function infix($name, $breakpoints: $default) {
   @return if(minimum($name, $breakpoints) == null, "", "#{$name}\\:");
 }
