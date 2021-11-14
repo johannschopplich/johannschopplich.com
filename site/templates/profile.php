@@ -6,7 +6,7 @@
 <?php snippet('header') ?>
 
 <div class="section-bio pt-13">
-  <div class="container is-lg">
+  <div class="container is-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:pb-13">
     <div class="bio-content content">
       <?= $page->profileText()->kt() ?>
     </div>
@@ -14,7 +14,7 @@
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
         <figure class="relative md:framed unselectable -md-full-width">
-          <svg class="drauu-canvas hidden md:block"></svg>
+          <svg class="drauu-canvas absolute inset-0 hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"
             width="<?= $image->width() ?>"

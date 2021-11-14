@@ -13,11 +13,10 @@
   "dependencies": {
     "@github/mini-throttle": "^2.1.0",
     "@splidejs/splide": "^3.3.1",
-    "@unocss/reset": "^0.9.3",
     "animate.css": "^4.1.1",
     "animere": "^1.14.1",
     "drauu": "^0.2.1",
-    "duecss": "^0.2.5",
+    "duecss": "^0.3.0",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
