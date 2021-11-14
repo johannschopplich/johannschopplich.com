@@ -1,4 +1,4 @@
-@use "../abstracts/breakpoints";
+@use "duecss/abstracts/breakpoints";
 
 .project-item {
   position: relative;
@@ -10,7 +10,6 @@
     }
 
     &:hover figure {
-      // transform: translate(-2px, -2px);
       box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 currentColor;
     }
   }

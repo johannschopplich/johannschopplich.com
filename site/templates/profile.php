@@ -13,7 +13,7 @@
 
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="relative unselectable bio-picture stretched-fullwidth@md">
+        <figure class="relative unselectable -md-full-width">
           <svg class="drauu-canvas hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"

@@ -1,4 +1,4 @@
-@use "../abstracts/breakpoints";
+@use "duecss/abstracts/breakpoints";
 
 .section-bio > .container {
   display: grid;
@@ -57,14 +57,6 @@
         background-image: url("/assets/img/highlight-3-dark.svg");
       }
     }
-  }
-}
-
-.bio-picture {
-  @include breakpoints.media-above(md) {
-    // border: 2px solid var(--color-accent);
-    // box-shadow: 2px 2px 0 var(--color-background), 4px 4px 0 var(--color-accent);
-    box-shadow: 3px 3px 0 var(--color-background), 4px 4px 0 currentColor;
   }
 }
 

@@ -1,4 +1,4 @@
-@use "../abstracts/breakpoints";
+@use "duecss/abstracts/breakpoints";
 
 a:not([class]),
 a.text-underline {
@@ -17,10 +17,6 @@ code {
   border-radius: 0.125em;
 }
 
-.title {
-  font-weight: 700;
-}
-
 .title.is-intro {
   font-size: var(--text-intro);
   line-height: calc(1ex / 0.5);
@@ -34,4 +30,17 @@ h2 a.text-underline {
   color: currentColor;
   letter-spacing: 0.025ch;
   text-decoration-color: var(--color-contrast-lower);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.1ch;
+}
+
+// Expand element to full viewport width
+.-md-full-width {
+  @include breakpoints.media-below(md) {
+    margin-right: calc(-1 * var(--due-spacer));
+    margin-left: calc(-1 * var(--due-spacer));
+  }
 }

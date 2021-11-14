@@ -1,11 +1,8 @@
-@forward "@unocss/reset/tailwind.css";
-
-@use "vendor/buldy";
-@use "vendor/splide";
+@use "@unocss/reset/tailwind";
+@use "vendor/due";
 
 @use "base/root";
 @use "base/generic";
-@use "base/helpers";
 
 @use "components/animate";
 @use "components/content";
@@ -23,4 +20,5 @@
 @use "pages/profile";
 @use "pages/projects";
 
-@forward "uno";
+@use "vendor/splide";
+@use "vendor/uno";

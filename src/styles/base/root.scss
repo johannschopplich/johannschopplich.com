@@ -8,7 +8,7 @@
   --font-family-heading:     "Uxum Grotesque", sans-serif;
   --text-hero:               clamp(var(--text-1), 5vw, var(--text-1) + 1rem);
   --text-intro:              clamp(var(--text-1), 6vw, var(--text-1) + 3rem);
-  --radius:                  2px;
+  --due-radius:              2px;
 }
 
 :root:not([data-theme]),

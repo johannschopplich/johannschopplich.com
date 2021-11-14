@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../abstracts/breakpoints";
+@use "duecss/abstracts/breakpoints";
 
 .content {
   figure,
@@ -45,8 +45,8 @@
     // Expand element to full viewport width
     @include breakpoints.media-below(md) {
       border-radius: 0;
-      margin-right: calc(-1 * var(--component-spacer));
-      margin-left: calc(-1 * var(--component-spacer));
+      margin-right: calc(-1 * var(--due-spacer));
+      margin-left: calc(-1 * var(--due-spacer));
     }
   }
 
@@ -92,7 +92,7 @@
       text-align: left;
 
       @include breakpoints.media-below(md) {
-        padding: 0 var(--component-spacer);
+        padding: 0 var(--due-spacer);
       }
     }
 

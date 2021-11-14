@@ -3,7 +3,7 @@
   "scripts": {
     "assets:head": "esbuild src/inline-head.ts --minify --format=iife --outdir=public/dist/assets",
     "assets:worker": "node scripts/generateServiceWorker.mjs",
-    "assets:unocss": "unocss \"site/snippets/**/*\" \"site/templates/**/*\" --out-file src/styles/uno.css",
+    "assets:unocss": "unocss \"site/snippets/**/*\" \"site/templates/**/*\" --out-file src/styles/vendor/uno.css",
     "dev": "shx touch src/.lock && concurrently \"npm run assets:unocss -- --watch\" \"vite\"",
     "build": "shx rm -f src/.lock && npm run assets:unocss && vite build && npm run assets:head && npm run assets:worker",
     "lint": "eslint \"src/**/*.ts\"",
@@ -13,17 +13,18 @@
   "dependencies": {
     "@github/mini-throttle": "^2.1.0",
     "@splidejs/splide": "^3.3.1",
-    "@unocss/reset": "^0.9.2",
+    "@unocss/reset": "^0.9.3",
     "animate.css": "^4.1.1",
     "animere": "^1.14.1",
     "drauu": "^0.2.1",
+    "duecss": "^0.2.1",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
-    "@unocss/cli": "^0.9.2",
+    "@unocss/cli": "^0.9.3",
     "concurrently": "^6.4.0",
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
@@ -37,7 +38,7 @@
     "sass": "^1.43.4",
     "shx": "^0.3.3",
     "typescript": "^4.4.4",
-    "unocss": "^0.9.2",
+    "unocss": "^0.9.3",
     "vite": "^2.6.14",
     "vite-plugin-full-reload": "^0.2.2"
   }

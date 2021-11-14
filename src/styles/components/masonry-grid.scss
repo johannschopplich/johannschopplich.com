@@ -10,7 +10,7 @@
     );
 	grid-template-rows: masonry;
 	justify-content: center;
-  gap: var(--masonry-gap, var(--component-spacer));
+  gap: var(--masonry-gap, var(--due-spacer));
 
   > * {
     align-self: start;

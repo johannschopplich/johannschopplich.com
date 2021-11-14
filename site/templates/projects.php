@@ -34,7 +34,7 @@
       </h2>
 
       <?php if ($image = $project->thumbnail()->toFile()): ?>
-        <figure class="project-figure stretched-fullwidth@md aspect-ratio-fixed is-4:3">
+        <figure class="project-figure aspect-ratio-4:3 hover:framed -md-full-width">
           <?php snippet('image', [
             'image' => $image,
             'class' => 'object-cover'
