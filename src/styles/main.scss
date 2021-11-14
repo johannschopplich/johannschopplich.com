@@ -1,5 +1,9 @@
 @use "@unocss/reset/tailwind";
-@use "vendor/due";
+
+@use "duecss/base/all";
+@use "duecss/components/container";
+@use "duecss/components/button";
+@use "duecss/components/content";
 
 @use "base/root";
 @use "base/generic";
