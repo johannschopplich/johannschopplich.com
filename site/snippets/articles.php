@@ -11,7 +11,7 @@
       </p>
 
       <h2 class="title font-size-4 sm:font-size-3 mb-3">
-        <a href="<?= $article->url() ?>" class="stretched-link text-underline hyphenated">
+        <a href="<?= $article->url() ?>" class="stretched-link underlined hyphenated">
           <?= $article->title() ?>
         </a>
       </h2>

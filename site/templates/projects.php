@@ -28,7 +28,7 @@
       </p>
 
       <h2 class="title font-size-2 sm:font-size-1 mb-5">
-        <a href="<?= $project->url() ?>" class="text-underline stretched-link">
+        <a href="<?= $project->url() ?>" class="underlined stretched-link">
           <?= $project->title()->escape() ?>
         </a>
       </h2>
