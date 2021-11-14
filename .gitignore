@@ -23,4 +23,4 @@ site/config/.license
 public/service-worker.js
 public/assets/dev
 public/dist
-src/styles/uno.css
+src/styles/vendor/uno.css
