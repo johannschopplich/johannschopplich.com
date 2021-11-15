@@ -1,0 +1,23 @@
+@use "duecss/abstracts/breakpoints";
+
+.popular-article-link {
+  --color-link-hover: var(--color-accent);
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--space-xs);
+
+  &[aria-current] {
+    color: var(--color-accent);
+  }
+
+  @include breakpoints.media-below(sm) {
+    + .popular-article-link {
+      padding-top: var(--space-xs);
+      border-top: 1px dashed var(--color-contrast-lower);
+    }
+  }
+
+  @include breakpoints.media-above(md) {
+    align-items: center;
+  }
+}

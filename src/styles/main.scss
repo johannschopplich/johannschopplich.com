@@ -8,15 +8,15 @@
 @use "components/divider";
 @use "components/drauu";
 @use "components/masonry-grid";
+@use "components/pagination";
+@use "components/popular";
 @use "components/tag";
 
 @use "layout/header";
 @use "layout/footer";
-@use "layout/articles";
 
 @use "pages/default";
 @use "pages/home";
-@use "pages/photography";
 @use "pages/profile";
 @use "pages/projects";
 

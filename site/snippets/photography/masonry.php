@@ -2,10 +2,7 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 ?>
-<div <?= attr([
-  'class' => 'grid-masonry is-photography',
-  'style' => $page->isHomePage() ? '--masonry-max-width: 40vw; --masonry-gap: var(--space-m);' : null
-]) ?>>
+<div class="grid-masonry gap-8 sm:gap-5" style="--masonry-max-width: clamp(25rem, 25vw, 30rem);">
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>

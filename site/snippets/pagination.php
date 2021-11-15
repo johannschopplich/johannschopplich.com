@@ -2,11 +2,11 @@
 <div class="py-m">
   <div class="section container-xl-full bg-lowest">
     <div class="container-lg">
-      <nav class="articles-pagination">
+      <nav class="flex justify-center font-size-3 font-700" style="--color-link: var(--color-accent); --color-link-hover: var(--color-text);">
         <?php if ($pagination->hasPrevPage()): ?>
-          <a href="<?= $pagination->prevPageUrl() ?>" class="pagination-previous" aria-label="Previous page">←</a>
+          <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto" aria-label="Previous page">←</a>
         <?php else: ?>
-          <span class="text-contrast-lower" aria-disabled="true">←</span>
+          <span class="mr-auto text-contrast-lower" aria-disabled="true">←</span>
         <?php endif ?>
 
         <div class="flex space-x-1">
@@ -31,9 +31,9 @@
         </div>
 
         <?php if ($pagination->hasNextPage()): ?>
-          <a href="<?= $pagination->nextPageUrl() ?>" class="pagination-next" aria-label="Next page">→</a>
+          <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto" aria-label="Next page">→</a>
         <?php else: ?>
-          <span class="text-contrast-lower" aria-disabled="true">→</span>
+          <span class="ml-auto text-contrast-lower" aria-disabled="true">→</span>
         <?php endif ?>
       </nav>
     </div>

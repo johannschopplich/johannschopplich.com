@@ -1,5 +1,5 @@
 <?php /** @var \Kirby\Cms\Collection $query */ ?>
-<div class="articles-grid">
+<div class="grid sm:grid-cols-2 gap-13">
   <?php foreach ($query as $article): ?>
     <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="relative">

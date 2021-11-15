@@ -20,10 +20,10 @@ $year = null;
         <?php endif ?>
 
         <a href="<?= $post->url() ?>" class="popular-article-link"<?php e($post->isActive() || $post->id() === $page->id(), ' aria-current="page"') ?>>
-          <p class="popular-article-title"><?= $post->title()->escape() ?></p>
+          <p class="font-size-5"><?= $post->title()->escape() ?></p>
           <?php if ($post->categories()->isNotEmpty()): ?>
-            <hr class="popular-article-spacer">
-            <p class="popular-article-categories">
+            <hr class="flex-grow bg-transparent border-t-1 border-dashed border-contrast-lower mx-2 invisible md:visible">
+            <p class="flex flex-wrap justify-start items-center space-x-1">
               <?php foreach ($post->categories()->split() as $category): ?>
                 <span class="tag"><?= $category ?></span>
               <?php endforeach ?>
