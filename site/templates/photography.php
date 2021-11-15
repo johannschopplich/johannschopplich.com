@@ -8,7 +8,7 @@
 <div class="section">
   <?php $blocks = $page->text()->toBlocks() ?>
   <?php if ($blocks->isNotEmpty()): ?>
-    <div class="container is-decentered for-content pb-13">
+    <div class="container max-w-[60ch] mx-0 pb-13">
       <section class="content">
         <h1 class="sr-only">
           <?= $page->title() ?>

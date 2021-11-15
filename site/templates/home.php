@@ -7,7 +7,7 @@
 
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
-<div class="container is-lg pb-13">
+<div class="container-lg pb-13">
   <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-13">
     <?= t('articles.latest') ?>
   </h2>

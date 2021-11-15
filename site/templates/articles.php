@@ -6,7 +6,7 @@
 ?>
 <?php snippet('header') ?>
 
-<div class="container is-lg section">
+<div class="container-lg section">
   <h1 class="sr-only"><?= $page->title() ?></h1>
   <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-13">
     <?= t('articles.all') ?>

@@ -1,7 +1,7 @@
 <?php /** @var \Kirby\Cms\Pagination $pagination */ ?>
 <div class="py-m">
-  <div class="section container is-xl is-fullwidth bg-lowest">
-    <div class="container is-lg">
+  <div class="section container-xl-full bg-lowest">
+    <div class="container-lg">
       <nav class="articles-pagination">
         <?php if ($pagination->hasPrevPage()): ?>
           <a href="<?= $pagination->prevPageUrl() ?>" class="pagination-previous" aria-label="Previous page">←</a>

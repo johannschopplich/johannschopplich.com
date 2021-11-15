@@ -1,7 +1,7 @@
   </main>
 
-  <footer class="footer section">
-    <div class="container is-lg">
+  <footer class="section">
+    <div class="footer-container container-lg">
       <p>© <?= date('Y') ?> Johann Schopplich</p>
 
       <div class="footer-links flex space-x-5">

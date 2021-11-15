@@ -1,6 +1,6 @@
 <?php /** @var \Kirby\Cms\Page $page */ ?>
 <div class="section">
-  <div class="container for-content mb-13">
+  <div class="container max-w-[60ch] mb-13">
     <h1 class="title font-size-hero font-bold lh-none">
       <?= $page->title()->escape() ?>
     </h1>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="container for-content">
+  <div class="container max-w-[60ch]">
     <section class="content"<?= attr(['lang' => $textLanguageCode], ' ') ?>>
       <?= $text ?>
 

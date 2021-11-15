@@ -5,8 +5,8 @@
 $year = null;
 ?>
 <div<?= attr(['class' => !$page->isHomePage() ? 'py-m' : null], ' ') ?>>
-  <div class="section container is-xl is-fullwidth" data-theme-inverse>
-    <section class="container is-lg">
+  <div class="section container-xl-full" data-theme-inverse>
+    <section class="container-lg">
       <h2 class="title font-size-2 sm:font-size-1 text-accent mb-13"><?= $heading ?></h2>
 
       <?php foreach ($query as $post): ?>

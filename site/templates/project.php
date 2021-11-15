@@ -6,7 +6,7 @@
 <?php snippet('header') ?>
 
 <div class="section">
-  <div class="container is-md mb-13">
+  <div class="container-md mb-13">
     <p class="font-size-5 text-contrast-medium">
       <?= $page->subtitle()->escape() ?>
     </p>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="container is-lg">
+  <div class="container-lg">
     <div class="space-y-5">
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
         <figure>
@@ -35,7 +35,7 @@
 </div>
 
 <div class="section">
-  <div class="container is-sm">
+  <div class="container-sm">
     <?php if ($page->text()->isNotEmpty()): ?>
       <div class="content mb-21">
         <?= $page->text()->kirbytext() ?>

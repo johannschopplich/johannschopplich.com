@@ -10,7 +10,7 @@
   'props' => 'mb-2'
 ]) ?>
 
-<section class="container is-md text-center pb-13">
+<section class="container-md text-center pb-13">
   <?php /*
   <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-21">
     <?= t('projects.title') ?>
