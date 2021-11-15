@@ -56,7 +56,7 @@
 </head>
 
 <body data-template="<?= $page->intendedTemplate()->name() ?>">
-  <header class="container pt-5">
+  <header class="container-fluid pt-5">
     <?php snippet('navigation') ?>
   </header>
 

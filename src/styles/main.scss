@@ -1,8 +1,8 @@
-@use "vendor/due";
-
+@use "duecss/base/all";
 @use "base/root";
 @use "base/generic";
 
+@use "duecss/components/button";
 @use "components/animate";
 @use "components/content";
 @use "components/divider";
@@ -10,8 +10,9 @@
 @use "components/masonry-grid";
 @use "components/tag";
 
+@use "layout/header";
+@use "layout/footer";
 @use "layout/articles";
-@use "layout/navigation";
 
 @use "pages/default";
 @use "pages/home";

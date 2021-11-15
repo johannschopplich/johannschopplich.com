@@ -14,7 +14,7 @@
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
         <figure class="relative md:framed unselectable -md-full-width">
-          <svg class="drauu-canvas absolute inset-0 hidden md:block"></svg>
+          <svg class="drauu-canvas absolute t-0 l-0 w-full h-full z-10 hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"
             width="<?= $image->width() ?>"

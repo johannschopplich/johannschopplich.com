@@ -8,10 +8,10 @@
 <div class="section">
   <?php $blocks = $page->text()->toBlocks() ?>
   <?php if ($blocks->isNotEmpty()): ?>
-    <div class="container max-w-[60ch] mx-0 pb-13">
+    <div class="container-fluid max-w-[60ch] pb-13">
       <section class="content">
         <h1 class="sr-only">
-          <?= $page->title() ?>
+          <?= $page->title()->escape() ?>
         </h1>
         <?= $blocks ?>
       </section>

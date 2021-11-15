@@ -1,18 +1,6 @@
 @use "duecss/abstracts/breakpoints";
 
-.navigation {
-  --color-link-hover: var(--color-accent);
-
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-
-  > :first-child {
-    flex-grow: 1;
-  }
-}
-
-.navigation-links {
+.navbar-links {
   display: flex;
 
   > *:not(:first-child) {
@@ -52,33 +40,5 @@
       background-color: currentColor;
       border-color: currentColor;
     }
-  }
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  border-top: 1px solid;
-  padding-top: var(--space-m);
-
-  @include breakpoints.media-below(sm) {
-    .footer-links {
-      grid-row: 2;
-    }
-  }
-
-  @include breakpoints.media-above(sm) {
-    grid-template-columns: 1fr repeat(2, auto);
-    gap: var(--space-m);
-  }
-}
-
-#theme-switcher {
-  display: flex;
-  border: 0;
-  padding: 0;
-
-  &:hover {
-    color: var(--color-link-hover);
   }
 }
