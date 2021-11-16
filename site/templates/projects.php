@@ -35,7 +35,7 @@
 
       <?php if ($image = $project->thumbnail()->toFile()): ?>
         <figure class="project-figure aspect-ratio-4:3 -md-full-width">
-          <?php snippet('image', [
+          <?php snippet('helpers/img', [
             'image' => $image,
             'class' => 'object-cover'
           ]) ?>

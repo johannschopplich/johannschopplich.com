@@ -13,5 +13,5 @@ echo Html::img($image->placeholderUri(), [
   'data-zoomable' => $zoomable ?? null,
   'width' => $image->width(),
   'height' => $image->height(),
-  'alt' => $image->alt()->escape()
+  'alt' => $image->alt()->isNotEmpty() ? $image->alt()->escape() : null
 ]);

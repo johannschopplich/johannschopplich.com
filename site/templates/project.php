@@ -24,7 +24,7 @@
     <div class="space-y-5">
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
         <figure>
-          <?php snippet('image', [
+          <?php snippet('helpers/img', [
             'image' => $image,
             'zoomable' => true
           ]) ?>

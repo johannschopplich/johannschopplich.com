@@ -13,7 +13,7 @@ specifiers:
   consola: ^2.15.3
   dotenv: ^10.0.0
   drauu: ^0.2.1
-  duecss: ^0.6.4
+  duecss: ^0.8.1
   esbuild: ^0.13.14
   eslint: ^8.2.0
   eslint-config-prettier: ^8.3.0
@@ -35,7 +35,7 @@ dependencies:
   animate.css: 4.1.1
   animere: 1.14.1
   drauu: 0.2.1
-  duecss: 0.6.4
+  duecss: 0.8.1
   medium-zoom: 1.0.6
 
 devDependencies:
@@ -545,8 +545,8 @@ packages:
       '@drauu/core': 0.2.1
     dev: false
 
-  /duecss/0.6.4:
-    resolution: {integrity: sha512-K3F/hhFTPb9QX03G+Mlfr6zEF9zAGtvz8IfCkJWyhIN8aMFSfh3EsmoH7TSF8McX8LuI5NZvrsi1Im8ZVAk3BA==}
+  /duecss/0.8.1:
+    resolution: {integrity: sha512-KbtTdF1RrpQg1/Cm+qUIMMlx8mstbRci/gcte+zvgH6kEYe4fSawZ/eUO9BLbQmBGxSzYAKF+fp4IxPSMZ23iw==}
     dependencies:
       '@unocss/reset': 0.9.3
       unocss: 0.9.3
