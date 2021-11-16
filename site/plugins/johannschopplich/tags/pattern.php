@@ -24,7 +24,7 @@ return [
         ]);
 
         return Html::figure([$image], $tag->caption, [
-            'class' => trim('aspect-ratio is-4:3 is-outset background-pattern ' . $tag->class, ' ')
+            'class' => trim('aspect-ratio-4:3 is-outset background-pattern ' . $tag->class, ' ')
         ]);
     }
 ];

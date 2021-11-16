@@ -43,7 +43,7 @@
     <?php endif ?>
 
     <div class="text-center">
-      <a href="<?= $page->parent()->url() ?>" class="button is-accent is-outlined px-3">
+      <a href="<?= $page->parent()->url() ?>" class="button-text">
         <?= t('project.allWorks') ?>
       </a>
     </div>

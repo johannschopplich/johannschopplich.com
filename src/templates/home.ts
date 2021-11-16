@@ -1,6 +1,6 @@
 export default async () => {
   const { default: Splide } = await import("@splidejs/splide");
-  const splide = new Splide(".carousel.is-photography", {
+  const splide = new Splide(".carousel", {
     gap: "var(--space-xs)",
     fixedHeight: "clamp(35vh, 50vw, 75vh)",
     autoWidth: true,

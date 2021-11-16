@@ -17,7 +17,7 @@
   ]) ?>
 
   <div class="text-center mt-13">
-    <a href="<?= page('blog')->url() ?>" class="button is-text px-3">
+    <a href="<?= page('blog')->url() ?>" class="button-text px-3">
       <?= t('articles.more') ?>
     </a>
   </div>
@@ -46,7 +46,7 @@
     <?php snippet('photography/carousel', compact('query')) ?>
 
     <div class="text-center mt-5">
-      <a href="<?= $photography->url() ?>" class="button is-text px-3">
+      <a href="<?= $photography->url() ?>" class="button-text px-3">
         <?= t('photography.morePhotos') ?>
       </a>
     </div>

@@ -2,12 +2,12 @@
 .grid-masonry {
   display: grid;
   grid-template-columns: repeat(
-      auto-fit,
-      minmax(
-        min(var(--masonry-max-width, 25rem), 100%),
-        1fr
-      )
-    );
+    auto-fit,
+    minmax(
+      min(var(--masonry-max-width, 25rem), 100%),
+      1fr
+    )
+  );
 	grid-template-rows: masonry;
 	justify-content: center;
   gap: var(--masonry-gap, var(--due-spacer));

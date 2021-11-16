@@ -1,5 +1,5 @@
 $main: var(--color-accent) !default;
-$main-light: var(--color-accent-hover) !default;
+$main-light: var(--color-accent) !default;
 
 @use "splide/template/default/foundation/colors" with
   (

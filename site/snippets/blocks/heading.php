@@ -12,7 +12,7 @@ if (
   is_a($model, \Kirby\Cms\Page::class) &&
   str_starts_with($model->template()->name(), 'article')
 ) {
-  $text = Html::link("#{$id}", $block->text());
+  Html::tag('a', [$block->text()], ['href' => "#{$id}"]);
 } else {
   $text = $block->text();
 }
