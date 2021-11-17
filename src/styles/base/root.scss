@@ -17,12 +17,3 @@
   --color-link:              var(--color-text);
   --color-link-hover:        var(--color-accent);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  // Prevent FOUC on initial page view
-  // Will get overridden by animated elements
-  // (style attribute has higher specificity)
-  :root[data-animatable] [data-animere] {
-    visibility: hidden;
-  }
-}

@@ -5,9 +5,8 @@ if (setting === "dark" || (prefersDark && setting !== "light")) {
   document.documentElement.dataset.theme = "dark";
 }
 
-// Prevent FOUC by immediately adding `visibility: hidden` styles
-// on elements to animate later on
-const isCrawler = /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
-if (!isCrawler) {
-  document.documentElement.dataset.animatable = "true";
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const style = document.createElement("style");
+  style.innerHTML = "[data-animere] { visibility: hidden }";
+  document.head.appendChild(style);
 }
