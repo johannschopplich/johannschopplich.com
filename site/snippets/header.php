@@ -4,7 +4,7 @@
 /** @var \Kirby\Cms\Page $page */
 ?>
 <!DOCTYPE html>
-<html lang="<?= $kirby->languageCode() ?>">
+<html class="due-var-color-primary due-var-color-accent" lang="<?= $kirby->languageCode() ?>">
 <head>
 
   <meta charset="utf-8">
