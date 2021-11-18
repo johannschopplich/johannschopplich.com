@@ -2,8 +2,8 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+layout();
 ?>
-<?php snippet('header') ?>
 
 <div class="section-bio due-pt-xl">
   <div class="container-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:due-pb-xl">
@@ -55,5 +55,3 @@
     <?php endforeach ?>
   </div>
 </div>
-
-<?php snippet('footer') ?>

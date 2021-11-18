@@ -2,8 +2,8 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+layout();
 ?>
-<?php snippet('header') ?>
 
 <div class="due-py-xl">
   <div class="container-md due-mb-xl">
@@ -49,5 +49,3 @@
     </div>
   </div>
 </div>
-
-<?php snippet('footer') ?>

@@ -2,8 +2,8 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+layout();
 ?>
-<?php snippet('header') ?>
 
 <?php snippet('intro', [
   'title' => $page->text()->kti(),
@@ -44,5 +44,3 @@
     </div>
   <?php endforeach ?>
 </section>
-
-<?php snippet('footer') ?>

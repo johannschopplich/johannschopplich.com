@@ -3,8 +3,8 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Collection $query */
+layout()
 ?>
-<?php snippet('header') ?>
 
 <div class="container-lg section">
   <h1 class="sr-only"><?= $page->title() ?></h1>
@@ -16,4 +16,3 @@
 </div>
 
 <?php snippet('pagination', ['pagination' => $query->pagination()]) ?>
-<?php snippet('footer') ?>

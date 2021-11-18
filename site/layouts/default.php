@@ -56,8 +56,17 @@
 </head>
 
 <body data-template="<?= $page->intendedTemplate()->name() ?>">
+
   <header class="container-fluid due-pt-m">
     <?php snippet('navigation') ?>
   </header>
 
   <main>
+    <?php slot() ?>
+    <?php endslot() ?>
+  </main>
+
+  <?php snippet('footer') ?>
+
+</body>
+</html>
