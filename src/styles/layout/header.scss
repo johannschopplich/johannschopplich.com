@@ -4,7 +4,7 @@
   display: flex;
 
   > *:not(:first-child) {
-    margin-left: clamp(var(--space-s), 3vw, var(--space-m));
+    margin-left: clamp(var(--du-space-s), 3vw, var(--du-space-m));
   }
 }
 
@@ -30,7 +30,7 @@
       width: 0.5em;
       height: 0.5em;
       border-radius: 50%;
-      border: 1px solid var(--color-contrast-low);
+      border: 1px solid var(--du-color-contrast-low);
       margin-right: 0.4em;
     }
 

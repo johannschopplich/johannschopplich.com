@@ -1,6 +1,6 @@
   </main>
 
-  <footer class="section">
+  <footer class="due-py-xl">
     <div class="footer-container container-lg">
       <p>© <?= date('Y') ?> Johann Schopplich</p>
 

@@ -1,7 +1,7 @@
 <?php /** @var \Kirby\Cms\Page $page */ ?>
-<div class="section">
-  <div class="container max-w-[60ch] mb-13">
-    <h1 class="title font-size-hero font-bold lh-none">
+<div class="due-py-xl">
+  <div class="container max-w-[60ch] due-mb-xl">
+    <h1 class="title due-text-hero font-bold lh-none">
       <?= $page->title()->escape() ?>
     </h1>
 
@@ -15,7 +15,7 @@
       </p>
     <?php endif ?>
 
-    <div class="mt-3">
+    <div class="due-mt-s">
       <?= asset('assets/img/article-spacer.svg')->read() ?>
     </div>
   </div>

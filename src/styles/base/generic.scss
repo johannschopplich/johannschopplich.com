@@ -3,7 +3,7 @@
 a:not([class]),
 a.underlined {
   text-decoration-line: underline;
-  text-decoration-color: var(--color-accent);
+  text-decoration-color: var(--du-color-accent);
   text-decoration-thickness: max(2px, 0.1em);
   text-underline-offset: max(2px, 0.1em);
   text-decoration-skip-ink: auto;
@@ -18,7 +18,7 @@ code {
 }
 
 .title.is-intro {
-  font-size: var(--text-intro);
+  font-size: var(--du-text-intro);
   line-height: calc(1ex / 0.5);
 
   @include breakpoints.media-above(md) {
@@ -29,7 +29,7 @@ code {
 h2 a.underlined {
   color: currentColor;
   letter-spacing: 0.025ch;
-  text-decoration-color: var(--color-contrast-lower);
+  text-decoration-color: var(--du-color-contrast-lower);
 }
 
 .text-uppercase {
@@ -40,7 +40,7 @@ h2 a.underlined {
 // Expand element to full viewport width
 .-md-full-width {
   @include breakpoints.media-below(md) {
-    margin-right: calc(-1 * var(--due-spacer));
-    margin-left: calc(-1 * var(--due-spacer));
+    margin-right: calc(-1 * var(--du-spacer));
+    margin-left: calc(-1 * var(--du-spacer));
   }
 }

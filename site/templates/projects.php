@@ -7,19 +7,19 @@
 
 <?php snippet('intro', [
   'title' => $page->text()->kti(),
-  'props' => 'mb-2'
+  'props' => 'due-mb-xs'
 ]) ?>
 
-<section class="container-md text-center pb-13">
+<section class="container-md text-center due-pb-xl">
   <?php /*
-  <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-21">
+  <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-2xl">
     <?= t('projects.title') ?>
   </h2>
   */ ?>
 
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
-    <div class="project-item<?php e(!$project->isLast($children), ' mb-21') ?>"<?= attr([
+    <div class="project-item<?php e(!$project->isLast($children), ' due-mb-2xl') ?>"<?= attr([
       'data-animere' => !$project->isFirst($children) ? 'fadeInUpSmall' : null,
       'data-animere-duration' => '750ms'
     ], ' ') ?>>
@@ -27,7 +27,7 @@
         <?= $project->subtitle()->escape() ?>
       </p>
 
-      <h2 class="title font-size-2 sm:font-size-1 mb-5">
+      <h2 class="title due-text-2 sm:due-text-1 due-mb-m">
         <a href="<?= $project->url() ?>" class="underlined stretched-link">
           <?= $project->title()->escape() ?>
         </a>

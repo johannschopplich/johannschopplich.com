@@ -6,18 +6,18 @@
   figure,
   hr {
     &:not(:first-child) {
-      margin-top: calc(var(--space-l) * var(--block-vspace-multiplier, 1));
+      margin-top: calc(var(--du-space-l) * var(--du-block-vspace-multiplier, 1));
     }
 
     &:not(:last-child) {
-      margin-bottom: calc(var(--space-l) * var(--block-vspace-multiplier, 1));
+      margin-bottom: calc(var(--du-space-l) * var(--du-block-vspace-multiplier, 1));
     }
   }
 
   h2,
   h3,
   h4 {
-    font-family: var(--font-family-heading);
+    font-family: var(--du-font-family-heading);
     letter-spacing: 0.025em;
 
     a {
@@ -27,11 +27,11 @@
   }
 
   hr {
-    border-top: 1px dashed var(--color-contrast-low);
+    border-top: 1px dashed var(--du-color-contrast-low);
   }
 
   blockquote {
-    border-left-color: var(--color-accent);
+    border-left-color: var(--du-color-accent);
     border-left-style: dotted;
   }
 
@@ -40,8 +40,8 @@
     // Expand element to full viewport width
     @include breakpoints.media-below(md) {
       border-radius: 0;
-      margin-right: calc(-1 * var(--due-spacer));
-      margin-left: calc(-1 * var(--due-spacer));
+      margin-right: calc(-1 * var(--du-spacer));
+      margin-left: calc(-1 * var(--du-spacer));
     }
   }
 
@@ -50,17 +50,17 @@
       &.is-pulled-left,
       &.is-pulled-right {
         width: 45%;
-        margin-top: calc(var(--space-xxs) * var(--block-vspace-multiplier, 1));
+        margin-top: calc(var(--du-space-2xs) * var(--du-block-vspace-multiplier, 1));
       }
 
       &.is-pulled-left {
         float: left;
-        margin-right: var(--space-l);
+        margin-right: var(--du-space-l);
       }
 
       &.is-pulled-right {
         float: right;
-        margin-left: var(--space-l);
+        margin-left: var(--du-space-l);
       }
     }
 
@@ -72,22 +72,22 @@
 
       &.is-outset,
       &.is-pulled-left {
-        margin-left: calc(-1 * var(--space-xl));
+        margin-left: calc(-1 * var(--du-space-xl));
       }
 
       &.is-outset,
       &.is-pulled-right {
-        margin-right: calc(-1 * var(--space-xl));
+        margin-right: calc(-1 * var(--du-space-xl));
       }
     }
 
     figcaption {
-      color: var(--color-contrast-medium);
-      font-size: var(--text-7);
+      color: var(--du-color-contrast-medium);
+      font-size: var(--du-text-7);
       text-align: left;
 
       @include breakpoints.media-below(md) {
-        padding: 0 var(--due-spacer);
+        padding: 0 var(--du-spacer);
       }
     }
 
@@ -96,8 +96,8 @@
 
       figcaption {
         align-self: flex-end;
-        background-color: var(--color-background);
-        padding-top: calc(var(--space-xs) * var(--block-vspace-multiplier, 1));
+        background-color: var(--du-color-background);
+        padding-top: calc(var(--du-space-xs) * var(--du-block-vspace-multiplier, 1));
       }
     }
   }
@@ -111,7 +111,7 @@
       margin-left: 0;
 
       figcaption {
-        margin-top: calc(var(--space-s) * var(--block-vspace-multiplier, 1));
+        margin-top: calc(var(--du-space-s) * var(--du-block-vspace-multiplier, 1));
       }
     }
 
@@ -121,8 +121,8 @@
 
     // Copied from `is-outset` figure class
     @include breakpoints.media-above(xl) {
-      margin-right: calc(-1 * var(--space-xl));
-      margin-left: calc(-1 * var(--space-xl));
+      margin-right: calc(-1 * var(--du-space-xl));
+      margin-left: calc(-1 * var(--du-space-xl));
     }
   }
 }

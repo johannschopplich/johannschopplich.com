@@ -5,17 +5,17 @@
 ?>
 <?php snippet('header') ?>
 
-<div class="section">
-  <div class="container-md mb-13">
-    <p class="font-size-5 text-contrast-medium">
+<div class="due-py-xl">
+  <div class="container-md due-mb-xl">
+    <p class="due-text-5 text-contrast-medium">
       <?= $page->subtitle()->escape() ?>
     </p>
 
-    <h1 class="title font-size-hero font-bold lh-none">
+    <h1 class="title due-text-hero font-bold lh-none">
       <?= $page->title()->escape() ?>
     </h1>
 
-    <div class="mt-3">
+    <div class="due-mt-s">
       <?= asset('assets/img/article-spacer.svg')->read() ?>
     </div>
   </div>
@@ -34,10 +34,10 @@
   </div>
 </div>
 
-<div class="section">
+<div class="due-py-xl">
   <div class="container-sm">
     <?php if ($page->text()->isNotEmpty()): ?>
-      <div class="content mb-21">
+      <div class="content due-mb-2xl">
         <?= $page->text()->kirbytext() ?>
       </div>
     <?php endif ?>

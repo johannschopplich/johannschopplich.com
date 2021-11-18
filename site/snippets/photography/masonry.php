@@ -12,7 +12,7 @@
       ]) ?>
 
       <?php if ($image->caption()->isNotEmpty() && !$page->isHomePage()): ?>
-        <figcaption class="font-size-7 lh-heading text-contrast-medium text-center px-m py-2">
+        <figcaption class="due-text-7 lh-heading text-contrast-medium text-center due-px-m due-py-xs">
           <?= $image->caption() ?>
         </figcaption>
       <?php endif ?>

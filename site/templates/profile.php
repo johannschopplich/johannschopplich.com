@@ -5,8 +5,8 @@
 ?>
 <?php snippet('header') ?>
 
-<div class="section-bio pt-13">
-  <div class="container-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:pb-13">
+<div class="section-bio due-pt-xl">
+  <div class="container-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:due-pb-xl">
     <div class="bio-content content">
       <?= $page->profileText()->kt() ?>
     </div>
@@ -23,7 +23,7 @@
           >
         </figure>
 
-        <div class="drauu-app mt-3 hidden md:flex">
+        <div class="drauu-app due-mt-s hidden md:flex">
           <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>

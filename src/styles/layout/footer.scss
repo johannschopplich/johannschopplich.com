@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   border-top: 1px solid;
-  padding-top: var(--space-m);
+  padding-top: var(--du-space-m);
 
   @include breakpoints.media-below(sm) {
     .footer-links {
@@ -14,6 +14,6 @@
 
   @include breakpoints.media-above(sm) {
     grid-template-columns: 1fr repeat(2, auto);
-    gap: var(--space-m);
+    gap: var(--du-space-m);
   }
 }

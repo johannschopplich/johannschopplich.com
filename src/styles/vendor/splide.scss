@@ -1,12 +1,12 @@
-$main: var(--color-accent) !default;
-$main-light: var(--color-accent) !default;
+$main: var(--du-color-accent) !default;
+$main-light: var(--du-color-accent) !default;
 
 @use "splide/template/default/foundation/colors" with
   (
     $main: $main,
     $sub01: $main,
     $sub02: $main,
-    $background: var(--color-background),
+    $background: var(--du-color-background),
     $background-active: $main
   );
 
@@ -19,7 +19,7 @@ $main-light: var(--color-accent) !default;
     $fill-hover: $main-light,
     $button-size: false,
     $button-background: transparent,
-    $button-padding: var(--space-s),
+    $button-padding: var(--du-space-s),
     $left: 0,
     $right: 0
   );

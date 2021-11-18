@@ -14,7 +14,7 @@ export const install = async () => {
   );
 
   mediumZoom(elements, {
-    background: "var(--color-background)",
+    background: "var(--du-color-background)",
     margin,
   });
 };

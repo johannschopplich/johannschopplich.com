@@ -7,8 +7,8 @@
 
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
-<div class="container-lg pb-13">
-  <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-13">
+<div class="container-lg due-pb-xl">
+  <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
     <?= t('articles.latest') ?>
   </h2>
 
@@ -16,8 +16,8 @@
     'query' => $kirby->collection('articles')->paginate(4)
   ]) ?>
 
-  <div class="text-center mt-13">
-    <a href="<?= page('blog')->url() ?>" class="button-text px-3">
+  <div class="text-center due-mt-xl">
+    <a href="<?= page('blog')->url() ?>" class="button-text">
       <?= t('articles.more') ?>
     </a>
   </div>
@@ -36,17 +36,17 @@
     ->filterBy('ratio', '>=', '1')
     ->limit(4)
   ?>
-  <div class="section-divider mt-2" data-animere="GrowSectionDivider"></div>
+  <div class="section-divider due-mt-xs" data-animere="GrowSectionDivider"></div>
 
-  <div class="section-photography pb-13">
-    <h2 class="title font-size-2 sm:font-size-1 text-accent text-center mb-13">
+  <div class="section-photography due-pb-xl">
+    <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
       <?= t('photography') ?>
     </h2>
 
     <?php snippet('photography/carousel', compact('query')) ?>
 
-    <div class="text-center mt-5">
-      <a href="<?= $photography->url() ?>" class="button-text px-3">
+    <div class="text-center due-mt-m">
+      <a href="<?= $photography->url() ?>" class="button-text">
         <?= t('photography.morePhotos') ?>
       </a>
     </div>

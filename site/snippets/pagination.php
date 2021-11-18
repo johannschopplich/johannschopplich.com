@@ -1,8 +1,8 @@
 <?php /** @var \Kirby\Cms\Pagination $pagination */ ?>
-<div class="py-m">
-  <div class="section container-xl-full bg-lowest">
+<div class="due-py-m">
+  <div class="due-py-xl container-xl-full bg-lowest">
     <div class="container-lg">
-      <nav class="flex justify-center font-size-3 font-700" style="--color-link: var(--color-accent); --color-link-hover: var(--color-text);">
+      <nav class="flex justify-center due-text-3 font-700" style="--du-color-link: var(--du-color-accent); --du-color-link-hover: var(--du-color-text);">
         <?php if ($pagination->hasPrevPage()): ?>
           <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto" aria-label="Previous page">←</a>
         <?php else: ?>
