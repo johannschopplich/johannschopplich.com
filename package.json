@@ -1,5 +1,5 @@
 {
-  "prrivate": true,
+  "private": true,
   "scripts": {
     "assets:head": "esbuild src/inline-head.ts --minify --format=iife --outdir=public/dist/assets",
     "assets:worker": "node scripts/generateServiceWorker.mjs",
@@ -12,18 +12,20 @@
   },
   "dependencies": {
     "@github/mini-throttle": "^2.1.0",
-    "@splidejs/splide": "^3.5.7",
+    "@splidejs/splide": "^3.5.8",
     "animate.css": "^4.1.1",
     "animere": "^1.16.0",
     "drauu": "^0.2.1",
-    "duecss": "^0.12.2",
+    "duecss": "^0.12.3",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
+    "@iconify/json": "^1.1.431",
+    "@types/node": "^16.11.8",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@unocss/cli": "^0.10.0",
+    "@unocss/cli": "^0.11.1",
+    "@unocss/preset-icons": "^0.11.1",
     "concurrently": "^6.4.0",
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
@@ -37,7 +39,7 @@
     "sass": "^1.43.4",
     "shx": "^0.3.3",
     "typescript": "^4.5.2",
-    "unocss": "^0.10.0",
+    "unocss": "^0.11.1",
     "vite": "^2.6.14",
     "vite-plugin-full-reload": "^0.2.2"
   }

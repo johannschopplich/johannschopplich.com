@@ -1,13 +1,5 @@
 @use "duecss/abstracts/breakpoints";
 
-.navbar-links {
-  display: flex;
-
-  > *:not(:first-child) {
-    margin-left: clamp(var(--du-space-s), 3vw, var(--du-space-m));
-  }
-}
-
 .navbar-link {
   display: inline-flex;
   align-items: center;

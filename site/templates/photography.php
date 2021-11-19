@@ -8,7 +8,7 @@ layout();
 <div class="due-py-xl">
   <?php $blocks = $page->text()->toBlocks() ?>
   <?php if ($blocks->isNotEmpty()): ?>
-    <div class="container-fluid max-w-[60ch] due-pb-xl">
+    <div class="container-fluid max-w-prose due-pb-xl">
       <section class="content">
         <h1 class="sr-only">
           <?= $page->title()->escape() ?>
