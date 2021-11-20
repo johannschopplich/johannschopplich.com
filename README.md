@@ -19,18 +19,6 @@ npm install
 composer install
 ```
 
-## Configuration
-
-To add custom rules or shortcuts, edit the [`unocss.config.ts`](./unocss.config.ts).
-
-For example, this project already defines a `box` class via a shortcut:
-
-```js
-shortcuts: {
-  'box': 'max-w-7xl mx-auto bg-gray-100 rounded-md shadow-sm p-4'
-}
-```
-
 ## Usage
 
 ### Development

@@ -21,11 +21,11 @@
   },
   "devDependencies": {
     "@iconify/json": "^1.1.431",
-    "@types/node": "^16.11.8",
+    "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@unocss/cli": "^0.11.1",
-    "@unocss/preset-icons": "^0.11.1",
+    "@unocss/cli": "^0.11.2",
+    "@unocss/preset-icons": "^0.11.2",
     "concurrently": "^6.4.0",
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
@@ -39,7 +39,7 @@
     "sass": "^1.43.4",
     "shx": "^0.3.3",
     "typescript": "^4.5.2",
-    "unocss": "^0.11.1",
+    "unocss": "^0.11.2",
     "vite": "^2.6.14",
     "vite-plugin-full-reload": "^0.2.2"
   }
