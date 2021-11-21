@@ -6,7 +6,7 @@ layout();
 ?>
 
 <div class="section-bio due-pt-xl">
-  <div class="container-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:due-pb-xl">
+  <div class="due-container-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:due-pb-xl">
     <div class="bio-content content">
       <?= $page->profileText()->kt() ?>
     </div>
@@ -47,7 +47,7 @@ layout();
 </div>
 
 <div class="pb-13">
-  <div class="cv-container container-md">
+  <div class="cv-container due-container-md">
     <?php foreach ($page->bio()->toStructure() as $section): ?>
       <div class="cv-content content">
         <?= $section->text()->kt() ?>

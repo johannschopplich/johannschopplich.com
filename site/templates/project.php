@@ -6,7 +6,7 @@ layout();
 ?>
 
 <div class="due-py-xl">
-  <div class="container-md due-mb-xl">
+  <div class="due-container-md due-mb-xl">
     <p class="due-text-5 text-contrast-medium">
       <?= $page->subtitle()->escape() ?>
     </p>
@@ -20,7 +20,7 @@ layout();
     </div>
   </div>
 
-  <div class="container-lg">
+  <div class="due-container-lg">
     <div class="space-y-5">
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
         <figure>
@@ -35,7 +35,7 @@ layout();
 </div>
 
 <div class="due-py-xl">
-  <div class="container-sm">
+  <div class="due-container-sm">
     <?php if ($page->text()->isNotEmpty()): ?>
       <div class="content due-mb-2xl">
         <?= $page->text()->kirbytext() ?>

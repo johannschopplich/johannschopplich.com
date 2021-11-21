@@ -57,7 +57,7 @@
 
 <body data-template="<?= $page->intendedTemplate()->name() ?>">
 
-  <header class="container-fluid due-pt-m">
+  <header class="due-container-fluid due-pt-m">
     <?php snippet('navigation') ?>
   </header>
 

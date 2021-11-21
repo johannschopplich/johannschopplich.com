@@ -7,7 +7,7 @@ layout();
 
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
-<div class="container-lg due-pb-xl">
+<div class="due-container-lg due-pb-xl">
   <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
     <?= t('articles.latest') ?>
   </h2>

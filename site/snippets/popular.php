@@ -5,8 +5,8 @@
 $year = null;
 ?>
 <div<?= attr(['class' => !$page->isHomePage() ? 'due-py-m' : null], ' ') ?>>
-  <div class="due-py-xl container-xl-full" data-theme-inverse>
-    <section class="container-lg">
+  <div class="due-py-xl due-container-xl-full" data-theme-inverse>
+    <section class="due-container-lg">
       <h2 class="title due-text-2 sm:due-text-1 text-accent due-mb-xl"><?= $heading ?></h2>
 
       <?php foreach ($query as $post): ?>

@@ -1,5 +1,5 @@
 <footer class="due-py-xl">
-  <div class="footer-container container-lg">
+  <div class="footer-container due-container-lg">
     <p>© <?= date('Y') ?> Johann Schopplich</p>
 
     <div class="footer-links flex space-x-5">

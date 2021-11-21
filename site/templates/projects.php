@@ -10,7 +10,7 @@ layout();
   'props' => 'due-mb-xs'
 ]) ?>
 
-<section class="container-md text-center due-pb-xl">
+<section class="due-container-md text-center due-pb-xl">
   <?php /*
   <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-2xl">
     <?= t('projects.title') ?>
