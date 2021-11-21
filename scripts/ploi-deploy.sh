@@ -17,7 +17,7 @@ composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 if [ -f package-lock.json ]; then
   npm install
 elif [ -f pnpm-lock.yaml ]; then
-  npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build
+  npx pnpm i && npx pnpm run build
 fi
 
 # Clean cache
