@@ -11,7 +11,7 @@ layout();
       <?= $page->subtitle()->escape() ?>
     </p>
 
-    <h1 class="title due-text-hero font-bold lh-none">
+    <h1 class="due-title due-text-hero font-700 lh-none">
       <?= $page->title()->escape() ?>
     </h1>
 
@@ -43,7 +43,7 @@ layout();
     <?php endif ?>
 
     <div class="text-center">
-      <a href="<?= $page->parent()->url() ?>" class="button-text">
+      <a href="<?= $page->parent()->url() ?>" class="due-button-text">
         <?= t('project.allWorks') ?>
       </a>
     </div>

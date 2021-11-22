@@ -1,11 +1,13 @@
-<?php /** @var \Kirby\Cms\Page $page */ ?>
+<?php
+
+/** @var \Kirby\Cms\Page $page */ ?>
 <div class="due-py-xl">
   <div class="due-container max-w-prose due-mb-xl">
-    <h1 class="title due-text-hero font-bold lh-none">
+    <h1 class="text-contrast-higher font-heading due-text-hero font-700 leading-none">
       <?= $page->title()->escape() ?>
     </h1>
 
-    <?php if ($page->published()->exists() && $page->published()->isNotEmpty()): ?>
+    <?php if ($page->published()->exists() && $page->published()->isNotEmpty()) : ?>
       <p class="text-contrast-medium">
         <?php $format = $kirby->languageCode() === 'de' ? '%e. %B %Y' : '%e %B %Y' ?>
         <?= t('article.publishedAt') ?>
@@ -21,13 +23,13 @@
   </div>
 
   <div class="due-container max-w-prose">
-    <section class="content"<?= attr(['lang' => $textLanguageCode], ' ') ?>>
+    <section class="content" <?= attr(['lang' => $textLanguageCode], ' ') ?>>
       <?= $text ?>
 
       <?php if (
         $page->parent() !== null &&
         $page->parent()->template()->name() === 'articles'
-      ): ?>
+      ) : ?>
         <?= $page->parent()->articleFooter()->kt() ?>
       <?php endif ?>
     </section>

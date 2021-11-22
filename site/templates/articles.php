@@ -8,7 +8,7 @@ layout()
 
 <div class="due-container-lg due-py-xl">
   <h1 class="sr-only"><?= $page->title() ?></h1>
-  <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
+  <h2 class="due-title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
     <?= t('articles.all') ?>
   </h2>
 

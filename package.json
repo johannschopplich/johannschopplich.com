@@ -14,18 +14,18 @@
     "@github/mini-throttle": "^2.1.0",
     "@splidejs/splide": "^3.6.0",
     "animate.css": "^4.1.1",
-    "animere": "^1.16.0",
+    "animere": "^1.16.1",
     "drauu": "^0.2.1",
-    "duecss": "^0.12.7",
+    "duecss": "^0.13.1",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.431",
+    "@iconify/json": "^1.1.432",
     "@types/node": "^16.11.9",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "@unocss/cli": "^0.11.4",
-    "@unocss/preset-icons": "^0.11.4",
+    "@unocss/cli": "^0.12.0",
+    "@unocss/preset-icons": "^0.12.0",
     "concurrently": "^6.4.0",
     "consola": "^2.15.3",
     "dotenv": "^10.0.0",
@@ -39,7 +39,7 @@
     "sass": "^1.43.4",
     "shx": "^0.3.3",
     "typescript": "^4.5.2",
-    "unocss": "^0.11.4",
+    "unocss": "^0.12.0",
     "vite": "^2.6.14",
     "vite-plugin-full-reload": "^0.2.2"
   }

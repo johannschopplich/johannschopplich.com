@@ -6,7 +6,6 @@ a.underlined {
   text-decoration-color: var(--du-color-accent);
   text-decoration-thickness: max(2px, 0.1em);
   text-underline-offset: max(2px, 0.1em);
-  text-decoration-skip-ink: auto;
 
   &:hover {
     text-decoration-color: currentColor;
@@ -17,7 +16,7 @@ code {
   border-radius: 0.125em;
 }
 
-.title.is-intro {
+.due-title.is-intro {
   font-size: var(--du-text-intro);
   line-height: calc(1ex / 0.5);
 

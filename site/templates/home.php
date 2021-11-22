@@ -8,7 +8,7 @@ layout();
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
 <div class="due-container-lg due-pb-xl">
-  <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
+  <h2 class="due-title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
     <?= t('articles.latest') ?>
   </h2>
 
@@ -17,7 +17,7 @@ layout();
   ]) ?>
 
   <div class="text-center due-mt-xl">
-    <a href="<?= page('blog')->url() ?>" class="button-text">
+    <a href="<?= page('blog')->url() ?>" class="due-button-text">
       <?= t('articles.more') ?>
     </a>
   </div>
@@ -39,14 +39,14 @@ layout();
   <div class="section-divider due-mt-xs" data-animere="GrowSectionDivider"></div>
 
   <div class="section-photography due-pb-xl">
-    <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
+    <h2 class="due-title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
       <?= t('photography') ?>
     </h2>
 
     <?php snippet('photography/carousel', compact('query')) ?>
 
     <div class="text-center due-mt-m">
-      <a href="<?= $photography->url() ?>" class="button-text">
+      <a href="<?= $photography->url() ?>" class="due-button-text">
         <?= t('photography.morePhotos') ?>
       </a>
     </div>

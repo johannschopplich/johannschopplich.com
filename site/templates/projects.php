@@ -12,7 +12,7 @@ layout();
 
 <section class="due-container-md text-center due-pb-xl">
   <?php /*
-  <h2 class="title due-text-2 sm:due-text-1 text-accent text-center due-mb-2xl">
+  <h2 class="due-title due-text-2 sm:due-text-1 text-accent text-center due-mb-2xl">
     <?= t('projects.title') ?>
   </h2>
   */ ?>
@@ -23,11 +23,11 @@ layout();
       'data-animere' => !$project->isFirst($children) ? 'fadeInUpSmall' : null,
       'data-animere-duration' => '750ms'
     ], ' ') ?>>
-      <p class="project-subtitle font-medium">
+      <p class="project-subtitle font-500">
         <?= $project->subtitle()->escape() ?>
       </p>
 
-      <h2 class="title due-text-2 sm:due-text-1 due-mb-m">
+      <h2 class="due-title due-text-2 sm:due-text-1 due-mb-m">
         <a href="<?= $project->url() ?>" class="underlined stretched-link">
           <?= $project->title()->escape() ?>
         </a>
@@ -37,7 +37,7 @@ layout();
         <figure class="project-figure aspect-ratio-4:3 -md-full-width">
           <?php snippet('helpers/img', [
             'image' => $image,
-            'class' => 'object-cover'
+            'class' => 'object-cover h-full'
           ]) ?>
         </figure>
       <?php endif ?>

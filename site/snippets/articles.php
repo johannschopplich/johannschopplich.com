@@ -3,14 +3,14 @@
   <?php foreach ($query as $article): ?>
     <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="relative">
-      <p class="text-contrast-low due-text-7 font-medium text-uppercase">
+      <p class="text-contrast-low due-text-7 font-500 text-uppercase">
         <?php $format = $kirby->language()->code() === 'de' ? '%e. %B %Y' : '%e %B %Y' ?>
         <time datetime="<?= $article->published()->toDate('%Y-%m-%d') ?>">
           <?= $article->published()->toDate($format) ?>
         </time>
       </p>
 
-      <h2 class="title due-text-4 sm:due-text-3 due-mb-s">
+      <h2 class="due-title due-text-4 sm:due-text-3 due-mb-s">
         <a href="<?= $article->url() ?>" class="stretched-link underlined hyphenated">
           <?= $article->title() ?>
         </a>
