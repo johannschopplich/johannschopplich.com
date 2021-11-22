@@ -13,7 +13,7 @@ layout();
 
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="relative md:framed unselectable -md-full-width">
+        <figure class="relative md:framed unselectable -mx-5 md:mx-0">
           <svg class="drauu-canvas absolute t-0 l-0 w-full h-full z-10 hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"

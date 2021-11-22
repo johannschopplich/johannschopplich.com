@@ -34,7 +34,7 @@ layout();
       </h2>
 
       <?php if ($image = $project->thumbnail()->toFile()): ?>
-        <figure class="project-figure aspect-ratio-4:3 -md-full-width">
+        <figure class="project-figure aspect-ratio-4:3 -mx-5 md:mx-0">
           <?php snippet('helpers/img', [
             'image' => $image,
             'class' => 'object-cover h-full'

@@ -1,6 +1,7 @@
 @use "duecss/base/all";
 @use "base/root";
 @use "base/generic";
+@use "base/accessibility";
 
 @use "components/animate";
 @use "components/content";
@@ -13,7 +14,6 @@
 @use "components/popular";
 @use "components/tag";
 
-@use "pages/default";
 @use "pages/home";
 @use "pages/profile";
 @use "pages/projects";

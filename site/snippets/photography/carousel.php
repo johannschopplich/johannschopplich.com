@@ -2,7 +2,7 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 ?>
-<div class="carousel is-photography splide">
+<div class="carousel carousel-photography splide">
   <div class="splide__track">
     <ul class="splide__list">
       <?php foreach ($query as $image): ?>

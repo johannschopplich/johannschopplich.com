@@ -35,11 +35,3 @@ h2 a.underlined {
   text-transform: uppercase;
   letter-spacing: 0.1ch;
 }
-
-// Expand element to full viewport width
-.-md-full-width {
-  @include breakpoints.media-below(md) {
-    margin-right: calc(-1 * var(--du-spacer));
-    margin-left: calc(-1 * var(--du-spacer));
-  }
-}
