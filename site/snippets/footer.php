@@ -1,4 +1,4 @@
-<footer class="due-py-xl">
+<footer class="sticky top-100vh due-py-xl">
   <div class="footer-container due-container-lg">
     <p>© <?= date('Y') ?> Johann Schopplich</p>
 

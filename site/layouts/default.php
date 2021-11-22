@@ -4,7 +4,7 @@
 /** @var \Kirby\Cms\Page $page */
 ?>
 <!DOCTYPE html>
-<html class="due-var-color-primary due-var-color-accent" lang="<?= $kirby->languageCode() ?>">
+<html class="h-full due-var-color-primary due-var-color-accent" lang="<?= $kirby->languageCode() ?>">
 <head>
 
   <meta charset="utf-8">
@@ -55,7 +55,7 @@
 
 </head>
 
-<body data-template="<?= $page->intendedTemplate()->name() ?>">
+<body class="h-full" data-template="<?= $page->intendedTemplate()->name() ?>">
 
   <header class="due-container-fluid due-pt-m">
     <?php snippet('navigation') ?>
