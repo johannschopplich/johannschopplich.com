@@ -4,6 +4,7 @@ specifiers:
   '@github/mini-throttle': ^2.1.0
   '@iconify/json': ^1.1.432
   '@splidejs/splide': ^3.6.0
+  '@types/fs-extra': ^9.0.13
   '@types/node': ^16.11.9
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
@@ -20,6 +21,7 @@ specifiers:
   eslint: ^8.3.0
   eslint-config-prettier: ^8.3.0
   fast-glob: ^3.2.7
+  fs-extra: ^10.0.0
   medium-zoom: ^1.0.6
   nanoid: ^3.1.30
   postcss: ^8.3.11
@@ -42,6 +44,7 @@ dependencies:
 
 devDependencies:
   '@iconify/json': 1.1.432
+  '@types/fs-extra': 9.0.13
   '@types/node': 16.11.9
   '@typescript-eslint/eslint-plugin': 5.4.0_5c8ff4cecd5a55e744866c0654edac32
   '@typescript-eslint/parser': 5.4.0_eslint@8.3.0+typescript@4.5.2
@@ -54,6 +57,7 @@ devDependencies:
   eslint: 8.3.0
   eslint-config-prettier: 8.3.0_eslint@8.3.0
   fast-glob: 3.2.7
+  fs-extra: 10.0.0
   nanoid: 3.1.30
   postcss: 8.3.11
   prettier: 2.4.1
@@ -158,6 +162,12 @@ packages:
   /@splidejs/splide/3.6.0:
     resolution: {integrity: sha512-zA4UZpV24GzcJmjgN2CcxF2w/GSspTbt+GR3HSzGhlbyzFvvCjP8VDC5B4G/lHOwiBsdnwGq9jZ/NZ+vJt6kyg==}
     dev: false
+
+  /@types/fs-extra/9.0.13:
+    resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
+    dependencies:
+      '@types/node': 16.11.9
+    dev: true
 
   /@types/json-schema/7.0.9:
     resolution: {integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==}
@@ -961,6 +971,15 @@ packages:
     resolution: {integrity: sha512-8/sOawo8tJ4QOBX8YlQBMxL8+RLZfxMQOif9o0KUKTNTjMYElWPE0r/m5VNFxTRd0NSw8qSy8dajrwX4RYI1Hw==}
     dev: true
 
+  /fs-extra/10.0.0:
+    resolution: {integrity: sha512-C5owb14u9eJwizKGdchcDUQeFtlSHHthBk8pbX9Vc1PFZrLombudjDnNns88aYslCyF6IY5SUw3Roz6xShcEIQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.8
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+    dev: true
+
   /fs.realpath/1.0.0:
     resolution: {integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=}
     dev: true
@@ -1039,6 +1058,10 @@ packages:
       ignore: 5.1.9
       merge2: 1.4.1
       slash: 3.0.0
+    dev: true
+
+  /graceful-fs/4.2.8:
+    resolution: {integrity: sha512-qkIilPUYcNhJpd33n0GBXTB1MMPp14TxEsEs0pTrsSVucApsYzW5V+Q8Qxhik6KU3evy+qkAAowTByymK0avdg==}
     dev: true
 
   /gzip-size/6.0.0:
@@ -1157,6 +1180,14 @@ packages:
 
   /json-stable-stringify-without-jsonify/1.0.1:
     resolution: {integrity: sha1-nbe1lJatPzz+8wp1FC0tkwrXJlE=}
+    dev: true
+
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.8
     dev: true
 
   /levn/0.4.1:
@@ -1626,6 +1657,11 @@ packages:
     resolution: {integrity: sha512-5BlMof9H1yGt0P8/WF+wPNw6GfctgGjXp5hkblpyT+8rkASSmkUKMXrxR0Xg8ThVCi/JnHQiKXeBaEwCeQwMFw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
+    dev: true
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
     dev: true
 
   /unocss/0.12.0:
