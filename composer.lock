@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f3c0d879d1117cfc2d09215fcefd8f3c",
+    "content-hash": "924ddfa936bfec412ef4b2c108b7b2a1",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -541,16 +541,16 @@
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
-            "version": "1.1.0",
+            "version": "1.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-punctuation-section.git",
-                "reference": "fd17f952201ed4b0148bdd7c21fdfa6f7a032db6"
+                "reference": "2b7d2b70c05b0e10eed6d63b4044fd09e9c57d0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/fd17f952201ed4b0148bdd7c21fdfa6f7a032db6",
-                "reference": "fd17f952201ed4b0148bdd7c21fdfa6f7a032db6",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/2b7d2b70c05b0e10eed6d63b4044fd09e9c57d0f",
+                "reference": "2b7d2b70c05b0e10eed6d63b4044fd09e9c57d0f",
                 "shasum": ""
             },
             "require": {
@@ -585,9 +585,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-punctuation-section/issues",
-                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v1.1.0"
+                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v1.1.4"
             },
-            "time": "2021-11-22T23:55:57+00:00"
+            "time": "2021-11-23T10:28:40+00:00"
         },
         {
             "name": "johannschopplich/kirby-vite",
