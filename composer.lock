@@ -479,22 +479,22 @@
         },
         {
             "name": "johannschopplich/kirby-extended",
-            "version": "2.10.2",
+            "version": "2.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-extended.git",
-                "reference": "6502e0a66f6112cb6496bc125a50b24d2ca6163b"
+                "reference": "b4f10330ba7d20c5c23507af0c046f92afde1b0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/6502e0a66f6112cb6496bc125a50b24d2ca6163b",
-                "reference": "6502e0a66f6112cb6496bc125a50b24d2ca6163b",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/b4f10330ba7d20c5c23507af0c046f92afde1b0f",
+                "reference": "b4f10330ba7d20c5c23507af0c046f92afde1b0f",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
                 "php": ">=7.4.0",
-                "symfony/polyfill-php80": "^1.20",
+                "symfony/polyfill-php80": "^1.23",
                 "vlucas/phpdotenv": "^5.0"
             },
             "require-dev": {
@@ -524,7 +524,7 @@
                 }
             ],
             "description": "Dotenv support, meta tags generation and more for the Kirby CMS",
-            "homepage": "https://github.com/johannschopplich/kirby-extended",
+            "homepage": "https://github.com/johannschopplich/kirby-extended#readme",
             "keywords": [
                 "dotenv",
                 "env",
@@ -535,9 +535,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-extended/issues",
-                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.10.2"
+                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.10.3"
             },
-            "time": "2021-11-16T15:15:15+00:00"
+            "time": "2021-11-23T12:56:39+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
