@@ -1,0 +1,49 @@
+type: punctuation
+headline:
+  de: Kleine Interpunktionshilfe
+  en: Lil Punctuation Helper
+fieldsets:
+  - category:
+    label:
+      de: Apostroph
+      en: Apostrophe
+    chars:
+      - "’"
+  - category:
+    label:
+      de: Gedankenstrich
+      en: Hyphen
+    chars:
+      - "–"
+  - category:
+    label:
+      de: Dt. Anführungszeichen
+      en: German Quotation Marks
+    chars:
+      - "„"
+      - "‚"
+      - "‘"
+      - "“"
+  - category:
+    label:
+      de: Engl. Anführungszeichen
+      en: English Quotation Marks
+    chars:
+      - "“"
+      - "‘"
+      - "’"
+      - "”"
+  - category:
+    label: Guillemets
+    chars:
+      - "»"
+      - "›"
+      - "‹"
+      - "«"
+  - category:
+    label:
+      de: Sonstiges
+      en: Other
+    chars:
+      - "…"
+      - "×"

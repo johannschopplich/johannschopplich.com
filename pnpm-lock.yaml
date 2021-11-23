@@ -1,7 +1,6 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@github/mini-throttle': ^2.1.0
   '@iconify/json': ^1.1.432
   '@splidejs/splide': ^3.6.1
   '@types/fs-extra': ^9.0.13
@@ -34,7 +33,6 @@ specifiers:
   vite-plugin-full-reload: ^0.2.2
 
 dependencies:
-  '@github/mini-throttle': 2.1.0
   '@splidejs/splide': 3.6.1
   animate.css: 4.1.1
   animere: 1.16.1
@@ -92,10 +90,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /@github/mini-throttle/2.1.0:
-    resolution: {integrity: sha512-iEeR2OdVCPkdIPUszL8gJnKNu4MR8ANh7y0u/LPyaatYezgaWxUZEzhFntloqQq+HE6MZkFy+cl+xzCNuljOdw==}
-    dev: false
 
   /@humanwhocodes/config-array/0.6.0:
     resolution: {integrity: sha512-JQlEKbcgEUjBFhLIF4iqM7u/9lwgHRBcpHrmUNCALK0Q3amXN6lxdoXLnF0sm11E9VqTmBALR87IlUg1bZ8A9A==}

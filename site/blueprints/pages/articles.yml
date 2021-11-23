@@ -36,7 +36,7 @@ tabs:
     label:
       de: Seite
       en: Page
-    icon: document
+    icon: draft
     columns:
       - width: 2/3
         sections:

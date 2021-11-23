@@ -13,7 +13,7 @@ tabs:
     label:
       en: Page
       de: Seite
-    icon: document
+    icon: draft
     columns:
       - width: 2/3
         sections:
