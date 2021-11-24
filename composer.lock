@@ -541,16 +541,16 @@
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
-            "version": "1.1.4",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-punctuation-section.git",
-                "reference": "2b7d2b70c05b0e10eed6d63b4044fd09e9c57d0f"
+                "reference": "596bba96fc72816e024a3bf521c10cf5a4408f34"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/2b7d2b70c05b0e10eed6d63b4044fd09e9c57d0f",
-                "reference": "2b7d2b70c05b0e10eed6d63b4044fd09e9c57d0f",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/596bba96fc72816e024a3bf521c10cf5a4408f34",
+                "reference": "596bba96fc72816e024a3bf521c10cf5a4408f34",
                 "shasum": ""
             },
             "require": {
@@ -585,9 +585,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-punctuation-section/issues",
-                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v1.1.4"
+                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v1.1.5"
             },
-            "time": "2021-11-23T10:28:40+00:00"
+            "time": "2021-11-24T16:13:08+00:00"
         },
         {
             "name": "johannschopplich/kirby-vite",

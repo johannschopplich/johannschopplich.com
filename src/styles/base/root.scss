@@ -10,7 +10,7 @@
 
 :root:not([data-theme]),
 [data-theme="light"] {
-  --du-color-background:        hsl(35, 80%, 98.5%);
+  --du-color-background:        #fefcf8;
   --du-color-link:              var(--du-color-text);
   --du-color-link-hover:        var(--du-color-accent);
 }
