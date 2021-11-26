@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@iconify/json': ^1.1.433
+  '@iconify/json': ^1.1.434
   '@splidejs/splide': ^3.6.4
   '@types/fs-extra': ^9.0.13
   '@types/node': ^16.11.10
@@ -15,7 +15,7 @@ specifiers:
   consola: ^2.15.3
   dotenv: ^10.0.0
   drauu: ^0.2.1
-  duecss: ^0.14.1
+  duecss: ^0.14.2
   esbuild: ^0.13.15
   eslint: ^8.3.0
   eslint-config-prettier: ^8.3.0
@@ -37,11 +37,11 @@ dependencies:
   animate.css: 4.1.1
   animere: 1.16.2
   drauu: 0.2.1
-  duecss: 0.14.1
+  duecss: 0.14.2
   medium-zoom: 1.0.6
 
 devDependencies:
-  '@iconify/json': 1.1.433
+  '@iconify/json': 1.1.434
   '@types/fs-extra': 9.0.13
   '@types/node': 16.11.10
   '@typescript-eslint/eslint-plugin': 5.4.0_5c8ff4cecd5a55e744866c0654edac32
@@ -106,8 +106,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify/json/1.1.433:
-    resolution: {integrity: sha512-Rze0fcoGmDuafPQn25kEKDwGMZIW8KtVx7IUFEEbYx6K5l+87zJw1DTXlBcoKaolIW6iNseTElWO212XJAWuyQ==}
+  /@iconify/json/1.1.434:
+    resolution: {integrity: sha512-GfVRF5QwPQ7IGVgWbD3bqLu/4NSBiNKJbm7yuhDj5q9gkxUuapWLhkcq3EiMRGfGshO3MP+i7r0S5llzXUlPCw==}
     dev: true
 
   /@iconify/types/1.0.12:
@@ -587,8 +587,8 @@ packages:
       '@drauu/core': 0.2.1
     dev: false
 
-  /duecss/0.14.1:
-    resolution: {integrity: sha512-BxvegXqKBy+gayThLohI3Gb6dw44K4i2fSuHTVvQ3gXmPKItprsZ61YpHTVKhFmvr5I9wtGZskVp4UEP5RMw1Q==}
+  /duecss/0.14.2:
+    resolution: {integrity: sha512-OEu2V12B+eqMx9H7LeZiJS9fFpSBH4wdkxcR0z1iJHbFtOItWvxWtDXa+ntafC/7Ws2Ptrd00txC0QYhjFbYVA==}
     dev: false
 
   /duplexer/0.1.2:

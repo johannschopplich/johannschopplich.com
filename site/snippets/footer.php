@@ -1,8 +1,8 @@
 <footer class="sticky top-100vh due-py-xl">
-  <div class="footer-container due-container-lg">
+  <div class="due-container-lg grid grid-cols-[1fr,auto] sm:grid-cols-[1fr,auto,auto] sm:gap-5 border-t-1 due-pt-m">
     <p>© <?= date('Y') ?> Johann Schopplich</p>
 
-    <div class="footer-links flex space-x-5">
+    <div class="flex space-x-5 row-start-2 sm:row-start-auto">
       <?php foreach ($site->footerPages()->toPages() as $p): ?>
         <a href="<?= $p->url() ?>">
           <?= $p->title() ?>

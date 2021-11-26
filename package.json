@@ -15,11 +15,11 @@
     "animate.css": "^4.1.1",
     "animere": "^1.16.2",
     "drauu": "^0.2.1",
-    "duecss": "^0.14.1",
+    "duecss": "^0.14.2",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
-    "@iconify/json": "^1.1.433",
+    "@iconify/json": "^1.1.434",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^16.11.10",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
