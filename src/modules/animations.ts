@@ -1,5 +1,7 @@
 import Animere from "animere";
 
 export const install = () => {
-  new Animere();
+  new Animere({
+    skipInit: () => !document.documentElement.dataset.animatable,
+  });
 };

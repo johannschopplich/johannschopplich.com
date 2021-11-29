@@ -7,7 +7,7 @@ if (setting === "dark" || (prefersDark && setting !== "light")) {
 }
 
 if (
-  !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+  !matchMedia("(prefers-reduced-motion: reduce)").matches &&
   !/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent)
 ) {
   root.dataset.animatable = "true";
