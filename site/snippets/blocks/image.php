@@ -26,7 +26,7 @@ if ($block->location() === 'web') {
       'data-sizes' => 'auto',
       'width' => $image->width(),
       'height' => $image->height(),
-      'alt' => $alt
+      'alt' => $alt->escape()
     ]
   );
 } else {

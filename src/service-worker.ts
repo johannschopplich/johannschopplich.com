@@ -1,5 +1,3 @@
-/// <reference no-default-lib="true"/>
-/// <reference lib="es2021" />
 /// <reference lib="WebWorker" />
 
 const sw = self as unknown as ServiceWorkerGlobalScope & typeof globalThis;
