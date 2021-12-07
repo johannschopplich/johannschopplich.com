@@ -1,7 +1,7 @@
 {
   "require": {
     "php": ">=7.4.0",
-    "getkirby/cms": "^3.0",
+    "getkirby/cms": "^3.6",
     "getkirby/layouts": "^1.0",
     "symfony/yaml": "^5.0",
     "johannschopplich/kirby-extended": "^2.10",
@@ -13,7 +13,7 @@
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",
-      "@php -S localhost:8000 -t public server.php"
+      "@php -S localhost:8000 -t public vendor/getkirby/cms/router.php"
     ]
   },
   "autoload": {
