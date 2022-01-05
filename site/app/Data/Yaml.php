@@ -6,7 +6,7 @@ use Kirby\Toolkit\A;
 use Symfony\Component\Yaml\Yaml as Parser;
 
 /**
- * Simple Wrapper around Symfony's Yaml Component
+ * Simple wrapper around Symfony's YAML class
  *
  * @package   Kirby Data
  * @author    Bastian Allgeier <bastian@getkirby.com>
@@ -24,33 +24,29 @@ class Yaml extends Handler
      */
     public static function encode($data): string
     {
-        // $data, when to not inline, indentation
-        $yaml = Parser::dump($data, 2, 2, Parser::DUMP_MULTI_LINE_LITERAL_BLOCK);
-
-        return $yaml;
+        return Parser::dump($data, 2, 2, Parser::DUMP_MULTI_LINE_LITERAL_BLOCK | Parser::DUMP_EMPTY_ARRAY_AS_SEQUENCE);
     }
 
     /**
      * Parses an encoded YAML string and returns a multi-dimensional array
      *
-     * @param string $yaml
+     * @param string $string
      * @return array
      */
-    public static function decode($yaml): array
+    public static function decode($string): array
     {
-        if ($yaml === null) {
+        if ($string === null || $string === '') {
             return [];
         }
 
-        if (is_array($yaml) === true) {
-            return $yaml;
+        if (is_array($string) === true) {
+            return $string;
         }
 
         // remove BOM
-        $yaml   = str_replace("\xEF\xBB\xBF", '', $yaml);
-        $result = Parser::parse($yaml);
+        $string = str_replace("\xEF\xBB\xBF", '', $string);
 
-        // ensure that single string is wrapped in array
+        $result = Parser::parse($string);
         $result = A::wrap($result);
 
         return $result;
