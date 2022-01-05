@@ -6,7 +6,7 @@ layout();
 ?>
 
 <div class="section-bio due-pt-xl">
-  <div class="due-container-lg grid items-center gap-13 sm:grid-cols-[8fr,4fr] sm:due-pb-xl">
+  <div class="due-container-lg grid items-center gap-13 sm:grid-cols-[8fr_4fr] sm:due-pb-xl">
     <div class="bio-content content">
       <?= $page->profileText()->kt() ?>
     </div>

@@ -1,5 +1,5 @@
 <footer class="sticky top-100vh due-py-xl">
-  <div class="due-container-lg grid grid-cols-[1fr,auto] sm:grid-cols-[1fr,auto,auto] sm:gap-5 border-t-1 due-pt-m">
+  <div class="due-container-lg grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_auto_auto] sm:gap-5 border-t-1 due-pt-m">
     <p>© <?= date('Y') ?> Johann Schopplich</p>
 
     <div class="flex space-x-5 row-start-2 sm:row-start-auto">
