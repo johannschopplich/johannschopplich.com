@@ -2,6 +2,7 @@ import { defineConfig, presetUno, presetIcons } from "unocss";
 import { presetDue } from "duecss";
 
 export default defineConfig({
+  safelist: ["bg-contrast-lowest"],
   rules: [
     [
       "framed",
