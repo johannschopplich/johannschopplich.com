@@ -5,10 +5,10 @@ $arrow-left: 1em !default;
   $root: &;
 
   &--rtl {
-    > #{$root}__slider > #{$root}__track > #{$root}__arrows,
-    > #{$root}__track > #{$root}__arrows,
-    > #{$root}__arrows {
-      #{$root}__arrow {
+    > #{ $root }__slider > #{ $root }__track > #{ $root }__arrows,
+    > #{ $root }__track > #{ $root }__arrows,
+    > #{ $root }__arrows {
+      #{ $root }__arrow {
         &--prev {
           left: auto;
           right: $arrow-right;

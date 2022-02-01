@@ -9,6 +9,5 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  },
-  "include": ["src", "vite.config.ts"]
+  }
 }

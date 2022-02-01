@@ -18,7 +18,8 @@
       <?php endforeach ?>
 
       <li class="splide__slide carousel-link flex items-center justify-center">
-        <a href="<?= $query->first()->parent()->url() ?>" class="stretched-link due-button-text">
+        <a href="<?= $query->first()->parent()->url() ?>" class="due-button-text">
+          <span class="absolute inset-0" aria-hidden="true"></span>
           <?= substr(($t = t('photography.morePhotos')), 0, strrpos($t, ' ')) ?>
         </a>
       </li>

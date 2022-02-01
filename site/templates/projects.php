@@ -28,7 +28,8 @@ layout();
       </p>
 
       <h2 class="due-title due-text-2 sm:due-text-1 due-mb-m">
-        <a href="<?= $project->url() ?>" class="underlined stretched-link">
+        <a href="<?= $project->url() ?>" class="underlined">
+          <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $project->title()->escape() ?>
         </a>
       </h2>

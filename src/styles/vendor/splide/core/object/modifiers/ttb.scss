@@ -3,9 +3,9 @@
 
   &--ttb {
     &.is-active {
-      > #{$root}__slider > #{$root}__track,
-      > #{$root}__track {
-        > #{$root}__list {
+      > #{ $root }__slider > #{ $root }__track,
+      > #{ $root }__track {
+        > #{ $root }__list {
           display: block;
         }
       }

@@ -8,6 +8,7 @@ $border: 2px solid #999 !default;
     border-left-color: transparent;
     border-radius: 50%;
     bottom: 0;
+    contain: strict;
     display: inline-block;
     height: $size;
     left: 0;

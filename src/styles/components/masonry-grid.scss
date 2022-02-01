@@ -3,13 +3,10 @@
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(
-      min(var(--masonry-max-width, 25rem), 100%),
-      1fr
-    )
+    minmax(min(var(--masonry-max-width, 25rem), 100%), 1fr)
   );
-	grid-template-rows: masonry;
-	justify-content: center;
+  grid-template-rows: masonry;
+  justify-content: center;
   gap: var(--masonry-gap, var(--du-spacer));
 
   > * {
@@ -17,7 +14,7 @@
   }
 
   // Optionally stretch the first element across the grid
-	&[data-stretch-first-element] > :first-child {
+  &[data-stretch-first-element] > :first-child {
     grid-column: 1/ -1;
     max-height: 30vh;
     margin: 0 auto;

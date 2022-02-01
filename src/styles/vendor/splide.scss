@@ -1,27 +1,25 @@
 $main: var(--du-color-accent) !default;
 $main-light: var(--du-color-accent) !default;
 
-@use "splide/template/default/foundation/colors" with
-  (
-    $main: $main,
-    $sub01: $main,
-    $sub02: $main,
-    $background: var(--du-color-background),
-    $background-active: $main
-  );
+@use "splide/template/default/foundation/colors" with (
+  $main: $main,
+  $sub01: $main,
+  $sub02: $main,
+  $background: var(--du-color-background),
+  $background-active: $main
+);
 
-@use "splide/template/default/object/objects/arrow" with
-  (
-    $size: clamp(1rem, 4vw, 2rem),
-    $opacity: false,
-    $opacity-hover: false,
-    $fill: $main,
-    $fill-hover: $main-light,
-    $button-size: false,
-    $button-background: transparent,
-    $button-padding: var(--du-space-s),
-    $left: 0,
-    $right: 0
-  );
+@use "splide/template/default/object/objects/arrow" with (
+  $size: clamp(1rem, 4vw, 2rem),
+  $opacity: false,
+  $opacity-hover: false,
+  $fill: $main,
+  $fill-hover: $main-light,
+  $button-size: false,
+  $button-background: transparent,
+  $button-padding: var(--du-space-s),
+  $left: 0,
+  $right: 0
+);
 
 @forward "splide/template/default";

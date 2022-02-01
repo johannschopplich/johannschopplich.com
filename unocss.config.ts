@@ -1,5 +1,4 @@
-import { defineConfig, presetUno } from "unocss";
-import presetIcons from "@unocss/preset-icons";
+import { defineConfig, presetUno, presetIcons } from "unocss";
 import { presetDue } from "duecss";
 
 export default defineConfig({

@@ -6,11 +6,15 @@
   figure,
   hr {
     &:not(:first-child) {
-      margin-top: calc(var(--du-space-l) * var(--du-block-space-y-multiplier, 1));
+      margin-top: calc(
+        var(--du-space-l) * var(--du-block-space-y-multiplier, 1)
+      );
     }
 
     &:not(:last-child) {
-      margin-bottom: calc(var(--du-space-l) * var(--du-block-space-y-multiplier, 1));
+      margin-bottom: calc(
+        var(--du-space-l) * var(--du-block-space-y-multiplier, 1)
+      );
     }
   }
 
@@ -50,7 +54,9 @@
       &.is-pulled-left,
       &.is-pulled-right {
         width: 45%;
-        margin-top: calc(var(--du-space-2xs) * var(--du-block-space-y-multiplier, 1));
+        margin-top: calc(
+          var(--du-space-2xs) * var(--du-block-space-y-multiplier, 1)
+        );
       }
 
       &.is-pulled-left {
@@ -97,7 +103,9 @@
       figcaption {
         align-self: flex-end;
         background-color: var(--du-color-background);
-        padding-top: calc(var(--du-space-xs) * var(--du-block-space-y-multiplier, 1));
+        padding-top: calc(
+          var(--du-space-xs) * var(--du-block-space-y-multiplier, 1)
+        );
       }
     }
   }
@@ -111,7 +119,9 @@
       margin-left: 0;
 
       figcaption {
-        margin-top: calc(var(--du-space-s) * var(--du-block-space-y-multiplier, 1));
+        margin-top: calc(
+          var(--du-space-s) * var(--du-block-space-y-multiplier, 1)
+        );
       }
     }
 

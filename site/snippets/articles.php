@@ -11,7 +11,8 @@
       </p>
 
       <h2 class="due-title due-text-4 sm:due-text-3 due-mb-s">
-        <a href="<?= $article->url() ?>" class="stretched-link underlined hyphenated">
+        <a href="<?= $article->url() ?>" class="underlined hyphenated">
+          <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $article->title() ?>
         </a>
       </h2>
