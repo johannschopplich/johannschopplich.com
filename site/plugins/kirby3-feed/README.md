@@ -9,7 +9,7 @@
 
 Generate a RSS/JSON/Sitemap-Feed from a Pages-Collection.
 
-## Commerical Usage
+## Commercial Usage
 
 > <br>
 ><b>Support open source!</b><br><br>
@@ -67,12 +67,13 @@ If you use these defaults you need to provide the fields `date (type: date)` and
     'textfield' => 'text',
     'modified' => time(),
     'snippet' => 'feed/rss', // 'feed/json'
+    'dateformat' => 'r',
     'mime' => null,
     'sort' => true,
 ]
 ```
 
-**virtual page in site/config.php**
+**virtual page in site/config/config.php**
 
 ```php
 return [
@@ -131,6 +132,7 @@ If you use these defaults you need to provide the fields `date (type: date)` and
 
 ```php
 [
+    'dateformat' => 'c',
     'xsl' => true,
     'urlfield' => 'url',
     'modified' => time(),

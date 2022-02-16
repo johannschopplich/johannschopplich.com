@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
-            "version": "1.5.1",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-feed.git",
-                "reference": "75dc09ac1611e43d85cdd2df726accc7ebc11374"
+                "reference": "e9a0a4b780ddfa510702d13981c878fddf638acd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/75dc09ac1611e43d85cdd2df726accc7ebc11374",
-                "reference": "75dc09ac1611e43d85cdd2df726accc7ebc11374",
+                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/e9a0a4b780ddfa510702d13981c878fddf638acd",
+                "reference": "e9a0a4b780ddfa510702d13981c878fddf638acd",
                 "shasum": ""
             },
             "require": {
@@ -66,7 +66,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-feed/issues",
-                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.5.1"
+                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.5.2"
             },
             "funding": [
                 {
@@ -86,7 +86,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-29T17:03:51+00:00"
+            "time": "2022-02-12T21:00:23+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -246,15 +246,15 @@
                 ]
             },
             "autoload": {
+                "files": [
+                    "config/setup.php",
+                    "config/helpers.php"
+                ],
                 "psr-4": {
                     "Kirby\\": "src/"
                 },
                 "classmap": [
                     "dependencies/"
-                ],
-                "files": [
-                    "config/setup.php",
-                    "config/helpers.php"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -436,16 +436,16 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "1.4.2",
+            "version": "1.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "4d6400279bea2a06dbe1f434ac87ef5b57c02014"
+                "reference": "07d21bcabb644a835b35fc497eab4542a6ee7487"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/4d6400279bea2a06dbe1f434ac87ef5b57c02014",
-                "reference": "4d6400279bea2a06dbe1f434ac87ef5b57c02014",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/07d21bcabb644a835b35fc497eab4542a6ee7487",
+                "reference": "07d21bcabb644a835b35fc497eab4542a6ee7487",
                 "shasum": ""
             },
             "require": {
@@ -481,9 +481,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.4.2"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.4.3"
             },
-            "time": "2021-11-16T15:40:42+00:00"
+            "time": "2022-02-10T08:01:39+00:00"
         },
         {
             "name": "johannschopplich/kirby-extended",
@@ -1200,12 +1200,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Intl\\Idn\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Idn\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1285,12 +1285,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -1372,12 +1372,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
-                },
                 "files": [
                     "bootstrap.php"
-                ]
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1449,12 +1449,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
