@@ -20,7 +20,6 @@ storage/sessions/*
 site/config/.license
 
 # Build assets
-public/service-worker.js
 public/assets/dev
 public/dist
 src/styles/vendor/uno.css

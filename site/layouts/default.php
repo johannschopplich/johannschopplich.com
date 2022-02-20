@@ -47,7 +47,6 @@
   ]) ?>
 
   <link rel="preload" href="/assets/fonts/UxumGrotesque-Bold.woff2" as="font" type="font/woff2" crossorigin>
-  <!-- <link rel="preload" href="/assets/fonts/UxumGrotesque-Medium.woff2" as="font" type="font/woff2" crossorigin> -->
 
   <script><?= asset('dist/assets/head.js')->read() ?></script>
 

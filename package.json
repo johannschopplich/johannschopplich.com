@@ -2,10 +2,9 @@
   "private": true,
   "scripts": {
     "assets:head": "esbuild src/head.ts --minify --format=iife --outdir=public/dist/assets",
-    "assets:worker": "node scripts/generateServiceWorker.mjs",
     "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/vendor/uno.css",
     "dev": "shx touch src/.lock && concurrently \"npm run assets:unocss -- --watch\" \"vite\"",
-    "build": "shx rm -f src/.lock && npm run assets:unocss && vite build && npm run assets:head && npm run assets:worker",
+    "build": "shx rm -f src/.lock && npm run assets:unocss && vite build && npm run assets:head",
     "lint": "eslint \"src/**/*.ts\" --ignore-path .gitignore",
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier \"src/**/*.{css,scss,ts}\" --write --ignore-path .gitignore"
