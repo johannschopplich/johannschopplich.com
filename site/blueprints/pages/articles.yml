@@ -12,9 +12,9 @@ tabs:
     label:
       de: Artikel
       en: Articles
-    icon: draft
+    icon: headline
     columns:
-      - width: 1/2
+      - width: 1/1
         sections:
           drafts:
             extends: sections/articles
@@ -23,7 +23,7 @@ tabs:
               en: Drafts
             status: drafts
 
-      - width: 1/2
+      - width: 1/1
         sections:
           published:
             extends: sections/articles
@@ -31,6 +31,8 @@ tabs:
               de: Veröffentlicht
               en: Published
             status: published
+            layout: cards
+            size: tiny
 
   settings:
     label:

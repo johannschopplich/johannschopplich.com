@@ -17,8 +17,6 @@ tabs:
               de: Artikelentwürfe
               en: Article Drafts
             status: draft
-            layout: cards
-            size: tiny
 
       - width: 1/2
         sections:
@@ -29,6 +27,8 @@ tabs:
               en: Published Articles
             status: published
             limit: 10
+            layout: cards
+            size: tiny
 
       - width: 1/2
         sections:
