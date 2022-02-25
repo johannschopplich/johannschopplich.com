@@ -18,6 +18,6 @@ h2 a.underlined {
   text-decoration-color: var(--du-color-contrast-lower);
 }
 
-.text-hero {
-  font-size: clamp(var(--du-text-4xl), 6vw, var(--du-text-4xl) + 3rem);
+.medium-zoom-image {
+  z-index: 50;
 }

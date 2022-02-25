@@ -40,6 +40,11 @@
   figure {
     box-shadow: var(--du-shadow-frame);
 
+    img {
+      position: relative;
+      z-index: 50;
+    }
+
     @include breakpoints.media-below(sm) {
       margin-left: 1rem;
       margin-right: 1rem;
@@ -70,7 +75,9 @@
 
     figcaption {
       color: var(--du-color-contrast-medium);
+      font-family: var(--du-font-family-heading);
       font-size: 0.75rem;
+      font-weight: 500;
       margin-top: 0.25rem;
       text-align: left;
     }
