@@ -80,7 +80,7 @@
       font-size: 0.75rem;
       font-weight: 500;
       margin-top: 0.25rem;
-      padding-bottom: 0.25rem;
+      padding: 0 3px 0.25rem;
       text-align: left;
     }
 
@@ -100,12 +100,6 @@
 
     @include breakpoints.media-above(sm) {
       --masonry-col-max-w: 25vw;
-    }
-
-    figure {
-      margin-top: 0;
-      margin-right: 0;
-      margin-left: 0;
     }
   }
 }
