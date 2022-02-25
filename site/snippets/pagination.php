@@ -4,9 +4,9 @@
   style="--du-color-link: var(--du-color-accent); --du-color-link-hover: var(--du-color-text);"
 >
   <?php if ($pagination->hasPrevPage()): ?>
-    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto font-sans" aria-label="Previous page">←</a>
+    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-mdi-arrow-left" aria-label="Previous page"></a>
   <?php else: ?>
-    <span class="mr-auto font-sans text-contrast-low" aria-disabled="true">←</span>
+    <span class="mr-auto text-contrast-low i-mdi-arrow-left" aria-disabled="true"></span>
   <?php endif ?>
 
   <div class="flex space-x-1">
@@ -15,12 +15,14 @@
     <?php foreach ($pagination->range(6) as $r): ?>
       <a
         href="<?= $pagination->pageUrl($r) ?>"
-        class="pagination-link"
+        class="group flex flex-col items-center<?php e($pagination->page() === $r, ' text-theme-base') ?>"
         aria-label="Go to page <?= $r ?>"
         <?php e($pagination->page() === $r, 'aria-current="page"') ?>
       >
         <span>o</span>
-        <span><?= $r ?></span>
+        <span class="mt-2 text-contrast-low text-base font-500<?php e($pagination->page() === $r, ' text-theme-base') ?>">
+          <?= $r ?>
+        </span>
       </a>
     <?php endforeach ?>
 
@@ -31,8 +33,8 @@
   </div>
 
   <?php if ($pagination->hasNextPage()): ?>
-    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto font-sans" aria-label="Next page">→</a>
+    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-mdi-arrow-right" aria-label="Next page"></a>
   <?php else: ?>
-    <span class="ml-auto font-sans text-contrast-lower" aria-disabled="true">→</span>
+    <span class="ml-auto text-contrast-lower i-mdi-arrow-right" aria-disabled="true"></span>
   <?php endif ?>
 </nav>
