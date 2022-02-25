@@ -13,7 +13,7 @@
       </p>
     <?php endif ?>
 
-    <h1 class="title text-4xl font-900">
+    <h1 class="title text-3xl md:text-4xl font-900">
       <?= $page->title()->escape() ?>
     </h1>
 
