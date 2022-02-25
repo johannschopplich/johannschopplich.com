@@ -4,7 +4,7 @@
   --du-font-family-normal: Times, Times New Roman, serif, "Apple Color Emoji",
     "Segoe UI Emoji";
   --du-font-family-heading: "Cooper Hewitt", sans-serif;
-  --du-line-height-tight: calc(1ex / 0.22);
+  --du-line-height-tight: 1.05;
 
   // Custom due root variables
   --du-shadow-frame: 3px 3px 0 var(--du-color-background),
