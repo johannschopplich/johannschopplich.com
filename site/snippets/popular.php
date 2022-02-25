@@ -24,16 +24,16 @@ $year = null;
       <?php e($isActive, 'aria-current="page"') ?>
       style="--du-color-link-hover: var(--du-color-accent);"
     >
-      <span class="flex-grow font-heading<?php e($isActive, ' text-accent') ?>">
+      <span class="flex-grow font-heading font-500<?php e($isActive, ' text-accent') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>
         <hr class="border-contrast-medium invisible md:visible md:basis-1/4 md:mt-3">
-        <p class="flex-shrink-0 flex flex-wrap justify-start items-center space-x-1">
+        <span class="flex-shrink-0 flex flex-wrap justify-start items-center space-x-1">
           <?php foreach ($post->categories()->split() as $category): ?>
             <span class="tag"><?= $category ?></span>
           <?php endforeach ?>
-        </p>
+        </span>
       <?php endif ?>
     </a>
 
