@@ -10,6 +10,7 @@ $year = null;
   <?php foreach ($query as $post): ?>
     <?php /** @var \Kirby\Cms\Page $post */ ?>
     <?php $postY = $post->published()->toDate('%Y') ?>
+    <?php $isActive = $post->isActive() || $post->id() === $page->id() ?>
 
     <?php if ($postY !== $year): ?>
       <div class="mt-3xl mb-xs">
@@ -20,10 +21,10 @@ $year = null;
     <a
       href="<?= $post->url() ?>"
       class="flex items-start gap-xs mb-xs"
-      <?php e($post->isActive() || $post->id() === $page->id(), 'aria-current="page"') ?>
+      <?php e($isActive, 'aria-current="page"') ?>
       style="--du-color-link-hover: var(--du-color-accent);"
     >
-      <span class="font-heading<?php e($post->isActive() || $post->id() === $page->id(), ' text-accent') ?>">
+      <span class="flex-grow font-heading<?php e($isActive, ' text-accent') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>

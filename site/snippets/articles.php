@@ -25,7 +25,9 @@
         </a>
       </h2>
 
-      <p class="leading-tighter"><?= $article->description() ?></p>
+      <p>
+        <?= $article->description() ?>
+      </p>
   </div>
   <?php endforeach ?>
 </div>
