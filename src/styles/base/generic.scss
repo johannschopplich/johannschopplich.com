@@ -1,7 +1,7 @@
 @use "duecss/abstracts/breakpoints";
 
 a:not([class]),
-.underlined {
+.text-underline {
   text-decoration-line: underline;
   text-decoration-color: var(--du-color-accent);
   text-decoration-thickness: var(--du-decoration-width);
@@ -12,10 +12,8 @@ a:not([class]),
   }
 }
 
-h2 a.underlined {
-  color: currentColor;
+h2 a.text-underline {
   text-decoration-color: var(--du-color-contrast-lower);
-  line-height: 1.25;
 }
 
 [id] {
