@@ -11,16 +11,12 @@ specifiers:
   animate.css: ^4.1.1
   animere: ^1.16.3
   concurrently: ^7.0.0
-  consola: ^2.15.3
-  dotenv: ^16.0.0
   drauu: ^0.2.1
   duecss: ^0.22.7
   esbuild: ^0.14.23
   eslint: ^8.9.0
   eslint-config-prettier: ^8.4.0
-  fast-glob: ^3.2.11
   medium-zoom: ^1.0.6
-  nanoid: ^3.3.1
   postcss: ^8.4.7
   prettier: ^2.5.1
   sass: ^1.49.9
@@ -46,13 +42,9 @@ devDependencies:
   '@typescript-eslint/parser': 5.12.1_eslint@8.9.0+typescript@4.5.5
   '@unocss/cli': 0.26.2_sass@1.49.9
   concurrently: 7.0.0
-  consola: 2.15.3
-  dotenv: 16.0.0
   esbuild: 0.14.23
   eslint: 8.9.0
   eslint-config-prettier: 8.4.0_eslint@8.9.0
-  fast-glob: 3.2.11
-  nanoid: 3.3.1
   postcss: 8.4.7
   prettier: 2.5.1
   sass: 1.49.9
@@ -723,11 +715,6 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       esutils: 2.0.3
-    dev: true
-
-  /dotenv/16.0.0:
-    resolution: {integrity: sha512-qD9WU0MPM4SWLPJy/r2Be+2WgQj8plChsyrCNQzW/0WjvcJQiKQJ9mH3ZgB3fxbUUxgc/11ZJ0Fi5KiimWGz2Q==}
-    engines: {node: '>=12'}
     dev: true
 
   /drauu/0.2.1:
