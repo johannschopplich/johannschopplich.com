@@ -12,36 +12,4 @@ export const install = () => {
     root.dataset.theme = themes[newIndex];
     localStorage.setItem("color-schema", themes[newIndex]);
   });
-
-  // Handle themed containers
-  const inverseContainers = [
-    ...document.querySelectorAll<HTMLElement>("[data-theme-inverse]"),
-  ];
-  const handleInvertedContainers = (elements: HTMLElement[]) => {
-    for (const element of elements) {
-      if (root.dataset.theme === "dark") {
-        element.classList.add("bg-contrast-lowest");
-        delete element.dataset.theme;
-      } else {
-        element.dataset.theme = "dark";
-        element.classList.remove("bg-contrast-lowest");
-      }
-    }
-  };
-
-  handleInvertedContainers(inverseContainers);
-
-  const themeObserver = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-      if (mutation.attributeName === "data-theme") {
-        handleInvertedContainers(inverseContainers);
-      }
-    }
-  });
-
-  themeObserver.observe(document.documentElement, {
-    attributes: true,
-    childList: false,
-    characterData: false,
-  });
 };
