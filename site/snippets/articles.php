@@ -18,7 +18,7 @@
         </time>
       </p>
 
-      <h2 class="title text-size-lg sm:text-size-xl mb-lg">
+      <h2 class="title text-size-xl mb-lg">
         <a href="<?= $article->url() ?>" class="underlined hyphenate">
           <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $article->title() ?>
