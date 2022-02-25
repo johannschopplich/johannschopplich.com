@@ -6,7 +6,7 @@ layout();
 ?>
 
 <div class="section-bio md:pt-5xl">
-  <div class="max-w-screen-lg grid gap-5xl sm:gap-8xl sm:grid-cols-2 sm:pb-5xl sm:pr-lg md:pr-3xl">
+  <div class="max-w-screen-lg grid gap-5xl pb-5xl sm:gap-8xl sm:grid-cols-2 sm:pr-lg md:pr-3xl">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
         <figure class="relative md:framed unselectable">

@@ -14,8 +14,8 @@ a:not([class]),
 
 h2 a.underlined {
   color: currentColor;
-  letter-spacing: 0.025ch;
   text-decoration-color: var(--du-color-contrast-lower);
+  line-height: 1.25;
 }
 
 .medium-zoom-image {
