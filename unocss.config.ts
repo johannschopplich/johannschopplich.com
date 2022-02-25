@@ -2,7 +2,7 @@ import { defineConfig, presetUno, presetIcons } from "unocss";
 import { presetDue } from "duecss";
 
 export default defineConfig({
-  safelist: ["bg-contrast-lowest"],
+  safelist: ["aspect-ratio-16/9"],
   shortcuts: {
     content: "px-lg md:px-3xl",
     "content-centered": "relative mx-auto w-[calc(100%-2.25rem)]",
