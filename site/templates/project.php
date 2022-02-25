@@ -5,23 +5,23 @@
 layout();
 ?>
 
-<div class="due-py-xl">
-  <div class="due-container-md due-mb-xl">
-    <p class="due-text-5 text-contrast-medium">
+<div class="pt-8xl">
+  <div class="content max-w-screen-lg pb-5xl">
+    <p class="text-contrast-medium">
       <?= $page->subtitle()->escape() ?>
     </p>
 
-    <h1 class="due-title due-text-hero font-700 lh-none">
+    <h1 class="title text-4xl font-900">
       <?= $page->title()->escape() ?>
     </h1>
 
-    <div class="due-mt-s">
+    <div class="mt-xs">
       <?= asset('assets/img/article-spacer.svg')->read() ?>
     </div>
   </div>
 
-  <div class="due-container-lg">
-    <div class="space-y-5">
+  <div class="content max-w-screen-lg">
+    <div class="space-y-lg md:space-y-3xl">
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
         <figure>
           <?php snippet('helpers/img', [
@@ -34,17 +34,17 @@ layout();
   </div>
 </div>
 
-<div class="due-py-xl">
-  <div class="due-container-sm">
+<div class="py-8xl">
+  <div class="content max-w-prose">
     <?php if ($page->text()->isNotEmpty()): ?>
-      <div class="content due-mb-2xl">
+      <div class="prose mb-5xl">
         <?= $page->text()->kirbytext() ?>
       </div>
     <?php endif ?>
 
-    <div class="text-center">
-      <a href="<?= $page->parent()->url() ?>" class="due-button-text">
-        <?= t('project.allWorks') ?>
+    <div class="border-t pt-lg">
+      <a href="<?= $page->parent()->url() ?>" class="-ml-1 action-button">
+        <span class="i-mdi-arrow-left mr-1"></span><?= t('project.allWorks') ?>
       </a>
     </div>
   </div>

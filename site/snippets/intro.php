@@ -2,9 +2,9 @@
 /** @var string $title */
 /** @var string|null $props */
 ?>
-<div class="due-container-xl due-pt-xl">
-  <h1 class="<?= trim('due-title is-intro md:text-center ' . ($props ?? ''), ' ') ?>">
+<div class="content max-w-screen-lg pt-8xl">
+  <h1 class="<?= trim('title text-4xl font-900 ' . ($props ?? ''), ' ') ?>">
     <?= $title ?>
   </h1>
-  <div class="section-divider" data-animere="GrowSectionDivider"></div>
+  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 </div>

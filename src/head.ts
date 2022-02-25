@@ -1,10 +1,17 @@
-const root = document.documentElement;
-const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
-const setting = localStorage.getItem("color-schema") || "auto";
-
-if (setting === "dark" || (prefersDark && setting !== "light")) {
-  root.dataset.theme = "dark";
+if (matchMedia("(hover: none)").matches) {
+  document.documentElement.style.setProperty(
+    "--vh",
+    `${window.innerHeight * 0.01}px`
+  );
 }
+
+const root = document.documentElement;
+// const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+// const setting = localStorage.getItem("color-schema") || "auto";
+
+// if (setting === "dark" || (prefersDark && setting !== "light")) {
+//   root.dataset.theme = "dark";
+// }
 
 if (
   !matchMedia("(prefers-reduced-motion: reduce)").matches &&

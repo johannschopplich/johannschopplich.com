@@ -20,11 +20,11 @@ return [
         $tag->size ??= 'initial';
 
         $image = Html::tag('div', [], [
-            'style' => "background-image: url({$tag->src}); background-size: {$tag->size};"
+            'style' => "height: 16rem; background-image: url({$tag->src}); background-size: {$tag->size};"
         ]);
 
         return Html::figure([$image], $tag->caption, [
-            'class' => trim('aspect-ratio-4:3 is-outset background-pattern ' . $tag->class, ' ')
+            'class' => trim('is-outset background-pattern ' . $tag->class, ' ')
         ]);
     }
 ];

@@ -17,7 +17,7 @@ $main-light: var(--du-color-accent) !default;
   $fill-hover: $main-light,
   $button-size: false,
   $button-background: transparent,
-  $button-padding: var(--du-space-s),
+  $button-padding: 0.75rem,
   $left: 0,
   $right: 0
 );

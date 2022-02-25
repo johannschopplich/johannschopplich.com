@@ -7,26 +7,25 @@ layout();
 
 <?php snippet('intro', ['title' => $page->text()->kti()]) ?>
 
-<div class="due-container-lg due-pb-xl">
-  <h2 class="due-title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
-    <?= t('articles.latest') ?>
-  </h2>
+<div class="content max-w-screen-lg">
+  <div class="">
+    <h2 class="title text-2xl text-accent text-center mb-5xl">
+      <?= t('articles.latest') ?>
+    </h2>
 
-  <?php snippet('articles', [
-    'query' => $kirby->collection('articles')->paginate(4)
-  ]) ?>
+    <div class="overflow-hidden border-y">
+      <?php snippet('articles', [
+        'query' => $kirby->collection('articles')->paginate(4)
+      ]) ?>
+    </div>
 
-  <div class="text-center due-mt-xl">
-    <a href="<?= page('blog')->url() ?>" class="due-button-text">
-      <?= t('articles.more') ?>
-    </a>
+    <div class="text-center mt-lg">
+      <a href="<?= page('blog')->url() ?>" class="action-button">
+        <?= t('articles.more') ?><span class="i-mdi-arrow-right ml-1"></span>
+      </a>
+    </div>
   </div>
 </div>
-
-<?php snippet('popular', [
-  'query' => $kirby->collection('popularArticles'),
-  'heading' => t('articles.popular')
-]) ?>
 
 <?php if ($photography = page('photography')): ?>
   <?php $query = $photography
@@ -36,18 +35,21 @@ layout();
     ->filterBy('ratio', '>=', '1')
     ->limit(4)
   ?>
-  <div class="section-divider due-mt-xs" data-animere="GrowSectionDivider"></div>
 
-  <div class="section-photography due-pb-xl">
-    <h2 class="due-title due-text-2 sm:due-text-1 text-accent text-center due-mb-xl">
+  <div class="content max-w-screen-lg">
+    <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
+
+    <h2 class="title text-2xl text-accent text-center mb-5xl">
       <?= t('photography') ?>
     </h2>
+  </div>
 
-    <?php snippet('photography/carousel', compact('query')) ?>
+  <?php snippet('photography/carousel', compact('query')) ?>
 
-    <div class="text-center due-mt-m">
-      <a href="<?= $photography->url() ?>" class="due-button-text">
-        <?= t('photography.morePhotos') ?>
+  <div class="content max-w-screen-lg pb-8xl">
+    <div class="text-center mt-lg">
+      <a href="<?= $photography->url() ?>" class="action-button">
+        <?= t('photography.morePhotos') ?><span class="i-mdi-arrow-right ml-1"></span>
       </a>
     </div>
   </div>

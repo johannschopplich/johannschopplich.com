@@ -5,14 +5,15 @@
 layout();
 ?>
 
-<div class="due-py-xl">
+<div class="py-8xl">
   <?php $blocks = $page->text()->toBlocks() ?>
   <?php if ($blocks->isNotEmpty()): ?>
-    <div class="due-container-fluid max-w-prose due-pb-xl">
-      <section class="content">
+    <div class="content max-w-prose pb-5xl">
+      <section class="prose font-heading font-500">
         <h1 class="sr-only">
           <?= $page->title()->escape() ?>
         </h1>
+
         <?= $blocks ?>
       </section>
     </div>

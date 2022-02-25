@@ -1,5 +1,3 @@
-@use "duecss/abstracts/breakpoints";
-
 .project-item {
   position: relative;
 
@@ -13,8 +11,4 @@
       box-shadow: 3px 3px 0 var(--du-color-background), 4px 4px 0 currentColor;
     }
   }
-}
-
-.project-subtitle {
-  word-spacing: 0.25ch;
 }

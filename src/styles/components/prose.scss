@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "duecss/abstracts/breakpoints";
+@use "duecss/plugins/typography";
+
+.prose {
+  figure {
+    &:not(:first-child) {
+      margin-top: calc(2rem * var(--du-prose-y-spacer, 1));
+    }
+
+    &:not(:last-child) {
+      margin-bottom: calc(2rem * var(--du-prose-y-spacer, 1));
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-family: var(--du-font-family-heading);
+
+    a {
+      color: inherit;
+      text-decoration-line: none;
+    }
+  }
+
+  p {
+    text-indent: 1rem;
+  }
+
+  hr {
+    border-bottom: none;
+  }
+
+  blockquote {
+    border-left-color: var(--du-color-accent);
+    border-left-style: dotted;
+  }
+
+  figure {
+    box-shadow: var(--du-shadow-frame);
+
+    @include breakpoints.media-below(sm) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    @include breakpoints.media-above(sm) {
+      &.is-pulled-left,
+      &.is-pulled-right {
+        width: 45%;
+        float: right;
+        margin-top: 0.25em;
+        margin-left: 2rem;
+      }
+    }
+
+    @include breakpoints.media-above(lg) {
+      &.is-pulled-left,
+      &.is-pulled-right {
+        width: 50%;
+      }
+
+      &.is-outset,
+      &.is-pulled-left,
+      &.is-pulled-right {
+        margin-right: calc(-50% - 2rem);
+      }
+    }
+
+    figcaption {
+      color: var(--du-color-contrast-medium);
+      font-size: 0.75rem;
+      margin-top: 0.25rem;
+      text-align: left;
+    }
+
+    &.background-pattern {
+      background-repeat: repeat;
+
+      figcaption {
+        align-self: flex-end;
+        background-color: var(--du-color-background);
+        padding-top: 0.5rem;
+      }
+    }
+  }
+
+  .masonry-grid {
+    --masonry-col-max-w: 100vw;
+
+    @include breakpoints.media-above(sm) {
+      --masonry-col-max-w: 25vw;
+    }
+
+    figure {
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+  }
+}

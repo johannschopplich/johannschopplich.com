@@ -1,32 +1,27 @@
-type Breakpoint = "xs" | "sm" | "md" | "lg" | "xl";
+import { theme } from "@unocss/preset-mini";
 
-const breakpoints: Record<Breakpoint, number> = {
-  xs: 0,
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-};
+// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+const breakpoints = theme.breakpoints!;
 
 /**
  * Indicates if the viewport is above the given breakpoint
  */
-function isAbove(breakpoint: Breakpoint): boolean {
+function isAbove(breakpoint: string): boolean {
   if (!(breakpoint in breakpoints)) {
-    throw new Error(`${breakpoint} is not a valid breakpoint`);
+    throw new Error(`Unknown breakpoint "${breakpoint}"`);
   }
 
-  return matchMedia(`(min-width: ${breakpoints[breakpoint]}px)`).matches;
+  return matchMedia(`(min-width: ${breakpoints[breakpoint]})`).matches;
 }
 
 /**
  * Indicates if the viewport is below the given breakpoint
  */
-function isBelow(breakpoint: Breakpoint): boolean {
+function isBelow(breakpoint: string): boolean {
   return !isAbove(breakpoint);
 }
 
-export default () => ({
+export const useBreakpoints = () => ({
   breakpoints,
   isAbove,
   isBelow,

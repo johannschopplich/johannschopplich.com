@@ -1,36 +1,40 @@
 @use "duecss/abstracts/breakpoints";
 
 .navbar-link {
-  display: inline-flex;
-  align-items: center;
-
   @include breakpoints.media-below(md) {
-    border-bottom: 0.2em solid transparent;
+    text-decoration-line: underline;
+    text-decoration-color: transparent;
+    text-decoration-thickness: var(--du-decoration-width);
+    text-underline-offset: var(--du-decoration-width);
 
     &:focus,
     &:hover,
     &[aria-current] {
-      border-bottom-color: currentColor;
+      text-decoration-color: var(--du-color-accent);
     }
   }
 
   @include breakpoints.media-above(md) {
-    padding: 0.2em 0.4em;
+    &:hover {
+      color: currentColor;
+    }
 
     &::before {
       content: "";
       width: 0.5em;
       height: 0.5em;
       border-radius: 50%;
-      border: 1px solid var(--du-color-contrast-low);
-      margin-right: 0.4em;
+      background-color: var(--du-color-contrast-lower);
+      margin-right: 0.25em;
     }
 
     &:focus::before,
-    &:hover::before,
+    &:hover::before {
+      background-color: var(--du-color-accent);
+    }
+
     &[aria-current="page"]::before {
       background-color: currentColor;
-      border-color: currentColor;
     }
   }
 }

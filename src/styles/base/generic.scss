@@ -1,27 +1,14 @@
 @use "duecss/abstracts/breakpoints";
 
 a:not([class]),
-a.underlined {
+.underlined {
   text-decoration-line: underline;
   text-decoration-color: var(--du-color-accent);
-  text-decoration-thickness: max(2px, 0.1em);
-  text-underline-offset: max(2px, 0.1em);
+  text-decoration-thickness: var(--du-decoration-width);
+  text-underline-offset: var(--du-decoration-width);
 
   &:hover {
     text-decoration-color: currentColor;
-  }
-}
-
-code {
-  border-radius: 0.125em;
-}
-
-.due-title.is-intro {
-  font-size: var(--du-text-intro);
-  line-height: calc(1ex / 0.5);
-
-  @include breakpoints.media-above(md) {
-    line-height: calc(1ex / 0.6);
   }
 }
 
@@ -31,7 +18,6 @@ h2 a.underlined {
   text-decoration-color: var(--du-color-contrast-lower);
 }
 
-.text-uppercase {
-  text-transform: uppercase;
-  letter-spacing: 0.1ch;
+.text-hero {
+  font-size: clamp(var(--du-text-4xl), 6vw, var(--du-text-4xl) + 3rem);
 }

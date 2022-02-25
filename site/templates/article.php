@@ -5,7 +5,6 @@
 layout();
 
 snippet('text');
-snippet('comments');
 snippet('popular', [
   'query' => $kirby->collection('popularArticles'),
   'heading' => t('articles.popular')

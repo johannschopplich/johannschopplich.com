@@ -5,15 +5,11 @@
 layout();
 ?>
 
-<div class="section-bio due-pt-xl">
-  <div class="due-container-lg grid items-center gap-13 sm:grid-cols-[8fr_4fr] sm:due-pb-xl">
-    <div class="bio-content content">
-      <?= $page->profileText()->kt() ?>
-    </div>
-
+<div class="section-bio md:pt-5xl">
+  <div class="max-w-screen-lg grid items-center gap-5xl sm:gap-8xl sm:grid-cols-2 sm:pb-5xl sm:pr-lg md:pr-3xl">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="relative md:framed unselectable -mx-5 md:mx-0">
+        <figure class="relative md:framed unselectable">
           <svg class="drauu-canvas absolute t-0 l-0 w-full h-full z-10 hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"
@@ -23,7 +19,7 @@ layout();
           >
         </figure>
 
-        <div class="drauu-app due-mt-s hidden md:flex">
+        <div class="drauu-app mt-xs hidden md:flex md:ml-3xl">
           <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>
@@ -43,15 +39,21 @@ layout();
         </div>
       </div>
     <?php endif ?>
+
+    <div class="prose prose-bio px-lg sm:px-0">
+      <?= $page->profileText()->kt() ?>
+    </div>
   </div>
 </div>
 
-<div class="pb-13">
-  <div class="cv-container due-container-md">
-    <?php foreach ($page->bio()->toStructure() as $section): ?>
-      <div class="cv-content content">
-        <?= $section->text()->kt() ?>
-      </div>
-    <?php endforeach ?>
+<div class="pb-8xl">
+  <div class="content max-w-screen-lg">
+    <div class="border-t grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-2rem),1fr))]">
+      <?php foreach ($page->bio()->toStructure() as $section): ?>
+        <div class="prose prose-cv">
+          <?= $section->text()->kt() ?>
+        </div>
+      <?php endforeach ?>
+    </div>
   </div>
 </div>

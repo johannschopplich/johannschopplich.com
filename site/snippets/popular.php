@@ -4,35 +4,38 @@
 
 $year = null;
 ?>
-<div<?= attr(['class' => !$page->isHomePage() ? 'due-py-m' : null], ' ') ?>>
-  <div class="due-py-xl due-container-xl-full" data-theme-inverse>
-    <section class="due-container-lg">
-      <h2 class="due-title due-text-2 sm:due-text-1 text-accent due-mb-xl"><?= $heading ?></h2>
+<section class="content max-w-prose pb-8xl">
+  <h2 class="title text-xl text-accent mb-3xl"><?= $heading ?></h2>
 
-      <?php foreach ($query as $post): ?>
-        <?php /** @var \Kirby\Cms\Page $post */ ?>
-        <?php $postY = $post->published()->toDate('%Y') ?>
+  <?php foreach ($query as $post): ?>
+    <?php /** @var \Kirby\Cms\Page $post */ ?>
+    <?php $postY = $post->published()->toDate('%Y') ?>
 
-        <?php if ($postY !== $year): ?>
-          <div class="due-mt-xl due-mb-xs">
-            <h3 class="due-text-5 text-contrast-low"><?= $postY ?></h3>
-          </div>
-        <?php endif ?>
+    <?php if ($postY !== $year): ?>
+      <div class="mt-3xl mb-xs">
+        <h3 class="text-size-xl leading-none text-contrast-low"><?= $postY ?></h3>
+      </div>
+    <?php endif ?>
 
-        <a href="<?= $post->url() ?>" class="popular-article-link"<?php e($post->isActive() || $post->id() === $page->id(), ' aria-current="page"') ?>>
-          <p class="due-text-5"><?= $post->title()->escape() ?></p>
-          <?php if ($post->categories()->isNotEmpty()): ?>
-            <hr class="flex-grow bg-transparent border-t-1 border-dashed border-contrast-lower due-mx-xs invisible md:visible">
-            <p class="flex flex-wrap justify-start items-center space-x-1">
-              <?php foreach ($post->categories()->split() as $category): ?>
-                <span class="tag"><?= $category ?></span>
-              <?php endforeach ?>
-            </p>
-          <?php endif ?>
-        </a>
+    <a
+      href="<?= $post->url() ?>"
+      class="flex items-start gap-xs mb-xs"
+      <?php e($post->isActive() || $post->id() === $page->id(), 'aria-current="page"') ?>
+      style="--du-color-link-hover: var(--du-color-accent);"
+    >
+      <span class="font-heading<?php e($post->isActive() || $post->id() === $page->id(), ' text-accent') ?>">
+        <?= $post->title()->escape() ?>
+      </span>
+      <?php if ($post->categories()->isNotEmpty()): ?>
+        <hr class="border-contrast-medium invisible md:visible md:basis-1/4 md:mt-3">
+        <p class="flex-shrink-0 flex flex-wrap justify-start items-center space-x-1">
+          <?php foreach ($post->categories()->split() as $category): ?>
+            <span class="tag"><?= $category ?></span>
+          <?php endforeach ?>
+        </p>
+      <?php endif ?>
+    </a>
 
-        <?php $year = $postY ?>
-      <?php endforeach ?>
-    </section>
-  </div>
-</div>
+    <?php $year = $postY ?>
+  <?php endforeach ?>
+</section>

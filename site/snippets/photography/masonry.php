@@ -2,7 +2,7 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 ?>
-<div class="grid-masonry gap-8 sm:gap-5" style="--masonry-max-width: clamp(25rem, 25vw, 30rem);">
+<div class="masonry-grid gap-5xl sm:gap-lg" style="--masonry-col-max-w: clamp(25rem, 25vw, 30rem);">
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>
@@ -12,7 +12,7 @@
       ]) ?>
 
       <?php if ($image->caption()->isNotEmpty() && !$page->isHomePage()): ?>
-        <figcaption class="due-text-7 lh-heading text-contrast-medium text-center due-px-m due-py-xs">
+        <figcaption class="content py-2 text-contrast-medium text-size-xs font-heading leading-tight font-500 text-center uppercase tracking-[0.125ch]">
           <?= $image->caption() ?>
         </figcaption>
       <?php endif ?>

@@ -1,12 +1,8 @@
 <?php
 
 /** @var \Kirby\Cms\Page $page */ ?>
-<div class="due-py-xl">
-  <div class="due-container max-w-prose due-mb-xl">
-    <h1 class="text-contrast-higher font-heading due-text-hero font-700 leading-none">
-      <?= $page->title()->escape() ?>
-    </h1>
-
+<div class="py-8xl">
+  <div class="content max-w-prose pb-5xl">
     <?php if ($page->published()->exists() && $page->published()->isNotEmpty()) : ?>
       <p class="text-contrast-medium">
         <?php $format = $kirby->languageCode() === 'de' ? '%e. %B %Y' : '%e %B %Y' ?>
@@ -17,13 +13,17 @@
       </p>
     <?php endif ?>
 
-    <div class="due-mt-s">
+    <h1 class="title text-4xl font-900">
+      <?= $page->title()->escape() ?>
+    </h1>
+
+    <div class="mt-xs">
       <?= asset('assets/img/article-spacer.svg')->read() ?>
     </div>
   </div>
 
-  <div class="due-container max-w-prose">
-    <section class="content" <?= attr(['lang' => $textLanguageCode], ' ') ?>>
+  <div class="content max-w-prose">
+    <section class="prose" <?= attr(['lang' => $textLanguageCode], ' ') ?>>
       <?= $text ?>
 
       <?php if (

@@ -1,70 +1,59 @@
 @use "duecss/abstracts/breakpoints";
 
-.bio-content {
-  z-index: 1;
-
+.prose-bio {
   h2 {
-    font-size: var(--du-text-hero);
-    letter-spacing: 0;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  strong {
-    position: relative;
-    font-weight: inherit;
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: -5%;
-      left: -5%;
-      width: 110%;
-      height: 110%;
-      background-size: 100% 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    &:nth-child(1)::after {
-      background-image: url("/assets/img/highlight-1.svg");
-      [data-theme="dark"] & {
-        background-image: url("/assets/img/highlight-1-dark.svg");
-      }
-    }
-
-    &:nth-child(2)::after {
-      background-image: url("/assets/img/highlight-2.svg");
-      [data-theme="dark"] & {
-        background-image: url("/assets/img/highlight-2-dark.svg");
-      }
-    }
-
-    &:nth-child(3)::after {
-      background-image: url("/assets/img/highlight-3.svg");
-      [data-theme="dark"] & {
-        background-image: url("/assets/img/highlight-3-dark.svg");
-      }
-    }
+    font-size: var(--du-text-4xl);
+    font-weight: 900;
+    line-height: var(--du-line-height-tight);
   }
 }
 
-.cv-container {
-  display: grid;
-  column-gap: var(--du-space-xl);
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(calc(22ch - var(--du-space-xl)), 1fr)
-  );
-}
+.prose-cv {
+  p {
+    text-indent: 0;
+  }
 
-.cv-content {
   h2 {
-    font-size: var(--du-text-6);
-    font-weight: 500;
-    letter-spacing: 0.05em;
+    font-size: 0.875rem;
     text-transform: uppercase;
-    margin-top: var(--du-space-xl) !important;
-    margin-bottom: var(--du-space-xs) !important;
+    letter-spacing: 0.125ch;
+    margin-top: 3rem !important; // 5xl
+  }
+}
+
+.drauu-canvas {
+  cursor: crosshair;
+  touch-action: pinch-zoom;
+}
+
+.drauu-app {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+
+  button {
+    width: 2rem;
+    height: 2rem;
+    padding-top: 0.25em;
+
+    &.is-active {
+      border: 1px solid;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--du-color-contrast-lowest);
+    }
+  }
+
+  select {
+    background-color: transparent;
+    font-family: var(--du-font-family-heading);
+  }
+
+  .drauu-app-divider {
+    height: 1.5rem;
+    border-left: 1px solid var(--du-color-contrast-lowest);
   }
 }

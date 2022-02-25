@@ -4,7 +4,11 @@
 /** @var \Kirby\Cms\Page $page */
 ?>
 <!DOCTYPE html>
-<html class="due-var-color-primary due-var-color-accent" lang="<?= $kirby->languageCode() ?>">
+<html class="
+  var-color-primary
+  var-color-accent
+  var-color-accent-200
+" lang="<?= $kirby->languageCode() ?>">
 <head>
 
   <meta charset="utf-8">
@@ -42,11 +46,10 @@
   <?php endif ?>
 
   <?= css([
-    'assets/fonts/Inter.css',
-    'assets/fonts/UxumGrotesque.css'
+    'assets/fonts/CooperHewitt.css'
   ]) ?>
 
-  <link rel="preload" href="/assets/fonts/UxumGrotesque-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- <link rel="preload" href="/assets/fonts/Silverknife-BoldItalic.woff2" as="font" type="font/woff2" crossorigin> -->
 
   <script><?= asset('dist/assets/head.js')->read() ?></script>
 
@@ -54,9 +57,9 @@
 
 </head>
 
-<body data-template="<?= $page->intendedTemplate()->name() ?>">
+<body class="min-h-$h-screen" data-template="<?= $page->intendedTemplate()->name() ?>">
 
-  <header class="due-container-fluid due-pt-m">
+  <header class="sticky top-0 z-10 content py-2 border-b bg-theme-background md:py-xs">
     <?php snippet('navigation') ?>
   </header>
 
