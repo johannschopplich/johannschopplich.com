@@ -27,11 +27,6 @@
 }
 
 .drauu-app {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.25rem;
-
   button {
     width: 2rem;
     height: 2rem;
@@ -48,12 +43,12 @@
   }
 
   select {
-    background-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
     font-family: var(--du-font-family-heading);
-  }
-
-  .drauu-app-divider {
-    height: 1.5rem;
-    border-left: 1px solid var(--du-color-contrast-lowest);
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+      no-repeat right center / 1em;
+    border-radius: 0;
+    padding-right: 1em;
   }
 }

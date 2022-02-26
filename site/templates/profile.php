@@ -19,7 +19,7 @@ layout();
           >
         </figure>
 
-        <div class="drauu-app mt-xs hidden md:flex md:ml-3xl">
+        <div class="drauu-app flex flex-wrap items-center gap-1 mt-xs hidden md:flex md:ml-3xl">
           <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>
