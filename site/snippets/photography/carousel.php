@@ -3,7 +3,7 @@
 /** @var \Kirby\Cms\Files $query */
 ?>
 <div
-  class="w-full flex gap-xs snap-x snap-mandatory overflow-x-auto md:gap-lg"
+  class="w-full flex gap-xs snap-x snap-mandatory overflow-x-auto"
   style="--cell: clamp(35vh, 50vw, 75vh);"
 >
   <?php foreach ($query as $image): ?>
