@@ -12,7 +12,7 @@ export default defineConfig({
     content: "px-lg md:px-3xl",
     "content-centered": "relative mx-auto w-[calc(100%-2.25rem)]",
     "action-button":
-      "text-size-xs font-heading leading-heading font-500 text-center uppercase tracking-[0.125ch]",
+      "p-2 -m-2 text-size-xs font-heading leading-heading font-500 text-center uppercase tracking-[0.125ch]",
     tag: "px-2 py-1 border-1 border-theme-base text-accent text-xs font-heading font-500 leading-heading rounded-full whitespace-nowrap",
   },
   presets: [
