@@ -43,9 +43,11 @@ layout();
     <?php endif ?>
 
     <div class="border-t pt-lg">
-      <a href="<?= $page->parent()->url() ?>" class="-ml-1 action-button">
-        <span class="i-mdi-arrow-left mr-1"></span><?= t('project.allWorks') ?>
-      </a>
+      <div class="-ml-1">
+        <a href="<?= $page->parent()->url() ?>" class="action-button">
+          <span class="i-mdi-arrow-left mr-1" aria-hidden="true"></span><?= t('project.allWorks') ?>
+        </a>
+      </div>
     </div>
   </div>
 </div>

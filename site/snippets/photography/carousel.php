@@ -20,7 +20,7 @@
     <div class="relative h-$cell w-[min(65vw,25rem)] flex items-center justify-center border">
       <a href="<?= $query->first()->parent()->url() ?>" class="action-button">
         <span class="absolute inset-0" aria-hidden="true"></span>
-        <?= t('photography.morePhotos') ?><span class="i-mdi-arrow-right ml-1"></span>
+        <?= t('photography.morePhotos') ?><span class="i-mdi-arrow-right ml-1" aria-hidden="true"></span>
       </a>
     </div>
   </div>
