@@ -10,12 +10,10 @@
     "format": "prettier \"src/**/*.{css,scss,ts}\" --write --ignore-path .gitignore"
   },
   "dependencies": {
-    "@splidejs/splide": "^3.6.12",
-    "@unocss/preset-mini": "^0.26.2",
     "animate.css": "^4.1.1",
     "animere": "^1.16.3",
     "drauu": "^0.2.1",
-    "duecss": "^0.22.7",
+    "duecss": "^0.22.8",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
@@ -23,17 +21,18 @@
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
-    "@unocss/cli": "^0.26.2",
+    "@unocss/cli": "^0.26.3",
+    "@unocss/preset-mini": "^0.26.3",
     "concurrently": "^7.0.0",
     "esbuild": "^0.14.23",
-    "eslint": "^8.9.0",
+    "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.4.0",
     "postcss": "^8.4.7",
     "prettier": "^2.5.1",
     "sass": "^1.49.9",
     "shx": "^0.3.4",
     "typescript": "^4.5.5",
-    "unocss": "^0.26.2",
+    "unocss": "^0.26.3",
     "vite": "^2.8.4",
     "vite-plugin-full-reload": "^1.0.0"
   }
