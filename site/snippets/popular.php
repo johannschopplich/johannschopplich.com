@@ -5,7 +5,9 @@
 $year = null;
 ?>
 <section class="content max-w-prose pb-8xl">
-  <h2 class="title text-xl text-accent mb-3xl"><?= $heading ?></h2>
+  <h2 class="title text-xl text-accent mb-3xl">
+    <?= $heading ?>
+  </h2>
 
   <?php foreach ($query as $post): ?>
     <?php /** @var \Kirby\Cms\Page $post */ ?>
