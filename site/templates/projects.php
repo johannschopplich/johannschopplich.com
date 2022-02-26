@@ -11,7 +11,7 @@ layout();
   <div class="border-t pt-xl">
     <?php foreach ($children = $page->children()->listed() as $project): ?>
       <?php /** @var \Kirby\Cms\Page $project */ ?>
-      <div class="project-item<?php e(!$project->isLast($children), ' mb-5xl') ?>"<?= attr([
+      <div class="group relative<?php e(!$project->isLast($children), ' mb-5xl') ?>"<?= attr([
         'data-animere' => !$project->isFirst($children) ? 'fadeInUpSmall' : null,
         'data-animere-duration' => '500ms'
       ], ' ') ?>>
@@ -27,7 +27,7 @@ layout();
         </h2>
 
         <?php if ($image = $project->thumbnail()->toFile()): ?>
-          <figure class="aspect-ratio-4:3 -mx-lg md:mx-0">
+          <figure class="aspect-ratio-4:3 -mx-lg md:mx-0 group-hover:shadow-frame">
             <?php snippet('helpers/img', [
               'image' => $image,
               'class' => 'object-cover h-full'

@@ -2,6 +2,11 @@ import { defineConfig, presetUno, presetIcons } from "unocss";
 import { presetDue } from "duecss";
 
 export default defineConfig({
+  theme: {
+    boxShadow: {
+      frame: "var(--du-shadow-frame)",
+    },
+  },
   safelist: ["w-full", "aspect-ratio-16/9"],
   shortcuts: {
     content: "px-lg md:px-3xl",
@@ -10,14 +15,6 @@ export default defineConfig({
       "text-size-xs font-heading leading-heading font-500 text-center uppercase tracking-[0.125ch]",
     tag: "px-2 py-1 border-1 border-theme-base text-accent text-xs font-heading font-500 leading-heading rounded-full whitespace-nowrap",
   },
-  rules: [
-    [
-      "framed",
-      {
-        "box-shadow": "var(--du-shadow-frame)",
-      },
-    ],
-  ],
   presets: [
     presetUno(),
     presetIcons({
