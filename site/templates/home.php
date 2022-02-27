@@ -9,7 +9,7 @@ layout();
 
 <div class="content max-w-screen-lg">
   <div class="">
-    <h2 class="title text-2xl text-accent text-center mb-xl">
+    <h2 class="title text-2xl text-accent text-center mb-lg">
       <?= t('articles.latest') ?>
     </h2>
 
@@ -39,7 +39,7 @@ layout();
   <div class="content max-w-screen-lg">
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-    <h2 class="title text-2xl text-accent text-center mb-xl">
+    <h2 class="title text-2xl text-accent text-center mb-lg">
       <?= t('photography') ?>
     </h2>
   </div>
