@@ -14,7 +14,7 @@ layout();
       'data-animere' => !$project->isFirst($children) ? 'fadeInUpSmall' : null,
       'data-animere-duration' => '500ms'
     ], ' ') ?>>
-      <p class="text-contrast-medium" style="word-spacing: 0.25ch;">
+      <p class="text-contrast-medium word-spacing-[0.5ch]">
         <?= $project->subtitle()->escape() ?>
       </p>
 
