@@ -10,7 +10,7 @@ layout();
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
         <figure class="relative md:shadow-frame unselectable">
-          <svg class="drauu-canvas absolute t-0 l-0 w-full h-full z-10 hidden md:block"></svg>
+          <svg id="drauu-canvas" class="cursor-crosshair touch-pinch-zoom absolute t-0 l-0 w-full h-full z-10 hidden md:block"></svg>
           <img
             src="<?= $image->url() ?>"
             width="<?= $image->width() ?>"
@@ -19,7 +19,7 @@ layout();
           >
         </figure>
 
-        <div class="drauu-app flex-wrap items-center gap-1 mt-xs hidden md:flex md:ml-3xl">
+        <div class="drauu-controls flex-wrap items-center gap-1 mt-xs hidden md:flex md:ml-3xl">
           <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>

@@ -39,7 +39,7 @@ export default async () => {
 
   const { createDrauu } = await import("drauu");
   const drauu = createDrauu({
-    el: ".drauu-canvas",
+    el: "#drauu-canvas",
     brush: {
       mode: "stylus",
       color: "hsl(357, 43%, 63%)",

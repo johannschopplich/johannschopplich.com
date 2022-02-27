@@ -63,7 +63,7 @@
 
 <body class="min-h-$h-screen" data-template="<?= $page->intendedTemplate()->name() ?>">
 
-  <header class="sticky top-0 z-10 content py-2 border-b bg-theme-background md:py-xs">
+  <header class="sticky top-0 z-20 content py-2 border-b bg-theme-background md:py-xs">
     <?php snippet('navigation') ?>
   </header>
 
