@@ -7,19 +7,12 @@ icon: 👤
 columns:
   - width: 2/3
     sections:
-      main:
+      text:
         type: fields
         fields:
-          profileText:
-            label:
-              de: Profiltext
-              en: Profile Text
-            type: textarea
-            font: monospace
-          bio:
-            label:
-              de: Inhalt
-              en: Content
+          bio: fields/blocks
+          cv:
+            label: Curriculum Vitae
             type: structure
             fields:
               text:

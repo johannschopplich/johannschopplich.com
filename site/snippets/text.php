@@ -30,7 +30,7 @@
         $page->parent() !== null &&
         $page->parent()->template()->name() === 'articles'
       ) : ?>
-        <?= $page->parent()->articleFooter()->kt() ?>
+        <?= $page->parent()->articleFooter()->toBlocks() ?>
       <?php endif ?>
     </section>
   </div>

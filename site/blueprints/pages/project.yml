@@ -10,7 +10,7 @@ status:
 columns:
   - width: 2/3
     sections:
-      main:
+      text:
         type: fields
         fields:
           subtitle:

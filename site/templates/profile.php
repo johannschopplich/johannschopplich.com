@@ -41,7 +41,7 @@ layout();
     <?php endif ?>
 
     <div class="prose prose-bio px-lg sm:px-0">
-      <?= $page->profileText()->kt() ?>
+      <?= $page->bio()->toBlocks() ?>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@ layout();
 <div class="pb-8xl">
   <div class="content max-w-screen-lg">
     <div class="border-t grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-2rem),1fr))]">
-      <?php foreach ($page->bio()->toStructure() as $section): ?>
+      <?php foreach ($page->cv()->toStructure() as $section): ?>
         <div class="prose prose-cv">
           <?= $section->text()->kt() ?>
         </div>

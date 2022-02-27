@@ -22,13 +22,14 @@ columns:
               en: Title (Override)
             type: text
             icon: title
+            placeholder: "{{ page.title }} – {{ site.title }}"
             width: 2/3
           categories:
             label:
               de: Kategorien
               en: Categories
             type: text
-            icon: code
+            icon: tag
             width: 1/3
           published:
             label:
@@ -65,16 +66,17 @@ columns:
         fields:
           description:
             label:
-              de: Beschreibung
-              en: Description
+              de: Beschreibung (Überschreiben)
+              en: Description (Override)
             type: textarea
-            font: monospace
             buttons: false
-            icon: text
+            help:
+              de: Eine kurze Beschreibung der Seite, die von Suchmaschinen unter dem Titel angezeigt wird.
+              en: A short description of the page that will be displayed underneath the title by search engines.
 
   - width: 2/3
     sections:
-      main: sections/main
+      text: sections/kirbytext
 
   - width: 1/3
     sticky: true

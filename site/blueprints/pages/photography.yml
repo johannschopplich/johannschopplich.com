@@ -17,7 +17,7 @@ tabs:
     columns:
       - width: 2/3
         sections:
-          main: sections/blocks
+          text: sections/blocks
           gallery:
             type: fields
             fields:

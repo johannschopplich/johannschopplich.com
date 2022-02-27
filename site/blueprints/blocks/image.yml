@@ -45,5 +45,5 @@ fields:
     type: select
     options:
       is-outset: Outset
-      is-pulled-left: Left-aligned
-      is-pulled-right: Right-aligned
+      is-pulled-left: Left-Aligned
+      is-pulled-right: Right-Aligned

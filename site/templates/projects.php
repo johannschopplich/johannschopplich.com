@@ -5,7 +5,7 @@
 layout();
 ?>
 
-<?php snippet('intro', ['title' => $page->text()->kti()]) ?>
+<?php snippet('intro', ['title' => $page->text()->escape()]) ?>
 
 <div class="content max-w-screen-lg pb-8xl">
   <div class="border-t pt-xl">

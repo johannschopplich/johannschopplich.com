@@ -49,11 +49,17 @@ tabs:
     label:
       de: Seite
       en: Page
-    icon: page
+    icon: draft
     columns:
       - width: 2/3
         sections:
-          main: sections/main
+          text:
+            type: fields
+            fields:
+              text:
+                label: Text
+                type: writer
+                inline: true
 
       - width: 1/3
         sections:

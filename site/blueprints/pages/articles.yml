@@ -42,18 +42,14 @@ tabs:
     columns:
       - width: 2/3
         sections:
-          main:
-            extends: sections/main
-          comments:
+          footer:
             type: fields
             fields:
               articleFooter:
+                extends: fields/blocks
                 label:
                   de: Artikelfußzeile
                   en: Article Footer
-                type: textarea
-                font: monospace
-                size: small
 
       - width: 1/3
         sections:
