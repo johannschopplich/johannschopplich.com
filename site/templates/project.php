@@ -38,7 +38,7 @@ layout();
   <div class="content max-w-prose">
     <?php if ($page->text()->isNotEmpty()): ?>
       <div class="prose mb-5xl">
-        <?= $page->text()->kirbytext() ?>
+        <?= $page->text()->toBlocks() ?>
       </div>
     <?php endif ?>
 

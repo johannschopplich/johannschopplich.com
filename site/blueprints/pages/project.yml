@@ -39,11 +39,7 @@ columns:
             type: files
             layout: cards
             translate: false
-          text:
-            label: Text
-            type: textarea
-            font: monospace
-            size: small
+          text: fields/blocks
 
   - width: 1/3
     sections:
