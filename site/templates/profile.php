@@ -24,15 +24,9 @@ layout();
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>
           <select id="size" title="<?= t('drauu.size') ?>">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3" selected>3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
+            <?php foreach (range(1, 9) as $number): ?>
+              <option value="<?= $number ?>"<?php e($number === 3, ' selected') ?>><?= $number ?></option>
+            <?php endforeach ?>
           </select>
           <button id="clear" class="ml-auto" title="<?= t('drauu.clear') ?>">🗑</button>
           <button id="download" title="Download">📥</button>
@@ -48,7 +42,7 @@ layout();
 
 <div class="pb-8xl">
   <div class="content max-w-screen-lg">
-    <div class="border-t grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-2rem),1fr))]">
+    <div class="border-t grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]">
       <?php foreach ($page->cv()->toStructure() as $section): ?>
         <div class="prose prose-cv">
           <?= $section->text()->kt() ?>
