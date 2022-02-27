@@ -5,7 +5,7 @@
 layout();
 ?>
 
-<div class="pt-8xl">
+<div class="pt-8xl pb-5xl">
   <div class="content max-w-screen-lg pb-5xl">
     <p class="text-contrast-medium">
       <?= $page->subtitle()->escape() ?>
@@ -34,7 +34,7 @@ layout();
   </div>
 </div>
 
-<div class="py-8xl">
+<div class="pb-8xl">
   <div class="content max-w-prose">
     <?php if ($page->text()->isNotEmpty()): ?>
       <div class="prose mb-5xl">
