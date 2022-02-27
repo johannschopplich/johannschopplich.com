@@ -27,7 +27,7 @@ layout();
         </h2>
 
         <?php if ($image = $project->thumbnail()->toFile()): ?>
-          <figure class="aspect-ratio-4:3 -mx-lg md:mx-0 group-hover:shadow-frame">
+          <figure class="aspect-ratio-4/3 -mx-lg md:mx-0 group-hover:shadow-frame">
             <?php snippet('helpers/img', [
               'image' => $image,
               'class' => 'object-cover h-full'
