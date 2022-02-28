@@ -8,7 +8,7 @@
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
-    <div class="cursor-$cursor shrink-0 snap-always snap-center first:snap-start">
+    <div class="shrink-0 snap-always snap-center first:snap-start">
       <?php snippet('helpers/img', [
         'image' => $image,
         'class' => 'pointer-events-none h-$cell w-auto object-contain'
