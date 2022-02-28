@@ -16,7 +16,7 @@
     </div>
   <?php endforeach ?>
 
-  <div class="slider-grap-none shrink-0 snap-always snap-end pr-xs">
+  <div class="slider-ignore shrink-0 snap-always snap-end pr-xs">
     <div class="relative h-$cell w-[min(65vw,25rem)] flex items-center justify-center border">
       <a href="<?= $query->first()->parent()->url() ?>" class="action-button">
         <span class="absolute inset-0" aria-hidden="true"></span>

@@ -23,7 +23,7 @@ export const install = () => {
 
   slider.addEventListener("mousedown", (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (target.closest(".slider-grap-none")) return;
+    if (target.closest(".slider-ignore")) return;
 
     disableScroll();
     startX = e.pageX - slider.offsetLeft;
