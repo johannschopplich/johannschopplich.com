@@ -23,7 +23,7 @@ layout();
   <div class="content max-w-screen-lg">
     <div class="space-y-lg md:space-y-3xl">
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
-        <figure>
+        <figure class="content-breakout">
           <?php snippet('helpers/img', [
             'image' => $image,
             'zoomable' => true
