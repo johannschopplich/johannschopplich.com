@@ -9,13 +9,13 @@ export const install = () => {
   let startX: number;
   let scrollLeft: number;
 
-  const disableScroll = () => {
+  const disableSnap = () => {
     isDown = true;
     slider.style.setProperty("--un-scroll-snap-strictness", "none");
     slider.style.setProperty("--cursor", "grabbing");
   };
 
-  const enableScroll = () => {
+  const enableSnap = () => {
     isDown = false;
     slider.style.setProperty("--un-scroll-snap-strictness", "mandatory");
     slider.style.setProperty("--cursor", "grab");
@@ -23,15 +23,15 @@ export const install = () => {
 
   slider.addEventListener("mousedown", (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    if (target.closest(".slider-ignore")) return;
+    if (target.closest("[data-slider-ignore]")) return;
 
-    disableScroll();
+    disableSnap();
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
   });
 
-  slider.addEventListener("mouseleave", enableScroll);
-  slider.addEventListener("mouseup", enableScroll);
+  slider.addEventListener("mouseleave", enableSnap);
+  slider.addEventListener("mouseup", enableSnap);
 
   slider.addEventListener("mousemove", (e: MouseEvent) => {
     if (!isDown) return;

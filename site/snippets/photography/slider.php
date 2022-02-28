@@ -8,7 +8,7 @@
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
-    <div class="cursor-$cursor shrink-0 snap-always snap-center">
+    <div class="cursor-$cursor shrink-0 snap-always snap-center first:snap-start">
       <?php snippet('helpers/img', [
         'image' => $image,
         'class' => 'pointer-events-none h-$cell w-auto object-contain'
@@ -16,7 +16,7 @@
     </div>
   <?php endforeach ?>
 
-  <div class="slider-ignore shrink-0 snap-always snap-end pr-xs">
+  <div class="shrink-0 snap-always snap-end pr-xs" data-slider-ignore>
     <div class="relative h-$cell w-[min(65vw,25rem)] flex items-center justify-center border">
       <a href="<?= $query->first()->parent()->url() ?>" class="action-button">
         <span class="absolute inset-0" aria-hidden="true"></span>
