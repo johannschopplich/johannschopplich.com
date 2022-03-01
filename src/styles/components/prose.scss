@@ -79,19 +79,9 @@
       line-height: 1.25;
       font-size: 0.75rem;
       font-weight: 500;
-      margin-top: 0.25rem;
       padding: 0 3px 0.25rem;
+      margin-top: calc(0.25rem + 3px);
       text-align: left;
-    }
-
-    &.background-pattern {
-      background-repeat: repeat;
-
-      figcaption {
-        align-self: flex-end;
-        background-color: var(--du-color-background);
-        padding-top: 0.5rem;
-      }
     }
   }
 
