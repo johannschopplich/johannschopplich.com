@@ -86,10 +86,13 @@
   }
 
   .masonry-grid {
-    --masonry-col-max-w: 100vw;
+    --masonry-col-max-w: 40vw;
+    gap: 1rem;
 
-    @include breakpoints.media-above(sm) {
-      --masonry-col-max-w: 25vw;
+    figure {
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 }
