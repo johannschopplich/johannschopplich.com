@@ -66,12 +66,9 @@ export default async () => {
     document.body.removeChild(el);
   });
 
-  $("size")?.addEventListener(
-    "input",
-    (evt) =>
-      // @ts-expect-error: event target is an HTML element
-      (drauu.brush.size = +evt.target.value)
-  );
+  $("size")?.addEventListener("input", (evt) => {
+    drauu.brush.size = +(evt.target as HTMLSelectElement).value;
+  });
 
   const modes: { el: HTMLElement; brush: Partial<Brush> }[] = [
     { el: $("m-stylus")!, brush: { mode: "stylus" } },
