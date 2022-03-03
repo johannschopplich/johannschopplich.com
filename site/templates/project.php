@@ -45,7 +45,7 @@ layout();
     <div class="border-t pt-lg">
       <div class="-ml-1">
         <a href="<?= $page->parent()->url() ?>" class="action-button">
-          <span class="i-mdi-arrow-left mr-1" aria-hidden="true"></span><?= t('project.allWorks') ?>
+          <span class="i-bx-left-arrow-alt mr-1" aria-hidden="true"></span><?= t('project.allWorks') ?>
         </a>
       </div>
     </div>

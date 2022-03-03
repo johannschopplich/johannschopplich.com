@@ -21,7 +21,7 @@ layout();
 
     <div class="text-center mt-lg">
       <a href="<?= page('blog')->url() ?>" class="action-button">
-        <?= t('articles.more') ?><span class="i-mdi-arrow-right ml-1" aria-hidden="true"></span>
+        <?= t('articles.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
       </a>
     </div>
   </div>
@@ -49,7 +49,7 @@ layout();
   <div class="content max-w-screen-lg pb-8xl">
     <div class="text-center mt-lg">
       <a href="<?= $photography->url() ?>" class="action-button">
-        <?= t('photography.morePhotos') ?><span class="i-mdi-arrow-right ml-1" aria-hidden="true"></span>
+        <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
       </a>
     </div>
   </div>

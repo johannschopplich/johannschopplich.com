@@ -4,9 +4,9 @@
   style="--du-color-link: var(--du-color-accent); --du-color-link-hover: var(--du-color-text);"
 >
   <?php if ($pagination->hasPrevPage()): ?>
-    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-mdi-arrow-left" aria-label="Previous page"></a>
+    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-bx-left-arrow-alt" aria-label="Previous page"></a>
   <?php else: ?>
-    <span class="mr-auto text-contrast-low i-mdi-arrow-left" aria-disabled="true"></span>
+    <span class="mr-auto text-contrast-low i-bx-left-arrow-alt" aria-disabled="true"></span>
   <?php endif ?>
 
   <div class="flex space-x-1">
@@ -33,8 +33,8 @@
   </div>
 
   <?php if ($pagination->hasNextPage()): ?>
-    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-mdi-arrow-right" aria-label="Next page"></a>
+    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-bx-right-arrow-alt" aria-label="Next page"></a>
   <?php else: ?>
-    <span class="ml-auto text-contrast-lower i-mdi-arrow-right" aria-disabled="true"></span>
+    <span class="ml-auto text-contrast-lower i-bx-right-arrow-alt" aria-disabled="true"></span>
   <?php endif ?>
 </nav>
