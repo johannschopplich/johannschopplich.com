@@ -75,18 +75,17 @@ export default async () => {
     drauu.brush.size = +(evt.target as HTMLSelectElement).value;
   });
 
-  const modes: { el: HTMLElement; brush: Partial<Brush> }[] = [
-    { el: $("m-stylus")!, brush: { mode: "stylus" } },
-    { el: $("m-eraser")!, brush: { mode: "eraseLine" } },
-    { el: $("m-draw")!, brush: { mode: "draw" } },
-    { el: $("m-line")!, brush: { mode: "line" } },
+  const modes: { el?: HTMLElement | null; brush: Partial<Brush> }[] = [
+    { el: $("m-stylus"), brush: { mode: "stylus" } },
+    { el: $("m-eraser"), brush: { mode: "eraseLine" } },
+    { el: $("m-draw"), brush: { mode: "draw" } },
+    { el: $("m-line"), brush: { mode: "line" } },
   ];
 
   for (const { el, brush } of modes) {
     el?.addEventListener("click", () => {
-      modes.forEach(({ el }) => el.classList.remove("is-active"));
+      modes.forEach(({ el }) => el?.classList.remove("is-active"));
       el.classList.add("is-active");
-      // Object.assign(drauu.brush, brush);
       drauu.brush.arrowEnd = brush.arrowEnd;
       drauu.mode = brush.mode!;
     });
