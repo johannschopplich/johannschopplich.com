@@ -5,7 +5,7 @@
     </svg>
   </a>
 
-  <div class="grid grid-cols-[1fr_auto] sm:grid-cols-[1fr_auto_auto] sm:gap-lg">
+  <div class="grid gap-1 grid-cols-[1fr_auto] sm:grid-cols-[1fr_auto_auto] sm:gap-lg">
     <div class="flex items-center gap-xs font-500">
       <p>© <?= date('Y') ?> Johann Schopplich</p>
       <a href="https://www.instagram.com/johannschopplich/" class="i-fa-brands-instagram" aria-label="Instagram"></a>
