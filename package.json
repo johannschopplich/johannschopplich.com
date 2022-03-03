@@ -13,7 +13,7 @@
     "animate.css": "^4.1.1",
     "animere": "^1.16.3",
     "drauu": "^0.3.0",
-    "duecss": "^0.23.3",
+    "duecss": "^0.23.4",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
