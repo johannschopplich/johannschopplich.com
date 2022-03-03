@@ -33,6 +33,11 @@ const registerKeyboardShortcuts = (drauu: Drauu) => {
   });
 };
 
+const getAccentColor = () =>
+  getComputedStyle(document.documentElement).getPropertyValue(
+    "--du-color-accent"
+  );
+
 export default async () => {
   const { isBelow } = useBreakpoints();
   if (isBelow("md")) return;
@@ -42,7 +47,7 @@ export default async () => {
     el: "#drauu-canvas",
     brush: {
       mode: "stylus",
-      color: "hsl(357, 43%, 63%)",
+      color: getAccentColor(),
       size: 3,
     },
   });
