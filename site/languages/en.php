@@ -23,6 +23,7 @@ return [
         'feed.title' => 'Johann Schopplich’s Latest Articles',
         'feed.description' => 'Receive my latest posts when they come out.',
         'drauu.stylus' => 'Stylus',
+        'drauu.eraser' => 'Eraser',
         'drauu.draw' => 'Draw',
         'drauu.line' => 'Line',
         'drauu.size' => 'Stroke Width',

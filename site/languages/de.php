@@ -23,6 +23,7 @@ return [
         'feed.title' => 'Johann Schopplichs jüngste Artikel',
         'feed.description' => 'Empfange meine neuesten Beiträge, sobald sie herauskommen.',
         'drauu.stylus' => 'Stift',
+        'drauu.eraser' => 'Radierer',
         'drauu.draw' => 'Frei Hand',
         'drauu.line' => 'Linie',
         'drauu.size' => 'Strichstärke',

@@ -77,6 +77,7 @@ export default async () => {
 
   const modes: { el: HTMLElement; brush: Partial<Brush> }[] = [
     { el: $("m-stylus")!, brush: { mode: "stylus" } },
+    { el: $("m-eraser")!, brush: { mode: "eraseLine" } },
     { el: $("m-draw")!, brush: { mode: "draw" } },
     { el: $("m-line")!, brush: { mode: "line" } },
   ];
@@ -85,7 +86,9 @@ export default async () => {
     el?.addEventListener("click", () => {
       modes.forEach(({ el }) => el.classList.remove("is-active"));
       el.classList.add("is-active");
-      Object.assign(drauu.brush, brush);
+      // Object.assign(drauu.brush, brush);
+      drauu.brush.arrowEnd = brush.arrowEnd;
+      drauu.mode = brush.mode!;
     });
   }
 };
