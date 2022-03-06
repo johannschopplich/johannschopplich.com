@@ -72,17 +72,22 @@
         margin-right: calc(-50% - 2rem);
       }
     }
+  }
 
-    figcaption {
-      color: var(--du-color-contrast-medium);
-      font-family: var(--du-font-family-heading);
-      line-height: 1.25;
-      font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0 3px 0.25rem;
-      margin-top: calc(0.25rem + 3px);
-      text-align: left;
-    }
+  figcaption {
+    color: var(--du-color-contrast-medium);
+    font-family: var(--du-font-family-heading);
+    line-height: 1.25;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0 3px 0.25rem;
+    margin-top: calc(0.25rem + 3px);
+    text-align: left;
+  }
+
+  pre,
+  code {
+    background-color: var(--du-color-contrast-lowest);
   }
 
   .masonry-grid {
