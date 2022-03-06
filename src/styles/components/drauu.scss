@@ -1,26 +1,3 @@
-@use "duecss/abstracts/breakpoints";
-
-.prose-bio {
-  h2 {
-    font-size: var(--du-text-4xl);
-    line-height: var(--du-line-height-heading);
-    font-weight: 900;
-  }
-}
-
-.prose-cv {
-  p {
-    text-indent: 0;
-  }
-
-  h2 {
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.125ch;
-    margin-top: 3rem !important; // 5xl
-  }
-}
-
 .drauu-controls {
   button {
     width: 2rem;

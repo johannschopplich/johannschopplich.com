@@ -35,18 +35,36 @@ layout();
       </div>
     <?php endif ?>
 
-    <div class="prose prose-bio px-lg sm:px-0">
-      <?= $page->bio()->toBlocks() ?>
+    <div class="prose px-lg sm:px-0">
+      <?php foreach ($page->bio()->toBlocks() as $block): ?>
+        <?php /** @var \Kirby\Cms\Block $block */ ?>
+        <?php if ($block->type() === 'heading'): ?>
+          <h1 class="text-size-4xl leading-heading font-900"><?= $block->text() ?></h1>
+        <?php else: ?>
+          <?= $block ?>
+        <?php endif ?>
+      <?php endforeach ?>
     </div>
   </div>
 </div>
 
 <div class="pb-8xl">
   <div class="content max-w-screen-lg">
-    <div class="border-t grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]">
-      <?php foreach ($page->cv()->toStructure() as $section): ?>
-        <div class="prose prose-cv">
-          <?= $section->text()->kt() ?>
+    <div class="pt-5xl border-t">
+      <?php foreach ($page->cv()->toLayouts() as $layout): ?>
+        <div class="grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]">
+          <?php foreach ($layout->columns() as $column): ?>
+            <div class="prose">
+              <?php foreach ($column->blocks() as $block): ?>
+                <?php /** @var \Kirby\Cms\Block $block */ ?>
+                <?php if ($block->type() === 'heading'): ?>
+                  <h2 class="text-sm uppercase tracking-[0.125ch]"><?= $block->text() ?></h2>
+                <?php else: ?>
+                  <div class="children-[p]:indent-0"><?= $block ?></div>
+                <?php endif ?>
+              <?php endforeach ?>
+            </div>
+          <?php endforeach ?>
         </div>
       <?php endforeach ?>
     </div>

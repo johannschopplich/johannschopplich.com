@@ -13,12 +13,16 @@ columns:
           bio: fields/blocks
           cv:
             label: Curriculum Vitae
-            type: structure
-            fields:
-              text:
-                label: Text
-                type: textarea
-                font: monospace
+            type: layout
+            layouts:
+              - "1/1"
+              - "1/2, 1/2"
+              - "1/3, 1/3, 1/3"
+            fieldsets:
+              - heading
+              - text
+              - line
+              - code
 
   - width: 1/3
     sections:
