@@ -54,13 +54,13 @@ layout();
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div class="grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]">
           <?php foreach ($layout->columns() as $column): ?>
-            <div class="prose">
+            <div class="prose children-[p]:indent-0">
               <?php foreach ($column->blocks() as $block): ?>
                 <?php /** @var \Kirby\Cms\Block $block */ ?>
                 <?php if ($block->type() === 'heading'): ?>
                   <h2 class="text-sm uppercase tracking-[0.125ch]"><?= $block->text() ?></h2>
                 <?php else: ?>
-                  <div class="children-[p]:indent-0"><?= $block ?></div>
+                  <?= $block ?>
                 <?php endif ?>
               <?php endforeach ?>
             </div>
