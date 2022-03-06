@@ -52,7 +52,7 @@ layout();
   <div class="content max-w-screen-lg">
     <div class="pt-5xl border-t">
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
-        <div class="grid gap-x-3xl grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]">
+        <div class="grid gap-x-3xl gap-y-8 grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]">
           <?php foreach ($layout->columns() as $column): ?>
             <div class="prose children-[p]:indent-0">
               <?php foreach ($column->blocks() as $block): ?>
