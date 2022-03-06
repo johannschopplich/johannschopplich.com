@@ -2,7 +2,7 @@
 
 return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Page $page) {
     $textLanguageCode = null;
-    $text = $page->text();
+    $text = $page->text()->toBlocks();
 
     if ($text->isEmpty()) {
         $textLanguageCode = $kirby
@@ -13,10 +13,9 @@ return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Page $page) {
 
         $text = $page
             ->content($textLanguageCode)
-            ->text();
+            ->text()
+            ->toBlocks();
     }
-
-    $text = $text->kt();
 
     return compact('textLanguageCode', 'text');
 };
