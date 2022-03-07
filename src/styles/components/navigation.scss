@@ -1,6 +1,9 @@
 @use "duecss/abstracts/breakpoints";
 
 .navbar-link {
+  display: flex;
+  align-items: center;
+
   @include breakpoints.media-below(md) {
     text-decoration-line: underline;
     text-decoration-color: transparent;
