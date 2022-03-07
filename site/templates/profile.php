@@ -5,8 +5,8 @@
 layout();
 ?>
 
-<div class="section-bio md:pt-5xl">
-  <div class="max-w-screen-lg pb-5xl grid gap-5xl sm:grid-cols-2 sm:gap-6xl sm:pr-lg md:pr-3xl">
+<div class="pb-5xl md:pt-5xl">
+  <div class="max-w-screen-lg grid gap-5xl sm:grid-cols-2 sm:gap-6xl sm:pr-lg md:pr-3xl">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
         <figure class="relative md:shadow-frame unselectable">
