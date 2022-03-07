@@ -1,6 +1,6 @@
 type: pages
 parent: kirby.page('blog')
-template: article-blocks
+template: article
 sortBy: published desc
 info: "{{ page.published.toDate('%d.%m.%Y') }}"
 image:
