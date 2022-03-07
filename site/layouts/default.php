@@ -49,7 +49,7 @@
     'assets/fonts/CooperHewitt.css'
   ]) ?>
 
-  <!-- <link rel="preload" href="/assets/fonts/Silverknife-BoldItalic.woff2" as="font" type="font/woff2" crossorigin> -->
+  <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script><?= asset('dist/assets/head.js')->read() ?></script>
 
