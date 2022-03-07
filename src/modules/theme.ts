@@ -4,8 +4,9 @@ const themes = ["light", "dark"];
 export const install = () => {
   document.querySelector("#theme-switcher")?.addEventListener("click", () => {
     const currentTheme = root.dataset.theme;
-    const newTheme = themes.find((theme) => theme !== currentTheme);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    const newTheme = themes.find((theme) => theme !== currentTheme)!;
     root.dataset.theme = newTheme;
-    if (newTheme) localStorage.setItem("color-schema", newTheme);
+    localStorage.setItem("color-schema", newTheme);
   });
 };
