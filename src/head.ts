@@ -11,13 +11,5 @@ if (
   root.dataset.animatable = "true";
 }
 
-// const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
 const setting = localStorage.getItem("color-schema");
-
-// if (setting === "dark" || (prefersDark && setting !== "light")) {
-//   root.dataset.theme = "dark";
-// }
-
-if (setting === "dark") {
-  root.dataset.theme = "dark";
-}
+if (setting) root.dataset.theme = setting;
