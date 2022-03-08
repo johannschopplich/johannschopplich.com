@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "assets:head": "esbuild src/head.ts --minify --format=iife --outdir=public/dist/assets",
-    "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/vendor/uno.css",
+    "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/uno.css",
     "dev": "shx touch src/.lock && concurrently \"npm run assets:unocss -- --watch\" \"vite\"",
     "build": "shx rm -f src/.lock && npm run assets:unocss && vite build && npm run assets:head",
     "lint": "eslint \"src/**/*.ts\" --ignore-path .gitignore",

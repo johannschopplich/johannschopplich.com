@@ -22,4 +22,4 @@ site/config/.license
 # Build assets
 public/assets/dev
 public/dist
-src/styles/vendor/uno.css
+src/styles/uno.css
