@@ -40,7 +40,10 @@ tabs:
             status: all
             create: default
             info: "/{{ page.slug }}"
-            image: page.thumbnail.toFile
+            image:
+              query: page.thumbnail.toFile
+              back: "#C7D2F0"
+              cover: true
 
   settings:
     label:
