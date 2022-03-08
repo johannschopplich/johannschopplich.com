@@ -6,7 +6,7 @@ options:
   changeStatus: false
   delete: false
 
-icon: 🌄
+icon: 🦊
 
 tabs:
   projects:

@@ -75,7 +75,7 @@ export default async () => {
     drauu.brush.size = +(evt.target as HTMLSelectElement).value;
   });
 
-  const modes: { el?: HTMLElement | null; brush: Partial<Brush> }[] = [
+  const modes: { el: HTMLElement | null; brush: Partial<Brush> }[] = [
     { el: $("m-stylus"), brush: { mode: "stylus" } },
     { el: $("m-eraser"), brush: { mode: "eraseLine" } },
     { el: $("m-draw"), brush: { mode: "draw" } },

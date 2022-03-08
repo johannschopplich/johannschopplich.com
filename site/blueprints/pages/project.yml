@@ -2,11 +2,6 @@ title:
   de: Projekt
   en: Project
 
-status:
-  draft: true
-  unlisted: true
-  listed: true
-
 columns:
   - width: 2/3
     sections:

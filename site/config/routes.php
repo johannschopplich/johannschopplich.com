@@ -9,7 +9,7 @@ return [
                 return false;
             }
 
-            // https://github.com/bnomei/kirby3-feed#usage
+            // https://github.com/bnomei/kirby3-feed#usage-feed
             $options = [
                 'feedurl' => url("feeds/{$type}"),
                 'title' => t('feed.title'),
