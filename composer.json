@@ -3,6 +3,7 @@
     "php": ">=7.4.0",
     "getkirby/cms": "^3.6",
     "getkirby/layouts": "^1.0",
+    "symfony/yaml": "^5.0",
     "johannschopplich/kirby-extended": "^2.10",
     "johannschopplich/kirby-blurry-placeholder": "^1.4",
     "johannschopplich/kirby-punctuation-section": "^1.1",
@@ -13,6 +14,14 @@
     "start": [
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 -t public vendor/getkirby/cms/router.php"
+    ]
+  },
+  "autoload": {
+    "psr-4": {
+      "Kirby\\": "site/app/"
+    },
+    "exclude-from-classmap": [
+      "vendor/getkirby/cms/src/Data/Yaml.php"
     ]
   },
   "config": {
