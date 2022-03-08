@@ -5,5 +5,5 @@ sortBy: published desc
 info: "{{ page.published.toDate('%d.%m.%Y') }}"
 image:
   query: page.thumbnail.toFile
-  back: "#C7D2F0"
+  back: "#C9787C"
   cover: true

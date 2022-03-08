@@ -42,7 +42,7 @@ tabs:
             info: "/{{ page.slug }}"
             image:
               query: page.thumbnail.toFile
-              back: "#C7D2F0"
+              back: "#C9787C"
               cover: true
 
   settings:
