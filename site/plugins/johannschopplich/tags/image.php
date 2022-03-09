@@ -46,7 +46,7 @@ return [
             $img = Html::img(
                 $isFeed ? $tag->file->resize(1024)->url() : $tag->file->placeholderUri(),
                 [
-                    'loading' => 'lazy',
+                    'data-loading' => 'lazy',
                     'data-srcset' => $tag->file->srcset(),
                     'data-sizes' => 'auto',
                     'width' => $tag->file->width(),

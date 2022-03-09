@@ -7,7 +7,7 @@ if (isset($file) && !$file) return;
 
 echo Html::img($file->placeholderUri(), [
   'class' => $class ?? null,
-  'data-lazyload' => 'true',
+  'data-loading' => 'lazy',
   'data-srcset' => $file->srcset(),
   'data-sizes' => 'auto',
   'data-zoomable' => $zoomable ?? null,
