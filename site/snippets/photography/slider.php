@@ -10,7 +10,7 @@
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <div class="shrink-0 snap-always snap-center first:snap-start">
       <?php snippet('helpers/img', [
-        'image' => $image,
+        'file' => $image,
         'class' => 'pointer-events-none h-$cell w-auto object-contain'
       ]) ?>
     </div>

@@ -17,6 +17,7 @@ specifiers:
   esbuild: ^0.14.25
   eslint: ^8.10.0
   eslint-config-prettier: ^8.5.0
+  loadeer: ^1.3.0
   medium-zoom: ^1.0.6
   postcss: ^8.4.8
   prettier: ^2.5.1
@@ -32,6 +33,7 @@ dependencies:
   animere: 1.16.3
   drauu: 0.3.0
   duecss: 0.23.4
+  loadeer: 1.3.0
   medium-zoom: 1.0.6
 
 devDependencies:
@@ -1401,6 +1403,10 @@ packages:
       prelude-ls: 1.2.1
       type-check: 0.4.0
     dev: true
+
+  /loadeer/1.3.0:
+    resolution: {integrity: sha512-4R3UMM51L/bhA/cHVRLXiMqfKSCsrY8VSpoFxyBwL4VkaaJQCyVvLaGBZ1ToY1CUxY4f4ZDc1qD1sNi08ykHwg==}
+    dev: false
 
   /local-pkg/0.4.1:
     resolution: {integrity: sha512-lL87ytIGP2FU5PWwNDo0w3WhIo2gopIAxPg9RxDYF7m4rr5ahuZxP22xnJHIvaLTe4Z9P6uKKY2UHiwyB4pcrw==}

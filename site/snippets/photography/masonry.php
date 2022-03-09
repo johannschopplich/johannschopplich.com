@@ -7,7 +7,7 @@
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>
       <?php snippet('helpers/img', [
-        'image' => $image,
+        'file' => $image,
         'zoomable' => true
       ]) ?>
 

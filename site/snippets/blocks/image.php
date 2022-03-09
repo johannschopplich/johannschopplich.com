@@ -21,7 +21,7 @@ if ($block->location() === 'web') {
     // Disable blurry images images for feeds
     $isFeed ? $image->resize(1024)->url() : $image->placeholderUri(),
     [
-      'loading' => 'lazy',
+      'data-lazyload' => 'true',
       'data-srcset' => $image->srcset(),
       'data-sizes' => 'auto',
       'width' => $image->width(),

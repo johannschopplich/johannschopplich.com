@@ -2,16 +2,16 @@
 
 use Kirby\Toolkit\Html;
 
-/** @var \Kirby\Cms\File|null $image */
-if (isset($image) && !$image) return;
+/** @var \Kirby\Cms\File|null $file */
+if (isset($file) && !$file) return;
 
-echo Html::img($image->placeholderUri(), [
+echo Html::img($file->placeholderUri(), [
   'class' => $class ?? null,
-  'loading' => 'lazy',
-  'data-srcset' => $image->srcset(),
+  'data-lazyload' => 'true',
+  'data-srcset' => $file->srcset(),
   'data-sizes' => 'auto',
   'data-zoomable' => $zoomable ?? null,
-  'width' => $image->width(),
-  'height' => $image->height(),
-  'alt' => $image->alt()->isNotEmpty() ? $image->alt()->escape() : null
+  'width' => $file->width(),
+  'height' => $file->height(),
+  'alt' => $file->alt()->isNotEmpty() ? $file->alt()->escape() : null
 ]);

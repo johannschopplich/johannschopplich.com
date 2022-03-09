@@ -25,7 +25,7 @@ layout();
       <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
         <figure class="content-breakout">
           <?php snippet('helpers/img', [
-            'image' => $image,
+            'file' => $image,
             'zoomable' => true
           ]) ?>
         </figure>
