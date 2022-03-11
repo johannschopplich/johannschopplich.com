@@ -35,6 +35,10 @@
   blockquote {
     border-left-color: var(--du-color-accent);
     border-left-style: dotted;
+
+    p {
+      text-indent: 0;
+    }
   }
 
   figure {
