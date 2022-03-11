@@ -1,7 +1,7 @@
 <?php /** @var \Kirby\Cms\Pagination $pagination */ ?>
 <nav
   class="flex justify-center text-xl font-heading font-700"
-  style="--du-color-link: var(--du-color-accent); --du-color-link-hover: var(--du-color-text);"
+  style="--du-color-link: var(--du-color-primary); --du-color-link-hover: var(--du-color-text);"
 >
   <?php if ($pagination->hasPrevPage()): ?>
     <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-bx-left-arrow-alt" aria-label="Previous page"></a>

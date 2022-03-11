@@ -16,10 +16,10 @@
 [data-theme="light"] {
   --du-color-background: #fefcf8;
   --du-color-link: var(--du-color-text);
-  --du-color-link-hover: var(--du-color-accent);
+  --du-color-link-hover: var(--du-color-primary);
 }
 
 [data-theme="dark"] {
   --du-color-link: var(--du-color-text);
-  --du-color-link-hover: var(--du-color-accent);
+  --du-color-link-hover: var(--du-color-primary);
 }

@@ -5,7 +5,7 @@
 $year = null;
 ?>
 <section class="content max-w-prose pb-8xl">
-  <h2 class="title text-xl text-accent mb-3xl">
+  <h2 class="title text-xl text-primary mb-3xl">
     <?= $heading ?>
   </h2>
 
@@ -24,9 +24,9 @@ $year = null;
       href="<?= $post->url() ?>"
       class="flex items-start gap-xs mb-xs"
       <?php e($isActive, 'aria-current="page"') ?>
-      style="--du-color-link-hover: var(--du-color-accent);"
+      style="--du-color-link-hover: var(--du-color-primary);"
     >
-      <span class="flex-grow font-heading font-500<?php e($isActive, ' text-accent') ?>">
+      <span class="flex-grow font-heading font-500<?php e($isActive, ' text-primary') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>

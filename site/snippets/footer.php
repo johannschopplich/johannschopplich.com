@@ -22,7 +22,7 @@
 
     <button
       id="theme-switcher"
-      class="hover:text-accent du-light:i-bxs-moon du-dark:i-bx-bxs-sun"
+      class="hover:text-primary du-light:i-bxs-moon du-dark:i-bx-bxs-sun"
       aria-label="<?= t('theme.switch') ?>"
     ></button>
   </div>

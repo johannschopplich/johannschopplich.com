@@ -13,7 +13,7 @@
     &:focus,
     &:hover,
     &[aria-current] {
-      text-decoration-color: var(--du-color-accent);
+      text-decoration-color: var(--du-color-primary);
     }
   }
 
@@ -33,7 +33,7 @@
 
     &:focus::before,
     &:hover::before {
-      background-color: var(--du-color-accent);
+      background-color: var(--du-color-primary);
     }
 
     &[aria-current="page"]::before {

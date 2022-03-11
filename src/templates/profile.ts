@@ -33,9 +33,9 @@ const registerKeyboardShortcuts = (drauu: Drauu) => {
   });
 };
 
-const getAccentColor = () =>
+const getPrimaryColor = () =>
   getComputedStyle(document.documentElement).getPropertyValue(
-    "--du-color-accent"
+    "--du-color-primary"
   );
 
 export default async () => {
@@ -47,7 +47,7 @@ export default async () => {
     el: "#drauu-canvas",
     brush: {
       mode: "stylus",
-      color: getAccentColor(),
+      color: getPrimaryColor(),
       size: 3,
     },
   });
