@@ -436,16 +436,16 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "1.4.3",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "07d21bcabb644a835b35fc497eab4542a6ee7487"
+                "reference": "33d1f792bdf8818008e09ce87e85dd63ca7e88fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/07d21bcabb644a835b35fc497eab4542a6ee7487",
-                "reference": "07d21bcabb644a835b35fc497eab4542a6ee7487",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/33d1f792bdf8818008e09ce87e85dd63ca7e88fd",
+                "reference": "33d1f792bdf8818008e09ce87e85dd63ca7e88fd",
                 "shasum": ""
             },
             "require": {
@@ -481,9 +481,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.4.3"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.5.0"
             },
-            "time": "2022-02-10T08:01:39+00:00"
+            "time": "2022-03-17T12:30:45+00:00"
         },
         {
             "name": "johannschopplich/kirby-extended",
