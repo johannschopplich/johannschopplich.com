@@ -54,7 +54,7 @@ layout();
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div
           class="grid gap-x-3xl gap-y-8 grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]"
-          style="--du-prose-y-spacer: 1.25;"
+          style="--du-prose-space-y: 1.25;"
         >
           <?php foreach ($layout->columns() as $column): ?>
             <div class="prose all-[p]:indent-0">

@@ -5,11 +5,11 @@
 .prose {
   figure {
     &:not(:first-child) {
-      margin-top: calc(2rem * var(--du-prose-y-spacer, 1));
+      margin-top: calc(2rem * var(--du-prose-space-y, 1));
     }
 
     &:not(:last-child) {
-      margin-bottom: calc(2rem * var(--du-prose-y-spacer, 1));
+      margin-bottom: calc(2rem * var(--du-prose-space-y, 1));
     }
   }
 
