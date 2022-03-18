@@ -3,41 +3,52 @@
 @use "duecss/plugins/typography";
 
 .prose {
-  figure {
-    &:not(:first-child) {
-      margin-top: calc(2rem * var(--du-prose-space-y, 1));
-    }
+  :where(figure:not(:first-child)) {
+    margin-top: calc(2rem * var(--du-prose-space-y, 1));
+  }
 
-    &:not(:last-child) {
-      margin-bottom: calc(2rem * var(--du-prose-space-y, 1));
-    }
+  :where(figure:not(:last-child)) {
+    margin-bottom: calc(2rem * var(--du-prose-space-y, 1));
+  }
+
+  :where(h2, h3, h4) {
+    font-family: var(--du-font-family-heading);
+  }
+
+  :where(p) {
+    text-indent: 1rem;
+  }
+
+  :where(blockquote) {
+    border-left-color: var(--du-color-primary);
+    border-left-style: dotted;
+    // Keep in line with text indent
+    padding-left: 1rem;
+  }
+
+  :where(blockquote p) {
+    text-indent: 0;
+  }
+
+  :where(pre) {
+    background-color: var(--du-color-contrast-lowest);
+  }
+
+  :where(ol, ul) {
+    // Keep in line with text indent
+    padding-left: 1rem;
+  }
+
+  :where(hr) {
+    border-bottom: none;
   }
 
   h2,
   h3,
   h4 {
-    font-family: var(--du-font-family-heading);
-
     a {
       color: inherit;
       text-decoration-line: none;
-    }
-  }
-
-  p {
-    text-indent: 1rem;
-  }
-
-  hr {
-    border-bottom: none;
-  }
-
-  blockquote {
-    border-left-color: var(--du-color-primary);
-    border-left-style: dotted;
-
-    p {
-      text-indent: 0;
     }
   }
 
@@ -87,10 +98,6 @@
     padding: 0 3px 0.25rem;
     margin-top: calc(0.25rem + 3px);
     text-align: left;
-  }
-
-  pre {
-    background-color: var(--du-color-contrast-lowest);
   }
 
   .masonry-grid {
