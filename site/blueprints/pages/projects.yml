@@ -13,7 +13,7 @@ tabs:
     label:
       de: Projekte
       en: Projects
-    icon: dashboard
+    icon: paragraph
     columns:
       - width: 1/2
         sections:

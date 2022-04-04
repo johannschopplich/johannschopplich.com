@@ -7,7 +7,7 @@ tabs:
     label:
       de: Übersicht
       en: Dashboard
-    icon: dashboard
+    icon: paragraph
     columns:
       - width: 1/1
         sections:
