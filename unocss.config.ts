@@ -1,4 +1,5 @@
-import { defineConfig, presetUno, presetIcons } from "unocss";
+import { defineConfig, presetIcons } from "unocss";
+import { presetWind } from "@unocss/preset-wind";
 import { presetDue } from "duecss";
 
 export default defineConfig({
@@ -44,7 +45,7 @@ export default defineConfig({
   },
   safelist: ["w-full", "aspect-ratio-16/9"],
   presets: [
-    presetUno(),
+    presetWind(),
     presetIcons({
       extraProperties: {
         display: "inline-block",
