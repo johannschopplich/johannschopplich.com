@@ -2,7 +2,7 @@ title:
   de: Artikel (Blöcke)
   en: Post (Blocks)
 
-num: '{{ page.published.toDate("%Y%m%d") }}'
+num: '{{ page.published.toDate("YMMdd") }}'
 
 icon: 📝
 

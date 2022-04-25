@@ -13,7 +13,7 @@ return [
 
     'languages' => true,
     'languages.detect' => true,
-    'date.handler' => 'strftime',
+    'date.handler' => 'intl',
 
     'cache' => [
         'pages' => [

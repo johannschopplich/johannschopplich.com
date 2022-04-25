@@ -1,6 +1,6 @@
 <?php
 
-class ArticleBlocksPage extends \Kirby\Cms\Page
+class ArticlePage extends \Kirby\Cms\Page
 {
     public function metadata(): array
     {
@@ -14,7 +14,7 @@ class ArticleBlocksPage extends \Kirby\Cms\Page
                 'type' => 'article',
                 'namespace:article' => [
                     'author' => $author,
-                    'published_time' => $this->published()->toDate('%Y-%m-%d')
+                    'published_time' => $this->published()->toDate('Y-MM-dd')
                 ]
             ],
             'jsonld' => [
@@ -33,8 +33,8 @@ class ArticleBlocksPage extends \Kirby\Cms\Page
                         'name' => $author,
                         'url' => url()
                     ],
-                    'datePublished' => $this->published()->toDate('%Y-%m-%d'),
-                    'dateModified' => $this->modified('%Y-%m-%d')
+                    'datePublished' => $this->published()->toDate('Y-MM-dd'),
+                    'dateModified' => $this->modified('Y-MM-dd')
                 ]
             ]
         ];

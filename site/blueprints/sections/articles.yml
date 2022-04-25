@@ -2,7 +2,7 @@ type: pages
 parent: kirby.page('blog')
 template: article
 sortBy: published desc
-info: "{{ page.published.toDate('%d.%m.%Y') }}"
+info: "{{ page.published.toDate('dd.MM.Y') }}"
 image:
   query: page.thumbnail.toFile
   back: "#C9787C"

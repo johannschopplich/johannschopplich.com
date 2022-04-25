@@ -5,10 +5,9 @@
   <div class="content max-w-prose pb-5xl">
     <?php if ($page->published()->exists() && $page->published()->isNotEmpty()) : ?>
       <p class="text-contrast-medium">
-        <?php $format = $kirby->languageCode() === 'de' ? '%e. %B %Y' : '%e %B %Y' ?>
         <?= t('article.publishedAt') ?>
-        <time datetime="<?= $page->published()->toDate('%Y-%m-%d') ?>">
-          <?= $page->published()->toDate($format) ?>
+        <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">
+          <?= $page->published()->toDate(new IntlDateFormatter($kirby->languageCode(), IntlDateFormatter::LONG, IntlDateFormatter::NONE)) ?>
         </time>
       </p>
     <?php endif ?>

@@ -11,7 +11,7 @@ $year = null;
 
   <?php foreach ($query as $post): ?>
     <?php /** @var \Kirby\Cms\Page $post */ ?>
-    <?php $postY = $post->published()->toDate('%Y') ?>
+    <?php $postY = $post->published()->toDate('Y') ?>
     <?php $isActive = $post->isActive() || $post->id() === $page->id() ?>
 
     <?php if ($postY !== $year): ?>

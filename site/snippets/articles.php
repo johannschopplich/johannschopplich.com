@@ -12,9 +12,8 @@
       after:content-empty after:absolute after:top-5 after:bottom-5 after:right-0 after:w-1px after:bg-current
     ">
       <p class="text-contrast-medium">
-        <?php $format = $kirby->language()->code() === 'de' ? '%e. %B %Y' : '%e %B %Y' ?>
-        <time datetime="<?= $article->published()->toDate('%Y-%m-%d') ?>">
-          <?= $article->published()->toDate($format) ?>
+        <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">
+          <?= $article->published()->toDate(new IntlDateFormatter($kirby->languageCode(), IntlDateFormatter::LONG, IntlDateFormatter::NONE)) ?>
         </time>
       </p>
 
