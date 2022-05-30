@@ -210,16 +210,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.6.5",
+            "version": "3.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "40d2ee98b51644b8eefa814c37f3b402a9fdb994"
+                "reference": "005fc78fcc0e7f99f61e6973efa8ea8ec85741d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/40d2ee98b51644b8eefa814c37f3b402a9fdb994",
-                "reference": "40d2ee98b51644b8eefa814c37f3b402a9fdb994",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/005fc78fcc0e7f99f61e6973efa8ea8ec85741d9",
+                "reference": "005fc78fcc0e7f99f61e6973efa8ea8ec85741d9",
                 "shasum": ""
             },
             "require": {
@@ -287,7 +287,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-04-19T12:49:55+00:00"
+            "time": "2022-05-05T11:30:27+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -487,21 +487,21 @@
         },
         {
             "name": "johannschopplich/kirby-extended",
-            "version": "2.10.3",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-extended.git",
-                "reference": "b4f10330ba7d20c5c23507af0c046f92afde1b0f"
+                "reference": "9ab71f0df1edf5ad17f5778d6ecc6dbe52c0149c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/b4f10330ba7d20c5c23507af0c046f92afde1b0f",
-                "reference": "b4f10330ba7d20c5c23507af0c046f92afde1b0f",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/9ab71f0df1edf5ad17f5778d6ecc6dbe52c0149c",
+                "reference": "9ab71f0df1edf5ad17f5778d6ecc6dbe52c0149c",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=7.4.0",
+                "php": ">=8.0.0",
                 "symfony/polyfill-php80": "^1.23",
                 "vlucas/phpdotenv": "^5.0"
             },
@@ -543,9 +543,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-extended/issues",
-                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.10.3"
+                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.11.1"
             },
-            "time": "2021-11-23T12:56:39+00:00"
+            "time": "2022-05-24T10:47:45+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
@@ -1020,25 +1020,25 @@
         },
         {
             "name": "symfony/deprecation-contracts",
-            "version": "v3.0.1",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
-                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c"
+                "reference": "07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
-                "reference": "26954b3d62a6c5fd0ea8a2a00c0353a14978d05c",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918",
+                "reference": "07f1b9cc2ffee6aaafcf4b710fbc38ff736bd918",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0.2"
+                "php": ">=8.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "3.0-dev"
+                    "dev-main": "3.1-dev"
                 },
                 "thanks": {
                     "name": "symfony/contracts",
@@ -1067,7 +1067,7 @@
             "description": "A generic function and convention to trigger deprecation notices",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.0.1"
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -1083,7 +1083,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:55:41+00:00"
+            "time": "2022-02-25T11:15:52+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
