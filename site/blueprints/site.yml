@@ -9,7 +9,7 @@ tabs:
       en: Dashboard
     icon: paragraph
     columns:
-      - width: 1/1
+      - width: 1/2
         sections:
           drafts:
             extends: sections/articles
@@ -17,9 +17,6 @@ tabs:
               de: Artikelentwürfe
               en: Article Drafts
             status: draft
-
-      - width: 1/2
-        sections:
           published:
             extends: sections/articles
             headline:

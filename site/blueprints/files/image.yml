@@ -13,9 +13,29 @@ fields:
     type: text
     icon: title
   caption:
-    label:
-      de: Beschriftung
-      en: Caption
-    type: writer
-    icon: text
-    inline: true
+
+columns:
+  - width: 1/2
+    sections:
+      content:
+        type: fields
+        fields:
+          caption:
+            label:
+              de: Beschriftung
+              en: Caption
+            type: writer
+            icon: text
+            inline: true
+
+  - width: 1/2
+    sections:
+      meta:
+        type: fields
+        fields:
+          alt:
+            label:
+              de: Alternativtext
+              en: Alternative Text
+            type: text
+            icon: title

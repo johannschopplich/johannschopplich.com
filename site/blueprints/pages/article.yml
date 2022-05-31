@@ -1,6 +1,6 @@
 title:
-  de: Artikel (Blöcke)
-  en: Post (Blocks)
+  de: Artikel
+  en: Post
 
 num: '{{ page.published.toDate("YMMdd") }}'
 
@@ -20,13 +20,6 @@ columns:
             icon: title
             placeholder: "{{ page.title }} – {{ site.title }}"
             width: 2/3
-          categories:
-            label:
-              de: Kategorien
-              en: Categories
-            type: text
-            icon: tag
-            width: 1/3
           published:
             label:
               de: Veröffentlichungsdatum
@@ -42,6 +35,13 @@ columns:
             type: users
             multiple: false
             translate: false
+            width: 1/3
+          categories:
+            label:
+              de: Kategorien
+              en: Categories
+            type: text
+            icon: tag
             width: 1/3
           thumbnail:
             label:
