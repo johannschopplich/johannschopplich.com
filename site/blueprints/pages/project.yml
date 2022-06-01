@@ -3,9 +3,9 @@ title:
   en: Project
 
 columns:
-  - width: 2/3
+  - width: 1/3
     sections:
-      text:
+      meta:
         type: fields
         fields:
           subtitle:
@@ -27,6 +27,13 @@ columns:
             translate: false
             required: true
             width: 1/2
+      images: sections/images
+
+  - width: 2/3
+    sections:
+      text:
+        type: fields
+        fields:
           gallery:
             label:
               de: Galerie
@@ -35,7 +42,3 @@ columns:
             layout: cards
             translate: false
           text: fields/blocks
-
-  - width: 1/3
-    sections:
-      images: sections/images

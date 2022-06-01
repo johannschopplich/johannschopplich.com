@@ -46,7 +46,6 @@ tabs:
             layout: cards
             image:
               query: page.thumbnail.toFile
-              back: white
               cover: true
 
   settings:

@@ -6,7 +6,6 @@ icon: 🏠
 
 options:
   changeStatus: false
-  cache: false
 
 columns:
   - width: 2/3

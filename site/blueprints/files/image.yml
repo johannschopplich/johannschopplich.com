@@ -5,15 +5,6 @@ title:
 accept:
   type: image
 
-fields:
-  alt:
-    label:
-      de: Alternativtext
-      en: Alternative Text
-    type: text
-    icon: title
-  caption:
-
 columns:
   - width: 1/2
     sections:

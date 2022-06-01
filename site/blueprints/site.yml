@@ -78,5 +78,3 @@ tabs:
                 uploads:
                   parent: kirby.page('photography')
                   template: image
-
-  images: tabs/images

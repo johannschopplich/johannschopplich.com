@@ -14,7 +14,7 @@ tabs:
       en: Articles
     icon: paragraph
     columns:
-      - width: 1/1
+      - width: 1/3
         sections:
           drafts:
             extends: sections/articles
@@ -23,7 +23,7 @@ tabs:
               en: Drafts
             status: drafts
 
-      - width: 1/1
+      - width: 2/3
         sections:
           published:
             extends: sections/articles
