@@ -6,6 +6,7 @@ icon: 🏠
 
 options:
   changeStatus: false
+  delete: false
 
 columns:
   - width: 2/3
