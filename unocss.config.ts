@@ -38,8 +38,7 @@ export default defineConfig({
   },
   shortcuts: {
     content: "px-lg md:px-3xl",
-    // FIXME: unmatched utility "-mx-lg" in shortcut "content-breakout"
-    "content-breakout": `-mx-[${theme.spacing?.lg}] md:mx-0`,
+    "content-breakout": "-mx-lg md:mx-0",
     "action-button":
       "p-2 -m-2 text-size-xs font-heading leading-heading font-500 uppercase tracking-[0.125ch]",
     tag: "px-2 py-1 border-1 border-theme-base text-primary text-xs font-heading font-500 leading-heading rounded-full whitespace-nowrap",
