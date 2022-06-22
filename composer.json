@@ -1,10 +1,10 @@
 {
   "require": {
-    "php": ">=7.4.0",
+    "php": ">=8.0.0",
     "getkirby/cms": "^3.6",
     "getkirby/layouts": "^1.0",
     "symfony/yaml": "^5.4",
-    "johannschopplich/kirby-extended": "^2.10",
+    "johannschopplich/kirby-extended": "^2.11",
     "johannschopplich/kirby-blurry-placeholder": "^1.4",
     "johannschopplich/kirby-punctuation-section": "^1.1",
     "johannschopplich/kirby-vite": "^1.0",

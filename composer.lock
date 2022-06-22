@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3255acd2e9183a773d52d11d04550ef",
+    "content-hash": "0d04694d42d46591f9db6a895ace61c9",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -487,16 +487,16 @@
         },
         {
             "name": "johannschopplich/kirby-extended",
-            "version": "2.11.1",
+            "version": "2.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-extended.git",
-                "reference": "9ab71f0df1edf5ad17f5778d6ecc6dbe52c0149c"
+                "reference": "eea85fdfb14788562193f88ae5c3889e0cf61986"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/9ab71f0df1edf5ad17f5778d6ecc6dbe52c0149c",
-                "reference": "9ab71f0df1edf5ad17f5778d6ecc6dbe52c0149c",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/eea85fdfb14788562193f88ae5c3889e0cf61986",
+                "reference": "eea85fdfb14788562193f88ae5c3889e0cf61986",
                 "shasum": ""
             },
             "require": {
@@ -543,9 +543,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-extended/issues",
-                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.11.1"
+                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.11.2"
             },
-            "time": "2022-05-24T10:47:45+00:00"
+            "time": "2022-06-22T15:33:19+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
@@ -1667,7 +1667,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4.0"
+        "php": ">=8.0.0"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
