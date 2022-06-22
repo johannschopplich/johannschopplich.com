@@ -5,8 +5,8 @@ class ArticlePage extends \Kirby\Cms\Page
     public function metadata(): array
     {
         $description = $this->description()->or($this->text()->excerpt(140))->value();
-        $author = $this->author()->toUser() ? $this->author()->toUser()->name()->value() : site()->title()->value();
-        $thumbnail = $this->thumbnail()->toFile() ? $this->thumbnail()->toFile()->resize(1200) : null;
+        $author = $this->author()->toUser()?->name()?->value() ?? site()->title()->value();
+        $thumbnail = $this->thumbnail()->toFile()?->resize(1200);
 
         return [
             'description' => $description,
