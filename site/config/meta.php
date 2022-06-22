@@ -13,7 +13,7 @@ return fn (\Kirby\Cms\App $kirby, \Kirby\Cms\Site $site, \Kirby\Cms\Page $page) 
                 'gender' => 'male',
                 'sameAs' => [
                     'https://www.instagram.com/johannschopplich/',
-                    'https://twitter.com/johannschopplich',
+                    'https://twitter.com/jschopplich',
                     'https://github.com/johannschopplich'
                 ]
             ],
