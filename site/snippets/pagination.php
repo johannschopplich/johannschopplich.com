@@ -1,6 +1,6 @@
 <?php /** @var \Kirby\Cms\Pagination $pagination */ ?>
 <nav
-  class="flex justify-center text-xl font-heading font-700"
+  class="flex justify-center text-xl leading-heading font-heading font-700"
   style="--du-color-link: var(--du-color-primary); --du-color-link-hover: var(--du-color-text);"
 >
   <?php if ($pagination->hasPrevPage()): ?>
@@ -20,7 +20,7 @@
         <?php e($pagination->page() === $r, 'aria-current="page"') ?>
       >
         <span>o</span>
-        <span class="mt-2 text-contrast-low text-base font-500<?php e($pagination->page() === $r, ' text-theme-base') ?>">
+        <span class="mt-2 text-contrast-low text-base leading-normal font-500<?php e($pagination->page() === $r, ' text-theme-base') ?>">
           <?= $r ?>
         </span>
       </a>
