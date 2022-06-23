@@ -33,6 +33,7 @@ export default defineConfig({
       },
     },
     // FIXME: UnoCSS won't overrride built-in sizes with [fontSize, lineHeight] syntax
+    // Temporarily redeclare sizes from DueCSS
     fontSize: {
       xs: "0.75rem",
       sm: "0.875rem",

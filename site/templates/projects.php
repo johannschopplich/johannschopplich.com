@@ -11,7 +11,7 @@ layout();
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div class="group relative pt-xl border-t"<?= attr([
-      'data-animere' => !$project->isFirst($children) ? 'fadeInUpSmall' : null,
+      'data-animere' => !$project->isFirst($children) ? 'fadeInRight' : null,
       'data-animere-duration' => '500ms'
     ], ' ') ?>>
       <p class="text-contrast-medium word-spacing-[0.5ch]">
