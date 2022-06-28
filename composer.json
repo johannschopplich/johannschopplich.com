@@ -1,7 +1,7 @@
 {
   "require": {
     "php": ">=8.0.0",
-    "getkirby/cms": "^3.6",
+    "getkirby/cms": "^3.7",
     "getkirby/layouts": "^1.0",
     "symfony/yaml": "^5.4",
     "johannschopplich/kirby-extended": "^2.11",
