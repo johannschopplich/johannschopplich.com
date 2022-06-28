@@ -1,5 +1,5 @@
-import { resolve } from "path";
-import { mkdirSync, writeFileSync } from "fs";
+import { resolve } from "node:path";
+import { mkdirSync, writeFileSync } from "node:fs";
 import { defineConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
 import type { Plugin as PostCssPlugin } from "postcss";
