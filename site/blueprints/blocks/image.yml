@@ -42,8 +42,15 @@ fields:
     label:
       de: Eigenschaften
       en: Properties
-    type: select
+    type: toggles
+    grow: false
     options:
-      is-outset: Outset
-      is-pulled-left: Left-Aligned
-      is-pulled-right: Right-Aligned
+      - value: is-outset
+        text: Outset
+        icon: grid-bottom
+      - value: is-pulled-left
+        text: Left-Aligned
+        icon: grid-left
+      - value: is-pulled-right
+        text: Right-Aligned
+        icon: grid-right
