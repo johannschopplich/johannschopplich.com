@@ -9,7 +9,7 @@ layout();
   <?php $blocks = $page->text()->toBlocks() ?>
   <?php if ($blocks->isNotEmpty()): ?>
     <div class="content max-w-prose pb-5xl">
-      <section class="prose font-heading font-500">
+      <section class="prose">
         <h1 class="sr-only">
           <?= $page->title()->escape() ?>
         </h1>
