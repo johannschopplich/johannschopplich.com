@@ -617,24 +617,24 @@
         },
         {
             "name": "johannschopplich/kirby-vite",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-vite.git",
-                "reference": "de028f3109051116db11bc57e51a1e1da4b020de"
+                "reference": "dab544f624be6c613183169829c7441a12bdda03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-vite/zipball/de028f3109051116db11bc57e51a1e1da4b020de",
-                "reference": "de028f3109051116db11bc57e51a1e1da4b020de",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-vite/zipball/dab544f624be6c613183169829c7441a12bdda03",
+                "reference": "dab544f624be6c613183169829c7441a12bdda03",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=7.4.0"
+                "php": ">=8.0.0"
             },
             "require-dev": {
-                "getkirby/cms": "^3.6"
+                "getkirby/cms": "^3.7"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -659,9 +659,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-vite/issues",
-                "source": "https://github.com/johannschopplich/kirby-vite/tree/v1.0.2"
+                "source": "https://github.com/johannschopplich/kirby-vite/tree/v1.0.3"
             },
-            "time": "2021-11-16T15:28:00+00:00"
+            "time": "2022-06-29T06:48:11+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
