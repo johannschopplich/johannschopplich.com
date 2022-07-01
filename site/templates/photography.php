@@ -19,5 +19,5 @@ layout();
     </div>
   <?php endif ?>
 
-  <?php snippet('photography/masonry', ['query' => $page->gallery()->toFiles()]) ?>
+  <?php snippet('shortcuts/masonry', ['query' => $page->gallery()->toFiles()]) ?>
 </div>

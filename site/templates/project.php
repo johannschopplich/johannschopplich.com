@@ -20,18 +20,9 @@ layout();
     </div>
   </div>
 
-  <div class="content max-w-screen-lg">
-    <div class="space-y-lg md:space-y-3xl">
-      <?php foreach ($files = $page->gallery()->toFiles() as $image): ?>
-        <figure class="content-breakout">
-          <?php snippet('helpers/img', [
-            'file' => $image,
-            'zoomable' => true
-          ]) ?>
-        </figure>
-      <?php endforeach ?>
-    </div>
-  </div>
+  <?php snippet('shortcuts/slider', [
+    'query' => $page->gallery()->toFiles()
+  ]) ?>
 </div>
 
 <div class="pb-8xl">

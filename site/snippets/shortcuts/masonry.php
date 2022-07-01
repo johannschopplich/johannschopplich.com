@@ -6,7 +6,7 @@
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>
-      <?php snippet('helpers/img', [
+      <?php snippet('shortcuts/img', [
         'file' => $image,
         'zoomable' => true
       ]) ?>

@@ -44,7 +44,7 @@ layout();
     </h2>
   </div>
 
-  <?php snippet('photography/slider', compact('query')) ?>
+  <?php snippet('shortcuts/slider', compact('query')) ?>
 
   <div class="content max-w-screen-lg pb-8xl">
     <div class="text-center mt-lg">

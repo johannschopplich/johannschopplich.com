@@ -14,7 +14,7 @@
     "animere": "^1.18.0",
     "drauu": "^0.3.0",
     "duecss": "^0.26.0",
-    "loadeer": "^2.0.0",
+    "loadeer": "^2.0.1",
     "medium-zoom": "^1.0.6"
   },
   "devDependencies": {
@@ -24,11 +24,11 @@
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
-    "@unocss/cli": "^0.41.1",
-    "@unocss/core": "^0.41.1",
-    "@unocss/preset-wind": "^0.41.1",
+    "@unocss/cli": "^0.42.0",
+    "@unocss/core": "^0.42.0",
+    "@unocss/preset-wind": "^0.42.0",
     "concurrently": "^7.2.2",
-    "esbuild": "^0.14.47",
+    "esbuild": "^0.14.48",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.14",
@@ -36,7 +36,7 @@
     "sass": "^1.53.0",
     "shx": "^0.3.4",
     "typescript": "^4.7.4",
-    "unocss": "^0.41.1",
+    "unocss": "^0.42.0",
     "vite": "^3.0.0-beta.5",
     "vite-plugin-full-reload": "^1.0.0"
   }

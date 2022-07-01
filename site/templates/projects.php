@@ -27,7 +27,7 @@ layout();
 
       <?php if ($image = $project->thumbnail()->toFile()): ?>
         <figure class="content-breakout aspect-ratio-4/3 md:group-hover:shadow-frame">
-          <?php snippet('helpers/img', [
+          <?php snippet('shortcuts/img', [
             'file' => $image,
             'class' => 'object-cover h-full'
           ]) ?>
