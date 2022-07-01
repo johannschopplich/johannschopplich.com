@@ -24,6 +24,6 @@
           <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
         </a>
       </div>
-    <?php endif ?>
-  </div>
+    </div>
+  <?php endif ?>
 </div>
