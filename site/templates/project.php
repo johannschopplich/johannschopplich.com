@@ -6,7 +6,7 @@ layout();
 ?>
 
 <div class="pt-8xl pb-5xl">
-  <div class="content max-w-screen-lg pb-5xl">
+  <div class="content max-w-prose pb-5xl">
     <p class="text-contrast-medium">
       <?= $page->subtitle()->escape() ?>
     </p>

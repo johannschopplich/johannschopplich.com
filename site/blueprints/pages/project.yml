@@ -28,6 +28,7 @@ columns:
             required: true
             width: 1/2
       images: sections/images
+      files: sections/files
 
   - width: 2/3
     sections:

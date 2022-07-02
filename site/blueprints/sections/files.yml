@@ -1,0 +1,6 @@
+type: files
+headline:
+  de: Dateien
+  en: Files
+template: default
+sortBy: filename desc
