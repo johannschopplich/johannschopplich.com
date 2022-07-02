@@ -42,7 +42,8 @@ layout();
         'data-animere-duration' => '500ms'
       ], ' ') ?>>
         <?php snippet('shortcuts/slider', [
-          'query' => $project->gallery()->toFiles()
+          'query' => $project->gallery()->toFiles(),
+          'zoomable' => $zoomable ?? null
         ]) ?>
       </div>
 

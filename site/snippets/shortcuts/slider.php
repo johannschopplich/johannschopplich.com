@@ -4,14 +4,15 @@
 ?>
 <div
   class="w-full flex gap-xs snap-x snap-mandatory overflow-x-auto"
-  style="--cell: clamp(35vh, 50vw, 75vh);"
+  style="--cell: clamp(40vh, 50vw, 75vh);"
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <div class="shrink-0 snap-always snap-center first:snap-start">
       <?php snippet('shortcuts/img', [
         'file' => $image,
-        'class' => 'pointer-events-none h-$cell w-auto object-contain'
+        'class' => 'pointer-events-none h-$cell w-auto object-contain',
+        'zoomable' => $zoomable ?? null
       ]) ?>
     </div>
   <?php endforeach ?>

@@ -21,7 +21,8 @@ layout();
   </div>
 
   <?php snippet('shortcuts/slider', [
-    'query' => $page->gallery()->toFiles()
+    'query' => $page->gallery()->toFiles(),
+    'zoomable' => $zoomable ?? null
   ]) ?>
 </div>
 
