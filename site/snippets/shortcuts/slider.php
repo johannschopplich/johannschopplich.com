@@ -11,7 +11,8 @@
     <div class="shrink-0 snap-always snap-center first:snap-start">
       <?php snippet('shortcuts/img', [
         'file' => $image,
-        'class' => 'pointer-events-none h-$cell w-auto object-contain',
+        // pointer-events-none
+        'class' => 'h-$cell w-auto object-contain',
         'zoomable' => $zoomable ?? null
       ]) ?>
     </div>

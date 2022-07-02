@@ -3,7 +3,9 @@
 use Kirby\Toolkit\Html;
 
 /** @var \Kirby\Cms\File|null $file */
-if (isset($file) && !$file) return;
+if (isset($file) && !$file) {
+    return;
+}
 
 echo Html::img($file->placeholderUri(), [
   'class' => $class ?? null,
