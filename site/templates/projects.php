@@ -43,7 +43,7 @@ layout();
       ], ' ') ?>>
         <?php snippet('shortcuts/slider', [
           'query' => $project->gallery()->toFiles(),
-          'zoomable' => $zoomable ?? null
+          'zoomable' => true
         ]) ?>
       </div>
 
