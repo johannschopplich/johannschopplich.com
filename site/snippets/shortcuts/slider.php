@@ -4,7 +4,7 @@
 ?>
 <div
   class="w-full flex gap-xs snap-x snap-mandatory overflow-x-auto"
-  style="--cell: clamp(40vh, 50vw, 75vh);"
+  style="--cell: clamp(36vh, 50vw, 75vh);"
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
