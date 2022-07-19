@@ -12,7 +12,7 @@
       </p>
     <?php endif ?>
 
-    <h1 class="title text-3xl leading-heading font-900 md:text-4xl">
+    <h1 class="title text-3xl font-900 md:text-4xl">
       <?= $page->title()->escape() ?>
     </h1>
 
@@ -26,8 +26,8 @@
       <?= $text ?>
 
       <?php if (
-        $page->parent() !== null &&
-        $page->parent()->template()->name() === 'articles'
+          $page->parent() !== null &&
+          $page->parent()->template()->name() === 'articles'
       ) : ?>
         <?= $page->parent()->articleFooter()->toBlocks() ?>
       <?php endif ?>

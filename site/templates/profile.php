@@ -61,7 +61,7 @@ layout();
               <?php foreach ($column->blocks() as $block): ?>
                 <?php /** @var \Kirby\Cms\Block $block */ ?>
                 <?php if ($block->type() === 'heading'): ?>
-                  <h2 class="text-sm leading-normal uppercase tracking-[0.125ch]"><?= $block->text() ?></h2>
+                  <h2 class="text-sm uppercase tracking-[0.125ch]"><?= $block->text() ?></h2>
                 <?php else: ?>
                   <?= $block ?>
                 <?php endif ?>

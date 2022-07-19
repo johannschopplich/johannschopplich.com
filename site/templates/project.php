@@ -11,7 +11,7 @@ layout();
       <?= $page->subtitle()->escape() ?>
     </p>
 
-    <h1 class="title text-3xl leading-heading font-900 md:text-4xl">
+    <h1 class="title text-3xl font-900 md:text-4xl">
       <?= $page->title()->escape() ?>
     </h1>
 

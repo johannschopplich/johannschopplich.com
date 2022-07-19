@@ -32,18 +32,6 @@ export default defineConfig({
         "900": "#060B18",
       },
     },
-    // FIXME: UnoCSS won't overrride built-in sizes with [fontSize, lineHeight] syntax
-    // Temporarily redeclare sizes from DueCSS
-    fontSize: {
-      xs: "0.75rem",
-      sm: "0.875rem",
-      base: "1rem",
-      lg: "var(--du-text-lg)",
-      xl: "var(--du-text-xl)",
-      "2xl": "var(--du-text-2xl)",
-      "3xl": "var(--du-text-3xl)",
-      "4xl": "var(--du-text-4xl)",
-    },
     boxShadow: {
       frame: "var(--du-shadow-frame)",
     },
@@ -52,8 +40,8 @@ export default defineConfig({
     content: "px-lg md:px-3xl",
     "content-breakout": "-mx-lg md:mx-0",
     "action-button":
-      "p-2 -m-2 text-size-xs font-heading leading-heading font-500 uppercase tracking-[0.125ch]",
-    tag: "px-2 py-1 border-1 border-theme-base text-primary text-xs leading-normal font-heading font-500 leading-heading rounded-full whitespace-nowrap",
+      "p-2 -m-2 text-size-xs leading-heading font-heading font-500 uppercase tracking-[0.125ch]",
+    tag: "px-2 py-1 border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 rounded-full whitespace-nowrap",
   },
   safelist: ["w-full", "aspect-ratio-16/9"],
   presets: [
