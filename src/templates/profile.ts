@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useBreakpoints } from "../hooks";
 import type { Drauu, Brush } from "drauu";
 

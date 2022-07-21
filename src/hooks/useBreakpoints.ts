@@ -1,6 +1,5 @@
 import { theme } from "@unocss/preset-wind";
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const breakpoints = Object.freeze(theme.breakpoints!);
 
 /**
