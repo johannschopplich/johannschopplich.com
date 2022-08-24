@@ -1,7 +1,7 @@
 import Animere from "animere";
 
-export const install = () => {
+export function install() {
   new Animere({
     initResolver: () => !!document.documentElement.dataset.animatable,
   });
-};
+}

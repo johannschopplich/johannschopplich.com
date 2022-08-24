@@ -1,6 +1,6 @@
 import { useBreakpoints } from "../hooks";
 
-export const install = async () => {
+export async function install() {
   const { isBelow } = useBreakpoints();
   const elements = [
     ...document.querySelectorAll<HTMLElement>("[data-zoomable]"),
@@ -17,4 +17,4 @@ export const install = async () => {
     background: "var(--du-color-background)",
     margin,
   });
-};
+}

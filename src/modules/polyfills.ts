@@ -1,5 +1,5 @@
-import { masonryGridPolyfill } from "duecss";
+import { masonryGridPolyfill } from "duecss/client";
 
-export const install = () => {
+export function install() {
   masonryGridPolyfill();
-};
+}
