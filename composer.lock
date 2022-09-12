@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0215c0d050974b10d20e6c385c780a04",
+    "content-hash": "f6e36997b3e968f77a0e26d3276928b8",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -90,16 +90,16 @@
         },
         {
             "name": "claviska/simpleimage",
-            "version": "3.6.5",
+            "version": "3.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/claviska/SimpleImage.git",
-                "reference": "00f90662686696b9b7157dbb176183aabe89700f"
+                "reference": "abd15ced313c7b8041d7d73d8d2398b4f2510cf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/00f90662686696b9b7157dbb176183aabe89700f",
-                "reference": "00f90662686696b9b7157dbb176183aabe89700f",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/abd15ced313c7b8041d7d73d8d2398b4f2510cf1",
+                "reference": "abd15ced313c7b8041d7d73d8d2398b4f2510cf1",
                 "shasum": ""
             },
             "require": {
@@ -127,7 +127,7 @@
             "description": "A PHP class that makes working with images as simple as possible.",
             "support": {
                 "issues": "https://github.com/claviska/SimpleImage/issues",
-                "source": "https://github.com/claviska/SimpleImage/tree/3.6.5"
+                "source": "https://github.com/claviska/SimpleImage/tree/3.7.0"
             },
             "funding": [
                 {
@@ -135,7 +135,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-01T12:42:55+00:00"
+            "time": "2022-07-05T13:18:44+00:00"
         },
         {
             "name": "filp/whoops",
@@ -210,20 +210,20 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.7.4",
+            "version": "3.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "44158e8a5856384f35b07263240abc96db16ae7e"
+                "reference": "021561f7444896fc9917eccb52768a6e715e9a74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/44158e8a5856384f35b07263240abc96db16ae7e",
-                "reference": "44158e8a5856384f35b07263240abc96db16ae7e",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/021561f7444896fc9917eccb52768a6e715e9a74",
+                "reference": "021561f7444896fc9917eccb52768a6e715e9a74",
                 "shasum": ""
             },
             "require": {
-                "claviska/simpleimage": "3.6.5",
+                "claviska/simpleimage": "3.7.0",
                 "ext-ctype": "*",
                 "ext-curl": "*",
                 "ext-dom": "*",
@@ -240,7 +240,7 @@
                 "laminas/laminas-escaper": "2.10.0",
                 "michelf/php-smartypants": "1.8.1",
                 "php": ">=7.4.0 <8.2.0",
-                "phpmailer/phpmailer": "6.6.3",
+                "phpmailer/phpmailer": "6.6.4",
                 "symfony/polyfill-intl-idn": "1.26.0",
                 "symfony/polyfill-mbstring": "1.26.0"
             },
@@ -305,7 +305,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-08-22T15:20:00+00:00"
+            "time": "2022-08-30T18:27:48+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -505,16 +505,16 @@
         },
         {
             "name": "johannschopplich/kirby-extended",
-            "version": "2.11.2",
+            "version": "2.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-extended.git",
-                "reference": "eea85fdfb14788562193f88ae5c3889e0cf61986"
+                "reference": "2983531a80f95e5ae18e2f9a0674ca29e49acad1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/eea85fdfb14788562193f88ae5c3889e0cf61986",
-                "reference": "eea85fdfb14788562193f88ae5c3889e0cf61986",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/2983531a80f95e5ae18e2f9a0674ca29e49acad1",
+                "reference": "2983531a80f95e5ae18e2f9a0674ca29e49acad1",
                 "shasum": ""
             },
             "require": {
@@ -524,7 +524,7 @@
                 "vlucas/phpdotenv": "^5.0"
             },
             "require-dev": {
-                "getkirby/cms": "^3.6"
+                "getkirby/cms": "^3.7"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -561,30 +561,30 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-extended/issues",
-                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.11.2"
+                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.11.3"
             },
-            "time": "2022-06-22T15:33:19+00:00"
+            "time": "2022-09-02T16:46:11+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
-            "version": "1.1.7",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-punctuation-section.git",
-                "reference": "0258ca13d5dffa3f8094e434b2eba9fe119147a4"
+                "reference": "a5408458758ea5b6f439ba71a45534aa5fdf9c79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/0258ca13d5dffa3f8094e434b2eba9fe119147a4",
-                "reference": "0258ca13d5dffa3f8094e434b2eba9fe119147a4",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/a5408458758ea5b6f439ba71a45534aa5fdf9c79",
+                "reference": "a5408458758ea5b6f439ba71a45534aa5fdf9c79",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=7.4.0"
+                "php": ">=8.0.0"
             },
             "require-dev": {
-                "getkirby/cms": "^3.6"
+                "getkirby/cms": "^3.7"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -611,9 +611,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-punctuation-section/issues",
-                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v1.1.7"
+                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.0.0"
             },
-            "time": "2021-11-30T18:02:46+00:00"
+            "time": "2022-09-11T15:45:07+00:00"
         },
         {
             "name": "johannschopplich/kirby-vite",
@@ -839,16 +839,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.6.3",
+            "version": "v6.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "9400f305a898f194caff5521f64e5dfa926626f3"
+                "reference": "a94fdebaea6bd17f51be0c2373ab80d3d681269b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/9400f305a898f194caff5521f64e5dfa926626f3",
-                "reference": "9400f305a898f194caff5521f64e5dfa926626f3",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/a94fdebaea6bd17f51be0c2373ab80d3d681269b",
+                "reference": "a94fdebaea6bd17f51be0c2373ab80d3d681269b",
                 "shasum": ""
             },
             "require": {
@@ -905,7 +905,7 @@
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "support": {
                 "issues": "https://github.com/PHPMailer/PHPMailer/issues",
-                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.6.3"
+                "source": "https://github.com/PHPMailer/PHPMailer/tree/v6.6.4"
             },
             "funding": [
                 {
@@ -913,7 +913,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-20T09:21:02+00:00"
+            "time": "2022-08-22T09:22:00+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1528,16 +1528,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v5.4.11",
+            "version": "v5.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "05d4ea560f3402c6c116afd99fdc66e60eda227e"
+                "reference": "7a3aa21ac8ab1a96cc6de5bbcab4bc9fc943b18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/05d4ea560f3402c6c116afd99fdc66e60eda227e",
-                "reference": "05d4ea560f3402c6c116afd99fdc66e60eda227e",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/7a3aa21ac8ab1a96cc6de5bbcab4bc9fc943b18c",
+                "reference": "7a3aa21ac8ab1a96cc6de5bbcab4bc9fc943b18c",
                 "shasum": ""
             },
             "require": {
@@ -1583,7 +1583,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v5.4.11"
+                "source": "https://github.com/symfony/yaml/tree/v5.4.12"
             },
             "funding": [
                 {
@@ -1599,7 +1599,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-06-27T16:58:25+00:00"
+            "time": "2022-08-02T15:52:22+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -6,7 +6,7 @@
     "symfony/yaml": "^5.4",
     "johannschopplich/kirby-extended": "^2.11",
     "johannschopplich/kirby-blurry-placeholder": "^1.4",
-    "johannschopplich/kirby-punctuation-section": "^1.1",
+    "johannschopplich/kirby-punctuation-section": "^2.0",
     "johannschopplich/kirby-vite": "^1.0",
     "bnomei/kirby3-feed": "^1.5"
   },
