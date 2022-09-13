@@ -1,8 +1,7 @@
 <?php /** @var \Kirby\Cms\Collection $query */ ?>
 <div class="
-  relative
-  grid -mx-xl sm:grid-cols-2
-  after:content-empty after:absolute after:left-0 after:right-0 after:bottom-0 after:h-1px after:bg-theme-background
+  -mx-xl relative grid sm:grid-cols-2
+  after:content-empty after:h-1px after:bg-theme-background after:absolute after:inset-x-0 after:bottom-0
 ">
   <?php foreach ($query as $article): ?>
     <?php /** @var \Kirby\Cms\Page $article */ ?>
@@ -13,7 +12,7 @@
     ">
       <p class="text-contrast-medium">
         <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">
-          <?= $article->published()->toDate(new IntlDateFormatter($kirby->languageCode(), IntlDateFormatter::LONG, IntlDateFormatter::NONE)) ?>
+          <?= $article->published()->toDate(dateFormatter()) ?>
         </time>
       </p>
 

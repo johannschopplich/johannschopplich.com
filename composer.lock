@@ -617,16 +617,16 @@
         },
         {
             "name": "johannschopplich/kirby-vite",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-vite.git",
-                "reference": "f23863b0eb581e7da6c035c83955d94baece453a"
+                "reference": "85c098b6f53c19e0ee91e1669942ae1f28c2b9f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-vite/zipball/f23863b0eb581e7da6c035c83955d94baece453a",
-                "reference": "f23863b0eb581e7da6c035c83955d94baece453a",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-vite/zipball/85c098b6f53c19e0ee91e1669942ae1f28c2b9f5",
+                "reference": "85c098b6f53c19e0ee91e1669942ae1f28c2b9f5",
                 "shasum": ""
             },
             "require": {
@@ -659,9 +659,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-vite/issues",
-                "source": "https://github.com/johannschopplich/kirby-vite/tree/v1.0.4"
+                "source": "https://github.com/johannschopplich/kirby-vite/tree/v1.0.6"
             },
-            "time": "2022-08-16T07:44:41+00:00"
+            "time": "2022-09-13T13:14:13+00:00"
         },
         {
             "name": "laminas/laminas-escaper",

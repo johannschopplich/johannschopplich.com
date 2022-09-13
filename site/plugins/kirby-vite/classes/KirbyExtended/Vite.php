@@ -138,8 +138,6 @@ class Vite
 
     /**
      * Gets the instance via lazy initialization
-     *
-     * @return \KirbyExtended\Vite
      */
     public static function getInstance(): \KirbyExtended\Vite
     {

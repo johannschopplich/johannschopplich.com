@@ -7,7 +7,7 @@
       <p class="text-contrast-medium">
         <?= t('article.publishedAt') ?>
         <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">
-          <?= $page->published()->toDate(new IntlDateFormatter($kirby->languageCode(), IntlDateFormatter::LONG, IntlDateFormatter::NONE)) ?>
+          <?= $page->published()->toDate(dateFormatter()) ?>
         </time>
       </p>
     <?php endif ?>

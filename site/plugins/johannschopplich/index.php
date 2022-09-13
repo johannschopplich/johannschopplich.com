@@ -20,3 +20,20 @@
         'pattern' => require __DIR__ . '/tags/pattern.php'
     ]
 ]);
+
+if (!function_exists('dateFormatter')) {
+    function dateFormatter()
+    {
+        static $dateFormatter;
+
+        if ($dateFormatter === null) {
+            $dateFormatter = new IntlDateFormatter(
+                kirby()->languageCode(),
+                IntlDateFormatter::LONG,
+                IntlDateFormatter::NONE
+            );
+        }
+
+        return $dateFormatter;
+    }
+}
