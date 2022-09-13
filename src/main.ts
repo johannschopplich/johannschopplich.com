@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./styles/main.scss";
 
 // Remove temporary stylesheet (to prevent FOUC) in development mode
@@ -29,5 +28,5 @@ const templates = Object.fromEntries(
   ).map(([key, value]) => [key.slice(12, -3), value])
 );
 
-const { template = "" } = document.body.dataset;
+const { template = "default" } = document.body.dataset;
 templates[template]?.().then((m) => m.default?.());
