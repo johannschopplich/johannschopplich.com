@@ -9,7 +9,7 @@ layout();
 
 <div class="content max-w-screen-lg">
   <div class="">
-    <h2 class="title text-2xl text-primary text-center mb-lg">
+    <h2 class="title text-primary mb-lg text-center text-2xl">
       <?= t('articles.latest') ?>
     </h2>
 
@@ -39,14 +39,14 @@ layout();
   <div class="content max-w-screen-lg">
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-    <h2 class="title text-2xl text-primary text-center mb-lg">
+    <h2 class="title text-primary mb-lg text-center text-2xl">
       <?= t('photography') ?>
     </h2>
   </div>
 
   <?php snippet('shortcuts/slider', compact('query')) ?>
 
-  <div class="content max-w-screen-lg pb-8xl">
+  <div class="content pb-8xl max-w-screen-lg">
     <div class="text-center mt-lg">
       <a href="<?= $photography->url() ?>" class="action-button">
         <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>

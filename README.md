@@ -54,4 +54,4 @@ pnpm run build
 
 ## License
 
-[MIT](./LICENSE) License © 2021 [Johann Schopplich](https://github.com/johannschopplich)
+[MIT](./LICENSE) License © 2021-2022 [Johann Schopplich](https://github.com/johannschopplich)

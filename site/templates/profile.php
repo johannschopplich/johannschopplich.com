@@ -6,11 +6,11 @@ layout();
 ?>
 
 <div class="pb-5xl md:pt-5xl">
-  <div class="max-w-screen-lg grid gap-5xl sm:grid-cols-2 sm:gap-6xl sm:pr-lg md:pr-3xl">
+  <div class="gap-5xl sm:gap-6xl sm:pr-lg md:pr-3xl grid max-w-screen-lg sm:grid-cols-2">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="relative md:shadow-frame unselectable">
-          <svg id="drauu-canvas" class="cursor-crosshair touch-pinch-zoom absolute t-0 l-0 w-full h-full z-10 hidden md:block"></svg>
+        <figure class="md:shadow-frame unselectable relative">
+          <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
           <img
             src="<?= $image->url() ?>"
             width="<?= $image->width() ?>"
@@ -19,7 +19,7 @@ layout();
           >
         </figure>
 
-        <div class="drauu-controls flex-wrap items-center gap-1 mt-xs hidden md:flex md:ml-3xl">
+        <div class="drauu-controls mt-xs md:ml-3xl hidden flex-wrap items-center gap-1 md:flex">
           <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
           <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
           <!-- <button id="m-eraser" title="<?= t('drauu.eraser') ?>">⚪️</button> -->
@@ -53,7 +53,7 @@ layout();
     <div class="pt-5xl border-t">
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div
-          class="grid gap-x-3xl gap-y-8 grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))]"
+          class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8"
           style="--du-prose-space-y: 1.25;"
         >
           <?php foreach ($layout->columns() as $column): ?>

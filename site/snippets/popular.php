@@ -4,8 +4,8 @@
 
 $year = null;
 ?>
-<section class="content max-w-prose pb-8xl">
-  <h2 class="title text-xl text-primary mb-3xl">
+<section class="content pb-8xl max-w-prose">
+  <h2 class="title text-primary mb-3xl text-xl">
     <?= $heading ?>
   </h2>
 
@@ -16,13 +16,13 @@ $year = null;
 
     <?php if ($postY !== $year): ?>
       <div class="mt-3xl mb-xs">
-        <h3 class="text-size-xl leading-none text-contrast-low"><?= $postY ?></h3>
+        <h3 class="text-size-xl text-contrast-low leading-none"><?= $postY ?></h3>
       </div>
     <?php endif ?>
 
     <a
       href="<?= $post->url() ?>"
-      class="flex items-start gap-xs mb-xs"
+      class="gap-xs mb-xs flex items-start"
       <?php e($isActive, 'aria-current="page"') ?>
       style="--du-color-link-hover: var(--du-color-primary);"
     >
@@ -31,7 +31,7 @@ $year = null;
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>
         <hr class="border-contrast-medium invisible md:visible md:basis-1/4 md:mt-3">
-        <span class="flex-shrink-0 flex flex-wrap justify-start items-center space-x-1">
+        <span class="shrink-0 flex flex-wrap justify-start items-center space-x-1">
           <?php foreach ($post->categories()->split() as $category): ?>
             <span class="tag"><?= $category ?></span>
           <?php endforeach ?>

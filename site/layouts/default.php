@@ -31,7 +31,9 @@
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 
   <?php foreach ($kirby->languages() as $language): ?>
-    <?php if ($language->code() === $kirby->languageCode()) continue; ?>
+    <?php if ($language->code() === $kirby->languageCode()) {
+        continue;
+    } ?>
     <link rel="alternate" hreflang="<?= $language->code() ?>" href="<?= $page->urlForLanguage($language->code()) ?>">
   <?php endforeach ?>
 
@@ -59,7 +61,7 @@
 
 <body class="min-h-$h-screen" data-template="<?= $page->intendedTemplate()->name() ?>">
 
-  <header class="sticky top-0 z-20 content py-2 border-b bg-theme-background md:py-xs">
+  <header class="content bg-theme-background md:py-xs sticky top-0 z-20 border-b py-2">
     <?php snippet('navigation') ?>
   </header>
 

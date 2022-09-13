@@ -7,9 +7,9 @@
   <?php foreach ($query as $article): ?>
     <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="
-      relative p-xl
-      before:content-empty before:absolute before:left-5 before:right-5 before:bottom-0 before:h-1px before:bg-current
-      after:content-empty after:absolute after:top-5 after:bottom-5 after:right-0 after:w-1px after:bg-current
+      p-xl relative
+      before:content-empty before:h-1px before:absolute before:inset-x-5 before:bottom-0 before:bg-current
+      after:content-empty after:w-1px after:absolute after:inset-y-5 after:right-0 after:bg-current
     ">
       <p class="text-contrast-medium">
         <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">
@@ -18,7 +18,7 @@
       </p>
 
       <h2 class="title text-size-xl mb-lg">
-        <a href="<?= $article->url() ?>" class="text-underline leading-tight hyphenate !text-current">
+        <a href="<?= $article->url() ?>" class="text-underline hyphenate leading-tight !text-current">
           <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $article->title() ?>
         </a>

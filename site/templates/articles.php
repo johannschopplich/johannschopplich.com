@@ -7,8 +7,8 @@ layout()
 ?>
 
 <div class="py-8xl">
-  <div class="content max-w-screen-lg pb-5xl">
-    <h1 class="text-3xl text-primary font-heading font-900 mb-5xl md:text-4xl">
+  <div class="content pb-5xl max-w-screen-lg">
+    <h1 class="text-primary font-heading font-900 mb-5xl text-3xl md:text-4xl">
       <?= t('articles.all') ?>
     </h1>
 

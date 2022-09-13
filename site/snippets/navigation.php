@@ -3,8 +3,8 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 ?>
-<nav class="flex flex-wrap gap-x-lg items-center font-heading">
-  <div class="basis-full sm:basis-auto mr-auto">
+<nav class="gap-x-lg font-heading flex flex-wrap items-center">
+  <div class="mr-auto basis-full sm:basis-auto">
     <a href="<?= $site->url() ?>" class="font-600" aria-label="<?= t('home') ?>"<?php e($page->isHomePage(), ' aria-current="page"') ?>>
       <?= $site->title()->escape() ?>
     </a>

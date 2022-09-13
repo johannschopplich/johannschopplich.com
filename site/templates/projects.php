@@ -11,7 +11,7 @@ layout();
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
-      <div class="group relative content pt-xl border-t mb-xl">
+      <div class="group content pt-xl mb-xl relative border-t">
         <p class="text-contrast-medium word-spacing-[0.5ch]">
           <?= $project->subtitle()->escape() ?>
         </p>

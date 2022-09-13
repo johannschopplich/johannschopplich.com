@@ -2,7 +2,7 @@
 
 /** @var \Kirby\Cms\Page $page */ ?>
 <div class="py-8xl">
-  <div class="content max-w-prose pb-5xl">
+  <div class="content pb-5xl max-w-prose">
     <?php if ($page->published()->exists() && $page->published()->isNotEmpty()) : ?>
       <p class="text-contrast-medium">
         <?= t('article.publishedAt') ?>
@@ -12,7 +12,7 @@
       </p>
     <?php endif ?>
 
-    <h1 class="title text-3xl font-900 md:text-4xl">
+    <h1 class="title font-900 text-3xl md:text-4xl">
       <?= $page->title()->escape() ?>
     </h1>
 
