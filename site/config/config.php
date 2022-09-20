@@ -33,7 +33,7 @@ return [
         'extra' => true
     ],
 
-    'kirby-extended' => [
+    'kirby-helpers' => [
         'redirects' => require __DIR__ . '/redirects.php',
         'meta' => [
             'defaults' => require __DIR__ . '/meta.php'
@@ -45,8 +45,10 @@ return [
             'enable' => true
         ],
         'vite' => [
-            'entry' => 'main.ts'
-        ]
+            'server' => [
+                'host' => 'localhost'
+            ]
+        ],
     ]
 
 ];

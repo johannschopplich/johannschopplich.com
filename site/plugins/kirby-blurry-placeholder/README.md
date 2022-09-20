@@ -12,7 +12,7 @@ How it works:
 ## Key Features
 
 - ✨ Avoids content jumping (keeping aspect ratio)
-- 🥨 Respects [custom image formats](https://getkirby.com/docs/guide/templates/resize-images-on-the-fly#image-formats) set globally
+- 🥨 Respects [custom image formats](https://getkirby.com/docs/guide/templates/resize-images-on-the-fly#image-formats), like WebP and AVIF
 - 🏗 Use as:
   - [Image block](#as-kirby-image-block)
   - [Kirbytag](#as-kirbytag)
@@ -23,7 +23,7 @@ How it works:
 ## Requirements
 
 - Kirby 3.6+
-- PHP 7.4+
+- PHP 8.0+
 
 ## Installation
 

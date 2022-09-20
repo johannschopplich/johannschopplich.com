@@ -40,16 +40,14 @@
   <link rel="alternate" type="application/rss+xml" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/rss') ?>">
   <link rel="alternate" type="application/json" title="<?= $site->title()->escape() ?>" href="<?= url('feeds/json') ?>">
 
-  <?= vite()->js() ?>
-  <?= vite()->css() ?>
-
   <?php if (vite()->isDev()): ?>
     <?= css('assets/dev/index.css?v=' . time(), ['id' => 'vite-dev-css']) ?>
   <?php endif ?>
 
-  <?= css([
-    'assets/fonts/CooperHewitt.css'
-  ]) ?>
+  <?= vite()->js('main.ts') ?>
+  <?= vite()->css('main.ts') ?>
+
+  <?= css(['assets/fonts/CooperHewitt.css']) ?>
 
   <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 

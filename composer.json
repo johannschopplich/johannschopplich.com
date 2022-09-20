@@ -4,10 +4,9 @@
     "getkirby/cms": "^3.7",
     "getkirby/layouts": "^1.0",
     "symfony/yaml": "^5.4",
-    "johannschopplich/kirby-extended": "^2.11",
-    "johannschopplich/kirby-blurry-placeholder": "^1.4",
+    "johannschopplich/kirby-helpers": "^3.0",
+    "johannschopplich/kirby-blurry-placeholder": "^2.0",
     "johannschopplich/kirby-punctuation-section": "^2.0",
-    "johannschopplich/kirby-vite": "^1.0",
     "bnomei/kirby3-feed": "^1.5"
   },
   "scripts": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6e36997b3e968f77a0e26d3276928b8",
+    "content-hash": "3e7c9e4d2526326a4bcdca87157fd2f6",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -454,24 +454,24 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "1.5.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "33d1f792bdf8818008e09ce87e85dd63ca7e88fd"
+                "reference": "49b61f3453c8c11639d3e0a343a54466649b5414"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/33d1f792bdf8818008e09ce87e85dd63ca7e88fd",
-                "reference": "33d1f792bdf8818008e09ce87e85dd63ca7e88fd",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/49b61f3453c8c11639d3e0a343a54466649b5414",
+                "reference": "49b61f3453c8c11639d3e0a343a54466649b5414",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=7.4.0"
+                "php": ">=8.0.0"
             },
             "require-dev": {
-                "getkirby/cms": "^3.6"
+                "getkirby/cms": "^3.7"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -499,28 +499,28 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v1.5.0"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v2.0.0"
             },
-            "time": "2022-03-17T12:30:45+00:00"
+            "time": "2022-09-20T10:30:20+00:00"
         },
         {
-            "name": "johannschopplich/kirby-extended",
-            "version": "2.11.5",
+            "name": "johannschopplich/kirby-helpers",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johannschopplich/kirby-extended.git",
-                "reference": "06a4dd911477307a74f0afb87cdb9959bb760abb"
+                "url": "https://github.com/johannschopplich/kirby-helpers.git",
+                "reference": "227fbd037608800d6140db1091ed1f7ed46520bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-extended/zipball/06a4dd911477307a74f0afb87cdb9959bb760abb",
-                "reference": "06a4dd911477307a74f0afb87cdb9959bb760abb",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/227fbd037608800d6140db1091ed1f7ed46520bc",
+                "reference": "227fbd037608800d6140db1091ed1f7ed46520bc",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
                 "php": ">=8.0.0",
-                "symfony/polyfill-php80": "^1.23",
+                "symfony/polyfill-php80": "^1.26",
                 "vlucas/phpdotenv": "^5.0"
             },
             "require-dev": {
@@ -535,7 +535,7 @@
                     "helpers.php"
                 ],
                 "psr-4": {
-                    "KirbyExtended\\": "classes/KirbyExtended/"
+                    "KirbyHelpers\\": "classes/KirbyHelpers/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -550,20 +550,23 @@
                 }
             ],
             "description": "Dotenv support, meta tags generation and more for the Kirby CMS",
-            "homepage": "https://github.com/johannschopplich/kirby-extended#readme",
+            "homepage": "https://github.com/johannschopplich/kirby-helpers#readme",
             "keywords": [
                 "dotenv",
                 "env",
+                "getkirby",
                 "kirby",
+                "kirby-cms",
                 "meta",
                 "meta-tags",
-                "seo"
+                "seo",
+                "vite"
             ],
             "support": {
-                "issues": "https://github.com/johannschopplich/kirby-extended/issues",
-                "source": "https://github.com/johannschopplich/kirby-extended/tree/v2.11.5"
+                "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.1"
             },
-            "time": "2022-09-14T07:38:46+00:00"
+            "time": "2022-09-20T18:55:33+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
@@ -614,54 +617,6 @@
                 "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.0.1"
             },
             "time": "2022-09-12T07:35:27+00:00"
-        },
-        {
-            "name": "johannschopplich/kirby-vite",
-            "version": "1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johannschopplich/kirby-vite.git",
-                "reference": "85c098b6f53c19e0ee91e1669942ae1f28c2b9f5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-vite/zipball/85c098b6f53c19e0ee91e1669942ae1f28c2b9f5",
-                "reference": "85c098b6f53c19e0ee91e1669942ae1f28c2b9f5",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0.0"
-            },
-            "require-dev": {
-                "getkirby/cms": "^3.7"
-            },
-            "type": "kirby-plugin",
-            "extra": {
-                "kirby-cms-path": false
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Johann Schopplich",
-                    "email": "pkg@johannschopplich.com",
-                    "homepage": "https://johannschopplich.com"
-                }
-            ],
-            "description": "Vite integration for the Kirby CMS",
-            "homepage": "https://github.com/johannschopplich/kirby-vite#readme",
-            "keywords": [
-                "kirby",
-                "vite"
-            ],
-            "support": {
-                "issues": "https://github.com/johannschopplich/kirby-vite/issues",
-                "source": "https://github.com/johannschopplich/kirby-vite/tree/v1.0.6"
-            },
-            "time": "2022-09-13T13:14:13+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
