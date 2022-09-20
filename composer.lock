@@ -454,16 +454,16 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "49b61f3453c8c11639d3e0a343a54466649b5414"
+                "reference": "3197e221c3845ecf9b023e07a732754307f963e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/49b61f3453c8c11639d3e0a343a54466649b5414",
-                "reference": "49b61f3453c8c11639d3e0a343a54466649b5414",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/3197e221c3845ecf9b023e07a732754307f963e8",
+                "reference": "3197e221c3845ecf9b023e07a732754307f963e8",
                 "shasum": ""
             },
             "require": {
@@ -488,7 +488,7 @@
                     "homepage": "https://johannschopplich.com"
                 }
             ],
-            "description": "Blurry image placeholders and lazy loading for better UX",
+            "description": "Blurry image placeholders for better UX",
             "homepage": "https://github.com/johannschopplich/kirby-blurry-placeholder#readme",
             "keywords": [
                 "image",
@@ -499,22 +499,22 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v2.0.0"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v2.0.1"
             },
-            "time": "2022-09-20T10:30:20+00:00"
+            "time": "2022-09-20T19:24:10+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "227fbd037608800d6140db1091ed1f7ed46520bc"
+                "reference": "2ad1bce31097ef93cb28ce767db5c96470e821ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/227fbd037608800d6140db1091ed1f7ed46520bc",
-                "reference": "227fbd037608800d6140db1091ed1f7ed46520bc",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/2ad1bce31097ef93cb28ce767db5c96470e821ed",
+                "reference": "2ad1bce31097ef93cb28ce767db5c96470e821ed",
                 "shasum": ""
             },
             "require": {
@@ -564,9 +564,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.1"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.2"
             },
-            "time": "2022-09-20T18:55:33+00:00"
+            "time": "2022-09-20T19:25:56+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
