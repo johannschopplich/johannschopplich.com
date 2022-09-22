@@ -43,12 +43,7 @@ return [
         ],
         'sitemap' => [
             'enable' => true
-        ],
-        'vite' => [
-            'server' => [
-                'host' => 'localhost'
-            ]
-        ],
+        ]
     ]
 
 ];
