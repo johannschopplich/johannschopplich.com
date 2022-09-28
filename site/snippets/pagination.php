@@ -15,12 +15,12 @@
     <?php foreach ($pagination->range(6) as $r): ?>
       <a
         href="<?= $pagination->pageUrl($r) ?>"
-        class="group flex flex-col items-center<?php e($pagination->page() === $r, ' text-theme-base') ?>"
+        class="group flex flex-col items-center <?php e($pagination->page() === $r, 'text-theme-base') ?>"
         aria-label="Go to page <?= $r ?>"
         <?php e($pagination->page() === $r, 'aria-current="page"') ?>
       >
         <span>o</span>
-        <span class="text-contrast-low font-500 mt-2 text-base<?php e($pagination->page() === $r, ' text-theme-base') ?>">
+        <span class="text-contrast-low font-500 mt-2 text-base <?php e($pagination->page() === $r, 'text-theme-base') ?>">
           <?= $r ?>
         </span>
       </a>

@@ -505,16 +505,16 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "3.0.5",
+            "version": "3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "2278822ef78f873b0b82cb2a7d589626cb946254"
+                "reference": "fe30dfe7ba9345c17e9a5843978f232987b782cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/2278822ef78f873b0b82cb2a7d589626cb946254",
-                "reference": "2278822ef78f873b0b82cb2a7d589626cb946254",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/fe30dfe7ba9345c17e9a5843978f232987b782cb",
+                "reference": "fe30dfe7ba9345c17e9a5843978f232987b782cb",
                 "shasum": ""
             },
             "require": {
@@ -564,9 +564,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.5"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.6"
             },
-            "time": "2022-09-22T15:00:14+00:00"
+            "time": "2022-09-26T19:24:54+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",

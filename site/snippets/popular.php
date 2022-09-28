@@ -26,7 +26,7 @@ $year = null;
       <?php e($isActive, 'aria-current="page"') ?>
       style="--du-color-link-hover: var(--du-color-primary);"
     >
-      <span class="flex-grow font-heading font-500<?php e($isActive, ' text-primary') ?>">
+      <span class="flex-grow font-heading font-500 <?php e($isActive, 'text-primary') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>
