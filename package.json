@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.15.0",
+  "packageManager": "pnpm@7.16.1",
   "scripts": {
     "assets:head": "esbuild src/head.ts --minify --format=iife --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/uno.css",
