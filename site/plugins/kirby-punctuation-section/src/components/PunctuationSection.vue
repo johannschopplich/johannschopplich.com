@@ -5,27 +5,32 @@
     </k-headline>
 
     <k-box :theme="theme">
-      <k-text class="k-text-punctuation">
-        <div v-for="(category, index) in text" :key="index" class="space-x-1">
-          <span class="k-text-punctuation-label">{{ category.label }}:</span>
-          <div class="k-text-punctuation-group space-x-1">
-            <button
-              v-for="(char, charIndex) in category.chars"
-              :key="charIndex"
-              :class="[
-                'k-button k-button-punctuation',
-                {
-                  'is-active':
-                    char === activeChar && index === categoryIndex,
-                },
-              ]"
-              type="button"
-              @click="writeToClipboard(char, index)"
-            >
-              {{ char }}
-            </button>
-          </div>
-        </div>
+      <k-text class="k-text-punctuation space-y-1">
+        <k-grid v-for="(category, index) in text" :key="index">
+          <k-column :width="category.help ? '1/2' : '1/1'">
+            <span class="k-text-punctuation-label">{{ category.label }}:</span>
+            <div class="k-text-punctuation-group space-x-1">
+              <button
+                v-for="(char, charIndex) in category.chars"
+                :key="charIndex"
+                :class="[
+                  'k-button k-button-punctuation',
+                  {
+                    'is-active': index === categoryIndex && char === activeChar,
+                  },
+                ]"
+                type="button"
+                @click="writeToClipboard(char, index)"
+              >
+                {{ char }}
+              </button>
+            </div>
+          </k-column>
+
+          <k-column v-if="category.help" :width="category.help ? '1/2' : '1/1'">
+            <k-text :html="category.help" class="k-text-punctuation-help" />
+          </k-column>
+        </k-grid>
       </k-text>
     </k-box>
   </section>
@@ -57,14 +62,18 @@ export default {
     this.theme = response.theme || "none";
     this.text = this.fieldsets.map((i) => ({
       ...i,
-      label:
-        typeof i.label === "string"
-          ? i.label
-          : i.label?.[this.$language?.code] ?? Object.values(i.label)[0],
+      label: this.t(i.label),
+      help: i.help ? this.t(i.help) : false,
     }));
   },
 
   methods: {
+    t(value) {
+      return typeof value === "string"
+        ? value
+        : value?.[this.$language?.code] ?? Object.values(value)[0];
+    },
+
     async writeToClipboard(char, categoryIndex) {
       try {
         // The Clipboard API is only available to secure contexts, it cannot be used
@@ -94,9 +103,14 @@ export default {
   margin-left: var(--spacing-1);
 }
 
+.space-y-1 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: var(--spacing-1);
+}
+
 .k-text-punctuation-label {
   cursor: default;
   user-select: none;
+  padding-right: 1ch;
 }
 
 .k-text-punctuation-group {
@@ -109,6 +123,7 @@ export default {
   font-size: 1.25em;
   font-family: serif;
   padding: 0 var(--spacing-2);
+  box-shadow: var(--shadow);
   transition: none;
   touch-action: manipulation;
 }
@@ -122,5 +137,20 @@ export default {
 .k-text-punctuation-group:hover
   .k-button-punctuation:not(.is-active):not(:hover) {
   background-color: var(--color-gray-200);
+  box-shadow: none;
+}
+
+.k-text-punctuation-help {
+  color: var(--color-gray-600);
+}
+
+.k-text-punctuation > .k-grid:not(:last-child) .k-text-punctuation-help {
+  padding-bottom: var(--spacing-1);
+}
+
+@media screen and (min-width: 65em) {
+  .k-text-punctuation > .k-grid:not(:last-child) .k-text-punctuation-help {
+    padding-bottom: 0;
+  }
 }
 </style>

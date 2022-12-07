@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.16.1",
+  "packageManager": "pnpm@7.18.1",
   "scripts": {
     "assets:head": "esbuild src/head.ts --minify --format=iife --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/uno.css",
@@ -19,24 +19,24 @@
     "medium-zoom": "^1.0.8"
   },
   "devDependencies": {
-    "@iconify-json/bx": "^1.1.4",
-    "@iconify-json/bxs": "^1.1.4",
-    "@iconify-json/fa-brands": "^1.1.2",
-    "@types/node": "^18.11.9",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": "^5.43.0",
-    "@unocss/cli": "^0.46.5",
-    "@unocss/preset-wind": "^0.46.5",
-    "concurrently": "^7.5.0",
-    "esbuild": "^0.15.14",
-    "eslint": "^8.27.0",
+    "@iconify-json/bx": "^1.1.5",
+    "@iconify-json/bxs": "^1.1.5",
+    "@iconify-json/fa-brands": "^1.1.3",
+    "@types/node": "^18.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "@unocss/cli": "^0.47.5",
+    "@unocss/preset-wind": "^0.47.5",
+    "concurrently": "^7.6.0",
+    "esbuild": "^0.16.1",
+    "eslint": "^8.29.0",
     "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.19",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "sass": "^1.56.1",
     "typescript": "^4.9.3",
-    "unocss": "^0.46.5",
-    "vite": "^3.2.4",
+    "unocss": "^0.47.5",
+    "vite": "^3.2.5",
     "vite-plugin-full-reload": "^1.0.4"
   }
 }

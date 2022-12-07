@@ -10,7 +10,7 @@ Label translations are supported as well. See [usage](#usage) below.
 
 ## Requirements
 
-- Kirby 3.6+
+- Kirby 3.7+
 
 ## Installation
 
@@ -38,7 +38,7 @@ A bare minimum section example:
 
 ```yaml
 type: punctuation
-headline: Lil Punctuation Helper
+label: Lil Punctuation Helper
 fieldsets:
   - category:
     label: German Quotation Marks
@@ -47,6 +47,7 @@ fieldsets:
       - "‚"
       - "‘"
       - "“"
+    help: This is a description for the category
 ```
 
 Now, you're already good to go! Of course, you probably want to adapt the characters to your needs.
@@ -72,7 +73,7 @@ Take a look at the section blueprint below for a full fledged example, including
 
 ```yaml
 type: punctuation
-headline:
+label:
   de: Kleine Interpunktionshilfe
   en: Lil Punctuation Helper
 fieldsets:
@@ -82,6 +83,9 @@ fieldsets:
       en: Apostrophe
     chars:
       - "’"
+    help:
+      de: Das ist eine Beschreibung der Kategorie
+      en: This is a description for the category
   - category:
     label:
       de: Gedankenstrich
