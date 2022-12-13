@@ -1,5 +1,5 @@
 import { useBreakpoints } from "../hooks";
-import type { Drauu, Brush } from "drauu";
+import type { Brush, Drauu } from "drauu";
 
 const $ = (id: string) => document.getElementById(id);
 
