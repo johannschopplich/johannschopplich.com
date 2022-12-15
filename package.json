@@ -6,8 +6,8 @@
     "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/uno.css",
     "dev": "rm -rf public/dist && concurrently \"npm run assets:unocss -- --watch\" \"vite\"",
     "build": "npm run assets:unocss && vite build && npm run assets:head",
-    "lint": "eslint \"src/**/*.ts\" --ignore-path .gitignore",
-    "lint:fix": "npm run lint -- --fix",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix",
     "format": "prettier \"src/**/*.{css,scss,ts}\" --write --ignore-path .gitignore"
   },
   "dependencies": {
