@@ -6,9 +6,9 @@
     "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/uno.css",
     "dev": "rm -rf public/dist && concurrently \"npm run assets:unocss -- --watch\" \"vite\"",
     "build": "npm run assets:unocss && vite build && npm run assets:head",
-    "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix",
-    "format": "prettier \"src/**/*.{css,scss,ts}\" --write --ignore-path .gitignore"
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
+    "format": "prettier \"src/**/*\" --write --ignore-path .gitignore"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
