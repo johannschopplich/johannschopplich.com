@@ -27,7 +27,8 @@ $heightMap = [
         <div class="h-$cell bg-$bg flex items-center justify-center px-[5vh]" style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>">
           <?php snippet('shortcuts/img', [
             'file' => $image,
-            'class' => 'h-[80%] w-auto rounded-xl border border-theme-base object-contain'
+            'class' => 'h-[80%] w-auto rounded-xl border border-theme-base object-contain',
+            'zoomable' => $settings->link()->isEmpty() ? true : null
           ]) ?>
         </div>
       <?php else: ?>
