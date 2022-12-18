@@ -20,7 +20,7 @@ tabs:
           drafts:
             type: pages
             template: project
-            headline:
+            label:
               de: Entwürfe
               en: Drafts
             status: draft
@@ -28,7 +28,7 @@ tabs:
           unlisted:
             type: pages
             template: project
-            headline:
+            label:
               de: Ungelistet
               en: Unlisted
             status: unlisted
@@ -39,7 +39,7 @@ tabs:
             type: pages
             template: project
             info: "{{ page.subtitle }}"
-            headline:
+            label:
               de: Veröffentlichte Projekte
               en: Published Projects
             status: listed

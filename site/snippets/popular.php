@@ -24,7 +24,7 @@ $year = null;
       href="<?= $post->url() ?>"
       class="gap-xs mb-xs flex items-start"
       <?php e($isActive, 'aria-current="page"') ?>
-      style="--du-color-link-hover: var(--du-color-primary);"
+      style="--du-color-link-hover: var(--du-color-primary)"
     >
       <span class="flex-grow font-heading font-500 <?php e($isActive, 'text-primary') ?>">
         <?= $post->title()->escape() ?>

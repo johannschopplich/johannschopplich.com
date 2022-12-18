@@ -2,7 +2,7 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 ?>
-<div class="masonry-grid gap-5xl sm:gap-lg" style="--masonry-col-max-w: clamp(25rem, 25vw, 30rem);">
+<div class="masonry-grid gap-5xl sm:gap-lg" style="--masonry-col-max-w: clamp(25rem, 25vw, 30rem)">
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>

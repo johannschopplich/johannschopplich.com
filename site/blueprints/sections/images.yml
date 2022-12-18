@@ -1,5 +1,5 @@
 type: files
-headline:
+label:
   de: Bilder
   en: Images
 template: image

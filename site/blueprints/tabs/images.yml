@@ -5,7 +5,7 @@ icon: image
 sections:
   images:
     type: files
-    headline:
+    label:
       de: Bilder
       en: Images
     template: image

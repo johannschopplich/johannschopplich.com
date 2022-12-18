@@ -1,17 +1,24 @@
 <?php
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
+/** @var bool|null $zoomable */
+/** @var string|null $height */
+
+$heightMap = [
+  'tight' => 'clamp(36vh, 50vw, 25vh)',
+  'normal' => 'clamp(36vh, 50vw, 50vh)',
+  'loose' => 'clamp(36vh, 50vw, 75vh)'
+];
 ?>
 <div
   class="gap-xs flex w-full snap-x snap-mandatory overflow-x-auto"
-  style="--cell: clamp(36vh, 50vw, 75vh);"
+  style="--cell: <?= $heightMap[$height ?? 'normal'] ?>"
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <div class="shrink-0 snap-center snap-always first:snap-start">
       <?php snippet('shortcuts/img', [
         'file' => $image,
-        // pointer-events-none
         'class' => 'h-$cell w-auto object-contain',
         'zoomable' => $zoomable ?? null
       ]) ?>

@@ -9,29 +9,27 @@ tabs:
       en: Dashboard
     icon: paragraph
     columns:
-      - width: 1/2
+      - width: 2/3
         sections:
-          drafts:
+          articles:
             extends: sections/articles
-            headline:
-              de: Artikelentwürfe
-              en: Article Drafts
-            status: draft
-          published:
-            extends: sections/articles
-            headline:
-              de: Veröffentlichte Artikel
-              en: Published Articles
-            status: published
-            limit: 10
-            layout: cards
-            size: tiny
+            label:
+              de: Artikel
+              en: Articles
+            layout: table
+            columns:
+              published:
+                label:
+                  de: Veröffentlicht
+                  en: Published
+                value: "{{ page.published.toDate('dd.MM.Y') }}"
+                width: 1/4
 
-      - width: 1/2
+      - width: 1/3
         sections:
           pages:
             type: pages
-            headline:
+            label:
               de: Seiten
               en: Pages
             status: all
@@ -39,8 +37,8 @@ tabs:
             info: "/{{ page.slug }}"
             image:
               query: page.thumbnail.toFile
-              back: "#C9787C"
               cover: true
+              back: "#C9787C"
 
   settings:
     label:

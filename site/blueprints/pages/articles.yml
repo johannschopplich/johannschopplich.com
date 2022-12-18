@@ -18,21 +18,23 @@ tabs:
         sections:
           drafts:
             extends: sections/articles
-            headline:
+            label:
               de: Entwürfe
               en: Drafts
+            info: "{{ page.published.toDate('dd.MM.Y') }}"
             status: drafts
 
       - width: 2/3
         sections:
           published:
             extends: sections/articles
-            headline:
+            label:
               de: Veröffentlicht
               en: Published
             status: published
             layout: cards
             size: tiny
+            info: "{{ page.published.toDate('dd.MM.Y') }}"
 
   settings:
     label:

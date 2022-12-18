@@ -28,11 +28,14 @@ columns:
             default: today
             translate: false
             width: 1/3
-          author:
+          thumbnail:
             label:
-              de: Autor
-              en: Author
-            type: users
+              de: Vorschaubild
+              en: Thumbnail
+            type: files
+            query: page.files.template('image')
+            uploads:
+              template: image
             multiple: false
             translate: false
             width: 1/3
@@ -43,14 +46,11 @@ columns:
             type: text
             icon: tag
             width: 1/3
-          thumbnail:
+          author:
             label:
-              de: Vorschaubild
-              en: Thumbnail
-            type: files
-            query: page.files.template('image')
-            uploads:
-              template: image
+              de: Autor
+              en: Author
+            type: users
             multiple: false
             translate: false
             width: 1/3

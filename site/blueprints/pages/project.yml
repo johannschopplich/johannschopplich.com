@@ -27,6 +27,23 @@ columns:
             translate: false
             required: true
             width: 1/2
+          galleryHeight:
+            label:
+              de: Galeriehöhe
+              en: Gallery Height
+            type: select
+            default: loose
+            options:
+              tight:
+                de: Eng
+                en: Tight
+              normal:
+                de: Normal
+                en: Normal
+              loose:
+                de: Locker
+                en: Loose
+            translate: false
       images: sections/images
       files: sections/files
 
@@ -42,4 +59,6 @@ columns:
             type: files
             layout: cards
             translate: false
+            image:
+              back: white
           text: fields/blocks
