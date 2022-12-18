@@ -17,7 +17,7 @@ return [
         'articles.popular' => 'Popular Articles',
         'article.publishedAt' => '',
         'projects.title' => 'Projects of the Heart',
-        'projects.more' => 'Want to know more',
+        'projects.more' => 'About the Project',
         'project.allWorks' => 'All Works',
         'photography' => 'Photographs',
         'photography.morePhotos' => 'More Photographs',
