@@ -30,7 +30,6 @@ layout();
       ], ' ') ?>>
         <?php snippet('shortcuts/slider', [
           'query' => $project->gallery()->toFiles(),
-          'zoomable' => true,
           'height' => $project->galleryHeight()->value()
           ]) ?>
       </div>
