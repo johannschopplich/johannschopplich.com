@@ -11,6 +11,12 @@ columns:
       content:
         type: fields
         fields:
+          alt:
+            label:
+              de: Alternativtext
+              en: Alternative Text
+            type: text
+            icon: title
           caption:
             label:
               de: Beschriftung
@@ -24,9 +30,22 @@ columns:
       meta:
         type: fields
         fields:
-          alt:
-            label:
-              de: Alternativtext
-              en: Alternative Text
-            type: text
-            icon: title
+          gallery:
+            label: Galerie
+            type: object
+            fields:
+              link:
+                label: Link
+                type: url
+                width: 2/3
+              hasBorder:
+                label: Screenshot
+                type: toggle
+                width: 1/3
+              bgColor:
+                label:
+                  de: Hintergrundfarbe
+                  en: Background Color
+                type: text
+                when:
+                  hasBorder: true

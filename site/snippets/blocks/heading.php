@@ -9,12 +9,12 @@ $id = Str::slug(Str::unhtml($block->text()));
 $model = $block->parent();
 
 if (
-  is_a($model, \Kirby\Cms\Page::class) &&
-  str_starts_with($model->template()->name(), 'article')
+    is_a($model, \Kirby\Cms\Page::class) &&
+    str_starts_with($model->template()->name(), 'article')
 ) {
-  $text = Html::tag('a', [$block->text()], ['href' => "#{$id}"]);
+    $text = Html::tag('a', [$block->text()], ['href' => "#{$id}"]);
 } else {
-  $text = $block->text();
+    $text = $block->text();
 }
 
 echo Html::tag($level, [$text], ['id' => $id]);

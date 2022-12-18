@@ -24,19 +24,6 @@ layout();
         </h2>
       </div>
 
-      <?php /*
-      <div class="content max-w-screen-lg">
-        <?php if ($image = $project->thumbnail()->toFile()): ?>
-          <figure class="content-breakout aspect-ratio-4/3 md:group-hover:shadow-frame">
-            <?php snippet('shortcuts/img', [
-              'file' => $image,
-              'class' => 'object-cover h-full'
-            ]) ?>
-          </figure>
-        <?php endif ?>
-      </div>
-      */ ?>
-
       <div class="mb-lg"<?= attr([
         'data-animere' => !$project->isFirst($children) ? 'fadeInRight' : null,
         'data-animere-duration' => '500ms'
@@ -44,7 +31,7 @@ layout();
         <?php snippet('shortcuts/slider', [
           'query' => $project->gallery()->toFiles(),
           'zoomable' => true,
-          'height' => $page->galleryHeight()->value()
+          'height' => $project->galleryHeight()->value()
           ]) ?>
       </div>
 

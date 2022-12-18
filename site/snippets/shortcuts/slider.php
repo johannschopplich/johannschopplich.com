@@ -16,13 +16,28 @@ $heightMap = [
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
-    <div class="shrink-0 snap-center snap-always first:snap-start">
-      <?php snippet('shortcuts/img', [
-        'file' => $image,
-        'class' => 'h-$cell w-auto object-contain',
-        'zoomable' => $zoomable ?? null
-      ]) ?>
-    </div>
+    <?php $settings = $image->gallery()->toObject() ?>
+    <?php $tag = $settings->link()->isNotEmpty() ? 'a' : 'div' ?>
+    <<?= $tag ?> class="shrink-0 snap-center snap-always first:snap-start"<?= attr([
+      'href' => $settings->link()->isNotEmpty() ? $settings->link()->value() : null,
+      'target' => $settings->link()->isNotEmpty() ? '_blank' : null,
+      'rel' => $settings->link()->isNotEmpty() ? 'noopener' : null
+    ], ' ') ?>>
+      <?php if ($settings->hasBorder()->isTrue()): ?>
+        <div class="h-$cell bg-$bg flex items-center justify-center px-[5vh]" style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>">
+          <?php snippet('shortcuts/img', [
+            'file' => $image,
+            'class' => 'h-[80%] w-auto rounded-xl border border-theme-base object-contain'
+          ]) ?>
+        </div>
+      <?php else: ?>
+        <?php snippet('shortcuts/img', [
+          'file' => $image,
+          'class' => 'h-$cell w-auto object-contain',
+          'zoomable' => $zoomable ?? null
+        ]) ?>
+      <?php endif ?>
+    </<?= $tag ?>>
   <?php endforeach ?>
 
   <?php if ($page->isHomePage()): ?>
