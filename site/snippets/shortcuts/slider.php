@@ -28,14 +28,14 @@ $heightMap = [
           <?php snippet('shortcuts/img', [
             'file' => $image,
             'class' => 'h-full w-auto rounded-xl border border-theme-base object-contain',
-            'zoomable' => $settings->link()->isEmpty() ? true : null
+            'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
           ]) ?>
         </div>
       <?php else: ?>
         <?php snippet('shortcuts/img', [
           'file' => $image,
           'class' => 'h-$cell w-auto object-contain',
-          'zoomable' => $zoomable ?? null
+          'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
         ]) ?>
       <?php endif ?>
     </<?= $tag ?>>
