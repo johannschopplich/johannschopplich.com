@@ -39,7 +39,9 @@ columns:
                 type: url
                 width: 2/3
               hasBorder:
-                label: Screenshot
+                label:
+                  de: Rahmen
+                  en: Border
                 type: toggle
                 width: 1/3
               bgColor:
