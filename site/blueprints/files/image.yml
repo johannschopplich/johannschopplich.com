@@ -37,17 +37,30 @@ columns:
               link:
                 label: Link
                 type: url
-                width: 2/3
-              hasBorder:
-                label:
-                  de: Rahmen
-                  en: Border
-                type: toggle
-                width: 1/3
+                width: 1/2
+              mockup:
+                label: Mockup
+                type: toggles
+                options:
+                  - value: mobile
+                    text:
+                      de: Mobil
+                      en: Mobile
+                    icon: mobile
+                  - value: desktop
+                    text: Desktop
+                    icon: display
+                  - value: none
+                    text:
+                      de: Keine
+                      en: None
+                    icon: cancel-small
+                width: 1/2
               bgColor:
                 label:
                   de: Hintergrundfarbe
                   en: Background Color
                 type: text
-                when:
-                  hasBorder: true
+                help:
+                  de: Findet nur Anwendung, wenn ein Mockup ausgewählt ist.
+                  en: Only applies when a mockup is selected.
