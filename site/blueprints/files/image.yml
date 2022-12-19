@@ -41,6 +41,7 @@ columns:
               mockup:
                 label: Mockup
                 type: toggles
+                default: none
                 options:
                   - value: mobile
                     text:
