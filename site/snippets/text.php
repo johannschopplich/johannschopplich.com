@@ -22,7 +22,7 @@
   </div>
 
   <div class="content max-w-prose">
-    <section class="prose" <?= attr(['lang' => $textLanguageCode], ' ') ?>>
+    <section class="prose"<?= attr(['lang' => $textLanguageCode], ' ') ?>>
       <?= $text ?>
 
       <?php if ($page->parent()?->template()?->name() === 'articles'): ?>

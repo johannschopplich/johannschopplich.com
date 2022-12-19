@@ -17,26 +17,25 @@ $heightMap = [
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <?php $settings = $image->gallery()->toObject() ?>
-    <?php $tag = $settings->link()->isNotEmpty() ? 'a' : 'div' ?>
-    <<?= $tag ?> class="shrink-0 snap-center snap-always first:snap-start"<?= attr([
-      'href' => $settings->link()->isNotEmpty() ? $settings->link()->value() : null,
-      'target' => $settings->link()->isNotEmpty() ? '_blank' : null,
-      'rel' => $settings->link()->isNotEmpty() ? 'noopener' : null
+    <?php $tag = ($hasLink = $settings->link()->isNotEmpty()) ? 'a' : 'div' ?>
+    <<?= $tag . attr([
+      'class' => 'shrink-0 snap-center snap-always first:snap-start',
+      'href' => $settings->link()->or(null)->value(),
+      'target' => $hasLink ? '_blank' : null,
+      'rel' => $hasLink ? 'noopener' : null
     ], ' ') ?>>
-      <?php if ($settings->hasBorder()->isTrue()): ?>
+      <?php if ($hasBorder = $settings->hasBorder()->isTrue()): ?>
         <div class="h-$cell bg-$bg p-3xl md:p-5xl" style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>">
-          <?php snippet('shortcuts/img', [
-            'file' => $image,
-            'class' => 'h-full w-auto rounded-xl border border-theme-base object-contain',
-            'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
-          ]) ?>
+      <?php endif ?>
+
+      <?php snippet('shortcuts/img', [
+        'file' => $image,
+        'class' => $hasBorder ? 'h-full w-auto rounded-xl border border-theme-base object-contain' : 'h-$cell w-auto object-contain',
+        'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
+      ]) ?>
+
+      <?php if ($hasBorder): ?>
         </div>
-      <?php else: ?>
-        <?php snippet('shortcuts/img', [
-          'file' => $image,
-          'class' => 'h-$cell w-auto object-contain',
-          'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
-        ]) ?>
       <?php endif ?>
     </<?= $tag ?>>
   <?php endforeach ?>
