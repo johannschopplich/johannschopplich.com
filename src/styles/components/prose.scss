@@ -1,4 +1,3 @@
-@use "sass:map";
 @use "duecss/abstracts/breakpoints";
 @use "duecss/plugins/typography";
 
@@ -46,7 +45,7 @@
   h2,
   h3,
   h4 {
-    a {
+    a:not([href^="http"]) {
       color: inherit;
       text-decoration-line: none;
     }
