@@ -33,6 +33,7 @@ columns:
           gallery:
             label: Galerie
             type: object
+            translate: false
             fields:
               link:
                 label: Link
