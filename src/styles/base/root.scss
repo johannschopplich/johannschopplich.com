@@ -7,10 +7,10 @@
   --du-font-family-heading: "Cooper Hewitt", sans-serif;
   --du-line-height-heading: 1.05;
 
-  // Custom due root variables
-  --du-shadow-frame: 3px 3px 0 var(--du-color-background),
-    4px 4px 0 currentColor;
+  // Project-specific due variables
   --du-decoration-width: max(2px, 0.1em);
+  --du-shadow-frame: 3px 3px 0 var(--du-color-background),
+    4px 4px 0 var(--du-color-border);
 }
 
 :root:not([data-theme]),
@@ -18,9 +18,13 @@
   --du-color-background: #fefcf8;
   --du-color-link: var(--du-color-text);
   --du-color-link-hover: var(--du-color-primary);
+  // Project-specific due variables
+  --du-color-border: currentColor;
 }
 
 [data-theme="dark"] {
   --du-color-link: var(--du-color-text);
   --du-color-link-hover: var(--du-color-primary);
+  // Project-specific due variables
+  --du-color-border: var(--du-color-contrast-lower);
 }

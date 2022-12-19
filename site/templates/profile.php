@@ -50,7 +50,7 @@ layout();
 
 <div class="pb-8xl">
   <div class="content max-w-screen-lg">
-    <div class="pt-5xl border-t">
+    <div class="pt-5xl border-t du-dark:border-contrast-lower">
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div
           class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8"

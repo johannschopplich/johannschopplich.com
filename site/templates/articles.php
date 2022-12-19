@@ -12,7 +12,7 @@ layout()
       <?= t('articles.all') ?>
     </h1>
 
-    <div class="overflow-hidden border-y">
+    <div class="overflow-hidden border-y du-dark:border-contrast-lower">
       <?php snippet('articles', ['query' => $query]) ?>
     </div>
   </div>

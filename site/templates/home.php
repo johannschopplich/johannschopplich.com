@@ -8,22 +8,20 @@ layout();
 <?php snippet('intro', ['title' => $page->text()]) ?>
 
 <div class="content max-w-screen-lg">
-  <div class="">
-    <h2 class="title text-primary mb-lg text-center text-2xl">
-      <?= t('articles.latest') ?>
-    </h2>
+  <h2 class="title text-primary mb-lg text-center text-2xl">
+    <?= t('articles.latest') ?>
+  </h2>
 
-    <div class="overflow-hidden border-y">
-      <?php snippet('articles', [
-        'query' => $kirby->collection('articles')->paginate(4)
-      ]) ?>
-    </div>
+  <div class="overflow-hidden border-y du-dark:border-contrast-lower">
+    <?php snippet('articles', [
+      'query' => $kirby->collection('articles')->paginate(4)
+    ]) ?>
+  </div>
 
-    <div class="text-center mt-lg">
-      <a href="<?= page('blog')->url() ?>" class="action-button">
-        <?= t('articles.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
-      </a>
-    </div>
+  <div class="text-center mt-lg">
+    <a href="<?= page('blog')->url() ?>" class="action-button">
+      <?= t('articles.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+    </a>
   </div>
 </div>
 

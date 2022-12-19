@@ -10,7 +10,7 @@
     bottom: 0;
     left: 50%;
     width: 1px;
-    background-color: currentColor;
+    background-color: var(--du-color-border);
     transform: translate3d(-50%, 0, 0);
     z-index: -1;
   }

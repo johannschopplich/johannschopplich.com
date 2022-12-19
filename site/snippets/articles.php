@@ -7,8 +7,8 @@
     <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="
       p-xl relative
-      before:content-empty before:h-1px before:absolute before:inset-x-5 before:bottom-0 before:bg-current
-      after:content-empty after:w-1px after:absolute after:inset-y-5 after:right-0 after:bg-current
+      before:content-empty before:h-1px before:absolute before:inset-x-5 before:bottom-0 before:bg-current du-dark:before:bg-contrast-lower
+      after:content-empty after:w-1px after:absolute after:inset-y-5 after:right-0 after:bg-current du-dark:after:bg-contrast-lower
     ">
       <p class="text-contrast-medium">
         <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">
