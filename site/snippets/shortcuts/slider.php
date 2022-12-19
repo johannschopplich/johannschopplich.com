@@ -33,7 +33,7 @@ $heightMap = [
         <?php if ($mockup === 'mobile'): ?>
           <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl absolute bottom-[calc(1.875rem+6px)] h-[4px] w-1/4 rounded-full bg-zinc-900"></div>
         <?php elseif ($mockup === 'desktop'): ?>
-          <div class="top-[calc(1.875rem+2px)] inset-x-3xl md:top-[calc(3rem+2px)] md:inset-x-5xl absolute flex h-4 items-center gap-1 rounded-t-lg bg-zinc-900 px-2 ">
+          <div class="top-[calc(1.875rem+1px)] inset-x-3xl md:top-[calc(3rem+1px)] md:inset-x-5xl absolute flex h-4 items-center gap-1 rounded-t-lg bg-zinc-900 px-2 ">
             <?php foreach (range(1, 3) as $i): ?>
               <div class="bg-contrast-low h-1.5 w-1.5 rounded-full"></div>
             <?php endforeach ?>
@@ -44,9 +44,9 @@ $heightMap = [
       <?php snippet('shortcuts/img', [
         'file' => $image,
         'class' => $mockup === 'mobile'
-          ? 'h-full w-auto rounded-xl border-2 border-zinc-900 object-contain'
+          ? 'h-full w-auto rounded-xl border border-zinc-900 object-contain'
           : ($mockup === 'desktop'
-            ? 'h-full w-auto rounded-lg border-2 border-zinc-900 object-contain pt-4'
+            ? 'h-full w-auto rounded-lg border border-zinc-900 object-contain pt-4'
             : 'h-$cell w-auto object-contain'),
         'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
       ]) ?>
