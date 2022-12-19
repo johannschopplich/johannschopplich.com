@@ -12,7 +12,7 @@ $heightMap = [
 ?>
 <div
   class="gap-xs flex w-full snap-x snap-mandatory overflow-x-auto"
-  style="--cell: <?= $heightMap[$height ?? 'normal'] ?>"
+  style="--cell: <?= $heightMap[$height ?? 'loose'] ?>"
 >
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
@@ -30,7 +30,7 @@ $heightMap = [
 
       <?php snippet('shortcuts/img', [
         'file' => $image,
-        'class' => $hasBorder ? 'h-full w-auto rounded-xl border border-theme-base object-contain' : 'h-$cell w-auto object-contain',
+        'class' => $hasBorder ? 'h-full w-auto rounded-xl border border-zinc-900 object-contain' : 'h-$cell w-auto object-contain',
         'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
       ]) ?>
 
