@@ -32,9 +32,9 @@ $heightMap = [
           --bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>;
         ">
         <?php if ($mockup === 'mobile'): ?>
-          <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl absolute bottom-[calc(1.875rem+6px)] h-[4px] w-1/4 rounded-full bg-zinc-900"></div>
+          <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl bottom-3xl absolute h-[2px] w-1/4 translate-y-[-3px] rounded-full bg-zinc-900"></div>
         <?php elseif ($mockup === 'desktop'): ?>
-          <div class="top-3xl inset-x-3xl md:top-5xl md:inset-x-5xl absolute flex h-4 translate-y-[1px] items-center gap-1 rounded-t-lg bg-zinc-900 px-2">
+          <div class="top-3xl inset-x-3xl md:top-5xl md:inset-x-5xl absolute flex h-4 translate-y-[-1rem] items-center gap-1 rounded-t-lg bg-zinc-900 px-2">
             <?php foreach (range(1, 3) as $i): ?>
               <div class="bg-contrast-low h-1.5 w-1.5 rounded-full"></div>
             <?php endforeach ?>
@@ -47,7 +47,7 @@ $heightMap = [
         'class' => $mockup === 'mobile'
           ? 'h-full w-auto rounded-xl border border-zinc-900 object-contain'
           : ($mockup === 'desktop'
-            ? 'h-full w-auto rounded-lg border border-zinc-900 object-contain pt-4'
+            ? 'h-full w-auto rounded-b-lg border border-zinc-900 object-contain'
             : 'h-$cell max-w-screen w-auto object-contain'),
         'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
       ]) ?>
