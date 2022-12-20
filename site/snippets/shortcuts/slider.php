@@ -34,9 +34,9 @@ $heightMap = [
         <?php if ($mockup === 'mobile'): ?>
           <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl bottom-3xl absolute h-[4px] w-1/4 translate-y-[-6px] rounded-full bg-zinc-900"></div>
         <?php elseif ($mockup === 'desktop'): ?>
-          <div class="flex h-4 items-center gap-1 rounded-t-lg border-x border-t border-zinc-900 px-2">
+          <div class="flex h-4 items-center gap-1 rounded-t-lg border-x border-t border-zinc-900 px-1.5">
             <?php foreach (range(1, 3) as $i): ?>
-              <div class="bg-contrast-low h-1.5 w-1.5 rounded-full"></div>
+              <div class="border border-zinc-900 h-1.5 w-1.5 rounded-full"></div>
             <?php endforeach ?>
           </div>
         <?php endif ?>
