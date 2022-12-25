@@ -12,7 +12,7 @@ layout();
     <?= t('articles.latest') ?>
   </h2>
 
-  <div class="overflow-hidden border-y du-dark:border-contrast-lower">
+  <div class="overflow-hidden border-y border-y-solid du-dark:border-contrast-lower">
     <?php snippet('articles', [
       'query' => $kirby->collection('articles')->paginate(4)
     ]) ?>

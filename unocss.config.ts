@@ -39,8 +39,8 @@ export default defineConfig({
     content: "px-lg md:px-3xl",
     "content-breakout": "-mx-lg md:mx-0",
     "action-button":
-      "p-2 -m-2 text-size-xs leading-heading font-heading font-500 uppercase tracking-[0.125ch]",
-    tag: "px-2 py-1 border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 rounded-full whitespace-nowrap",
+      "text-size-xs leading-heading font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
+    tag: "border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 whitespace-nowrap rounded-full border-solid px-2 py-1",
   },
   safelist: ["w-full", "aspect-ratio-16/9"],
   presets: [

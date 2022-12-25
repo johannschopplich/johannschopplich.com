@@ -587,16 +587,16 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "3.0.7",
+            "version": "3.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "b9aac395bedad0eccbdda2f5a061165143362944"
+                "reference": "c8edafb468b9d5ece9d8a4aaaff443dbf4f65533"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/b9aac395bedad0eccbdda2f5a061165143362944",
-                "reference": "b9aac395bedad0eccbdda2f5a061165143362944",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/c8edafb468b9d5ece9d8a4aaaff443dbf4f65533",
+                "reference": "c8edafb468b9d5ece9d8a4aaaff443dbf4f65533",
                 "shasum": ""
             },
             "require": {
@@ -605,6 +605,7 @@
                 "vlucas/phpdotenv": "^5.0"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "@stable",
                 "getkirby/cms": "^3.8"
             },
             "type": "kirby-plugin",
@@ -645,22 +646,22 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.7"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.10"
             },
-            "time": "2022-11-18T18:34:34+00:00"
+            "time": "2022-12-25T16:16:57+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
-            "version": "2.1.9",
+            "version": "2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-punctuation-section.git",
-                "reference": "b40a079743129dc371c48b9bcb312f2d3c55b17d"
+                "reference": "9d48cf1975526ada98407e1e8bb7f04b2054a986"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/b40a079743129dc371c48b9bcb312f2d3c55b17d",
-                "reference": "b40a079743129dc371c48b9bcb312f2d3c55b17d",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/9d48cf1975526ada98407e1e8bb7f04b2054a986",
+                "reference": "9d48cf1975526ada98407e1e8bb7f04b2054a986",
                 "shasum": ""
             },
             "require": {
@@ -668,6 +669,7 @@
                 "php": ">=8.0.0"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "@stable",
                 "getkirby/cms": "^3.8"
             },
             "type": "kirby-plugin",
@@ -695,9 +697,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-punctuation-section/issues",
-                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.1.9"
+                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.1.10"
             },
-            "time": "2022-12-18T14:30:12+00:00"
+            "time": "2022-12-25T16:00:05+00:00"
         },
         {
             "name": "laminas/laminas-escaper",

@@ -34,7 +34,7 @@ layout();
       </div>
     <?php endif ?>
 
-    <div class="pt-lg border-t du-dark:border-contrast-lower">
+    <div class="pt-lg border-t border-t-solid du-dark:border-contrast-lower">
       <div class="-ml-1">
         <a href="<?= $page->parent()->url() ?>" class="action-button">
           <span class="i-bx-left-arrow-alt mr-1" aria-hidden="true"></span><?= t('project.allWorks') ?>
