@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Kirby\\": "site/app/"
+      "Kirby\\": "site/classes/Kirby/"
     },
     "exclude-from-classmap": [
       "vendor/getkirby/cms/src/Data/Yaml.php"

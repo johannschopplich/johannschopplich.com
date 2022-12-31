@@ -18,9 +18,6 @@ class Yaml extends Handler
 {
     /**
      * Converts an array to an encoded YAML string
-     *
-     * @param mixed $data
-     * @return string
      */
     public static function encode($data): string
     {
@@ -29,9 +26,6 @@ class Yaml extends Handler
 
     /**
      * Parses an encoded YAML string and returns a multi-dimensional array
-     *
-     * @param string $string
-     * @return array
      */
     public static function decode($string): array
     {
