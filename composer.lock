@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "796873ef2b07b620a33bb7412bab5506",
+    "content-hash": "d29b6de4e60e459200d023a67e165167",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -536,21 +536,20 @@
         },
         {
             "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "2.0.2",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "3bd2a41c009d3bb2d32b45ddb889ad4ad63b4cf0"
+                "reference": "82e8ce58ce3fb8c7bfbe41bffc592e04bf45bede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/3bd2a41c009d3bb2d32b45ddb889ad4ad63b4cf0",
-                "reference": "3bd2a41c009d3bb2d32b45ddb889ad4ad63b4cf0",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/82e8ce58ce3fb8c7bfbe41bffc592e04bf45bede",
+                "reference": "82e8ce58ce3fb8c7bfbe41bffc592e04bf45bede",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0.0"
+                "getkirby/composer-installer": "^1.2"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "@stable",
@@ -582,9 +581,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v2.0.2"
+                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v3.0.1"
             },
-            "time": "2022-12-25T16:34:13+00:00"
+            "time": "2023-01-06T07:34:08+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
@@ -1730,9 +1729,7 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {
-        "php": ">=8.0.0"
-    },
+    "platform": [],
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
 }
