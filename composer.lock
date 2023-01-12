@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d29b6de4e60e459200d023a67e165167",
+    "content-hash": "3b84f2a835b4b69167e3974ac17e781d",
     "packages": [
         {
             "name": "bnomei/kirby3-feed",
@@ -291,16 +291,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.8.3",
+            "version": "3.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "41719bd54310dfc2e321a75a8549da98ccf5cd1d"
+                "reference": "d8a3654d2293e0a7c3d0b0672e9657fda9a5c481"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/41719bd54310dfc2e321a75a8549da98ccf5cd1d",
-                "reference": "41719bd54310dfc2e321a75a8549da98ccf5cd1d",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/d8a3654d2293e0a7c3d0b0672e9657fda9a5c481",
+                "reference": "d8a3654d2293e0a7c3d0b0672e9657fda9a5c481",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +387,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-12-06T14:31:06+00:00"
+            "time": "2023-01-10T08:50:24+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -535,68 +535,17 @@
             "time": "2022-07-30T15:56:11+00:00"
         },
         {
-            "name": "johannschopplich/kirby-blurry-placeholder",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johannschopplich/kirby-blurry-placeholder.git",
-                "reference": "82e8ce58ce3fb8c7bfbe41bffc592e04bf45bede"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-blurry-placeholder/zipball/82e8ce58ce3fb8c7bfbe41bffc592e04bf45bede",
-                "reference": "82e8ce58ce3fb8c7bfbe41bffc592e04bf45bede",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "@stable",
-                "getkirby/cms": "^3.8"
-            },
-            "type": "kirby-plugin",
-            "extra": {
-                "kirby-cms-path": false
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Johann Schopplich",
-                    "email": "pkg@johannschopplich.com",
-                    "homepage": "https://johannschopplich.com"
-                }
-            ],
-            "description": "Blurry image placeholders for better UX",
-            "homepage": "https://github.com/johannschopplich/kirby-blurry-placeholder#readme",
-            "keywords": [
-                "image",
-                "kirby",
-                "lazyload",
-                "placeholder",
-                "seo"
-            ],
-            "support": {
-                "issues": "https://github.com/johannschopplich/kirby-blurry-placeholder/issues",
-                "source": "https://github.com/johannschopplich/kirby-blurry-placeholder/tree/v3.0.1"
-            },
-            "time": "2023-01-06T07:34:08+00:00"
-        },
-        {
             "name": "johannschopplich/kirby-helpers",
-            "version": "3.0.13",
+            "version": "3.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "d3c1fe3c8d2f72fe083796ffd3e64871b577d5d3"
+                "reference": "5012797c19b86632f7b9824649ede15e4ee8972b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/d3c1fe3c8d2f72fe083796ffd3e64871b577d5d3",
-                "reference": "d3c1fe3c8d2f72fe083796ffd3e64871b577d5d3",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/5012797c19b86632f7b9824649ede15e4ee8972b",
+                "reference": "5012797c19b86632f7b9824649ede15e4ee8972b",
                 "shasum": ""
             },
             "require": {
@@ -645,9 +594,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.13"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v3.0.14"
             },
-            "time": "2022-12-28T20:47:59+00:00"
+            "time": "2023-01-09T10:09:15+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
@@ -699,6 +648,54 @@
                 "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.1.10"
             },
             "time": "2022-12-25T16:00:05+00:00"
+        },
+        {
+            "name": "kornrunner/blurhash",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kornrunner/php-blurhash.git",
+                "reference": "bc8a4596cb0a49874f0158696a382ab3933fefe4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kornrunner/php-blurhash/zipball/bc8a4596cb0a49874f0158696a382ab3933fefe4",
+                "reference": "bc8a4596cb0a49874f0158696a382ab3933fefe4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "ocramius/package-versions": "^1.4|^2.0",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^9",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "kornrunner\\Blurhash\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Momčilović",
+                    "email": "boris.momcilovic@gmail.com"
+                }
+            ],
+            "description": "Pure PHP implementation of Blurhash",
+            "homepage": "https://github.com/kornrunner/php-blurhash",
+            "support": {
+                "issues": "https://github.com/kornrunner/php-blurhash/issues",
+                "source": "https://github.com/kornrunner/php-blurhash.git"
+            },
+            "time": "2022-07-13T19:38:39+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -1637,6 +1634,55 @@
                 }
             ],
             "time": "2022-12-13T09:57:04+00:00"
+        },
+        {
+            "name": "tobimori/kirby-blurhash",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tobimori/kirby-blurhash.git",
+                "reference": "2a95af27ee7fcf3e9bb2c816b3eea2bdad7d117e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tobimori/kirby-blurhash/zipball/2a95af27ee7fcf3e9bb2c816b3eea2bdad7d117e",
+                "reference": "2a95af27ee7fcf3e9bb2c816b3eea2bdad7d117e",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "kornrunner/blurhash": "^1.2",
+                "php": ">=8.0.0"
+            },
+            "require-dev": {
+                "getkirby/cms": "^3.8"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "tobimori\\": "classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Möritz",
+                    "email": "tobias@moeritz.io"
+                }
+            ],
+            "description": "Image placeholders with the optimized BlurHash integration",
+            "homepage": "https://github.com/tobimori/kirby-blurhash#readme",
+            "support": {
+                "issues": "https://github.com/tobimori/kirby-blurhash/issues",
+                "source": "https://github.com/tobimori/kirby-blurhash/tree/1.1.5"
+            },
+            "time": "2023-01-06T14:45:42+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

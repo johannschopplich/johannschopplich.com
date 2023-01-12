@@ -4,9 +4,9 @@
     "getkirby/layouts": "^1.0",
     "symfony/yaml": "^5.4",
     "johannschopplich/kirby-helpers": "^3.0",
-    "johannschopplich/kirby-blurry-placeholder": "^3.0",
     "johannschopplich/kirby-punctuation-section": "^2.1",
-    "bnomei/kirby3-feed": "^1.5"
+    "bnomei/kirby3-feed": "^1.5",
+    "tobimori/kirby-blurhash": "^1.1"
   },
   "scripts": {
     "start": [

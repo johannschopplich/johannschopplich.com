@@ -7,7 +7,7 @@ if (isset($file) && !$file) {
     return;
 }
 
-echo Html::img($file->placeholderUri(), [
+echo Html::img($file->blurhashUri(), [
   'class' => $class ?? null,
   'data-loading' => 'lazy',
   'data-srcset' => $file->srcset(),
