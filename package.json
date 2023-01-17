@@ -3,7 +3,7 @@
   "packageManager": "pnpm@7.25.0",
   "scripts": {
     "assets:head": "esbuild src/head.ts --minify --format=iife --outdir=public/dist/assets",
-    "assets:unocss": "unocss \"site/{layouts,snippets,templates}/**/*\" --out-file src/styles/uno.css",
+    "assets:unocss": "unocss \"site/{snippets,templates}/**/*\" --out-file src/styles/uno.css",
     "dev": "rm -rf public/dist && concurrently \"npm run assets:unocss -- --watch\" \"vite\"",
     "build": "npm run assets:unocss && vite build && npm run assets:head",
     "lint": "eslint src",
