@@ -1,7 +1,6 @@
 {
   "require": {
-    "getkirby/cms": "^3.8",
-    "getkirby/layouts": "^1.0",
+    "getkirby/cms": "^3.9",
     "symfony/yaml": "^5.4",
     "johannschopplich/kirby-helpers": "^3.0",
     "johannschopplich/kirby-punctuation-section": "^2.1",

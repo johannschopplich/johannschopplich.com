@@ -64,8 +64,7 @@
   </header>
 
   <main>
-    <?php slot() ?>
-    <?php endslot() ?>
+    <?= $slot ?>
   </main>
 
   <?php snippet('footer') ?>

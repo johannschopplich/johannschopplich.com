@@ -3,7 +3,7 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Collection $query */
-layout()
+snippet('layouts/default', slots: true);
 ?>
 
 <div class="py-8xl">
@@ -21,3 +21,5 @@ layout()
     <?php snippet('pagination', ['pagination' => $query->pagination()]) ?>
   </div>
 </div>
+
+<?php endsnippet() ?>

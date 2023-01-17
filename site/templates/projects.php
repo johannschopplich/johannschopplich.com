@@ -2,7 +2,7 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
-layout();
+snippet('layouts/default', slots: true);
 ?>
 
 <?php snippet('intro', ['title' => $page->text()]) ?>
@@ -42,3 +42,5 @@ layout();
     </div>
   <?php endforeach ?>
 </div>
+
+<?php endsnippet() ?>

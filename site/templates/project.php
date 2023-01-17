@@ -2,7 +2,7 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
-layout();
+snippet('layouts/default', slots: true);
 ?>
 
 <div class="pt-8xl pb-5xl">
@@ -43,3 +43,5 @@ layout();
     </div>
   </div>
 </div>
+
+<?php endsnippet() ?>
