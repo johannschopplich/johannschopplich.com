@@ -2,7 +2,7 @@
   "require": {
     "getkirby/cms": "^3.9",
     "symfony/yaml": "^5.4",
-    "johannschopplich/kirby-helpers": "^3.0",
+    "johannschopplich/kirby-helpers": "^4.0",
     "johannschopplich/kirby-punctuation-section": "^2.1",
     "bnomei/kirby3-feed": "^1.5",
     "tobimori/kirby-blurhash": "^1.1"
