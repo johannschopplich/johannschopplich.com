@@ -90,7 +90,7 @@ const translations = {
       footer: {
         selectText: "auswählen",
         selectKeyAriaLabel: "Enter-Taste",
-        navigateText: "Navigieren",
+        navigateText: "navigieren",
         navigateUpKeyAriaLabel: "Pfeil nach oben",
         navigateDownKeyAriaLabel: "Pfeil nach unten",
         closeText: "schließen",
