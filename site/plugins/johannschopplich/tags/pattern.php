@@ -10,9 +10,9 @@ return [
         'class'
     ],
     'html' => function ($tag) {
-        if ($tag->file    = $tag->file($tag->value)) {
-            $tag->src     = $tag->file->url();
-            $tag->caption = $tag->caption ?? $tag->file->caption()->value();
+        if ($tag->file = $tag->file($tag->value)) {
+            $tag->src = $tag->file->url();
+            $tag->caption ??= $tag->file->caption()->value();
         } else {
             $tag->src = Url::to($tag->value);
         }

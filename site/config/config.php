@@ -48,26 +48,31 @@ return [
 
     'johannschopplich.algolia-doc-search' => [
         'app' => env('ALGOLIA_APP_ID'),
-        'key' => env('ALGOLIA_INDEX_KEY'),
+        'key' => env('ALGOLIA_API_KEY'),
         'index' => 'johannschopplich',
         // Define the content that should be indexed
         'content' => function (\Kirby\Cms\Page $page) {
+            // return strip_tags($page->text()->toBlocks()->toHtml());
+
             $html = $page->render();
-            // Extract only the HTML inside the <main> tag
-            $main = preg_replace('/^.*<main[^>]*>|<\/main>.*$/is', '', $html);
-            // Strip all HTML tags
-            return  strip_tags($main);
+            // Extract the HTML from inside the <main> tag
+            $main = preg_replace('/.*<main[^>]*>(.*)<\/main>.*/s', '$1', $html);
+            // Remove all HTML tags
+            $main = strip_tags($main);
         },
         // Define templates which should be indexed
         'templates' => [
             'article',
-            'articles',
             'default',
             'home',
             'photography',
             'profile',
-            'project',
-            'projects'
+            'project'
+        ],
+        'exclude' => [
+            'pages' => [
+                'blog/fiverr-layout-css-fix'
+            ]
         ],
         'hierarchy' => [
             'default' => [

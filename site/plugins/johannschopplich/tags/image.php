@@ -16,9 +16,9 @@ return [
     ],
     'html' => function ($tag) {
         if ($tag->file = $tag->file($tag->value)) {
-            $tag->src     = $tag->file->url();
-            $tag->alt     = $tag->alt     ?? $tag->file->alt()->value();
-            $tag->caption = $tag->caption ?? $tag->file->caption()->value();
+            $tag->src = $tag->file->url();
+            $tag->alt ??= $tag->file->alt()->value() || null;
+            $tag->caption ??= $tag->file->caption()->value();
         } else {
             $tag->src = Url::to($tag->value);
         }
@@ -28,11 +28,8 @@ return [
                 return $img;
             }
 
-            if ($link = $tag->file($tag->link)) {
-                $link = $link->url();
-            } else {
-                $link = $tag->link === 'self' ? $tag->src : $tag->link;
-            }
+            $link = $tag->file($tag->link)?->url();
+            $link ??= $tag->link === 'self' ? $tag->src : $tag->link;
 
             return Html::a($link, [$img], [
                 'rel'    => $tag->rel,
@@ -51,8 +48,8 @@ return [
                     'data-sizes' => 'auto',
                     'width' => $tag->file->width(),
                     'height' => $tag->file->height(),
-                    'class'  => $tag->imgclass,
-                    'alt'    => $tag->alt
+                    'class' => $tag->imgclass,
+                    'alt' => $tag->alt
                 ]
             );
         } else {

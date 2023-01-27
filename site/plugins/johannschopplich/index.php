@@ -25,15 +25,10 @@ if (!function_exists('dateFormatter')) {
     function dateFormatter()
     {
         static $dateFormatter;
-
-        if ($dateFormatter === null) {
-            $dateFormatter = new IntlDateFormatter(
-                kirby()->languageCode(),
-                IntlDateFormatter::LONG,
-                IntlDateFormatter::NONE
-            );
-        }
-
-        return $dateFormatter;
+        return $dateFormatter ??= new IntlDateFormatter(
+            kirby()->languageCode(),
+            IntlDateFormatter::LONG,
+            IntlDateFormatter::NONE
+        );
     }
 }

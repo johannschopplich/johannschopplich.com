@@ -23,7 +23,7 @@ $heightMap = [
       ?>
     <<?= $tag . attr([
       'class' => 'shrink-0 snap-center snap-always first:snap-start',
-      'href' => $settings->link()->value(),
+      'href' => $settings->link()->or(null)->value(),
       'target' => $hasLink ? '_blank' : null,
       'rel' => $hasLink ? 'noopener' : null
     ], ' ') ?>>
