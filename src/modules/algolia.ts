@@ -95,7 +95,7 @@ const translations = {
         navigateDownKeyAriaLabel: "Pfeil nach unten",
         closeText: "schließen",
         closeKeyAriaLabel: "Escape-Taste",
-        searchByText: "Suche von",
+        searchByText: "Suche durch",
       },
       noResultsScreen: {
         noResultsText: "Keine Ergebnisse für",
