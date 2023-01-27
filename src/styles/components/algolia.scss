@@ -17,3 +17,12 @@
 .DocSearch-Button {
   margin: 0;
 }
+
+// Hide Ctrol+K keys
+.DocSearch-Button-Placeholder {
+  padding-right: 6px;
+}
+
+.DocSearch-Button-Keys {
+  display: none;
+}
