@@ -50,7 +50,10 @@ return [
         'appId' => env('ALGOLIA_APP_ID'),
         'apiKey' => env('ALGOLIA_API_KEY'),
         'index' => 'johannschopplich',
-        // Define templates which should be indexed
+        // HTML tag name which contains a page's content or
+        // closure which returns the content of a page
+        'content' => 'main',
+        // Templates which should be indexed
         'templates' => [
             'article',
             'default',
@@ -59,12 +62,14 @@ return [
             'profile',
             'project'
         ],
+        // Optional pages which should be excluded from the index
         'exclude' => [
             'pages' => [
                 'blog/fiverr-layout-css-fix'
             ]
         ],
-        'hierarchy' => [
+        // Define the search hit label
+        'label' => [
             'default' => [
                 'de' => 'Seite',
                 'en' => 'Page'
