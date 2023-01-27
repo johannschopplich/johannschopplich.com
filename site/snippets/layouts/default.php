@@ -69,5 +69,13 @@
 
   <?php snippet('footer') ?>
 
+<script id="site-data" type="application/json"><?= \Kirby\Data\Json::encode([
+  'algolia' => [
+    'appId' => env('ALGOLIA_APP_ID'),
+    'indexName' => "johannschopplich-{$kirby->languageCode()}",
+    'apiKey' => env('ALGOLIA_SEARCH_ONLY_API_KEY'),
+  ]
+]) ?></script>
+
 </body>
 </html>

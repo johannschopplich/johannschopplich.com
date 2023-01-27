@@ -15,4 +15,6 @@
       <?= $item->title() ?>
     </a>
   <?php endforeach ?>
+
+  <div class="absolute right-lg top-1/2 -translate-y-1/2 sm:relative sm:right-0 sm:top-0 sm:translate-0" data-docsearch></div>
 </nav>

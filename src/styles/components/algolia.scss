@@ -1,0 +1,19 @@
+:root {
+  --docsearch-primary-color: var(--du-color-primary);
+  --docsearch-text-color: var(--du-color-contrast-high);
+  --docsearch-muted-color: var(--du-color-contrast-medium);
+  --docsearch-searchbox-background: var(--du-color-contrast-lowest);
+  --docsearch-searchbox-focus-background: var(--du-color-background);
+}
+
+.DocSearch-Input,
+.DocSearch-Cancel,
+.DocSearch-Hit-source,
+.DocSearch-Hit-title,
+.DocSearch-Footer {
+  font-family: var(--du-font-family-heading);
+}
+
+.DocSearch-Button {
+  margin: 0;
+}

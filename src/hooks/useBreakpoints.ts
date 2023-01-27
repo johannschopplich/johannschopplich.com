@@ -20,8 +20,10 @@ function isBelow(breakpoint: string): boolean {
   return !isAbove(breakpoint);
 }
 
-export const useBreakpoints = () => ({
-  breakpoints,
-  isAbove,
-  isBelow,
-});
+export function useBreakpoints() {
+  return {
+    breakpoints,
+    isAbove,
+    isBelow,
+  };
+}

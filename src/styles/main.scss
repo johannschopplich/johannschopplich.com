@@ -4,7 +4,9 @@
 @use "base/root";
 @use "base/generic";
 @use "base/accessibility";
+@use "base/libs";
 
+@use "components/algolia";
 @use "components/animate";
 @use "components/divider";
 @use "components/drauu";
