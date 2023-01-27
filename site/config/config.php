@@ -58,7 +58,7 @@ return [
             // Extract the HTML from inside the <main> tag
             $main = preg_replace('/.*<main[^>]*>(.*)<\/main>.*/s', '$1', $html);
             // Remove all HTML tags
-            $main = strip_tags($main);
+            return strip_tags($main);
         },
         // Define templates which should be indexed
         'templates' => [
