@@ -4,8 +4,8 @@ class ArticlePage extends \Kirby\Cms\Page
 {
     public function metadata(): array
     {
-        $description = $this->description()->or($this->text()->excerpt(140))->value();
-        $author = $this->author()->toUser()?->name()?->value() ?? site()->title()->value();
+        $description = $this->description()->or($this->text()->toBlocks()->excerpt(140))->value();
+        $author = $this->author()->toUser()?->name()?->value() || $this->site()->title()->value();
         $thumbnail = $this->thumbnail()->toFile()?->resize(1200);
 
         return [
@@ -22,7 +22,7 @@ class ArticlePage extends \Kirby\Cms\Page
                     'headline' => $this->title()->value(),
                     'description' => $description,
                     'url' => $this->url(),
-                    'image' => $thumbnail !== null ? [
+                    'image' => $thumbnail ? [
                         '@type' => 'ImageObject',
                         'url' => $thumbnail->url(),
                         'width' => $thumbnail->width(),
