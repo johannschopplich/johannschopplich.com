@@ -46,12 +46,12 @@ return [
         ]
     ],
 
-    'johannschopplich.algolia-doc-search' => [
+    'johannschopplich.algolia-docsearch' => [
         'appId' => env('ALGOLIA_APP_ID'),
         'apiKey' => env('ALGOLIA_API_KEY'),
         'index' => 'johannschopplich',
-        // HTML tag name which contains a page's content or
-        // closure which returns the content of a page
+        // HTML tag name which contains a page's content or closure
+        // which returns the text content for a given page
         'content' => 'main',
         // Templates which should be indexed
         'templates' => [
