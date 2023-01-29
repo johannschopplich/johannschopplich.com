@@ -16,5 +16,5 @@
     </a>
   <?php endforeach ?>
 
-  <div class="absolute right-lg top-1/2 -translate-y-1/2 sm:relative sm:right-0 sm:top-0 sm:min-w-[102px] sm:translate-0 md:my-[-4px]" data-docsearch></div>
+  <div class="absolute right-lg top-1/2 -translate-y-1/2 sm:relative sm:right-0 sm:top-0 sm:h-[36px] sm:min-w-[110px] sm:translate-0 md:my-[-4px]" data-docsearch></div>
 </nav>
