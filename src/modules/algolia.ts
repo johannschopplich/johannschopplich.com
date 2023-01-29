@@ -17,6 +17,8 @@ export async function install() {
     }?.[lang],
     translations: translations?.[lang],
   });
+
+  localStorage.setItem("algolia.docsearch.width", `${container.clientWidth}px`);
 }
 
 const translations = {

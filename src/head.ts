@@ -13,3 +13,7 @@ if (
 
 const setting = localStorage.getItem("color-schema");
 if (setting) root.dataset.theme = setting;
+
+// Reduce flickering on initial load
+const docsearchWidth = localStorage.getItem("algolia.docsearch.width");
+if (docsearchWidth) root.style.setProperty("--docsearch-width", docsearchWidth);
