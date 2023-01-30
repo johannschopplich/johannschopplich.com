@@ -49,7 +49,7 @@ $heightMap = [
           : ($mockup === 'desktop'
             ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
             : 'h-$cell max-w-screen w-auto object-contain'),
-        'zoomable' => $settings->link()->isEmpty() ? true : $zoomable ?? null
+        'zoomable' => $settings->link()->isEmpty() ? true : ($zoomable ?? null)
       ]) ?>
 
       <?php if ($mockup !== 'none'): ?>
