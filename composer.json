@@ -4,7 +4,7 @@
     "getkirby/cli": "^1.1",
     "symfony/yaml": "^5.4",
     "johannschopplich/kirby-helpers": "^4.0",
-    "johannschopplich/kirby-algolia-docsearch": "^0.2",
+    "johannschopplich/kirby-algolia-docsearch": "^0.3",
     "johannschopplich/kirby-punctuation-section": "^2.1",
     "bnomei/kirby3-feed": "^1.5",
     "bnomei/kirby3-janitor": "^3.2",
