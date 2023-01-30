@@ -11,7 +11,7 @@ export async function install() {
   docsearch({
     ...algolia,
     container,
-    indexName: `johannschopplich-${lang}}`,
+    indexName: `johannschopplich-${lang}`,
     placeholder: {
       en: "Search Site",
       de: "Seite durchsuchen",
