@@ -21,6 +21,7 @@ site/config/.license
 
 # Plugins
 site/plugins/*
+!site/plugins/.gitkeep
 !site/plugins/johannschopplich
 
 # Build assets

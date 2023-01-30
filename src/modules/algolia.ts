@@ -18,7 +18,13 @@ export async function install() {
     translations: translations?.[lang],
   });
 
-  localStorage.setItem("algolia.docsearch.width", `${container.clientWidth}px`);
+  const docsearchButton = document.querySelector(".DocSearch");
+  if (docsearchButton) {
+    localStorage.setItem(
+      "algolia.docsearch.rect",
+      JSON.stringify(docsearchButton.getBoundingClientRect())
+    );
+  }
 }
 
 const translations = {
