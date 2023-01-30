@@ -51,6 +51,11 @@ tabs:
           content:
             type: fields
             fields:
+              headlineContent:
+                label:
+                  de: Inhalt
+                  en: Content
+                type: headline
               popularArticles:
                 label:
                   de: Beliebte Artikel
@@ -64,9 +69,22 @@ tabs:
                   en: Footer Pages
                 type: pages
                 translate: false
+              headlineAlgolia:
+                label: Algolia
+                type: headline
+              algoliaIndex:
+                label: johannschopplich.algolia-docsearch.index.start
+                type: janitor
+                command: "algolia-docsearch:index"
 
       - width: 1/2
         sections:
+          metaHeadline:
+            type: fields
+            fields:
+              headlineMeta:
+                label: SEO
+                type: headline
           meta:
             extends: sections/meta
             type: fields
