@@ -2,7 +2,11 @@
 
 Quickest way to integrate a search bar in your Kirby project. Index your content with a Kirby CLI command or Panel button push it to Algolia. The [Algolia's DocSearch](https://docsearch.algolia.com) JavaScript library will display a search button and result modal for you.
 
-You can use the **Algolia free plan**. This plugin solely uses basic Algolia features. Since the plugin indexes and parses the site, the Algolia crawler (a paid feature) is not needed. Leaving you with the option to stick with the free tier. 💸
+You can use the **Algolia free plan**, since the plugin itself indexes and parses the site. The Algolia crawler (a paid feature) is not needed. Leaving you with the option to stick with the free tier. 💸
+
+> “But DocSearch is for documentations! My Kirby project is not a documentation!” you might add.
+
+Well, we co-opt the DocSearch library for our own purposes. 😏 The library can be used anywhere, if the data model matches the requirements. Which it does. 🎉
 
 ## Key Features
 
@@ -84,6 +88,65 @@ The DocSearch library to display the search input field and result modal is not 
 
 ## Usage
 
+### Configuration
+
+```php
+# /site/config/config.php
+return [
+    'johannschopplich.algolia-docsearch' => [
+        // Algolia App ID for the project
+        'appId' => 'ALGOLIA_APP_ID',
+        // Algolia API Key for the project
+        'apiKey' => 'ALGOLIA_API_KEY',
+        // Algolia index base name; in mutlilang projects,
+        // the language code will be appended by the pljgin
+        'index' => 'example',
+        // HTML tag name which contains a page's content or
+        // closure which returns the content of a page
+        // By default, `body` will be used, here the `main` tag
+        'content' => 'main',
+        // Templates which should be indexed
+        'templates' => [
+            'article',
+            'default',
+            'home',
+            'project'
+        ],
+        // Optional pages which should be excluded from the index
+        'exclude' => [
+            'pages' => [
+                'blog/some-post',
+            ]
+        ],
+        // Define the search hit label
+        'label' => [
+            // Accepts a string or an array of strings for each language
+            // Single language:
+            // 'default' => 'Page'
+            // Multiple languages:
+            'default' => [
+                'de' => 'Seite',
+                'en' => 'Page'
+            ],
+            'templates' => [
+                // Accepts a string or an array of strings for each language
+                // Single language:
+                // 'article' => 'Article'
+                // Multiple languages:
+                'article' => [
+                    'de' => 'Artikel',
+                    'en' => 'Article'
+                ],
+                'project' => [
+                    'de' => 'Projekt',
+                    'en' => 'Project'
+                ]
+            ]
+        ]
+    ]
+];
+```
+
 ### Indexing the Site
 
 #### Kirby CLI
@@ -108,57 +171,6 @@ algoliaIndex:
 ### Multilang Projects
 
 If languages are enabled in your Kirby project, the plugin will create an Algolia index for each language. The index name will be the value of the `index` option appended by the language code, e.g. `example-de`.
-
-### Configuration
-
-```php
-# /site/config/config.php
-return [
-    'johannschopplich.algolia-docsearch' => [
-        // Algolia App ID for the project
-        'appId' => env('ALGOLIA_APP_ID'),
-        // Algolia API Key for the project
-        'apiKey' => env('ALGOLIA_API_KEY'),
-        // Algolia index base name; in mutlilang projects,
-        // the language code will be appended by the pljgin
-        'index' => 'example',
-        // HTML tag name which contains a page's content or
-        // closure which returns the content of a page
-        // By default, `body` will be used, here the `main` tag
-        'content' => 'main',
-        // Templates which should be indexed
-        'templates' => [
-            'article',
-            'default',
-            'home',
-            'project'
-        ],
-        // Optional pages which should be excluded from the index
-        'exclude' => [
-            'pages' => [
-                'blog/fiverr-layout-css-fix'
-            ]
-        ],
-        // Define the search hit label
-        'label' => [
-            'default' => [
-                'de' => 'Seite',
-                'en' => 'Page'
-            ],
-            'templates' => [
-                'article' => [
-                    'de' => 'Artikel',
-                    'en' => 'Article'
-                ],
-                'project' => [
-                    'de' => 'Projekt',
-                    'en' => 'Project'
-                ]
-            ]
-        ]
-    ]
-];
-```
 
 ## Cookbook
 

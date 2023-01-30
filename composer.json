@@ -3,7 +3,7 @@
     "getkirby/cms": "^3.9",
     "symfony/yaml": "^5.4",
     "johannschopplich/kirby-helpers": "^4.0",
-    "johannschopplich/kirby-algolia-docsearch": "^0.2.0",
+    "johannschopplich/kirby-algolia-docsearch": "^0.2",
     "johannschopplich/kirby-punctuation-section": "^2.1",
     "bnomei/kirby3-feed": "^1.5",
     "tobimori/kirby-blurhash": "^1.1"

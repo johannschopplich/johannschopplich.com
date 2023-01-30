@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc8c915fcdf85b8c938fd83af7e5461a",
+    "content-hash": "77d067603b6a0666bfb8a65bdd950cce",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -574,16 +574,16 @@
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "b80df0c0c8087abfef3064c74982ad814fc064ca"
+                "reference": "62fd55498d850b53133fd6067260ff8ed3ba13b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/b80df0c0c8087abfef3064c74982ad814fc064ca",
-                "reference": "b80df0c0c8087abfef3064c74982ad814fc064ca",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/62fd55498d850b53133fd6067260ff8ed3ba13b4",
+                "reference": "62fd55498d850b53133fd6067260ff8ed3ba13b4",
                 "shasum": ""
             },
             "require": {
@@ -620,9 +620,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.2.0"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.2.1"
             },
-            "time": "2023-01-28T10:04:35+00:00"
+            "time": "2023-01-29T21:33:17+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
