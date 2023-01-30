@@ -46,11 +46,17 @@ fields:
     grow: false
     options:
       - value: is-outset
-        text: Outset
+        text:
+          de: Hervorgehoben
+          en: Outset
         icon: grid-bottom
       - value: is-pulled-left
-        text: Left-Aligned
+        text:
+          de: Linksbündig
+          en: Left-Aligned
         icon: grid-left
       - value: is-pulled-right
-        text: Right-Aligned
+        text:
+          de: Rechtsbündig
+          en: Right-Aligned
         icon: grid-right
