@@ -31,9 +31,7 @@
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 
   <?php foreach ($kirby->languages() as $language): ?>
-    <?php if ($language->code() === $kirby->languageCode()) {
-        continue;
-    } ?>
+    <?php if ($language->code() === $kirby->languageCode()) continue ?>
     <link rel="alternate" hreflang="<?= $language->code() ?>" href="<?= $page->urlForLanguage($language->code()) ?>">
   <?php endforeach ?>
 
@@ -51,7 +49,11 @@
 
   <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
-  <script><?= asset('dist/assets/head.js')->read() ?></script>
+  <?php if (vite()->isDev()): ?>
+    <script><?= asset('../src/head.js')->read() ?></script>
+  <?php else: ?>
+    <script><?= asset('dist/assets/head.js')->read() ?></script>
+  <?php endif ?>
 
   <script async defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
 
