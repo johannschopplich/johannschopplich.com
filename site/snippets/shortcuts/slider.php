@@ -5,9 +5,9 @@
 /** @var string|null $height */
 
 $heightMap = [
-  'tight' => 'clamp(36vh, 50vw, 25vh)',
-  'normal' => 'clamp(36vh, 50vw, 50vh)',
-  'loose' => 'clamp(36vh, 50vw, 75vh)'
+  'tight' => 'clamp(36svh, 50vw, 25svh)',
+  'normal' => 'clamp(36svh, 50vw, 50svh)',
+  'loose' => 'clamp(36svh, 50vw, 75svh)'
 ];
 ?>
 <div
