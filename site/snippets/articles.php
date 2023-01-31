@@ -23,7 +23,7 @@
         </a>
       </h2>
 
-      <p>
+      <p class="du-dark:text-contrast-medium">
         <?= $article->description() ?>
       </p>
   </div>

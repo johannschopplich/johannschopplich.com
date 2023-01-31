@@ -40,4 +40,10 @@
       background-color: currentColor;
     }
   }
+
+  @include breakpoints.media-above(lg) {
+    &::before {
+      margin-right: 0.5em;
+    }
+  }
 }
