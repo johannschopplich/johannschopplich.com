@@ -43,7 +43,7 @@ export default defineConfig({
     "content-breakout": "-mx-lg md:mx-0",
     "action-button":
       "text-size-xs leading-heading font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
-    tag: "border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 whitespace-nowrap rounded-full border-solid px-2 py-1",
+    tag: "border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 whitespace-nowrap rounded-full border-solid px-2 py-1 du-dark:border-contrast-low",
   },
   safelist: ["w-full", "aspect-ratio-16/9"],
   presets: [
