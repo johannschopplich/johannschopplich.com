@@ -520,16 +520,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.9.0",
+            "version": "3.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "066b0506a81fdd331edc54add601d907a61ebbb4"
+                "reference": "617a07aa0151aa4b1a3735b3b5e1a41ccc244a43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/066b0506a81fdd331edc54add601d907a61ebbb4",
-                "reference": "066b0506a81fdd331edc54add601d907a61ebbb4",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/617a07aa0151aa4b1a3735b3b5e1a41ccc244a43",
+                "reference": "617a07aa0151aa4b1a3735b3b5e1a41ccc244a43",
                 "shasum": ""
             },
             "require": {
@@ -616,7 +616,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-01-17T12:55:18+00:00"
+            "time": "2023-01-31T10:07:31+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -1060,16 +1060,16 @@
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.3.2",
+            "version": "0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "4e619a937a91e21d8957b3e7b4a13fc2361de706"
+                "reference": "560efbab6ea55e9a0f05a9a28457aea0868a963f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/4e619a937a91e21d8957b3e7b4a13fc2361de706",
-                "reference": "4e619a937a91e21d8957b3e7b4a13fc2361de706",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/560efbab6ea55e9a0f05a9a28457aea0868a963f",
+                "reference": "560efbab6ea55e9a0f05a9a28457aea0868a963f",
                 "shasum": ""
             },
             "require": {
@@ -1106,9 +1106,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.3.2"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.3.3"
             },
-            "time": "2023-01-30T11:14:30+00:00"
+            "time": "2023-01-30T12:38:03+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",

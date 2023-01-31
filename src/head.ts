@@ -11,8 +11,12 @@ if (
   root.dataset.animatable = "true";
 }
 
+const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
 const setting = localStorage.getItem("color-schema");
-if (setting) root.dataset.theme = setting;
+
+if (setting === "dark" || (prefersDark && setting !== "light")) {
+  root.dataset.theme = "dark";
+}
 
 // Reduce flickering on initial load
 const docsearchRect = localStorage.getItem("algolia.docsearch.rect");
