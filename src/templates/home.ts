@@ -1,10 +1,10 @@
 export default async () => {
-  const { Draggable } = await import("@neodrag/vanilla");
   const element = document.querySelector<HTMLElement>(".draggable");
   if (!element) return;
 
+  const { Draggable } = await import("@neodrag/vanilla");
   const dragPosition = { x: 0, y: 0 };
-  const easingExpoOut = (t: number) => 1 - Math.pow(2, -10 * t);
+  const easeOutCubic = (t: number) => --t * t * t + 1;
 
   const dragInstance = new Draggable(element, {
     // bounds: "parent",
@@ -22,20 +22,20 @@ export default async () => {
       function updatePosition(time: number) {
         const elapsed = time - startTime;
         const progress = Math.min(elapsed / duration, 1);
+        const easeProgress = easeOutCubic(progress);
+
         dragPosition.x =
-          (1 - easingExpoOut(progress)) * dragPosition.x +
-          easingExpoOut(progress) * targetX;
+          dragPosition.x + (targetX - dragPosition.x) * easeProgress;
         dragPosition.y =
-          (1 - easingExpoOut(progress)) * dragPosition.y +
-          easingExpoOut(progress) * targetY;
+          dragPosition.y + (targetY - dragPosition.y) * easeProgress;
 
         dragInstance.updateOptions({ position: dragPosition });
 
         if (
           progress < 1 &&
-          // Prevents the animation from running forever
-          Math.abs(dragPosition.x - targetX) > 0.00001 &&
-          Math.abs(dragPosition.y - targetY) > 0.00001
+          // Threshold to prevent infinite loop
+          Math.abs(dragPosition.x - targetX) > 0.0001 &&
+          Math.abs(dragPosition.y - targetY) > 0.0001
         ) {
           requestAnimationFrame(updatePosition);
         }
