@@ -7,7 +7,7 @@
     "johannschopplich/kirby-algolia-docsearch": "^0.3",
     "johannschopplich/kirby-punctuation-section": "^2.1",
     "bnomei/kirby3-feed": "^1.5",
-    "bnomei/kirby3-janitor": "^3.2",
+    "bnomei/kirby3-janitor": "^3.4",
     "tobimori/kirby-blurhash": "^1.1"
   },
   "scripts": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85dc27ef11c459c0e484af00657a8675",
+    "content-hash": "4046a81d9ede387f1b26da8835453379",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -164,16 +164,16 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "3.2.2",
+            "version": "3.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-janitor.git",
-                "reference": "57e9476966bcdd9ffea34878e26047d3402f253e"
+                "reference": "a34550d766796096cd5514e175e8c82ec55b7623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/57e9476966bcdd9ffea34878e26047d3402f253e",
-                "reference": "57e9476966bcdd9ffea34878e26047d3402f253e",
+                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/a34550d766796096cd5514e175e8c82ec55b7623",
+                "reference": "a34550d766796096cd5514e175e8c82ec55b7623",
                 "shasum": ""
             },
             "require": {
@@ -229,7 +229,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-janitor/issues",
-                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.2.2"
+                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.4.2"
             },
             "funding": [
                 {
@@ -249,7 +249,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-12-09T10:03:34+00:00"
+            "time": "2023-02-01T17:40:15+00:00"
         },
         {
             "name": "claviska/simpleimage",

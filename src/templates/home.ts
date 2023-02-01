@@ -20,8 +20,6 @@ export default async () => {
       const startTime = performance.now();
 
       function updatePosition(time: number) {
-        console.log(dragPosition);
-
         // Return if the drag is already at the target position
         if (
           Math.abs(dragPosition.x - targetX) < 0.1 &&
