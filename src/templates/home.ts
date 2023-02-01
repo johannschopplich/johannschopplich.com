@@ -20,13 +20,6 @@ export default async () => {
       const startTime = performance.now();
 
       function updatePosition(time: number) {
-        // Return if the drag is already at the target position
-        if (
-          Math.abs(dragPosition.x - targetX) < 0.1 &&
-          Math.abs(dragPosition.y - targetY) < 0.1
-        )
-          return;
-
         const elapsed = time - startTime;
         const progress = Math.min(elapsed / duration, 1);
         dragPosition.x =
@@ -38,7 +31,12 @@ export default async () => {
 
         dragInstance.updateOptions({ position: dragPosition });
 
-        if (progress < 1) {
+        if (
+          progress < 1 &&
+          // Prevents the animation from running forever
+          Math.abs(dragPosition.x - targetX) > 0.00001 &&
+          Math.abs(dragPosition.y - targetY) > 0.00001
+        ) {
           requestAnimationFrame(updatePosition);
         }
       }
