@@ -7,7 +7,8 @@
 <?php snippet('layouts/default', slots: true) ?>
   <?php snippet('intro', [
     'title' => $page->text(),
-    'className' => 'draggable relative z-10 cursor-grab select-none active:cursor-grabbing',
+    'className' => 'relative z-10 cursor-grab active:cursor-grabbing',
+    'draggable' => 'true'
   ]) ?>
 
   <div class="content max-w-screen-lg">

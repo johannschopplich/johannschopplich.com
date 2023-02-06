@@ -25,12 +25,12 @@ if ($block->location() === 'web') {
         // Disable blurry images images for feeds
         $isFeed ? $image->resize(1024)->url() : $image->blurhashUri(),
         [
-          'data-loading' => 'lazy',
-          'data-srcset' => $image->srcset(),
-          'data-sizes' => 'auto',
-          'width' => $image->width(),
-          'height' => $image->height(),
-          'alt' => $alt->isNotEmpty() ? $alt->escape() : null
+            'data-loading' => 'lazy',
+            'data-srcset' => $image->srcset(),
+            'data-sizes' => 'auto',
+            'width' => $image->width(),
+            'height' => $image->height(),
+            'alt' => $alt->isNotEmpty() ? $alt->escape() : null
         ]
     );
 } else {
@@ -38,7 +38,10 @@ if ($block->location() === 'web') {
 }
 
 ?>
-<figure<?= attr(['class' => $props], ' ') ?>>
+<figure <?= attr([
+  'class' => $props ?? null,
+  'data-draggable' => $link->isEmpty() ? 'true' : null,
+]) ?>>
   <?php if ($link->isNotEmpty()): ?>
     <a href="<?= $link->toUrl() ?>">
       <?= $img ?>

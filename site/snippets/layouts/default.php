@@ -59,7 +59,10 @@
 
 <body class="min-h-[100svh]" data-template="<?= $page->intendedTemplate()->name() ?>">
 
-  <header class="content bg-theme-background md:py-xs sticky top-0 z-20 border-b border-b-solid py-2 du-dark:border-contrast-lower">
+  <header
+    class="content md:py-xs border-b-solid sticky top-0 z-20 border-b py-2 du-dark:border-contrast-lower <?= in_array($page->intendedTemplate()->name(), ['photography']) ? 'bg-theme-background' : 'bg-image-$gradient bg-[length:3px_3px] backdrop-blur-[4px]' ?>"
+    style="--gradient: radial-gradient(transparent 1px, var(--du-color-background) 1px)"
+  >
     <?php snippet('navigation') ?>
   </header>
 

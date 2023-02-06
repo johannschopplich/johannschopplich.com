@@ -1,5 +1,5 @@
 export default async () => {
-  const element = document.querySelector<HTMLElement>(".draggable");
+  const element = document.querySelector<HTMLElement>("[data-draggable]");
   if (!element) return;
 
   const { Draggable } = await import("@neodrag/vanilla");
@@ -34,8 +34,8 @@ export default async () => {
         if (
           progress < 1 &&
           // Threshold to prevent infinite loop
-          Math.abs(dragPosition.x - targetX) > 0.0001 &&
-          Math.abs(dragPosition.y - targetY) > 0.0001
+          (Math.abs(dragPosition.x - targetX) > 0.0001 ||
+            Math.abs(dragPosition.y - targetY) > 0.0001)
         ) {
           requestAnimationFrame(updatePosition);
         }
