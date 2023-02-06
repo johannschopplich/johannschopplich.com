@@ -59,8 +59,9 @@
 
 <body class="min-h-[100svh]" data-template="<?= $page->intendedTemplate()->name() ?>">
 
+  <?php $solidHeaderTemplates = ['photography'] ?>
   <header
-    class="content md:py-xs border-b-solid sticky top-0 z-20 border-b py-2 du-dark:border-contrast-lower <?= in_array($page->intendedTemplate()->name(), ['photography']) ? 'bg-theme-background' : 'bg-image-$gradient bg-[length:3px_3px] backdrop-blur-[4px]' ?>"
+    class="content md:py-xs border-b-solid sticky top-0 z-20 border-b py-2 du-dark:border-contrast-lower <?= in_array($page->intendedTemplate()->name(), $solidHeaderTemplates) ? 'bg-theme-background' : 'bg-image-$gradient bg-[length:3px_3px] backdrop-blur-[4px]' ?>"
     style="--gradient: radial-gradient(transparent 1px, var(--du-color-background) 1px)"
   >
     <?php snippet('navigation') ?>
