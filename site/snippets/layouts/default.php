@@ -45,15 +45,13 @@
   <?= vite()->js('main.ts') ?>
   <?= vite()->css('main.ts') ?>
 
-  <?= css(['assets/fonts/CooperHewitt.css']) ?>
+  <?= css('assets/fonts/CooperHewitt.css') ?>
 
   <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
-  <?php if (vite()->isDev()): ?>
-    <script><?= asset('../src/head.js')->read() ?></script>
-  <?php else: ?>
-    <script><?= asset('dist/assets/head.js')->read() ?></script>
-  <?php endif ?>
+  <script>
+    <?= asset((vite()->isDev() ? '../src' : 'dist/assets') . '/head.js')->read() ?>
+  </script>
 
   <script async defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
 
