@@ -1,8 +1,10 @@
 <?php
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
-/** @var bool|null $zoomable */
 /** @var string|null $height */
+/** @var string|null $link */
+/** @var string|null $animation */
+/** @var bool|null $zoomable */
 
 $heightMap = [
   'tight' => 'clamp(36svh, 50vw, 25svh)',
@@ -20,13 +22,13 @@ $heightMap = [
       $settings = $image->gallery()->toObject();
       $mockup = $settings->mockup()->or('none')->value();
       $tag = ($hasLink = $settings->link()->isNotEmpty()) ? 'a' : 'div';
-      ?>
+    ?>
     <<?= $tag . attr([
       'class' => 'shrink-0 snap-center snap-always first:snap-start',
-      'href' => $settings->link()->or(null)->value(),
+      'href' => $link ?? $settings->link()->or(null)->value(),
       'target' => $hasLink ? '_blank' : null,
       'rel' => $hasLink ? 'noopener' : null,
-      'data-animere' => 'fadeInRight',
+      'data-animere' => $animation ?? null,
       'data-animere-duration' => '500ms',
       'data-animere-delay' => $image->indexOf($query) * 50 + 50 . 'ms'
     ], ' ') ?>>

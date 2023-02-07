@@ -29,7 +29,9 @@
         <div class="mb-lg">
           <?php snippet('shortcuts/slider', [
             'query' => $project->gallery()->toFiles(),
-            'height' => $project->galleryHeight()->value()
+            'height' => $project->galleryHeight()->value(),
+            'link' => $project->url(),
+            'animation' => 'fadeInRight'
           ]) ?>
         </div>
 

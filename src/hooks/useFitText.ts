@@ -17,5 +17,5 @@ function splitText(element: HTMLElement) {
     element.appendChild(span);
   }
 
-  element.classList.add("ready");
+  element.classList.add("has-split-text");
 }
