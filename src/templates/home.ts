@@ -5,10 +5,16 @@ export default async () => {
   const { Draggable } = await import("@neodrag/vanilla");
   const dragPosition = { x: 0, y: 0 };
   const easeOutCubic = (t: number) => --t * t * t + 1;
+  const backdropFilter = document.querySelector<HTMLElement>(
+    "[data-draggable-backdrop]"
+  );
 
   const dragInstance = new Draggable(element, {
     // bounds: "parent",
     position: dragPosition,
+    onDragStart() {
+      backdropFilter?.removeAttribute("hidden");
+    },
     onDrag({ offsetX, offsetY }) {
       dragPosition.x = offsetX;
       dragPosition.y = offsetY;
@@ -18,6 +24,8 @@ export default async () => {
       const targetY = 0;
       const duration = 2000;
       const startTime = performance.now();
+
+      backdropFilter?.setAttribute("hidden", "");
 
       function updatePosition(time: number) {
         const elapsed = time - startTime;
