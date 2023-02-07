@@ -1,8 +1,9 @@
+import { Draggable } from "@neodrag/vanilla";
+
 export default async () => {
   const element = document.querySelector<HTMLElement>("[data-draggable]");
   if (!element) return;
 
-  const { Draggable } = await import("@neodrag/vanilla");
   const dragPosition = { x: 0, y: 0 };
   const easeOutCubic = (t: number) => --t * t * t + 1;
   const backdropFilter = document.querySelector<HTMLElement>(
