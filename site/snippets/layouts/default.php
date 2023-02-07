@@ -45,8 +45,12 @@
   <?= vite()->js('main.ts') ?>
   <?= vite()->css('main.ts') ?>
 
-  <?= css('assets/fonts/CooperHewitt.css') ?>
+  <?= css([
+    'assets/fonts/CooperHewitt.css',
+    'assets/fonts/Newsreader.css'
+  ]) ?>
 
+  <link rel="preload" href="/assets/fonts/NewsreaderText-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>

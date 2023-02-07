@@ -3,10 +3,6 @@ import { presetDue } from "duecss";
 
 export default defineConfig({
   theme: {
-    maxWidth: {
-      // Increase width for pairing with Times font
-      prose: "70ch",
-    },
     colors: {
       primary: {
         DEFAULT: "#C9787C",
