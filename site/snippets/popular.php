@@ -12,20 +12,20 @@ $year = null;
   <?php foreach ($query as $post): ?>
     <?php /** @var \Kirby\Cms\Page $post */ ?>
     <?php $postY = $post->published()->toDate('Y') ?>
-    <?php $isActive = $post->isActive() || $post->id() === $page->id() ?>
+    <?php $isActive = $post->isActive() || $post->is($page) ?>
 
     <?php if ($postY !== $year): ?>
       <div class="mt-3xl mb-xs">
-        <h3 class="text-size-xl text-contrast-low leading-none"><?= $postY ?></h3>
+        <h3 class="font-heading text-size-xl text-contrast-low leading-none"><?= $postY ?></h3>
       </div>
     <?php endif ?>
 
-    <a
-      href="<?= $post->url() ?>"
-      class="gap-xs mb-xs flex items-start"
-      <?php e($isActive, 'aria-current="page"') ?>
-      style="--du-color-link-hover: var(--du-color-primary)"
-    >
+    <a <?= attr([
+      'href' => $post->url(),
+      'class' => 'gap-xs mb-xs flex items-start',
+      'aria-current' => $isActive ? 'page' : null,
+      'style' => '--du-color-link-hover: var(--du-color-primary)'
+    ]) ?>>
       <span class="flex-grow font-heading font-500 <?php e($isActive, 'text-primary') ?>">
         <?= $post->title()->escape() ?>
       </span>

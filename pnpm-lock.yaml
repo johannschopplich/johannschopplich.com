@@ -16,7 +16,7 @@ specifiers:
   concurrently: ^7.6.0
   destr: ^1.2.2
   drauu: ^0.3.2
-  duecss: ^0.27.5
+  duecss: ^0.28.0
   esbuild: ^0.17.5
   eslint: ^8.33.0
   eslint-config-prettier: ^8.6.0
@@ -38,7 +38,7 @@ dependencies:
   animere: 1.18.2
   destr: 1.2.2
   drauu: 0.3.2
-  duecss: 0.27.5_unocss@0.49.4
+  duecss: 0.28.0_unocss@0.49.4
   loadeer: 2.1.1
   medium-zoom: 1.0.8
 
@@ -1300,8 +1300,8 @@ packages:
       '@drauu/core': 0.3.2
     dev: false
 
-  /duecss/0.27.5_unocss@0.49.4:
-    resolution: {integrity: sha512-xt+rgC7dx0//+RCDeND32yQWoty89LEshOcUPsTQALg9m1kDhnjQ73TjOu0s+iJFRRjJHL73Pscd04TexEmbwQ==}
+  /duecss/0.28.0_unocss@0.49.4:
+    resolution: {integrity: sha512-SSyoIxE2D09M/sv3bAHp9vH/uUpChvx8MPumlgiXzwA/7OKM5fIPgbQgaViiFM8BxLo2X1WTL/bu89hGcqPZ9g==}
     peerDependencies:
       unocss: '*'
     dependencies:
