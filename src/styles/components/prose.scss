@@ -50,13 +50,7 @@
   }
 
   :where(figure) {
-    background-color: var(--du-color-background);
     box-shadow: var(--du-shadow-frame);
-
-    @include breakpoints.media-below(sm) {
-      margin-left: 1rem;
-      margin-right: 1rem;
-    }
 
     @include breakpoints.media-above(sm) {
       img {
