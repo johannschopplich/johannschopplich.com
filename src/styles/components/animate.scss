@@ -21,10 +21,10 @@ $prefix: "animate__";
   }
 }
 
-@keyframes fadeInRight {
+@keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translate3d(0.5rem, 0, 0);
+    transform: translate3d(-0.5rem, 0, 0);
   }
 
   to {
@@ -33,6 +33,6 @@ $prefix: "animate__";
   }
 }
 
-.#{$prefix}fadeInRight {
-  animation-name: fadeInRight;
+.#{$prefix}fadeInLeft {
+  animation-name: fadeInLeft;
 }

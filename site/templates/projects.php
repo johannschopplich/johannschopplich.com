@@ -31,7 +31,7 @@
             'query' => $project->gallery()->toFiles(),
             'height' => $project->galleryHeight()->value(),
             'link' => $project->url(),
-            'animation' => 'fadeInRight'
+            'animation' => 'fadeInLeft'
           ]) ?>
         </div>
 
