@@ -1,10 +1,6 @@
 <?php
 
-\Kirby\Cms\App::plugin('johannschopplich/website', [
-    'fieldMethods' => [
-        'anchorHeadlines' => require __DIR__ . '/fields/anchorHeadlines.php'
-    ],
-
+\Kirby\Cms\App::plugin('johannschopplich/personal-website', [
     'hooks' => [
         'kirbytags:before' => function ($text) {
             return str_replace('\(', '[[', str_replace('\)', ']]', $text));

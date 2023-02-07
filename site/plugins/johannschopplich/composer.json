@@ -1,0 +1,15 @@
+{
+  "name": "johannschopplich/johannschopplich.com",
+  "description": "My personal website",
+  "type": "kirby-plugin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/johannschopplich/johannschopplich.com#readme",
+  "authors": [
+    {
+      "name": "Johann Schopplich",
+      "email": "pkg@johannschopplich.com",
+      "homepage": "https://johannschopplich.com"
+    }
+  ]
+}
