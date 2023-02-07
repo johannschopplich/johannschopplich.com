@@ -42,16 +42,14 @@
     border-bottom: none;
   }
 
-  h2,
-  h3,
-  h4 {
+  :where(h2, h3, h4) {
     a:not([href^="http"]) {
       color: inherit;
       text-decoration-line: none;
     }
   }
 
-  figure {
+  :where(figure) {
     background-color: var(--du-color-background);
     box-shadow: var(--du-shadow-frame);
 
@@ -89,10 +87,10 @@
     }
   }
 
-  figcaption {
+  :where(figcaption) {
     color: var(--du-color-contrast-medium);
     font-family: var(--du-font-family-heading);
-    line-height: 1.25;
+    line-height: 1.5;
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0 3px 0.25rem;
