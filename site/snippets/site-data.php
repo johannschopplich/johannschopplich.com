@@ -11,4 +11,4 @@ $serializedData = \Kirby\Data\Json::encode($data);
 
 ?>
 
-<script id="site-data" type="application/json"><?= $serializedData ?></script>
+<script type="application/json" data-site><?= $serializedData ?></script>

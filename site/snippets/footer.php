@@ -21,9 +21,9 @@
     </div>
 
     <button
-      id="theme-switcher"
       class="hover:text-primary du-light:i-bxs-moon du-dark:i-bx-bxs-sun"
       aria-label="<?= t('theme.switch') ?>"
+      data-theme-switcher
     ></button>
   </div>
 </footer>

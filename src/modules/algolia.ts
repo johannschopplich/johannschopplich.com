@@ -1,11 +1,11 @@
 import { useSiteData } from "../hooks";
 
 export async function install() {
-  const { algolia } = useSiteData();
-  const lang = document.documentElement.lang as keyof typeof translations;
   const container = document.querySelector("[data-docsearch]");
   if (!container) return;
 
+  const { algolia } = useSiteData();
+  const lang = document.documentElement.lang as keyof typeof translations;
   const { default: docsearch } = await import("@docsearch/js");
 
   docsearch({

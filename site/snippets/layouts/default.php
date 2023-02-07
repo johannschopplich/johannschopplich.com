@@ -50,7 +50,8 @@
   <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>
-    <?= asset((vite()->isDev() ? '../src' : 'dist/assets') . '/head.js')->read() ?>
+    <?php $srcDir = vite()->isDev() ? '../src' : 'dist/assets' ?>
+    <?= asset($srcDir . '/head.js')->read() ?>
   </script>
 
   <script async defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
@@ -61,7 +62,7 @@
 
   <?php $solidHeaderTemplates = ['photography'] ?>
   <header
-    class="content md:py-xs border-b-solid sticky top-0 z-20 border-b py-2 du-dark:border-contrast-lower <?= in_array($page->intendedTemplate()->name(), $solidHeaderTemplates) ? 'bg-theme-background' : 'bg-image-$gradient bg-[length:3px_3px] backdrop-blur-[4px]' ?>"
+    class="content md:py-xs border-b-solid sticky top-0 z-20 border-b py-2 du-dark:border-contrast-lower <?= in_array($page->intendedTemplate()->name(), $solidHeaderTemplates) ? 'bg-theme-background' : 'bg-image-$gradient bg-[length:3px_3px] backdrop-blur-[8px]' ?>"
     style="--gradient: radial-gradient(transparent 1px, var(--du-color-background) 1px)"
   >
     <?php snippet('navigation') ?>
@@ -69,7 +70,7 @@
 
   <main class="relative">
     <?= $slot ?>
-    <div class="absolute inset-0 backdrop-blur-[2px]" hidden data-draggable-backdrop></div>
+    <div class="absolute inset-0 backdrop-blur-[4px]" hidden data-draggable-backdrop></div>
   </main>
 
   <?php snippet('footer') ?>

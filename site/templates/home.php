@@ -6,10 +6,11 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <?php snippet('intro', [
-    'title' => $page->text(),
     'className' => 'relative z-10 cursor-grab active:cursor-grabbing',
     'draggable' => 'true'
-  ]) ?>
+  ], slots: true) ?>
+    <?= $page->text() ?>
+  <?php endsnippet() ?>
 
   <div class="content max-w-screen-lg">
     <h2 class="title text-primary mb-lg text-center text-2xl">
