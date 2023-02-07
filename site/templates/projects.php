@@ -5,7 +5,9 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <?php snippet('intro', ['title' => $page->text()]) ?>
+  <?php snippet('intro', slots: true) ?>
+    <?= $page->text() ?>
+  <?php endsnippet() ?>
 
   <div class="pb-8xl space-y-5xl md:space-y-8xl">
     <?php foreach ($children = $page->children()->listed() as $project): ?>
@@ -24,14 +26,11 @@
           </h2>
         </div>
 
-        <div class="mb-lg"<?= attr([
-          'data-animere' => !$project->isFirst($children) ? 'fadeInRight' : null,
-          'data-animere-duration' => '500ms'
-        ], ' ') ?>>
+        <div class="mb-lg">
           <?php snippet('shortcuts/slider', [
             'query' => $project->gallery()->toFiles(),
             'height' => $project->galleryHeight()->value()
-            ]) ?>
+          ]) ?>
         </div>
 
         <div class="content">

@@ -25,7 +25,10 @@ $heightMap = [
       'class' => 'shrink-0 snap-center snap-always first:snap-start',
       'href' => $settings->link()->or(null)->value(),
       'target' => $hasLink ? '_blank' : null,
-      'rel' => $hasLink ? 'noopener' : null
+      'rel' => $hasLink ? 'noopener' : null,
+      'data-animere' => 'fadeInRight',
+      'data-animere-duration' => '500ms',
+      'data-animere-delay' => $image->indexOf($query) * 50 + 50 . 'ms'
     ], ' ') ?>>
       <?php if ($mockup !== 'none'): ?>
         <div class="h-$cell bg-$bg p-3xl md:p-5xl relative<?php e($mockup === 'desktop', ' flex flex-col') ?>" style="

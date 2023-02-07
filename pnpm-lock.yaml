@@ -12,7 +12,7 @@ specifiers:
   '@unocss/cli': ^0.49.4
   '@unocss/preset-wind': ^0.49.4
   animate.css: ^4.1.1
-  animere: ^1.18.1
+  animere: ^1.18.2
   concurrently: ^7.6.0
   destr: ^1.2.2
   drauu: ^0.3.2
@@ -35,7 +35,7 @@ dependencies:
   '@docsearch/js': 3.3.3
   '@neodrag/vanilla': 2.0.3
   animate.css: 4.1.1
-  animere: 1.18.1
+  animere: 1.18.2
   destr: 1.2.2
   drauu: 0.3.2
   duecss: 0.27.5_unocss@0.49.4
@@ -1093,8 +1093,8 @@ packages:
     resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: false
 
-  /animere/1.18.1:
-    resolution: {integrity: sha512-Uu9A0uA38cvIpF011e1+plukCPHvFR5FXB7RwYzFjIIFl4dV5HoYWGKHgOQcJ3Pae/9+tM5yhroDhboJqCbfVA==}
+  /animere/1.18.2:
+    resolution: {integrity: sha512-eoU+X/TWeloduwHY45nUlpL1WtQ7t/7e49pY1+atx+/f0zFRrgM59etPnkakdj47dnH0mfU2lIWYSjvlH52ztA==}
     dev: false
 
   /ansi-regex/5.0.1:
