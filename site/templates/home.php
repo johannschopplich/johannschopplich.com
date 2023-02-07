@@ -37,7 +37,7 @@
       ->shuffle()
       // ->filterBy('ratio', '>=', '1')
       ->limit(4)
-      ?>
+    ?>
 
     <div class="content max-w-screen-lg">
       <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
