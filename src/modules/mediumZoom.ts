@@ -12,7 +12,7 @@ export async function install() {
   const margin = getRem();
 
   mediumZoom(elements, {
-    background: "var(--du-color-background)",
+    background: "transparent",
     margin,
   });
 }

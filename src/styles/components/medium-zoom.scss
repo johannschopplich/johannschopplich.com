@@ -1,3 +1,9 @@
 .medium-zoom-image {
   z-index: 50;
 }
+
+.medium-zoom-overlay {
+  backdrop-filter: blur(8px);
+  // Present just above the header
+  z-index: 21;
+}
