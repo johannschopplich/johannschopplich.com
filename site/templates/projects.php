@@ -30,8 +30,7 @@
           <?php snippet('shortcuts/slider', [
             'query' => $project->gallery()->toFiles(),
             'height' => $project->galleryHeight()->value(),
-            'link' => $project->url(),
-            'animation' => 'fadeInLeft'
+            'link' => $project->url()
           ]) ?>
         </div>
 

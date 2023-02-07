@@ -3,7 +3,6 @@
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 /** @var string|null $link */
-/** @var string|null $animation */
 /** @var bool|null $zoomable */
 
 $heightMap = [
@@ -28,7 +27,7 @@ $heightMap = [
       'href' => $link ?? $settings->link()->or(null)->value(),
       'target' => $hasLink ? '_blank' : null,
       'rel' => $hasLink ? 'noopener' : null,
-      'data-animere' => $animation ?? null,
+      'data-animere' => 'fadeInLeft',
       'data-animere-duration' => '500ms',
       'data-animere-delay' => $image->indexOf($query) * 50 + 50 . 'ms'
     ], ' ') ?>>
