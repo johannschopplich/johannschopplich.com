@@ -1,4 +1,4 @@
-import { useBreakpoints } from "../hooks";
+import { useBreakpoints, useRem } from "../hooks";
 
 export async function install() {
   const { isBelow } = useBreakpoints();
@@ -9,14 +9,10 @@ export async function install() {
   if (isBelow("md") || elements.length === 0) return;
 
   const { default: mediumZoom } = await import("medium-zoom");
-  const margin = getRem();
+  const margin = useRem();
 
   mediumZoom(elements, {
     background: "transparent",
     margin,
   });
-}
-
-function getRem() {
-  return parseFloat(getComputedStyle(document.documentElement).fontSize);
 }

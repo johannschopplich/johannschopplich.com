@@ -1,1 +1,6 @@
 @use "@docsearch/css";
+@use "swiper/swiper.css";
+
+.swiper-slide {
+  width: unset;
+}
