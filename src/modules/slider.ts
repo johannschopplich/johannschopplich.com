@@ -23,6 +23,7 @@ export async function install() {
       centeredSlides: true,
       centeredSlidesBounds: true,
       grabCursor: true,
+      longSwipesRatio: 0.25,
     });
   }
 }
