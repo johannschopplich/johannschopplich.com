@@ -2,6 +2,12 @@ import type { ScrollSnapPlugin } from "./plugin";
 
 export * from "./draggable";
 
+/**
+ * Refactored version of scroll-snap-slider
+ *
+ * @see https://github.com/barthy-koeln/scroll-snap-slider
+ * @license MIT
+ */
 export class ScrollSnapSlider {
   /** Base element of this slider */
   public element: HTMLElement;
