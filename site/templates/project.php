@@ -22,7 +22,8 @@
 
     <?php snippet('shortcuts/slider', [
       'query' => $page->gallery()->toFiles(),
-      'height' => $page->galleryHeight()->value()
+      'height' => $page->galleryHeight()->value(),
+      'links' => false
     ]) ?>
   </div>
 

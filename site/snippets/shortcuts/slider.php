@@ -2,7 +2,7 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
-/** @var string|null $link */
+/** @var bool|null $links */
 
 $heightMap = [
   'tight' => 'clamp(36svh, 50vw, 25svh)',
@@ -12,19 +12,21 @@ $heightMap = [
 
 ?>
 <div
-  class="gap-xs flex w-full snap-x snap-mandatory overflow-x-auto"
+  class="gap-xs flex w-full cursor-grab snap-x snap-mandatory overflow-x-auto scroll-smooth [&.slider-dragging]:cursor-grabbing"
   style="--cell: <?= $heightMap[$height ?? 'loose'] ?>"
+  data-scroll-snap-slider
 >
   <?php foreach ($query as $image): ?>
     <?php
       /** @var \Kirby\Cms\File $image */
       $settings = $image->gallery()->toObject();
       $mockup = $settings->mockup()->or('none')->value();
-      $tag = ($hasLink = $settings->link()->isNotEmpty()) ? 'a' : 'div';
+      $hasLink = $settings->link()->isNotEmpty();
+      $tag = $hasLink && ($links ?? true) ? 'a' : 'div';
     ?>
     <<?= $tag . attr([
       'class' => 'shrink-0 snap-center snap-always first:snap-start',
-      'href' => $link ?? $settings->link()->or(null)->value(),
+      'href' => ($links ?? true) ? $settings->link()->or(null)->value() : null,
       'target' => $hasLink ? '_blank' : null,
       'rel' => $hasLink ? 'noopener' : null
     ], ' ') ?>>
@@ -59,7 +61,7 @@ $heightMap = [
           'data-trigger-load' => 'true',
           'data-srcset' => $image->srcset(),
           'data-sizes' => 'auto',
-          'data-zoomable' => $settings->link()->isEmpty() ? 'true' : null,
+          // 'data-zoomable' => $settings->link()->isEmpty() ? 'true' : null,
           'width' => $image->width(),
           'height' => $image->height(),
           'alt' => $image->alt()->isNotEmpty() ? $image->alt()->escape() : null
@@ -73,7 +75,7 @@ $heightMap = [
   <?php endforeach ?>
 
   <?php if ($page->isHomePage()): ?>
-    <div class="pr-xs shrink-0 snap-end snap-always" data-slider-ignore>
+    <div class="pr-xs shrink-0 snap-end snap-always">
       <div class="h-$cell relative flex w-[min(65vw,25rem)] items-center justify-center border border-solid">
         <a href="<?= $query->first()->parent()->url() ?>" class="action-button">
           <span class="absolute inset-0" aria-hidden="true"></span>
