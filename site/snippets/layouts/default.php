@@ -47,7 +47,7 @@
 
   <?= css([
     'assets/fonts/CooperHewitt.css',
-    'assets/fonts/Newsreader.css'
+    'assets/fonts/Spectral.css'
   ]) ?>
 
   <link rel="preload" href="/assets/fonts/NewsreaderText-Regular.woff2" as="font" type="font/woff2" crossorigin>
