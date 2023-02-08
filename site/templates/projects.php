@@ -8,7 +8,7 @@
   <?php snippet('intro', ['title' => $page->intro() ], slots: true) ?>
     <?php $blocks = $page->text()->toBlocks() ?>
     <?php if ($blocks->isNotEmpty()): ?>
-      <div class="prose prose-no-indent max-w-prose mt-4">
+      <div class="prose prose-no-indent mt-xs max-w-prose md:mt-lg">
         <?= $blocks ?>
       </div>
     <?php endif ?>
