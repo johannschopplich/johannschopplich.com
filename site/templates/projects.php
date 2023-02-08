@@ -5,8 +5,13 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <?php snippet('intro', slots: true) ?>
-    <?= $page->text() ?>
+  <?php snippet('intro', ['title' => $page->intro() ], slots: true) ?>
+    <?php $blocks = $page->text()->toBlocks() ?>
+    <?php if ($blocks->isNotEmpty()): ?>
+      <div class="prose prose-no-indent max-w-prose mt-4">
+        <?= $blocks ?>
+      </div>
+    <?php endif ?>
   <?php endsnippet() ?>
 
   <div class="pb-8xl space-y-5xl md:space-y-8xl">

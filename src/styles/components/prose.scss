@@ -2,6 +2,10 @@
 @use "duecss/plugins/typography";
 
 .prose {
+  &:not(.prose-no-indent) :where(p) {
+    text-indent: 1rem;
+  }
+
   :where(figure:not(:first-child)) {
     margin-top: calc(2rem * var(--du-prose-space-y, 1));
   }
@@ -12,10 +16,6 @@
 
   :where(h2, h3, h4) {
     font-family: var(--du-font-family-heading);
-  }
-
-  :where(p) {
-    text-indent: 1rem;
   }
 
   :where(blockquote) {

@@ -25,7 +25,7 @@
     <section class="prose"<?= attr(['lang' => $textLanguageCode], ' ') ?>>
       <?= $text ?>
 
-      <?php if ($page->parent()?->template()?->name() === 'articles'): ?>
+      <?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>
         <?= $page->parent()->articleFooter()->toBlocks() ?>
       <?php endif ?>
     </section>
