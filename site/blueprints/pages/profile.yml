@@ -7,7 +7,7 @@ icon: 👤
 columns:
   - width: 2/3
     sections:
-      text:
+      content:
         type: fields
         fields:
           bio: fields/blocks

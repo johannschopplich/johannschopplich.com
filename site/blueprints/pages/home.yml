@@ -11,10 +11,10 @@ options:
 columns:
   - width: 2/3
     sections:
-      text:
+      content:
         type: fields
         fields:
-          text:
+          intro:
             label: Text
             type: writer
             inline: true
