@@ -6,7 +6,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <?php snippet('intro', [
-    'title' => $page->title(),
+    'title' => $page->intro(),
     'className' => 'relative z-10 cursor-grab active:cursor-grabbing',
     'draggable' => 'true'
   ]) ?>
