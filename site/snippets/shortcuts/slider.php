@@ -30,11 +30,11 @@ $heightMap = [
         'target' => $hasLink ? '_blank' : null,
         'rel' => $hasLink ? 'noopener' : null
       ], ' ') ?>>
-        <div <?= attr([
-          'data-animere' => 'fadeInLeft',
-          'data-animere-duration' => '500ms',
-          'data-animere-delay' => $image->indexOf($query) * 50 + 50 . 'ms'
-        ]) ?>>
+        <div
+          data-animere="fadeInLeft"
+          data-animere-duration="500ms"
+          data-animere-delay="<?= $image->indexOf($query) * 50 + 50 . 'ms' ?>"
+        >
           <?php if ($mockup !== 'none'): ?>
             <div
               class="h-$cell bg-$bg p-3xl md:p-5xl relative<?php e($mockup === 'desktop', ' flex flex-col') ?>"
@@ -51,22 +51,21 @@ $heightMap = [
             <?php endif ?>
           <?php endif ?>
 
-          <img <?= attr([
-            'src' => $image->blurhashUri(),
-            'class' => $mockup === 'mobile'
+          <img
+            src="<?= $image->blurhashUri() ?>"
+            class="<?= $mockup === 'mobile'
               ? 'h-full w-auto rounded-xl border-2 border-solid border-zinc-900 object-contain'
               : ($mockup === 'desktop'
                 ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
-                : 'h-$cell max-w-screen w-auto object-contain'),
-            'data-loading' => 'lazy',
-            'data-trigger-load' => 'true',
-            'data-srcset' => $image->srcset(),
-            'data-sizes' => 'auto',
-            // 'data-zoomable' => $settings->link()->isEmpty() ? 'true' : null,
-            'width' => $image->width(),
-            'height' => $image->height(),
-            'alt' => $image->alt()->isNotEmpty() ? $image->alt()->escape() : null
-          ]) ?>>
+                : 'h-$cell max-w-screen w-auto object-contain') ?>"
+            data-loading="lazy"
+            data-trigger-load
+            data-srcset="<?= $image->srcset() ?>"
+            data-sizes="auto"
+            width="<?= $image->width() ?>"
+            height="<?= $image->height() ?>"
+            alt="<?= $image->alt()->or('')->escape() ?>"
+          >
 
           <?php if ($mockup !== 'none'): ?>
             </div>
