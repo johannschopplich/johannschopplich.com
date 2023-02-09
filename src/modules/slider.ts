@@ -11,11 +11,7 @@ export async function install() {
 
   for (const element of elements) {
     // Remove classes that are interfering with Swiper.js
-    element.firstElementChild?.classList.remove(
-      "gap-xs",
-      "snap-x",
-      "overflow-x-auto"
-    );
+    element.firstElementChild?.setAttribute("class", "swiper-wrapper");
 
     new Swiper(element, {
       slidesPerView: "auto",
