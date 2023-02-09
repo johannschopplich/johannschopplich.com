@@ -11,7 +11,7 @@ $heightMap = [
 ];
 
 ?>
-<div class="swiper" data-slider>
+<div data-slider>
   <div
     class="swiper-wrapper flex w-full snap-x snap-mandatory gap-xs overflow-x-auto"
     style="--cell: <?= $heightMap[$height ?? 'loose'] ?>"
