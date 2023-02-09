@@ -2,7 +2,6 @@ import Loadeer from "loadeer";
 
 export function install() {
   const loadeer = new Loadeer('[data-loading="lazy"]');
-  loadeer.observe();
 
   // Trigger loading images before they are in the viewport,
   // e.g. for animated slider images
@@ -13,4 +12,6 @@ export function install() {
   for (const image of triggerLoad) {
     loadeer.triggerLoad(image);
   }
+
+  loadeer.observe();
 }
