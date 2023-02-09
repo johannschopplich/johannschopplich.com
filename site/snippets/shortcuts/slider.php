@@ -58,10 +58,8 @@ $heightMap = [
               : ($mockup === 'desktop'
                 ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
                 : 'h-$cell max-w-screen w-auto object-contain') ?>"
-            data-loading="lazy"
-            data-trigger-load
-            data-srcset="<?= $image->srcset() ?>"
-            data-sizes="auto"
+            srcset="<?= $image->srcset() ?>"
+            data-auto-sizes
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
