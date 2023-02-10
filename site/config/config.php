@@ -63,12 +63,6 @@ return [
             'profile',
             'project'
         ],
-        // Optional pages which should be excluded from the index
-        'exclude' => [
-            'pages' => [
-                'blog/fiverr-layout-css-fix'
-            ]
-        ],
         // Define the search hit label
         'label' => [
             'default' => [
