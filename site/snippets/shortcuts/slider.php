@@ -13,20 +13,20 @@ $heightMap = [
 ?>
 <div data-slider>
   <div
-    class="swiper-wrapper flex w-full snap-x snap-mandatory gap-xs overflow-x-auto"
+    class="flex w-full snap-x snap-mandatory gap-xs overflow-x-auto"
     style="--cell: <?= $heightMap[$height ?? 'loose'] ?>"
   >
     <?php foreach ($query as $image): ?>
       <?php
-        /** @var \Kirby\Cms\File $image */
-        $settings = $image->gallery()->toObject();
-        $mockup = $settings->mockup()->or('none')->value();
-        $hasLink = $settings->link()->isNotEmpty();
-        $tag = $hasLink && ($links ?? true) ? 'a' : 'div';
+      /** @var \Kirby\Cms\File $image */
+      $settings = $image->gallery()->toObject();
+      $mockup = $settings->mockup()->or('none')->value();
+      $hasLink = ($links ?? true) && $settings->link()->isNotEmpty();
+      $tag = $hasLink ? 'a' : 'div';
       ?>
       <<?= $tag . attr([
         'class' => 'swiper-slide shrink-0 snap-center snap-always first:snap-start',
-        'href' => ($links ?? true) ? $settings->link()->or(null)->value() : null,
+        'href' => $hasLink ? $settings->link()->or(null)->value() : null,
         'target' => $hasLink ? '_blank' : null,
         'rel' => $hasLink ? 'noopener' : null
       ], ' ') ?>>
