@@ -16,7 +16,7 @@ return fn (\Kirby\Cms\App $kirby, \Kirby\Cms\Site $site, \Kirby\Cms\Page $page) 
                     'https://twitter.com/jschopplich',
                     'https://github.com/johannschopplich'
                 ]
-            ],
+            ]
         ]
     ]
 ];

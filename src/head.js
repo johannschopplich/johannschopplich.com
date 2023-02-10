@@ -2,15 +2,16 @@
 
 (() => {
   const root = document.documentElement;
+  const prefersReducedMotion = matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+  const isBot = /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
 
-  if (
-    !matchMedia("(prefers-reduced-motion: reduce)").matches &&
-    !/(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent)
-  ) {
+  if (!prefersReducedMotion && !isBot) {
     root.dataset.animatable = "true";
   }
 
-  const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
   const setting = localStorage.getItem("color-schema");
 
   if (setting === "dark" || (prefersDark && setting !== "light")) {
