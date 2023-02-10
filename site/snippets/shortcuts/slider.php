@@ -31,9 +31,9 @@ $heightMap = [
         'rel' => $hasLink ? 'noopener' : null
       ], ' ') ?>>
         <div
-          data-animere="fadeInLeft"
-          data-animere-duration="500ms"
-          data-animere-delay="<?= $image->indexOf($query) * 50 + 50 . 'ms' ?>"
+          data-animere-slide="fadeInLeft"
+          data-animere-slide-duration="500ms"
+          data-animere-slide-delay="<?= $image->indexOf($query) * 50 + 50 . 'ms' ?>"
         >
           <?php if ($mockup !== 'none'): ?>
             <div

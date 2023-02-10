@@ -1,23 +1,30 @@
+import Animere from "animere";
 import { useRem } from "../hooks";
 
 export async function install() {
+  const isTouchscreen = matchMedia("(hover: none), (pointer: coarse)").matches;
   const elements = document.querySelectorAll<HTMLElement>("[data-slider]");
   if (elements.length === 0) return;
 
-  // Check if image is not inside viewport and reset animation delay
-  for (const element of elements) {
-    const animatedElements =
-      element.querySelectorAll<HTMLElement>("[data-animere]");
-
-    for (const element of animatedElements) {
-      if (element.getBoundingClientRect().left > window.innerWidth) {
-        element.dataset.animereDelay = "50ms";
-      }
+  // Check if image is outside viewport width and if so,
+  // skip initializing Animere on it
+  for (const slide of document.querySelectorAll<HTMLElement>(
+    "[data-animere-slide]"
+  )) {
+    const { left } = slide.getBoundingClientRect();
+    if (left > window.innerWidth) {
+      slide.removeAttribute("data-animere-slide");
     }
   }
 
+  // Animate slides within viewport
+  new Animere({
+    prefix: "animere-slide",
+    initResolver: () => !!document.documentElement.dataset.animatable,
+  });
+
   // Use scroll snap slider for mobile devices
-  if (matchMedia("(hover: none), (pointer: coarse)").matches) return;
+  if (isTouchscreen) return;
 
   const { default: Swiper } = await import("swiper");
   const rem = useRem();
