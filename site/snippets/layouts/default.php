@@ -50,7 +50,7 @@
     'assets/fonts/Spectral.css'
   ]) ?>
 
-  <link rel="preload" href="/assets/fonts/NewsreaderText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Spectral-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>
