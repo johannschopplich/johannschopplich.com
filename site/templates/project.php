@@ -20,11 +20,7 @@
       </div>
     </div>
 
-    <?php if ($page->galleryType()->value() === 'masonry'): ?>
-      <?php snippet('masonry', [
-        'query' => $page->gallery()->toFiles()
-      ]) ?>
-    <?php else: ?>
+    <?php if ($page->galleryType()->value() === 'slider'): ?>
       <?php snippet('slider', [
         'query' => $page->gallery()->toFiles(),
         'height' => $page->galleryHeight()->value(),
@@ -33,8 +29,18 @@
     <?php endif ?>
   </div>
 
-  <div class="pb-8xl">
-    <div class="content max-w-prose">
+  <?php $isMasonry = $page->galleryType()->value() === 'masonry' ?>
+  <div class="pb-8xl <?= e($isMasonry, 'lg:flex lg:flex-wrap') ?>">
+    <?php if ($isMasonry): ?>
+      <div class="flex-1 w-auto pb-8xl lg:max-w-prose">
+        <?php snippet('masonry', [
+          'query' => $page->gallery()->toFiles(),
+          'width' => 'min(15rem, 50vw)'
+        ]) ?>
+      </div>
+    <?php endif ?>
+
+    <div class="content max-w-prose <?= e($isMasonry, 'w-full') ?>">
       <?php if ($page->text()->isNotEmpty()): ?>
         <div class="prose mb-5xl">
           <?= $page->text()->toBlocks() ?>
