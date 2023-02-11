@@ -20,11 +20,17 @@
       </div>
     </div>
 
-    <?php snippet('shortcuts/slider', [
-      'query' => $page->gallery()->toFiles(),
-      'height' => $page->galleryHeight()->value(),
-      'links' => false
-    ]) ?>
+    <?php if ($page->galleryType()->value() === 'masonry'): ?>
+      <?php snippet('shortcuts/masonry', [
+        'query' => $page->gallery()->toFiles()
+      ]) ?>
+    <?php else: ?>
+      <?php snippet('shortcuts/slider', [
+        'query' => $page->gallery()->toFiles(),
+        'height' => $page->galleryHeight()->value(),
+        'links' => false
+      ]) ?>
+    <?php endif ?>
   </div>
 
   <div class="pb-8xl">

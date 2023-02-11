@@ -27,23 +27,42 @@ columns:
             translate: false
             required: true
             width: 1/2
+          galleryType:
+            label:
+              de: Galerietyp
+              en: Gallery Type
+            type: toggles
+            default: slider
+            options:
+              - value: slider
+                text: Slider
+                icon: badge
+              - value: masonry
+                text: Masonry
+                icon: grid
+            translate: false
           galleryHeight:
             label:
               de: Galeriehöhe
               en: Gallery Height
-            type: select
+            type: toggles
             default: loose
             options:
-              tight:
-                de: Eng
-                en: Tight
-              normal:
-                de: Normal
-                en: Normal
-              loose:
-                de: Locker
-                en: Loose
+              - value: tight
+                text:
+                  de: Eng
+                  en: Tight
+              - value: normal
+                text:
+                  de: Normal
+                  en: Normal
+              - value: loose
+                text:
+                  de: Locker
+                  en: Loose
             translate: false
+            when:
+              galleryType: masonry
       images: sections/images
       files: sections/files
 
