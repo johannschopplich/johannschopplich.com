@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.26.3",
+  "packageManager": "pnpm@7.27.0",
   "scripts": {
     "assets:head": "esbuild src/head.js --minify --format=esm --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{snippets,templates}/**/*\" --out-file src/styles/uno.css",
@@ -15,7 +15,7 @@
     "@docsearch/js": "^3.3.3",
     "@neodrag/vanilla": "^2.0.3",
     "animate.css": "^4.1.1",
-    "animere": "^1.19.2",
+    "animere": "^1.19.3",
     "destr": "^1.2.2",
     "drauu": "^0.3.2",
     "duecss": "^0.28.0",

@@ -19,6 +19,8 @@
       </div>
     <?php endif ?>
 
-    <?php snippet('shortcuts/masonry', ['query' => $page->gallery()->toFiles()]) ?>
+    <?php snippet('masonry', [
+      'query' => $page->gallery()->toFiles()
+    ]) ?>
   </div>
 <?php endsnippet() ?>

@@ -32,7 +32,7 @@
         </div>
 
         <div class="mb-lg">
-          <?php snippet('shortcuts/slider', [
+          <?php snippet('slider', [
             'query' => $project->gallery()->toFiles(),
             'height' => $project->galleryHeight()->value(),
             'links' => false

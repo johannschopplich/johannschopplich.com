@@ -46,7 +46,7 @@
       </h2>
     </div>
 
-    <?php snippet('shortcuts/slider', compact('query')) ?>
+    <?php snippet('slider', compact('query')) ?>
 
     <div class="content pb-8xl max-w-screen-lg">
       <div class="text-center mt-lg">

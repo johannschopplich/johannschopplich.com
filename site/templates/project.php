@@ -21,11 +21,11 @@
     </div>
 
     <?php if ($page->galleryType()->value() === 'masonry'): ?>
-      <?php snippet('shortcuts/masonry', [
+      <?php snippet('masonry', [
         'query' => $page->gallery()->toFiles()
       ]) ?>
     <?php else: ?>
-      <?php snippet('shortcuts/slider', [
+      <?php snippet('slider', [
         'query' => $page->gallery()->toFiles(),
         'height' => $page->galleryHeight()->value(),
         'links' => false
