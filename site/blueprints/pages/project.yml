@@ -62,7 +62,7 @@ columns:
                   en: Loose
             translate: false
             when:
-              galleryType: masonry
+              galleryType: slider
       images: sections/images
       files: sections/files
 
