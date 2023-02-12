@@ -5,7 +5,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="pt-8xl pb-5xl">
+  <div class="pt-8xl pb-5xl space-y-5xl">
     <div class="content max-w-prose">
       <p class="text-contrast-medium">
         <?= $page->subtitle()->escape() ?>
@@ -21,13 +21,11 @@
     </div>
 
     <?php if ($page->galleryType()->value() === 'slider'): ?>
-      <div class="pt-5xl">
-        <?php snippet('slider', [
-          'query' => $page->gallery()->toFiles(),
-          'height' => $page->galleryHeight()->value(),
-          'links' => false
-        ]) ?>
-      </div>
+      <?php snippet('slider', [
+        'query' => $page->gallery()->toFiles(),
+        'height' => $page->galleryHeight()->value(),
+        'links' => false
+      ]) ?>
     <?php endif ?>
   </div>
 
@@ -42,7 +40,7 @@
       </div>
     <?php endif ?>
 
-    <div class="content max-w-prose <?= e($isMasonry, 'w-full') ?>">
+    <div class="content w-full max-w-prose">
       <?php if ($page->text()->isNotEmpty()): ?>
         <div class="prose mb-5xl">
           <?= $page->text()->toBlocks() ?>
