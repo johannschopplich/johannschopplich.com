@@ -16,7 +16,7 @@ $year = null;
 
     <?php if ($postY !== $year): ?>
       <div class="mt-3xl mb-xs">
-        <h3 class="font-heading text-size-xl text-contrast-low leading-none"><?= $postY ?></h3>
+        <h3 class="font-heading font-500 text-size-xl text-contrast-low leading-none"><?= $postY ?></h3>
       </div>
     <?php endif ?>
 
@@ -26,7 +26,7 @@ $year = null;
       'aria-current' => $isActive ? 'page' : null,
       'style' => '--du-color-link-hover: var(--du-color-primary)'
     ]) ?>>
-      <span class="flex-grow font-heading font-500 <?php e($isActive, 'text-primary') ?>">
+      <span class="flex-grow font-heading font-500<?php e($isActive, ' text-primary') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>

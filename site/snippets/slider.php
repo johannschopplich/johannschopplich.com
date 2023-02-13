@@ -5,9 +5,9 @@
 /** @var bool|null $links */
 
 $heightMap = [
-  'tight' => 'clamp(36svh, 50vw, 25svh)',
-  'normal' => 'clamp(36svh, 50vw, 50svh)',
-  'loose' => 'clamp(36svh, 50vw, 75svh)'
+  'tight' => 'clamp(35svh, 50vw, 25svh)',
+  'normal' => 'clamp(35svh, 50vw, 50svh)',
+  'loose' => 'clamp(35svh, 50vw, 75svh)'
 ];
 
 ?>
@@ -26,7 +26,7 @@ $heightMap = [
       ?>
       <<?= $tag . attr([
         'class' => 'swiper-slide shrink-0 snap-center snap-always first:snap-start',
-        'href' => $hasLink ? $settings->link()->or(null)->value() : null,
+        'href' => $hasLink ? $settings->link()->value() : null,
         'target' => $hasLink ? '_blank' : null,
         'rel' => $hasLink ? 'noopener' : null
       ], ' ') ?>>

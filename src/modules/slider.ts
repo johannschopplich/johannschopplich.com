@@ -11,8 +11,8 @@ export async function install() {
   for (const slide of document.querySelectorAll<HTMLElement>(
     "[data-animere-slide]"
   )) {
-    const { left } = slide.getBoundingClientRect();
-    if (left > window.innerWidth) {
+    const { right } = slide.getBoundingClientRect();
+    if (right > window.innerWidth) {
       slide.removeAttribute("data-animere-slide");
     }
   }
