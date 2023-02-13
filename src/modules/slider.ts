@@ -3,6 +3,8 @@ import { useRem } from "../hooks";
 
 export async function install() {
   const isTouchscreen = matchMedia("(hover: none), (pointer: coarse)").matches;
+  const rem = useRem();
+
   const elements = document.querySelectorAll<HTMLElement>("[data-slider]");
   if (elements.length === 0) return;
 
@@ -11,8 +13,8 @@ export async function install() {
   for (const slide of document.querySelectorAll<HTMLElement>(
     "[data-animere-slide]"
   )) {
-    const { right } = slide.getBoundingClientRect();
-    if (right > window.innerWidth) {
+    const { left } = slide.getBoundingClientRect();
+    if (left + rem > window.innerWidth) {
       slide.removeAttribute("data-animere-slide");
     }
   }
@@ -27,7 +29,6 @@ export async function install() {
   if (isTouchscreen) return;
 
   const { default: Swiper } = await import("swiper");
-  const rem = useRem();
 
   for (const element of elements) {
     // Remove classes that are interfering with Swiper.js
