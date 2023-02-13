@@ -60,6 +60,7 @@ $heightMap = [
                 : 'h-$cell max-w-screen w-auto object-contain') ?>"
             data-loading="lazy"
             data-srcset="<?= $image->srcset() ?>"
+            data-trigger-load
             data-sizes="auto"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
