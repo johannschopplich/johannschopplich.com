@@ -12,7 +12,7 @@ specifiers:
   '@unocss/cli': ^0.49.4
   '@unocss/preset-wind': ^0.49.4
   animate.css: ^4.1.1
-  animere: ^1.20.1
+  animere: ^2.0.0
   concurrently: ^7.6.0
   destr: ^1.2.2
   drauu: ^0.3.2
@@ -25,7 +25,7 @@ specifiers:
   postcss: ^8.4.21
   prettier: ^2.8.4
   sass: ^1.58.0
-  swiper: ^9.0.4
+  swiper: ^9.0.5
   typescript: ^4.9.5
   unocss: ^0.49.4
   vite: ^4.1.1
@@ -36,13 +36,13 @@ dependencies:
   '@docsearch/js': 3.3.3
   '@neodrag/vanilla': 2.0.3
   animate.css: 4.1.1
-  animere: 1.20.1
+  animere: 2.0.0
   destr: 1.2.2
   drauu: 0.3.2
   duecss: 0.28.0_unocss@0.49.4
   loadeer: 2.1.2
   medium-zoom: 1.0.8
-  swiper: 9.0.4
+  swiper: 9.0.5
 
 devDependencies:
   '@iconify-json/bx': 1.1.6
@@ -1095,8 +1095,8 @@ packages:
     resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: false
 
-  /animere/1.20.1:
-    resolution: {integrity: sha512-oxH6BOilMzj14vTs3OrXW+E8USwLDkftgDdnh5x9DXKWq/xTByNsjkywia9juGFz+VZmn0FKC4jzU6GGMjR3kw==}
+  /animere/2.0.0:
+    resolution: {integrity: sha512-lS9ACMxqmFherC/jUzAEoHRtJmTOsFt+ZB/aK8irJCdhELesRThIByBnqM0rkVmyAVvtiOgU78yVs04uz1YGxQ==}
     dev: false
 
   /ansi-regex/5.0.1:
@@ -1921,7 +1921,7 @@ packages:
       destr: 1.2.2
       node-fetch-native: 1.0.1
       ufo: 1.0.1
-      undici: 5.18.0
+      undici: 5.19.1
 
   /once/1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
@@ -2207,8 +2207,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  /swiper/9.0.4:
-    resolution: {integrity: sha512-YH4sUh68DYw7vcoBZQ+DeBV6/wLZIRf8dZ4CzkvRTcvDPkIF6oweBdOjKnsXtoPCSUQbtqbZcLRghkfOtd5UYA==}
+  /swiper/9.0.5:
+    resolution: {integrity: sha512-UiLQ5fvn8L3ZZpaPa+9oiwKwhVGQt5TVc0UuXxFKHyTQe8g2E3vbPMiMfIGb6NhNGj5ntsSDyyNgg4qVmWlJkQ==}
     engines: {node: '>= 4.7.0'}
     dependencies:
       ssr-window: 4.0.2
@@ -2279,8 +2279,8 @@ packages:
       defu: 6.1.2
       jiti: 1.17.0
 
-  /undici/5.18.0:
-    resolution: {integrity: sha512-1iVwbhonhFytNdg0P4PqyIAXbdlVZVebtPDvuM36m66mRw4OGrCm2MYynJv/UENFLdP13J1nPVQzVE2zTs1OeA==}
+  /undici/5.19.1:
+    resolution: {integrity: sha512-YiZ61LPIgY73E7syxCDxxa3LV2yl3sN8spnIuTct60boiiRaE1J8mNWHO8Im2Zi/sFrPusjLlmRPrsyraSqX6A==}
     engines: {node: '>=12.18'}
     dependencies:
       busboy: 1.6.0
