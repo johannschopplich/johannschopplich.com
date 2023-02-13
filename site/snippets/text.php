@@ -3,7 +3,7 @@
 /** @var \Kirby\Cms\Page $page */ ?>
 <div class="py-8xl">
   <div class="content pb-5xl max-w-prose">
-    <?php if ($page->published()->exists() && $page->published()->isNotEmpty()): ?>
+    <?php if ($page->published()->isNotEmpty()): ?>
       <p class="text-contrast-medium">
         <?= t('article.publishedAt') ?>
         <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">
@@ -22,7 +22,10 @@
   </div>
 
   <div class="content max-w-prose">
-    <section class="prose"<?= attr(['lang' => $textLanguageCode], ' ') ?>>
+    <section <?= attr([
+      'class' => 'prose prose-indent-paragraph',
+      'lang' => $textLanguageCode
+    ]) ?>>
       <?= $text ?>
 
       <?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>

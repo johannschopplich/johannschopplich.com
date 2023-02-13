@@ -2,10 +2,6 @@
 @use "duecss/plugins/typography";
 
 .prose {
-  &:not(.prose-no-indent) :where(p) {
-    text-indent: 1rem;
-  }
-
   :where(figure:not(:first-child)) {
     margin-top: calc(2rem * var(--du-prose-space-y, 1));
   }
@@ -101,5 +97,9 @@
       margin-left: 0;
       margin-right: 0;
     }
+  }
+
+  &.prose-indent-paragraph :where(p) {
+    text-indent: 1rem;
   }
 }

@@ -57,7 +57,7 @@
             style="--du-prose-space-y: 1.25"
           >
             <?php foreach ($layout->columns() as $column): ?>
-              <div class="prose prose-no-indent">
+              <div class="prose">
                 <?php foreach ($column->blocks() as $block): ?>
                   <?php /** @var \Kirby\Cms\Block $block */ ?>
                   <?php if ($block->type() === 'heading'): ?>
