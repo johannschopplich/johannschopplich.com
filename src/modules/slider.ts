@@ -14,7 +14,7 @@ export async function install() {
     "[data-animere-slide]"
   )) {
     const { left } = slide.getBoundingClientRect();
-    if (left + rem > window.innerWidth) {
+    if (left > window.innerWidth) {
       slide.removeAttribute("data-animere-slide");
     }
   }
@@ -22,6 +22,7 @@ export async function install() {
   // Animate slides within viewport
   new Animere({
     prefix: "animere-slide",
+    axis: "y",
     initResolver: () => !!document.documentElement.dataset.animatable,
   });
 
