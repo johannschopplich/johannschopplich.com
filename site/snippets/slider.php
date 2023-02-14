@@ -37,7 +37,7 @@ $heightMap = [
         >
           <?php if ($mockup !== 'none'): ?>
             <div
-              class="h-$cell bg-$bg p-3xl md:p-5xl relative<?php e($mockup === 'desktop', ' flex flex-col') ?>"
+              class="h-$cell bg-$bg p-3xl md:p-5xl relative <?php e($mockup === 'desktop', 'flex flex-col') ?>"
               style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
             >
             <?php if ($mockup === 'mobile'): ?>
