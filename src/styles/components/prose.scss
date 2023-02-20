@@ -2,6 +2,8 @@
 @use "duecss/plugins/typography";
 
 .prose {
+  --du-prose-space-y: 1.5;
+
   :where(figure:not(:first-child)) {
     margin-top: calc(2rem * var(--du-prose-space-y, 1));
   }
@@ -12,6 +14,18 @@
 
   :where(h2, h3, h4) {
     font-family: var(--du-font-family-heading);
+
+    a:not([href^="http"]) {
+      color: inherit;
+      text-decoration-line: none;
+    }
+  }
+
+  :where(p) {
+    @include breakpoints.media-above(md) {
+      font-size: 1.1rem;
+      line-height: var(--du-line-height-normal);
+    }
   }
 
   :where(blockquote) {
@@ -19,10 +33,6 @@
     border-left-style: dotted;
     // Keep in line with text indent
     padding-left: 1rem;
-  }
-
-  :where(blockquote p) {
-    text-indent: 0;
   }
 
   :where(pre) {
@@ -36,13 +46,6 @@
 
   :where(hr) {
     border-bottom: none;
-  }
-
-  :where(h2, h3, h4) {
-    a:not([href^="http"]) {
-      color: inherit;
-      text-decoration-line: none;
-    }
   }
 
   :where(figure) {
@@ -69,10 +72,13 @@
         width: 60%;
       }
 
-      &.is-outset,
       &.is-pulled-left,
       &.is-pulled-right {
         margin-right: calc(-60% - 2rem);
+      }
+
+      &.is-outset {
+        margin-right: calc(-30% - 2rem);
       }
     }
   }
@@ -88,18 +94,18 @@
     text-align: left;
   }
 
-  .masonry-grid {
-    --masonry-col-max-w: 40vw;
+  :where(.masonry-grid) {
+    --masonry-col-max-w: 30ch;
     gap: 1rem;
 
     figure {
       margin-top: 0;
-      margin-left: 0;
-      margin-right: 0;
     }
   }
 
-  &.prose-indent-paragraph :where(p) {
-    text-indent: 1rem;
+  &.prose-indent-paragraph {
+    :where(p) {
+      text-indent: 1rem;
+    }
   }
 }

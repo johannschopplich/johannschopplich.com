@@ -1,6 +1,7 @@
 a:not([class]),
 .text-underline {
   text-decoration-line: underline;
+  text-decoration-style: dotted;
   text-decoration-color: var(--du-color-primary);
   text-decoration-thickness: var(--du-decoration-width);
   text-underline-offset: var(--du-decoration-width);

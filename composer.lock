@@ -164,16 +164,16 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "3.4.3",
+            "version": "3.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-janitor.git",
-                "reference": "e2f33645d65d45516016ee10679497605db28bad"
+                "reference": "158354dfddf0e581b70babf751048f841c70e373"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/e2f33645d65d45516016ee10679497605db28bad",
-                "reference": "e2f33645d65d45516016ee10679497605db28bad",
+                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/158354dfddf0e581b70babf751048f841c70e373",
+                "reference": "158354dfddf0e581b70babf751048f841c70e373",
                 "shasum": ""
             },
             "require": {
@@ -208,6 +208,7 @@
                 }
             ],
             "description": "Kirby 3 Plugin for running commands like cleaning the cache from within the Panel, PHP code or a cronjob",
+            "homepage": "https://github.com/bnomei/kirby3-janitor",
             "keywords": [
                 "Tinker",
                 "backup",
@@ -229,7 +230,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-janitor/issues",
-                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.4.3"
+                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.4.5"
             },
             "funding": [
                 {
@@ -249,7 +250,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-02-07T12:34:50+00:00"
+            "time": "2023-02-14T10:53:11+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -454,16 +455,16 @@
         },
         {
             "name": "getkirby/cli",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/cli.git",
-                "reference": "91138fad0fd3b7387dd258c1f78ee7e338adde00"
+                "reference": "0e8074b0e6081c9e1a9f31090733b058db15be06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/cli/zipball/91138fad0fd3b7387dd258c1f78ee7e338adde00",
-                "reference": "91138fad0fd3b7387dd258c1f78ee7e338adde00",
+                "url": "https://api.github.com/repos/getkirby/cli/zipball/0e8074b0e6081c9e1a9f31090733b058db15be06",
+                "reference": "0e8074b0e6081c9e1a9f31090733b058db15be06",
                 "shasum": ""
             },
             "require": {
@@ -471,7 +472,7 @@
                 "ext-zip": "*",
                 "guzzlehttp/guzzle": "^7.5",
                 "league/climate": "^3.8",
-                "php": ">=8.0.0 <8.2.0"
+                "php": ">=8.0.0 <8.3.0"
             },
             "bin": [
                 "bin/kirby"
@@ -516,7 +517,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-11-28T14:45:03+00:00"
+            "time": "2023-02-10T12:27:30+00:00"
         },
         {
             "name": "getkirby/cms",
