@@ -99,7 +99,7 @@
   &.is-article {
     :where(p) {
       font-size: 1.1rem;
-      line-height: var(--du-line-height-normal);
+      line-height: calc(1ex / 0.28);
       text-indent: 1rem;
     }
   }
