@@ -23,7 +23,7 @@
 
   <div class="content max-w-prose">
     <section <?= attr([
-      'class' => 'prose prose-indent-paragraph',
+      'class' => 'prose is-article',
       'lang' => $textLanguageCode
     ]) ?>>
       <?= $text ?>

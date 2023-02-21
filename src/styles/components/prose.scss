@@ -21,11 +21,6 @@
     }
   }
 
-  :where(p) {
-    font-size: 1.1rem;
-    line-height: var(--du-line-height-normal);
-  }
-
   :where(blockquote) {
     border-left-color: var(--du-color-primary);
     border-left-style: dotted;
@@ -101,8 +96,10 @@
     }
   }
 
-  &.prose-indent-paragraph {
+  &.is-article {
     :where(p) {
+      font-size: 1.1rem;
+      line-height: var(--du-line-height-normal);
       text-indent: 1rem;
     }
   }
