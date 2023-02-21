@@ -22,10 +22,8 @@
   }
 
   :where(p) {
-    @include breakpoints.media-above(md) {
-      font-size: 1.1rem;
-      line-height: var(--du-line-height-normal);
-    }
+    font-size: 1.1rem;
+    line-height: var(--du-line-height-normal);
   }
 
   :where(blockquote) {
