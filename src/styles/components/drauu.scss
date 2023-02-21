@@ -6,6 +6,10 @@
 
     &.is-active {
       border: 1px solid;
+
+      [data-theme="dark"] & {
+        border-color: var(--du-color-contrast-medium);
+      }
     }
 
     &:hover,
@@ -24,6 +28,11 @@
     border-radius: 0;
     padding-left: 0.25rem;
     padding-right: 1em;
+
+    [data-theme="dark"] & {
+      background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' fill='white'/%3E%3C/svg%3E")
+        no-repeat right center / 1em;
+    }
 
     &:hover,
     &:focus {
