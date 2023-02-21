@@ -7,7 +7,8 @@
   --du-line-height-heading: 1.05;
 
   // Project-specific due variables
-  --du-decoration-width: max(2px, 0.1em);
+  --du-decoration-thickness: max(1px, 0.05em);
+  --du-decoration-offset: max(2px, 0.15em);
   --du-shadow-frame: 3px 3px 0 var(--du-color-background),
     4px 4px 0 var(--du-color-border);
 }
