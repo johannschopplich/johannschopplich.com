@@ -7,8 +7,8 @@
   @include breakpoints.media-below(md) {
     text-decoration-line: underline;
     text-decoration-color: transparent;
-    text-decoration-thickness: var(--du-decoration-width);
-    text-underline-offset: var(--du-decoration-width);
+    text-decoration-thickness: var(--du-decoration-thickness);
+    text-underline-offset: var(--du-decoration-offset);
 
     &:focus,
     &:hover,
