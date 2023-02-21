@@ -42,7 +42,7 @@
 
     <div class="content w-full max-w-prose">
       <?php if ($page->text()->isNotEmpty()): ?>
-        <div class="prose mb-5xl">
+        <div class="prose is-article mb-5xl">
           <?= $page->text()->toBlocks() ?>
         </div>
       <?php endif ?>
