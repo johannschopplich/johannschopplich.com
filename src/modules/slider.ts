@@ -22,7 +22,6 @@ export async function install() {
   // Animate slides within viewport
   new Animere({
     prefix: "animere-slide",
-    axis: "y",
     initResolver: () => !!document.documentElement.dataset.animatable,
   });
 
