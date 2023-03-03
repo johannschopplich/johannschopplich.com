@@ -5,21 +5,27 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <?php snippet('intro', ['title' => $page->intro() ], slots: true) ?>
-    <?php $blocks = $page->text()->toBlocks() ?>
-    <?php if ($blocks->isNotEmpty()): ?>
-      <div class="prose mt-xs max-w-prose md:mt-lg">
-        <?= $blocks ?>
-      </div>
-    <?php endif ?>
-  <?php endsnippet() ?>
+  <div class="content pt-8xl max-w-screen-lg">
+    <div class="max-w-prose prose">
+      <?php foreach ($page->text()->toBlocks() as $block): ?>
+        <?php /** @var \Kirby\Cms\Block $block */ ?>
+        <?php if ($block->type() === 'heading' && $block->content()->level() === 'h1'): ?>
+          <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl"><?= $block->text() ?></h1>
+        <?php else: ?>
+          <?= $block ?>
+        <?php endif ?>
+      <?php endforeach ?>
+    </div>
+
+    <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
+  </div>
 
   <div class="pb-8xl space-y-5xl md:space-y-8xl">
     <?php foreach ($children = $page->children()->listed() as $project): ?>
       <?php /** @var \Kirby\Cms\Page $project */ ?>
       <div>
         <div class="content group pt-xl mb-xl relative border-t border-t-solid du-dark:border-contrast-lower">
-          <p class="text-contrast-medium">
+          <p class="text-contrast-medium font-200">
             <?= $project->subtitle()->escape() ?>
           </p>
 

@@ -14,10 +14,27 @@ columns:
       content:
         type: fields
         fields:
-          intro:
-            label: Text
-            type: writer
-            inline: true
+          text: fields/blocks
+          contactText:
+            label:
+              de: Kontakt-Text
+              en: Contact Text
+            extends: fields/blocks
+          contact:
+            label:
+              de: Kontakt
+              en: Contact
+            type: structure
+            fields:
+              title:
+                label:
+                  de: Titel
+                  en: Title
+                type: text
+              link:
+                label: Link
+                type: writer
+                inline: true
 
   - width: 1/3
     sections:

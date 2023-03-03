@@ -11,8 +11,9 @@ return [
     'translations' => [
         'theme.switch' => 'Farbschema wechseln',
         'home' => 'Startseite',
+        'contact' => 'Kontakt',
         'articles.all' => 'Alle Artikel',
-        'articles.latest' => 'Jüngste Artikel',
+        'articles.latest' => 'Schriftstücke',
         'articles.more' => 'Ältere Artikel',
         'articles.popular' => 'Beliebte Artikel',
         'article.publishedAt' => 'Vom',

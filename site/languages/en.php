@@ -11,8 +11,9 @@ return [
     'translations' => [
         'theme.switch' => 'Switch theme',
         'home' => 'Homepage',
+        'contact' => 'Contact',
         'articles.all' => 'All Articles',
-        'articles.latest' => 'Latest Articles',
+        'articles.latest' => 'Writing',
         'articles.more' => 'Prior Articles',
         'articles.popular' => 'Popular Articles',
         'article.publishedAt' => '',
