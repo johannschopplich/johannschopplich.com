@@ -9,7 +9,7 @@
     <div class="max-w-prose prose">
       <?php foreach ($page->text()->toBlocks() as $block): ?>
         <?php /** @var \Kirby\Cms\Block $block */ ?>
-        <?php if ($block->type() === 'heading' && $block->content()->level() === 'h1'): ?>
+        <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
           <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl"><?= $block->text() ?></h1>
         <?php else: ?>
           <?= $block ?>

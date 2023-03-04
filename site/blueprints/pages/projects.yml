@@ -59,10 +59,6 @@ tabs:
           content:
             type: fields
             fields:
-              intro:
-                label: Intro
-                type: writer
-                inline: true
               text: fields/blocks
 
       - width: 1/3
