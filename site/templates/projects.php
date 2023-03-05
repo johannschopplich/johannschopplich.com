@@ -25,7 +25,7 @@
       <?php /** @var \Kirby\Cms\Page $project */ ?>
       <div>
         <div class="content group pt-xl mb-xl relative border-t border-t-solid du-dark:border-contrast-lower">
-          <p class="text-contrast-medium font-200">
+          <p class="text-contrast-medium">
             <?= $project->subtitle()->escape() ?>
           </p>
 
