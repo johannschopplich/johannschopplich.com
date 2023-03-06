@@ -16,7 +16,7 @@
         </filter>
       </svg>
       <div
-        class="p-[min(45vmin,8rem)] rounded-1/2"
+        class="p-[clamp(2rem,25vw,8rem)] rounded-1/2"
         style="background: conic-gradient(var(--du-color-primary), khaki, var(--du-color-primary) 75%); filter: url(#grainy-blur);"
       ></div>
     </div>
