@@ -6,7 +6,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <div class="absolute inset-x-0 top-5xl">
-    <div class="flex max-w-screen-lg justify-end">
+    <div class="flex max-w-screen-md justify-end">
       <svg width="0" height="0">
         <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
           <feGaussianBlur stdDeviation="39" result="blur"></feGaussianBlur>
