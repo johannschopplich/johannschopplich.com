@@ -5,7 +5,24 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="content pt-8xl max-w-screen-lg">
+  <div class="absolute inset-x-0 top-5xl">
+    <div class="flex max-w-screen-lg justify-end">
+      <svg width="0" height="0">
+        <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
+          <feGaussianBlur stdDeviation="39" result="blur"></feGaussianBlur>
+          <feTurbulence type="fractalNoise" baseFrequency=".537"></feTurbulence>
+          <feComposite in="blur"></feComposite>
+          <feComposite in="blur" operator="in"></feComposite>
+        </filter>
+      </svg>
+      <div
+        class="p-[min(45vmin,8rem)] rounded-1/2"
+        style="background: conic-gradient(var(--du-color-primary), khaki, var(--du-color-primary) 75%); filter: url(#grainy-blur);"
+      ></div>
+    </div>
+  </div>
+
+  <div class="content relative pt-8xl max-w-screen-lg">
     <div class="max-w-prose prose">
       <?php foreach ($page->text()->toBlocks() as $block): ?>
         <?php /** @var \Kirby\Cms\Block $block */ ?>
