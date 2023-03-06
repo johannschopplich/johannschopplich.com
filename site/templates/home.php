@@ -79,7 +79,7 @@
         <div class="space-y-2">
           <?php foreach ($page->contact()->toStructure() as $item): ?>
             <div class="grid grid-cols-3">
-              <p><?= $item->title()->escape() ?></p>
+              <p class="text-contrast-medium"><?= $item->title()->escape() ?></p>
               <p class="col-start-2 col-end-2"><?= $item->link() ?></p>
             </div>
           <?php endforeach ?>
