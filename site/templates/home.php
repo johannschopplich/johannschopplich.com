@@ -5,33 +5,35 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="absolute inset-x-0 top-5xl">
-    <div class="flex max-w-screen-md justify-end">
-      <svg width="0" height="0">
-        <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
-          <feGaussianBlur stdDeviation="39" result="blur"></feGaussianBlur>
-          <feTurbulence type="fractalNoise" baseFrequency=".537"></feTurbulence>
-          <feComposite in="blur"></feComposite>
-          <feComposite in="blur" operator="in"></feComposite>
-        </filter>
-      </svg>
-      <div
-        class="p-[clamp(2rem,25vw,8rem)] rounded-1/2"
-        style="background: conic-gradient(var(--du-color-primary), khaki, var(--du-color-primary) 75%); filter: url(#grainy-blur);"
-      ></div>
-    </div>
-  </div>
-
   <div class="content relative pt-8xl max-w-screen-lg">
-    <div class="max-w-prose prose">
-      <?php foreach ($page->text()->toBlocks() as $block): ?>
-        <?php /** @var \Kirby\Cms\Block $block */ ?>
-        <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
-          <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl"><?= $block->text() ?></h1>
-        <?php else: ?>
-          <?= $block ?>
-        <?php endif ?>
-      <?php endforeach ?>
+    <div class="relative">
+      <div class="absolute inset-x-0 -top-5xl bottom-0">
+        <div class="h-full flex max-w-screen-md justify-end">
+          <svg width="0" height="0">
+            <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
+              <feGaussianBlur stdDeviation="39" result="blur"></feGaussianBlur>
+              <feTurbulence type="fractalNoise" baseFrequency=".537"></feTurbulence>
+              <feComposite in="blur"></feComposite>
+              <feComposite in="blur" operator="in"></feComposite>
+            </filter>
+          </svg>
+          <div
+            class="h-[75%] aspect-[1/1] rounded-1/2 md:h-full"
+            style="background: conic-gradient(var(--du-color-primary), khaki, var(--du-color-primary) 75%); filter: url(#grainy-blur);"
+          ></div>
+        </div>
+      </div>
+
+      <div class="relative max-w-prose prose">
+        <?php foreach ($page->text()->toBlocks() as $block): ?>
+          <?php /** @var \Kirby\Cms\Block $block */ ?>
+          <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
+            <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl"><?= $block->text() ?></h1>
+          <?php else: ?>
+            <?= $block ?>
+          <?php endif ?>
+        <?php endforeach ?>
+      </div>
     </div>
 
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
