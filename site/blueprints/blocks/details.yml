@@ -7,8 +7,7 @@ fields:
     label:
       de: Zusammenfassung
       en: Summary
-    type: writer
-    nodes: false
+    type: text
     placeholder:
       de: Zusammenfassung …
       en: Summary …
