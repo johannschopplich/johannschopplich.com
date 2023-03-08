@@ -90,10 +90,6 @@
   :where(details) {
     padding: 0.5rem 1rem;
     margin-left: -1rem;
-
-    &[open] summary {
-      padding-bottom: 0.5rem;
-    }
   }
 
   :where(summary) {
