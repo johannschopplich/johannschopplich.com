@@ -164,16 +164,16 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "3.4.5",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-janitor.git",
-                "reference": "158354dfddf0e581b70babf751048f841c70e373"
+                "reference": "e6c11bce6083db585c7603d92233d12e73d4f10e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/158354dfddf0e581b70babf751048f841c70e373",
-                "reference": "158354dfddf0e581b70babf751048f841c70e373",
+                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/e6c11bce6083db585c7603d92233d12e73d4f10e",
+                "reference": "e6c11bce6083db585c7603d92233d12e73d4f10e",
                 "shasum": ""
             },
             "require": {
@@ -230,7 +230,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-janitor/issues",
-                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.4.5"
+                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.5.1"
             },
             "funding": [
                 {
@@ -250,7 +250,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-02-14T10:53:11+00:00"
+            "time": "2023-03-07T21:40:52+00:00"
         },
         {
             "name": "claviska/simpleimage",
@@ -521,16 +521,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.9.1",
+            "version": "3.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "617a07aa0151aa4b1a3735b3b5e1a41ccc244a43"
+                "reference": "9ecd11cd5b7d4875d4212f767a2b3ad3e52b3528"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/617a07aa0151aa4b1a3735b3b5e1a41ccc244a43",
-                "reference": "617a07aa0151aa4b1a3735b3b5e1a41ccc244a43",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/9ecd11cd5b7d4875d4212f767a2b3ad3e52b3528",
+                "reference": "9ecd11cd5b7d4875d4212f767a2b3ad3e52b3528",
                 "shasum": ""
             },
             "require": {
@@ -617,7 +617,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-01-31T10:07:31+00:00"
+            "time": "2023-03-08T11:15:05+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -1113,16 +1113,16 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "4a8e8b907d2590d02a808ec0a6c0fd89bbf45a3b"
+                "reference": "da0558390f75731ade5debcc4b4629a3ec82b352"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/4a8e8b907d2590d02a808ec0a6c0fd89bbf45a3b",
-                "reference": "4a8e8b907d2590d02a808ec0a6c0fd89bbf45a3b",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/da0558390f75731ade5debcc4b4629a3ec82b352",
+                "reference": "da0558390f75731ade5debcc4b4629a3ec82b352",
                 "shasum": ""
             },
             "require": {
@@ -1171,9 +1171,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v4.0.2"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v4.0.3"
             },
-            "time": "2023-02-10T09:15:49+00:00"
+            "time": "2023-03-07T15:45:54+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",

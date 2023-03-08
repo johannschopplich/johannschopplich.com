@@ -21,6 +21,7 @@ columns:
             fieldsets:
               - heading
               - text
+              - details
               - line
               - code
 

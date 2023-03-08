@@ -87,6 +87,20 @@
     text-align: left;
   }
 
+  :where(details) {
+    padding: 0.5rem 1rem;
+    margin-left: -1rem;
+
+    &[open] summary {
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  :where(summary) {
+    font-family: var(--du-font-family-heading);
+    font-weight: 500;
+  }
+
   :where(.masonry-grid) {
     --masonry-col-max-w: 30ch;
     gap: 1rem;
