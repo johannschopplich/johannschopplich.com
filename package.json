@@ -21,26 +21,26 @@
     "duecss": "^0.28.0",
     "loadeer": "^2.1.2",
     "medium-zoom": "^1.0.8",
-    "swiper": "^9.1.0"
+    "swiper": "^9.1.1"
   },
   "devDependencies": {
     "@iconify-json/bx": "^1.1.6",
     "@iconify-json/bxs": "^1.1.6",
     "@iconify-json/fa-brands": "^1.1.4",
     "@nuxt/eslint-config": "^0.1.1",
-    "@types/node": "^18.14.6",
-    "@unocss/cli": "^0.50.4",
-    "@unocss/preset-wind": "^0.50.4",
+    "@types/node": "^18.15.3",
+    "@unocss/cli": "^0.50.6",
+    "@unocss/preset-wind": "^0.50.6",
     "concurrently": "^7.6.0",
-    "esbuild": "^0.17.11",
-    "eslint": "^8.35.0",
+    "esbuild": "^0.17.12",
+    "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
-    "sass": "^1.58.3",
-    "typescript": "^4.9.5",
-    "unocss": "^0.50.4",
-    "vite": "^4.1.4",
+    "sass": "^1.59.3",
+    "typescript": "^5.0.2",
+    "unocss": "^0.50.6",
+    "vite": "^4.2.0",
     "vite-plugin-full-reload": "^1.0.5"
   }
 }
