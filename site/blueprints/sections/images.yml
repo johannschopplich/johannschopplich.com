@@ -3,6 +3,8 @@ label:
   de: Bilder
   en: Images
 template: image
+uploads:
+  template: image
 sortBy: filename desc
 empty:
   de: Noch keine Bilder
