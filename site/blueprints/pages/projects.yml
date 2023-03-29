@@ -68,6 +68,6 @@ tabs:
             type: fields
             fields:
               thumbnail:
-                query: page.children.files.template('image')
+                query: page.children.files.template("image")
 
   images: tabs/images

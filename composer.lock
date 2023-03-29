@@ -164,16 +164,16 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "3.5.4",
+            "version": "3.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-janitor.git",
-                "reference": "e141704c1600856f5cec6d50f2b31f449a3c71a4"
+                "reference": "6191896f11a8445a5c6d51c8452820d0552adc07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/e141704c1600856f5cec6d50f2b31f449a3c71a4",
-                "reference": "e141704c1600856f5cec6d50f2b31f449a3c71a4",
+                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/6191896f11a8445a5c6d51c8452820d0552adc07",
+                "reference": "6191896f11a8445a5c6d51c8452820d0552adc07",
                 "shasum": ""
             },
             "require": {
@@ -230,7 +230,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-janitor/issues",
-                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.5.4"
+                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.9.1"
             },
             "funding": [
                 {
@@ -250,7 +250,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-03-13T16:31:14+00:00"
+            "time": "2023-03-25T09:57:13+00:00"
         },
         {
             "name": "claviska/simpleimage",

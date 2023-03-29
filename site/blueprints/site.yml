@@ -61,7 +61,7 @@ tabs:
                   de: Beliebte Artikel
                   en: Popular Articles
                 type: pages
-                query: kirby.page('blog')
+                query: kirby.page("blog")
                 translate: false
               footerPages:
                 label:
@@ -90,7 +90,7 @@ tabs:
             type: fields
             fields:
               thumbnail:
-                query: kirby.page('photography').files.template('image')
+                query: kirby.page("photography").files.template("image")
                 uploads:
-                  parent: kirby.page('photography')
+                  parent: kirby.page("photography")
                   template: image

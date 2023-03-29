@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.28.0",
+  "packageManager": "pnpm@7.30.3",
   "scripts": {
     "assets:head": "esbuild src/head.js --minify --format=esm --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{snippets,templates}/**/*\" --out-file src/styles/uno.css",
@@ -28,19 +28,19 @@
     "@iconify-json/bxs": "^1.1.6",
     "@iconify-json/fa-brands": "^1.1.4",
     "@nuxt/eslint-config": "^0.1.1",
-    "@types/node": "^18.15.3",
+    "@types/node": "^18.15.11",
     "@unocss/cli": "^0.50.6",
     "@unocss/preset-wind": "^0.50.6",
-    "concurrently": "^7.6.0",
-    "esbuild": "^0.17.12",
-    "eslint": "^8.36.0",
-    "eslint-config-prettier": "^8.7.0",
+    "concurrently": "^8.0.1",
+    "esbuild": "^0.17.14",
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
     "postcss": "^8.4.21",
-    "prettier": "^2.8.4",
-    "sass": "^1.59.3",
+    "prettier": "^2.8.7",
+    "sass": "^1.60.0",
     "typescript": "^5.0.2",
     "unocss": "^0.50.6",
-    "vite": "^4.2.0",
+    "vite": "^4.2.1",
     "vite-plugin-full-reload": "^1.0.5"
   }
 }

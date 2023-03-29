@@ -24,7 +24,7 @@ fields:
       de: Vorschaubild
       en: Thumbnail
     type: files
-    query: page.files.template('image')
+    query: page.files.template("image")
     uploads:
       template: image
     multiple: false
