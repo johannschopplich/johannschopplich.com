@@ -1,43 +1,7 @@
 import { useBreakpoints } from "../hooks";
 import type { Brush, Drauu } from "drauu";
 
-const $ = (id: string) => document.getElementById(id);
-
-const registerKeyboardShortcuts = (drauu: Drauu) => {
-  window.addEventListener("keydown", (evt) => {
-    if (evt.code === "KeyZ" && (evt.ctrlKey || evt.metaKey)) {
-      if (evt.shiftKey) {
-        drauu.redo();
-      } else {
-        drauu.undo();
-      }
-
-      return;
-    }
-
-    if (evt.shiftKey || evt.ctrlKey || evt.metaKey || evt.altKey) return;
-
-    const actions: Record<string, () => void> = {
-      KeyL: () => (drauu.mode = "line"),
-      KeyD: () => (drauu.mode = "draw"),
-      KeyS: () => (drauu.mode = "stylus"),
-      KeyR: () => (drauu.mode = "rectangle"),
-      KeyE: () => (drauu.mode = "ellipse"),
-      KeyC: () => drauu.clear(),
-      Equal: () => (drauu.brush.size += 0.5),
-      Minus: () => (drauu.brush.size -= 0.5),
-    };
-
-    actions[evt.code]?.();
-  });
-};
-
-const getPrimaryColor = () =>
-  getComputedStyle(document.documentElement).getPropertyValue(
-    "--du-color-primary"
-  );
-
-export default async () => {
+export default async function () {
   const { isBelow } = useBreakpoints();
   if (isBelow("md")) return;
 
@@ -89,4 +53,43 @@ export default async () => {
       drauu.mode = brush.mode!;
     });
   }
-};
+}
+
+function $(id: string) {
+  return document.getElementById(id);
+}
+
+function registerKeyboardShortcuts(drauu: Drauu) {
+  window.addEventListener("keydown", (evt) => {
+    if (evt.code === "KeyZ" && (evt.ctrlKey || evt.metaKey)) {
+      if (evt.shiftKey) {
+        drauu.redo();
+      } else {
+        drauu.undo();
+      }
+
+      return;
+    }
+
+    if (evt.shiftKey || evt.ctrlKey || evt.metaKey || evt.altKey) return;
+
+    const actions: Record<string, () => void> = {
+      KeyL: () => (drauu.mode = "line"),
+      KeyD: () => (drauu.mode = "draw"),
+      KeyS: () => (drauu.mode = "stylus"),
+      KeyR: () => (drauu.mode = "rectangle"),
+      KeyE: () => (drauu.mode = "ellipse"),
+      KeyC: () => drauu.clear(),
+      Equal: () => (drauu.brush.size += 0.5),
+      Minus: () => (drauu.brush.size -= 0.5),
+    };
+
+    actions[evt.code]?.();
+  });
+}
+
+function getPrimaryColor() {
+  return getComputedStyle(document.documentElement).getPropertyValue(
+    "--du-color-primary"
+  );
+}

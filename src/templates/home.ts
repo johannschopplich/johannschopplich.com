@@ -1,6 +1,6 @@
 import { Draggable } from "@neodrag/vanilla";
 
-export default async () => {
+export default async function () {
   const element = document.querySelector<HTMLElement>("[data-draggable]");
   if (!element) return;
 
@@ -53,4 +53,4 @@ export default async () => {
       requestAnimationFrame(updatePosition);
     },
   });
-};
+}
