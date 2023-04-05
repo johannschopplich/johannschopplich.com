@@ -23,6 +23,8 @@ $heightMap = [
       $mockup = $settings->mockup()->or('none')->value();
       $hasLink = ($links ?? true) && $settings->link()->isNotEmpty();
       $tag = $hasLink ? 'a' : 'div';
+      $isMobile = $mockup === 'mobile';
+      $isDesktop = $mockup === 'desktop';
       ?>
       <<?= $tag . attr([
         'class' => 'swiper-slide shrink-0 snap-center snap-always first:snap-start',
@@ -37,12 +39,12 @@ $heightMap = [
         >
           <?php if ($mockup !== 'none'): ?>
             <div
-              class="h-$cell bg-$bg p-3xl md:p-5xl relative <?php e($mockup === 'desktop', 'flex flex-col') ?>"
+              class="h-$cell bg-$bg relative <?= $isMobile ? 'px-5xl py-3xl md:px-8xl md:py-5xl' : 'p-3xl md:p-5xl' ?> <?php e($isDesktop, 'flex flex-col') ?>"
               style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
             >
-            <?php if ($mockup === 'mobile'): ?>
+            <?php if ($isMobile): ?>
               <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl bottom-3xl absolute h-[4px] w-1/4 translate-y-[-6px] rounded-full bg-zinc-900"></div>
-            <?php elseif ($mockup === 'desktop'): ?>
+            <?php elseif ($isDesktop): ?>
               <div class="flex h-4 items-center gap-1 rounded-t-lg border-x border-x-solid border-t border-t-solid border-zinc-900 px-1.5">
                 <?php foreach (range(1, 3) as $i): ?>
                   <div class="border border-solid border-zinc-900 h-1.5 w-1.5 rounded-full"></div>
@@ -53,9 +55,9 @@ $heightMap = [
 
           <img
             src="<?= $image->blurhashUri() ?>"
-            class="<?= $mockup === 'mobile'
+            class="<?= $isMobile
               ? 'h-full w-auto rounded-xl border-2 border-solid border-zinc-900 object-contain'
-              : ($mockup === 'desktop'
+              : ($isDesktop
                 ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
                 : 'h-$cell max-w-screen w-auto object-contain') ?>"
             data-loading="lazy"

@@ -1181,25 +1181,24 @@
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
-            "version": "2.1.10",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-punctuation-section.git",
-                "reference": "9d48cf1975526ada98407e1e8bb7f04b2054a986"
+                "reference": "75f49396111a9dcbd51327d58bb02cbe6772092e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/9d48cf1975526ada98407e1e8bb7f04b2054a986",
-                "reference": "9d48cf1975526ada98407e1e8bb7f04b2054a986",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-punctuation-section/zipball/75f49396111a9dcbd51327d58bb02cbe6772092e",
+                "reference": "75f49396111a9dcbd51327d58bb02cbe6772092e",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0.0"
+                "getkirby/composer-installer": "^1.2"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "@stable",
-                "getkirby/cms": "^3.8"
+                "getkirby/cms": "^3.9"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1226,9 +1225,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-punctuation-section/issues",
-                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.1.10"
+                "source": "https://github.com/johannschopplich/kirby-punctuation-section/tree/v2.2.0"
             },
-            "time": "2022-12-25T16:00:05+00:00"
+            "time": "2023-04-05T08:41:03+00:00"
         },
         {
             "name": "kornrunner/blurhash",
@@ -1784,25 +1783,25 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.0.1",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363"
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/f6561bf28d520154e4b0ec72be95418abe6d9363",
-                "reference": "f6561bf28d520154e4b0ec72be95418abe6d9363",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": "^7.2 || ^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -1831,9 +1830,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/master"
+                "source": "https://github.com/php-fig/http-message/tree/1.1"
             },
-            "time": "2016-08-06T14:39:51+00:00"
+            "time": "2023-04-04T09:50:52+00:00"
         },
         {
             "name": "psr/log",
