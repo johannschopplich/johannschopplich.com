@@ -58,7 +58,7 @@
     <?= asset($srcDir . '/head.js')->read() ?>
   </script>
 
-  <script async defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
+  <script defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
 
 </head>
 
