@@ -3,6 +3,7 @@
 }
 
 .medium-zoom-overlay {
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   // Present just above the header
   z-index: 21;
