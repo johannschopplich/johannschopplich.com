@@ -5,9 +5,9 @@
 /** @var bool|null $links */
 
 $heightMap = [
-  'tight' => 'clamp(35svh, 50vw, 25svh)',
-  'normal' => 'clamp(35svh, 50vw, 50svh)',
-  'loose' => 'clamp(35svh, 50vw, 75svh)'
+  'tight' => 'clamp(40svh, 50vw, 25svh)',
+  'normal' => 'clamp(40svh, 50vw, 50svh)',
+  'loose' => 'clamp(40svh, 50vw, 75svh)'
 ];
 
 ?>
