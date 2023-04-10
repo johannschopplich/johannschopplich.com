@@ -43,7 +43,7 @@ $heightMap = [
               style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
             >
             <?php if ($isMobile): ?>
-              <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl bottom-3xl absolute h-[4px] w-1/4 translate-y-[-6px] rounded-full bg-zinc-900"></div>
+              <div class="inset-l-1/2 -ml-1/8 md:bottom-5xl bottom-3xl absolute h-[2px] w-1/4 translate-y-[-4px] rounded-full bg-zinc-900"></div>
             <?php elseif ($isDesktop): ?>
               <div class="flex h-4 items-center gap-1 rounded-t-lg border-x border-x-solid border-t border-t-solid border-zinc-900 px-1.5">
                 <?php foreach (range(1, 3) as $i): ?>
@@ -56,7 +56,7 @@ $heightMap = [
           <img
             src="<?= $image->blurhashUri() ?>"
             class="<?= $isMobile
-              ? 'h-full w-auto rounded-xl border-2 border-solid border-zinc-900 object-contain'
+              ? 'h-full w-auto rounded-xl border border-solid border-zinc-900 object-contain'
               : ($isDesktop
                 ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
                 : 'h-$cell max-w-screen w-auto object-contain') ?>"
