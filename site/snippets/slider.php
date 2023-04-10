@@ -43,7 +43,7 @@ $heightMap = [
               style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
             >
             <?php if ($isMobile): ?>
-              <div class="absolute left-1/2 bottom-3xl ml-[-7.5%] h-[2px] w-[15%] translate-y-[-6px] rounded-full bg-zinc-900 md:bottom-5xl"></div>
+              <div class="absolute left-1/2 bottom-3xl ml-[-7.5%] h-[1px] w-[15%] bg-zinc-900 rounded-full translate-y-[-4px] md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
             <?php elseif ($isDesktop): ?>
               <div class="flex h-4 items-center gap-1 rounded-t-lg border-x border-x-solid border-t border-t-solid border-zinc-900 px-1.5">
                 <?php foreach (range(1, 3) as $i): ?>
