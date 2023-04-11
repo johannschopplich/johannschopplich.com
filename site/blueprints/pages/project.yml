@@ -76,6 +76,9 @@ columns:
               de: Galerie
               en: Gallery
             type: files
+            query: page.files.template("image")
+            uploads:
+              template: image
             layout: cards
             translate: false
             image:
