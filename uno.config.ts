@@ -44,6 +44,8 @@ export default defineConfig({
     "action-button":
       "text-size-xs leading-heading font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
     tag: "border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 whitespace-nowrap rounded-full border-solid px-2 py-1 du-dark:border-contrast-low",
+    "masonry-grid":
+      "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-col-max-w,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
   },
   safelist: ["w-full", "aspect-ratio-16/9"],
   presets: [
