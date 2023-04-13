@@ -1,3 +1,7 @@
+export const isCrawler =
+  !("onscroll" in window) ||
+  /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
+
 export function install() {
   const elements = [
     ...document.querySelectorAll<HTMLImageElement>('img[loading="lazy"]'),
@@ -12,7 +16,7 @@ export function install() {
     // Bail if the image doesn't contain a blurry placeholder
     if (!image.dataset.srcset) continue;
 
-    if (image.complete) {
+    if ((image.complete && image.naturalWidth > 0) || isCrawler) {
       // Load the image if it's already in the viewport
       loadImage(image);
     } else {
