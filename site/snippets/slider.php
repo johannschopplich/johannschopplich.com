@@ -66,6 +66,7 @@ $heightMap = [
             data-sizes="auto"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
+            style="aspect-ratio: <?= $image->ratio() ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
           >
 

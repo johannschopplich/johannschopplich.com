@@ -28,13 +28,15 @@ export function initMasonryGrid(selectors = ".masonry-grid") {
       count: 0,
     };
 
-    const debouncedWatchGrid = debounce(watchGrid, 100);
-    const resizeObserver = new ResizeObserver(() => debouncedWatchGrid(grid));
+    const debouncedUpdateGridItems = debounce(updateGridItems, 100);
+    const resizeObserver = new ResizeObserver(() =>
+      debouncedUpdateGridItems(grid)
+    );
     resizeObserver.observe(grid.el);
   }
 }
 
-function watchGrid(grid: GridInstance) {
+function updateGridItems(grid: GridInstance) {
   const columns = getComputedStyle(grid.el).gridTemplateColumns.split(
     " "
   ).length;
@@ -66,9 +68,7 @@ function watchGrid(grid: GridInstance) {
       // Top edge of current item
       const { top } = column.getBoundingClientRect();
 
-      requestAnimationFrame(() => {
-        column.style.marginTop = `${prevBottom + grid.gap - top}px`;
-      });
+      column.style.marginTop = `${prevBottom + grid.gap - top}px`;
     }
   }
 

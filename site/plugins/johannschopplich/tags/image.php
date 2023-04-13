@@ -49,6 +49,7 @@ return [
                     'width' => $tag->file->width(),
                     'height' => $tag->file->height(),
                     'class' => $tag->imgclass,
+                    'style' => 'aspect-ratio: ' . $tag->file->ratio(),
                     'alt' => $tag->alt
                 ]
             );
