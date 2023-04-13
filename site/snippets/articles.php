@@ -1,14 +1,14 @@
 <?php /** @var \Kirby\Cms\Collection $query */ ?>
 <div class="
-  -mx-xl relative grid sm:grid-cols-2
-  after:content-empty after:h-1px after:bg-theme-background after:absolute after:inset-x-0 after:bottom-0
+  relative grid -mx-xl sm:grid-cols-2
+  after:content-empty after:absolute after:inset-x-0 after:bottom-0 after:h-1px after:bg-theme-background
 ">
   <?php foreach ($query as $article): ?>
     <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="
-      p-xl relative
-      before:content-empty before:h-1px before:absolute before:inset-x-5 before:bottom-0 before:bg-current du-dark:before:bg-contrast-lower
-      after:content-empty after:w-1px after:absolute after:inset-y-5 after:right-0 after:bg-current du-dark:after:bg-contrast-lower
+      relative p-xl
+      before:content-empty before:absolute before:inset-x-5 before:bottom-0 before:h-1px before:bg-current du-dark:before:bg-contrast-lower
+      after:content-empty after:absolute after:inset-y-5 after:right-0 after:w-1px after:bg-current du-dark:after:bg-contrast-lower
     ">
       <p class="text-contrast-medium">
         <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">

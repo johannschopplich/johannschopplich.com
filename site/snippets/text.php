@@ -2,7 +2,7 @@
 
 /** @var \Kirby\Cms\Page $page */ ?>
 <div class="py-8xl">
-  <div class="content pb-5xl max-w-prose">
+  <div class="content max-w-prose pb-5xl">
     <?php if ($page->published()->isNotEmpty()): ?>
       <p class="text-contrast-medium mb-1">
         <?= t('article.publishedAt') ?>

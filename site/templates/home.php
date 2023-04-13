@@ -5,7 +5,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="content relative pt-8xl max-w-screen-lg">
+  <div class="content relative max-w-screen-lg pt-8xl">
     <div class="relative">
       <div class="absolute inset-x-0 -top-5xl bottom-0">
         <div class="h-full flex max-w-screen-md justify-end">

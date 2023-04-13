@@ -8,7 +8,7 @@
   <div class="py-8xl">
     <?php $blocks = $page->text()->toBlocks() ?>
     <?php if ($blocks->isNotEmpty()): ?>
-      <div class="content pb-5xl max-w-prose">
+      <div class="content max-w-prose pb-5xl">
         <section class="prose">
           <h1 class="sr-only">
             <?= $page->title()->escape() ?>

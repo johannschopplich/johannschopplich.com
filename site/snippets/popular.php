@@ -4,8 +4,8 @@
 
 $year = null;
 ?>
-<section class="content pb-8xl max-w-prose">
-  <h2 class="title text-primary mb-3xl text-xl">
+<section class="content max-w-prose pb-8xl">
+  <h2 class="title text-primary text-xl mb-3xl">
     <?= $heading ?>
   </h2>
 

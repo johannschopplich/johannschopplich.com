@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <div class="py-8xl">
-    <div class="content pb-5xl max-w-screen-lg">
+    <div class="content max-w-screen-lg pb-5xl">
       <h1 class="text-primary font-heading font-900 mb-5xl text-3xl md:text-4xl">
         <?= t('articles.all') ?>
       </h1>
