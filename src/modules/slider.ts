@@ -23,7 +23,7 @@ export async function install() {
   new Animere({
     prefix: "animere-slide",
     offset: 0.1,
-    initResolver: () => !!document.documentElement.dataset.animatable,
+    shouldInitialize: () => "animatable" in document.documentElement.dataset,
   });
 
   // Use scroll snap slider for mobile devices

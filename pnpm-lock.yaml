@@ -14,8 +14,8 @@ dependencies:
     specifier: ^4.1.1
     version: 4.1.1
   animere:
-    specifier: ^2.1.0
-    version: 2.1.0
+    specifier: ^2.1.1
+    version: 2.1.1
   destr:
     specifier: ^1.2.2
     version: 1.2.2
@@ -992,8 +992,8 @@ packages:
     resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
     dev: false
 
-  /animere@2.1.0:
-    resolution: {integrity: sha512-xDOZ4CqrOnP0dNiaOBc875uuXbMRCDPeeHF1dMh2PmObcHi8aTOpWbm7tPiN2f306BhbdnDBBRBwKxyjNyZtzQ==}
+  /animere@2.1.1:
+    resolution: {integrity: sha512-G3pt+mew5uL+apwTUKwcruGTOA8VuZ3KoMujOrlRvnlMONHzZ4PbKTK8khJ7Ehl91ulKtTfQfgehG4sG95g+lg==}
     dev: false
 
   /ansi-regex@5.0.1:

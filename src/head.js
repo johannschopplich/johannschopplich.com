@@ -2,20 +2,19 @@
 
 (() => {
   const root = document.documentElement;
+  const isBot = /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
+
+  const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
+  const themeSetting = localStorage.getItem("color-schema");
+  if (themeSetting === "dark" || (prefersDark && themeSetting !== "light")) {
+    root.dataset.theme = "dark";
+  }
+
   const prefersReducedMotion = matchMedia(
     "(prefers-reduced-motion: reduce)"
   ).matches;
-  const prefersDark = matchMedia("(prefers-color-scheme: dark)").matches;
-  const isBot = /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
-
   if (!prefersReducedMotion && !isBot) {
-    root.dataset.animatable = "true";
-  }
-
-  const setting = localStorage.getItem("color-schema");
-
-  if (setting === "dark" || (prefersDark && setting !== "light")) {
-    root.dataset.theme = "dark";
+    root.dataset.animatable = "";
   }
 
   // Reduce flickering on initial load
