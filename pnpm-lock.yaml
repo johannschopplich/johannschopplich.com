@@ -25,9 +25,6 @@ dependencies:
   duecss:
     specifier: ^0.30.0
     version: 0.30.0(unocss@0.51.4)
-  loadeer:
-    specifier: ^2.1.3
-    version: 2.1.3
   medium-zoom:
     specifier: ^1.0.8
     version: 1.0.8
@@ -76,8 +73,8 @@ devDependencies:
     specifier: ^2.8.7
     version: 2.8.7
   sass:
-    specifier: ^1.61.0
-    version: 1.61.0
+    specifier: ^1.62.0
+    version: 1.62.0
   typescript:
     specifier: ^5.0.4
     version: 5.0.4
@@ -86,7 +83,7 @@ devDependencies:
     version: 0.51.4(postcss@8.4.21)(vite@4.2.1)
   vite:
     specifier: ^4.2.1
-    version: 4.2.1(@types/node@18.15.11)(sass@1.61.0)
+    version: 4.2.1(@types/node@18.15.11)(sass@1.62.0)
   vite-plugin-full-reload:
     specifier: ^1.0.5
     version: 1.0.5(vite@4.2.1)
@@ -945,7 +942,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.2.1(@types/node@18.15.11)(sass@1.61.0)
+      vite: 4.2.1(@types/node@18.15.11)(sass@1.62.0)
     transitivePeerDependencies:
       - rollup
 
@@ -1660,10 +1657,6 @@ packages:
       type-check: 0.4.0
     dev: true
 
-  /loadeer@2.1.3:
-    resolution: {integrity: sha512-FvGTVQ+UT0dZ/9++BSAE62RfoW7I+g+FVXwIYbKJNJqQ8r5iEiJK/rj4JRsYRjvvBM/vX3jcCoDAfyeiCwTyEg==}
-    dev: false
-
   /local-pkg@0.4.3:
     resolution: {integrity: sha512-SFppqq5p42fe2qcZQqqEOiVRXl+WCP1MdT6k7BDEW1j++sp5fIY+/fdRQitvKgB5BrBcmrs5m/L0v2FrU5MY1g==}
     engines: {node: '>=14'}
@@ -1945,8 +1938,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /sass@1.61.0:
-    resolution: {integrity: sha512-PDsN7BrVkNZK2+dj/dpKQAWZavbAQ87IXqVvw2+oEYI+GwlTWkvbQtL7F2cCNbMqJEYKPh1EcjSxsnqIb/kyaQ==}
+  /sass@1.62.0:
+    resolution: {integrity: sha512-Q4USplo4pLYgCi+XlipZCWUQz5pkg/ruSSgJ0WRDSb/+3z9tXUOkQ7QPYn4XrhZKYAK4HlpaQecRwKLJX6+DBg==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -2187,10 +2180,10 @@ packages:
     dependencies:
       picocolors: 1.0.0
       picomatch: 2.3.1
-      vite: 4.2.1(@types/node@18.15.11)(sass@1.61.0)
+      vite: 4.2.1(@types/node@18.15.11)(sass@1.62.0)
     dev: true
 
-  /vite@4.2.1(@types/node@18.15.11)(sass@1.61.0):
+  /vite@4.2.1(@types/node@18.15.11)(sass@1.62.0):
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -2220,7 +2213,7 @@ packages:
       postcss: 8.4.21
       resolve: 1.22.2
       rollup: 3.20.2
-      sass: 1.61.0
+      sass: 1.62.0
     optionalDependencies:
       fsevents: 2.3.2
 

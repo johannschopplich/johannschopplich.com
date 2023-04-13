@@ -60,9 +60,8 @@ $heightMap = [
               : ($isDesktop
                 ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
                 : 'h-$cell max-w-screen w-auto object-contain') ?>"
-            data-loading="lazy"
-            data-srcset="<?= $image->srcset() ?>"
-            data-trigger-load
+            loading="lazy"
+            srcset="<?= $image->srcset() ?>"
             data-sizes="auto"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"

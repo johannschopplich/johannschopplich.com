@@ -8,7 +8,7 @@
     <figure>
       <img
         src="<?= $image->blurhashUri() ?>"
-        data-loading="lazy"
+        loading="lazy"
         data-srcset="<?= $image->srcset() ?>"
         data-sizes="auto"
         data-zoomable
