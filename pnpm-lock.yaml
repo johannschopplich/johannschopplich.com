@@ -31,6 +31,9 @@ dependencies:
   swiper:
     specifier: ^9.2.0
     version: 9.2.0
+  unlazy:
+    specifier: ^0.1.0
+    version: 0.1.0
 
 devDependencies:
   '@iconify-json/bx':
@@ -2127,6 +2130,10 @@ packages:
       '@antfu/utils': 0.5.2
       defu: 6.1.2
       jiti: 1.18.2
+
+  /unlazy@0.1.0:
+    resolution: {integrity: sha512-4lB7Ht9aZnMuqEVx+BEQ7Aj+B0LYaSixxQgLbq+WV4B/dWu7kecq151e99BvBsLO7clC1tJiTeOpUjm74v88DA==}
+    dev: false
 
   /unocss@0.51.4(postcss@8.4.21)(vite@4.2.1):
     resolution: {integrity: sha512-84kRoL29Rk0AKdeS2GGZ+YduW5F0S2on3cSxA2Hh1KlI4MN8Xvxa8+f4RfFS0U5iH4yoHohvcWThRgjDhOWSeg==}
