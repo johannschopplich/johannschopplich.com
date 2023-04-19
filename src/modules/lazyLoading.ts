@@ -1,5 +1,5 @@
-import { lazyLoadImages } from "unlazy";
+import { lazyLoad } from "unlazy";
 
 export function install() {
-  lazyLoadImages();
+  lazyLoad();
 }
