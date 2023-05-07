@@ -7,7 +7,7 @@
 <?php snippet('layouts/default', slots: true) ?>
   <div class="content relative max-w-screen-lg pt-8xl">
     <div class="relative">
-      <div class="absolute inset-x-0 -top-5xl bottom-0">
+      <div class="absolute inset-x-0 -top-5xl bottom-0 du-dark:hidden">
         <div class="h-full flex max-w-screen-md justify-end">
           <svg width="0" height="0">
             <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
@@ -19,7 +19,7 @@
           </svg>
           <div
             class="h-[75%] aspect-[1/1] rounded-1/2 md:h-full"
-            style="background: conic-gradient(var(--du-color-primary), khaki, var(--du-color-primary) 75%); filter: url(#grainy-blur);"
+            style="background: conic-gradient(#f0d590, var(--du-color-primary-200), #f0d590 75%); filter: url(#grainy-blur);"
           ></div>
         </div>
       </div>
