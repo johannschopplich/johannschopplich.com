@@ -1,7 +1,8 @@
 import { defineConfig, presetIcons, presetWind } from "unocss";
 import { presetDue } from "duecss";
+import type { Theme } from "@unocss/preset-wind";
 
-export default defineConfig({
+export default defineConfig<Theme>({
   theme: {
     maxWidth: {
       prose: "75ch",
