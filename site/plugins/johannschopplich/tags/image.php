@@ -41,7 +41,7 @@ return [
         if ($tag->file) {
             $isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
             $img = Html::img(
-                $isFeed ? $tag->file->resize(1024)->url() : $tag->file->blurhashUri(),
+                $isFeed ? $tag->file->resize(1024)->url() : $tag->file->thumbhashUri(),
                 [
                     'loading' => 'lazy',
                     'data-srcset' => $tag->file->srcset(),

@@ -7,7 +7,7 @@
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>
       <img
-        src="<?= $image->blurhashUri() ?>"
+        src="<?= $image->thumbhashUri() ?>"
         loading="lazy"
         data-srcset="<?= $image->srcset() ?>"
         data-sizes="auto"

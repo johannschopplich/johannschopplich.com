@@ -8,7 +8,7 @@
     "johannschopplich/kirby-punctuation-section": "^2.1",
     "bnomei/kirby3-feed": "^1.5",
     "bnomei/kirby3-janitor": "^3.4",
-    "tobimori/kirby-blurhash": "^1.1"
+    "tobimori/kirby-thumbhash": "^1.0"
   },
   "scripts": {
     "start": [

@@ -20,15 +20,15 @@
     "drauu": "^0.3.2",
     "duecss": "^0.30.0",
     "medium-zoom": "^1.0.8",
-    "swiper": "^9.2.4",
-    "unlazy": "^0.8.8"
+    "swiper": "^9.3.0",
+    "unlazy": "^0.8.9"
   },
   "devDependencies": {
     "@iconify-json/bx": "^1.1.6",
     "@iconify-json/bxs": "^1.1.6",
     "@iconify-json/fa-brands": "^1.1.4",
     "@nuxt/eslint-config": "^0.1.1",
-    "@types/node": "^18.16.5",
+    "@types/node": "^18.16.6",
     "@unocss/cli": "^0.51.12",
     "@unocss/preset-wind": "^0.51.12",
     "concurrently": "^8.0.1",
