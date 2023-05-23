@@ -48,7 +48,7 @@ export default defineConfig<Theme>({
     "masonry-grid":
       "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-col-max-w,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
   },
-  safelist: ["w-full", "aspect-ratio-16/9"],
+  safelist: ["w-full", "aspect-ratio-16/9", "invisible"],
   presets: [
     presetWind(),
     presetIcons({

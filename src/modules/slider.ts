@@ -1,4 +1,4 @@
-import Animere from "animere";
+import { animate } from "animere";
 import { useRem } from "../hooks";
 
 export async function install() {
@@ -8,29 +8,27 @@ export async function install() {
   const elements = document.querySelectorAll<HTMLElement>("[data-slider]");
   if (elements.length === 0) return;
 
-  // Check if image is outside viewport width and if so,
-  // skip initializing Animere on it
-  for (const slide of document.querySelectorAll<HTMLElement>(
-    "[data-animere-slide]"
-  )) {
-    const { left } = slide.getBoundingClientRect();
-    if (left > window.innerWidth) {
-      slide.removeAttribute("data-animere-slide");
-    }
-  }
-
-  // Animate slides within viewport
-  new Animere({
-    prefix: "animere-slide",
-    offset: 0.1,
-    shouldInitialize: () => "animatable" in document.documentElement.dataset,
-  });
-
   // Use scroll snap slider for mobile devices
   if (isTouchscreen) return;
 
   // @ts-expect-error: types couldn't be resolved
   const { default: Swiper } = await import("swiper");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+
+        for (const slide of entry.target.querySelectorAll<HTMLElement>(
+          "[data-slide-content]"
+        )) {
+          slide.classList.remove("invisible");
+          animate(slide, "fadeInLeft", "animate__");
+        }
+      }
+    },
+    { threshold: 0.1 }
+  );
 
   for (const element of elements) {
     // Remove classes that are interfering with Swiper.js
@@ -44,5 +42,18 @@ export async function install() {
       grabCursor: true,
       longSwipesRatio: 0.25,
     });
+
+    if (!("animatable" in document.documentElement.dataset)) continue;
+
+    const rect = element.getBoundingClientRect();
+    // If the slider is not initially in viewport, hide slides and start observer
+    if (rect.top >= window.innerHeight || rect.bottom <= 0) {
+      for (const slide of element.querySelectorAll<HTMLElement>(
+        "[data-slide-content]"
+      )) {
+        slide.classList.add("invisible");
+      }
+      observer.observe(element);
+    }
   }
 }
