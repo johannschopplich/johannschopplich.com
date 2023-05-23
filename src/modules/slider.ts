@@ -9,10 +9,26 @@ export async function install() {
   if (elements.length === 0) return;
 
   // Use scroll snap slider for mobile devices
-  if (isTouchscreen) return;
+  if (!isTouchscreen) {
+    // @ts-expect-error: types couldn't be resolved
+    const { default: Swiper } = await import("swiper");
 
-  // @ts-expect-error: types couldn't be resolved
-  const { default: Swiper } = await import("swiper");
+    for (const element of elements) {
+      // Remove classes that are interfering with Swiper.js
+      element.firstElementChild?.setAttribute("class", "swiper-wrapper");
+
+      new Swiper(element, {
+        slidesPerView: "auto",
+        spaceBetween: 0.75 * rem,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        grabCursor: true,
+        longSwipesRatio: 0.25,
+      });
+    }
+  }
+
+  if (!("animatable" in document.documentElement.dataset)) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -31,20 +47,6 @@ export async function install() {
   );
 
   for (const element of elements) {
-    // Remove classes that are interfering with Swiper.js
-    element.firstElementChild?.setAttribute("class", "swiper-wrapper");
-
-    new Swiper(element, {
-      slidesPerView: "auto",
-      spaceBetween: 0.75 * rem,
-      centeredSlides: true,
-      centeredSlidesBounds: true,
-      grabCursor: true,
-      longSwipesRatio: 0.25,
-    });
-
-    if (!("animatable" in document.documentElement.dataset)) continue;
-
     const rect = element.getBoundingClientRect();
     // If the slider is not initially in viewport, hide slides and start observer
     if (rect.top >= window.innerHeight || rect.bottom <= 0) {
