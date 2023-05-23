@@ -7,8 +7,9 @@
 <?php snippet('layouts/default', slots: true) ?>
   <div class="content relative max-w-screen-lg pt-8xl">
     <div class="relative">
-      <div class="absolute inset-x-0 -top-5xl bottom-0 du-dark:hidden">
-        <div class="h-full flex max-w-screen-md justify-end">
+      <!--
+      <div class="absolute inset-x-0 -top-5xl bottom-0">
+        <div class="h-full flex max-w-screen-lg justify-end">
           <svg width="0" height="0">
             <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
               <feGaussianBlur stdDeviation="39" result="blur"></feGaussianBlur>
@@ -23,14 +24,17 @@
           ></div>
         </div>
       </div>
+      -->
 
-      <div class="relative max-w-prose prose">
+      <div class="relative prose">
         <?php foreach ($page->text()->toBlocks() as $block): ?>
           <?php /** @var \Kirby\Cms\Block $block */ ?>
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl"><?= $block->text() ?></h1>
           <?php else: ?>
-            <?= $block ?>
+            <div class="max-w-prose">
+              <?= $block ?>
+            </div>
           <?php endif ?>
         <?php endforeach ?>
       </div>
