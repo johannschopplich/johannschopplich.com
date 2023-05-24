@@ -28,27 +28,26 @@ export async function install() {
     }
   }
 
+  // Skip animations if reduced motion is enabled
   if (!("animatable" in document.documentElement.dataset)) return;
 
   const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
 
-        for (const slide of entry.target.querySelectorAll<HTMLElement>(
-          "[data-slide-content]"
-        )) {
-          slide.classList.remove("invisible");
-          animate(slide, "fadeInLeft", "animate__");
-        }
+      for (const slide of entry.target.querySelectorAll<HTMLElement>(
+        "[data-slide-content]"
+      )) {
+        slide.classList.remove("invisible");
+        animate(slide, "fadeInLeft", "animate__");
       }
     },
     { threshold: 0.1 }
   );
 
+  // If the slider is not initially in viewport, hide slides and start observer
   for (const element of elements) {
     const rect = element.getBoundingClientRect();
-    // If the slider is not initially in viewport, hide slides and start observer
     if (rect.top >= window.innerHeight || rect.bottom <= 0) {
       for (const slide of element.querySelectorAll<HTMLElement>(
         "[data-slide-content]"
