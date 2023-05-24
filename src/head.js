@@ -20,6 +20,7 @@
   // Reduce flickering on initial load
   const docsearchRect = localStorage.getItem("algolia.docsearch.rect");
   if (docsearchRect) {
+    /** @type {DOMRect} */
     const domRect = JSON.parse(docsearchRect);
     root.style.setProperty("--docsearch-width", `${domRect.width}px`);
     root.style.setProperty("--docsearch-height", `${domRect.height}px`);
