@@ -111,8 +111,8 @@
 
   &.is-article {
     :where(p) {
-      font-size: 1.1rem;
-      line-height: calc(1ex / 0.28);
+      font-size: 1.05rem;
+      line-height: calc(var(--du-line-height-normal) / 0.875);
       text-indent: 1rem;
     }
   }
