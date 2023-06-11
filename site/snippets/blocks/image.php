@@ -40,8 +40,7 @@ if ($block->location() === 'web') {
 
 ?>
 <figure <?= attr([
-  'class' => $props ?? null,
-  'data-draggable' => $link->isEmpty() ? 'true' : null,
+  'class' => $props ?? null
 ]) ?>>
   <?php if ($link->isNotEmpty()): ?>
     <a href="<?= $link->toUrl() ?>">

@@ -74,7 +74,6 @@
 
   <main class="relative">
     <?= $slot ?>
-    <div class="absolute inset-0 backdrop-blur-[4px]" hidden data-draggable-backdrop></div>
   </main>
 
   <?php snippet('footer') ?>
