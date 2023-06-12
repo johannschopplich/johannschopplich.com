@@ -254,16 +254,16 @@
         },
         {
             "name": "claviska/simpleimage",
-            "version": "4.0.2",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/claviska/SimpleImage.git",
-                "reference": "226d507cca0c8400d69bee7eb324158e3cbe246e"
+                "reference": "b25690f0fc25b2f0b91731370465a3b4e52ea587"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/226d507cca0c8400d69bee7eb324158e3cbe246e",
-                "reference": "226d507cca0c8400d69bee7eb324158e3cbe246e",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/b25690f0fc25b2f0b91731370465a3b4e52ea587",
+                "reference": "b25690f0fc25b2f0b91731370465a3b4e52ea587",
                 "shasum": ""
             },
             "require": {
@@ -295,7 +295,7 @@
             "description": "A PHP class that makes working with images as simple as possible.",
             "support": {
                 "issues": "https://github.com/claviska/SimpleImage/issues",
-                "source": "https://github.com/claviska/SimpleImage/tree/4.0.2"
+                "source": "https://github.com/claviska/SimpleImage/tree/4.0.5"
             },
             "funding": [
                 {
@@ -303,7 +303,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-20T15:27:20+00:00"
+            "time": "2023-06-05T14:32:39+00:00"
         },
         {
             "name": "composer/semver",
@@ -388,16 +388,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.15.1",
+            "version": "2.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "e864ac957acd66e1565f25efda61e37791a5db0b"
+                "reference": "aac9304c5ed61bf7b1b7a6064bf9806ab842ce73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/e864ac957acd66e1565f25efda61e37791a5db0b",
-                "reference": "e864ac957acd66e1565f25efda61e37791a5db0b",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/aac9304c5ed61bf7b1b7a6064bf9806ab842ce73",
+                "reference": "aac9304c5ed61bf7b1b7a6064bf9806ab842ce73",
                 "shasum": ""
             },
             "require": {
@@ -447,7 +447,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.15.1"
+                "source": "https://github.com/filp/whoops/tree/2.15.2"
             },
             "funding": [
                 {
@@ -455,7 +455,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-06T18:09:13+00:00"
+            "time": "2023-04-12T12:00:00+00:00"
         },
         {
             "name": "getkirby/cli",
@@ -525,20 +525,20 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.9.3",
+            "version": "3.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "ce4aaace87ceca1f019a9cfc0293a69e662f9648"
+                "reference": "6b5dda600472b59a3a779f7e6b8e9e130cc414a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/ce4aaace87ceca1f019a9cfc0293a69e662f9648",
-                "reference": "ce4aaace87ceca1f019a9cfc0293a69e662f9648",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/6b5dda600472b59a3a779f7e6b8e9e130cc414a1",
+                "reference": "6b5dda600472b59a3a779f7e6b8e9e130cc414a1",
                 "shasum": ""
             },
             "require": {
-                "claviska/simpleimage": "4.0.2",
+                "claviska/simpleimage": "4.0.5",
                 "composer/semver": "3.3.2",
                 "ext-ctype": "*",
                 "ext-curl": "*",
@@ -551,14 +551,15 @@
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
                 "ext-simplexml": "*",
-                "filp/whoops": "2.15.1",
+                "filp/whoops": "2.15.2",
                 "getkirby/composer-installer": "^1.2.1",
                 "laminas/laminas-escaper": "2.12.0",
                 "michelf/php-smartypants": "1.8.1",
                 "php": ">=8.0.0 <8.3.0",
                 "phpmailer/phpmailer": "6.8.0",
                 "symfony/polyfill-intl-idn": "1.27.0",
-                "symfony/polyfill-mbstring": "1.27.0"
+                "symfony/polyfill-mbstring": "1.27.0",
+                "symfony/yaml": "5.4.23"
             },
             "replace": {
                 "symfony/polyfill-php72": "*"
@@ -621,7 +622,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-03-30T13:10:22+00:00"
+            "time": "2023-06-07T12:10:15+00:00"
         },
         {
             "name": "getkirby/composer-installer",
