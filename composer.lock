@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b5b0083bb0b369c3ea1eb32667b5029",
+    "content-hash": "593582e9508f2ccfa8719f3678f59f4f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -672,6 +672,75 @@
             "time": "2020-12-28T12:54:39+00:00"
         },
         {
+            "name": "getkirby/kql",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/getkirby/kql.git",
+                "reference": "bfcc2368d366902a36afdb2fa2547a5a617cacc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/getkirby/kql/zipball/bfcc2368d366902a36afdb2fa2547a5a617cacc6",
+                "reference": "bfcc2368d366902a36afdb2fa2547a5a617cacc6",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/cms": ">=3.8.2",
+                "getkirby/composer-installer": "^1.2.1",
+                "php": ">=8.0.0 <8.3.0"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "installer-name": "kql",
+                "kirby-cms-path": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kirby\\": [
+                        "tests/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bastian Allgeier",
+                    "email": "bastian@getkirby.com"
+                },
+                {
+                    "name": "Nico Hoffmann",
+                    "email": "nico@getkirby.com"
+                }
+            ],
+            "description": "Kirby Query Language",
+            "homepage": "https://getkirby.com",
+            "keywords": [
+                "api",
+                "cms",
+                "headless",
+                "json",
+                "kirby",
+                "query"
+            ],
+            "support": {
+                "email": "support@getkirby.com",
+                "forum": "https://forum.getkirby.com",
+                "issues": "https://github.com/getkirby/kql/issues",
+                "source": "https://github.com/getkirby/kql"
+            },
+            "funding": [
+                {
+                    "url": "https://getkirby.com/buy",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-12-07T16:11:59+00:00"
+        },
+        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.1",
             "source": {
@@ -1109,6 +1178,54 @@
                 "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.3.3"
             },
             "time": "2023-01-30T12:38:03+00:00"
+        },
+        {
+            "name": "johannschopplich/kirby-headless",
+            "version": "1.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johannschopplich/kirby-headless.git",
+                "reference": "e7be7e9fccbb3b0e31a600b8f3fcef4ff772afaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/e7be7e9fccbb3b0e31a600b8f3fcef4ff772afaf",
+                "reference": "e7be7e9fccbb3b0e31a600b8f3fcef4ff772afaf",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "@stable",
+                "getkirby/cms": "^3.9"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "pkg@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                }
+            ],
+            "description": "Kirby, but headless only – KQL with bearer token, Express-esque middlewares & more",
+            "homepage": "https://github.com/johannschopplich/kirby-headless#readme",
+            "keywords": [
+                "headless",
+                "kirby"
+            ],
+            "support": {
+                "issues": "https://github.com/johannschopplich/kirby-headless/issues",
+                "source": "https://github.com/johannschopplich/kirby-headless/tree/v1.5.6"
+            },
+            "time": "2023-06-13T11:13:57+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",

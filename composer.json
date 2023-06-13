@@ -2,8 +2,9 @@
   "require": {
     "getkirby/cms": "^3.9",
     "getkirby/cli": "^1.1",
-    "symfony/yaml": "^5.4",
+    "getkirby/kql": "^2.0",
     "johannschopplich/kirby-helpers": "^4.0",
+    "johannschopplich/kirby-headless": "^1.5",
     "johannschopplich/kirby-algolia-docsearch": "^0.3",
     "johannschopplich/kirby-punctuation-section": "^2.1",
     "bnomei/kirby3-feed": "^1.5",
@@ -14,14 +15,6 @@
     "start": [
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 -t public vendor/getkirby/cms/router.php"
-    ]
-  },
-  "autoload": {
-    "psr-4": {
-      "Kirby\\": "site/classes/Kirby/"
-    },
-    "exclude-from-classmap": [
-      "vendor/getkirby/cms/src/Data/Yaml.php"
     ]
   },
   "config": {

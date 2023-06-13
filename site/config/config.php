@@ -81,6 +81,19 @@ return [
                 ]
             ]
         ]
+    ],
+
+    'headless' => [
+        // Disable overwriting of the default routes
+        'routes' => false,
+        'token' => env('KIRBY_HEADLESS_API_TOKEN'),
+
+        'cors' => [
+            'allowOrigin' => env('KIRBY_HEADLESS_ALLOW_ORIGIN', '*'),
+            'allowMethods' => env('KIRBY_HEADLESS_ALLOW_METHODS', 'GET, POST, OPTIONS'),
+            'allowHeaders' => env('KIRBY_HEADLESS_ALLOW_HEADERS', '*'),
+            'maxAge' => env('KIRBY_HEADLESS_MAX_AGE', '86400')
+        ]
     ]
 
 ];

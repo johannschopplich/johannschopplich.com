@@ -1,0 +1,21 @@
+name:
+  de: Linktree-Abschnitt
+  en: Linktree Section
+icon: list-bullet
+wysiwyg: true
+preview: fields
+fields:
+  links:
+    label: Links
+    type: structure
+    fields:
+      title:
+        label:
+          de: Titel
+          en: Title
+        type: text
+        icon: title
+      link:
+        label: Link
+        type: url
+        inline: true
