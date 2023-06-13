@@ -3,6 +3,7 @@
 return [
 
     'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
+    'yaml.handler' => 'symfony',
 
     'panel' => [
         'install' => env('KIRBY_PANEL_INSTALL', false),
