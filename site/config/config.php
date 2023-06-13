@@ -83,12 +83,6 @@ return [
         ]
     ],
 
-
-    // Enable basic authentication for the API and thus KQL
-    'api' => [
-        'basicAuth' => true
-    ],
-
     // Default to token-based authentication
     'kql' => [
         'auth' => 'bearer'
