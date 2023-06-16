@@ -35,6 +35,24 @@ return [
         'extra' => true
     ],
 
+    // Default to token-based authentication
+    'kql' => [
+        'auth' => 'bearer'
+    ],
+
+    'headless' => [
+        // Disable overwriting of the default routes
+        'routes' => false,
+        'token' => env('KIRBY_HEADLESS_API_TOKEN'),
+
+        'cors' => [
+            'allowOrigin' => env('KIRBY_HEADLESS_ALLOW_ORIGIN', '*'),
+            'allowMethods' => env('KIRBY_HEADLESS_ALLOW_METHODS', 'GET, POST, OPTIONS'),
+            'allowHeaders' => env('KIRBY_HEADLESS_ALLOW_HEADERS', '*'),
+            'maxAge' => env('KIRBY_HEADLESS_MAX_AGE', '86400')
+        ]
+    ],
+
     'johannschopplich.helpers' => [
         'redirects' => require __DIR__ . '/redirects.php',
         'meta' => [
@@ -44,7 +62,12 @@ return [
             'enable' => true
         ],
         'sitemap' => [
-            'enable' => true
+            'enable' => true,
+            'exclude' => [
+                'templates' => [
+                    'linktree'
+                ]
+            ]
         ]
     ],
 
@@ -80,24 +103,6 @@ return [
                     'en' => 'Project'
                 ]
             ]
-        ]
-    ],
-
-    // Default to token-based authentication
-    'kql' => [
-        'auth' => 'bearer'
-    ],
-
-    'headless' => [
-        // Disable overwriting of the default routes
-        'routes' => false,
-        'token' => env('KIRBY_HEADLESS_API_TOKEN'),
-
-        'cors' => [
-            'allowOrigin' => env('KIRBY_HEADLESS_ALLOW_ORIGIN', '*'),
-            'allowMethods' => env('KIRBY_HEADLESS_ALLOW_METHODS', 'GET, POST, OPTIONS'),
-            'allowHeaders' => env('KIRBY_HEADLESS_ALLOW_HEADERS', '*'),
-            'maxAge' => env('KIRBY_HEADLESS_MAX_AGE', '86400')
         ]
     ]
 

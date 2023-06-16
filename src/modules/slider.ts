@@ -43,7 +43,7 @@ export async function install() {
         animate(slide, "fadeInLeft", "animate__");
       }
     },
-    { threshold: [0.25, 1] }
+    { threshold: [0.25, 0.5, 0.75, 1] }
   );
 
   // If the slider is not initially in viewport, hide slides and start observer
