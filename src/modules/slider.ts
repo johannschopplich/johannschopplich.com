@@ -38,11 +38,12 @@ export async function install() {
       for (const slide of entry.target.querySelectorAll<HTMLElement>(
         "[data-slide-content]"
       )) {
+        if (!slide.classList.contains("invisible")) continue;
         slide.classList.remove("invisible");
         animate(slide, "fadeInLeft", "animate__");
       }
     },
-    { threshold: 0.1 }
+    { threshold: [0.25, 1] }
   );
 
   // If the slider is not initially in viewport, hide slides and start observer
