@@ -1,7 +1,6 @@
-import { useBreakpoints, useRem } from "../hooks";
+import { getRootFontSize, isBelow } from "../utils";
 
 export async function install() {
-  const { isBelow } = useBreakpoints();
   const elements = [
     ...document.querySelectorAll<HTMLElement>("[data-zoomable]"),
   ];
@@ -9,7 +8,7 @@ export async function install() {
   if (isBelow("md") || elements.length === 0) return;
 
   const { default: mediumZoom } = await import("medium-zoom");
-  const margin = useRem();
+  const margin = getRootFontSize();
 
   mediumZoom(elements, {
     background: "transparent",

@@ -1,3 +1,3 @@
-export function useRem() {
+export function getRootFontSize() {
   return parseFloat(getComputedStyle(document.documentElement).fontSize);
 }

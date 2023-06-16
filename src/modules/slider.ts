@@ -1,9 +1,9 @@
 import { animate } from "animere";
-import { useRem } from "../hooks";
+import { getRootFontSize } from "../utils";
 
 export async function install() {
   const isTouchscreen = matchMedia("(hover: none), (pointer: coarse)").matches;
-  const rem = useRem();
+  const fontSize = getRootFontSize();
 
   const elements = document.querySelectorAll<HTMLElement>("[data-slider]");
   if (elements.length === 0) return;
@@ -19,7 +19,7 @@ export async function install() {
 
       new Swiper(element, {
         slidesPerView: "auto",
-        spaceBetween: 0.75 * rem,
+        spaceBetween: 0.75 * fontSize,
         centeredSlides: true,
         centeredSlidesBounds: true,
         grabCursor: true,

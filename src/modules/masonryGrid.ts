@@ -1,3 +1,5 @@
+import { debounce } from "../utils";
+
 export interface GridInstance {
   el: HTMLElement;
   items: ReadonlyArray<HTMLElement>;
@@ -73,16 +75,4 @@ function updateGridItems(grid: GridInstance) {
   }
 
   grid.count = 0;
-}
-
-function debounce<T extends (...args: any[]) => void>(fn: T, delay: number) {
-  let timeout: ReturnType<typeof setTimeout> | undefined;
-
-  return function (...args: Parameters<T>) {
-    if (timeout) clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      timeout = undefined;
-      fn(...args);
-    }, delay);
-  };
 }

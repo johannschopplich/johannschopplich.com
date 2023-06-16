@@ -1,8 +1,7 @@
-import { useBreakpoints } from "../hooks";
+import { isBelow } from "../utils";
 import type { Brush, Drauu } from "drauu";
 
 export default async function () {
-  const { isBelow } = useBreakpoints();
   if (isBelow("md")) return;
 
   const { createDrauu } = await import("drauu");
