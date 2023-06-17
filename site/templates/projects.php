@@ -40,7 +40,7 @@
         </div>
 
         <div class="mb-lg">
-          <?php snippet('slider', [
+          <?php snippet('components/slider', [
             'query' => $project->gallery()->toFiles(),
             'height' => $project->galleryHeight()->value(),
             'links' => false

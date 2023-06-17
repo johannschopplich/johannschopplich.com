@@ -19,7 +19,7 @@
       </div>
     <?php endif ?>
 
-    <?php snippet('masonry', [
+    <?php snippet('components/masonry', [
       'query' => $page->gallery()->toFiles()
     ]) ?>
   </div>

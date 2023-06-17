@@ -21,7 +21,7 @@
     </div>
 
     <?php if ($page->galleryType()->value() === 'slider'): ?>
-      <?php snippet('slider', [
+      <?php snippet('components/slider', [
         'query' => $page->gallery()->toFiles(),
         'height' => $page->galleryHeight()->value(),
         'links' => false
@@ -33,7 +33,7 @@
   <div class="pb-8xl <?= e($isMasonry, 'lg:flex lg:flex-wrap') ?>">
     <?php if ($isMasonry): ?>
       <div class="mb-5xl w-auto flex-1 lg:max-w-prose">
-        <?php snippet('masonry', [
+        <?php snippet('components/masonry', [
           'query' => $page->gallery()->toFiles(),
           'width' => 'min(15rem, 50vw)'
         ]) ?>

@@ -7,7 +7,7 @@
 <?php snippet('layouts/default', slots: true) ?>
   <div class="content relative max-w-screen-lg pt-8xl">
     <div class="relative">
-      <!--
+      <?php /*
       <div class="absolute inset-x-0 -top-5xl bottom-0">
         <div class="h-full flex max-w-screen-lg justify-end">
           <svg width="0" height="0">
@@ -24,13 +24,16 @@
           ></div>
         </div>
       </div>
-      -->
+      */ ?>
 
       <div class="relative prose">
         <?php foreach ($page->text()->toBlocks() as $block): ?>
           <?php /** @var \Kirby\Cms\Block $block */ ?>
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
-            <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl"><?= $block->text() ?></h1>
+            <h1 class="title font-900 text-size-2xl leading-heading md:text-size-4xl">
+              <?= $block->text() ?>
+              <?php snippet('components/sticker', ['emoji' => '🌻']) ?>
+            </h1>
           <?php else: ?>
             <div class="max-w-prose">
               <?= $block ?>
@@ -78,7 +81,7 @@
       </h2>
     </div>
 
-    <?php snippet('slider', compact('query')) ?>
+    <?php snippet('components/slider', compact('query')) ?>
 
     <div class="content max-w-screen-lg">
       <div class="text-center mt-lg">
