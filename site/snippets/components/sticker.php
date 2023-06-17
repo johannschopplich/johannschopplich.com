@@ -18,7 +18,7 @@ $id = \Kirby\Toolkit\Str::uuid();
     <filter id="<?= $id ?>-puffy" color-interpolation-filters="sRGB">
       <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur1"></feGaussianBlur>
       <feSpecularLighting result="spec1" in="blur1" surfaceScale="5" specularConstant="0.5" specularExponent="120" lighting-color="#ffffff">
-        <fePointLight class="sticker-light" x="-150" y="-150" z="300"></fePointLight>
+        <fePointLight class="sticker-light" x="200" y="0" z="300"></fePointLight>
       </feSpecularLighting>
       <feComposite in="spec1" in2="SourceAlpha" operator="in" result="specOut2"></feComposite>
       <feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"></feComposite>

@@ -1,14 +1,66 @@
 import { isBelow } from "../utils";
 
+let animationId: number | undefined;
+let latestMouseEvent: MouseEvent | undefined;
+let startTime: number | undefined;
+
 export function install() {
   if (isBelow("md")) return;
 
   const elements = [...document.querySelectorAll<HTMLElement>(".sticker")];
   if (!elements.length) return;
 
-  let latestMouseEvent: MouseEvent | undefined;
+  const rotateLight = (timestamp: number) => {
+    const duration = 1000;
+    startTime ??= timestamp;
 
-  const updateLightPosition = () => {
+    // Calculate eased progress
+    const t = Math.min((timestamp - startTime) / duration, 1);
+    const easedT = easeOutCubic(t);
+    const dx = 200 * Math.cos(2 * Math.PI * easedT);
+    const dy =
+      (easedT <= 0.5 ? -1 : 1) * 200 * Math.abs(Math.sin(2 * Math.PI * easedT));
+
+    for (const element of elements) {
+      const light = element.querySelector<HTMLElement>(".sticker-light");
+      if (!light) return;
+
+      light.setAttribute("x", dx.toFixed(2));
+      light.setAttribute("y", dy.toFixed(2));
+    }
+
+    // Request next frame or stop when done
+    if (t < 1) {
+      animationId = requestAnimationFrame(rotateLight);
+    } else {
+      startTime = undefined;
+      animationId = undefined;
+    }
+  };
+
+  const handleMouseMove = (event: MouseEvent) => {
+    if (animationId) {
+      // If an animation is running, cancel it
+      cancelAnimationFrame(animationId);
+      animationId = undefined;
+    }
+
+    latestMouseEvent = event;
+    requestAnimationFrame(updateLightPosition);
+  };
+
+  window.addEventListener("mousemove", handleMouseMove, {
+    passive: true,
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    if (!animationId) {
+      // If not already animating, start
+      animationId = requestAnimationFrame(rotateLight);
+    }
+  });
+
+  function updateLightPosition() {
     if (!latestMouseEvent) return;
 
     for (const element of elements) {
@@ -25,19 +77,14 @@ export function install() {
       const dx = Math.ceil(latestMouseEvent.clientX - centerX);
       const dy = Math.ceil(latestMouseEvent.clientY - centerY);
 
-      light.setAttribute("x", `${dx}`);
-      light.setAttribute("y", `${dy}`);
+      light.setAttribute("x", dx.toFixed(2));
+      light.setAttribute("y", dy.toFixed(2));
     }
 
     latestMouseEvent = undefined;
-  };
+  }
+}
 
-  const handleMouseMove = (event: MouseEvent) => {
-    latestMouseEvent = event;
-    requestAnimationFrame(updateLightPosition);
-  };
-
-  window.addEventListener("mousemove", handleMouseMove, {
-    passive: true,
-  });
+function easeOutCubic(t: number): number {
+  return --t * t * t + 1;
 }
