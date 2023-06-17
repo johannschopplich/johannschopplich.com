@@ -3,7 +3,7 @@
 
 $id = \Kirby\Toolkit\Str::uuid();
 ?>
-<div class="sticker inline-block select-none drop-shadow-[0.5px_0.5px_2px_rgba(0,_0,_0,_0.45)]">
+<div class="sticker inline-block select-none drop-shadow-[0.5px_0.5px_2px_rgba(0,_0,_0,_0.25)]">
   <svg width="0" height="0">
     <filter id="<?= $id ?>-normal">
       <feMorphology in="SourceAlpha" result="Dilated" operator="dilate" radius="4"></feMorphology>
