@@ -11,7 +11,7 @@ export function install() {
   if (!elements.length) return;
 
   const rotateLight = (timestamp: number) => {
-    const duration = 1000;
+    const duration = 750;
     startTime ??= timestamp;
 
     // Calculate eased progress
@@ -46,7 +46,7 @@ export function install() {
     }
 
     latestMouseEvent = event;
-    requestAnimationFrame(updateLightPosition);
+    requestAnimationFrame(() => updateLightPosition(elements));
   };
 
   window.addEventListener("mousemove", handleMouseMove, {
@@ -54,35 +54,33 @@ export function install() {
   });
 
   window.addEventListener("DOMContentLoaded", () => {
-    if (!animationId) {
-      // If not already animating, start
-      animationId = requestAnimationFrame(rotateLight);
-    }
+    // If not already animating, start
+    animationId ??= requestAnimationFrame(rotateLight);
   });
+}
 
-  function updateLightPosition() {
-    if (!latestMouseEvent) return;
+function updateLightPosition(elements: HTMLElement[]) {
+  if (!latestMouseEvent) return;
 
-    for (const element of elements) {
-      const container = element.querySelector<HTMLElement>("svg")!;
-      const light = element.querySelector<HTMLElement>(".sticker-light");
+  for (const element of elements) {
+    const container = element.querySelector<HTMLElement>("svg");
+    const light = element.querySelector<HTMLElement>(".sticker-light");
 
-      if (!container || !light) return;
+    if (!container || !light) return;
 
-      // Calculate the center point of the SVG
-      const { top, left, width, height } = container.getBoundingClientRect();
-      const centerX = left + width / 2;
-      const centerY = top + height / 2;
+    // Calculate the center point of the SVG
+    const { top, left, width, height } = container.getBoundingClientRect();
+    const centerX = left + width / 2;
+    const centerY = top + height / 2;
 
-      const dx = Math.ceil(latestMouseEvent.clientX - centerX);
-      const dy = Math.ceil(latestMouseEvent.clientY - centerY);
+    const dx = Math.ceil(latestMouseEvent.clientX - centerX);
+    const dy = Math.ceil(latestMouseEvent.clientY - centerY);
 
-      light.setAttribute("x", dx.toFixed(2));
-      light.setAttribute("y", dy.toFixed(2));
-    }
-
-    latestMouseEvent = undefined;
+    light.setAttribute("x", dx.toFixed(2));
+    light.setAttribute("y", dy.toFixed(2));
   }
+
+  latestMouseEvent = undefined;
 }
 
 function easeOutCubic(t: number): number {

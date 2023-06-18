@@ -3,8 +3,9 @@
 
 $id = \Kirby\Toolkit\Str::uuid();
 ?>
-<div class="sticker inline-block select-none drop-shadow-[0.5px_0.5px_2px_rgba(0,_0,_0,_0.25)]">
+<div class="sticker inline-block select-none drop-shadow-[0.5px_0.5px_2px_rgba(0,_0,_0,_0.25)] du-dark:drop-shadow-[0.5px_0.5px_2px_rgba(255,_255,_255,_0.25)]">
   <svg width="0" height="0">
+    <?php /*
     <filter id="<?= $id ?>-normal">
       <feMorphology in="SourceAlpha" result="Dilated" operator="dilate" radius="4"></feMorphology>
       <feFlood flood-color="#ffffff" result="OutlineColor"></feFlood>
@@ -14,7 +15,7 @@ $id = \Kirby\Toolkit\Str::uuid();
         <feMergeNode in="SourceGraphic"></feMergeNode>
       </feMerge>
     </filter>
-
+    */ ?>
     <filter id="<?= $id ?>-puffy" color-interpolation-filters="sRGB">
       <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur1"></feGaussianBlur>
       <feSpecularLighting result="spec1" in="blur1" surfaceScale="5" specularConstant="0.5" specularExponent="120" lighting-color="#ffffff">
