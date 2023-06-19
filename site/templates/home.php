@@ -7,25 +7,6 @@
 <?php snippet('layouts/default', slots: true) ?>
   <div class="content relative max-w-screen-lg pt-8xl">
     <div class="relative">
-      <?php /*
-      <div class="absolute inset-x-0 -top-5xl bottom-0">
-        <div class="h-full flex max-w-screen-lg justify-end">
-          <svg width="0" height="0">
-            <filter id="grainy-blur" x="-150%" y="-150%" width="400%" height="400%">
-              <feGaussianBlur stdDeviation="39" result="blur"></feGaussianBlur>
-              <feTurbulence type="fractalNoise" baseFrequency=".537"></feTurbulence>
-              <feComposite in="blur"></feComposite>
-              <feComposite in="blur" operator="in"></feComposite>
-            </filter>
-          </svg>
-          <div
-            class="h-[75%] aspect-[1/1] rounded-1/2 md:h-full"
-            style="background: conic-gradient(#f0d590, var(--du-color-primary-200), #f0d590 75%); filter: url(#grainy-blur);"
-          ></div>
-        </div>
-      </div>
-      */ ?>
-
       <div class="relative prose">
         <?php foreach ($page->text()->toBlocks() as $block): ?>
           <?php /** @var \Kirby\Cms\Block $block */ ?>
