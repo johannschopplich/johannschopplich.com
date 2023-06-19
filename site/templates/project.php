@@ -7,7 +7,7 @@
 <?php snippet('layouts/default', slots: true) ?>
   <div class="pt-8xl pb-5xl space-y-5xl">
     <div class="content max-w-prose">
-      <p class="text-contrast-medium mb-1">
+      <p class="text-contrast-medium">
         <?= $page->subtitle()->escape() ?>
       </p>
 

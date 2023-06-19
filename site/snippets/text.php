@@ -4,7 +4,7 @@
 <div class="py-8xl">
   <div class="content max-w-prose pb-5xl">
     <?php if ($page->published()->isNotEmpty()): ?>
-      <p class="text-contrast-medium mb-1">
+      <p class="text-contrast-medium">
         <?= t('article.publishedAt') ?>
         <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">
           <?= $page->published()->toDate(dateFormatter()) ?>
