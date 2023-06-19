@@ -13,14 +13,14 @@ export function install() {
   if (!elements.length) return;
 
   const handleMouseMove = (event: MouseEvent) => {
-    latestMouseEvent = event;
-
-    if (!animationId) {
-      animationId = requestAnimationFrame(() => {
-        updateLightPosition(elements);
-        animationId = undefined;
-      });
+    if (animationId) {
+      // If an animation is running, cancel it
+      cancelAnimationFrame(animationId);
+      animationId = undefined;
     }
+
+    latestMouseEvent = event;
+    requestAnimationFrame(() => updateLightPosition(elements));
   };
 
   window.addEventListener("mousemove", handleMouseMove, { passive: true });
