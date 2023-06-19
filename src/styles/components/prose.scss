@@ -113,7 +113,10 @@
     :where(p) {
       font-size: 1.05rem;
       line-height: calc(var(--du-line-height-normal) / 0.875);
-      text-indent: 1rem;
+
+      [data-template="article"] & {
+        text-indent: 1rem;
+      }
     }
   }
 }

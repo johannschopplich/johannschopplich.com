@@ -15,9 +15,11 @@
         <?= $page->title()->escape() ?>
       </h1>
 
+      <?php /*
       <div class="mt-xs">
         <?= asset('assets/img/article-spacer.svg')->read() ?>
       </div>
+      */ ?>
     </div>
 
     <?php if ($page->galleryType()->value() === 'slider'): ?>

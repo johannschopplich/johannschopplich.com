@@ -28,3 +28,8 @@
   // Project-specific due variables
   --du-color-border: var(--du-color-contrast-lower);
 }
+
+::selection {
+  color: inherit;
+  background: #f0d590;
+}

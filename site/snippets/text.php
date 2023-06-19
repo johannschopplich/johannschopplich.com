@@ -16,9 +16,11 @@
       <?= $page->title()->escape() ?>
     </h1>
 
+    <?php /*
     <div class="mt-xs">
       <?= asset('assets/img/article-spacer.svg')->read() ?>
     </div>
+    */ ?>
   </div>
 
   <div class="content max-w-prose">
