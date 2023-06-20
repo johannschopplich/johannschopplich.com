@@ -28,11 +28,11 @@ $year = null;
       'aria-current' => $isActive ? 'page' : null,
       'style' => '--du-color-link-hover: var(--du-color-primary)'
     ]) ?>>
-      <span class="w-max max-w-1/2 <?php e($isActive, 'text-primary') ?>">
+      <span class="w-max md:max-w-1/2 <?php e($isActive, 'text-primary') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>
-        <hr class="flex-grow border-contrast-medium invisible md:visible md:mt-3 du-dark:border-contrast-low">
+        <hr class="grow border-contrast-medium mt-3 du-dark:border-contrast-low">
         <span class="flex shrink-0 flex-wrap items-center justify-start space-x-1">
           <?php foreach ($post->categories()->split() as $category): ?>
             <span class="tag"><?= $category ?></span>
