@@ -17,5 +17,5 @@ fields:
         icon: title
       link:
         label: Link
-        type: url
-        inline: true
+        type: text
+        icon: url
