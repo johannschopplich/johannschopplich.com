@@ -34,7 +34,7 @@
   <?php $isMasonry = $page->galleryType()->value() === 'masonry' ?>
   <div class="pb-8xl <?= e($isMasonry, 'lg:flex lg:flex-wrap') ?>">
     <?php if ($isMasonry): ?>
-      <div class="mb-5xl w-auto flex-1 lg:max-w-prose">
+      <div class="mb-5xl w-auto flex-1 lg:max-w-prose lg:order-last">
         <?php snippet('components/masonry', [
           'query' => $page->gallery()->toFiles(),
           'width' => 'min(15rem, 50vw)'
