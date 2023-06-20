@@ -5,6 +5,7 @@ icon: 🔗
 options:
   changeStatus: false
   delete: false
+  preview: "https://byjohann.link"
 
 columns:
   - width: 2/3
