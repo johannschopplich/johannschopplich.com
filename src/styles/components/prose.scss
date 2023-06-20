@@ -110,7 +110,7 @@
 
   &.is-article {
     :where(p) {
-      font-size: 1.05rem;
+      // font-size: 1.05rem;
       line-height: calc(var(--du-line-height-normal) / 0.875);
     }
   }

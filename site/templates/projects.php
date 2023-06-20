@@ -33,7 +33,7 @@
             <?= $project->subtitle()->escape() ?>
           </p>
 
-          <h2 class="title text-2xl">
+          <h2 class="title text-2xl font-700">
             <a href="<?= $project->url() ?>" class="text-underline text-underline-contrast-lower leading-tight !text-current">
               <span class="absolute inset-0" aria-hidden="true"></span>
               <?= $project->title()->escape() ?>
