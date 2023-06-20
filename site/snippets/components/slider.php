@@ -34,7 +34,7 @@ $heightMap = [
       ], ' ') ?>>
         <div
           data-slide-content
-          style="--animate-duration: 500ms; --animate-delay: <?= $image->indexOf($query) * 50 + 50 . 'ms' ?>"
+          style="--animate-duration: 250ms; --animate-delay: <?= $image->indexOf($query) * 50 + 50 . 'ms' ?>"
         >
           <?php if ($mockup !== 'none'): ?>
             <div
