@@ -39,7 +39,7 @@
         <?php foreach ($page->bio()->toBlocks() as $block): ?>
           <?php /** @var \Kirby\Cms\Block $block */ ?>
           <?php if ($block->type() === 'heading'): ?>
-            <h1 class="title text-size-4xl font-900"><?= $block->text() ?></h1>
+            <h1 class="headline"><?= $block->text() ?></h1>
           <?php else: ?>
             <?= $block ?>
           <?php endif ?>
