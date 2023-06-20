@@ -9,7 +9,7 @@
   <?php if ($pagination->hasPrevPage()): ?>
     <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-bx-left-arrow-alt" aria-label="Previous page"></a>
   <?php else: ?>
-    <span class="mr-auto text-contrast-low i-bx-left-arrow-alt" aria-disabled="true"></span>
+    <span class="mr-auto text-contrast-low cursor-not-allowed i-bx-left-arrow-alt" aria-disabled="true"></span>
   <?php endif ?>
 
   <div class="flex space-x-1">
@@ -38,6 +38,6 @@
   <?php if ($pagination->hasNextPage()): ?>
     <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-bx-right-arrow-alt" aria-label="Next page"></a>
   <?php else: ?>
-    <span class="ml-auto text-contrast-lower i-bx-right-arrow-alt" aria-disabled="true"></span>
+    <span class="ml-auto text-contrast-lower cursor-not-allowed i-bx-right-arrow-alt" aria-disabled="true"></span>
   <?php endif ?>
 </nav>

@@ -5,7 +5,7 @@
 $year = null;
 ?>
 <section class="content max-w-prose pb-8xl">
-  <h2 class="title text-primary text-xl mb-3xl">
+  <h2 class="title text-2xl mb-3xl">
     <?= $heading ?>
   </h2>
 
@@ -16,7 +16,7 @@ $year = null;
 
     <?php if ($postY !== $year): ?>
       <div class="mt-3xl mb-xs">
-        <h3 class="font-heading font-600 text-size-xl text-contrast-low leading-none">
+        <h3 class="text-primary font-heading font-600 text-size-xl leading-none">
           <?= $postY ?>
         </h3>
       </div>

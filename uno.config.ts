@@ -44,7 +44,7 @@ export default defineConfig<Theme>({
     "content-breakout": "-mx-lg md:mx-0",
     "action-button":
       "text-size-xs leading-heading font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
-    tag: "border-1 border-theme-base text-primary text-size-xs leading-heading font-heading font-500 whitespace-nowrap rounded-full border-solid px-2 py-1 du-dark:border-contrast-low",
+    tag: "border-1 border-theme-base text-size-xs leading-heading font-heading font-500 whitespace-nowrap rounded-full border-solid px-2 py-1 du-dark:border-contrast-low",
     headline:
       "color-contrast-higher text-size-2xl leading-heading md:text-size-[calc(var(--du-text-4xl)+0.5vw)] font-heading font-900",
     "masonry-grid":
