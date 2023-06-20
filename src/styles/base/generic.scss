@@ -11,8 +11,12 @@ a:not([class]),
   }
 }
 
-h2 a.text-underline {
+.text-underline-contrast-lower {
   text-decoration-color: var(--du-color-contrast-lower);
+}
+
+.text-underline-transparent {
+  text-decoration-color: transparent;
 }
 
 [id] {

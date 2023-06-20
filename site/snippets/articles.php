@@ -17,7 +17,7 @@
       </p>
 
       <h2 class="title text-size-xl mb-lg">
-        <a href="<?= $article->url() ?>" class="text-underline hyphenate leading-tight !text-current">
+        <a href="<?= $article->url() ?>" class="text-underline text-underline-transparent leading-tight !text-current hyphenate">
           <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $article->title() ?>
         </a>
