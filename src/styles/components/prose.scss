@@ -12,7 +12,8 @@
     margin-bottom: calc(2rem * var(--du-prose-space-y, 1));
   }
 
-  :where(h2, h3, h4) {
+  :where(h1, h2, h3, h4, h5, h6) {
+    font-weight: 700;
     font-family: var(--du-font-family-heading);
 
     a:not([href^="http"]) {
