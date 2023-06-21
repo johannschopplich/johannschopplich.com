@@ -76,8 +76,7 @@
   }
 
   :where(figcaption) {
-    font-family: var(--du-font-family-heading);
-    line-height: 1.5;
+    line-height: calc(var(--du-line-height-normal) * 0.875);
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0 3px 0.25rem;
