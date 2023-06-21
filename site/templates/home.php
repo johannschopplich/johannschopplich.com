@@ -28,7 +28,7 @@
   </div>
 
   <div class="content max-w-screen-lg">
-    <h2 class="title text-primary mb-lg text-center text-2xl">
+    <h2 class="title text-primary text-2xl text-center mb-lg">
       <?= t('articles.latest') ?>
     </h2>
 
@@ -57,7 +57,7 @@
     <div class="content max-w-screen-lg">
       <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-      <h2 class="title text-primary mb-lg text-center text-2xl">
+      <h2 class="title text-primary text-2xl text-center mb-lg">
         <?= t('photography') ?>
       </h2>
     </div>
@@ -85,7 +85,7 @@
   <div class="content max-w-screen-lg">
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-    <h2 class="title text-primary mb-lg text-center text-2xl">
+    <h2 class="title text-primary text-2xl text-center mb-lg">
       <?= t('contact') ?>
     </h2>
 
