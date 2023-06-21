@@ -25,9 +25,9 @@ export function install() {
 
   window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
-  window.addEventListener("DOMContentLoaded", () => {
-    animationId ??= requestAnimationFrame((ts) => rotateLight(ts, elements));
-  });
+  // window.addEventListener("DOMContentLoaded", () => {
+  //   animationId ??= requestAnimationFrame((ts) => rotateLight(ts, elements));
+  // });
 }
 
 function updateLightPosition(elements: HTMLElement[]) {
