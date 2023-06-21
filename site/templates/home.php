@@ -11,7 +11,7 @@
         <?php foreach ($page->text()->toBlocks() as $block): ?>
           <?php /** @var \Kirby\Cms\Block $block */ ?>
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
-            <h1 class="headline">
+            <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
               <?php snippet('components/sticker', ['emoji' => '🌻']) ?>
             </h1>
