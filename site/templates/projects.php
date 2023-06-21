@@ -50,7 +50,7 @@
         </div>
 
         <div class="content">
-          <a href="<?= $project->url() ?>" class="action-button inline-block w-full">
+          <a href="<?= $project->url() ?>" class="cta-button inline-block w-full">
             <?= t('projects.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
           </a>
         </div>

@@ -39,7 +39,7 @@
     </div>
 
     <div class="text-center mt-lg">
-      <a href="<?= page('blog')->url() ?>" class="action-button">
+      <a href="<?= page('blog')->url() ?>" class="cta-button">
         <?= t('articles.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
       </a>
     </div>
@@ -66,7 +66,7 @@
 
     <div class="content max-w-screen-lg">
       <div class="text-center mt-lg">
-        <a href="<?= $photography->url() ?>" class="action-button">
+        <a href="<?= $photography->url() ?>" class="cta-button">
           <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
         </a>
       </div>

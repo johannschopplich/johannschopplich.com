@@ -78,7 +78,7 @@ $heightMap = [
     <?php if ($page->isHomePage()): ?>
       <div class="swiper-slide pr-xs shrink-0 snap-end snap-always">
         <div class="h-$cell relative flex w-[min(65vw,25rem)] items-center justify-center border border-solid">
-          <a href="<?= $query->first()->parent()->url() ?>" class="action-button">
+          <a href="<?= $query->first()->parent()->url() ?>" class="cta-button">
             <span class="absolute inset-0" aria-hidden="true"></span>
             <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
           </a>
