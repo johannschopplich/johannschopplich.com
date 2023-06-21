@@ -62,7 +62,16 @@
       </h2>
     </div>
 
-    <?php snippet('components/slider', compact('query')) ?>
+    <?php snippet('components/slider', compact('query'), slots: true) ?>
+      <div class="swiper-slide pr-xs shrink-0 snap-end snap-always">
+        <div class="h-$cell relative flex w-[min(65vw,25rem)] items-center justify-center border border-solid">
+          <a href="<?= $query->first()->parent()->url() ?>" class="cta-button">
+            <span class="absolute inset-0" aria-hidden="true"></span>
+            <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    <?php endsnippet() ?>
 
     <div class="content max-w-screen-lg">
       <div class="text-center mt-lg">
