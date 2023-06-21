@@ -89,6 +89,7 @@ tabs:
             extends: sections/meta
             type: fields
             fields:
+              customTitle: false
               thumbnail:
                 query: kirby.page("photography").files.template("image")
                 uploads:
