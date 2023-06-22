@@ -1,5 +1,5 @@
 type: pages
-parent: kirby.page('blog')
+parent: kirby.page("blog")
 template: article
 sortBy: published desc
 image:

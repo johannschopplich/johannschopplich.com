@@ -1,4 +1,4 @@
-import destr from "destr";
+import { destr } from "destr";
 
 export function getParsedSiteData(selector = "[data-site]") {
   const rawData = document.querySelector<HTMLElement>(selector)?.textContent;

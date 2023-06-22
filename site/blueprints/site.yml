@@ -22,7 +22,7 @@ tabs:
                 label:
                   de: Veröffentlicht
                   en: Published
-                value: "{{ page.published.toDate('dd.MM.Y') }}"
+                value: '{{ page.published.toDate("dd.MM.Y") }}'
                 width: 1/4
 
       - width: 1/3

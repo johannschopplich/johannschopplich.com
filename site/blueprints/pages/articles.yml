@@ -21,7 +21,7 @@ tabs:
             label:
               de: Entwürfe
               en: Drafts
-            info: "{{ page.published.toDate('dd.MM.Y') }}"
+            info: '{{ page.published.toDate("dd.MM.Y") }}'
             status: drafts
 
       - width: 2/3
@@ -34,7 +34,7 @@ tabs:
             status: published
             layout: cards
             size: tiny
-            info: "{{ page.published.toDate('dd.MM.Y') }}"
+            info: '{{ page.published.toDate("dd.MM.Y") }}'
 
   settings:
     label:

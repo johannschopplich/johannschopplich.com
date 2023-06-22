@@ -2,7 +2,7 @@ title:
   de: Artikel
   en: Post
 
-num: "{{ page.published.toDate('YMMdd') }}"
+num: '{{ page.published.toDate("YMMdd") }}'
 
 icon: 📝
 

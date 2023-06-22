@@ -32,7 +32,7 @@
   </div>
 
   <?php $isMasonry = $page->galleryType()->value() === 'masonry' ?>
-  <div class="pb-8xl <?= e($isMasonry, 'lg:flex lg:flex-wrap') ?>">
+  <div class="pb-8xl <?= e($isMasonry, 'lg:flex lg:flex-wrap lg:gap-5xl') ?>">
     <?php if ($isMasonry): ?>
       <div class="mb-5xl w-auto flex-1 lg:max-w-prose lg:order-last">
         <?php snippet('components/masonry', [
