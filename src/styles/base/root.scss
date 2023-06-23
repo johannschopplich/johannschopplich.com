@@ -2,9 +2,14 @@
   // Increase minimum font size for better legibility
   --du-fluid-min-font-size: 17;
   --du-fluid-max-font-size: 19;
-  --du-font-family-normal: "Iosevka Aile Web", serif, "Apple Color Emoji",
-    "Segoe UI Emoji";
-  --du-font-family-heading: "Cooper Hewitt", sans-serif;
+  --du-font-family-normal: "Iosevka Aile", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --du-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --du-line-height-heading: 1.05;
 
   // Project-specific due variables
