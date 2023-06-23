@@ -50,7 +50,7 @@
     'assets/fonts/IosevkaAile.css'
   ]) ?>
 
-  <link rel="preload" href="/assets/fonts/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/woff2/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>
     <?php $srcDir = vite()->isDev() ? '../src' : 'dist/assets' ?>
