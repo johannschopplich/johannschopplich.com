@@ -7,43 +7,49 @@ import type { Plugin as PostCssPlugin } from "postcss";
 
 const currentDir = new URL(".", import.meta.url).pathname;
 
-export default defineConfig(({ mode }) => ({
-  root: "src",
-  base: mode === "development" ? "/" : "/dist/",
+export default defineConfig(({ mode }) => {
+  const isDev = mode === "development";
 
-  build: {
-    outDir: resolve(currentDir, "public/dist"),
-    emptyOutDir: true,
-    manifest: true,
-    rollupOptions: {
-      input: resolve(currentDir, "src/main.ts"),
+  return {
+    root: "src",
+    base: isDev ? "/" : "/dist/",
+
+    build: {
+      outDir: resolve(currentDir, "public/dist"),
+      emptyOutDir: true,
+      manifest: true,
+      rollupOptions: {
+        input: resolve(currentDir, "src/main.ts"),
+      },
     },
-  },
 
-  css: {
-    postcss: {
-      plugins: [postCssDevStyles()],
+    css: {
+      postcss: {
+        ...(isDev && { plugins: [postCssDevStyles()] }),
+      },
     },
-  },
 
-  plugins: [
-    FullReload("site/{snippets,templates}/**/*"),
-    FontaineTransform.vite({
-      fallbacks: [
-        "ui-sans-serif",
-        "system-ui",
-        "Segoe UI",
-        "Roboto",
-        "Helvetica Neue",
-        "Arial",
-        "Noto Sans",
-      ],
-      resolvePath: (id) =>
-        new URL(`public/assets/fonts/${id}`, import.meta.url),
-      overrideName: (name) => `${name} override`,
-    }),
-  ],
-}));
+    plugins: [
+      FullReload("site/{snippets,templates}/**/*"),
+      ...(!isDev
+        ? [
+            FontaineTransform.vite({
+              fallbacks: [
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica Neue",
+                "Arial",
+              ],
+              resolvePath: (id) =>
+                new URL(`public/assets/fonts/${id}`, import.meta.url),
+              overrideName: (name) => `${name} override`,
+            }),
+          ]
+        : []),
+    ],
+  };
+});
 
 /**
  * Prevent FOUC in development mode before Vite
@@ -52,14 +58,10 @@ export default defineConfig(({ mode }) => ({
 function postCssDevStyles(): PostCssPlugin {
   return {
     postcssPlugin: "postcss-vite-dev-css",
-
-    OnceExit(root, { result }) {
-      // @ts-expect-error: property unknown
-      if (result.opts.env !== "production") {
-        const outDir = resolve(currentDir, "public/assets/dev");
-        mkdirSync(outDir, { recursive: true });
-        writeFileSync(resolve(outDir, "index.css"), root.toResult().css);
-      }
+    OnceExit(root) {
+      const outDir = resolve(currentDir, "public/assets/dev");
+      mkdirSync(outDir, { recursive: true });
+      writeFileSync(resolve(outDir, "index.css"), root.toResult().css);
     },
   };
 }
