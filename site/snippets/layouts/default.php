@@ -45,13 +45,6 @@
   <?= vite()->js('main.ts') ?>
   <?= vite()->css('main.ts') ?>
 
-  <?= css([
-    'assets/fonts/CooperHewitt.css',
-    'assets/fonts/IosevkaAile.css'
-  ]) ?>
-
-  <link rel="preload" href="/assets/fonts/woff2/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
-
   <script>
     <?php $srcDir = vite()->isDev() ? '../src' : 'dist/assets' ?>
     <?= asset($srcDir . '/head.js')->read() ?>
