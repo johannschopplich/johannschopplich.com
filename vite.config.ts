@@ -38,7 +38,8 @@ export default defineConfig(({ mode }) => ({
         "Arial",
         "Noto Sans",
       ],
-      resolvePath: (id) => new URL(`src/fonts/${id}`, import.meta.url),
+      resolvePath: (id) =>
+        new URL(`public/assets/fonts/${id}`, import.meta.url),
       overrideName: (name) => `${name} override`,
     }),
   ],

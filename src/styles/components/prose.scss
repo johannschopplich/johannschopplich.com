@@ -45,6 +45,10 @@
   :where(figure) {
     box-shadow: var(--du-shadow-frame);
 
+    @include breakpoints.media-below(sm) {
+      margin-left: -1.125rem;
+    }
+
     @include breakpoints.media-above(sm) {
       img {
         position: relative;
@@ -77,6 +81,10 @@
   }
 
   :where(figcaption) {
+    @include breakpoints.media-below(sm) {
+      margin-left: calc(1.125rem - 3px);
+    }
+
     line-height: calc(var(--du-line-height-normal) * 0.875);
     font-size: 0.75rem;
     font-weight: 500;

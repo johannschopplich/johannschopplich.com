@@ -1,6 +1,6 @@
 import "./styles/main.scss";
-import "./fonts/CooperHewitt.css";
-import "./fonts/IosevkaAile.css";
+import "../public/assets/fonts/CooperHewitt.css";
+import "../public/assets/fonts/IosevkaAile.css";
 
 // Remove temporary stylesheet (to prevent FOUC) in development mode
 if (import.meta.env.DEV) {

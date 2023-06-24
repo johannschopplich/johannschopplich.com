@@ -4,10 +4,6 @@ import type { Theme } from "@unocss/preset-wind";
 
 export default defineConfig<Theme>({
   theme: {
-    // Increase prose width for Spectral
-    // maxWidth: {
-    //   prose: "75ch",
-    // },
     colors: {
       primary: {
         DEFAULT: "#C9787C",
