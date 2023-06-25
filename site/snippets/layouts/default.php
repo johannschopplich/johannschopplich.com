@@ -41,7 +41,6 @@
   <?php if (vite()->isDev()): ?>
     <?= css('assets/dev/index.css?v=' . time(), ['id' => 'vite-dev-css']) ?>
     <?= css([
-      // Vite won't serve local wont file, so we use duplicated font-face declarations
       'assets/fonts/CooperHewitt.css',
       'assets/fonts/IosevkaAile.css'
     ]) ?>

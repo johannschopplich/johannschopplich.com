@@ -8,11 +8,11 @@ import type { Plugin as PostCssPlugin } from "postcss";
 const currentDir = new URL(".", import.meta.url).pathname;
 
 export default defineConfig(({ mode }) => {
-  const isDev = mode === "development";
+  const isProd = mode === "production";
 
   return {
     root: "src",
-    base: isDev ? "/" : "/dist/",
+    base: isProd ? "/dist/" : "/",
 
     build: {
       outDir: resolve(currentDir, "public/dist"),
@@ -23,30 +23,30 @@ export default defineConfig(({ mode }) => {
       },
     },
 
+    define: {
+      ...(isProd && { "//#__PROD__": "" }),
+    },
+
     css: {
       postcss: {
-        ...(isDev && { plugins: [postCssDevStyles()] }),
+        ...(!isProd && { plugins: [postCssDevStyles()] }),
       },
     },
 
     plugins: [
       FullReload("site/{snippets,templates}/**/*"),
-      ...(!isDev
-        ? [
-            FontaineTransform.vite({
-              fallbacks: [
-                "-apple-system",
-                "Segoe UI",
-                "Roboto",
-                "Helvetica Neue",
-                "Arial",
-              ],
-              resolvePath: (id) =>
-                new URL(`public/assets/fonts/${id}`, import.meta.url),
-              overrideName: (name) => `${name} override`,
-            }),
-          ]
-        : []),
+      FontaineTransform.vite({
+        fallbacks: [
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+        ],
+        resolvePath: (id) =>
+          new URL(`public/assets/fonts/${id}`, import.meta.url),
+        overrideName: (name) => `${name} override`,
+      }),
     ],
   };
 });

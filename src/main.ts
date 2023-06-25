@@ -1,6 +1,8 @@
 import "./styles/main.scss";
-import "../public/assets/fonts/CooperHewitt.css";
-import "../public/assets/fonts/IosevkaAile.css";
+// Import fonts only in production mode, otherwise they won't be served
+// correctly by Vite
+//#__PROD__ import "../public/assets/fonts/CooperHewitt.css";
+//#__PROD__ import "../public/assets/fonts/IosevkaAile.css";
 
 // Remove temporary stylesheet (to prevent FOUC) in development mode
 if (import.meta.env.DEV) {
