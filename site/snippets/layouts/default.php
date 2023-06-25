@@ -41,6 +41,7 @@
   <?php if (vite()->isDev()): ?>
     <?= css('assets/dev/index.css?v=' . time(), ['id' => 'vite-dev-css']) ?>
     <?= css([
+      // Import fonts in development mode, as they aren't correctly served by Vite
       'assets/fonts/CooperHewitt.css',
       'assets/fonts/IosevkaAile.css'
     ]) ?>

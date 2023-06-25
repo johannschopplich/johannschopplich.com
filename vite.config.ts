@@ -23,10 +23,6 @@ export default defineConfig(({ mode }) => {
       },
     },
 
-    define: {
-      ...(isProd && { "//#__PROD__": "" }),
-    },
-
     css: {
       postcss: {
         ...(!isProd && { plugins: [postCssDevStyles()] }),
@@ -35,18 +31,22 @@ export default defineConfig(({ mode }) => {
 
     plugins: [
       FullReload("site/{snippets,templates}/**/*"),
-      FontaineTransform.vite({
-        fallbacks: [
-          "-apple-system",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica Neue",
-          "Arial",
-        ],
-        resolvePath: (id) =>
-          new URL(`public/assets/fonts/${id}`, import.meta.url),
-        overrideName: (name) => `${name} override`,
-      }),
+      ...(isProd
+        ? [
+            FontaineTransform.vite({
+              fallbacks: [
+                "-apple-system",
+                "Segoe UI",
+                "Roboto",
+                "Helvetica Neue",
+                "Arial",
+              ],
+              resolvePath: (id) =>
+                new URL(`public/assets/fonts/${id}`, import.meta.url),
+              overrideName: (name) => `${name} override`,
+            }),
+          ]
+        : []),
     ],
   };
 });
