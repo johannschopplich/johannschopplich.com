@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { defineConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
 import { FontaineTransform } from "fontaine";
-import type { Plugin as PostCssPlugin } from "postcss";
+import type { Plugin as PostCSSPlugin } from "postcss";
 
 const currentDir = new URL(".", import.meta.url).pathname;
 
@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => {
 
     css: {
       postcss: {
-        ...(!isProd && { plugins: [postCssDevStyles()] }),
+        ...(!isProd && { plugins: [exportDevStyles()] }),
       },
     },
 
@@ -55,7 +55,7 @@ export default defineConfig(({ mode }) => {
  * Prevent FOUC in development mode before Vite
  * injects the CSS into the page
  */
-function postCssDevStyles(): PostCssPlugin {
+function exportDevStyles(): PostCSSPlugin {
   return {
     postcssPlugin: "postcss-vite-dev-css",
     OnceExit(root) {

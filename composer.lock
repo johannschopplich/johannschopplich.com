@@ -1181,16 +1181,16 @@
         },
         {
             "name": "johannschopplich/kirby-headless",
-            "version": "1.5.6",
+            "version": "1.5.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-headless.git",
-                "reference": "e7be7e9fccbb3b0e31a600b8f3fcef4ff772afaf"
+                "reference": "027d9aefd927ea58ea1ba023392a6e2e766f34fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/e7be7e9fccbb3b0e31a600b8f3fcef4ff772afaf",
-                "reference": "e7be7e9fccbb3b0e31a600b8f3fcef4ff772afaf",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/027d9aefd927ea58ea1ba023392a6e2e766f34fe",
+                "reference": "027d9aefd927ea58ea1ba023392a6e2e766f34fe",
                 "shasum": ""
             },
             "require": {
@@ -1223,22 +1223,22 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-headless/issues",
-                "source": "https://github.com/johannschopplich/kirby-headless/tree/v1.5.6"
+                "source": "https://github.com/johannschopplich/kirby-headless/tree/v1.5.8"
             },
-            "time": "2023-06-13T11:13:57+00:00"
+            "time": "2023-06-23T04:26:07+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "da0558390f75731ade5debcc4b4629a3ec82b352"
+                "reference": "8dc3aebd791c5497058d6559e5ae692e27fe159c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/da0558390f75731ade5debcc4b4629a3ec82b352",
-                "reference": "da0558390f75731ade5debcc4b4629a3ec82b352",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/8dc3aebd791c5497058d6559e5ae692e27fe159c",
+                "reference": "8dc3aebd791c5497058d6559e5ae692e27fe159c",
                 "shasum": ""
             },
             "require": {
@@ -1287,9 +1287,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v4.0.3"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v4.0.4"
             },
-            "time": "2023-03-07T15:45:54+00:00"
+            "time": "2023-06-22T18:13:54+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
