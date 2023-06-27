@@ -49,7 +49,7 @@
   </div>
 
   <div class="pb-8xl">
-    <div class="content max-w-screen-lg">
+    <div class="content max-w-screen-xl">
       <div class="pt-5xl border-t border-t-solid du-dark:border-contrast-lower">
         <?php foreach ($page->cv()->toLayouts() as $layout): ?>
           <div
