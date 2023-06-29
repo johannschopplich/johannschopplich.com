@@ -24,8 +24,6 @@
 
   :where(blockquote) {
     border-left-color: var(--du-color-primary);
-    border-left-style: dotted;
-    // Keep in line with text indent
     padding-left: 1rem;
   }
 
@@ -34,7 +32,6 @@
   }
 
   :where(ol, ul) {
-    // Keep in line with text indent
     padding-left: 1rem;
   }
 

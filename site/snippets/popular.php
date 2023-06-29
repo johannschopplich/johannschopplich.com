@@ -28,7 +28,7 @@ $year = null;
       'aria-current' => $isActive ? 'page' : null,
       'style' => '--du-color-link-hover: var(--du-color-primary)'
     ]) ?>>
-      <span class="w-max md:max-w-1/2 <?php e($isActive, 'text-primary') ?>">
+      <span class="w-max <?php e($isActive, 'text-primary') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>
