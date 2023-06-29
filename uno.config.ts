@@ -35,6 +35,9 @@ export default defineConfig<Theme>({
         "900": "#060B18",
       },
     },
+    lineHeight: {
+      "heading-tight": "var(--du-line-height-heading-tight)",
+    },
     boxShadow: {
       frame: "var(--du-shadow-frame)",
     },
@@ -43,10 +46,10 @@ export default defineConfig<Theme>({
     content: "px-lg md:px-3xl",
     "content-breakout": "-mx-lg md:mx-0",
     "cta-button":
-      "text-size-xs leading-heading font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
-    tag: "text-size-xs leading-heading font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",
+      "text-size-xs leading-heading-tight font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
+    tag: "text-size-xs leading-heading-tight font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",
     headline:
-      "text-contrast-higher text-size-2xl leading-heading font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)]",
+      "text-contrast-higher text-size-2xl leading-heading-tight font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)]",
     "masonry-grid":
       "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-col-max-w,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
   },

@@ -9,13 +9,13 @@ export function applySplitText(selector = "[data-split-text]") {
 
 function splitText(element: HTMLElement) {
   const html = element.innerHTML;
-  element.innerHTML = "";
+  let newHtml = "";
 
   for (const letter of html.split("")) {
-    const span = document.createElement("span");
-    span.innerHTML = letter.charCodeAt(0) === 32 ? "&nbsp;" : letter;
-    element.appendChild(span);
+    const spanContent = letter.charCodeAt(0) === 32 ? "&nbsp;" : letter;
+    newHtml += `<span>${spanContent}</span>`;
   }
 
-  element.classList.add("has-split-text");
+  element.innerHTML = newHtml;
+  element.dataset.splitTextReady = "";
 }

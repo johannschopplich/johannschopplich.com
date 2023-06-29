@@ -19,7 +19,7 @@
       >
 
       <?php if ($image->caption()->isNotEmpty()): ?>
-        <figcaption class="content text-size-xs font-500 py-2 text-center leading-tight">
+        <figcaption class="content text-size-xs leading-[calc(var(--du-line-height-normal)*0.875)] font-500 py-2 text-center">
           <?= $image->caption() ?>
         </figcaption>
       <?php endif ?>

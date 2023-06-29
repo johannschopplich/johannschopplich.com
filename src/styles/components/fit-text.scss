@@ -5,7 +5,7 @@
   text-align: center;
   opacity: 0;
 
-  &.has-split-text {
+  &[data-split-text-ready] {
     opacity: 1;
   }
 }
