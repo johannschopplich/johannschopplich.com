@@ -6,8 +6,8 @@
     ui-sans-serif, system-ui;
   --du-font-family-heading: "Cooper Hewitt", "Cooper Hewitt override",
     ui-sans-serif, system-ui;
-  --du-line-height-heading: calc(1ex / 0.2);
-  --du-line-height-heading-tight: calc(1ex / 0.25);
+  --du-line-height-heading: 1.25; // calc(1ex / 0.2)
+  --du-line-height-heading-tight: 1.05; // calc(1ex / 0.25)
 
   // Project-specific due variables
   --du-decoration-thickness: max(1px, 0.075em);
