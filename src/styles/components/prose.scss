@@ -15,6 +15,7 @@
   :where(h1, h2, h3, h4, h5, h6) {
     font-weight: 700;
     font-family: var(--du-font-family-heading);
+    line-height: calc(1ex / 0.2);
 
     a:not([href^="http"]) {
       color: inherit;
@@ -115,7 +116,6 @@
 
   &.is-article {
     :where(p) {
-      // font-size: 1.05rem;
       line-height: calc(var(--du-line-height-normal) / 0.875);
     }
   }
