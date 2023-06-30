@@ -53,7 +53,6 @@ $heightMap = [
           <?php endif ?>
 
           <img
-            src="<?= $image->thumbhashUri() ?>"
             class="<?= $isMobile
               ? 'h-full w-auto border border-solid border-zinc-900 object-contain rounded-xl'
               : ($isDesktop
