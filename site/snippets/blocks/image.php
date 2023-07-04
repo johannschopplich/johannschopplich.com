@@ -30,7 +30,7 @@ if ($block->location() === 'web') {
             'data-sizes' => 'auto',
             'width' => $image->width(),
             'height' => $image->height(),
-            'style' => 'aspect-ratio: ' . $image->ratio(),
+            'style' => 'aspect-ratio: ' . round($image->ratio(), 2),
             'alt' => $alt->isNotEmpty() ? $alt->escape() : null
         ]
     );

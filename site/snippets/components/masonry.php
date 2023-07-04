@@ -14,7 +14,7 @@
         data-zoomable
         width="<?= $image->width() ?>"
         height="<?= $image->height() ?>"
-        style="aspect-ratio: <?= $image->ratio() ?>"
+        style="aspect-ratio: <?= round($image->ratio(), 2) ?>"
         alt="<?= $image->alt()->or('')->escape() ?>"
       >
 

@@ -49,7 +49,7 @@ return [
                     'width' => $tag->file->width(),
                     'height' => $tag->file->height(),
                     'class' => $tag->imgclass,
-                    'style' => 'aspect-ratio: ' . $tag->file->ratio(),
+                    'style' => 'aspect-ratio: ' . round($tag->file->ratio(), 2),
                     'alt' => $tag->alt
                 ]
             );
