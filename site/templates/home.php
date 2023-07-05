@@ -94,9 +94,9 @@
         <?= $page->contactText()->toBlocks() ?>
         <div class="space-y-2">
           <?php foreach ($page->contact()->toStructure() as $item): ?>
-            <div class="grid grid-cols-3 gap-xl">
+            <div class="grid grid-cols-[auto_1fr] gap-xl md:grid-cols-3">
               <p class="text-contrast-medium"><?= $item->title()->escape() ?></p>
-              <p class="col-start-2 col-end-2"><?= $item->link() ?></p>
+              <p class="md:col-start-2 md:col-end-2"><?= $item->link() ?></p>
             </div>
           <?php endforeach ?>
         </div>
