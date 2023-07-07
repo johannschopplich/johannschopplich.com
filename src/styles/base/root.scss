@@ -2,10 +2,8 @@
   // Increase minimum font size for better legibility
   --du-fluid-min-font-size: 17;
   --du-fluid-max-font-size: 19;
-  --du-font-family-normal: "Iosevka Aile", "Iosevka Aile override",
-    ui-sans-serif, system-ui;
-  --du-font-family-heading: "Cooper Hewitt", "Cooper Hewitt override",
-    ui-sans-serif, system-ui;
+  --du-font-family-normal: "Iosevka Aile", ui-sans-serif, system-ui;
+  --du-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui;
   --du-line-height-heading: 1.25; // calc(1ex / 0.2)
   --du-line-height-heading-tight: 1.05; // calc(1ex / 0.25)
 

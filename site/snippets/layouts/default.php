@@ -40,17 +40,16 @@
 
   <?php if (vite()->isDev()): ?>
     <?= css('assets/dev/index.css?v=' . time(), ['id' => 'vite-dev-css']) ?>
-    <?= css([
-      // Import fonts in development mode, as they aren't correctly served by Vite
-      'assets/fonts/CooperHewitt.css',
-      'assets/fonts/IosevkaAile.css'
-    ]) ?>
-  <?php else: ?>
-    <link rel="preload" href="<?= vite()->file('../public/assets/fonts/woff2/CooperHewitt-Heavy.woff2') ?>" as="font" type="font/woff2" crossorigin>
   <?php endif ?>
 
   <?= vite()->js('main.ts') ?>
   <?= vite()->css('main.ts') ?>
+
+  <?= css([
+    'assets/fonts/CooperHewitt.css',
+    'assets/fonts/IosevkaAile.css'
+  ]) ?>
+  <link rel="preload" href="/assets/fonts/woff2/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>
     <?php $srcDir = vite()->isDev() ? '../src' : 'dist/assets' ?>

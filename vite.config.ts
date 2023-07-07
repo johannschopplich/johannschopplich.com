@@ -2,7 +2,6 @@ import { resolve } from "node:path";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { defineConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
-import { FontaineTransform } from "fontaine";
 import type { Plugin as PostCSSPlugin } from "postcss";
 
 const currentDir = new URL(".", import.meta.url).pathname;
@@ -29,25 +28,7 @@ export default defineConfig(({ mode }) => {
       },
     },
 
-    plugins: [
-      FullReload("site/{snippets,templates}/**/*"),
-      ...(isProd
-        ? [
-            FontaineTransform.vite({
-              fallbacks: [
-                "-apple-system",
-                "Segoe UI",
-                "Roboto",
-                "Helvetica Neue",
-                "Arial",
-              ],
-              resolvePath: (id) =>
-                new URL(`public/assets/fonts/${id}`, import.meta.url),
-              overrideName: (name) => `${name} override`,
-            }),
-          ]
-        : []),
-    ],
+    plugins: [FullReload("site/{snippets,templates}/**/*")],
   };
 });
 

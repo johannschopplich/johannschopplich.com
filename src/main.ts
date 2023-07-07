@@ -1,11 +1,5 @@
 import "./styles/main.scss";
 
-// Vite won't serve fonts correctly in development mode
-if (import.meta.env.PROD) {
-  import("../public/assets/fonts/CooperHewitt.css");
-  import("../public/assets/fonts/IosevkaAile.css");
-}
-
 // Remove temporary stylesheet (to prevent FOUC) in development mode
 if (import.meta.env.DEV) {
   for (const el of document.querySelectorAll(`[id*="vite-dev"]`)) {
