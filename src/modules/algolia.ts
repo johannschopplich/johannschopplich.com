@@ -23,6 +23,6 @@ export async function install() {
   const docsearchButton = document.querySelector(".DocSearch");
   localStorage.setItem(
     "algolia.docsearch.rect",
-    JSON.stringify(docsearchButton?.getBoundingClientRect() ?? {})
+    JSON.stringify(docsearchButton?.getBoundingClientRect() ?? {}),
   );
 }

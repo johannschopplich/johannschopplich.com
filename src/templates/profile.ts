@@ -89,6 +89,6 @@ function registerKeyboardShortcuts(drauu: Drauu) {
 
 function getPrimaryColor() {
   return getComputedStyle(document.documentElement).getPropertyValue(
-    "--du-color-primary"
+    "--du-color-primary",
   );
 }

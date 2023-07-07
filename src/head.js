@@ -11,7 +11,7 @@
   }
 
   const prefersReducedMotion = matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
   if (!prefersReducedMotion && !isBot) {
     root.dataset.animatable = "";

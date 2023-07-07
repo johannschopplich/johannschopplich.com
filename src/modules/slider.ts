@@ -36,14 +36,14 @@ export async function install() {
       if (!entry.isIntersecting) return;
 
       for (const slide of entry.target.querySelectorAll<HTMLElement>(
-        "[data-slide-content]"
+        "[data-slide-content]",
       )) {
         if (!slide.classList.contains("invisible")) continue;
         slide.classList.remove("invisible");
         animate(slide, "fadeInLeft", "animate__");
       }
     },
-    { threshold: 0.25 }
+    { threshold: 0.25 },
   );
 
   // If the slider is not initially in viewport, hide slides and start observer
@@ -51,7 +51,7 @@ export async function install() {
     const rect = element.getBoundingClientRect();
     if (rect.top >= window.innerHeight || rect.bottom <= 0) {
       for (const slide of element.querySelectorAll<HTMLElement>(
-        "[data-slide-content]"
+        "[data-slide-content]",
       )) {
         slide.classList.add("invisible");
       }
