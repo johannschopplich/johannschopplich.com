@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc7da36dd7775db043f12a1159268a6f",
+    "content-hash": "33bf32a38a5ad0f7524e4f2d9358e175",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1229,16 +1229,16 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "4.0.4",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "8dc3aebd791c5497058d6559e5ae692e27fe159c"
+                "reference": "fb072e103d512d6440a205f2a7e83a6e31e0473e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/8dc3aebd791c5497058d6559e5ae692e27fe159c",
-                "reference": "8dc3aebd791c5497058d6559e5ae692e27fe159c",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/fb072e103d512d6440a205f2a7e83a6e31e0473e",
+                "reference": "fb072e103d512d6440a205f2a7e83a6e31e0473e",
                 "shasum": ""
             },
             "require": {
@@ -1287,9 +1287,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v4.0.4"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v4.1.0"
             },
-            "time": "2023-06-22T18:13:54+00:00"
+            "time": "2023-07-07T14:39:23+00:00"
         },
         {
             "name": "johannschopplich/kirby-punctuation-section",
