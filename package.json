@@ -18,7 +18,7 @@
     "drauu": "^0.3.2",
     "duecss": "^0.30.0",
     "medium-zoom": "^1.0.8",
-    "swiper": "^10.0.3",
+    "swiper": "^10.0.4",
     "unlazy": "^0.9.1"
   },
   "devDependencies": {
@@ -26,20 +26,19 @@
     "@iconify-json/bxs": "^1.1.6",
     "@iconify-json/fa-brands": "^1.1.4",
     "@nuxt/eslint-config": "^0.1.1",
-    "@types/node": "^20.4.0",
-    "@unocss/cli": "^0.53.4",
-    "@unocss/preset-wind": "^0.53.4",
+    "@types/node": "^20.4.1",
+    "@unocss/cli": "^0.53.5",
+    "@unocss/preset-wind": "^0.53.5",
     "concurrently": "^8.2.0",
     "esbuild": "^0.18.11",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
-    "fontaine": "^0.4.0",
     "postcss": "^8.4.25",
     "prettier": "^3.0.0",
     "sass": "^1.63.6",
     "typescript": "^5.1.6",
-    "unocss": "^0.53.4",
-    "vite": "^4.4.1",
+    "unocss": "^0.53.5",
+    "vite": "^4.4.2",
     "vite-plugin-full-reload": "^1.0.5"
   }
 }
