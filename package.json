@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.6.6",
+  "packageManager": "pnpm@8.6.7",
   "scripts": {
     "assets:head": "esbuild src/head.js --minify --format=esm --target=es2020 --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{snippets,templates}/**/*\" --out-file src/styles/uno.css",
@@ -15,7 +15,7 @@
     "@docsearch/js": "^3.5.1",
     "animere": "^2.1.1",
     "destr": "^2.0.0",
-    "drauu": "^0.3.2",
+    "drauu": "^0.3.3",
     "duecss": "^0.30.0",
     "medium-zoom": "^1.0.8",
     "swiper": "^10.0.4",
@@ -38,7 +38,7 @@
     "sass": "^1.63.6",
     "typescript": "^5.1.6",
     "unocss": "^0.53.5",
-    "vite": "^4.4.2",
+    "vite": "^4.4.3",
     "vite-plugin-full-reload": "^1.0.5"
   }
 }

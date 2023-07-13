@@ -1,0 +1,16 @@
+name: field.blocks.video.name
+icon: video
+preview: fields
+fields:
+  url:
+    label: field.blocks.video.url.label
+    type: url
+    placeholder: field.blocks.video.url.placeholder
+  caption:
+    label: field.blocks.video.caption
+    type: writer
+    inline: true
+  ratio:
+    label: field.blocks.image.ratio
+    type: text
+    placeholder: 16/9
