@@ -15,7 +15,7 @@ return [
         'articles.all' => 'Alle Artikel',
         'articles.latest' => 'Schriftstücke',
         'articles.more' => 'Ältere Artikel',
-        'articles.popular' => 'Beliebte Artikel',
+        'articles.popular' => 'Artikel, die mir wichtig sind',
         'article.publishedAt' => 'Vom',
         'projects.title' => 'Herzensprojekte',
         'projects.more' => 'Über das Projekt',
