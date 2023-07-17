@@ -19,11 +19,18 @@ $pattern =
     ([\w-]{10,12})  # Allow 10-12 for 11 char YouTube id.
     $%x';
 $id = preg_match($pattern, $block->url()->value(), $matches) ? $matches[1] : null;
-
 if (!$id) return;
+
+/** @var \Kirby\Cms\File $image */
+$image = $block->thumbnail()->toFile();
+$bg = $image?->thumb([
+  'width' => 1280,
+  'quality' => 70
+])->url();
+
 ?>
 <figure>
-  <lite-youtube videoid="<?= $id ?>" style="aspect-ratio: <?= $block->ratio()->or("16/9") ?>"></lite-youtube>
+  <lite-youtube videoid="<?= $id ?>" style="<?= $bg ? "background-image: url({$bg});" : null ?>aspect-ratio: <?= $block->ratio()->or("16/9") ?>;"></lite-youtube>
   <?php if ($block->caption()->isNotEmpty()): ?>
     <figcaption><?= $block->caption() ?></figcaption>
   <?php endif ?>

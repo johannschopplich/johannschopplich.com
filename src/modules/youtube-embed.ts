@@ -1,5 +1,5 @@
 export function install() {
-  customElements.define("lite-youtube", LiteYTEmbed);
+  customElements.define("lite-youtube", LiteYouTubeEmbed);
 }
 
 /**
@@ -7,9 +7,9 @@ export function install() {
  *
  * @see https://github.com/paulirish/lite-youtube-embed
  */
-class LiteYTEmbed extends HTMLElement {
+class LiteYouTubeEmbed extends HTMLElement {
   videoId: string = "";
-  playLabel: string = "Play";
+  playLabel: string = "";
   needsYouTubeApi: boolean = false;
   vendorApiPromise: Promise<void> | undefined = undefined;
 
@@ -20,9 +20,9 @@ class LiteYTEmbed extends HTMLElement {
 
     let playBtnEl = this.querySelector<HTMLButtonElement>(".lty-playbtn");
 
-    // A label for the button takes priority over a [playlabel] attribute on the custom-element
+    // A label for the button takes priority over a `playlabel` attribute on the custom element
     this.playLabel =
-      (playBtnEl && playBtnEl?.textContent?.trim()) ||
+      playBtnEl?.textContent?.trim() ||
       this.getAttribute("playlabel") ||
       "Play";
 
@@ -48,7 +48,7 @@ class LiteYTEmbed extends HTMLElement {
     playBtnEl.removeAttribute("href");
 
     // On hover (or tap), warm up the TCP connections we're (likely) about to use.
-    this.addEventListener("pointerover", LiteYTEmbed.warmConnections, {
+    this.addEventListener("pointerover", LiteYouTubeEmbed.warmConnections, {
       once: true,
     });
 
@@ -60,7 +60,7 @@ class LiteYTEmbed extends HTMLElement {
     // Chrome & Edge desktop have no problem with the basic YouTube Embed with ?autoplay=1
     // However Safari desktop and most/all mobile browsers do not successfully track the user gesture of clicking through the creation/loading of the iframe,
     // so they don't autoplay automatically. Instead we must load an additional 2 sequential JS files (1KB + 165KB) (un-br) for the YT Player API
-    // TODO: Try loading the the YT API in parallel with our iframe and then attaching/playing it. #82
+    // TODO: Try loading the the YouTube API in parallel with our iframe and then attaching/playing it. #82
     this.needsYouTubeApi =
       navigator?.vendor?.includes("Apple") ||
       navigator.userAgent.includes("Mobi");
@@ -83,31 +83,33 @@ class LiteYTEmbed extends HTMLElement {
    * Since the embed's network requests load within its iframe,
    *   preload/prefetch'ing them outside the iframe will only cause double-downloads.
    * So, the best we can do is warm up a few connections to origins that are in the critical path.
-   *
-   * Maybe `<link rel=preload as=document>` would work, but it's unsupported: http://crbug.com/593267
-   * But TBH, I don't think it'll happen soon with Site Isolation and split caches adding serious complexity.
    */
   static warmConnections() {
-    if (LiteYTEmbed.preconnected) return;
+    if (LiteYouTubeEmbed.preconnected) return;
 
     // The iframe document and most of its subresources come right off youtube.com
-    LiteYTEmbed.addPrefetch("preconnect", "https://www.youtube-nocookie.com");
+    LiteYouTubeEmbed.addPrefetch(
+      "preconnect",
+      "https://www.youtube-nocookie.com",
+    );
     // The botguard script is fetched off from google.com
-    LiteYTEmbed.addPrefetch("preconnect", "https://www.google.com");
+    LiteYouTubeEmbed.addPrefetch("preconnect", "https://www.google.com");
 
     // Not certain if these ad related domains are in the critical path. Could verify with domain-specific throttling.
-    LiteYTEmbed.addPrefetch(
+    LiteYouTubeEmbed.addPrefetch(
       "preconnect",
       "https://googleads.g.doubleclick.net",
     );
-    LiteYTEmbed.addPrefetch("preconnect", "https://static.doubleclick.net");
+    LiteYouTubeEmbed.addPrefetch(
+      "preconnect",
+      "https://static.doubleclick.net",
+    );
 
-    LiteYTEmbed.preconnected = true;
+    LiteYouTubeEmbed.preconnected = true;
   }
 
-  fetchYTPlayerApi() {
-    // @ts-expect-error: missing property on window
-    if (window.YT || (window.YT && window.YT.Player)) return;
+  fetchVendorPlayerApi() {
+    if ((window as any).YT) return;
 
     this.vendorApiPromise = new Promise<void>((resolve, reject) => {
       const script = document.createElement("script");
@@ -121,8 +123,8 @@ class LiteYTEmbed extends HTMLElement {
     });
   }
 
-  async addYTPlayerIframe(params: URLSearchParams) {
-    this.fetchYTPlayerApi();
+  async addVendorPlayerIframe(params: URLSearchParams) {
+    this.fetchVendorPlayerApi();
     await this.vendorApiPromise;
 
     const videoPlaceholderEl = document.createElement("div");
@@ -149,13 +151,12 @@ class LiteYTEmbed extends HTMLElement {
     params.append("playsinline", "1");
 
     if (this.needsYouTubeApi) {
-      return this.addYTPlayerIframe(params);
+      return this.addVendorPlayerIframe(params);
     }
 
     const iframeEl = document.createElement("iframe");
     iframeEl.width = "560";
     iframeEl.height = "315";
-
     iframeEl.title = this.playLabel;
     iframeEl.allow =
       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
@@ -166,6 +167,7 @@ class LiteYTEmbed extends HTMLElement {
     iframeEl.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(
       this.videoId,
     )}?${params.toString()}`;
+
     this.append(iframeEl);
 
     // Set focus for a11y

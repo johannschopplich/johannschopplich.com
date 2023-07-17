@@ -14,3 +14,12 @@ fields:
     label: field.blocks.image.ratio
     type: text
     placeholder: 16/9
+  thumbnail:
+    label:
+      de: Vorschaubild
+      en: Thumbnail
+    type: files
+    query: page.files.template("image")
+    uploads:
+      template: image
+    multiple: false
