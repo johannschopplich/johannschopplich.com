@@ -44,6 +44,7 @@
 
     @include breakpoints.media-below(sm) {
       margin-left: -1.125rem;
+      margin-right: -1.125rem;
     }
 
     @include breakpoints.media-above(sm) {
