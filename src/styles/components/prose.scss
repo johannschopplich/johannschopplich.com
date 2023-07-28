@@ -64,16 +64,16 @@
     @include breakpoints.media-above(lg) {
       &.is-pulled-left,
       &.is-pulled-right {
-        width: 60%;
+        width: 50%;
       }
 
       &.is-pulled-left,
       &.is-pulled-right {
-        margin-right: calc(-60% - 2rem);
+        margin-right: calc(-50% - 2rem);
       }
 
       &.is-outset {
-        margin-right: calc(-30% - 2rem);
+        margin-right: calc(-25% - 2rem);
       }
     }
   }
