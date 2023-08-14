@@ -4,28 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49830e47e0975d40fdcfb58061f684aa",
+    "content-hash": "43ba264782caaee94659ca963364deca",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
-            "version": "3.3.2",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "cbd07bc0bb7303ff71e238d2d6284ef8469e1d5a"
+                "reference": "df4508d6ca85700d2df9b556edd18696f37fb2cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/cbd07bc0bb7303ff71e238d2d6284ef8469e1d5a",
-                "reference": "cbd07bc0bb7303ff71e238d2d6284ef8469e1d5a",
+                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/df4508d6ca85700d2df9b556edd18696f37fb2cd",
+                "reference": "df4508d6ca85700d2df9b556edd18696f37fb2cd",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "php": "^7.2 || ^8.0",
-                "psr/http-message": "^1.0",
+                "php": "^7.3 || ^8.0",
+                "psr/http-message": "^1.0 || ^2.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
                 "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
             },
@@ -76,9 +76,9 @@
             ],
             "support": {
                 "issues": "https://github.com/algolia/algoliasearch-client-php/issues",
-                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.3.2"
+                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.4.0"
             },
-            "time": "2022-09-22T08:21:13+00:00"
+            "time": "2023-08-10T09:34:00+00:00"
         },
         {
             "name": "bnomei/kirby3-feed",
@@ -525,16 +525,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "3.9.5",
+            "version": "3.9.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "6b5dda600472b59a3a779f7e6b8e9e130cc414a1"
+                "reference": "ee2669e6dd091399fd7981381e1bd8cbd94d90a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/6b5dda600472b59a3a779f7e6b8e9e130cc414a1",
-                "reference": "6b5dda600472b59a3a779f7e6b8e9e130cc414a1",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/ee2669e6dd091399fd7981381e1bd8cbd94d90a6",
+                "reference": "ee2669e6dd091399fd7981381e1bd8cbd94d90a6",
                 "shasum": ""
             },
             "require": {
@@ -622,7 +622,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-06-07T12:10:15+00:00"
+            "time": "2023-07-31T10:54:06+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -930,16 +930,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "3a494dc7dc1d7d12e511890177ae2d0e6c107da6"
+                "reference": "111166291a0f8130081195ac4556a5587d7f1b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/3a494dc7dc1d7d12e511890177ae2d0e6c107da6",
-                "reference": "3a494dc7dc1d7d12e511890177ae2d0e6c107da6",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/111166291a0f8130081195ac4556a5587d7f1b5d",
+                "reference": "111166291a0f8130081195ac4556a5587d7f1b5d",
                 "shasum": ""
             },
             "require": {
@@ -993,7 +993,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.0.0"
+                "source": "https://github.com/guzzle/promises/tree/2.0.1"
             },
             "funding": [
                 {
@@ -1009,20 +1009,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-05-21T13:50:22+00:00"
+            "time": "2023-08-03T15:11:55+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "b635f279edd83fc275f822a1188157ffea568ff6"
+                "reference": "8bd7c33a0734ae1c5d074360512beb716bef3f77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/b635f279edd83fc275f822a1188157ffea568ff6",
-                "reference": "b635f279edd83fc275f822a1188157ffea568ff6",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/8bd7c33a0734ae1c5d074360512beb716bef3f77",
+                "reference": "8bd7c33a0734ae1c5d074360512beb716bef3f77",
                 "shasum": ""
             },
             "require": {
@@ -1109,7 +1109,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.5.0"
+                "source": "https://github.com/guzzle/psr7/tree/2.6.0"
             },
             "funding": [
                 {
@@ -1125,24 +1125,24 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-17T16:11:26+00:00"
+            "time": "2023-08-03T15:06:02+00:00"
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.4.0",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "dea67590a2dda8dc056c25d0685dd1874e1efc3a"
+                "reference": "0b5cdc82746083797e9ae72329166b16d04b17d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/dea67590a2dda8dc056c25d0685dd1874e1efc3a",
-                "reference": "dea67590a2dda8dc056c25d0685dd1874e1efc3a",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/0b5cdc82746083797e9ae72329166b16d04b17d9",
+                "reference": "0b5cdc82746083797e9ae72329166b16d04b17d9",
                 "shasum": ""
             },
             "require": {
-                "algolia/algoliasearch-client-php": "^3.3",
+                "algolia/algoliasearch-client-php": "^3.4",
                 "getkirby/composer-installer": "^1.2"
             },
             "require-dev": {
@@ -1175,22 +1175,22 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.4.0"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.4.1"
             },
-            "time": "2023-06-19T21:03:10+00:00"
+            "time": "2023-08-14T11:47:53+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
-            "version": "1.5.8",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-headless.git",
-                "reference": "027d9aefd927ea58ea1ba023392a6e2e766f34fe"
+                "reference": "7f757edd9af903737b6a21978368909aea5a38f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/027d9aefd927ea58ea1ba023392a6e2e766f34fe",
-                "reference": "027d9aefd927ea58ea1ba023392a6e2e766f34fe",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/7f757edd9af903737b6a21978368909aea5a38f1",
+                "reference": "7f757edd9af903737b6a21978368909aea5a38f1",
                 "shasum": ""
             },
             "require": {
@@ -1223,9 +1223,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-headless/issues",
-                "source": "https://github.com/johannschopplich/kirby-headless/tree/v1.5.8"
+                "source": "https://github.com/johannschopplich/kirby-headless/tree/v1.6.0"
             },
-            "time": "2023-06-23T04:26:07+00:00"
+            "time": "2023-08-01T20:27:57+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
@@ -1797,16 +1797,16 @@
         },
         {
             "name": "psr/http-message",
-            "version": "1.1",
+            "version": "2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/http-message.git",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba"
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/http-message/zipball/cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
-                "reference": "cb6ce4845ce34a8ad9e68117c10ee90a29919eba",
+                "url": "https://api.github.com/repos/php-fig/http-message/zipball/402d35bcb92c70c026d1a6a9883f06b2ead23d71",
+                "reference": "402d35bcb92c70c026d1a6a9883f06b2ead23d71",
                 "shasum": ""
             },
             "require": {
@@ -1815,7 +1815,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "2.0.x-dev"
                 }
             },
             "autoload": {
@@ -1830,7 +1830,7 @@
             "authors": [
                 {
                     "name": "PHP-FIG",
-                    "homepage": "http://www.php-fig.org/"
+                    "homepage": "https://www.php-fig.org/"
                 }
             ],
             "description": "Common interface for HTTP messages",
@@ -1844,9 +1844,9 @@
                 "response"
             ],
             "support": {
-                "source": "https://github.com/php-fig/http-message/tree/1.1"
+                "source": "https://github.com/php-fig/http-message/tree/2.0"
             },
-            "time": "2023-04-04T09:50:52+00:00"
+            "time": "2023-04-04T09:54:51+00:00"
         },
         {
             "name": "psr/log",
@@ -2165,16 +2165,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v6.3.0",
+            "version": "v6.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "d9b01ba073c44cef617c7907ce2419f8d00d75e2"
+                "reference": "9915db259f67d21eefee768c1abcf1cc61b1fc9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/d9b01ba073c44cef617c7907ce2419f8d00d75e2",
-                "reference": "d9b01ba073c44cef617c7907ce2419f8d00d75e2",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/9915db259f67d21eefee768c1abcf1cc61b1fc9e",
+                "reference": "9915db259f67d21eefee768c1abcf1cc61b1fc9e",
                 "shasum": ""
             },
             "require": {
@@ -2209,7 +2209,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v6.3.0"
+                "source": "https://github.com/symfony/finder/tree/v6.3.3"
             },
             "funding": [
                 {
@@ -2225,7 +2225,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-04-02T01:25:41+00:00"
+            "time": "2023-07-31T08:31:44+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

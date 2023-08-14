@@ -7,7 +7,7 @@
     "johannschopplich/kirby-headless": "^1.5",
     "johannschopplich/kirby-algolia-docsearch": "^0.4",
     "bnomei/kirby3-feed": "^1.5",
-    "bnomei/kirby3-janitor": "^3.4",
+    "bnomei/kirby3-janitor": "^3.10",
     "tobimori/kirby-thumbhash": "^1.0"
   },
   "scripts": {
