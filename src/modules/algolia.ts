@@ -16,8 +16,9 @@ export async function install() {
     placeholder: {
       en: "Search Site",
       de: "Seite durchsuchen",
-    }?.[lang],
-    translations: locales?.[lang],
+    }[lang],
+    translations: locales[lang],
+    insights: true,
   });
 
   const docsearchButton = document.querySelector(".DocSearch");
