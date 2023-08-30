@@ -2,6 +2,8 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+
+$emojis = ['🙋‍♂️', '🙆‍♂️', '🌻', '🙌', '🦦'];
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -13,7 +15,7 @@
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <?php snippet('components/sticker', ['emoji' => '🙋‍♂️']) ?>
+              <?php snippet('components/sticker', ['emoji' => $emojis[array_rand($emojis)]]) ?>
             </h1>
           <?php else: ?>
             <div class="max-w-prose">
