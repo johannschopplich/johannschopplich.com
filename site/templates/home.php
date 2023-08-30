@@ -13,7 +13,7 @@
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <?php snippet('components/sticker', ['emoji' => '🌻']) ?>
+              <?php snippet('components/sticker', ['emoji' => '🙋‍♂️']) ?>
             </h1>
           <?php else: ?>
             <div class="max-w-prose">
