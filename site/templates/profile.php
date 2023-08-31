@@ -35,11 +35,11 @@
         </div>
       <?php endif ?>
 
-      <div class="prose px-lg sm:px-0">
+      <div class="prose px-lg sm:px-0 xl:flex xl:flex-col xl:pb-[2.25rem]">
         <?php foreach ($page->bio()->toBlocks() as $block): ?>
           <?php /** @var \Kirby\Cms\Block $block */ ?>
           <?php if ($block->type() === 'heading'): ?>
-            <h1 class="headline"><?= $block->text() ?></h1>
+            <h1 class="headline xl:mb-auto"><?= $block->text() ?></h1>
           <?php else: ?>
             <?= $block ?>
           <?php endif ?>
