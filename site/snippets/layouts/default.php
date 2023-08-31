@@ -4,8 +4,7 @@
 /** @var \Kirby\Cms\Page $page */
 ?>
 <!--
-  Interested in the source code of this website?
-  Visit https://github.com/johannschopplich/johannschopplich.com
+https://github.com/johannschopplich/johannschopplich.com
 -->
 <!DOCTYPE html>
 <html class="var-color-primary var-color-primary-200" data-theme="light" lang="<?= $kirby->languageCode() ?>">
