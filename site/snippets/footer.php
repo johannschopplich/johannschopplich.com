@@ -8,8 +8,7 @@
   <div class="grid grid-cols-[1fr_auto] gap-1 sm:grid-cols-[1fr_auto_auto] sm:gap-lg">
     <div class="gap-xs font-500 flex items-center">
       <p>© <?= date('Y') ?> Johann Schopplich</p>
-      <a href="https://www.instagram.com/johannschopplich/" class="i-fa-brands-instagram" aria-label="Instagram"></a>
-      <a href="https://github.com/johannschopplich" class="i-fa-brands-github" aria-label="GitHub"></a>
+      <a href="https://byjohann.link">byjohann.link</a>
     </div>
 
     <div class="gap-lg font-500 row-start-2 flex sm:row-start-auto">
