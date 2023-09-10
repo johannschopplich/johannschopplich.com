@@ -9,6 +9,9 @@ return [
     'name' => 'Deutsch',
 
     'translations' => [
+        'languages.switch' => 'auf',
+        'languages.de' => 'Deutsch',
+        'languages.en' => 'Englisch',
         'theme.switch' => 'Farbschema wechseln',
         'home' => 'Startseite',
         'contact' => 'Kontakt',
