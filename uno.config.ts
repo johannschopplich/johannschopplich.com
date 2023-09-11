@@ -61,7 +61,7 @@ export default defineConfig<Theme>({
         display: "inline-block",
         height: "1.25em",
         width: "1.25em",
-        "vertical-align": "text-bottom",
+        "vertical-align": "middle",
       },
     }),
     presetDue(),

@@ -9,7 +9,7 @@ return [
     'name' => 'Deutsch',
 
     'translations' => [
-        'languages.switch' => 'auf',
+        'languages.switch' => 'Zu {language} wechseln',
         'languages.de' => 'Deutsch',
         'languages.en' => 'Englisch',
         'theme.switch' => 'Farbschema wechseln',
