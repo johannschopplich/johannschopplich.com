@@ -22,6 +22,10 @@ export default defineConfig(({ mode }) => {
       },
     },
 
+    define: {
+      __ENABLE_HASH_DECODING__: false,
+    },
+
     css: {
       postcss: {
         ...(!isProd && { plugins: [exportDevStyles()] }),

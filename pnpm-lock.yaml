@@ -30,8 +30,8 @@ dependencies:
     specifier: ^10.2.0
     version: 10.2.0
   unlazy:
-    specifier: ^0.9.5
-    version: 0.9.5
+    specifier: ^0.10.0
+    version: 0.10.0
 
 devDependencies:
   '@iconify-json/bx':
@@ -987,8 +987,8 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
-  /@unlazy/core@0.9.5:
-    resolution: {integrity: sha512-gZ5OENxkirdvWImRIct2rr/ikkl3uq1R4tEsqVlljXB90MsJNqOI8wz9MGw6ehRDP/yu/bLoxDvc22NYTkLHlA==}
+  /@unlazy/core@0.10.0:
+    resolution: {integrity: sha512-+bkbfypn7j4PM5YtP95t4CDZWeomoHNmBNk4MT83kHcEwILov3M8BGXYTbqXTN5ApcRjAeD3F9LiGEDMOd/SOQ==}
     dev: false
 
   /@unocss/astro@0.55.7(vite@4.4.9):
@@ -2326,10 +2326,10 @@ packages:
       jiti: 1.20.0
       mlly: 1.4.2
 
-  /unlazy@0.9.5:
-    resolution: {integrity: sha512-VpoU5v3CRK26olohIxBcjZryzrJBiB6W2kskBS7fYkZYFfIR/YPd9gjsHwre6TVblOhqi6V0qCakhns+dptYrw==}
+  /unlazy@0.10.0:
+    resolution: {integrity: sha512-PJhid1mzjB9UUd3RUBe9v6BwrUNtVkaPF/MW3P5caaY7Xd25VFzMQOqc9cMnNeusgyJ+ouUUggNdwCqQQXKnTA==}
     dependencies:
-      '@unlazy/core': 0.9.5
+      '@unlazy/core': 0.10.0
     dev: false
 
   /unocss@0.55.7(postcss@8.4.29)(vite@4.4.9):
