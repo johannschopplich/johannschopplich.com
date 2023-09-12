@@ -20,7 +20,7 @@ https://github.com/johannschopplich/johannschopplich.com
   <?= $meta->jsonld() ?>
   <?= $meta->social() ?>
 
-  <meta name="theme-color" content="#c9787c">
+  <meta name="theme-color" content="#fefcf8">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="<?= $site->title()->escape() ?>">
