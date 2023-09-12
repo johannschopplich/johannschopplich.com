@@ -7,7 +7,7 @@ $inactiveLanguage = $kirby
   ->filter(fn ($language) => $language->code() !== $kirby->language()->code())
   ->first();
 ?>
-<footer class="content sticky top-100vh bg-contrast-lower font-heading py-3xl">
+<footer class="content sticky top-100vh bg-contrast-lower font-heading py-3xl du-dark:bg-contrast-lowest">
   <div class="mb-8xl">
     <a href="<?= $site->url() ?>" class="inline-block -ml-2" aria-label="<?= t('home') ?>">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.6 247.5" class="w-16 h-16" aria-hidden="true">
@@ -16,7 +16,7 @@ $inactiveLanguage = $kirby
     </a>
   </div>
 
-  <div class="border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-500">
+  <div class="border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-600">
     <span class="text-primary mr-1 i-bx-globe" aria-hidden="true"></span>
     <a
       href="<?= $page->url($inactiveLanguage->code()) ?>"
