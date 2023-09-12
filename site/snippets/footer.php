@@ -17,7 +17,7 @@ $inactiveLanguage = $kirby
   </div>
 
   <div class="border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-600">
-    <span class="text-primary mr-1 i-bx-globe" aria-hidden="true"></span>
+    <span class="text-primary mr-1 i-pixelarticons-flag" aria-hidden="true"></span>
     <a
       href="<?= $page->url($inactiveLanguage->code()) ?>"
       hreflang="<?= $inactiveLanguage->code() ?>"
@@ -28,7 +28,7 @@ $inactiveLanguage = $kirby
   </div>
 
   <div class="grid grid-cols-[1fr_auto] gap-1 sm:grid-cols-[1fr_auto_auto] sm:gap-lg">
-    <div class="font-500 flex flex-col md:flex-row md:items-center md:gap-xs">
+    <div class="font-500 flex flex-col gap-1 md:flex-row md:items-center md:gap-xs">
       <p>© <?= date('Y') ?> Johann Schopplich</p>
       <a href="https://byjohann.link">byjohann.link</a>
     </div>
@@ -42,7 +42,7 @@ $inactiveLanguage = $kirby
     </div>
 
     <button
-      class="!hover:text-primary translate-y-[0.1em] du-light:i-bxs-moon du-dark:i-bx-bxs-sun"
+      class="!hover:text-primary translate-y-[0.1em] du-light:i-pixelarticons-moon-star du-dark:i-pixelarticons-sun-alt"
       aria-label="<?= t('theme.switch') ?>"
       data-theme-switcher
     ></button>

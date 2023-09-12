@@ -3,7 +3,13 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 
+$root = dirname(__DIR__, 2);
+
 $emojis = ['🙋‍♂️', '🙆‍♂️', '🌻', '🙌', '🦦'];
+$svgs = array_map(
+  fn ($file) => \Kirby\Filesystem\F::read($file),
+  glob($root . '/public/assets/img/icons/*.svg')
+);
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -15,7 +21,7 @@ $emojis = ['🙋‍♂️', '🙆‍♂️', '🌻', '🙌', '🦦'];
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <?php snippet('components/sticker', ['emoji' => $emojis[array_rand($emojis)]]) ?>
+              <?php snippet('components/sticker', ['svg' => $svgs[array_rand($svgs)]]) ?>
             </h1>
           <?php else: ?>
             <div class="max-w-prose">
