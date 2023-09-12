@@ -21,7 +21,9 @@ $svgs = array_map(
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <?php snippet('components/sticker', ['svg' => $svgs[array_rand($svgs)]]) ?>
+              <div class="inline-block h-[0.825em] ml-1 select-none [&>svg]:w-auto [&>svg]:h-full">
+                <?= $svgs[array_rand($svgs)] ?>
+              </div>
             </h1>
           <?php else: ?>
             <div class="max-w-prose">
