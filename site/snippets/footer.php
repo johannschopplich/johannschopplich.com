@@ -16,8 +16,8 @@ $inactiveLanguage = $kirby
     </a>
   </div>
 
-  <div class="flex items-center gap-1.5 border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-500">
-    <span class="text-primary i-bx-globe" aria-hidden="true"></span>
+  <div class="border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-500">
+    <span class="text-primary mr-1 i-bx-globe" aria-hidden="true"></span>
     <a
       href="<?= $page->url($inactiveLanguage->code()) ?>"
       hreflang="<?= $inactiveLanguage->code() ?>"
