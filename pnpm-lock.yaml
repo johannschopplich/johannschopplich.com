@@ -40,9 +40,6 @@ devDependencies:
   '@iconify-json/bxs':
     specifier: ^1.1.7
     version: 1.1.7
-  '@iconify-json/pixelarticons':
-    specifier: ^1.1.7
-    version: 1.1.7
   '@nuxt/eslint-config':
     specifier: ^0.2.0
     version: 0.2.0(eslint@8.49.0)
@@ -739,12 +736,6 @@ packages:
 
   /@iconify-json/bxs@1.1.7:
     resolution: {integrity: sha512-oZlJtaJYnPYVF9MZyz9NQ80tLx23AE2Cni+Fxj+qv3THNewAaHob5Q64Auslxm3+fTDZxdz6mwxT6z+/jeOC4g==}
-    dependencies:
-      '@iconify/types': 2.0.0
-    dev: true
-
-  /@iconify-json/pixelarticons@1.1.7:
-    resolution: {integrity: sha512-YnY+sOcsIFt90My6ZtKjDnkhu8quJ5dmPmIiuaax311i2s4jZhuyQUiJrJ3eMhNsZlKlyNZCx+Lx/gu3BXkaEg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
