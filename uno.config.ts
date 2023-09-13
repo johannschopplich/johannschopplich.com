@@ -45,6 +45,7 @@ export default defineConfig<Theme>({
   shortcuts: {
     content: "px-lg md:px-3xl",
     "content-breakout": "-mx-lg md:mx-0",
+    icon: "inline-block w-[1.25em] h-[1.25em] align-text-bottom [&>svg]:w-full [&>svg]:h-full",
     "cta-button":
       "text-size-xs leading-heading-tight font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
     tag: "text-size-xs leading-heading-tight font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",

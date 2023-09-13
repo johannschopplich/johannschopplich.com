@@ -9,10 +9,11 @@ return [
     'name' => 'Deutsch',
 
     'translations' => [
-        'languages.switch' => 'Zu {language} wechseln',
+        'languages.switch' => 'Auf {language} lesen',
         'languages.de' => 'Deutsch',
         'languages.en' => 'Englisch',
         'theme.switch' => 'Farbschema wechseln',
+        'theme.switch.short' => 'Farbe',
         'home' => 'Startseite',
         'contact' => 'Kontakt',
         'articles.all' => 'Alle Artikel',

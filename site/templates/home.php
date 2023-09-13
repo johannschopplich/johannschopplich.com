@@ -4,10 +4,11 @@
 /** @var \Kirby\Cms\Page $page */
 
 $root = dirname(__DIR__, 2);
-$svgs = glob($root . '/public/assets/img/icons/*.svg');
+$icons = glob($root . '/public/assets/img/icons/*.svg');
+$filteredIcons = array_filter($icons, fn ($file) => !str_starts_with(basename(($file)), '_'));
 
-$randomIndex = array_rand($svgs);
-$svg = \Kirby\Filesystem\F::read($svgs[$randomIndex]);
+$randomIndex = array_rand($filteredIcons);
+$svg = \Kirby\Filesystem\F::read($filteredIcons[$randomIndex]);
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>

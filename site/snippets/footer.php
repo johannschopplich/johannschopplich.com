@@ -16,35 +16,37 @@ $inactiveLanguage = $kirby
     </a>
   </div>
 
-  <div class="border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-600">
-    <span class="text-primary mr-1 i-pixelarticons-flag" aria-hidden="true"></span>
-    <a
-      href="<?= $page->url($inactiveLanguage->code()) ?>"
-      hreflang="<?= $inactiveLanguage->code() ?>"
-      class="font-500"
-    >
-      <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
-    </a>
-  </div>
-
-  <div class="grid grid-cols-[1fr_auto] gap-1 sm:grid-cols-[1fr_auto_auto] sm:gap-lg">
-    <div class="font-500 flex flex-col gap-1 md:flex-row md:items-center md:gap-xs">
-      <p>© <?= date('Y') ?> Johann Schopplich</p>
-      <a href="https://byjohann.link">byjohann.link</a>
+  <div class="font-500">
+    <div class="flex gap-lg justify-between border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-600">
+      <a
+        href="<?= $page->url($inactiveLanguage->code()) ?>"
+        hreflang="<?= $inactiveLanguage->code() ?>"
+        class="inline-block"
+      >
+        <span class="mr-1 icon" aria-hidden="true">
+          <?= icon('_earth.svg') ?>
+        </span>
+        <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
+      </a>
+      <button
+        class="w-max hover:text-primary"
+        data-theme-switcher
+      >
+        <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('_sun.svg') ?></span>
+        <span class="mr-1 icon du-light:hidden" aria-hidden="true"><?= icon('_moon.svg') ?></span>
+        <span class="sm:hidden"><?= t('theme.switch.short') ?></span>
+        <span class="hidden sm:inline"><?= t('theme.switch') ?></span>
+      </button>
     </div>
 
-    <div class="gap-lg font-500 row-start-2 flex sm:row-start-auto">
+    <div class="flex flex-col gap-1 md:flex-row md:gap-lg md:justify-between">
+      <a href="https://byjohann.link" class="text-underline md:mr-auto">byjohann.link</a>
+
       <?php foreach ($site->footerPages()->toPages() as $p): ?>
         <a href="<?= $p->url() ?>">
           <?= $p->title() ?>
         </a>
       <?php endforeach ?>
     </div>
-
-    <button
-      class="!hover:text-primary translate-y-[0.1em] du-light:i-pixelarticons-moon-star du-dark:i-pixelarticons-sun-alt"
-      aria-label="<?= t('theme.switch') ?>"
-      data-theme-switcher
-    ></button>
   </div>
 </footer>

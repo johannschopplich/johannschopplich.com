@@ -1,6 +1,11 @@
 <?php
 
-\Kirby\Cms\App::plugin('johannschopplich/personal-website', [
+use Kirby\Cms\App;
+use Kirby\Cms\Html;
+use Kirby\Http\Url;
+use Kirby\Toolkit\Str;
+
+App::plugin('johannschopplich/personal-website', [
     'hooks' => [
         'kirbytags:before' => function ($text) {
             return str_replace('\(', '[[', str_replace('\)', ']]', $text));
@@ -26,5 +31,31 @@ if (!function_exists('dateFormatter')) {
             IntlDateFormatter::LONG,
             IntlDateFormatter::NONE
         );
+    }
+}
+
+if (!function_exists('icon')) {
+    /**
+     * Returns an SVG icon from the `assets/img/icons` directory
+     */
+    function icon(string $symbol, string|null $class = null)
+    {
+        $kirby = App::instance();
+        $iconDir = $kirby->root('index') . '/assets/img/icons/';
+        $symbolPath = Url::path($symbol, false);
+
+        if (!str_ends_with($symbol, '.svg')) {
+            return;
+        }
+
+        $svg = Html::svg($iconDir . $symbolPath);
+
+        $attributes = Html::attr([
+            'class' => $class,
+            'aria-hidden' => 'true',
+            'focusable' => 'false'
+        ]);
+
+        return Str::replace($svg, '<svg', '<svg ' . $attributes, 1);
     }
 }
