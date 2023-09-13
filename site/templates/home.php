@@ -21,7 +21,7 @@ $svg = \Kirby\Filesystem\F::read($svgs[$randomIndex]);
               <?= $block->text() ?>
               <div class="relative inline-block h-[0.825em] select-none animate-duration-[750ms] [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
                 <?= $svg ?>
-                <span class="absolute -inset-8"></span>
+                <span class="absolute -inset-6"></span>
               </div>
             </h1>
           <?php else: ?>
