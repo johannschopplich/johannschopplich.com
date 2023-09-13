@@ -12,8 +12,8 @@ dependencies:
     specifier: ^3.5.2
     version: 3.5.2(@algolia/client-search@4.20.0)(search-insights@2.8.2)
   animere:
-    specifier: ^2.1.1
-    version: 2.1.1
+    specifier: ^3.0.0
+    version: 3.0.0
   destr:
     specifier: ^2.0.1
     version: 2.0.1
@@ -1203,8 +1203,8 @@ packages:
       '@algolia/transporter': 4.20.0
     dev: false
 
-  /animere@2.1.1:
-    resolution: {integrity: sha512-G3pt+mew5uL+apwTUKwcruGTOA8VuZ3KoMujOrlRvnlMONHzZ4PbKTK8khJ7Ehl91ulKtTfQfgehG4sG95g+lg==}
+  /animere@3.0.0:
+    resolution: {integrity: sha512-1a2mk/ltNLiYJkfTmMIekEkxw6IUEFHMsoeMHuwerkfc/lQOSpq3sbuHJ26txi41ojkpg+LQbGrqGL7KhpFr7A==}
     dev: false
 
   /ansi-regex@5.0.1:

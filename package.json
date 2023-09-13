@@ -13,7 +13,7 @@
   "dependencies": {
     "@docsearch/css": "^3.5.2",
     "@docsearch/js": "^3.5.2",
-    "animere": "^2.1.1",
+    "animere": "^3.0.0",
     "destr": "^2.0.1",
     "drauu": "^0.3.6",
     "duecss": "^0.30.0",

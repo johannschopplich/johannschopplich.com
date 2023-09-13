@@ -1,7 +1,7 @@
-import Animere from "animere";
+import { createAnimere } from "animere";
 
 export function install() {
-  new Animere({
+  createAnimere({
     shouldInitialize: () => "animatable" in document.documentElement.dataset,
   });
 }
