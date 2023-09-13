@@ -5,7 +5,7 @@ $icons = array_map(
   fn ($file) => basename($file),
   glob($root . '/public/assets/img/icons/*.svg')
 );
-$filteredIcons = array_filter($icons, fn ($file) => !str_starts_with($file, '_'));
+$filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_with($file, '_')));
 
 $data = [
     'algolia' => [

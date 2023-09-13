@@ -1,6 +1,6 @@
 <?php
 
-use \Kirby\Toolkit\I18n;
+use Kirby\Toolkit\I18n;
 
 $inactiveLanguage = $kirby
   ->languages()
