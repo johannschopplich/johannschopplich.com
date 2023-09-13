@@ -4,12 +4,10 @@
 /** @var \Kirby\Cms\Page $page */
 
 $root = dirname(__DIR__, 2);
+$svgs = glob($root . '/public/assets/img/icons/*.svg');
 
-$emojis = ['🙋‍♂️', '🙆‍♂️', '🌻', '🙌', '🦦'];
-$svgs = array_map(
-  fn ($file) => \Kirby\Filesystem\F::read($file),
-  glob($root . '/public/assets/img/icons/*.svg')
-);
+$randomIndex = array_rand($svgs);
+$svg = \Kirby\Filesystem\F::read($svgs[$randomIndex]);
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -21,8 +19,8 @@ $svgs = array_map(
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <div class="inline-block h-[0.825em] ml-1 select-none [&>svg]:w-auto [&>svg]:h-full">
-                <?= $svgs[array_rand($svgs)] ?>
+              <div class="inline-block h-[0.825em] ml-1 select-none [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
+                <?= $svg ?>
               </div>
             </h1>
           <?php else: ?>

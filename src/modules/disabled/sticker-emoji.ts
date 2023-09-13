@@ -1,4 +1,4 @@
-import { isBelow } from "../utils";
+import { isBelow } from "../../utils";
 
 let latestMouseEvent: MouseEvent | undefined;
 let animationId: number | undefined;
@@ -9,7 +9,9 @@ const duration = 750;
 export function install() {
   if (isBelow("md")) return;
 
-  const elements = [...document.querySelectorAll<HTMLElement>(".sticker")];
+  const elements = [
+    ...document.querySelectorAll<HTMLElement>('[data-sticker="emoji"]'),
+  ];
   if (!elements.length) return;
 
   const handleMouseMove = (event: MouseEvent) => {
@@ -35,7 +37,7 @@ function updateLightPosition(elements: HTMLElement[]) {
 
   for (const element of elements) {
     const container = element.querySelector<HTMLElement>("svg");
-    const light = element.querySelector<HTMLElement>(".sticker-light");
+    const light = element.querySelector<HTMLElement>("[data-sticker-light]");
 
     if (container && light) {
       const { top, left, width, height } = container.getBoundingClientRect();
@@ -63,7 +65,7 @@ function rotateLight(timestamp: number, elements: HTMLElement[]) {
     (easedT <= 0.5 ? -1 : 1) * 200 * Math.abs(Math.sin(2 * Math.PI * easedT));
 
   for (const element of elements) {
-    const light = element.querySelector<HTMLElement>(".sticker-light");
+    const light = element.querySelector<HTMLElement>("[data-sticker-light]");
     if (light) {
       light.setAttribute("x", dx.toFixed(2));
       light.setAttribute("y", dy.toFixed(2));
