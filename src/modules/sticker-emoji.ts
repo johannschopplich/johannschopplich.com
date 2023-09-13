@@ -1,4 +1,4 @@
-import { isBelow } from "../../utils";
+import { isBelow } from "../utils";
 
 let latestMouseEvent: MouseEvent | undefined;
 let animationId: number | undefined;

@@ -19,8 +19,9 @@ $svg = \Kirby\Filesystem\F::read($svgs[$randomIndex]);
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <div class="inline-block h-[0.825em] ml-1 select-none [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
+              <div class="relative inline-block h-[0.825em] select-none animate-duration-[750ms] [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
                 <?= $svg ?>
+                <span class="absolute -inset-8"></span>
               </div>
             </h1>
           <?php else: ?>

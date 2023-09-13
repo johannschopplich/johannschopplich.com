@@ -10,7 +10,6 @@ export async function install() {
 
   // Use scroll snap slider for mobile devices
   if (!isTouchscreen) {
-    // @ts-expect-error: types couldn't be resolved
     const { default: Swiper } = await import("swiper");
 
     for (const element of elements) {
