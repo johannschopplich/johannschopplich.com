@@ -4,11 +4,11 @@
 /** @var \Kirby\Cms\Page $page */
 
 $root = dirname(__DIR__, 2);
-$icons = glob($root . '/public/assets/img/icons/*.svg');
-$filteredIcons = array_filter($icons, fn ($file) => !str_starts_with(basename(($file)), '_'));
-
-$randomIndex = array_rand($filteredIcons);
-$svg = \Kirby\Filesystem\F::read($filteredIcons[$randomIndex]);
+$icons = array_map(
+    fn ($file) => basename($file),
+    glob($root . '/public/assets/img/icons/*.svg')
+);
+$filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_with($file, '_')));
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -21,7 +21,7 @@ $svg = \Kirby\Filesystem\F::read($filteredIcons[$randomIndex]);
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
               <div class="relative inline-block h-[0.825em] select-none animate-duration-[750ms] [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
-                <?= $svg ?>
+                <?= icon($filteredIcons[array_rand($filteredIcons)]) ?>
                 <span class="absolute -inset-6"></span>
               </div>
             </h1>

@@ -2,8 +2,8 @@
 
 $root = dirname(__DIR__, 2);
 $icons = array_map(
-  fn ($file) => basename($file),
-  glob($root . '/public/assets/img/icons/*.svg')
+    fn ($file) => basename($file),
+    glob($root . '/public/assets/img/icons/*.svg')
 );
 $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_with($file, '_')));
 
