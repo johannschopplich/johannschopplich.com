@@ -33,9 +33,10 @@ $inactiveLanguage = $kirby
         data-theme-switcher
       >
         <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('_sun.svg') ?></span>
+        <span class="du-dark:hidden"><?= t('theme.switch.off') ?></span>
+
         <span class="mr-1 icon du-light:hidden" aria-hidden="true"><?= icon('_moon-stars.svg') ?></span>
-        <span class="sm:hidden"><?= t('theme.switch.short') ?></span>
-        <span class="hidden sm:inline"><?= t('theme.switch') ?></span>
+        <span class="du-light:hidden"><?= t('theme.switch.on') ?></span>
       </button>
     </div>
 
