@@ -22,7 +22,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
               <?= $block->text() ?>
               <div class="relative inline-block h-[0.825em] select-none animate-duration-[750ms] [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
                 <?= icon($filteredIcons[array_rand($filteredIcons)]) ?>
-                <span class="absolute -inset-6"></span>
+                <span class="absolute -inset-6 cursor-pointer"></span>
               </div>
             </h1>
           <?php else: ?>
