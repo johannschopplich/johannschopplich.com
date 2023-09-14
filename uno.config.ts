@@ -1,5 +1,6 @@
 import { defineConfig, presetIcons, presetWind } from "unocss";
 import { presetDue } from "duecss";
+import { animatedUno } from "animated-unocss";
 import type { Theme } from "@unocss/preset-wind";
 
 export default defineConfig<Theme>({
@@ -60,7 +61,8 @@ export default defineConfig<Theme>({
     "w-full",
     "aspect-[16/9]",
     "invisible",
-    "animate-bounce",
+    "animated",
+    "animated-tada",
   ],
   presets: [
     presetWind(),
@@ -73,5 +75,6 @@ export default defineConfig<Theme>({
       },
     }),
     presetDue(),
+    animatedUno({ buildFullVersion: false }),
   ],
 });

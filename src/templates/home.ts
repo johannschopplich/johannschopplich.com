@@ -41,6 +41,10 @@ export default async function () {
       isFetching = false;
     });
   }
+
+  setTimeout(() => {
+    animateBounce(elements[0]);
+  }, 100);
 }
 
 async function fetchRandomSvg() {
@@ -66,14 +70,14 @@ async function fetchRandomSvg() {
   }
 }
 
-function animateBounce(element: HTMLElement, duration = 1125) {
+function animateBounce(element: HTMLElement, duration = 1000) {
   return new Promise<void>((resolve) => {
     // Trigger reflow to restart the animation
     void element.offsetWidth;
 
-    element.classList.add("animate-bounce");
+    element.classList.add("animated", "animated-tada");
     setTimeout(() => {
-      element.classList.remove("animate-bounce");
+      element.classList.remove("animated", "animated-tada");
       resolve();
     }, duration);
   });

@@ -28,6 +28,7 @@
     "@types/node": "^20.6.0",
     "@unocss/cli": "^0.55.7",
     "@unocss/preset-wind": "^0.55.7",
+    "animated-unocss": "^0.0.6",
     "concurrently": "^8.2.1",
     "esbuild": "^0.19.2",
     "eslint": "^8.49.0",
