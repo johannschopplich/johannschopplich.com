@@ -13,12 +13,12 @@ App::plugin('johannschopplich/website', [
 
 if (!function_exists('icon')) {
     /**
-     * Returns an SVG icon from the `assets/img/icons` directory
+     * Returns an SVG icon from the `assets/icons` directory
      */
     function icon(string $symbol, string|null $class = null)
     {
         $kirby = App::instance();
-        $iconDir = $kirby->root('index') . '/assets/img/icons/';
+        $iconDir = $kirby->root('index') . '/assets/icons/';
         $symbolPath = Url::path($symbol);
         $svg = Html::svg($iconDir . $symbolPath);
 

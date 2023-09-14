@@ -18,7 +18,7 @@
 
     <?php /*
     <div class="mt-xs">
-      <?= asset('assets/img/article-spacer.svg')->read() ?>
+      <?= asset('assets/article-spacer.svg')->read() ?>
     </div>
     */ ?>
   </div>

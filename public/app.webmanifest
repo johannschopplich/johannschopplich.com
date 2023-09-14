@@ -1,0 +1,26 @@
+{
+  "name": "Johann Schopplich",
+  "short_name": "Johann Schopplich",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#fefcf8",
+  "theme_color": "#89937A",
+  "icons": [
+    {
+      "src": "/assets/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

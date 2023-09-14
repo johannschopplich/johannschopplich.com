@@ -53,7 +53,7 @@ async function fetchRandomSvg() {
   }
 
   try {
-    const response = await fetch(`/assets/img/icons/${randomIcon}`);
+    const response = await fetch(`/assets/icons/${randomIcon}`);
     if (!response.ok) {
       throw new Error(response.statusText);
     }
