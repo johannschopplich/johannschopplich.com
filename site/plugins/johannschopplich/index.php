@@ -3,36 +3,13 @@
 use Kirby\Cms\App;
 use Kirby\Cms\Html;
 use Kirby\Http\Url;
-use Kirby\Toolkit\Str;
 
-App::plugin('johannschopplich/personal-website', [
-    'hooks' => [
-        'kirbytags:before' => function ($text) {
-            return str_replace('\(', '[[', str_replace('\)', ']]', $text));
-        },
-
-        'kirbytags:after' => function ($text) {
-            return str_replace(']]', ')', str_replace('[[', '(', $text));
-        }
-    ],
-
+App::plugin('johannschopplich/website', [
     'tags' => [
         'image' => require __DIR__ . '/tags/image.php',
         'pattern' => require __DIR__ . '/tags/pattern.php'
     ]
 ]);
-
-if (!function_exists('dateFormatter')) {
-    function dateFormatter()
-    {
-        static $dateFormatter;
-        return $dateFormatter ??= new IntlDateFormatter(
-            kirby()->languageCode(),
-            IntlDateFormatter::LONG,
-            IntlDateFormatter::NONE
-        );
-    }
-}
 
 if (!function_exists('icon')) {
     /**
@@ -42,13 +19,12 @@ if (!function_exists('icon')) {
     {
         $kirby = App::instance();
         $iconDir = $kirby->root('index') . '/assets/img/icons/';
-        $symbolPath = Url::path($symbol, false);
+        $symbolPath = Url::path($symbol);
+        $svg = Html::svg($iconDir . $symbolPath);
 
-        if (!str_ends_with($symbol, '.svg')) {
+        if (!$svg) {
             return;
         }
-
-        $svg = Html::svg($iconDir . $symbolPath);
 
         $attributes = Html::attr([
             'class' => $class,
@@ -56,6 +32,22 @@ if (!function_exists('icon')) {
             'focusable' => 'false'
         ]);
 
-        return Str::replace($svg, '<svg', '<svg ' . $attributes, 1);
+        return preg_replace(
+            '!^<svg([^>]*)>!i',
+            '<svg$1' . $attributes . '>',
+            $svg
+        );
+    }
+}
+
+if (!function_exists('dateFormatter')) {
+    function dateFormatter()
+    {
+        static $dateFormatter;
+        return $dateFormatter ??= new IntlDateFormatter(
+            App::instance()->languageCode(),
+            IntlDateFormatter::LONG,
+            IntlDateFormatter::NONE
+        );
     }
 }
