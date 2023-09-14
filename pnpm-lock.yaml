@@ -21,8 +21,8 @@ dependencies:
     specifier: ^0.3.7
     version: 0.3.7
   duecss:
-    specifier: ^0.31.1
-    version: 0.31.1(unocss@0.55.7)
+    specifier: ^0.31.2
+    version: 0.31.2(unocss@0.55.7)
   medium-zoom:
     specifier: ^1.0.8
     version: 1.0.8
@@ -1398,8 +1398,8 @@ packages:
       '@drauu/core': 0.3.7
     dev: false
 
-  /duecss@0.31.1(unocss@0.55.7):
-    resolution: {integrity: sha512-tJ3UXFrnxayKR/kdri5YY2sl681BMuU81H5jhQ+aYdpCJsNOXyAfNzuVMpSdRnDf4/EMYx+GgMECuAzsOp/DlA==}
+  /duecss@0.31.2(unocss@0.55.7):
+    resolution: {integrity: sha512-Ai4ZPvlMVun+UjIJeTFXw5EHH9h6tQ8DmrcSnLnwOBx3uJ+9hy3M5eshhHu7IWi8emsbfr6bqeRtqhabJIWgiQ==}
     peerDependencies:
       unocss: '*'
     dependencies:

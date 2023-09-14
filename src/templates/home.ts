@@ -9,8 +9,12 @@ export default async function () {
   ];
   if (elements.length === 0) return;
 
-  for (const element of elements) {
+  for (const [index, element] of elements.entries()) {
     let animationPromise: Promise<void> | undefined;
+    const animationDuration = parseInt(
+      getPropertyValue(element, "--un-animated-duration"),
+      10,
+    );
 
     // Handle clicks on the sticker
     element.addEventListener("click", async () => {
@@ -35,16 +39,18 @@ export default async function () {
       // Replace the SVG with a random one
       if (svg && newSvg) {
         element.replaceChild(newSvg, svg);
-        animationPromise = animateBounce(element);
+        animationPromise = animateBounce(element, animationDuration);
       }
 
       isFetching = false;
     });
-  }
 
-  setTimeout(() => {
-    animateBounce(elements[0]);
-  }, 100);
+    if (index === 0) {
+      setTimeout(() => {
+        animateBounce(element, animationDuration);
+      }, 100);
+    }
+  }
 }
 
 async function fetchRandomSvg() {
@@ -81,4 +87,8 @@ function animateBounce(element: HTMLElement, duration = 1000) {
       resolve();
     }, duration);
   });
+}
+
+function getPropertyValue(element: HTMLElement, property: string) {
+  return getComputedStyle(element).getPropertyValue(property).trim();
 }

@@ -20,7 +20,11 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
           <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
             <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
               <?= $block->text() ?>
-              <div class="relative inline-block h-[0.825em] select-none touch-manipulation animated-fast [&>svg]:w-auto [&>svg]:h-full" data-sticker="svg">
+              <div
+                class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:w-auto [&>svg]:h-full"
+                style="--un-animated-duration: 800ms"
+                data-sticker="svg"
+              >
                 <?= icon($filteredIcons[array_rand($filteredIcons)]) ?>
                 <span class="absolute -inset-6 cursor-pointer"></span>
               </div>
