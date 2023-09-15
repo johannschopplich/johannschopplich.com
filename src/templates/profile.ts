@@ -1,5 +1,5 @@
-import { isBelow } from "../utils";
 import type { Brush, Drauu } from "drauu";
+import { isBelow } from "../utils";
 
 export default async function () {
   if (isBelow("md")) return;

@@ -1,3 +1,3 @@
 export function getRootFontSize() {
-  return parseFloat(getComputedStyle(document.documentElement).fontSize);
+  return Number.parseFloat(getComputedStyle(document.documentElement).fontSize);
 }

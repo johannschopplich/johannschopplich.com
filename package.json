@@ -22,16 +22,15 @@
     "unlazy": "^0.10.1"
   },
   "devDependencies": {
+    "@byjohann/eslint-config": "^0.1.2",
     "@iconify-json/bx": "^1.1.7",
     "@iconify-json/bxs": "^1.1.7",
-    "@nuxt/eslint-config": "^0.2.0",
     "@types/node": "^20.6.0",
     "@unocss/cli": "^0.55.7",
     "@unocss/preset-wind": "^0.55.7",
     "concurrently": "^8.2.1",
     "esbuild": "^0.19.3",
     "eslint": "^8.49.0",
-    "eslint-config-prettier": "^9.0.0",
     "postcss": "^8.4.29",
     "prettier": "^3.0.3",
     "sass": "^1.67.0",

@@ -11,7 +11,7 @@ export default async function () {
 
   for (const [index, element] of elements.entries()) {
     let animationPromise: Promise<void> | undefined;
-    const animationDuration = parseInt(
+    const animationDuration = Number.parseInt(
       getPropertyValue(element, "--un-animated-duration"),
       10,
     );

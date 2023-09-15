@@ -25,7 +25,7 @@ export function initMasonryGrid(selectors = ".masonry-grid") {
     const grid: GridInstance = {
       el,
       items: [...el.children] as HTMLElement[],
-      gap: parseFloat(getComputedStyle(el).rowGap),
+      gap: Number.parseFloat(getComputedStyle(el).rowGap),
       columns: 0,
       count: 0,
     };
