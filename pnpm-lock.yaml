@@ -35,8 +35,8 @@ dependencies:
 
 devDependencies:
   '@byjohann/eslint-config':
-    specifier: ^0.1.2
-    version: 0.1.2(eslint@8.49.0)(typescript@5.2.2)
+    specifier: ^0.2.0
+    version: 0.2.0(eslint@8.49.0)(typescript@5.2.2)
   '@iconify-json/bx':
     specifier: ^1.1.7
     version: 1.1.7
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^1.1.7
     version: 1.1.7
   '@types/node':
-    specifier: ^20.6.0
-    version: 20.6.0
+    specifier: ^20.6.2
+    version: 20.6.2
   '@unocss/cli':
     specifier: ^0.55.7
     version: 0.55.7
@@ -78,7 +78,7 @@ devDependencies:
     version: 0.55.7(postcss@8.4.29)(vite@4.4.9)
   vite:
     specifier: ^4.4.9
-    version: 4.4.9(@types/node@20.6.0)(sass@1.67.0)
+    version: 4.4.9(@types/node@20.6.2)(sass@1.67.0)
   vite-plugin-full-reload:
     specifier: ^1.0.5
     version: 1.0.5(vite@4.4.9)
@@ -269,8 +269,8 @@ packages:
       regenerator-runtime: 0.14.0
     dev: true
 
-  /@byjohann/eslint-config@0.1.2(eslint@8.49.0)(typescript@5.2.2):
-    resolution: {integrity: sha512-cM3RaE2IactWb4BGuhtt4N2Ug0B7cus7V28w7BGU4q6dx14nHt3XilSRCP3fPPQj3qeBWle9JZwe/O8OS5dsbg==}
+  /@byjohann/eslint-config@0.2.0(eslint@8.49.0)(typescript@5.2.2):
+    resolution: {integrity: sha512-/qyg+YLnrW5aDf/+hekHXvpGzK/2qhLYTITQc92DQnqypZHhOnLUIsF3pYr6r4EHk0PoY77KmX15vYLGLQyUtg==}
     peerDependencies:
       eslint: '*'
       typescript: '*'
@@ -865,8 +865,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node@20.6.0:
-    resolution: {integrity: sha512-najjVq5KN2vsH2U/xyh2opaSEz6cZMR2SetLIlxlj08nOcmPOemJmUK2o4kUzfLqfrWE0PIrNeE16XhYDd3nqg==}
+  /@types/node@20.6.2:
+    resolution: {integrity: sha512-Y+/1vGBHV/cYk6OI1Na/LHzwnlNCAfU3ZNGrc1LdRe/LAIbdDPTTv/HU3M7yXN448aTVDq3eKRm2cg7iKLb8gw==}
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
@@ -1022,7 +1022,7 @@ packages:
       '@unocss/core': 0.55.7
       '@unocss/reset': 0.55.7
       '@unocss/vite': 0.55.7(vite@4.4.9)
-      vite: 4.4.9(@types/node@20.6.0)(sass@1.67.0)
+      vite: 4.4.9(@types/node@20.6.2)(sass@1.67.0)
     transitivePeerDependencies:
       - rollup
 
@@ -1178,7 +1178,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      vite: 4.4.9(@types/node@20.6.0)(sass@1.67.0)
+      vite: 4.4.9(@types/node@20.6.2)(sass@1.67.0)
     transitivePeerDependencies:
       - rollup
 
@@ -3363,7 +3363,7 @@ packages:
       '@unocss/transformer-directives': 0.55.7
       '@unocss/transformer-variant-group': 0.55.7
       '@unocss/vite': 0.55.7(vite@4.4.9)
-      vite: 4.4.9(@types/node@20.6.0)(sass@1.67.0)
+      vite: 4.4.9(@types/node@20.6.2)(sass@1.67.0)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -3393,10 +3393,10 @@ packages:
     dependencies:
       picocolors: 1.0.0
       picomatch: 2.3.1
-      vite: 4.4.9(@types/node@20.6.0)(sass@1.67.0)
+      vite: 4.4.9(@types/node@20.6.2)(sass@1.67.0)
     dev: true
 
-  /vite@4.4.9(@types/node@20.6.0)(sass@1.67.0):
+  /vite@4.4.9(@types/node@20.6.2)(sass@1.67.0):
     resolution: {integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3424,7 +3424,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.6.0
+      '@types/node': 20.6.2
       esbuild: 0.18.20
       postcss: 8.4.29
       rollup: 3.29.1
