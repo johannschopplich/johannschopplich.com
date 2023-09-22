@@ -1,8 +1,7 @@
 <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect y="10" width="15" height="15" fill="#F4FB00"/>
-<rect x="15" y="15" width="10" height="15" fill="#F4FB00"/>
-<rect x="25" y="15" width="10" height="10" fill="#DEFD00"/>
-<rect x="25" y="25" width="10" height="5" fill="#F4FB00"/>
+<rect x="15" y="15" width="20" height="15" fill="#F4FB00"/>
+<rect x="25" y="15" width="15" height="10" fill="#DEFD00"/>
 <rect x="10" y="30" width="5" height="5" fill="#FFEC00"/>
 <rect x="20" y="30" width="5" height="5" fill="#FFEC00"/>
 <rect x="30" y="30" width="5" height="5" fill="#FFEC00"/>
@@ -12,7 +11,6 @@
 <rect x="20" y="5" width="10" height="5" fill="#C0F900"/>
 <rect x="25" width="5" height="5" fill="#C0F900"/>
 <rect x="35" y="15" width="5" height="5" fill="#C4FF1B"/>
-<rect x="35" y="20" width="5" height="5" fill="#DEFD00"/>
 <rect x="35" y="10" width="5" height="5" fill="#A0FF63"/>
 <rect x="30" width="5" height="5" fill="#7EFFAB"/>
 <rect x="35" y="5" width="5" height="5" fill="#7EFFAB"/>
