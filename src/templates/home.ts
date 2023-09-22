@@ -54,22 +54,33 @@ export default async function () {
 }
 
 async function fetchRandomSvg() {
-  const { icons } = getParsedSiteData();
-  const randomIndex = Math.floor(Math.random() * icons.length);
-  const randomIcon = icons[randomIndex];
+  const { icons } = getParsedSiteData<{ icons: string[] }>();
 
-  if (cache.has(randomIcon)) {
+  // Create list of icons that haven't been shown yet
+  const iconsToBeShown = icons.filter((icon) => !cache.has(icon));
+
+  if (iconsToBeShown.length > 0) {
+    // If there are icons that have not yet been shown, prefer those
+    const randomIndex = Math.floor(Math.random() * iconsToBeShown.length);
+    const randomIcon = iconsToBeShown[randomIndex];
+    return await fetchAndCacheSvg(randomIcon);
+  } else {
+    // If all icons have been shown, fetch any at random
+    const randomIndex = Math.floor(Math.random() * icons.length);
+    const randomIcon = icons[randomIndex];
     return cache.get(randomIcon)!;
   }
+}
 
+async function fetchAndCacheSvg(icon: string) {
   try {
-    const response = await fetch(`/assets/icons/${randomIcon}`);
+    const response = await fetch(`/assets/icons/${icon}`);
     if (!response.ok) {
       throw new Error(response.statusText);
     }
 
     const svg = await response.text();
-    cache.set(randomIcon, svg);
+    cache.set(icon, svg);
     return svg;
   } catch (error) {
     console.error(`Failed to fetch SVG: ${error}`);
