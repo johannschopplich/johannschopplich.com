@@ -8,13 +8,17 @@ const themeColor: Record<(typeof themes)[number], string> = {
 
 export function install() {
   const themeSwitcher = document.querySelector("[data-theme-switcher]");
-  themeSwitcher?.addEventListener("click", switchTheme);
-}
+  themeSwitcher?.addEventListener("click", () => {
+    const currentTheme = root.dataset.theme;
+    const newTheme = getNextTheme(currentTheme);
 
-function switchTheme() {
-  const currentTheme = root.dataset.theme;
-  const newTheme = getNextTheme(currentTheme);
-  applyTheme(newTheme);
+    if (!document.startViewTransition) {
+      applyTheme(newTheme);
+      return;
+    }
+
+    document.startViewTransition(() => applyTheme(newTheme));
+  });
 }
 
 function getNextTheme(currentTheme?: string) {
