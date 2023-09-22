@@ -1,12 +1,11 @@
-title:
-  de: Fotografie
-  en: Photography
+title: Stube Umlauts
 
-icon: 📷
+icon: 🎨
 
 options:
   changeStatus: false
   delete: false
+  preview: "https://umlauts.link"
 
 tabs:
   pages:
@@ -23,14 +22,12 @@ tabs:
             fields:
               gallery:
                 label:
-                  de: Galerie
-                  en: Gallery
+                  de: Projekte
+                  en: Projects
                 type: files
                 query: page.files.template("image")
                 uploads:
                   template: image
-                layout: cards
-                size: tiny
                 image:
                   cover: true
                   ratio: 1/1
