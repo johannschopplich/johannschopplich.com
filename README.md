@@ -1,7 +1,5 @@
 # johannschopplich.com
 
-> Forked from [kirby-vite-unocss-kit](https://github.com/johannschopplich/kirby-vite-unocss-kit#readme). Head over to its repository to find out more about it.
-
 A powerful and performant integration of [Vite](https://vitejs.dev), [UnoCSS](https://github.com/antfu/unocss) and [Kirby](https://getkirby.com). This project seeks to provide a best practice that combines these three solutions while focusing on the developer experience.
 
 ## Installation
@@ -54,4 +52,4 @@ pnpm run build
 
 ## License
 
-[MIT](./LICENSE) License © 2021-2022 [Johann Schopplich](https://github.com/johannschopplich)
+[MIT](./LICENSE) License © 2021-PRESENT [Johann Schopplich](https://github.com/johannschopplich)
