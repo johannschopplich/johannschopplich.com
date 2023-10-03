@@ -30,7 +30,6 @@ tabs:
                 uploads:
                   template: image
                 layout: cards
-                size: tiny
                 image:
                   cover: true
                   ratio: 1/1

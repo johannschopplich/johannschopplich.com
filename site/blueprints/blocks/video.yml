@@ -1,5 +1,6 @@
 name: field.blocks.video.name
 icon: video
+wysiwyg: true
 preview: fields
 fields:
   url:

@@ -33,7 +33,6 @@ tabs:
               en: Published
             status: published
             layout: cards
-            size: tiny
             info: '{{ page.published.toDate("dd.MM.Y") }}'
 
   settings:

@@ -1,15 +1,23 @@
 {
   "require": {
-    "getkirby/cms": "^3.9",
+    "getkirby/cms": "^4",
     "getkirby/cli": "^1.1",
-    "getkirby/kql": "^2.0",
-    "johannschopplich/kirby-helpers": "^4.1",
-    "johannschopplich/kirby-headless": "^1.6",
+    "getkirby/kql": "dev-v4-compat",
+    "johannschopplich/kirby-helpers": "^4.2",
+    "johannschopplich/kirby-headless": "^2.1",
     "johannschopplich/kirby-algolia-docsearch": "^0.4",
     "bnomei/kirby3-feed": "^1.5",
     "bnomei/kirby3-janitor": "^3.11",
     "tobimori/kirby-thumbhash": "^1.0"
   },
+  "repositories": [
+    {
+      "url": "https://github.com/johannschopplich/kql-fork.git",
+      "type": "git"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",
