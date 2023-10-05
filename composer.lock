@@ -677,10 +677,10 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kql-fork.git",
-                "reference": "6c147d64e37da036bf8aab9f2c66c4ee155724bc"
+                "reference": "d08985b12e16b497f78051d2ebe843213c83fd77"
             },
             "require": {
-                "getkirby/cms": ">=3.9.6.1",
+                "getkirby/cms": ">=3.8.2",
                 "getkirby/composer-installer": "^1.2.1",
                 "php": ">=8.0.0 <8.3.0"
             },
@@ -756,7 +756,7 @@
                 "forum": "https://forum.getkirby.com",
                 "source": "https://github.com/getkirby/kql"
             },
-            "time": "2023-10-03T15:00:58+00:00"
+            "time": "2023-10-03T20:07:14+00:00"
         },
         {
             "name": "graham-campbell/result-type",

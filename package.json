@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.8.0",
   "scripts": {
     "assets:head": "esbuild src/head.js --minify --format=esm --target=es2020 --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{snippets,templates}/**/*\" --out-file src/styles/uno.css",
@@ -18,25 +18,25 @@
     "drauu": "^0.3.7",
     "duecss": "^0.31.2",
     "medium-zoom": "^1.0.8",
-    "swiper": "^10.3.0",
+    "swiper": "^10.3.1",
     "unlazy": "^0.10.1"
   },
   "devDependencies": {
     "@byjohann/eslint-config": "^0.2.2",
     "@iconify-json/bx": "^1.1.7",
     "@iconify-json/bxs": "^1.1.7",
-    "@types/node": "^20.6.3",
-    "@unocss/cli": "^0.56.1",
-    "@unocss/preset-wind": "^0.56.1",
+    "@types/node": "^20.8.2",
+    "@unocss/cli": "^0.56.5",
+    "@unocss/preset-wind": "^0.56.5",
     "concurrently": "^8.2.1",
-    "esbuild": "^0.19.3",
-    "eslint": "^8.49.0",
-    "postcss": "^8.4.30",
+    "esbuild": "^0.19.4",
+    "eslint": "^8.50.0",
+    "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "sass": "^1.68.0",
     "typescript": "^5.2.2",
-    "unocss": "^0.56.1",
-    "vite": "^4.4.9",
+    "unocss": "^0.56.5",
+    "vite": "^4.4.11",
     "vite-plugin-full-reload": "^1.0.5"
   }
 }
