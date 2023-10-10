@@ -1,4 +1,5 @@
 import { animate } from "animere";
+import { lazyLoad } from "unlazy";
 import { getRootFontSize } from "../utils";
 
 export async function install() {
@@ -23,6 +24,15 @@ export async function install() {
         centeredSlidesBounds: true,
         grabCursor: true,
         longSwipesRatio: 0.25,
+        on: {
+          afterInit() {
+            lazyLoad("[data-slide-image]", {
+              onImageLoad(image) {
+                console.log("Image loaded", image);
+              },
+            });
+          },
+        },
       });
     }
   }
@@ -37,9 +47,10 @@ export async function install() {
       for (const slide of entry.target.querySelectorAll<HTMLElement>(
         "[data-slide-content]",
       )) {
-        if (!slide.classList.contains("invisible")) continue;
-        slide.classList.remove("invisible");
-        animate(slide, "fadeInLeft", "animate__");
+        if (slide.classList.contains("invisible")) {
+          slide.classList.remove("invisible");
+          animate(slide, "fadeInLeft", "animate__");
+        }
       }
     },
     { threshold: 0.25 },

@@ -59,11 +59,13 @@ $heightMap = [
                 ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
                 : 'h-$cell max-w-screen w-auto object-contain') ?>"
             loading="lazy"
-            srcset="<?= $image->srcset() ?>"
+            src="<?= $image->thumbhashUri() ?>"
+            data-srcset="<?= $image->srcset() ?>"
             data-sizes="auto"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
+            data-slide-image
           >
 
           <?php if ($mockup !== 'none'): ?>

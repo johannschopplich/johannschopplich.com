@@ -2,7 +2,8 @@ import { lazyLoad } from "unlazy";
 
 export function install() {
   lazyLoad(
-    // Exclude slider items (loading event won't fire)
-    'img[loading="lazy"]:not([srcset])',
+    // Exclude slider items, since loading event won't fire
+    // before Swiper.js is initialized
+    'img[loading="lazy"]:not([data-swiper])',
   );
 }
