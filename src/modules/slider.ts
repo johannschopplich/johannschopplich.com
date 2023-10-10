@@ -26,11 +26,9 @@ export async function install() {
         longSwipesRatio: 0.25,
         on: {
           afterInit() {
-            lazyLoad("[data-slide-image]", {
-              onImageLoad(image) {
-                console.log("Image loaded", image);
-              },
-            });
+            const images =
+              element.querySelectorAll<HTMLImageElement>("[data-slide-image]");
+            lazyLoad(images);
           },
         },
       });
