@@ -5,38 +5,30 @@ A powerful and performant integration of [Vite](https://vitejs.dev), [UnoCSS](ht
 ## Installation
 
 1. Duplicate the [`.env.development.example`](./.env.development.example) as `.env`:
-
-```bash
-cp .env.development.example .env
-```
-
-1. Install the required npm dependencies:
-
-```bash
-pnpm install
-```
-
-1. Install the required Composer dependencies:
-
-```bash
-composer install
-```
+   ```bash
+   cp .env.development.example .env
+   ```
+2. Install the required npm dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Install the required Composer dependencies:
+   ```bash
+   composer install
+   ```
 
 ## Usage
 
 ### Development
 
 1. Start the Vite development server and watch for file changes accordingly:
-
-```bash
-pnpm run dev
-```
-
-1. Run the PHP built-in web server or use a development web server of your choice (like Laravel Valet).
-
-```bash
-composer start
-```
+   ```bash
+   pnpm run dev
+   ```
+2. Run the PHP built-in web server or use a development web server of your choice (like Laravel Valet).
+   ```bash
+   composer start
+   ```
 
 ### Production
 
@@ -48,7 +40,8 @@ pnpm run build
 
 ### Deployment
 
-> ℹ️ See [ploi-deploy.sh](./scripts/ploi-deploy.sh) for deployment instructions.
+> [!NOTE]
+> See [ploi-deploy.sh](./scripts/ploi-deploy.sh) for deployment instructions.
 
 ## License
 
