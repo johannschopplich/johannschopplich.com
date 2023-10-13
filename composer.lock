@@ -1147,16 +1147,16 @@
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "e90c69289c64349bdc8657f60269806778473f4d"
+                "reference": "1aa3cc5485c4d8f2dd821c439366cf4f2c066bc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/e90c69289c64349bdc8657f60269806778473f4d",
-                "reference": "e90c69289c64349bdc8657f60269806778473f4d",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/1aa3cc5485c4d8f2dd821c439366cf4f2c066bc7",
+                "reference": "1aa3cc5485c4d8f2dd821c439366cf4f2c066bc7",
                 "shasum": ""
             },
             "require": {
@@ -1193,9 +1193,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.4.2"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.4.3"
             },
-            "time": "2023-10-13T05:52:27+00:00"
+            "time": "2023-10-13T06:21:38+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",

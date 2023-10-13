@@ -87,7 +87,7 @@ return [
             'photography' => $defaultContentIndexFn,
             'profile' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
                 return strip_tags($page->content($languageCode)->bio()->toBlocks()->toHtml())
-                    . strip_tags($page->content($languageCode)->cv()->toLayouts->toBlocks()->toHtml());
+                    . strip_tags($page->content($languageCode)->cv()->toLayouts()->toBlocks()->toHtml());
             },
             'project' => $defaultContentIndexFn
         ],
