@@ -1,7 +1,5 @@
 <?php
 
-$defaultContentIndexFn = fn (\Kirby\Cms\Page $page, string|null $languageCode) => strip_tags($page->content($languageCode)->text()->toBlocks()->toHtml());
-
 return [
 
     'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
@@ -81,15 +79,13 @@ return [
         'apiKey' => env('ALGOLIA_API_KEY'),
         'index' => 'johannschopplich',
         'content' => [
-            'article' => $defaultContentIndexFn,
-            'default' => $defaultContentIndexFn,
-            'home' => $defaultContentIndexFn,
-            'photography' => $defaultContentIndexFn,
+            'default' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
+                return strip_tags($page->content($languageCode)->text()->toBlocks()->toHtml());
+            },
             'profile' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
                 return strip_tags($page->content($languageCode)->bio()->toBlocks()->toHtml())
                     . strip_tags($page->content($languageCode)->cv()->toLayouts()->toBlocks()->toHtml());
-            },
-            'project' => $defaultContentIndexFn
+            }
         ],
         // Templates which should be indexed
         'templates' => [
