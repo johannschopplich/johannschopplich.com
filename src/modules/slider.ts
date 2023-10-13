@@ -11,9 +11,7 @@ export async function install() {
 
   // Use scroll snap slider for mobile devices
   if (isTouchscreen) {
-    for (const element of elements) {
-      initLazyLoad(element);
-    }
+    lazyLoad("[data-slider] [data-slide-image]");
   } else {
     const { default: Swiper } = await import("swiper");
 
@@ -30,7 +28,9 @@ export async function install() {
         longSwipesRatio: 0.25,
         on: {
           afterInit() {
-            initLazyLoad(element);
+            const images =
+              element.querySelectorAll<HTMLImageElement>("[data-slide-image]");
+            lazyLoad(images);
           },
         },
       });
@@ -68,10 +68,4 @@ export async function install() {
       observer.observe(element);
     }
   }
-}
-
-function initLazyLoad(element: HTMLElement) {
-  const images =
-    element.querySelectorAll<HTMLImageElement>("[data-slide-image]");
-  lazyLoad(images);
 }
