@@ -67,8 +67,8 @@ columns:
             type: textarea
             buttons: false
             help:
-              de: Eine kurze Beschreibung der Seite, die von Suchmaschinen unter dem Titel angezeigt wird.
-              en: A short description of the page that will be displayed underneath the title by search engines.
+              de: Eine kurze Beschreibung für Suchmaschinen.
+              en: A short description for search engines.
 
   - width: 2/3
     sections:
@@ -78,3 +78,4 @@ columns:
     sticky: true
     sections:
       images: sections/images
+      # punctuation: sections/punctuation
