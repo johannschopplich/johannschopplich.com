@@ -1,5 +1,7 @@
 <?php
 
+$defaultContentIndexFn = fn (\Kirby\Cms\Page $page, string|null $languageCode) => strip_tags($page->content($languageCode)->text()->toBlocks()->toHtml());
+
 return [
 
     'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
@@ -78,9 +80,17 @@ return [
         'appId' => env('ALGOLIA_APP_ID'),
         'apiKey' => env('ALGOLIA_API_KEY'),
         'index' => 'johannschopplich',
-        // HTML tag name which contains a page's content or closure
-        // which returns the text content for a given page
-        'content' => 'main',
+        'content' => [
+            'article' => $defaultContentIndexFn,
+            'default' => $defaultContentIndexFn,
+            'home' => $defaultContentIndexFn,
+            'photography' => $defaultContentIndexFn,
+            'profile' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
+                return strip_tags($page->content($languageCode)->bio()->toBlocks()->toHtml())
+                    . strip_tags($page->content($languageCode)->cv()->toLayouts->toBlocks()->toHtml());
+            },
+            'project' => $defaultContentIndexFn
+        ],
         // Templates which should be indexed
         'templates' => [
             'article',

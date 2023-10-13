@@ -34,7 +34,7 @@ if (!function_exists('icon')) {
 
         return preg_replace(
             '!^<svg([^>]*)>!i',
-            '<svg$1' . $attributes . '>',
+            '<svg$1 ' . $attributes . '>',
             $svg
         );
     }
