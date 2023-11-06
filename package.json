@@ -19,23 +19,23 @@
     "duecss": "^0.31.2",
     "medium-zoom": "^1.0.8",
     "swiper": "^11.0.3",
-    "unlazy": "^0.10.1"
+    "unlazy": "^0.10.2"
   },
   "devDependencies": {
     "@byjohann/eslint-config": "^0.3.0",
     "@iconify-json/bx": "^1.1.7",
     "@iconify-json/bxs": "^1.1.7",
     "@types/node": "^20.8.10",
-    "@unocss/cli": "^0.57.1",
-    "@unocss/preset-wind": "^0.57.1",
+    "@unocss/cli": "^0.57.2",
+    "@unocss/preset-wind": "^0.57.2",
     "concurrently": "^8.2.2",
     "esbuild": "^0.19.5",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "sass": "^1.69.5",
     "typescript": "^5.2.2",
-    "unocss": "^0.57.1",
+    "unocss": "^0.57.2",
     "vite": "^4.5.0",
     "vite-plugin-full-reload": "^1.0.5"
   }
