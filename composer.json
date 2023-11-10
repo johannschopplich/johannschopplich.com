@@ -7,7 +7,7 @@
     "johannschopplich/kirby-headless": "^2.2",
     "johannschopplich/kirby-algolia-docsearch": "^0.4",
     "bnomei/kirby3-feed": "^1.5",
-    "bnomei/kirby3-janitor": "^3.12",
+    "bnomei/kirby3-janitor": "^4.0",
     "tobimori/kirby-thumbhash": "^1.1"
   },
   "minimum-stability": "dev",

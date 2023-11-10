@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18918627d96f7dac3846237559525b7c",
+    "content-hash": "b81e5c942fa6bc859ff004521f5dc5b9",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -164,29 +164,32 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "3.12.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-janitor.git",
-                "reference": "6fdc3d8f560ed126336c059c49e6d895961a6169"
+                "reference": "4ff244d803659e5d2346f546cb4687ba6388146b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/6fdc3d8f560ed126336c059c49e6d895961a6169",
-                "reference": "6fdc3d8f560ed126336c059c49e6d895961a6169",
+                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/4ff244d803659e5d2346f546cb4687ba6388146b",
+                "reference": "4ff244d803659e5d2346f546cb4687ba6388146b",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0",
+                "php": ">=8.1",
                 "symfony/deprecation-contracts": "^3.0.1",
                 "symfony/finder": "^6.0"
             },
             "require-dev": {
                 "getkirby/cli": "dev-develop",
-                "getkirby/cms": "^3.8.2",
-                "php-coveralls/php-coveralls": "^2.4",
-                "phpunit/phpunit": "^9.5"
+                "getkirby/cms": "^4.0.0-beta.3",
+                "laravel/pint": "^1.13",
+                "nunomaduro/larastan": "^2.6",
+                "pestphp/pest": "^2.24",
+                "pestphp/pest-plugin-type-coverage": "^2.4",
+                "spatie/ray": "^1.39"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -221,16 +224,16 @@
                 "janitor",
                 "job",
                 "job-runner",
-                "kirby3",
-                "kirby3-cms",
-                "kirby3-plugin",
+                "kirby",
+                "kirby-cms",
+                "kirby-plugin",
                 "maintenance",
                 "panel",
                 "render"
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-janitor/issues",
-                "source": "https://github.com/bnomei/kirby3-janitor/tree/v3.12.0"
+                "source": "https://github.com/bnomei/kirby3-janitor/tree/v4.0.0"
             },
             "funding": [
                 {
@@ -250,7 +253,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-10-25T15:58:22+00:00"
+            "time": "2023-11-05T18:24:00+00:00"
         },
         {
             "name": "christian-riesen/base32",
