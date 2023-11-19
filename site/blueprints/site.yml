@@ -62,12 +62,20 @@ tabs:
                   en: Popular Articles
                 type: pages
                 query: kirby.page("blog")
+                image:
+                  query: page.cover.toFile
+                  cover: true
+                  back: white
                 translate: false
               footerPages:
                 label:
                   de: Fußzeilenlinks
                   en: Footer Pages
                 type: pages
+                image:
+                  query: page.cover.toFile
+                  cover: true
+                  back: white
                 translate: false
               headlineAlgolia:
                 label: Algolia
