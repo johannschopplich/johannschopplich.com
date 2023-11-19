@@ -26,7 +26,7 @@ tabs:
                   de: Galerie
                   en: Gallery
                 type: files
-                query: page.files.template("image")
+                query: page.files.template(["image", "blocks/image"])
                 uploads:
                   template: image
                 layout: cards

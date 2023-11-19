@@ -33,7 +33,7 @@ columns:
               de: Vorschaubild
               en: Thumbnail
             type: files
-            query: page.files.template("image")
+            query: page.files.template(["image", "blocks/image"])
             uploads:
               template: image
             multiple: false
