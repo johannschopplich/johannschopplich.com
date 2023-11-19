@@ -63,7 +63,7 @@ tabs:
                 type: pages
                 query: kirby.page("blog")
                 image:
-                  query: page.cover.toFile
+                  query: page.thumbnail.toFile
                   cover: true
                   back: white
                 translate: false
@@ -73,7 +73,7 @@ tabs:
                   en: Footer Pages
                 type: pages
                 image:
-                  query: page.cover.toFile
+                  query: page.thumbnail.toFile
                   cover: true
                   back: white
                 translate: false
