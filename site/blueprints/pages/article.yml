@@ -69,6 +69,7 @@ columns:
             help:
               de: Eine kurze Beschreibung für Suchmaschinen.
               en: A short description for search engines.
+      # seoPreview: sections/seo-preview
 
   - width: 2/3
     sections:

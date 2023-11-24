@@ -45,7 +45,10 @@ export default {
 
   async created() {
     const response = await this.load();
-    this.label = response.label;
+    this.label =
+      typeof response.label === "string"
+        ? response.label
+        : response.label?.[this.$language?.code];
     this.config = response.config;
     this.site = response.site;
   },
@@ -59,11 +62,11 @@ export default {
 <template>
   <k-section :headline="label">
     <div
-      class="mb-2 overflow-hidden rounded-[var(--input-rounded)] bg-[var(--input-color-back)] p-4"
+      class="overflow-hidden rounded-[var(--input-rounded)] bg-[var(--input-color-back)] p-4"
     >
-      <div class="mb-2 flex gap-3 items-center">
+      <div class="mb-2 flex items-center gap-3">
         <figure
-          class="bg-[#f1f3f4] border-solid border-[#ecedef] inline-flex aspect-square h-[26px] w-[26px] items-center justify-center rounded-full"
+          class="inline-flex aspect-square h-[26px] w-[26px] items-center justify-center rounded-full border border-solid border-[#ecedef] bg-[#f1f3f4]"
         >
           <img
             class="block h-[18px] w-[18px]"
@@ -72,18 +75,18 @@ export default {
           />
         </figure>
         <div class="flex flex-col">
-          <span class="text-[#4d5156] text-sm">{{ site.title }}</span>
-          <span class="text-[#4d5156] line-clamp-1 text-xs">{{
+          <span class="text-sm text-[#4d5156]">{{ site.title }}</span>
+          <span class="line-clamp-1 text-xs text-[#4d5156]">{{
             joinURL(config.baseUrl || site.url, path)
           }}</span>
         </div>
       </div>
 
-      <h3 class="text-[#1a0dab] mb-1 line-clamp-1 text-xl">
+      <h3 class="mb-1 line-clamp-1 text-xl text-[#1a0dab]">
         {{ content.customTitle || `${$view.title} – ${site.title}` }}
       </h3>
 
-      <p class="text-[#4d5156] line-clamp-2 text-sm">
+      <p class="line-clamp-2 text-sm text-[#4d5156]">
         {{ content.description }}
       </p>
     </div>
