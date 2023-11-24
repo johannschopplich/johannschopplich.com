@@ -32,6 +32,6 @@ $bg = $image?->thumb([
 <figure>
   <lite-youtube videoid="<?= $id ?>" style="<?= $bg ? "background-image: url({$bg});" : null ?>aspect-ratio: <?= $block->ratio()->or("16/9") ?>;"></lite-youtube>
   <?php if ($block->caption()->isNotEmpty()): ?>
-    <figcaption><?= $block->caption() ?></figcaption>
+    <figcaption><?= $block->caption()->permalinksToUrls() ?></figcaption>
   <?php endif ?>
 </figure>

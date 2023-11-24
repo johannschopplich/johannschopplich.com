@@ -18,7 +18,7 @@ if ($block->location() === 'web') {
         $alt = $image->alt();
     }
     if ($caption->isEmpty()) {
-        $caption = $image->caption();
+        $caption = $image->caption()->permalinksToUrls();
     }
 
     $img = Html::img(
