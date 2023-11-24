@@ -130,6 +130,7 @@ class LiteYouTubeEmbed extends HTMLElement {
     const videoPlaceholderEl = document.createElement("div");
     this.append(videoPlaceholderEl);
 
+    // eslint-disable-next-line no-new
     new (window as any).YT.Player(videoPlaceholderEl, {
       width: "100%",
       videoId: this.videoId,

@@ -55,6 +55,7 @@ function updateLightPosition(elements: HTMLElement[]) {
   latestMouseEvent = undefined;
 }
 
+// eslint-disable-next-line unused-imports/no-unused-vars
 function rotateLight(timestamp: number, elements: HTMLElement[]) {
   startTime ??= timestamp;
 

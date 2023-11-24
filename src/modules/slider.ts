@@ -19,6 +19,7 @@ export async function install() {
       // Remove classes that are interfering with Swiper.js
       element.firstElementChild?.setAttribute("class", "swiper-wrapper");
 
+      // eslint-disable-next-line no-new
       new Swiper(element, {
         slidesPerView: "auto",
         spaceBetween: 0.75 * fontSize,
