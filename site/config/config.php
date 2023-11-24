@@ -3,7 +3,13 @@
 return [
 
     'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
-    'yaml.handler' => 'symfony',
+
+    'yaml' => [
+        'handler' => 'symfony'
+    ],
+    'date' => [
+        'handler' => 'intl'
+    ],
 
     'panel' => [
         'install' => env('KIRBY_PANEL_INSTALL', false),
@@ -14,7 +20,6 @@ return [
 
     'languages' => true,
     'languages.detect' => true,
-    'date.handler' => 'intl',
 
     'cache' => [
         'pages' => [
