@@ -6,7 +6,7 @@ fields:
     label: field.blocks.image.location
     type: radio
     columns: 2
-    default: "kirby"
+    default: kirby
     options:
       kirby: Kirby
       web: Web

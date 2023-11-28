@@ -10,8 +10,6 @@
     "bnomei/kirby3-janitor": "^4.0",
     "tobimori/kirby-thumbhash": "^1.1"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",

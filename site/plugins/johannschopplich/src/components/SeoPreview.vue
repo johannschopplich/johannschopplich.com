@@ -64,7 +64,7 @@ export default {
     <div
       class="overflow-hidden rounded-[var(--input-rounded)] bg-[var(--input-color-back)] p-4"
     >
-      <div class="mb-2 flex items-center gap-3">
+      <div class="flex items-center gap-3 mb-2">
         <figure
           class="inline-flex aspect-square h-[26px] w-[26px] items-center justify-center rounded-full border border-solid border-[#ecedef] bg-[#f1f3f4]"
         >

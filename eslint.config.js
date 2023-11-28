@@ -3,7 +3,8 @@ import antfu from "@antfu/eslint-config";
 export default await antfu(
   {
     stylistic: false,
-    ignores: ["tsconfig.json"],
+    yaml: false,
+    ignores: ["tsconfig.json", "**/plugins/*/index.js"],
   },
   {
     rules: {
