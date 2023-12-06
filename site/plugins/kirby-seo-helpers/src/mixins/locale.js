@@ -1,10 +1,9 @@
+import { withLeadingSlash } from "ufo";
+
 export default {
   computed: {
     locales() {
-      return this.$languages.reduce(
-        (locales, language) => [...locales, language.code],
-        [],
-      );
+      return this.$languages.map((language) => language.code);
     },
   },
   methods: {
@@ -17,7 +16,7 @@ export default {
         parts.shift();
       }
 
-      return `/${parts.join("/")}`;
+      return withLeadingSlash(parts.join("/"));
     },
   },
 };

@@ -24,8 +24,11 @@ export default {
 
       let path = this.getNonLocalizedPath(this.url);
 
-      // Add language prefix only if it's not the default language
-      if (!this.$language.default) {
+      if (config.languagePrefixForDefault) {
+        if (!this.$language.default) {
+          path = joinURL(this.$language.code, path);
+        }
+      } else {
         path = joinURL(this.$language.code, path);
       }
 
