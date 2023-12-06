@@ -1,10 +1,10 @@
-<svg width="35" height="51" viewBox="0 0 35 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="10" y="0.5" width="15" height="5" fill="#FCB749"/>
-<rect x="10" y="5.5" width="15" height="15" fill="#583414"/>
-<rect x="10" y="20.5" width="15" height="5" fill="#FCB749"/>
-<rect x="10" y="5.5" width="15" height="5" transform="rotate(90 10 5.5)" fill="#FCB749"/>
-<rect x="30" y="5.5" width="15" height="5" transform="rotate(90 30 5.5)" fill="#FCB749"/>
-<rect x="15" y="25.5" width="5" height="25" fill="#5C9F4C"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M25 25.5V30.5H20V35.5H35V30.5V25.5H25Z" fill="#27752D"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M10 30.5V35.5L15 35.5V40.5L0 40.5V35.5V30.5H10Z" fill="#27752D"/>
+<svg width="35" height="50" viewBox="0 0 35 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="10" width="15" height="5" fill="#FCB749"/>
+<rect x="10" y="5" width="15" height="15" fill="#583414"/>
+<rect x="10" y="20" width="15" height="5" fill="#FCB749"/>
+<rect x="10" y="5" width="15" height="5" transform="rotate(90 10 5)" fill="#FCB749"/>
+<rect x="30" y="5" width="15" height="5" transform="rotate(90 30 5)" fill="#FCB749"/>
+<rect x="15" y="25" width="5" height="25" fill="#5C9F4C"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M25 25V30H20V35H35V30V25H25Z" fill="#27752D"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 30V35L15 35V40L0 40V35V30H10Z" fill="#27752D"/>
 </svg>
