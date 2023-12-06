@@ -4,7 +4,7 @@ export default await antfu(
   {
     stylistic: false,
     yaml: false,
-    ignores: ["tsconfig.json", "**/plugins/*/index.js"],
+    ignores: ["tsconfig.json", "**/plugins/*/index.js", "**/vendor/**"],
   },
   {
     rules: {

@@ -23,22 +23,22 @@
     "unlazy": "^0.10.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.1.1",
+    "@antfu/eslint-config": "^2.3.4",
     "@iconify-json/bx": "^1.1.9",
     "@iconify-json/bxs": "^1.1.9",
-    "@types/node": "^20.10.0",
-    "@unocss/cli": "^0.57.7",
-    "@unocss/eslint-plugin": "^0.57.7",
-    "@unocss/preset-wind": "^0.57.7",
+    "@types/node": "^20.10.3",
+    "@unocss/cli": "^0.58.0",
+    "@unocss/eslint-plugin": "^0.58.0",
+    "@unocss/preset-wind": "^0.58.0",
     "concurrently": "^8.2.2",
     "esbuild": "^0.19.8",
-    "eslint": "^8.54.0",
-    "postcss": "^8.4.31",
+    "eslint": "^8.55.0",
+    "postcss": "^8.4.32",
     "prettier": "^3.1.0",
     "sass": "^1.69.5",
     "typescript": "^5.3.2",
-    "unocss": "^0.57.7",
-    "vite": "^5.0.2",
+    "unocss": "^0.58.0",
+    "vite": "^5.0.6",
     "vite-plugin-full-reload": "^1.1.0"
   }
 }
