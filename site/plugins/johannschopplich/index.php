@@ -5,7 +5,6 @@ use Kirby\Cms\Html;
 use Kirby\Http\Url;
 
 App::plugin('johannschopplich/website', [
-    'sections' => require __DIR__ . '/extensions/sections.php',
     'tags' => [
         'image' => require __DIR__ . '/tags/image.php',
         'pattern' => require __DIR__ . '/tags/pattern.php'

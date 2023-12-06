@@ -76,6 +76,17 @@ return [
         ]
     ],
 
+    'johannschopplich.seo-helpers' => [
+        'syncableFields' => ['text', 'description'],
+        'translatableFields' => ['text', 'description'],
+        'translatableBlocks' => [
+            'text' => ['text']
+        ],
+        'DeepL' => [
+            'apiKey' => env('DEEPL_API_KEY')
+        ]
+    ],
+
     'johannschopplich.algolia-docsearch' => [
         'appId' => env('ALGOLIA_APP_ID'),
         'apiKey' => env('ALGOLIA_API_KEY'),
