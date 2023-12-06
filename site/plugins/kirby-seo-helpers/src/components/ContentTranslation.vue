@@ -115,6 +115,7 @@ export default {
           v-for="language in $languages.filter((lang) => !lang.default)"
           :key="language.code"
           :disabled="$language.default"
+          icon="translate"
           size="sm"
           variant="filled"
           theme="notice"
@@ -122,7 +123,7 @@ export default {
         >
           {{
             $t("johannschopplich.seo-helpers.translate", {
-              language: language.name,
+              language: language.code.toUpperCase(),
             })
           }}
         </k-button>
