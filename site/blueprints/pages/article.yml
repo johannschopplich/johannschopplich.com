@@ -83,8 +83,7 @@ tabs:
       - width: 1/3
         sticky: true
         sections:
-          contentTranslation: sections/content-translation
-          seoPreview: sections/seo-preview
+          contentTranslator: sections/content-translator
           # punctuation: sections/punctuation
 
   images: tabs/images

@@ -23,7 +23,6 @@ site/config/.license
 site/plugins/*
 !site/plugins/.gitkeep
 !site/plugins/johannschopplich
-!site/plugins/kirby-seo-helpers
 
 # Build assets
 public/assets/dev

@@ -8,43 +8,43 @@ fieldsets:
       de: Apostroph
       en: Apostrophe
     chars:
-      - "’"
+      - ’
     help: The most common punctuation mark in the English language. It is used to indicate possession, contractions, and plurals.
   - category:
     label:
       de: Gedankenstrich
       en: Hyphen
     chars:
-      - "–"
+      - –
   - category:
     label:
       de: Dt. Anführungszeichen
       en: German Quotation Marks
     chars:
-      - "„"
-      - "‚"
-      - "‘"
-      - "“"
+      - „
+      - ‚
+      - ‘
+      - “
   - category:
     label:
       de: Engl. Anführungszeichen
       en: English Quotation Marks
     chars:
-      - "“"
-      - "‘"
-      - "’"
-      - "”"
+      - “
+      - ‘
+      - ’
+      - ”
   - category:
     label: Guillemets
     chars:
-      - "»"
-      - "›"
-      - "‹"
-      - "«"
+      - »
+      - ›
+      - ‹
+      - «
   - category:
     label:
       de: Sonstiges
       en: Other
     chars:
-      - "…"
-      - "×"
+      - …
+      - ×

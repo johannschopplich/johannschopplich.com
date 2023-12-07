@@ -76,7 +76,7 @@ return [
         ]
     ],
 
-    'johannschopplich.seo-helpers' => [
+    'johannschopplich.content-translator' => [
         'syncableFields' => ['text', 'description'],
         'translatableFields' => ['text', 'description'],
         'translatableBlocks' => [
