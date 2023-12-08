@@ -77,11 +77,6 @@ return [
     ],
 
     'johannschopplich.content-translator' => [
-        'syncableFields' => ['text', 'description'],
-        'translatableFields' => ['text', 'description'],
-        'translatableBlocks' => [
-            'text' => ['text']
-        ],
         'DeepL' => [
             'apiKey' => env('DEEPL_API_KEY')
         ]
@@ -96,8 +91,8 @@ return [
                 return strip_tags($page->content($languageCode)->text()->toBlocks()->toHtml());
             },
             'profile' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
-                return strip_tags($page->content($languageCode)->bio()->toBlocks()->toHtml())
-                    . strip_tags($page->content($languageCode)->cv()->toLayouts()->toBlocks()->toHtml());
+                return strip_tags($page->content($languageCode)->bio()->toBlocks()->toHtml()) .
+                    strip_tags($page->content($languageCode)->cv()->toLayouts()->toBlocks()->toHtml());
             }
         ],
         // Templates which should be indexed

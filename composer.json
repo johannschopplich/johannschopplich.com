@@ -6,6 +6,7 @@
     "johannschopplich/kirby-helpers": "^5.0",
     "johannschopplich/kirby-headless": "^2.3",
     "johannschopplich/kirby-algolia-docsearch": "^0.4",
+    "johannschopplich/kirby-content-translator": "^0.1.4",
     "bnomei/kirby3-feed": "^1.5",
     "bnomei/kirby3-janitor": "^4.0",
     "tobimori/kirby-thumbhash": "^1.1"
@@ -19,7 +20,8 @@
   "config": {
     "optimize-autoloader": true,
     "allow-plugins": {
-      "getkirby/composer-installer": true
+      "getkirby/composer-installer": true,
+      "php-http/discovery": true
     }
   },
   "extra": {

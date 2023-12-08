@@ -1,1 +1,16 @@
 type: content-translator
+syncableFields:
+  - text
+  - description
+  - tags
+translatableFields:
+  - text
+  - description
+translatableBlocks:
+  heading:
+    - text
+  text:
+    - text
+  image:
+    - alt
+    - caption
