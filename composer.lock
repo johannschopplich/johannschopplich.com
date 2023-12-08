@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "96e3bcd90f5b83a5a3bcd05f84db8af6",
+    "content-hash": "774a4b424892bf18e7bed24d089f75a9",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -164,16 +164,16 @@
         },
         {
             "name": "bnomei/kirby3-janitor",
-            "version": "4.0.0",
+            "version": "4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-janitor.git",
-                "reference": "4ff244d803659e5d2346f546cb4687ba6388146b"
+                "reference": "ca11c3814a32b0554a6256bfc88c526208eb13ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/4ff244d803659e5d2346f546cb4687ba6388146b",
-                "reference": "4ff244d803659e5d2346f546cb4687ba6388146b",
+                "url": "https://api.github.com/repos/bnomei/kirby3-janitor/zipball/ca11c3814a32b0554a6256bfc88c526208eb13ca",
+                "reference": "ca11c3814a32b0554a6256bfc88c526208eb13ca",
                 "shasum": ""
             },
             "require": {
@@ -233,7 +233,7 @@
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-janitor/issues",
-                "source": "https://github.com/bnomei/kirby3-janitor/tree/v4.0.0"
+                "source": "https://github.com/bnomei/kirby3-janitor/tree/v4.0.1"
             },
             "funding": [
                 {
@@ -253,7 +253,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-11-05T18:24:00+00:00"
+            "time": "2023-12-07T16:51:55+00:00"
         },
         {
             "name": "christian-riesen/base32",
@@ -1308,16 +1308,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "0.1.4",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-content-translator.git",
-                "reference": "7a82f4f5281f00bd9672003dbf2f7c002e7c7fdc"
+                "reference": "f826ec6a67a52d186b1b554137801aad57f62195"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/7a82f4f5281f00bd9672003dbf2f7c002e7c7fdc",
-                "reference": "7a82f4f5281f00bd9672003dbf2f7c002e7c7fdc",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/f826ec6a67a52d186b1b554137801aad57f62195",
+                "reference": "f826ec6a67a52d186b1b554137801aad57f62195",
                 "shasum": ""
             },
             "require": {
@@ -1358,9 +1358,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-content-translator/issues",
-                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.1.4"
+                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.2.1"
             },
-            "time": "2023-12-08T09:45:17+00:00"
+            "time": "2023-12-08T14:25:15+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",

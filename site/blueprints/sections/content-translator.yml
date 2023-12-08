@@ -6,11 +6,3 @@ syncableFields:
 translatableFields:
   - text
   - description
-translatableBlocks:
-  heading:
-    - text
-  text:
-    - text
-  image:
-    - alt
-    - caption
