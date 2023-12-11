@@ -1245,16 +1245,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "0.3.5",
+            "version": "0.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-content-translator.git",
-                "reference": "24c0a029c0e91c98000a3ac1ba37cd442f4c87aa"
+                "reference": "3b9ddca655565bf49fe29e8fc22ad450c7518fd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/24c0a029c0e91c98000a3ac1ba37cd442f4c87aa",
-                "reference": "24c0a029c0e91c98000a3ac1ba37cd442f4c87aa",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/3b9ddca655565bf49fe29e8fc22ad450c7518fd4",
+                "reference": "3b9ddca655565bf49fe29e8fc22ad450c7518fd4",
                 "shasum": ""
             },
             "require": {
@@ -1293,9 +1293,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-content-translator/issues",
-                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.3.5"
+                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.3.8"
             },
-            "time": "2023-12-09T11:03:51+00:00"
+            "time": "2023-12-10T15:31:28+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",

@@ -84,6 +84,7 @@ tabs:
         sticky: true
         sections:
           contentTranslator: sections/content-translator
+          # serpPreview: sections/serp-preview
           # punctuation: sections/punctuation
 
   images: tabs/images

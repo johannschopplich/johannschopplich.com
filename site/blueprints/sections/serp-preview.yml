@@ -1,0 +1,8 @@
+type: serp-preview
+defaultLanguagePrefix: true
+faviconUrl: /assets/favicon.svg
+siteTitle: "{{ site.title.value }}"
+siteUrl: "{{ site.url }}"
+titleSeparator: "-"
+titleContentKey: customTitle
+descriptionContentKey: description
