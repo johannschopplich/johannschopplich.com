@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3dbf0c76877b2ae4f853c7a4d76b35e5",
+    "content-hash": "ff4f0f0d1d553d8e312f7a44cb608ef7",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1245,16 +1245,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "0.3.8",
+            "version": "0.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-content-translator.git",
-                "reference": "3b9ddca655565bf49fe29e8fc22ad450c7518fd4"
+                "reference": "cf920fee5bbbab9ea00397afbaf95d7019b44193"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/3b9ddca655565bf49fe29e8fc22ad450c7518fd4",
-                "reference": "3b9ddca655565bf49fe29e8fc22ad450c7518fd4",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/cf920fee5bbbab9ea00397afbaf95d7019b44193",
+                "reference": "cf920fee5bbbab9ea00397afbaf95d7019b44193",
                 "shasum": ""
             },
             "require": {
@@ -1293,9 +1293,15 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-content-translator/issues",
-                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.3.8"
+                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.4.2"
             },
-            "time": "2023-12-10T15:31:28+00:00"
+            "funding": [
+                {
+                    "url": "https://paypal.me/jschopplich",
+                    "type": "custom"
+                }
+            ],
+            "time": "2023-12-13T11:16:42+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
