@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff4f0f0d1d553d8e312f7a44cb608ef7",
+    "content-hash": "0f9e8ffd70de59bc1e98f6fca6bc0e42",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1193,16 +1193,16 @@
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.4.5",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "86d55d62243ef3c5e97a241a1a71a96d4fd5cb10"
+                "reference": "48514a80f077ec4fd427810538e9d7adfb203d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/86d55d62243ef3c5e97a241a1a71a96d4fd5cb10",
-                "reference": "86d55d62243ef3c5e97a241a1a71a96d4fd5cb10",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/48514a80f077ec4fd427810538e9d7adfb203d02",
+                "reference": "48514a80f077ec4fd427810538e9d7adfb203d02",
                 "shasum": ""
             },
             "require": {
@@ -1211,7 +1211,7 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "@stable",
-                "getkirby/cms": "^3.9"
+                "getkirby/cms": "^4"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1239,9 +1239,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.4.5"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.5.2"
             },
-            "time": "2023-10-13T08:26:14+00:00"
+            "time": "2023-11-28T14:12:21+00:00"
         },
         {
             "name": "johannschopplich/kirby-content-translator",

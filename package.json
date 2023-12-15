@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@8.12.0",
+  "packageManager": "pnpm@8.12.1",
   "scripts": {
     "assets:head": "esbuild src/head.js --minify --format=esm --target=es2020 --outdir=public/dist/assets",
     "assets:unocss": "unocss \"site/{snippets,templates}/**/*\" --out-file src/styles/uno.css",
@@ -23,22 +23,22 @@
     "unlazy": "^0.10.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.4.3",
-    "@iconify-json/bx": "^1.1.9",
-    "@iconify-json/bxs": "^1.1.9",
+    "@antfu/eslint-config": "^2.4.5",
+    "@iconify-json/bx": "^1.1.10",
+    "@iconify-json/bxs": "^1.1.10",
     "@types/node": "^20.10.4",
     "@unocss/cli": "^0.58.0",
     "@unocss/eslint-plugin": "^0.58.0",
     "@unocss/preset-wind": "^0.58.0",
     "concurrently": "^8.2.2",
-    "esbuild": "^0.19.8",
+    "esbuild": "^0.19.9",
     "eslint": "^8.55.0",
     "postcss": "^8.4.32",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "sass": "^1.69.5",
     "typescript": "^5.3.3",
     "unocss": "^0.58.0",
-    "vite": "^5.0.7",
+    "vite": "^5.0.9",
     "vite-plugin-full-reload": "^1.1.0"
   }
 }
