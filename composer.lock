@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f9e8ffd70de59bc1e98f6fca6bc0e42",
+    "content-hash": "0d7e8513ba0719cba43b531dd937b55e",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1245,16 +1245,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "0.4.3",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-content-translator.git",
-                "reference": "7561ef225f1c827af5fc40d9c239cd67d9e1e1d7"
+                "reference": "009c47a9ab07a64edcfb6baf85c7ebfbdf8de7cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/7561ef225f1c827af5fc40d9c239cd67d9e1e1d7",
-                "reference": "7561ef225f1c827af5fc40d9c239cd67d9e1e1d7",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/009c47a9ab07a64edcfb6baf85c7ebfbdf8de7cd",
+                "reference": "009c47a9ab07a64edcfb6baf85c7ebfbdf8de7cd",
                 "shasum": ""
             },
             "require": {
@@ -1293,7 +1293,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-content-translator/issues",
-                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.4.3"
+                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v0.5.0"
             },
             "funding": [
                 {
@@ -1301,7 +1301,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-12-14T17:44:40+00:00"
+            "time": "2023-12-17T12:06:24+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",

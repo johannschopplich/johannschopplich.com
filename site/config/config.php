@@ -77,6 +77,7 @@ return [
     ],
 
     'johannschopplich.content-translator' => [
+        'allowDefaultLanguageOverwrite' => true,
         'DeepL' => [
             'apiKey' => env('DEEPL_API_KEY')
         ]
