@@ -23,6 +23,8 @@
   }
 
   :where(blockquote) {
+    border-left-width: 3px;
+    border-left-style: double;
     border-left-color: var(--du-color-primary);
     padding-left: 1rem;
   }
