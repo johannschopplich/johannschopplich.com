@@ -74,11 +74,11 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <?php snippet('footer') ?>
 
-<?php if ($page->isHomePage()): ?>
+<?php /*: ?>
 <is-land on:media="(prefers-reduced-motion: no-preference)">
 	<snow-fall count="25" style="--snow-fall-color: var(--du-color-contrast-low)"></snow-fall>
 </is-land>
-<?php endif ?>
+<?php */ ?>
 
 <?php snippet('site-data') ?>
 
