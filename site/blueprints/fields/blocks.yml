@@ -10,6 +10,7 @@ fieldsets:
       - list
       - quote
       - line
+      - note
   media:
     label:
       de: Medien
