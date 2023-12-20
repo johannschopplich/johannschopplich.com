@@ -2,9 +2,6 @@ import { isBelow } from "../utils";
 
 let latestMouseEvent: MouseEvent | undefined;
 let animationId: number | undefined;
-let startTime: number | undefined;
-
-const duration = 750;
 
 export function install() {
   if (isBelow("md")) return;
@@ -26,10 +23,6 @@ export function install() {
   };
 
   window.addEventListener("mousemove", handleMouseMove, { passive: true });
-
-  // window.addEventListener("DOMContentLoaded", () => {
-  //   animationId ??= requestAnimationFrame((ts) => rotateLight(ts, elements));
-  // });
 }
 
 function updateLightPosition(elements: HTMLElement[]) {
@@ -53,35 +46,4 @@ function updateLightPosition(elements: HTMLElement[]) {
   }
 
   latestMouseEvent = undefined;
-}
-
-// eslint-disable-next-line unused-imports/no-unused-vars
-function rotateLight(timestamp: number, elements: HTMLElement[]) {
-  startTime ??= timestamp;
-
-  const t = Math.min((timestamp - startTime) / duration, 1);
-  const easedT = easeOutCubic(t);
-  const dx = 200 * Math.cos(2 * Math.PI * easedT);
-  const dy =
-    (easedT <= 0.5 ? -1 : 1) * 200 * Math.abs(Math.sin(2 * Math.PI * easedT));
-
-  for (const element of elements) {
-    const light = element.querySelector<HTMLElement>("[data-sticker-light]");
-    if (light) {
-      light.setAttribute("x", dx.toFixed(2));
-      light.setAttribute("y", dy.toFixed(2));
-    }
-  }
-
-  // Request next frame or stop when done
-  if (t < 1) {
-    animationId = requestAnimationFrame((ts) => rotateLight(ts, elements));
-  } else {
-    startTime = undefined;
-    animationId = undefined;
-  }
-}
-
-function easeOutCubic(t: number): number {
-  return --t * t * t + 1;
 }

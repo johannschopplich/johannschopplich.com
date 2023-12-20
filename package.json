@@ -23,6 +23,7 @@
     "unlazy": "^0.10.2"
   },
   "devDependencies": {
+    "@11ty/is-land": "^4.0.0",
     "@antfu/eslint-config": "^2.4.6",
     "@iconify-json/bx": "^1.1.10",
     "@iconify-json/bxs": "^1.1.10",
