@@ -34,9 +34,6 @@ dependencies:
     version: 0.10.2
 
 devDependencies:
-  '@11ty/is-land':
-    specifier: ^4.0.0
-    version: 4.0.0
   '@antfu/eslint-config':
     specifier: ^2.4.6
     version: 2.4.6(@unocss/eslint-plugin@0.58.0)(@vue/compiler-sfc@3.3.13)(eslint@8.56.0)(typescript@5.3.3)
@@ -90,10 +87,6 @@ devDependencies:
     version: 1.1.0
 
 packages:
-
-  /@11ty/is-land@4.0.0:
-    resolution: {integrity: sha512-RxbjF2+FzSu3rerHrWLRsvsPX2YM47RwXpdWCCzLhwRSsz5sJe9TnK7mphEld1gZnp2GeD5ByvhqjIc4CqidsQ==}
-    dev: true
 
   /@aashutoshrathi/word-wrap@1.2.6:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}

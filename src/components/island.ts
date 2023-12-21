@@ -8,7 +8,7 @@ class Island extends HTMLElement {
   };
 
   static onceCache = new Map<string, boolean>();
-  static onReady = new Map<string, () => any>();
+  static onReady = new Map<string, (island: typeof Island) => void>();
 
   static fallback = {
     ":not(is-land,:defined,[defer-hydration])": (
@@ -209,7 +209,6 @@ class Island extends HTMLElement {
     this.replaceTemplates(this.getTemplates());
 
     for (const fn of Island.onReady.values()) {
-      // @ts-expect-error: second argument is always Island
       await fn.call(this, Island);
     }
 
@@ -218,9 +217,11 @@ class Island extends HTMLElement {
     this.setAttribute(Island.attr.ready, "");
 
     // Remove [defer-hydration]
-    this.querySelectorAll(`[${Island.attr.defer}]`).forEach((node) =>
-      node.removeAttribute(Island.attr.defer),
-    );
+    for (const node of this.querySelectorAll<HTMLElement>(
+      `[${Island.attr.defer}]`,
+    )) {
+      node.removeAttribute(Island.attr.defer);
+    }
   }
 }
 
