@@ -7,7 +7,11 @@
 https://github.com/johannschopplich/johannschopplich.com
 -->
 <!DOCTYPE html>
-<html class="var-color-primary var-color-primary-200" data-theme="light" lang="<?= $kirby->languageCode() ?>">
+<html
+  class="var-color-primary var-color-primary-500 var-color-primary-200"
+  data-theme="light"
+  lang="<?= $kirby->languageCode() ?>"
+>
 <head>
 
   <meta charset="utf-8">

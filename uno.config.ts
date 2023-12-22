@@ -1,6 +1,7 @@
 import { defineConfig, presetIcons, presetWind } from "unocss";
 import { presetDue } from "duecss";
 import type { Theme } from "@unocss/preset-wind";
+import { parseColor } from "@unocss/preset-mini/utils";
 
 export default defineConfig<Theme>({
   theme: {
@@ -43,6 +44,19 @@ export default defineConfig<Theme>({
       frame: "var(--du-shadow-frame)",
     },
   },
+  rules: [
+    [
+      /^frame-(.+)$/,
+      ([, body], { theme }) => {
+        const parsed = parseColor(body, theme);
+        if (!parsed) return;
+
+        return {
+          "box-shadow": `3px 3px 0 var(--du-color-background), 4px 4px 0 ${parsed.color}`,
+        };
+      },
+    ],
+  ],
   shortcuts: {
     content: "px-lg md:px-3xl",
     "content-breakout": "-mx-lg md:mx-0",
