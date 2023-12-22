@@ -6,7 +6,7 @@ class LiveAnnouncer extends HTMLElement {
     if (typeof window !== "undefined") {
       let tagName = "live-announcer";
       while (customElements.get(tagName)) {
-        tagName += "-";
+        tagName += "-x";
       }
       customElements.define(tagName, LiveAnnouncer);
     }

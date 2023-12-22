@@ -1,3 +1,4 @@
+// Forked from: https://github.com/zachleat/snow-fall
 export class Snow extends HTMLElement {
   static random(min: number, max: number) {
     return min + Math.floor(Math.random() * (max - min) + 1);

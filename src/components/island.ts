@@ -1,3 +1,4 @@
+// Forked from: https://github.com/11ty/is-land
 class Island extends HTMLElement {
   static tagName = "is-land";
   static prefix = "is-land--";
