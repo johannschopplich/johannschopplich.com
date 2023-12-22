@@ -1,4 +1,4 @@
-class LiveAnnouncer extends HTMLElement {
+export class LiveAnnouncer extends HTMLElement {
   #assertiveRegion;
   #politeRegion;
 
@@ -58,18 +58,16 @@ class LiveAnnouncer extends HTMLElement {
 
 let _announcer: LiveAnnouncer;
 
-function setup() {
+export function setup() {
   if (!document.body.shadowRoot) {
     const shadow = document.body.attachShadow({ mode: "open" });
     shadow.appendChild(document.createElement("slot"));
   }
+
   _announcer = new LiveAnnouncer();
-  // @ts-expect-error: target expects a Node
-  _announcer.setup({ target: document.body.shadowRoot });
+  _announcer.setup({ target: document.body.shadowRoot! });
 }
 
-function notify(...args: Parameters<LiveAnnouncer["notify"]>) {
+export function notify(...args: Parameters<LiveAnnouncer["notify"]>) {
   _announcer.notify(...args);
 }
-
-export { setup, notify, LiveAnnouncer };

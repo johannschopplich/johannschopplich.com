@@ -9,66 +9,61 @@ const supportsConstructableStylesheets =
 
 const motionOK = window.matchMedia("(prefers-reduced-motion: no-preference)");
 
-class SparklyText extends HTMLElement {
+export class SparklyText extends HTMLElement {
   #numberOfSparkles = 3;
-  #sparkleSvg = `<svg width="1200" height="1200" viewBox="0 0 1200 1200" aria-hidden="true">
-		<path fill="red" d="m611.04 866.16c17.418-61.09 50.25-116.68 95.352-161.42 45.098-44.742 100.94-77.133 162.17-94.062l38.641-10.68-38.641-10.68c-61.227-16.93-117.07-49.32-162.17-94.062-45.102-44.738-77.934-100.33-95.352-161.42l-11.039-38.641-11.039 38.641c-17.418 61.09-50.25 116.68-95.352 161.42-45.098 44.742-100.94 77.133-162.17 94.062l-38.641 10.68 38.641 10.68c61.227 16.93 117.07 49.32 162.17 94.062 45.102 44.738 77.934 100.33 95.352 161.42l11.039 38.641z"/>
-	</svg>`;
+  #sparkleSvg = `
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" aria-hidden="true">
+  <path fill="red" d="m611.04 866.16c17.418-61.09 50.25-116.68 95.352-161.42 45.098-44.742 100.94-77.133 162.17-94.062l38.641-10.68-38.641-10.68c-61.227-16.93-117.07-49.32-162.17-94.062-45.102-44.738-77.934-100.33-95.352-161.42l-11.039-38.641-11.039 38.641c-17.418 61.09-50.25 116.68-95.352 161.42-45.098 44.742-100.94 77.133-162.17 94.062l-38.641 10.68 38.641 10.68c61.227 16.93 117.07 49.32 162.17 94.062 45.102 44.738 77.934 100.33 95.352 161.42l11.039 38.641z"/>
+</svg>`;
 
   #css = `
-    :host {
-      --_sparkle-base-size: var(--sparkly-text-size, 1em);
-      --_sparkle-base-animation-length: var(--sparkly-text-animation-length, 1.5s);
-      --_sparkle-base-color: var(--sparkly-text-color, #4ab9f8);
+:host {
+  --_sparkle-base-size: var(--sparkly-text-size, 1em);
+  --_sparkle-base-animation-length: var(--sparkly-text-animation-length, 1.5s);
+  --_sparkle-base-color: var(--sparkly-text-color, #4ab9f8);
 
-      position: relative;
-      z-index: 0;
-    }
+  position: relative;
+  z-index: 0;
+}
 
-    svg {
-      position: absolute;
-      z-index: -1;
-      width: var(--_sparkle-base-size);
-      height: var(--_sparkle-base-size);
-      transform-origin: center;
-      pointer-events: none;
-    }
+svg {
+  position: absolute;
+  z-index: -1;
+  width: var(--_sparkle-base-size);
+  height: var(--_sparkle-base-size);
+  transform-origin: center;
+  pointer-events: none;
+}
 
-    @media (prefers-reduced-motion: no-preference) {
-      svg {
-        animation: sparkle-spin var(--_sparkle-base-animation-length) linear 1;
-      }
-    }
-
-    svg path {
-      fill: var(--_sparkle-base-color);
-    }
-
-    @keyframes sparkle-spin {
-      0% {
-        scale: 0;
-        opacity: 0;
-        rotate: 0deg;
-      }
-
-      50% {
-        scale: 1;
-        opacity: 1;
-      }
-
-      100% {
-        scale: 0;
-        opacity: 0;
-        rotate: 180deg;
-      }
-    }
-`;
-
-  static register() {
-    if ("customElements" in window) {
-      window.customElements.define("sparkly-text", SparklyText);
-    }
+@media (prefers-reduced-motion: no-preference) {
+  svg {
+    animation: sparkle-spin var(--_sparkle-base-animation-length) linear 1;
   }
+}
+
+svg path {
+  fill: var(--_sparkle-base-color);
+}
+
+@keyframes sparkle-spin {
+  0% {
+    scale: 0;
+    opacity: 0;
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1;
+    opacity: 1;
+  }
+
+  100% {
+    scale: 0;
+    opacity: 0;
+    rotate: 180deg;
+  }
+}
+`;
 
   generateCss() {
     if (!sheet) {
@@ -160,6 +155,6 @@ class SparklyText extends HTMLElement {
   }
 }
 
-SparklyText.register();
-
-export { SparklyText };
+export function setup() {
+  customElements.define("sparkly-text", SparklyText);
+}

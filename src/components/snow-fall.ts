@@ -119,3 +119,7 @@ export class Snow extends HTMLElement {
     shadowroot.appendChild(document.createElement("slot"));
   }
 }
+
+export function setup() {
+  customElements.define("snow-fall", Snow);
+}

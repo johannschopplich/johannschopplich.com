@@ -1,5 +1,5 @@
 // Forked from: https://github.com/11ty/is-land
-class Island extends HTMLElement {
+export class Island extends HTMLElement {
   static tagName = "is-land";
   static prefix = "is-land--";
   static attr = {
@@ -106,9 +106,9 @@ class Island extends HTMLElement {
   }
 
   forceFallback() {
-    if ((window as any).Island) {
-      Object.assign(Island.fallback, (window as any).Island.fallback);
-    }
+    // if ((window as any).Island) {
+    //   Object.assign(Island.fallback, (window as any).Island.fallback);
+    // }
 
     for (const selector in Island.fallback) {
       // Reverse here as a cheap way to get the deepest nodes first
@@ -252,11 +252,6 @@ class Conditions {
   }
 
   static visible(noop: unknown, el: HTMLElement) {
-    if (!("IntersectionObserver" in window)) {
-      // runs immediately
-      return;
-    }
-
     return new Promise<void>((resolve) => {
       const observer = new IntersectionObserver((entries) => {
         const [entry] = entries;
@@ -320,13 +315,11 @@ class Conditions {
   }
 
   static media(query: string) {
-    let mm = {
-      matches: true,
-    } as MediaQueryList;
-
-    if (query && "matchMedia" in window) {
-      mm = window.matchMedia(query);
+    if (!query) {
+      return;
     }
+
+    const mm = window.matchMedia(query);
 
     if (mm.matches) {
       return;
@@ -354,8 +347,6 @@ class Conditions {
     return new Promise(() => {});
   }
 }
-
-export { Island };
 
 export function setup() {
   customElements.define(Island.tagName, Island);
