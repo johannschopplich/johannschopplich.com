@@ -1,6 +1,6 @@
 import { debounce } from "../utils";
 
-let masonrySheet: CSSStyleSheet | HTMLStyleElement;
+let sheet: CSSStyleSheet | HTMLStyleElement;
 const supportsConstructableStylesheets =
   "replaceSync" in CSSStyleSheet.prototype;
 
@@ -26,22 +26,20 @@ export class MasonryGrid extends HTMLElement {
 `;
 
   generateCss() {
-    if (!masonrySheet) {
+    if (!sheet) {
       if (supportsConstructableStylesheets) {
-        masonrySheet = new CSSStyleSheet();
-        masonrySheet.replaceSync(this.#css);
+        sheet = new CSSStyleSheet();
+        sheet.replaceSync(this.#css);
       } else {
-        masonrySheet = document.createElement("style");
-        masonrySheet.textContent = this.#css;
+        sheet = document.createElement("style");
+        sheet.textContent = this.#css;
       }
     }
 
     if (supportsConstructableStylesheets) {
-      this.shadowRoot!.adoptedStyleSheets = [masonrySheet as CSSStyleSheet];
+      this.shadowRoot!.adoptedStyleSheets = [sheet as CSSStyleSheet];
     } else {
-      this.shadowRoot!.append(
-        (masonrySheet as HTMLStyleElement).cloneNode(true),
-      );
+      this.shadowRoot!.append((sheet as HTMLStyleElement).cloneNode(true));
     }
   }
 

@@ -1,11 +1,8 @@
 // Forked from: https://github.com/zachleat/snow-fall
 export class Snow extends HTMLElement {
-  static random(min: number, max: number) {
-    return min + Math.floor(Math.random() * (max - min) + 1);
-  }
-
   static attrs = {
-    count: "count", // default: 100
+    /* @default 100 */
+    count: "count",
     mode: "mode",
   };
 
@@ -53,20 +50,20 @@ export class Snow extends HTMLElement {
 
     // Thank you @alphardex: https://codepen.io/alphardex/pen/dyPorwJ
     for (let j = 1; j <= count; j++) {
-      const x = (Snow.random(1, 100) * dimensions.width) / 100; // vw
-      const offset = (Snow.random(-10, 10) * dimensions.width) / 100; // vw
+      const x = (random(1, 100) * dimensions.width) / 100; // vw
+      const offset = (random(-10, 10) * dimensions.width) / 100; // vw
 
-      const yoyo = Math.round(Snow.random(30, 100)); // % time
+      const yoyo = Math.round(random(30, 100)); // % time
       const yStart = (yoyo * dimensions.height) / 100; // vh
       const yEnd = dimensions.height; // vh
 
-      const scale = Snow.random(1, 10000) * 0.0001;
-      const duration = Snow.random(10, 30);
-      const delay = Snow.random(0, 30) * -1;
+      const scale = random(1, 10000) * 0.0001;
+      const duration = random(10, 30);
+      const delay = random(0, 30) * -1;
 
       css.push(`
 :nth-child(${j}) {
-	opacity: ${Snow.random(0, 1000) * 0.001};
+	opacity: ${random(0, 1000) * 0.001};
 	transform: translate(${x}${units.x}, -10px) scale(${scale});
 	animation: fall-${j} ${duration}s ${delay}s linear infinite;
 }
@@ -122,4 +119,8 @@ export class Snow extends HTMLElement {
 
 export function setup() {
   customElements.define("snow-fall", Snow);
+}
+
+function random(min: number, max: number) {
+  return min + Math.floor(Math.random() * (max - min) + 1);
 }
