@@ -171,3 +171,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     iframeEl.focus();
   }
 }
+
+export function setup() {
+  customElements.define("lite-youtube", LiteYouTubeEmbed);
+}

@@ -108,7 +108,7 @@
   }
 
   :where(.masonry-grid) {
-    --masonry-col-max-w: 30ch;
+    --masonry-column-max-width: 30ch;
     gap: 1rem;
 
     figure {
