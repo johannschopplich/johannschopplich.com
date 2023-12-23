@@ -107,7 +107,7 @@
     font-weight: 500;
   }
 
-  :where(.masonry-grid) {
+  :where(masonry-grid) {
     --masonry-column-max-width: 30ch;
     gap: 1rem;
 
