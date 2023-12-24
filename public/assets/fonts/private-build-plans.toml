@@ -2,9 +2,9 @@
 family = "Iosevka Aile"
 spacing = "quasi-proportional"
 serifs = "sans"
-no-cv-ss = true
-export-glyph-names = false
-webfont-formats = ['woff2']
+noCvSs = true
+exportGlyphNames = false
+webfontFormats = ['woff2']
 
 [buildPlans.iosevka-aile.weights.regular]
 shape = 400

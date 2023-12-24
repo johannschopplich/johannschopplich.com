@@ -10,8 +10,8 @@
   // Project-specific due variables
   --du-decoration-thickness: max(1px, 0.075em);
   --du-decoration-offset: max(2px, 0.15em);
-  --du-shadow-frame: 3px 3px 0 var(--du-color-background),
-    4px 4px 0 var(--du-color-border);
+  --du-frame-shadow-template: 3px 3px 0 var(--du-color-background), 4px 4px 0;
+  --du-frame-shadow: var(--du-frame-shadow-template) var(--du-color-border);
 }
 
 :root:not([data-theme]),

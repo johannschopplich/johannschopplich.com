@@ -9,7 +9,7 @@
     <div class="gap-5xl sm:gap-6xl sm:pr-lg md:pr-3xl grid max-w-screen-xl sm:grid-cols-2">
       <?php if ($image = $page->thumbnail()->toFile()): ?>
         <div>
-          <figure class="unselectable relative md:shadow-frame">
+          <figure class="unselectable relative md:shadow-$du-frame-shadow">
             <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
             <img
               src="<?= $image->url() ?>"

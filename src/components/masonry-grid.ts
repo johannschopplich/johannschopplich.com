@@ -17,7 +17,7 @@ export class MasonryGrid extends HTMLElement {
     minmax(min(var(--masonry-column-max-width, 25rem), 100%), 1fr)
   );
   justify-content: center;
-  gap: var(--masonry-grid-gap, 16px);
+  gap: var(--masonry-gap, 16px);
 }
 
 ::slotted(*) {

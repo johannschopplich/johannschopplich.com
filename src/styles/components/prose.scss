@@ -27,6 +27,14 @@
     border-left-style: double;
     border-left-color: var(--du-color-primary);
     padding-left: 1rem;
+
+    footer {
+      line-height: calc(var(--du-line-height-normal) * 0.875);
+      font-size: 0.75rem;
+      font-weight: 500;
+      font-style: normal;
+      margin-top: 0.25rem;
+    }
   }
 
   :where(pre) {
@@ -42,7 +50,7 @@
   }
 
   :where(figure) {
-    box-shadow: var(--du-shadow-frame);
+    box-shadow: var(--du-frame-shadow-template) var(--du-color-border);
 
     @include breakpoints.media-below(sm) {
       margin-left: -1.125rem;
@@ -116,9 +124,29 @@
     }
   }
 
+  :where(.note) {
+    border: 1px solid var(--du-color-primary-500);
+    font-size: 0.875rem;
+    padding: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    box-shadow: var(--du-frame-shadow-template) var(--du-color-primary-500);
+
+    @include breakpoints.media-above(sm) {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
   &.is-article {
     :where(p) {
       line-height: calc(var(--du-line-height-normal) / 0.875);
+    }
+
+    :where(.note p) {
+      line-height: var(--du-line-height-normal);
     }
   }
 }
