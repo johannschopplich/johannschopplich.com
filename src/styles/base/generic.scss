@@ -1,3 +1,5 @@
+@use "duecss/abstracts/breakpoints";
+
 a:not([class]),
 .text-underline {
   text-decoration-line: underline;
@@ -20,5 +22,9 @@ a:not([class]),
 }
 
 [id] {
-  scroll-margin-top: 4rem;
+  scroll-margin-top: 5rem;
+
+  @include breakpoints.media-above(sm) {
+    scroll-margin-top: 4rem;
+  }
 }
