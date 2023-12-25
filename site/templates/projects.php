@@ -34,7 +34,11 @@
           </p>
 
           <h2 class="title text-2xl font-700">
-            <a href="<?= $project->url() ?>" class="text-underline text-underline-contrast-lower !text-current">
+            <a
+              href="<?= $project->url() ?>"
+              class="text-underline !text-current"
+              style="--text-underline-color: var(--du-color-contrast-lower)"
+            >
               <span class="absolute inset-0" aria-hidden="true"></span>
               <?= $project->title()->escape() ?>
             </a>

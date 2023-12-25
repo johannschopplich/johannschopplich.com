@@ -4,21 +4,13 @@ a:not([class]),
 .text-underline {
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-color: var(--du-color-primary);
+  text-decoration-color: var(--text-underline-color, var(--du-color-primary));
   text-decoration-thickness: var(--du-decoration-thickness);
   text-underline-offset: var(--du-decoration-offset);
 
   &:hover {
     text-decoration-color: currentColor;
   }
-}
-
-.text-underline-contrast-lower {
-  text-decoration-color: var(--du-color-contrast-lower);
-}
-
-.text-underline-transparent {
-  text-decoration-color: transparent;
 }
 
 [id] {
