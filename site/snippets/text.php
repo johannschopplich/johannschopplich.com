@@ -10,10 +10,7 @@
     <?php if ($page->published()->isNotEmpty()): ?>
       <div class="flex items-center mt-2">
         <?= asset('assets/article-spacer.svg')->read() ?>
-          <p
-            class="absolute text-sm font-500 text-contrast-medium"
-            style="text-shadow: -2px -2px 0 var(--du-color-background), 0 -2px 0 var(--du-color-background), 2px -2px 0 var(--du-color-background), -2px 0 0 var(--du-color-background), 2px 0 0 var(--du-color-background), -2px 2px 0 var(--du-color-background), 0 2px 0 var(--du-color-background), 2px 2px 0 var(--du-color-background);"
-          >
+          <p class="text-background-shadow absolute text-sm font-500 text-contrast-medium">
             <?= t('article.publishedAt') ?>
             <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">
               <?= $page->published()->toDate(dateFormatter()) ?>

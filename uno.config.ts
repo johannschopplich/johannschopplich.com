@@ -6,7 +6,6 @@ import {
 } from "unocss";
 import { presetDue } from "duecss";
 import type { Theme } from "@unocss/preset-wind";
-import { parseColor } from "@unocss/preset-mini/utils";
 
 export default defineConfig<Theme>({
   theme: {
@@ -43,6 +42,15 @@ export default defineConfig<Theme>({
       },
     },
   },
+  rules: [
+    [
+      "text-background-shadow",
+      {
+        "text-shadow":
+          "-2px -2px 0 var(--du-color-background), 0 -2px 0 var(--du-color-background), 2px -2px 0 var(--du-color-background), -2px 0 0 var(--du-color-background), 2px 0 0 var(--du-color-background), -2px 2px 0 var(--du-color-background), 0 2px 0 var(--du-color-background), 2px 2px 0 var(--du-color-background)",
+      },
+    ],
+  ],
   shortcuts: {
     content: "px-lg md:px-3xl",
     "content-breakout": "-mx-lg md:mx-0",
