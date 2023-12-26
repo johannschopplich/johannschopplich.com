@@ -27,9 +27,9 @@
         </a>
       </h2>
 
-      <p>
-        <?= $article->description() ?>
-      </p>
+      <div class="prose">
+        <p><?= $article->description() ?></p>
+      </div>
   </div>
   <?php endforeach ?>
 </div>

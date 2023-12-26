@@ -6,6 +6,7 @@
 
   @include breakpoints.media-below(sm) {
     font-size: 0.875rem;
+    line-height: var(--du-line-height-normal);
   }
 
   &.is-article {
