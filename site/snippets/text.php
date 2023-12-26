@@ -2,8 +2,8 @@
 
 /** @var \Kirby\Cms\Page $page */ ?>
 <div class="py-8xl">
-  <div class="content w-max max-w-prose pb-5xl">
-    <h1 class="headline inline-block">
+  <div class="content max-w-prose pb-5xl">
+    <h1 class="headline">
       <?= $page->title()->escape() ?>
     </h1>
 
