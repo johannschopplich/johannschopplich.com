@@ -4,6 +4,16 @@
 .prose {
   --du-prose-space-y: 1.5;
 
+  @include breakpoints.media-below(sm) {
+    font-size: 0.875rem;
+  }
+
+  &.is-article {
+    :where(p) {
+      line-height: calc(var(--du-line-height-normal) / 0.875);
+    }
+  }
+
   :where(figure:not(:first-child)) {
     margin-top: calc(2rem * var(--du-prose-space-y, 1));
   }
@@ -153,16 +163,6 @@
       padding-right: 1.25rem;
       margin-left: 0;
       margin-right: 0;
-    }
-  }
-
-  &.is-article {
-    @include breakpoints.media-below(sm) {
-      font-size: 0.875rem;
-    }
-
-    :where(p) {
-      line-height: calc(var(--du-line-height-normal) / 0.875);
     }
   }
 }
