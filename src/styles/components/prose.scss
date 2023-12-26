@@ -164,9 +164,5 @@
     :where(p) {
       line-height: calc(var(--du-line-height-normal) / 0.875);
     }
-
-    :where(.note p) {
-      line-height: var(--du-line-height-normal);
-    }
   }
 }
