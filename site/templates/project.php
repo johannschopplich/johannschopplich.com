@@ -6,20 +6,20 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <div class="pt-8xl pb-5xl space-y-5xl">
-    <div class="content max-w-prose">
-      <p class="text-contrast-medium">
-        <?= $page->subtitle()->escape() ?>
-      </p>
-
-      <h1 class="headline">
+    <div class="content w-max max-w-prose">
+      <h1 class="headline inline-block">
         <?= $page->title()->escape() ?>
       </h1>
 
-      <?php /*
-      <div class="mt-xs">
+      <div class="flex items-center mt-2">
         <?= asset('assets/article-spacer.svg')->read() ?>
+        <p
+          class="absolute text-sm font-500 text-contrast-medium"
+          style="text-shadow: -2px -2px 0 var(--du-color-background), 0 -2px 0 var(--du-color-background), 2px -2px 0 var(--du-color-background), -2px 0 0 var(--du-color-background), 2px 0 0 var(--du-color-background), -2px 2px 0 var(--du-color-background), 0 2px 0 var(--du-color-background), 2px 2px 0 var(--du-color-background);"
+        >
+          <?= $page->subtitle()->escape() ?>
+        </p>
       </div>
-      */ ?>
     </div>
 
     <?php if ($page->galleryType()->value() === 'slider'): ?>
