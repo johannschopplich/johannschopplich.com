@@ -12,6 +12,22 @@
     margin-bottom: calc(2rem * var(--du-prose-space-y, 1));
   }
 
+  :where(h1) {
+    font-size: var(--du-text-2xl);
+  }
+
+  :where(h2) {
+    font-size: var(--du-text-xl);
+  }
+
+  :where(h3) {
+    font-size: var(--du-text-lg);
+  }
+
+  :where(h4) {
+    font-size: 1rem;
+  }
+
   :where(h1, h2, h3, h4, h5, h6) {
     font-weight: 700;
     font-family: var(--du-font-family-heading);
@@ -91,6 +107,7 @@
   :where(figcaption) {
     @include breakpoints.media-below(sm) {
       margin-left: calc(1.125rem - 3px);
+      margin-right: calc(1.125rem - 3px);
     }
 
     line-height: calc(var(--du-line-height-normal) * 0.875);
@@ -126,7 +143,6 @@
 
   :where(.note) {
     border: 1px solid var(--du-color-primary-500);
-    font-size: 0.875rem;
     padding: 1rem;
     margin-left: -1rem;
     margin-right: -1rem;
@@ -141,6 +157,10 @@
   }
 
   &.is-article {
+    @include breakpoints.media-below(sm) {
+      font-size: 0.875rem;
+    }
+
     :where(p) {
       line-height: calc(var(--du-line-height-normal) / 0.875);
     }
