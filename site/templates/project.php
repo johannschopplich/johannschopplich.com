@@ -6,14 +6,13 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <div class="pt-8xl pb-5xl space-y-5xl">
-    <div class="content max-w-prose">
-      <h1 class="headline">
+    <div class="content w-fit max-w-prose">
+      <h1 class="headline inline-block">
         <?= $page->title()->escape() ?>
       </h1>
 
-      <div class="flex items-center mt-2">
-        <?= asset('assets/article-spacer.svg')->read() ?>
-        <p class="text-background-shadow absolute text-sm font-500 text-contrast-medium">
+      <div class="flex gap-1 items-center after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-medium">
+        <p class="shrink-0 text-sm font-500 text-contrast-medium">
           <?= $page->subtitle()->escape() ?>
         </p>
       </div>
