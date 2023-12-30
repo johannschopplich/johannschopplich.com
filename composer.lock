@@ -521,24 +521,24 @@
         },
         {
             "name": "getkirby/cli",
-            "version": "1.1.1",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/cli.git",
-                "reference": "0e8074b0e6081c9e1a9f31090733b058db15be06"
+                "reference": "1d6d72fb1d29cad3fb7ebe351959b85bd8c843c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/cli/zipball/0e8074b0e6081c9e1a9f31090733b058db15be06",
-                "reference": "0e8074b0e6081c9e1a9f31090733b058db15be06",
+                "url": "https://api.github.com/repos/getkirby/cli/zipball/1d6d72fb1d29cad3fb7ebe351959b85bd8c843c1",
+                "reference": "1d6d72fb1d29cad3fb7ebe351959b85bd8c843c1",
                 "shasum": ""
             },
             "require": {
                 "composer-runtime-api": "^2.2",
                 "ext-zip": "*",
-                "guzzlehttp/guzzle": "^7.5",
-                "league/climate": "^3.8",
-                "php": ">=8.0.0 <8.3.0"
+                "guzzlehttp/guzzle": "^7.8",
+                "league/climate": "^3.8.2",
+                "php": "~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "bin": [
                 "bin/kirby"
@@ -583,7 +583,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-02-10T12:27:30+00:00"
+            "time": "2023-12-21T11:50:41+00:00"
         },
         {
             "name": "getkirby/cms",
