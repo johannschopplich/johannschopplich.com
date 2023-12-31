@@ -1,0 +1,30 @@
+name:
+  de: Muster
+  en: Pattern
+icon: palette
+wysiwyg: true
+preview: fields
+fields:
+  image:
+    label: field.blocks.image.name
+    type: files
+    multiple: false
+    image:
+      back: black
+    uploads:
+      template: image
+  caption:
+    label: field.blocks.image.caption
+    type: writer
+    icon: text
+    inline: true
+  size:
+    label:
+      de: Größe
+      en: Size
+    type: range
+    default: 50
+    step: 1
+    min: 0
+    max: 100
+    after: "%"

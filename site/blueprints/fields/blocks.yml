@@ -11,6 +11,7 @@ fieldsets:
       - quote
       - line
       - note
+      - pattern
   media:
     label:
       de: Medien
