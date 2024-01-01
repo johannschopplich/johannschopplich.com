@@ -49,11 +49,6 @@ fields:
           de: Hervorgehoben
           en: Outset
         icon: grid-bottom
-      - value: is-pulled-left
-        text:
-          de: Linksbündig
-          en: Left-Aligned
-        icon: grid-left
       - value: is-pulled-right
         text:
           de: Rechtsbündig
