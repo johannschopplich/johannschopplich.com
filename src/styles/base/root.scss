@@ -23,8 +23,8 @@
   --du-color-border: currentColor;
 
   ::selection {
-    color: inherit;
-    background: var(--du-color-primary); // #f0d590
+    color: black;
+    background: var(--du-color-primary-200); // #f0d590
   }
 }
 
