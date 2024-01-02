@@ -43,6 +43,7 @@ fields:
       de: Eigenschaften
       en: Properties
     type: toggles
+    grow: false
     options:
       - value: is-outset
         text:
