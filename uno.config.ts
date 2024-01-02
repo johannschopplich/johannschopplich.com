@@ -54,14 +54,7 @@ export default defineConfig<Theme>({
     "masonry-grid":
       "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-col-max-w,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
   },
-  safelist: [
-    "sr-only",
-    "w-full",
-    "aspect-[16/9]",
-    "invisible",
-    "animated",
-    "animated-tada",
-  ],
+  safelist: ["sr-only", "invisible", "animated", "animated-tada"],
   transformers: [transformerDirectives()],
   presets: [
     presetWind(),

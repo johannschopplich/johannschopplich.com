@@ -39,10 +39,6 @@ return [
         ]
     ],
 
-    'markdown' => [
-        'extra' => true
-    ],
-
     // Default to token-based authentication
     'kql' => [
         'auth' => 'bearer'
