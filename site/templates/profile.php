@@ -62,8 +62,12 @@
                   <?php /** @var \Kirby\Cms\Block $block */ ?>
                   <?php if ($block->type() === 'heading'): ?>
                     <h2 class="text-sm uppercase tracking-[0.125ch] du-dark:text-contrast-medium"><?= $block->text() ?></h2>
-                  <?php else: ?>
-                    <?= $block ?>
+                  <?php elseif ($block->type() === 'text'): ?>
+                    <?= preg_replace(
+                      '/<code>(.*?)<\/code>/',
+                      '<sparkly-text style="--sparkly-text-size: 2em; --sparkly-text-color: gold">$1</sparkly-text>',
+                      $block->toHtml()
+                    ) ?>
                   <?php endif ?>
                 <?php endforeach ?>
               </div>
