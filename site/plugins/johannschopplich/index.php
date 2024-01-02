@@ -4,12 +4,7 @@ use Kirby\Cms\App;
 use Kirby\Cms\Html;
 use Kirby\Http\Url;
 
-App::plugin('johannschopplich/website', [
-    'tags' => [
-        'image' => require __DIR__ . '/tags/image.php',
-        'pattern' => require __DIR__ . '/tags/pattern.php'
-    ]
-]);
+App::plugin('johannschopplich/website');
 
 if (!function_exists('icon')) {
     /**
@@ -17,10 +12,13 @@ if (!function_exists('icon')) {
      */
     function icon(string $symbol, string|null $class = null)
     {
-        $kirby = App::instance();
-        $iconDir = $kirby->root('index') . '/assets/icons/';
-        $symbolPath = Url::path($symbol);
-        $svg = Html::svg($iconDir . $symbolPath);
+        static $iconDir;
+        if (!$iconDir) {
+            $kirby = App::instance();
+            $iconDir = $kirby->root('index') . '/assets/icons/';
+        }
+
+        $svg = Html::svg($iconDir . Url::path($symbol));
 
         if (!$svg) {
             return;
