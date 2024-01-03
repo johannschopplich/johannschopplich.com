@@ -68,6 +68,8 @@
                       '<sparkly-text style="--sparkly-text-size: 2em; --sparkly-text-color: gold">$1</sparkly-text>',
                       $block->toHtml()
                     ) ?>
+                  <?php else: ?>
+                    <?= $block ?>
                   <?php endif ?>
                 <?php endforeach ?>
               </div>
