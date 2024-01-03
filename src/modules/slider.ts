@@ -23,8 +23,8 @@ export async function install() {
       new Swiper(element, {
         slidesPerView: "auto",
         spaceBetween: 0.75 * fontSize,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
+        // centeredSlides: true,
+        // centeredSlidesBounds: true,
         grabCursor: true,
         longSwipesRatio: 0.25,
         on: {
