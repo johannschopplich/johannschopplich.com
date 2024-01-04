@@ -1,3 +1,4 @@
+// Forked from: https://github.com/hexagoncircle/click-spark
 export class ClickSpark extends HTMLElement {
   #root = document.documentElement;
   #svg?: SVGSVGElement;
@@ -8,7 +9,6 @@ export class ClickSpark extends HTMLElement {
 
   connectedCallback() {
     this.attachShadow({ mode: "open" });
-
     this.shadowRoot!.innerHTML = `
 <style>
 :host {
@@ -32,7 +32,7 @@ line {
 <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
   ${Array.from(
     { length: 8 },
-    (_) => `<line x1="50" y1="30" x2="50" y2="4"/>`,
+    (_) => '<line x1="50" y1="30" x2="50" y2="4"/>',
   ).join("")}
 </svg>
 `;
@@ -40,12 +40,18 @@ line {
     const svg = this.shadowRoot?.querySelector("svg");
     if (svg) {
       this.#svg = svg;
-      this.#root.addEventListener("click", (event) => {
-        this.setSparkPosition(event);
-        this.animateSpark();
-      });
+      this.#root.addEventListener("click", this.onClickCallback);
     }
   }
+
+  disconnectedCallback() {
+    this.#root.removeEventListener("click", this.onClickCallback);
+  }
+
+  onClickCallback = (event: MouseEvent) => {
+    this.setSparkPosition(event);
+    this.animateSpark();
+  };
 
   animateSpark() {
     const sparks = [...this.#svg!.children];
