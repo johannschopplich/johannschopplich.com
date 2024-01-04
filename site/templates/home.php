@@ -30,7 +30,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
               </div>
             </h1>
           <?php else: ?>
-            <div class="max-w-prose">
+            <div class="max-w-prose text-contrast-medium">
               <?= $block ?>
             </div>
           <?php endif ?>

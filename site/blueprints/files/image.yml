@@ -38,12 +38,17 @@ columns:
               link:
                 label: Link
                 type: url
-                width: 1/2
+                width: 1/3
               mockup:
                 label: Mockup
                 type: toggles
                 default: none
                 options:
+                  - value: document
+                    text:
+                      de: Dokument
+                      en: Document
+                    icon: document
                   - value: mobile
                     text:
                       de: Mobil
@@ -57,7 +62,7 @@ columns:
                       de: Keine
                       en: None
                     icon: cancel-small
-                width: 1/2
+                width: 2/3
               bgColor:
                 label:
                   de: Hintergrundfarbe

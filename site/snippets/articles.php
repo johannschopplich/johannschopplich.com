@@ -27,7 +27,7 @@
         </a>
       </h2>
 
-      <div class="prose">
+      <div class="prose text-contrast-medium">
         <p><?= $article->description() ?></p>
       </div>
   </div>

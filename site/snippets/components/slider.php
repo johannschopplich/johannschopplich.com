@@ -23,14 +23,14 @@ $heightMap = [
       $mockup = $settings->mockup()->or('none')->value();
       $hasLink = ($links ?? true) && $settings->link()->isNotEmpty();
       $tag = $hasLink ? 'a' : 'div';
+      $isDocument = $mockup === 'document';
       $isMobile = $mockup === 'mobile';
       $isDesktop = $mockup === 'desktop';
       ?>
       <<?= $tag . attr([
         'class' => 'swiper-slide shrink-0 snap-center snap-always first:snap-start',
         'href' => $hasLink ? $settings->link()->value() : null,
-        'target' => $hasLink ? '_blank' : null,
-        'rel' => $hasLink ? 'noopener' : null
+        'target' => $hasLink ? '_blank' : null
       ], ' ') ?>>
         <div
           data-slide-content
@@ -38,7 +38,11 @@ $heightMap = [
         >
           <?php if ($mockup !== 'none'): ?>
             <div
-              class="h-$cell bg-$bg relative <?= $isMobile ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : 'p-3xl md:p-5xl' ?> <?php e($isDesktop, 'flex flex-col') ?>"
+              class="<?= implode(' ', [
+                'h-$cell bg-$bg relative',
+                ($isMobile || $isDocument) ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : 'p-3xl md:p-5xl',
+                $isDesktop ? 'flex flex-col' : ''
+              ]) ?>"
               style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
             >
             <?php if ($isMobile): ?>
@@ -53,11 +57,12 @@ $heightMap = [
           <?php endif ?>
 
           <img
-            class="<?= $isMobile
-              ? 'h-full w-auto border border-solid border-zinc-900 object-contain rounded-xl'
-              : ($isDesktop
-                ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain'
-                : 'h-$cell max-w-screen w-auto object-contain') ?>"
+            class="<?= implode(' ', [
+              ($isDocument || $isMobile) ? 'h-full w-auto border border-solid border-zinc-900 object-contain' : '',
+              $isMobile ? 'rounded-xl' : '',
+              $isDesktop ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain' : '',
+              ($mockup === 'none') ? 'h-$cell max-w-screen w-auto object-contain' : ''
+            ]) ?>"
             loading="lazy"
             src="<?= $image->thumbhashUri() ?>"
             data-srcset="<?= $image->srcset() ?>"
