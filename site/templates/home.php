@@ -104,12 +104,12 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
     </h2>
 
     <div class="border-t border-t-solid du-dark:border-contrast-lower pt-lg">
-      <div class="max-w-prose prose">
+      <div class="prose max-w-prose text-contrast-medium">
         <?= $page->contactText()->toBlocks() ?>
         <div class="space-y-2">
           <?php foreach ($page->contact()->toStructure() as $item): ?>
             <div class="grid grid-cols-[auto_1fr] gap-xl md:grid-cols-3">
-              <p class="text-contrast-medium"><?= $item->title()->escape() ?></p>
+              <p><?= $item->title()->escape() ?></p>
               <p class="md:col-start-2 md:col-end-2"><?= $item->link()->permalinksToUrls() ?></p>
             </div>
           <?php endforeach ?>
