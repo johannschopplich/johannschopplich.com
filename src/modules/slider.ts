@@ -54,7 +54,7 @@ export async function install() {
         }
       }
     },
-    { threshold: 0.25 },
+    { threshold: [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] },
   );
 
   // If the slider is not initially in viewport, hide slides and start observer
