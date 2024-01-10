@@ -17,7 +17,7 @@ $inactiveLanguage = $kirby
   </div>
 
   <div class="font-500">
-    <div class="flex gap-lg justify-between border-b border-zinc-400 pb-xs mb-xs du-dark:border-zinc-600">
+    <div class="flex gap-lg justify-between border-b border-contrast-low pb-xs mb-xs">
       <a
         href="<?= $page->url($inactiveLanguage->code()) ?>"
         hreflang="<?= $inactiveLanguage->code() ?>"
