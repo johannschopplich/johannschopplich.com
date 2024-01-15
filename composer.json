@@ -3,7 +3,7 @@
     "getkirby/cms": "^4",
     "getkirby/cli": "^1.1",
     "getkirby/kql": "^2.1",
-    "johannschopplich/kirby-helpers": "^5.0",
+    "johannschopplich/kirby-helpers": "^6.0",
     "johannschopplich/kirby-headless": "^2.3",
     "johannschopplich/kirby-algolia-docsearch": "^0.5",
     "johannschopplich/kirby-content-translator": "^0.5",
