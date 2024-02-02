@@ -1,4 +1,5 @@
 type: content-translator
+title: true
 syncableFields:
   - text
   - description
