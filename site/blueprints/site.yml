@@ -17,6 +17,7 @@ tabs:
               de: Artikel
               en: Articles
             layout: table
+            search: true
             columns:
               published:
                 label:
