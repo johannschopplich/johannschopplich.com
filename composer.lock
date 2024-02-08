@@ -1100,16 +1100,16 @@
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.5.3",
+            "version": "0.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "f1bad9d81d89606e21f2c0b2588f539ad504e9d8"
+                "reference": "b1eb083f4f2d2b88c6d9db1745a2d50459b83260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/f1bad9d81d89606e21f2c0b2588f539ad504e9d8",
-                "reference": "f1bad9d81d89606e21f2c0b2588f539ad504e9d8",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/b1eb083f4f2d2b88c6d9db1745a2d50459b83260",
+                "reference": "b1eb083f4f2d2b88c6d9db1745a2d50459b83260",
                 "shasum": ""
             },
             "require": {
@@ -1146,7 +1146,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.5.3"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.5.4"
             },
             "funding": [
                 {
@@ -1154,7 +1154,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-08T08:30:14+00:00"
+            "time": "2024-02-08T20:46:24+00:00"
         },
         {
             "name": "johannschopplich/kirby-content-translator",
