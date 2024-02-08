@@ -1,6 +1,6 @@
 type: serp-preview
 defaultLanguagePrefix: true
-faviconUrl: /assets/favicon.svg
+faviconUrl: /assets/icon.svg
 siteTitle: "{{ site.title.value }}"
 siteUrl: "{{ site.url }}"
 titleSeparator: "-"

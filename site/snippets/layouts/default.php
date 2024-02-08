@@ -29,9 +29,10 @@ https://github.com/johannschopplich/johannschopplich.com
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="<?= $site->title()->escape() ?>">
 
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <link rel="manifest" href="/app.webmanifest">
-  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
   <?php foreach ($kirby->languages() as $language): ?>
     <?php if ($language->code() === $kirby->languageCode()) continue ?>
