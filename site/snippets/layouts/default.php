@@ -25,10 +25,6 @@ https://github.com/johannschopplich/johannschopplich.com
   <?= $meta->social() ?>
 
   <meta name="theme-color" content="#fefcf8">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="<?= $site->title()->escape() ?>">
-
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
