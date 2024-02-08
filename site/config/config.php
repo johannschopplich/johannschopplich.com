@@ -60,10 +60,10 @@ return [
             'defaults' => require __DIR__ . '/meta.php'
         ],
         'robots' => [
-            'enable' => true
+            'enabled' => true
         ],
         'sitemap' => [
-            'enable' => true,
+            'enabled' => true,
             'exclude' => [
                 'templates' => [
                     'linktree'
@@ -83,6 +83,7 @@ return [
         'appId' => env('ALGOLIA_APP_ID'),
         'apiKey' => env('ALGOLIA_API_KEY'),
         'index' => 'johannschopplich',
+        'hooks' => true,
         'content' => [
             'default' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
                 return strip_tags($page->content($languageCode)->text()->toBlocks()->toHtml());

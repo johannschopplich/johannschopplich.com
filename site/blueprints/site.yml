@@ -81,10 +81,6 @@ tabs:
               headlineAlgolia:
                 label: Algolia
                 type: headline
-              algoliaIndex:
-                label: johannschopplich.algolia-docsearch.index.start
-                type: janitor
-                command: "algolia-docsearch:index"
 
       - width: 1/2
         sections:
