@@ -45,8 +45,6 @@ return [
     ],
 
     'headless' => [
-        // Disable overwriting of the default routes
-        'routes' => false,
         'token' => env('KIRBY_HEADLESS_API_TOKEN'),
 
         'cors' => [

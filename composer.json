@@ -4,7 +4,7 @@
     "getkirby/cli": "^1.2",
     "getkirby/kql": "^2.1",
     "johannschopplich/kirby-helpers": "^6.1",
-    "johannschopplich/kirby-headless": "^2.3",
+    "johannschopplich/kirby-headless": "^3",
     "johannschopplich/kirby-algolia-docsearch": "^0.5",
     "johannschopplich/kirby-content-translator": "^1.2",
     "bnomei/kirby3-feed": "^1.5",

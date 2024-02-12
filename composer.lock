@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6f817aee58ba6d7c3a062f5314c1507",
+    "content-hash": "d35cd309a851de1df51220d082c44121",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1100,16 +1100,16 @@
         },
         {
             "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.5.4",
+            "version": "0.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "b1eb083f4f2d2b88c6d9db1745a2d50459b83260"
+                "reference": "639b16c71fc2ffcf2b3e7863e09c3d900ed7c910"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/b1eb083f4f2d2b88c6d9db1745a2d50459b83260",
-                "reference": "b1eb083f4f2d2b88c6d9db1745a2d50459b83260",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/639b16c71fc2ffcf2b3e7863e09c3d900ed7c910",
+                "reference": "639b16c71fc2ffcf2b3e7863e09c3d900ed7c910",
                 "shasum": ""
             },
             "require": {
@@ -1146,7 +1146,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.5.4"
+                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.5.6"
             },
             "funding": [
                 {
@@ -1154,7 +1154,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-08T20:46:24+00:00"
+            "time": "2024-02-09T18:58:36+00:00"
         },
         {
             "name": "johannschopplich/kirby-content-translator",
@@ -1218,16 +1218,16 @@
         },
         {
             "name": "johannschopplich/kirby-headless",
-            "version": "2.3.7",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-headless.git",
-                "reference": "125c9ff3d45124956c7b101b3679047ccafbeb9e"
+                "reference": "7899faacd30fb28bb0fd94d77c7e5bb0ff81d1a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/125c9ff3d45124956c7b101b3679047ccafbeb9e",
-                "reference": "125c9ff3d45124956c7b101b3679047ccafbeb9e",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/7899faacd30fb28bb0fd94d77c7e5bb0ff81d1a6",
+                "reference": "7899faacd30fb28bb0fd94d77c7e5bb0ff81d1a6",
                 "shasum": ""
             },
             "require": {
@@ -1265,7 +1265,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-headless/issues",
-                "source": "https://github.com/johannschopplich/kirby-headless/tree/v2.3.7"
+                "source": "https://github.com/johannschopplich/kirby-headless/tree/v3.0.2"
             },
             "funding": [
                 {
@@ -1273,7 +1273,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-01-23T06:26:05+00:00"
+            "time": "2024-02-12T07:43:49+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
@@ -2099,16 +2099,16 @@
         },
         {
             "name": "srwiez/thumbhash",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SRWieZ/thumbhash.git",
-                "reference": "70a4c48e3fa055ce7010641634ab1ea1b8d7ce81"
+                "reference": "2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/70a4c48e3fa055ce7010641634ab1ea1b8d7ce81",
-                "reference": "70a4c48e3fa055ce7010641634ab1ea1b8d7ce81",
+                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66",
+                "reference": "2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66",
                 "shasum": ""
             },
             "require": {
@@ -2141,9 +2141,9 @@
             "description": "A brief description of your package",
             "support": {
                 "issues": "https://github.com/SRWieZ/thumbhash/issues",
-                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.2.0"
+                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.2.1"
             },
-            "time": "2023-05-10T15:02:57+00:00"
+            "time": "2024-02-11T11:22:22+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
