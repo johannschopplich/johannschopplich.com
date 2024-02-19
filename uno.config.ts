@@ -44,13 +44,13 @@ export default defineConfig<Theme>({
   },
   shortcuts: {
     content: "px-lg md:px-3xl",
-    "content-breakout": "-mx-lg md:mx-0",
+    "content-full-width": "-mx-lg md:mx-0",
     icon: "inline-block w-[1.25em] h-[1.25em] align-text-bottom [&>svg]:w-full [&>svg]:h-full",
     "cta-button":
       "text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
     tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",
     headline:
-      "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.25vw)] md:leading-[1.05]",
+      "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)] md:leading-[1.05]",
     "masonry-grid":
       "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-col-max-w,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
   },
