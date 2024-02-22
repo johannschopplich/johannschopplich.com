@@ -15,6 +15,7 @@ return [
         'theme.switch.on' => 'Lights on',
         'theme.switch.off' => 'Lights off',
         'home' => 'Homepage',
+        'docsearch.placeholder' => 'Search',
         'contact' => 'Contact',
         'articles.all' => 'All Articles',
         'articles.latest' => 'Writing',

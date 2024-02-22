@@ -5,25 +5,26 @@ export async function install() {
   if (!container) return;
 
   const { algolia } = getParsedSiteData();
-  const { default: docsearch } = await import("@docsearch/js");
+  const { default: DocSearch } = await import("@docsearch/js");
   const { locales } = await import("../locales/algolia");
   const lang = document.documentElement.lang as keyof typeof locales;
 
-  docsearch({
-    ...algolia,
-    container,
-    indexName: `johannschopplich-${lang}`,
-    placeholder: {
-      en: "Search Site",
-      de: "Seite durchsuchen",
-    }[lang],
-    translations: locales[lang],
-    // insights: true,
-  });
+  document
+    .querySelector<HTMLButtonElement>(".DocSearch-Button")
+    ?.addEventListener("click", () => {
+      DocSearch({
+        ...algolia,
+        container,
+        indexName: `johannschopplich-${lang}`,
+        placeholder: {
+          en: "Search Site",
+          de: "Seite durchsuchen",
+        }[lang],
+        translations: locales[lang],
+        // insights: true,
+      });
 
-  const docsearchButton = document.querySelector(".DocSearch");
-  localStorage.setItem(
-    "algolia.docsearch.rect",
-    JSON.stringify(docsearchButton?.getBoundingClientRect() ?? {}),
-  );
+      // Simulate click on the button to open the search modal
+      document.querySelector<HTMLElement>(".DocSearch-Button")?.click();
+    });
 }

@@ -1,5 +1,3 @@
-import { THEME_COLOR_DARK } from "./constants";
-
 (() => {
   const root = document.documentElement;
   const isBot = /(gle|ing|ro)bot|crawl|spider/i.test(navigator.userAgent);
@@ -9,7 +7,7 @@ import { THEME_COLOR_DARK } from "./constants";
   const themeSetting = localStorage.getItem("color-schema");
   if (themeSetting === "dark" || (prefersDark && themeSetting !== "light")) {
     root.dataset.theme = "dark";
-    themeColorMeta?.setAttribute("content", THEME_COLOR_DARK);
+    themeColorMeta?.setAttribute("content", "#1c1917");
   }
 
   const prefersReducedMotion = matchMedia(
@@ -17,14 +15,5 @@ import { THEME_COLOR_DARK } from "./constants";
   ).matches;
   if (!prefersReducedMotion && !isBot) {
     root.dataset.animatable = "";
-  }
-
-  // Reduce flickering on initial load
-  const docsearchRect = localStorage.getItem("algolia.docsearch.rect");
-  if (docsearchRect) {
-    /** @type {DOMRect} */
-    const domRect = JSON.parse(docsearchRect);
-    root.style.setProperty("--docsearch-width", `${domRect.width}px`);
-    root.style.setProperty("--docsearch-height", `${domRect.height}px`);
   }
 })();
