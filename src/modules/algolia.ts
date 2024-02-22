@@ -18,7 +18,7 @@ export async function install() {
       de: "Seite durchsuchen",
     }[lang],
     translations: locales[lang],
-    insights: true,
+    // insights: true,
   });
 
   const docsearchButton = document.querySelector(".DocSearch");

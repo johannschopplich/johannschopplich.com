@@ -1,4 +1,4 @@
-// @ts-check
+import { THEME_COLOR_DARK } from "./constants";
 
 (() => {
   const root = document.documentElement;
@@ -9,7 +9,7 @@
   const themeSetting = localStorage.getItem("color-schema");
   if (themeSetting === "dark" || (prefersDark && themeSetting !== "light")) {
     root.dataset.theme = "dark";
-    themeColorMeta?.setAttribute("content", "#18181b");
+    themeColorMeta?.setAttribute("content", THEME_COLOR_DARK);
   }
 
   const prefersReducedMotion = matchMedia(

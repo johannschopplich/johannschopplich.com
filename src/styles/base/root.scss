@@ -21,11 +21,6 @@
   --du-color-link-hover: var(--du-color-primary);
   // Project-specific due variables
   --du-color-border: currentColor;
-
-  ::selection {
-    color: black;
-    background: var(--du-color-primary-200); // #f0d590
-  }
 }
 
 [data-theme="dark"] {
@@ -33,4 +28,9 @@
   --du-color-link-hover: var(--du-color-primary);
   // Project-specific due variables
   --du-color-border: var(--du-color-contrast-lower);
+}
+
+::selection {
+  color: black;
+  background: var(--du-color-primary-200); // #f0d590
 }

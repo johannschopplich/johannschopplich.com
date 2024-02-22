@@ -1,10 +1,7 @@
+import { themeColor, themes } from "../constants";
+
 const root = document.documentElement;
 const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-const themes = ["light", "dark"] as const;
-const themeColor: Record<(typeof themes)[number], string> = {
-  light: "#fefcf8",
-  dark: "#18181b",
-};
 
 export function install() {
   const themeSwitcher = document.querySelector("[data-theme-switcher]");
