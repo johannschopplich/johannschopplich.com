@@ -14,25 +14,5 @@ $prefix: "animate__";
     animation-duration: 1ms !important;
     transition-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-
-    &[class*="Out"] {
-      opacity: 0;
-    }
   }
-}
-
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-0.25rem, 0, 0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.#{$prefix}fadeInLeft {
-  animation-name: fadeInLeft;
 }
