@@ -46,11 +46,11 @@ $heightMap = [
               style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
             >
             <?php if ($isMobile): ?>
-              <div class="absolute left-1/2 bottom-3xl h-[1px] w-[15%] bg-zinc-900 ml-[-7.5%] rounded-full translate-y-[-4px] md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
+              <div class="absolute left-1/2 bottom-3xl h-[1px] w-[15%] bg-stone-900 ml-[-7.5%] rounded-full translate-y-[-4px] md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
             <?php elseif ($isDesktop): ?>
-              <div class="flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-zinc-900 rounded-t-lg px-1.5">
+              <div class="flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
                 <?php foreach (range(1, 3) as $i): ?>
-                  <div class="h-1.5 w-1.5 border border-solid border-zinc-900 rounded-full"></div>
+                  <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
                 <?php endforeach ?>
               </div>
             <?php endif ?>
@@ -58,9 +58,9 @@ $heightMap = [
 
           <img
             class="<?= implode(' ', [
-              ($isDocument || $isMobile) ? 'h-full w-auto border border-solid border-zinc-900 object-contain' : '',
+              ($isDocument || $isMobile) ? 'h-full w-auto border border-solid border-stone-900 object-contain' : '',
               $isMobile ? 'rounded-xl' : '',
-              $isDesktop ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-zinc-900 object-contain' : '',
+              $isDesktop ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-stone-900 object-contain' : '',
               ($mockup === 'none') ? 'h-$cell max-w-screen w-auto object-contain' : ''
             ]) ?>"
             loading="lazy"

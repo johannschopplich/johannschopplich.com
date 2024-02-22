@@ -1,3 +1,5 @@
+// Forked from: https://github.com/zachleat/table-saw
+
 // https://caniuse.com/mdn-api_cssstylesheet_replacesync
 const supportsConstructableStylesheets =
   "replaceSync" in CSSStyleSheet.prototype;
