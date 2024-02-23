@@ -31,7 +31,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
                   class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:w-auto [&>svg]:h-full"
                   style="--un-animated-duration: 800ms"
                   data-sticker="svg"
-                  >
+                >
                   <?= icon($filteredIcons[array_rand($filteredIcons)]) ?>
                   <span class="absolute -inset-4 cursor-pointer"></span>
                 </span>
