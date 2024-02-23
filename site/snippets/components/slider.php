@@ -65,7 +65,7 @@ $heightMap = [
           data-sizes="auto"
           width="<?= $image->width() ?>"
           height="<?= $image->height() ?>"
-          style="<?= 'aspect-ratio ' . round($image->ratio(), 2) ?>"
+          style="aspect-ratio: <?= $image->width() ?>/<?= $image->height() ?>"
           alt="<?= $image->alt()->or('')->escape() ?>"
           data-slide-image
         >
