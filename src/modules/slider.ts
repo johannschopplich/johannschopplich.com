@@ -8,7 +8,7 @@ export async function install() {
   const elements = document.querySelectorAll<HTMLElement>("[data-slider]");
   if (elements.length === 0) return;
 
-  // Use scroll snap slider for mobile devices
+  // Use plain CSS scroll snap slider for mobile devices
   if (isTouchscreen) {
     lazyLoad("[data-slider] [data-slide-image]");
     return;

@@ -8,7 +8,7 @@ https://github.com/johannschopplich/johannschopplich.com
 -->
 <!DOCTYPE html>
 <html
-  class="var-color-primary var-color-primary-500 var-color-primary-200"
+  class="var-color-primary var-color-primary-400 var-color-primary-500 var-color-primary-200"
   data-theme="light"
   lang="<?= $kirby->languageCode() ?>"
 >

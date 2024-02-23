@@ -7,7 +7,8 @@ $inactiveLanguage = $kirby
   ->filter(fn ($language) => $language->code() !== $kirby->language()->code())
   ->first();
 ?>
-<footer class="content sticky top-100vh bg-contrast-lower font-heading py-3xl du-dark:bg-contrast-lowest">
+<footer class="content sticky top-100vh bg-contrast-lower font-heading border-t border-$du-color-border py-3xl du-dark:bg-contrast-lowest">
+  <?php /*
   <div class="mb-8xl">
     <a href="<?= $site->url() ?>" class="inline-block -ml-2" aria-label="<?= t('home') ?>">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185.6 247.5" class="w-16 h-16" aria-hidden="true">
@@ -15,39 +16,38 @@ $inactiveLanguage = $kirby
       </svg>
     </a>
   </div>
+  */ ?>
 
-  <div class="font-500">
-    <div class="flex gap-lg justify-between border-b border-contrast-low pb-xs mb-xs">
-      <a
-        href="<?= $page->url($inactiveLanguage->code()) ?>"
-        hreflang="<?= $inactiveLanguage->code() ?>"
-        class="inline-block"
-      >
-        <span class="mr-1 icon" aria-hidden="true">
-          <?= icon('_earth.svg') ?>
-        </span>
-        <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
+  <div class="flex gap-lg justify-between font-500 mb-8xl">
+    <a
+      href="<?= $page->url($inactiveLanguage->code()) ?>"
+      hreflang="<?= $inactiveLanguage->code() ?>"
+      class="inline-block"
+    >
+      <span class="mr-1 icon" aria-hidden="true">
+        <?= icon('_earth.svg') ?>
+      </span>
+      <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
+    </a>
+    <button
+      class="w-max hover:text-primary du-dark:hover:text-primary-400"
+      data-theme-switcher
+    >
+      <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('_sun.svg') ?></span>
+      <span class="du-dark:hidden"><?= t('theme.switch.off') ?></span>
+
+      <span class="mr-1 icon du-light:hidden" aria-hidden="true"><?= icon('_moon-stars.svg') ?></span>
+      <span class="du-light:hidden"><?= t('theme.switch.on') ?></span>
+    </button>
+  </div>
+
+  <div class="flex flex-col gap-1 font-500 md:flex-row md:gap-lg md:justify-between">
+    <a href="https://byjohann.link" class="text-underline md:mr-auto">byjohann.link</a>
+
+    <?php foreach ($site->footerPages()->toPages() as $p): ?>
+      <a href="<?= $p->url() ?>">
+        <?= $p->title() ?>
       </a>
-      <button
-        class="w-max hover:text-primary"
-        data-theme-switcher
-      >
-        <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('_sun.svg') ?></span>
-        <span class="du-dark:hidden"><?= t('theme.switch.off') ?></span>
-
-        <span class="mr-1 icon du-light:hidden" aria-hidden="true"><?= icon('_moon-stars.svg') ?></span>
-        <span class="du-light:hidden"><?= t('theme.switch.on') ?></span>
-      </button>
-    </div>
-
-    <div class="flex flex-col gap-1 md:flex-row md:gap-lg md:justify-between">
-      <a href="https://byjohann.link" class="text-underline md:mr-auto">byjohann.link</a>
-
-      <?php foreach ($site->footerPages()->toPages() as $p): ?>
-        <a href="<?= $p->url() ?>">
-          <?= $p->title() ?>
-        </a>
-      <?php endforeach ?>
-    </div>
+    <?php endforeach ?>
   </div>
 </footer>
