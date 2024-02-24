@@ -10,6 +10,10 @@
   --docsearch-footer-background: var(--du-color-contrast-lowest) !important;
 }
 
+.DocSearch-Container {
+  position: fixed;
+}
+
 .DocSearch-Input,
 .DocSearch-Cancel,
 .DocSearch-Hit-source,
@@ -22,12 +26,7 @@
   margin: 0;
 }
 
-// Hide Ctrl+K keys
-.DocSearch-Button-Placeholder {
-  padding-right: 6px;
-}
-
-.DocSearch-Logo,
-.DocSearch-Button-Keys {
+.DocSearch-Button-Keys,
+.DocSearch-Footer {
   display: none;
 }
