@@ -86,7 +86,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
 
     <?php snippet('components/slider', compact('query'), slots: true) ?>
       <div class="swiper-slide pr-xs shrink-0 snap-end snap-always">
-        <div class="relative h-$cell w-[min(65vw,25rem)] flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current">
+        <div class="relative h-$cell aspect-square flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current">
           <a href="<?= $query->first()->parent()->url() ?>" class="cta-button hover:text-theme-base">
             <span class="absolute inset-0" aria-hidden="true"></span>
             <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
