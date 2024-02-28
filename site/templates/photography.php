@@ -5,7 +5,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="py-8xl">
+  <div class="pt-5xl pb-8xl md:pt-8xl">
     <?php $blocks = $page->text()->toBlocks() ?>
     <?php if ($blocks->isNotEmpty()): ?>
       <div class="content max-w-prose pb-5xl">

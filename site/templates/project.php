@@ -5,7 +5,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="pt-8xl pb-5xl space-y-5xl">
+  <div class="pt-5xl pb-5xl space-y-5xl md:pt-8xl">
     <div class="content w-fit max-w-prose">
       <h1 class="headline inline-block">
         <?= $page->title()->escape() ?>

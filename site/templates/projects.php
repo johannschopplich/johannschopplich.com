@@ -5,7 +5,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="content pt-8xl max-w-screen-lg">
+  <div class="content max-w-screen-lg pt-5xl md:pt-8xl">
     <div class="prose">
       <?php foreach ($page->text()->toBlocks() as $block): ?>
         <?php /** @var \Kirby\Cms\Block $block */ ?>

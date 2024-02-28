@@ -1,7 +1,7 @@
 <?php
 
 /** @var \Kirby\Cms\Page $page */ ?>
-<div class="py-8xl">
+<div class="pt-5xl pb-8xl md:pt-8xl">
   <div class="content max-w-prose pb-5xl">
     <h1 class="headline">
       <?= $page->title()->escape() ?>

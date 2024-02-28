@@ -12,7 +12,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="content relative max-w-screen-lg pt-8xl">
+  <div class="content relative max-w-screen-lg pt-5xl md:pt-8xl">
     <div class="relative">
       <div class="relative prose">
         <?php foreach ($page->text()->toBlocks() as $block): ?>
