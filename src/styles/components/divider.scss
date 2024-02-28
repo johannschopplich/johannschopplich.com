@@ -2,7 +2,7 @@
 
 .section-divider {
   position: relative;
-  height: min(15svh, 10rem);
+  height: min(25svh, 10rem);
   overflow: hidden;
 
   @include breakpoints.media-above(sm) {
