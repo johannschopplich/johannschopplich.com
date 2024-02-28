@@ -5,7 +5,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-  <div class="pb-5xl sm:pt-5xl md:pt-8xl">
+  <div class="pt-5xl pb-5xl md:pt-8xl">
     <div class="gap-5xl sm:gap-6xl sm:pr-lg md:pr-3xl grid max-w-screen-xl sm:grid-cols-2">
       <?php if ($image = $page->thumbnail()->toFile()): ?>
         <div>
