@@ -1,7 +1,13 @@
+@use "duecss/abstracts/breakpoints";
+
 .section-divider {
   position: relative;
-  height: min(25svh, 15rem);
+  height: min(15svh, 10rem);
   overflow: hidden;
+
+  @include breakpoints.media-above(lg) {
+    height: min(25svh, 15rem);
+  }
 
   &::after {
     content: "";
