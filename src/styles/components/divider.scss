@@ -5,7 +5,7 @@
   height: min(15svh, 10rem);
   overflow: hidden;
 
-  @include breakpoints.media-above(lg) {
+  @include breakpoints.media-above(sm) {
     height: min(25svh, 15rem);
   }
 
