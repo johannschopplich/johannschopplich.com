@@ -60,10 +60,10 @@ https://github.com/johannschopplich/johannschopplich.com
 
 </head>
 
-<body class="min-h-[100svh]" data-template="<?= $page->intendedTemplate()->name() ?>">
+<body class="min-h-[100svh] md:pt-sm" data-template="<?= $page->intendedTemplate()->name() ?>">
 
   <header
-    class="content sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 py-2 md:py-xs bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-current du-dark:[&.is-pinned]:border-contrast-lower du-dark:bg-stone-900 du-dark:bg-opacity-40"
+    class="content sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 py-2 bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-current md:py-xs du-dark:[&.is-pinned]:border-contrast-lower du-dark:bg-stone-900 du-dark:bg-opacity-40"
     style="--gradient: radial-gradient(rgba(255, 255, 255, 0) 1px, var(--du-color-background) 1px)"
   >
     <?php snippet('navigation') ?>
