@@ -57,7 +57,7 @@ $heightMap = [
             ($isDocument || $isMobile) ? 'h-full w-auto border border-solid border-stone-900 object-contain' : '',
             $isMobile ? 'rounded-xl' : '',
             $isDesktop ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-stone-900 object-contain' : '',
-            ($mockup === 'none') ? 'h-$cell max-w-[calc(100vw-2.25rem)] w-auto object-contain' : ''
+            $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)] w-auto object-contain' : ''
           ]) ?>"
           loading="lazy"
           src="<?= $image->thumbhashUri() ?>"
@@ -65,7 +65,7 @@ $heightMap = [
           data-sizes="auto"
           width="<?= $image->width() ?>"
           height="<?= $image->height() ?>"
-          style="aspect-ratio: <?= $image->width() ?>/<?= $image->height() ?>"
+          style="<?= $mockup === 'none' ? 'aspect-ratio:' . $image->width() . '/' . $image->height() : '' ?>"
           alt="<?= $image->alt()->or('')->escape() ?>"
           data-slide-image
         >
