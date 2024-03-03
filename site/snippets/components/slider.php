@@ -55,7 +55,7 @@ $heightMap = [
         <img
           class="<?= implode(' ', [
             ($isDocument || $isMobile) ? 'h-full w-auto border border-solid border-stone-900 object-contain' : '',
-            $isMobile ? 'rounded-xl' : '',
+            $isMobile ? 'rounded-md md:rounded-xl' : '',
             $isDesktop ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-stone-900 object-contain' : '',
             $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)] w-auto object-contain' : ''
           ]) ?>"
