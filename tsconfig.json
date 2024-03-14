@@ -1,20 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
+    "module": "Preserve",
     "moduleResolution": "Bundler",
-    "verbatimModuleSyntax": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "strict": true,
     "noEmit": true,
-
-    /* Linting */
-    "strict": true
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
   },
   "include": ["src"]
 }
