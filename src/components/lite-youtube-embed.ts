@@ -238,10 +238,8 @@ export class LiteYouTubeEmbed extends HTMLElement {
     setTimeout(() => {
       const webpUrl = `https://i.ytimg.com/vi_webp/${this.videoId}/sddefault.webp`;
       const img = new Image();
-      // @ts-expect-error: Property is not yet in the Image type
       img.fetchPriority = "low"; // low priority to reduce network contention
-      // @ts-expect-error: Property is not yet in the Image type
-      img.referrerpolicy = "origin"; // Not 100% sure it's needed, but https://github.com/ampproject/amphtml/pull/3940
+      img.referrerPolicy = "origin"; // Not 100% sure it's needed, but https://github.com/ampproject/amphtml/pull/3940
       img.src = webpUrl;
       img.onload = (e) => {
         // A pretty ugly hack since onerror won't fire on YouTube image 404. This is (probably) due to
