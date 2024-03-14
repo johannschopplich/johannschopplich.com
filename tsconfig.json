@@ -2,8 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "useDefineForClassFields": true,
-    "module": "Preserve",
+    "module": "ESNext",
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "strict": true,
