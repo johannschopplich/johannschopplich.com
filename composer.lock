@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d35cd309a851de1df51220d082c44121",
+    "content-hash": "d2dd31fdf24254bce94c4e971dfddd8b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -428,16 +428,16 @@
         },
         {
             "name": "getkirby/cli",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/cli.git",
-                "reference": "1b7d168201a734ef4ff166a9c8af5ed1ffc67791"
+                "reference": "8cb347764de108f257c1a6f9ded456c8dd13c6f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/cli/zipball/1b7d168201a734ef4ff166a9c8af5ed1ffc67791",
-                "reference": "1b7d168201a734ef4ff166a9c8af5ed1ffc67791",
+                "url": "https://api.github.com/repos/getkirby/cli/zipball/8cb347764de108f257c1a6f9ded456c8dd13c6f7",
+                "reference": "8cb347764de108f257c1a6f9ded456c8dd13c6f7",
                 "shasum": ""
             },
             "require": {
@@ -490,20 +490,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-06T10:16:17+00:00"
+            "time": "2024-02-29T15:18:04+00:00"
         },
         {
             "name": "getkirby/cms",
-            "version": "4.1.0",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "2965c3124e3b141072a2d46c798a327dda710060"
+                "reference": "6b7ac66c55ecac20d6b580ef01a667d1806d5c72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/2965c3124e3b141072a2d46c798a327dda710060",
-                "reference": "2965c3124e3b141072a2d46c798a327dda710060",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/6b7ac66c55ecac20d6b580ef01a667d1806d5c72",
+                "reference": "6b7ac66c55ecac20d6b580ef01a667d1806d5c72",
                 "shasum": ""
             },
             "require": {
@@ -593,7 +593,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-01-30T15:39:12+00:00"
+            "time": "2024-03-06T11:38:42+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -1218,16 +1218,16 @@
         },
         {
             "name": "johannschopplich/kirby-headless",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-headless.git",
-                "reference": "4149122c20ed49db6259707c5f2336bbd4cd3e40"
+                "reference": "4f11f48c382b6b36127ab8e298f4d887714000ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/4149122c20ed49db6259707c5f2336bbd4cd3e40",
-                "reference": "4149122c20ed49db6259707c5f2336bbd4cd3e40",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/4f11f48c382b6b36127ab8e298f4d887714000ee",
+                "reference": "4f11f48c382b6b36127ab8e298f4d887714000ee",
                 "shasum": ""
             },
             "require": {
@@ -1265,7 +1265,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-headless/issues",
-                "source": "https://github.com/johannschopplich/kirby-headless/tree/v3.1.1"
+                "source": "https://github.com/johannschopplich/kirby-headless/tree/v3.1.2"
             },
             "funding": [
                 {
@@ -1273,7 +1273,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-12T13:01:04+00:00"
+            "time": "2024-03-07T19:03:55+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",

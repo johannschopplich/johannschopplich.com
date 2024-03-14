@@ -1,14 +1,14 @@
 {
   "require": {
     "getkirby/cms": "^4",
-    "getkirby/cli": "^1.2",
-    "getkirby/kql": "^2.1",
-    "johannschopplich/kirby-helpers": "^6.1",
+    "getkirby/cli": "^1",
+    "getkirby/kql": "^2",
+    "johannschopplich/kirby-helpers": "^6",
     "johannschopplich/kirby-headless": "^3",
     "johannschopplich/kirby-algolia-docsearch": "^0.5",
-    "johannschopplich/kirby-content-translator": "^1.2",
-    "bnomei/kirby3-feed": "^1.5",
-    "tobimori/kirby-thumbhash": "^1.1"
+    "johannschopplich/kirby-content-translator": "^1",
+    "bnomei/kirby3-feed": "^1",
+    "tobimori/kirby-thumbhash": "^1"
   },
   "scripts": {
     "start": [
