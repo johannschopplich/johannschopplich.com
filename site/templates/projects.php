@@ -47,7 +47,7 @@
           <?php snippet('components/slider', [
             'query' => $project->gallery()->toFiles(),
             'height' => $project->galleryHeight()->value(),
-            'links' => false
+            'links' => true
           ]) ?>
         </div>
 

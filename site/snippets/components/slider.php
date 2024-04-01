@@ -21,16 +21,19 @@ $heightMap = [
       /** @var \Kirby\Cms\File $image */
       $settings = $image->gallery()->toObject();
       $mockup = $settings->mockup()->or('none')->value();
-      $hasLink = ($links ?? true) && $settings->link()->isNotEmpty();
-      $tag = $hasLink ? 'a' : 'div';
+      $target = $links && $settings->link()->isNotEmpty() ? $settings->link()->value() : null;
+      $tag = $target ? 'a' : 'div';
       $isDocument = $mockup === 'document';
       $isMobile = $mockup === 'mobile';
       $isDesktop = $mockup === 'desktop';
       ?>
       <<?= $tag . attr([
-        'class' => 'swiper-slide shrink-0 snap-center snap-always first:snap-start',
-        'href' => $hasLink ? $settings->link()->value() : null,
-        'target' => $hasLink ? '_blank' : null
+        'class' => trim(implode(' ', [
+          'swiper-slide shrink-0 snap-center snap-always first:snap-start',
+          $target ? 'hover:ring hover:ring-theme-base' : '',
+        ]), ' '),
+        'href' => $target,
+        'target' => $target ? '_blank' : null
       ], ' ') ?>>
         <div
           class="<?= trim(implode(' ', [
