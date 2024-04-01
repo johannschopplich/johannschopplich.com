@@ -71,7 +71,7 @@ $heightMap = [
         >
 
         <?php if ($mockup === 'none' && $image->caption()->isNotEmpty()): ?>
-          <p class="text-contrast-medium text-size-xs leading-[calc(var(--du-line-height-normal)*0.875)] font-500 p-1">
+          <p class="text-contrast-medium text-size-xs leading-[calc(var(--du-line-height-normal)*0.875)] font-500 p-2">
             <?= $image->caption() ?>
           </p>
         <?php endif ?>
