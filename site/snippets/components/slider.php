@@ -29,7 +29,7 @@ $heightMap = [
       ?>
       <<?= $tag . attr([
         'class' => trim(implode(' ', [
-          'swiper-slide shrink-0 snap-center snap-always first:snap-start',
+          'swiper-slide shrink-0 snap-center snap-always cursor-grab first:snap-start',
           $target ? 'hover:ring hover:ring-theme-base' : '',
         ]), ' '),
         'href' => $target,
