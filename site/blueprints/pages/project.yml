@@ -36,10 +36,8 @@ columns:
             options:
               - value: slider
                 text: Slider
-                icon: badge
               - value: masonry
                 text: Masonry
-                icon: grid
             translate: false
           galleryHeight:
             label:

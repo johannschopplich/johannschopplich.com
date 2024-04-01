@@ -32,53 +32,43 @@ $heightMap = [
         'href' => $hasLink ? $settings->link()->value() : null,
         'target' => $hasLink ? '_blank' : null
       ], ' ') ?>>
-        <?php if ($mockup !== 'none'): ?>
-          <div
-            class="<?= implode(' ', [
-              'h-$cell bg-$bg relative',
-              ($isMobile || $isDocument) ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : 'p-3xl md:p-5xl',
-              $isDesktop ? 'flex flex-col' : ''
-            ]) ?>"
-            style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
-          >
-          <?php if ($isMobile): ?>
-            <div class="absolute left-1/2 bottom-3xl h-[1px] w-[15%] bg-stone-900 ml-[-7.5%] rounded-full translate-y-[-4px] md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
-          <?php elseif ($isDesktop): ?>
-            <div class="flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
-              <?php foreach (range(1, 3) as $i): ?>
-                <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
-              <?php endforeach ?>
-            </div>
-          <?php endif ?>
-        <?php endif ?>
-
-        <img
-          class="<?= implode(' ', [
-            ($isDocument || $isMobile) ? 'h-full w-auto border border-solid border-stone-900 object-contain' : '',
-            $isMobile ? 'rounded-md md:rounded-xl' : '',
-            $isDesktop ? 'h-[calc(100%-1rem)] w-auto rounded-b-lg border border-solid border-stone-900 object-contain' : '',
-            $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)] w-auto object-contain' : ''
-          ]) ?>"
-          loading="lazy"
-          src="<?= $image->thumbhashUri() ?>"
-          data-srcset="<?= $image->srcset() ?>"
-          data-sizes="auto"
-          width="<?= $image->width() ?>"
-          height="<?= $image->height() ?>"
-          style="<?= $mockup === 'none' ? 'aspect-ratio:' . $image->width() . '/' . $image->height() : '' ?>"
-          alt="<?= $image->alt()->or('')->escape() ?>"
-          data-slide-image
+        <div
+          class="<?= trim(implode(' ', [
+            $mockup !== 'none' ? 'relative h-$cell bg-$bg' : '',
+            ($isMobile || $isDocument) ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
+            $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
+          ]), ' ') ?>"
+          style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>"
         >
-
-        <?php if ($mockup === 'none' && $image->caption()->isNotEmpty()): ?>
-          <p class="text-contrast-medium text-size-xs leading-[calc(var(--du-line-height-normal)*0.875)] font-500 p-2">
-            <?= $image->caption() ?>
-          </p>
-        <?php endif ?>
-
-        <?php if ($mockup !== 'none'): ?>
+        <?php if ($isMobile): ?>
+          <div class="absolute left-1/2 bottom-3xl h-[1px] w-[15%] bg-stone-900 ml-[-7.5%] rounded-full translate-y-[-4px] md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
+        <?php elseif ($isDesktop): ?>
+          <div class="flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
+            <?php foreach (range(1, 3) as $i): ?>
+              <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
+            <?php endforeach ?>
           </div>
         <?php endif ?>
+
+          <img
+            loading="lazy"
+            class="<?= trim(implode(' ', [
+              'object-contain w-auto',
+              $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)]' : 'border border-solid border-stone-900',
+              $isMobile ? 'h-full rounded-md md:rounded-xl' : '',
+              $isDocument ? 'h-full' : '',
+              $isDesktop ? 'h-[calc(100%-1rem)] rounded-b-lg' : ''
+            ]), ' ') ?>"
+            src="<?= $image->thumbhashUri() ?>"
+            data-srcset="<?= $image->srcset() ?>"
+            data-sizes="auto"
+            width="<?= $image->width() ?>"
+            height="<?= $image->height() ?>"
+            style="<?= $mockup === 'none' ? 'aspect-ratio:' . $image->width() . '/' . $image->height() : '' ?>"
+            alt="<?= $image->alt()->or('')->escape() ?>"
+            data-slide-image
+          >
+        </div>
       </<?= $tag ?>>
     <?php endforeach ?>
 
