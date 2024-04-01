@@ -85,7 +85,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
     </div>
 
     <?php snippet('components/slider', ['query' => $query, 'links' => false], slots: true) ?>
-      <div class="swiper-slide pr-xs shrink-0 snap-end snap-always">
+      <div class="pr-xs shrink-0 snap-end snap-always">
         <div class="relative h-$cell aspect-square flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current">
           <a href="<?= $query->first()->parent()->url() ?>" class="cta-button hover:text-theme-base">
             <span class="absolute inset-0" aria-hidden="true"></span>
