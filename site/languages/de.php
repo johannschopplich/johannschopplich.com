@@ -23,7 +23,7 @@ return [
         'articles.popular' => 'Artikel, die mir wichtig sind',
         'article.publishedAt' => 'Vom',
         'projects.title' => 'Herzensprojekte',
-        'projects.more' => 'Über das Projekt',
+        'projects.more' => 'Mehr zum Projekt',
         'project.allWorks' => 'Alle Arbeiten',
         'photography' => 'Lichtbilder',
         'photography.morePhotos' => 'Mehr Fotografien',
