@@ -37,7 +37,7 @@ $heightMap = [
     ]) ?>>
       <div
         class="<?= trim(implode(' ', [
-          'group-hover:ring group-hover:ring-primary-500 du-dark:group-hover:ring-primary-400',
+          'group-hover:ring group-hover:ring-theme-base',
           $mockup !== 'none' ? 'relative h-$cell bg-$bg' : '',
           ($isMobile || $isDocument) ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
           $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
@@ -57,7 +57,7 @@ $heightMap = [
         <img
           loading="lazy"
           class="<?= trim(implode(' ', [
-            'object-contain w-auto',
+            'object-contain w-auto group-hover:opacity-80',
             $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)]' : 'border border-solid border-stone-900',
             $isMobile ? 'h-full rounded-md md:rounded-xl' : '',
             $isDocument ? 'h-full' : '',
