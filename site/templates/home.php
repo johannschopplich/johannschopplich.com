@@ -50,7 +50,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
   </div>
 
   <div class="content max-w-screen-lg">
-    <h2 class="title text-primary text-2xl text-center mb-lg du-dark:text-primary-400">
+    <h2 class="title text-primary-500 text-2xl text-center mb-lg du-dark:text-primary-400">
       <?= t('articles.latest') ?>
     </h2>
 
@@ -79,7 +79,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
     <div class="content max-w-screen-lg">
       <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-      <h2 class="title text-primary text-2xl text-center mb-lg du-dark:text-primary-400">
+      <h2 class="title text-primary-500 text-2xl text-center mb-lg du-dark:text-primary-400">
         <?= t('photography') ?>
       </h2>
     </div>
@@ -107,7 +107,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
   <div class="content max-w-screen-lg">
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-    <h2 class="title text-primary text-2xl text-center mb-lg du-dark:text-primary-400">
+    <h2 class="title text-primary-500 text-2xl text-center mb-lg du-dark:text-primary-400">
       <?= t('contact') ?>
     </h2>
 

@@ -30,7 +30,7 @@ $inactiveLanguage = $kirby
       <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
     </a>
     <button
-      class="w-max hover:text-primary du-dark:hover:text-primary-400"
+      class="w-max hover:text-primary-500 du-dark:hover:text-primary-400"
       data-theme-switcher
     >
       <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('_sun.svg') ?></span>

@@ -16,7 +16,7 @@ $year = null;
 
     <?php if ($postY !== $year): ?>
       <div class="mt-3xl mb-xs">
-        <h3 class="title text-primary du-dark:text-primary-400">
+        <h3 class="title text-primary-500 du-dark:text-primary-400">
           <?= $postY ?>
         </h3>
       </div>
@@ -28,7 +28,7 @@ $year = null;
       'aria-current' => $isActive ? 'page' : null,
       'style' => '--du-color-link-hover: var(--du-color-primary)'
     ]) ?>>
-      <span class="w-max <?php e($isActive, 'text-primary du-dark:text-primary-400') ?>">
+      <span class="w-max <?php e($isActive, 'text-primary-500 du-dark:text-primary-400') ?>">
         <?= $post->title()->escape() ?>
       </span>
       <?php if ($post->categories()->isNotEmpty()): ?>
