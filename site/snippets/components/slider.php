@@ -57,7 +57,7 @@ $heightMap = [
         <img
           loading="lazy"
           class="<?= trim(implode(' ', [
-            'object-contain w-auto group-hover:opacity-80',
+            'object-contain w-auto group-hover:opacity-90',
             $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)]' : 'border border-solid border-stone-900',
             $isMobile ? 'h-full rounded-md md:rounded-xl' : '',
             $isDocument ? 'h-full' : '',
