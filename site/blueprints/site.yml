@@ -5,9 +5,9 @@ title:
 tabs:
   dashboard:
     label:
-      de: Übersicht
-      en: Dashboard
-    icon: paragraph
+      de: Struktur
+      en: Structure
+    icon: sitemap
     columns:
       - width: 2/3
         sections:

@@ -2,83 +2,101 @@ title:
   de: Projekt
   en: Project
 
-columns:
-  - width: 1/3
-    sections:
-      meta:
-        type: fields
-        fields:
-          subtitle:
-            label:
-              de: Untertitel
-              en: Subtitle
-            type: text
-            required: true
-            width: 1/2
-          thumbnail:
-            label:
-              de: Titelbild
-              en: Cover Image
-            type: files
-            query: page.files.template(["image", "blocks/image"])
-            uploads:
-              template: image
-            multiple: false
-            translate: false
-            required: true
-            width: 1/2
-          galleryType:
-            label:
-              de: Galerietyp
-              en: Gallery Type
-            type: toggles
-            default: slider
-            options:
-              - value: slider
-                text: Slider
-              - value: masonry
-                text: Masonry
-            translate: false
-          galleryHeight:
-            label:
-              de: Galeriehöhe
-              en: Gallery Height
-            type: toggles
-            default: loose
-            options:
-              - value: tight
-                text:
-                  de: Eng
-                  en: Tight
-              - value: normal
-                text:
-                  de: Normal
-                  en: Normal
-              - value: loose
-                text:
-                  de: Locker
-                  en: Loose
-            translate: false
-            when:
-              galleryType: slider
-      images: sections/images
-      files: sections/files
+tabs:
+  article:
+    label:
+      en: Page
+      de: Seite
+    icon: draft
+    columns:
+      - width: 1/2
+        sections:
+          meta:
+            type: fields
+            fields:
+              subtitle:
+                label:
+                  de: Untertitel
+                  en: Subtitle
+                type: text
+                required: true
+                width: 1/2
+              thumbnail:
+                label:
+                  de: Titelbild
+                  en: Cover Image
+                type: files
+                query: page.files.template(["image", "blocks/image"])
+                uploads:
+                  template: image
+                multiple: false
+                translate: false
+                required: true
+                width: 1/2
 
-  - width: 2/3
-    sections:
-      content:
-        type: fields
-        fields:
+      - width: 1/2
+        sections:
+          galleryOptions:
+            type: fields
+            fields:
+              galleryType:
+                label:
+                  de: Galerietyp
+                  en: Gallery Type
+                type: toggles
+                default: slider
+                options:
+                  - value: slider
+                    text: Slider
+                  - value: masonry
+                    text: Masonry
+                translate: false
+                width: 1/2
+              galleryHeight:
+                label:
+                  de: Galeriehöhe
+                  en: Gallery Height
+                type: select
+                default: loose
+                options:
+                  - value: tight
+                    text:
+                      de: Eng
+                      en: Tight
+                  - value: normal
+                    text:
+                      de: Normal
+                      en: Normal
+                  - value: loose
+                    text:
+                      de: Locker
+                      en: Loose
+                translate: false
+                when:
+                  galleryType: slider
+                width: 1/2
+
+      - width: 1/2
+        sections:
+          text: sections/text
+
+      - width: 1/2
+        sections:
           gallery:
-            label:
-              de: Galerie
-              en: Gallery
-            type: files
-            query: page.files.template(["image", "blocks/image"])
-            uploads:
-              template: image
-            layout: cards
-            translate: false
-            image:
-              back: white
-          text: fields/blocks
+            type: fields
+            fields:
+              gallery:
+                label:
+                  de: Galerie
+                  en: Gallery
+                type: files
+                query: page.files.template(["image", "blocks/image"])
+                uploads:
+                  template: image
+                translate: false
+                image:
+                  back: white
+          contentTranslator: sections/content-translator
+
+  images: tabs/images
+  files: tabs/files

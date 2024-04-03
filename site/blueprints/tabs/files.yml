@@ -1,0 +1,12 @@
+label:
+  de: Dateien
+  en: Files
+icon: file
+sections:
+  files:
+    type: files
+    label:
+      de: Dateien
+      en: Files
+    template: default
+    sortBy: filename desc
