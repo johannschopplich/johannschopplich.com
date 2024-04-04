@@ -12,7 +12,8 @@
           <figure class="unselectable relative md:shadow-$du-frame-shadow">
             <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
             <img
-              src="<?= $image->url() ?>"
+              srcset="<?= $image->srcset() ?>"
+              sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
               width="<?= $image->width() ?>"
               height="<?= $image->height() ?>"
               alt="<?= $image->alt() ?>"
