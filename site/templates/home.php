@@ -2,13 +2,6 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
-
-$root = dirname(__DIR__, 2);
-$icons = array_map(
-    fn ($file) => basename($file),
-    glob($root . '/public/assets/icons/*.svg')
-);
-$filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_with($file, '_')));
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -32,7 +25,7 @@ $filteredIcons = array_values(array_filter($icons, fn ($file) => !str_starts_wit
                   style="--un-animated-duration: 800ms"
                   data-sticker="svg"
                 >
-                  <?= icon($filteredIcons[array_rand($filteredIcons)]) ?>
+                  <?= icon('johann.svg') ?>
                   <span class="absolute -inset-4 cursor-pointer"></span>
                 </span>
               </span>
