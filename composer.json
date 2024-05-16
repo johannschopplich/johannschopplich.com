@@ -5,7 +5,7 @@
     "getkirby/kql": "^2",
     "johannschopplich/kirby-helpers": "^6",
     "johannschopplich/kirby-headless": "^3",
-    "johannschopplich/kirby-algolia-docsearch": "^0.5",
+    "johannschopplich/kirby-algolia-docsearch": "^0.6",
     "johannschopplich/kirby-content-translator": "^1",
     "bnomei/kirby3-feed": "^1",
     "tobimori/kirby-thumbhash": "^1"

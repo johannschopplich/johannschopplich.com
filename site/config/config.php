@@ -7,19 +7,21 @@ return [
     'yaml' => [
         'handler' => 'symfony'
     ],
+
     'date' => [
         'handler' => 'intl'
+    ],
+
+    'routes' => require __DIR__ . '/routes.php',
+
+    'languages' => [
+        'detect' => true
     ],
 
     'panel' => [
         'install' => env('KIRBY_PANEL_INSTALL', false),
         'slug' => env('KIRBY_PANEL_SLUG', 'panel')
     ],
-
-    'routes' => require __DIR__ . '/routes.php',
-
-    'languages' => true,
-    'languages.detect' => true,
 
     'cache' => [
         'pages' => [
