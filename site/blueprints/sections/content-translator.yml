@@ -1,9 +1,3 @@
 type: content-translator
 title: true
-syncableFields:
-  - text
-  - description
-  - tags
-translatableFields:
-  - text
-  - description
+slug: true

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44cd7330dee4cb7e921cdb530a676352",
+    "content-hash": "53e6b73f7af26430a1a1948723c82a66",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -82,24 +82,24 @@
         },
         {
             "name": "bnomei/kirby3-feed",
-            "version": "1.5.8",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bnomei/kirby3-feed.git",
-                "reference": "e6ffb5947b58459cf848a1a3f0ee3c344fa46917"
+                "reference": "522e4318b02fe9efd35c02e4799aed2f8961feb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/e6ffb5947b58459cf848a1a3f0ee3c344fa46917",
-                "reference": "e6ffb5947b58459cf848a1a3f0ee3c344fa46917",
+                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/522e4318b02fe9efd35c02e4799aed2f8961feb6",
+                "reference": "522e4318b02fe9efd35c02e4799aed2f8961feb6",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0"
+                "php": ">=8.1"
             },
             "require-dev": {
-                "getkirby/cms": "^3.5",
+                "getkirby/cms": "^4.0",
                 "php-coveralls/php-coveralls": "^2.4",
                 "phpunit/phpunit": "^9.5"
             },
@@ -132,15 +132,15 @@
                 "Sitemap",
                 "feed",
                 "json",
-                "kirby3",
-                "kirby3-cms",
-                "kirby3-plugin",
+                "kirby",
+                "kirby-cms",
+                "kirby-plugin",
                 "rss",
                 "rss-feed"
             ],
             "support": {
                 "issues": "https://github.com/bnomei/kirby3-feed/issues",
-                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.5.8"
+                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.6.1"
             },
             "funding": [
                 {
@@ -160,7 +160,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2023-03-02T10:55:31+00:00"
+            "time": "2024-05-28T14:44:17+00:00"
         },
         {
             "name": "christian-riesen/base32",
@@ -223,16 +223,16 @@
         },
         {
             "name": "claviska/simpleimage",
-            "version": "4.1.0",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/claviska/SimpleImage.git",
-                "reference": "1dcb9c785c44960890970d26e25c437a2a252bbf"
+                "reference": "dfbe53c01dae8467468ef2b817c09b786a7839d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/1dcb9c785c44960890970d26e25c437a2a252bbf",
-                "reference": "1dcb9c785c44960890970d26e25c437a2a252bbf",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/dfbe53c01dae8467468ef2b817c09b786a7839d2",
+                "reference": "dfbe53c01dae8467468ef2b817c09b786a7839d2",
                 "shasum": ""
             },
             "require": {
@@ -264,7 +264,7 @@
             "description": "A PHP class that makes working with images as simple as possible.",
             "support": {
                 "issues": "https://github.com/claviska/SimpleImage/issues",
-                "source": "https://github.com/claviska/SimpleImage/tree/4.1.0"
+                "source": "https://github.com/claviska/SimpleImage/tree/4.2.0"
             },
             "funding": [
                 {
@@ -272,7 +272,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-04T15:41:11+00:00"
+            "time": "2024-04-15T16:07:16+00:00"
         },
         {
             "name": "composer/semver",
@@ -428,16 +428,16 @@
         },
         {
             "name": "getkirby/cli",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/cli.git",
-                "reference": "8cb347764de108f257c1a6f9ded456c8dd13c6f7"
+                "reference": "e1d18565828623607e5b8ab65eaf0ed93600f8e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/cli/zipball/8cb347764de108f257c1a6f9ded456c8dd13c6f7",
-                "reference": "8cb347764de108f257c1a6f9ded456c8dd13c6f7",
+                "url": "https://api.github.com/repos/getkirby/cli/zipball/e1d18565828623607e5b8ab65eaf0ed93600f8e1",
+                "reference": "e1d18565828623607e5b8ab65eaf0ed93600f8e1",
                 "shasum": ""
             },
             "require": {
@@ -490,25 +490,25 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-29T15:18:04+00:00"
+            "time": "2024-05-21T13:13:08+00:00"
         },
         {
             "name": "getkirby/cms",
-            "version": "4.2.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "c1e6ff77b056774543f201035f5dab6a02bfdb3b"
+                "reference": "f9f00b16a22fe9dbbbddc2bfd4719ca3437cbee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/c1e6ff77b056774543f201035f5dab6a02bfdb3b",
-                "reference": "c1e6ff77b056774543f201035f5dab6a02bfdb3b",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/f9f00b16a22fe9dbbbddc2bfd4719ca3437cbee9",
+                "reference": "f9f00b16a22fe9dbbbddc2bfd4719ca3437cbee9",
                 "shasum": ""
             },
             "require": {
                 "christian-riesen/base32": "1.6.0",
-                "claviska/simpleimage": "4.1.0",
+                "claviska/simpleimage": "4.2.0",
                 "composer/semver": "3.4.0",
                 "ext-ctype": "*",
                 "ext-curl": "*",
@@ -529,7 +529,7 @@
                 "phpmailer/phpmailer": "6.9.1",
                 "symfony/polyfill-intl-idn": "1.29.0",
                 "symfony/polyfill-mbstring": "1.29.0",
-                "symfony/yaml": "6.4.3"
+                "symfony/yaml": "6.4.8"
             },
             "replace": {
                 "symfony/polyfill-php72": "*"
@@ -593,7 +593,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-04-10T08:55:30+00:00"
+            "time": "2024-06-13T09:58:27+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -1157,24 +1157,27 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "1.2.0",
+            "version": "2.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johannschopplich/kirby-content-translator.git",
-                "reference": "586b6cb8ecbaeaccc6adf2c49e2d976b2b9fbeaa"
+                "url": "https://github.com/kirby-tools/kirby-content-translator.git",
+                "reference": "61acc3585f3213e533522bf20c3fddb8c09d3aba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-content-translator/zipball/586b6cb8ecbaeaccc6adf2c49e2d976b2b9fbeaa",
-                "reference": "586b6cb8ecbaeaccc6adf2c49e2d976b2b9fbeaa",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/61acc3585f3213e533522bf20c3fddb8c09d3aba",
+                "reference": "61acc3585f3213e533522bf20c3fddb8c09d3aba",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.2"
+                "getkirby/composer-installer": "^1.2",
+                "johannschopplich/kirby-tools-licensing": "^0.1"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "@stable",
-                "getkirby/cms": "^4"
+                "getkirby/cli": "^1.5",
+                "getkirby/cms": "^4",
+                "phpunit/phpunit": "^11.1",
+                "vlucas/phpdotenv": "^5.6"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1182,38 +1185,37 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "proprietary"
             ],
             "authors": [
                 {
                     "name": "Johann Schopplich",
-                    "email": "pkg@johannschopplich.com",
+                    "email": "hello@johannschopplich.com",
                     "homepage": "https://johannschopplich.com"
-                },
-                {
-                    "name": "Dennis Baum",
-                    "homepage": "https://github.com/dennisbaum"
                 }
             ],
-            "description": "Kirby Panel plugin to translate content at once with DeepL or other services",
-            "homepage": "https://github.com/johannschopplich/kirby-content-translator#readme",
+            "description": "Translate any page in the Panel or programmatically with DeepL",
+            "homepage": "https://kirby.tools/content-translator",
             "keywords": [
                 "content",
                 "deepl",
+                "i18n",
                 "kirby",
-                "translation"
+                "language",
+                "translation",
+                "translator"
             ],
             "support": {
-                "issues": "https://github.com/johannschopplich/kirby-content-translator/issues",
-                "source": "https://github.com/johannschopplich/kirby-content-translator/tree/v1.2.0"
+                "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.1.4"
             },
             "funding": [
                 {
-                    "url": "https://paypal.me/jschopplich",
+                    "url": "https://kirby.tools/content-translator",
                     "type": "custom"
                 }
             ],
-            "time": "2024-02-08T07:44:58+00:00"
+            "time": "2024-06-16T16:37:27+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1337,6 +1339,51 @@
                 "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.1.1"
             },
             "time": "2024-02-08T08:54:12+00:00"
+        },
+        {
+            "name": "johannschopplich/kirby-tools-licensing",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kirby-tools/licensing-backend.git",
+                "reference": "2fd798167d988cecbaa390a8515e0b246fef5abc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/2fd798167d988cecbaa390a8515e0b246fef5abc",
+                "reference": "2fd798167d988cecbaa390a8515e0b246fef5abc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "getkirby/cms": "^4"
+            },
+            "type": "library",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "JohannSchopplich\\Licensing\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "hello@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                }
+            ],
+            "description": "Shared tooling for licensing server-side",
+            "homepage": "https://github.com/kirby-tools/licensing-backend#readme",
+            "support": {
+                "issues": "https://github.com/kirby-tools/licensing-backend/issues",
+                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.1.2"
+            },
+            "time": "2024-06-16T16:23:36+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -2617,16 +2664,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v6.4.3",
+            "version": "v6.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "d75715985f0f94f978e3a8fa42533e10db921b90"
+                "reference": "52903de178d542850f6f341ba92995d3d63e60c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/d75715985f0f94f978e3a8fa42533e10db921b90",
-                "reference": "d75715985f0f94f978e3a8fa42533e10db921b90",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/52903de178d542850f6f341ba92995d3d63e60c9",
+                "reference": "52903de178d542850f6f341ba92995d3d63e60c9",
                 "shasum": ""
             },
             "require": {
@@ -2669,7 +2716,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v6.4.3"
+                "source": "https://github.com/symfony/yaml/tree/v6.4.8"
             },
             "funding": [
                 {
@@ -2685,7 +2732,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-01-23T14:51:35+00:00"
+            "time": "2024-05-31T14:49:08+00:00"
         },
         {
             "name": "tobimori/kirby-thumbhash",
