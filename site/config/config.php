@@ -1,5 +1,7 @@
 <?php
 
+use Kirby\Cms\Page;
+
 return [
 
     'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
@@ -26,7 +28,7 @@ return [
     'cache' => [
         'pages' => [
             'active' => env('KIRBY_CACHE', false),
-            'ignore' => fn (\Kirby\Cms\Page $page) => $page->kirby()->user() !== null
+            'ignore' => fn (Page $page) => $page->kirby()->user() !== null
         ]
     ],
 
