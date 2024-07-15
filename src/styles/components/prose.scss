@@ -2,8 +2,6 @@
 @use "duecss/plugins/typography";
 
 .prose {
-  --du-prose-space-y: 1.5;
-
   @include breakpoints.media-below(sm) {
     font-size: 0.875rem;
     line-height: var(--du-line-height-normal);
@@ -16,11 +14,11 @@
   }
 
   :where(figure:not(:first-child)) {
-    margin-top: calc(2rem * var(--du-prose-space-y, 1));
+    margin-top: calc(2rem * var(--du-prose-space-y));
   }
 
   :where(figure:not(:last-child)) {
-    margin-bottom: calc(2rem * var(--du-prose-space-y, 1));
+    margin-bottom: calc(2rem * var(--du-prose-space-y));
   }
 
   :where(h1) {
@@ -139,15 +137,6 @@
   :where(summary) {
     font-family: var(--du-font-family-heading);
     font-weight: 500;
-  }
-
-  :where(masonry-grid) {
-    --masonry-column-max-width: 30ch;
-    gap: 1rem;
-
-    figure {
-      margin-top: 0;
-    }
   }
 
   :where(.note) {

@@ -6,37 +6,35 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <div class="content relative max-w-screen-lg pt-5xl md:pt-8xl">
-    <div class="relative">
-      <div class="relative prose">
-        <?php foreach ($page->text()->toBlocks() as $block): ?>
-          <?php /** @var \Kirby\Cms\Block $block */ ?>
-          <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
-            <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
-              <?php
-              $words = explode(' ', $block->text());
-              $lastWord = array_pop($words);
-              $rest = implode(' ', $words);
-              echo $rest;
-              ?>
-              <span class="whitespace-nowrap">
-                <?= $lastWord ?>
-                <span
-                  class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:w-auto [&>svg]:h-full"
-                  style="--un-animated-duration: 800ms"
-                  data-sticker="svg"
-                >
-                  <?= icon('johann.svg') ?>
-                  <span class="absolute -inset-4 cursor-pointer"></span>
-                </span>
+    <div class="prose">
+      <?php foreach ($page->text()->toBlocks() as $block): ?>
+        <?php /** @var \Kirby\Cms\Block $block */ ?>
+        <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
+          <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
+            <?php
+            $words = explode(' ', $block->text());
+            $lastWord = array_pop($words);
+            $rest = implode(' ', $words);
+            echo $rest;
+            ?>
+            <span class="whitespace-nowrap">
+              <?= $lastWord ?>
+              <span
+                class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:w-auto [&>svg]:h-full"
+                style="--un-animated-duration: 800ms"
+                data-sticker="svg"
+              >
+                <?= icon('johann.svg') ?>
+                <span class="absolute -inset-4 cursor-pointer"></span>
               </span>
-            </h1>
-          <?php else: ?>
-            <div class="max-w-prose text-contrast-medium">
-              <?= $block ?>
-            </div>
-          <?php endif ?>
-        <?php endforeach ?>
-      </div>
+            </span>
+          </h1>
+        <?php else: ?>
+          <div class="max-w-prose text-contrast-medium">
+            <?= $block ?>
+          </div>
+        <?php endif ?>
+      <?php endforeach ?>
     </div>
 
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>

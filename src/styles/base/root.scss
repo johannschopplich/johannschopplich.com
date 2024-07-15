@@ -6,12 +6,14 @@
   --du-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
     sans-serif;
   --du-line-height-heading: 1.25; // calc(1ex / 0.2)
+  --du-prose-space-y: 1.5;
 
   // Project-specific due variables
   --du-decoration-thickness: max(1px, 0.075em);
   --du-decoration-offset: max(2px, 0.15em);
   --du-frame-shadow-template: 3px 3px 0 var(--du-color-background), 4px 4px 0;
   --du-frame-shadow: var(--du-frame-shadow-template) var(--du-color-border);
+  --du-prose-spacer: calc(1rem * var(--du-prose-space-y));
 }
 
 :root:not([data-theme]),

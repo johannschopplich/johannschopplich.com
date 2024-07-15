@@ -11,18 +11,10 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier \"src/**/*\" --write"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.22.2",
     "@docsearch/css": "^3.6.0",
     "@docsearch/js": "^3.6.0",
-    "animere": "^3.0.0",
-    "destr": "^2.0.3",
-    "drauu": "^0.4.0",
-    "duecss": "^0.32.0",
-    "medium-zoom": "^1.1.0",
-    "unlazy": "^0.11.3"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "^2.22.0",
     "@iconify-json/bx": "^1.1.10",
     "@iconify-json/bxs": "^1.1.10",
     "@types/node": "^20.14.10",
@@ -30,13 +22,19 @@
     "@unocss/eslint-plugin": "^0.61.3",
     "@unocss/preset-mini": "^0.61.3",
     "@unocss/preset-wind": "^0.61.3",
+    "animere": "^3.0.0",
     "concurrently": "^8.2.2",
+    "drauu": "^0.4.0",
+    "duecss": "^0.32.0",
+    "es-toolkit": "^1.10.1",
     "esbuild": "^0.23.0",
-    "eslint": "^9.6.0",
+    "eslint": "^9.7.0",
+    "medium-zoom": "^1.1.0",
     "postcss": "^8.4.39",
-    "prettier": "^3.3.2",
-    "sass": "^1.77.7",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
     "typescript": "^5.5.3",
+    "unlazy": "^0.11.3",
     "unocss": "^0.61.3",
     "vite": "^5.3.3",
     "vite-plugin-full-reload": "^1.2.0"

@@ -1,4 +1,4 @@
-import { debounce } from "../utils";
+import { debounce } from "es-toolkit";
 
 let sheet: CSSStyleSheet | HTMLStyleElement;
 const supportsConstructableStylesheets =

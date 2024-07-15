@@ -6,21 +6,23 @@
 
 <?php snippet('layouts/default', slots: true) ?>
   <div class="pt-5xl pb-8xl md:pt-8xl">
-    <?php $blocks = $page->text()->toBlocks() ?>
-    <?php if ($blocks->isNotEmpty()): ?>
-      <div class="content max-w-prose pb-5xl">
-        <section class="prose">
-          <h1 class="sr-only">
-            <?= $page->title()->escape() ?>
-          </h1>
+    <div class="content prose max-w-prose">
+      <h1 class="sr-only">
+        <?= $page->title()->escape() ?>
+      </h1>
 
-          <?= $blocks ?>
-        </section>
-      </div>
-    <?php endif ?>
-
-    <?php snippet('components/masonry', [
-      'query' => $page->gallery()->toFiles()
-    ]) ?>
+      <?php foreach ($page->text()->toBlocks() as $block): ?>
+        <?php /** @var \Kirby\Cms\Block $block */ ?>
+        <?php if ($block->type() === 'gallery'): ?>
+          </div>
+          <div class="mt-[--du-prose-spacer] mb-8xl">
+            <?= $block ?>
+          </div>
+          <div class="content prose max-w-prose">
+        <?php else: ?>
+          <?= $block ?>
+        <?php endif ?>
+      <?php endforeach ?>
+    </div>
   </div>
 <?php endsnippet() ?>
