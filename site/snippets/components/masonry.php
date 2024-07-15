@@ -1,7 +1,8 @@
 <?php
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $width */
-// Apply the `masonry-grid` class only as fallback until the web component is initialized
+
+// Note: The `masonry-grid` class is only applied  as fallback until the web component is initialized
 ?>
 <masonry-grid class="masonry-grid gap-5xl sm:gap-lg" style="--masonry-column-max-width: <?= $width ?? 'clamp(25rem, 25vw, 30rem)' ?>">
   <?php foreach ($query as $image): ?>

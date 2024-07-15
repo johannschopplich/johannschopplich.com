@@ -35,10 +35,10 @@ tabs:
             layout: cards
             info: '{{ page.published.toDate("dd.MM.Y") }}'
 
-  settings:
+  content:
     label:
-      de: Seite
-      en: Page
+      de: Inhalt
+      en: Content
     icon: draft
     columns:
       - width: 2/3

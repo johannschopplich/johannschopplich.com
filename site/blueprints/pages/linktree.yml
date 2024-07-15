@@ -7,25 +7,32 @@ options:
   delete: false
   preview: "https://byjohann.link"
 
-columns:
-  - width: 2/3
-    sections:
-      text:
-        type: fields
-        fields:
+tabs:
+  content:
+    label:
+      de: Inhalt
+      en: Content
+    icon: draft
+    columns:
+      - width: 2/3
+        sections:
           text:
-            label: Text
-            type: blocks
-            fieldsets:
+            type: fields
+            fields:
               text:
                 label: Text
-                type: group
+                type: blocks
                 fieldsets:
-                  - heading
-                  - text
-                  - linktree-section
+                  text:
+                    label: Text
+                    type: group
+                    fieldsets:
+                      - heading
+                      - text
+                      - linktree-section
 
-  - width: 1/3
-    sections:
-      meta: sections/meta
-      images: sections/images
+      - width: 1/3
+        sections:
+          meta: sections/meta
+
+  images: tabs/images

@@ -41,11 +41,11 @@ tabs:
               cover: true
               back: "#89937A"
 
-  settings:
+  info:
     label:
-      de: Einstellungen
-      en: Settings
-    icon: settings
+      de: Informationen
+      en: Information
+    icon: info
     columns:
       - width: 1/2
         sections:
@@ -78,9 +78,6 @@ tabs:
                   cover: true
                   back: white
                 translate: false
-              headlineAlgolia:
-                label: Algolia
-                type: headline
 
       - width: 1/2
         sections:

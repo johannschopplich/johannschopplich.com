@@ -114,17 +114,17 @@
   }
 
   :where(figcaption) {
-    @include breakpoints.media-below(sm) {
-      margin-left: calc(1.125rem - 3px);
-      margin-right: calc(1.125rem - 3px);
-    }
-
     line-height: calc(var(--du-line-height-normal) * 0.875);
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0 3px 0.25rem;
     margin-top: calc(0.25rem + 3px);
     text-align: left;
+
+    @include breakpoints.media-below(sm) {
+      margin-left: calc(1.125rem - 3px);
+      margin-right: calc(1.125rem - 3px);
+    }
   }
 
   :where(details) {

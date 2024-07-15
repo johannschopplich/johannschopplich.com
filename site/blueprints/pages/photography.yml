@@ -9,10 +9,10 @@ options:
   delete: false
 
 tabs:
-  pages:
+  content:
     label:
-      en: Page
-      de: Seite
+      de: Inhalt
+      en: Content
     icon: draft
     columns:
       - width: 2/3

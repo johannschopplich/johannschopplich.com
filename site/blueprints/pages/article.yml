@@ -7,10 +7,10 @@ num: '{{ page.published.toDate("YMMdd") }}'
 icon: 📝
 
 tabs:
-  article:
+  content:
     label:
-      en: Page
-      de: Seite
+      en: Content
+      de: Inhalt
     icon: draft
     columns:
       - width: 2/3
