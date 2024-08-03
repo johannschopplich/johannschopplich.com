@@ -60,8 +60,7 @@
 
   <?php if ($photography = page('photography')): ?>
     <?php $query = $photography
-      ->gallery()
-      ->toFiles()
+      ->files()
       ->shuffle()
       // ->filterBy('ratio', '>=', '1')
       ->limit(4)
