@@ -9,6 +9,7 @@ sections:
       de: Bilder
       en: Images
     template: image
+    sortBy: filename desc
     empty:
       de: Noch keine Bilder
       en: No images yet
