@@ -23,5 +23,6 @@ tabs:
         sections:
           meta:
             extends: sections/meta
+          contentTranslator: sections/content-translator
 
   images: tabs/images
