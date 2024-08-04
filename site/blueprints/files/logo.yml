@@ -1,0 +1,22 @@
+title: Logo
+
+accept:
+  type: image
+
+sections:
+  content:
+    type: fields
+    fields:
+      alt:
+        label:
+          de: Alternativtext
+          en: Alternative Text
+        type: text
+        icon: title
+      usage:
+        label:
+          de: Verwendung
+          en: Usage
+        type: text
+        font: monospace
+        icon: text

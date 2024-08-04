@@ -18,6 +18,7 @@ storage/logs/*
 storage/sessions/*
 !storage/sessions/.gitkeep
 site/config/.license
+site/config/.kirby-tools-licenses
 
 # Plugins
 site/plugins/*

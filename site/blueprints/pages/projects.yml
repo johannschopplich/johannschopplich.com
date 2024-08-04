@@ -70,4 +70,21 @@ tabs:
               thumbnail:
                 query: page.children.files.template("image")
 
+  clients:
+    label:
+      de: Klienten
+      en: Clients
+    icon: users
+    sections:
+      images:
+        type: files
+        label: Logos
+        template: logo
+        sortBy: filename desc
+        empty:
+          de: Noch keine Logos
+          en: No logos yet
+        layout: cards
+        size: small
+
   images: tabs/images
