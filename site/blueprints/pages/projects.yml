@@ -76,7 +76,7 @@ tabs:
       en: Clients
     icon: users
     sections:
-      images:
+      logos:
         type: files
         label: Logos
         template: logo
