@@ -18,3 +18,7 @@ sections:
           en: Brand
         type: text
         icon: title
+      website:
+        label: Website
+        type: url
+        icon: globe
