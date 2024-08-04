@@ -7,16 +7,14 @@ sections:
   content:
     type: fields
     fields:
-      alt:
-        label:
-          de: Alternativtext
-          en: Alternative Text
-        type: text
-        icon: title
       usage:
         label:
           de: Verwendung
           en: Usage
+        type: tags
+      brand:
+        label:
+          de: Marke
+          en: Brand
         type: text
-        font: monospace
-        icon: text
+        icon: title
