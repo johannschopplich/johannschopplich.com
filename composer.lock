@@ -1157,21 +1157,21 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "2.1.12",
+            "version": "2.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "ad739bc6079da5011903353e1dc8f7b41031aa81"
+                "reference": "663b31785fcedf686f100308d7fb93a8a97de8d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/ad739bc6079da5011903353e1dc8f7b41031aa81",
-                "reference": "ad739bc6079da5011903353e1dc8f7b41031aa81",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/663b31785fcedf686f100308d7fb93a8a97de8d0",
+                "reference": "663b31785fcedf686f100308d7fb93a8a97de8d0",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "johannschopplich/kirby-tools-licensing": "^0.4"
+                "johannschopplich/kirby-tools-licensing": "^0.5"
             },
             "require-dev": {
                 "getkirby/cli": "^1.5",
@@ -1212,7 +1212,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.1.12"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.1.13"
             },
             "funding": [
                 {
@@ -1220,7 +1220,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-07-15T14:18:05+00:00"
+            "time": "2024-08-04T07:23:41+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1347,16 +1347,16 @@
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
-            "version": "0.4.3",
+            "version": "0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/licensing-backend.git",
-                "reference": "afd11dc6f0b3153218ec61953d574963255ee4fc"
+                "reference": "a8ac9a672c554e0d6694a5c11d631c40cb24c6ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/afd11dc6f0b3153218ec61953d574963255ee4fc",
-                "reference": "afd11dc6f0b3153218ec61953d574963255ee4fc",
+                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/a8ac9a672c554e0d6694a5c11d631c40cb24c6ef",
+                "reference": "a8ac9a672c554e0d6694a5c11d631c40cb24c6ef",
                 "shasum": ""
             },
             "require-dev": {
@@ -1386,9 +1386,9 @@
             "homepage": "https://github.com/kirby-tools/licensing-backend#readme",
             "support": {
                 "issues": "https://github.com/kirby-tools/licensing-backend/issues",
-                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.4.3"
+                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.5.0"
             },
-            "time": "2024-07-15T14:05:29+00:00"
+            "time": "2024-08-04T07:19:39+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
