@@ -1,10 +1,10 @@
+import { presetDue } from "duecss";
 import {
   defineConfig,
   presetIcons,
   presetWind,
   transformerDirectives,
 } from "unocss";
-import { presetDue } from "duecss";
 import type { Theme } from "@unocss/preset-wind";
 
 export default defineConfig<Theme>({

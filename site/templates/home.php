@@ -25,7 +25,7 @@
                 data-sticker="svg"
               >
                 <?= icon('johann.svg') ?>
-                <span class="absolute -inset-4 cursor-pointer"></span>
+                <span class="absolute -inset-4"></span>
               </span>
             </span>
           </h1>
