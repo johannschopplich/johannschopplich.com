@@ -1,8 +1,8 @@
+import type { Plugin as PostCSSPlugin } from "postcss";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
-import type { Plugin as PostCSSPlugin } from "postcss";
 
 const currentDir = new URL(".", import.meta.url).pathname;
 

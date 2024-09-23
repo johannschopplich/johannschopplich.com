@@ -70,11 +70,11 @@ tabs:
               thumbnail:
                 query: page.children.files.template("image")
 
-  clients:
+  usage:
     label:
-      de: Klienten
-      en: Clients
-    icon: users
+      de: Verwendung
+      en: Usage
+    icon: cart
     sections:
       logos:
         type: files
