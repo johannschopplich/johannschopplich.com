@@ -81,7 +81,6 @@ https://github.com/johannschopplich/johannschopplich.com
 </is-land>
 <?php */ ?>
 
-  <?php snippet('components/backlight-filter') ?>
   <?php snippet('site-data') ?>
 
 </body>
