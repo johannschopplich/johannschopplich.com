@@ -1,4 +1,5 @@
 <?php
+
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
@@ -10,8 +11,8 @@ https://github.com/johannschopplich/johannschopplich.com
 <html
   class="var-color-primary var-color-primary-400 var-color-primary-500 var-color-primary-200"
   data-theme="light"
-  lang="<?= $kirby->languageCode() ?>"
->
+  lang="<?= $kirby->languageCode() ?>">
+
 <head>
 
   <meta charset="utf-8">
@@ -64,8 +65,7 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <header
     class="content sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 py-2 bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-current md:py-xs du-dark:[&.is-pinned]:border-contrast-lower du-dark:bg-stone-900 du-dark:bg-opacity-40"
-    style="--gradient: radial-gradient(rgba(255, 255, 255, 0) 1px, var(--du-color-background) 1px)"
-  >
+    style="--gradient: radial-gradient(rgba(255, 255, 255, 0) 1px, var(--du-color-background) 1px)">
     <?php snippet('navigation') ?>
   </header>
 
@@ -75,13 +75,14 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <?php snippet('footer') ?>
 
-<?php /*: ?>
+  <?php /*: ?>
 <is-land on:media="(prefers-reduced-motion: no-preference)">
-	<snow-fall count="25" style="--snow-fall-color: var(--du-color-contrast-low)"></snow-fall>
+  <snow-fall count="25" style="--snow-fall-color: var(--du-color-contrast-low)"></snow-fall>
 </is-land>
 <?php */ ?>
 
-<?php snippet('site-data') ?>
+  <?php snippet('site-data') ?>
 
 </body>
+
 </html>

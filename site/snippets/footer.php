@@ -4,7 +4,7 @@ use Kirby\Toolkit\I18n;
 
 $inactiveLanguage = $kirby
   ->languages()
-  ->filter(fn ($language) => $language->code() !== $kirby->language()->code())
+  ->filter(fn($language) => $language->code() !== $kirby->language()->code())
   ->first();
 ?>
 <footer class="content sticky top-100vh bg-contrast-lower font-heading border-t border-$du-color-border py-3xl du-dark:bg-contrast-lowest">
@@ -22,8 +22,7 @@ $inactiveLanguage = $kirby
     <a
       href="<?= $page->url($inactiveLanguage->code()) ?>"
       hreflang="<?= $inactiveLanguage->code() ?>"
-      class="inline-block"
-    >
+      class="inline-block">
       <span class="mr-1 icon" aria-hidden="true">
         <?= icon('earth.svg') ?>
       </span>
@@ -31,8 +30,7 @@ $inactiveLanguage = $kirby
     </a>
     <button
       class="w-max hover:text-primary-500 du-dark:hover:text-primary-400"
-      data-theme-switcher
-    >
+      data-theme-switcher>
       <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
       <span class="du-dark:hidden"><?= t('theme.switch.off') ?></span>
 

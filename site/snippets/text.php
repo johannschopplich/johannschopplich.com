@@ -1,4 +1,6 @@
-<?php /** @var \Kirby\Cms\Page $page */ ?>
+<?php
+
+/** @var \Kirby\Cms\Page $page */ ?>
 
 <section class="pt-5xl pb-8xl md:pt-8xl">
   <div class="content max-w-prose pb-5xl">
@@ -26,18 +28,18 @@
     <?php foreach ($blocks as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'gallery'): ?>
-        </div>
-        <div class="mt-[--du-prose-spacer]">
-          <?= $block ?>
-        </div>
-        <div <?= $sectionAttrs ?>>
-      <?php else: ?>
-        <?= $block ?>
-      <?php endif ?>
-    <?php endforeach ?>
+  </div>
+  <div class="mt-[--du-prose-spacer]">
+    <?= $block ?>
+  </div>
+  <div <?= $sectionAttrs ?>>
+  <?php else: ?>
+    <?= $block ?>
+  <?php endif ?>
+<?php endforeach ?>
 
-    <?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>
-      <?= $page->parent()->articleFooter()->toBlocks() ?>
-    <?php endif ?>
+<?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>
+  <?= $page->parent()->articleFooter()->toBlocks() ?>
+<?php endif ?>
   </div>
 </section>

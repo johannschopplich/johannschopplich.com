@@ -1,4 +1,6 @@
-<?php /** @var \Kirby\Cms\Collection $query */ ?>
+<?php
+
+/** @var \Kirby\Cms\Collection $query */ ?>
 <div class="
   relative grid -mx-xl sm:grid-cols-2
   after:content-empty after:absolute after:inset-x-0 after:bottom-0 after:h-1px after:bg-theme-background
@@ -20,8 +22,7 @@
         <a
           href="<?= $article->url() ?>"
           class="text-underline !text-current hyphenate"
-          style="--text-underline-color: transparent"
-        >
+          style="--text-underline-color: transparent">
           <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $article->title() ?>
         </a>
@@ -30,6 +31,6 @@
       <div class="prose text-sm text-contrast-medium">
         <p><?= $article->description() ?></p>
       </div>
-  </div>
+    </div>
   <?php endforeach ?>
 </div>

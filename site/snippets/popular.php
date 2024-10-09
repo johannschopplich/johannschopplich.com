@@ -1,4 +1,5 @@
 <?php
+
 /** @var \Kirby\Cms\Pages $query */
 /** @var string $heading */
 
@@ -23,11 +24,11 @@ $year = null;
     <?php endif ?>
 
     <a <?= attr([
-      'href' => $post->url(),
-      'class' => 'gap-xs mb-xs flex items-start',
-      'aria-current' => $isActive ? 'page' : null,
-      'style' => '--du-color-link-hover: var(--du-color-primary)'
-    ]) ?>>
+          'href' => $post->url(),
+          'class' => 'gap-xs mb-xs flex items-start',
+          'aria-current' => $isActive ? 'page' : null,
+          'style' => '--du-color-link-hover: var(--du-color-primary)'
+        ]) ?>>
       <span class="w-max <?php e($isActive, 'text-primary-500 du-dark:text-primary-400') ?>">
         <?= $post->title()->escape() ?>
       </span>

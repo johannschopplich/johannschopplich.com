@@ -116,7 +116,7 @@ export class Island extends HTMLElement {
         this.querySelectorAll<HTMLElement>(selector),
       ).reverse();
 
-      // with thanks to https://gist.github.com/cowboy/938767
+      // With thanks to https://gist.github.com/cowboy/938767
       for (const node of components) {
         if (!node.isConnected) {
           continue;

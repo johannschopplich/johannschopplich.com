@@ -4,7 +4,7 @@
 
 // Extract the YouTube video ID from the URL
 $videoIdPattern =
-    '%^# Match any youtube URL
+  '%^# Match any youtube URL
     (?:https?://)?  # Optional scheme. Either http or https
     (?:www\.)?      # Optional www subdomain
     (?:             # Group host alternatives
@@ -32,12 +32,12 @@ $bgImage = $image?->thumb([
 ?>
 <figure>
   <lite-youtube <?= attr([
-    'videoid' => $id,
-    'style' => implode(';', [
-      $bgImage ? "background-image: url({$bgImage})" : null,
-      'aspect-ratio: ' . $block->ratio()->or('16/9')->value()
-    ])
-  ]) ?>></lite-youtube>
+                  'videoid' => $id,
+                  'style' => implode(';', [
+                    $bgImage ? "background-image: url({$bgImage})" : null,
+                    'aspect-ratio: ' . $block->ratio()->or('16/9')->value()
+                  ])
+                ]) ?>></lite-youtube>
   <?php if ($block->caption()->isNotEmpty()): ?>
     <figcaption><?= $block->caption()->permalinksToUrls() ?></figcaption>
   <?php endif ?>
