@@ -52,6 +52,7 @@ export default defineConfig<Theme>({
       "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)] md:leading-[1.05]",
     "masonry-grid":
       "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
+    "filter-blur": "[filter:url(#blur-and-scale)]",
   },
   safelist: ["sr-only", "invisible", "animated", "animated-tada"],
   transformers: [transformerDirectives()],
