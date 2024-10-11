@@ -4,6 +4,8 @@ use Kirby\Cms\Page;
 
 return [
 
+    'url' => env('KIRBY_URL'),
+
     'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
 
     'yaml' => [
