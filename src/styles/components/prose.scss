@@ -1,5 +1,5 @@
-@use "duecss/abstracts/breakpoints";
-@use "duecss/plugins/typography";
+@use "../abstracts/breakpoints";
+@use "../plugins/typography";
 
 .prose {
   @include breakpoints.media-below(sm) {

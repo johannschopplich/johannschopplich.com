@@ -1,10 +1,28 @@
 :root {
-  // Increase minimum font size for better legibility
-  --du-fluid-min-font-size: 16;
-  --du-fluid-max-font-size: 18;
+  --du-fluid-min-width: 320;
+  --du-fluid-max-width: 1140;
+  --du-fluid-screen: 100vw;
+  --du-fluid-bp: calc(
+    (var(--du-fluid-screen) - var(--du-fluid-min-width) / 16 * 1rem) /
+      (var(--du-fluid-max-width) - var(--du-fluid-min-width))
+  );
+
   --du-font-family-normal: "Iosevka Aile", ui-sans-serif, system-ui, sans-serif;
   --du-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
     sans-serif;
+  --du-line-height-normal: calc(1ex / 0.32);
+  --du-line-height-heading: calc(1ex / 0.42);
+
+  --du-text-scale-ratio: 1.2;
+  --du-text-lg: calc(1rem * var(--du-text-scale-ratio));
+  --du-text-xl: calc(var(--du-text-lg) * var(--du-text-scale-ratio));
+  --du-text-2xl: calc(var(--du-text-xl) * var(--du-text-scale-ratio));
+  --du-text-3xl: calc(var(--du-text-2xl) * var(--du-text-scale-ratio));
+  --du-text-4xl: calc(var(--du-text-3xl) * var(--du-text-scale-ratio));
+
+  // Project-specific spacing and sizing variables
+  --du-fluid-min-font-size: 16;
+  --du-fluid-max-font-size: 18;
   --du-line-height-heading: 1.25; // calc(1ex / 0.2)
   --du-prose-space-y: 1.5;
 
@@ -16,9 +34,25 @@
   --du-prose-spacer: calc(1rem * var(--du-prose-space-y));
 }
 
+@media screen and (min-width: 1140px) {
+  :root {
+    --du-fluid-screen: calc(var(--du-fluid-max-width) * 1px);
+  }
+}
+
 :root:not([data-theme]),
 [data-theme="light"] {
+  /* Shades (stone color from Tailwind CSS) */
+  --du-color-contrast-lowest: #f5f5f4; /* 100 */
+  --du-color-contrast-lower: #e7e5e4; /* 200 */
+  --du-color-contrast-low: #d6d3d1; /* 300 */
+  --du-color-contrast-medium: #78716c; /* 500 */
+  --du-color-contrast-high: #292524; /* 800 */
+  --du-color-contrast-higher: #1c1917; /* 900 */
+
+  /* Semantic color definitions */
   --du-color-background: #fefcf8;
+  --du-color-text: var(--du-color-contrast-higher);
   --du-color-link: var(--du-color-text);
   --du-color-link-hover: var(--du-color-primary);
   // Project-specific due variables
@@ -26,13 +60,85 @@
 }
 
 [data-theme="dark"] {
+  /* Shades (stone color from Tailwind CSS) */
+  --du-color-contrast-lowest: #292524; /* 800 */
+  --du-color-contrast-lower: #44403c; /* 700 */
+  --du-color-contrast-low: #57534e; /* 600 */
+  --du-color-contrast-medium: #a8a29e; /* 400 */
+  --du-color-contrast-high: #f5f5f4; /* 100 */
+  --du-color-contrast-higher: #fafaf9; /* 50 */
+
+  /* Semantic color definitions */
+  --du-color-background: #1c1917; /* 900 */
+  --du-color-text: white;
   --du-color-link: var(--du-color-text);
   --du-color-link-hover: var(--du-color-primary-400);
   // Project-specific due variables
   --du-color-border: var(--du-color-contrast-lower);
 }
 
+[data-theme]:not(:root) {
+  color: var(--du-color-text);
+  background-color: var(--du-color-background);
+}
+
+html {
+  min-width: calc(1px * var(--du-fluid-min-width));
+  font-size: calc(
+    ((var(--du-fluid-min-font-size, 16) / 16) * 1rem) +
+      (var(--du-fluid-max-font-size, 18) - var(--du-fluid-min-font-size, 16)) *
+      var(--du-fluid-bp)
+  );
+  background-color: var(--du-color-background, white);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  font-family: var(--du-font-family-normal);
+  line-height: var(--du-line-height-normal);
+  color: var(--du-color-text);
+}
+
+a {
+  cursor: pointer;
+  color: var(--du-color-link);
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: auto;
+  text-decoration-skip-ink: auto;
+}
+
+a:hover {
+  color: var(--du-color-link-hover);
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+[id] {
+  scroll-margin-top: 2ex;
+}
+
 ::selection {
   color: black;
   background: var(--du-color-primary-200);
+}
+
+/* Hide focus styles if they're not needed, for example,
+   when an element receives focus via the mouse */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Show focus styles on keyboard focus */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
