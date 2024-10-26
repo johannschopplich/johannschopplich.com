@@ -1,11 +1,12 @@
 import type { Theme } from "@unocss/preset-wind";
+import { variantMatcher } from "@unocss/preset-mini/utils";
 import {
   defineConfig,
   presetIcons,
   presetWind,
   transformerDirectives,
 } from "unocss";
-import { presetDue } from "./src/unocss";
+import { rules } from "./src/unocss";
 
 export default defineConfig<Theme>({
   theme: {
@@ -40,20 +41,79 @@ export default defineConfig<Theme>({
         "800": "#6D2C2F",
         "900": "#451C1E",
       },
+      link: {
+        DEFAULT: "var(--du-color-link)",
+        hover: "var(--du-color-link-hover)",
+      },
+      theme: {
+        base: "var(--du-color-text)",
+        background: "var(--du-color-background)",
+      },
+      contrast: {
+        lowest: "var(--du-color-contrast-lowest)",
+        lower: "var(--du-color-contrast-lower)",
+        low: "var(--du-color-contrast-low)",
+        medium: "var(--du-color-contrast-medium)",
+        high: "var(--du-color-contrast-high)",
+        higher: "var(--du-color-contrast-higher)",
+      },
+    },
+    borderRadius: {
+      DEFAULT: "0.125rem",
+    },
+    fontSize: {
+      xs: ["0.75rem", "var(--du-line-height-normal)"],
+      sm: ["0.875rem", "var(--du-line-height-normal)"],
+      base: ["1rem", "var(--du-line-height-normal)"],
+      lg: ["var(--du-text-lg)", "var(--du-line-height-heading)"],
+      xl: ["var(--du-text-xl)", "var(--du-line-height-heading)"],
+      "2xl": ["var(--du-text-2xl)", "var(--du-line-height-heading)"],
+      "3xl": ["var(--du-text-3xl)", "var(--du-line-height-heading)"],
+      "4xl": ["var(--du-text-4xl)", "var(--du-line-height-heading)"],
+    },
+    fontFamily: {
+      normal: "var(--du-font-family-normal)",
+      heading: "var(--du-font-family-heading)",
+    },
+    lineHeight: {
+      normal: "var(--du-line-height-normal)",
+      heading: "var(--du-line-height-heading)",
     },
   },
-  shortcuts: {
-    content: "px-lg md:px-3xl",
-    icon: "inline-block w-[1.25em] h-[1.25em] align-text-bottom [&>svg]:w-full [&>svg]:h-full",
-    "cta-button":
-      "text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
-    tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",
-    headline:
-      "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)] md:leading-[1.05]",
-    "masonry-grid":
-      "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
-    "filter-blur": "[filter:url(#blur-and-scale)]",
-  },
+  variants: [
+    variantMatcher("du-light", (input) => ({
+      prefix: `:root[data-theme="light"] $$ ${input.prefix}`,
+    })),
+    variantMatcher("du-dark", (input) => ({
+      prefix: `:root[data-theme="dark"] $$ ${input.prefix}`,
+    })),
+  ],
+  rules,
+  shortcuts: [
+    [/^column-(\d+)$/, ([, d]) => `flex-none w-${d}/12`],
+    // Generic shortcuts
+    {
+      title: "text-contrast-higher font-heading font-600 leading-heading",
+      columns: "flex flex-wrap",
+      column: "block flex-1",
+      "column-narrow": "block flex-[0_0_auto] w-auto",
+      "column-auto": "block flex-1 w-auto",
+      "column-full": "block flex-none w-full",
+    },
+    // Project-specific shortcuts
+    {
+      content: "px-lg md:px-3xl",
+      icon: "inline-block w-[1.25em] h-[1.25em] align-text-bottom [&>svg]:w-full [&>svg]:h-full",
+      "cta-button":
+        "text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
+      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",
+      headline:
+        "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)] md:leading-[1.05]",
+      "masonry-grid":
+        "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
+      "filter-blur": "[filter:url(#blur-and-scale)]",
+    },
+  ],
   safelist: ["sr-only", "invisible", "animated", "animated-tada"],
   transformers: [transformerDirectives()],
   presets: [
@@ -66,6 +126,5 @@ export default defineConfig<Theme>({
         "vertical-align": "text-bottom",
       },
     }),
-    presetDue(),
   ],
 });
