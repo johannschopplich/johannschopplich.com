@@ -6,16 +6,28 @@
 /** @var bool|null $links */
 
 $heightMap = [
-  'tight' => 'clamp(25svh, 50vw, 25svh)',
-  'normal' => 'clamp(36.5svh, 50vw, 50svh)',
-  'loose' => 'clamp(50svh, 50vw, 75svh)'
+  'tight' => [
+    'mobile' => 'clamp(25svh, 50vw, 25svh)',
+    'desktop' => 'clamp(40svh, 50vw, 25svh)'
+  ],
+  'normal' => [
+    'mobile' => 'clamp(36.5svh, 50vw, 50svh)',
+    'desktop' => 'clamp(40svh, 50vw, 50svh)'
+  ],
+  'loose' => [
+    'mobile' => 'clamp(50svh, 50vw, 75svh)',
+    'desktop' => 'clamp(40svh, 50vw, 75svh)'
+  ]
 ];
 
 ?>
 
 <div
   class="w-full flex gap-xs snap-x snap-mandatory overflow-x-auto py-px"
-  style="--cell: <?= $heightMap[$height ?? 'loose'] ?>">
+  style="
+    --cell-mobile: <?= $heightMap[$height ?? 'loose']['mobile'] ?>;
+    --cell-desktop: <?= $heightMap[$height ?? 'loose']['desktop'] ?>;
+  ">
   <?php foreach ($query as $image): ?>
     <?php
     /** @var \Kirby\Cms\File $image */
@@ -38,7 +50,7 @@ $heightMap = [
       <div
         class="<?= trim(implode(' ', [
                   'group-hover:ring-1 group-hover:ring-theme-base',
-                  $mockup !== 'none' ? 'relative h-$cell bg-$bg' : '',
+                  $mockup !== 'none' ? 'relative bg-$bg h-[var(--cell-mobile)] md:h-[var(--cell-desktop)]' : '',
                   ($isDocument || $isMobile) ? 'px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
                   $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
                 ]), ' ') ?>"
@@ -57,7 +69,7 @@ $heightMap = [
           loading="lazy"
           class="<?= trim(implode(' ', [
                     'object-contain w-auto group-hover:opacity-90',
-                    $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)]' : 'border border-solid border-stone-900',
+                    $mockup === 'none' ? 'h-[var(--cell-mobile)] max-w-[calc(100vw-2.25rem)] md:h-[var(--cell-desktop)]' : 'border border-solid border-stone-900',
                     $isMobile ? 'h-full rounded-xl md:rounded-2xl' : '',
                     $isDocument ? 'h-full' : '',
                     $isDesktop ? 'h-[calc(100%-1rem)] rounded-b-lg' : ''
