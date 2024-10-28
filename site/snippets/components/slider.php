@@ -58,7 +58,7 @@ $heightMap = [
           class="<?= trim(implode(' ', [
                     'object-contain w-auto group-hover:opacity-90',
                     $mockup === 'none' ? 'h-$cell max-w-[calc(100vw-2.25rem)]' : 'border border-solid border-stone-900',
-                    $isMobile ? 'h-full rounded-md md:rounded-xl' : '',
+                    $isMobile ? 'h-full rounded-xl md:rounded-2xl' : '',
                     $isDocument ? 'h-full' : '',
                     $isDesktop ? 'h-[calc(100%-1rem)] rounded-b-lg' : ''
                   ]), ' ') ?>"
