@@ -39,7 +39,8 @@ $heightMap = [
         class="<?= trim(implode(' ', [
                   'group-hover:ring-1 group-hover:ring-theme-base',
                   $mockup !== 'none' ? 'relative h-$cell bg-$bg' : '',
-                  ($isMobile || $isDocument) ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
+                  $isDocument ? 'px-5xl py-3xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
+                  $isMobile ? 'px-8xl py-3xl md:py-5xl xl:px-[9rem]' : '',
                   $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
                 ]), ' ') ?>"
         style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>">
