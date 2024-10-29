@@ -25,7 +25,6 @@
               style="--un-animated-duration: 800ms"
               data-sticker="svg">
               <?= icon('johann.svg') ?>
-              <span class="absolute -inset-4"></span>
             </span>
           </span>
         </h1>

@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import "./styles/main.scss";
 
 // Remove temporary stylesheet (to prevent FOUC) in development mode
