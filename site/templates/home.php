@@ -76,7 +76,7 @@
 
   <?php snippet('components/slider', ['query' => $query, 'links' => false], slots: true) ?>
   <div class="pr-xs shrink-0 snap-end snap-always">
-    <div class="relative h-$cell aspect-square flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current">
+    <div class="relative h-$cell-base aspect-square flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
       <a href="<?= $query->first()->parent()->url() ?>" class="cta-button hover:text-theme-base">
         <span class="absolute inset-0" aria-hidden="true"></span>
         <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
