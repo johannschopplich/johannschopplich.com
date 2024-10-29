@@ -58,7 +58,7 @@ $cssVars = implode(';', array_map(
                   ($isDocument || $isMobile) ? 'px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
                   $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
                 ]), ' ') ?>"
-        style="--bg: <?= $settings->bgColor()->or('var(--du-color-contrast-lower)') ?>">
+        style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>">
         <?php if ($isMobile): ?>
           <div class="hidden absolute left-1/2 h-[1px] w-[14%] bg-stone-900 ml-[-7%] rounded-full translate-y-[-4px] md:block md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
         <?php elseif ($isDesktop): ?>
@@ -72,7 +72,7 @@ $cssVars = implode(';', array_map(
         <img
           loading="lazy"
           class="<?= trim(implode(' ', [
-                    'object-contain w-auto transition-transform duration-300 group-hover:scale-101',
+                    'object-contain w-auto transition-transform duration-300 group-hover:brightness-85',
                     $mockup === 'none' ? 'max-w-[calc(100vw-2.25rem)] h-$cell-base md:h-$cell-md' : 'border border-solid border-stone-900',
                     $isMobile ? 'h-full rounded-xl md:rounded-2xl' : '',
                     $isDocument ? 'h-full' : '',

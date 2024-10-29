@@ -4,9 +4,9 @@ a:not([class]),
 .text-underline {
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-color: var(--text-underline-color, var(--du-color-primary));
-  text-decoration-thickness: var(--du-decoration-thickness);
-  text-underline-offset: var(--du-decoration-offset);
+  text-decoration-color: var(--text-underline-color, var(--un-color-primary));
+  text-decoration-thickness: var(--un-decoration-thickness);
+  text-underline-offset: var(--un-decoration-offset);
 
   &:hover {
     text-decoration-color: currentColor;

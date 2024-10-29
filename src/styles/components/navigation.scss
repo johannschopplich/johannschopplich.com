@@ -7,13 +7,13 @@
   @include breakpoints.media-below(md) {
     text-decoration-line: underline;
     text-decoration-color: transparent;
-    text-decoration-thickness: var(--du-decoration-thickness);
-    text-underline-offset: var(--du-decoration-offset);
+    text-decoration-thickness: var(--un-decoration-thickness);
+    text-underline-offset: var(--un-decoration-offset);
 
     &:focus,
     &:hover,
     &[aria-current] {
-      text-decoration-color: var(--du-color-primary);
+      text-decoration-color: var(--un-color-primary);
     }
   }
 
@@ -27,13 +27,13 @@
       width: 0.5em;
       height: 0.5em;
       border-radius: 50%;
-      background-color: var(--du-color-contrast-lower);
+      background-color: var(--un-color-contrast-lower);
       margin-right: 0.25em;
     }
 
     &:focus::before,
     &:hover::before {
-      background-color: var(--du-color-primary);
+      background-color: var(--un-color-primary);
     }
 
     &[aria-current="page"]::before {

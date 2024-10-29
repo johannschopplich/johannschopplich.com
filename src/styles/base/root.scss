@@ -1,108 +1,108 @@
 :root {
-  --du-fluid-min-width: 320;
-  --du-fluid-max-width: 1140;
-  --du-fluid-screen: 100vw;
-  --du-fluid-bp: calc(
-    (var(--du-fluid-screen) - var(--du-fluid-min-width) / 16 * 1rem) /
-      (var(--du-fluid-max-width) - var(--du-fluid-min-width))
+  --un-fluid-min-width: 320;
+  --un-fluid-max-width: 1140;
+  --un-fluid-screen: 100vw;
+  --un-fluid-bp: calc(
+    (var(--un-fluid-screen) - var(--un-fluid-min-width) / 16 * 1rem) /
+      (var(--un-fluid-max-width) - var(--un-fluid-min-width))
   );
 
-  --du-font-family-normal: "Iosevka Aile", ui-sans-serif, system-ui, sans-serif;
-  --du-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
+  --un-font-family-normal: "Iosevka Aile", ui-sans-serif, system-ui, sans-serif;
+  --un-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
     sans-serif;
-  --du-line-height-normal: calc(1ex / 0.32);
-  --du-line-height-heading: calc(1ex / 0.42);
+  --un-line-height-normal: calc(1ex / 0.32);
+  --un-line-height-heading: calc(1ex / 0.42);
 
-  --du-text-scale-ratio: 1.2;
-  --du-text-lg: calc(1rem * var(--du-text-scale-ratio));
-  --du-text-xl: calc(var(--du-text-lg) * var(--du-text-scale-ratio));
-  --du-text-2xl: calc(var(--du-text-xl) * var(--du-text-scale-ratio));
-  --du-text-3xl: calc(var(--du-text-2xl) * var(--du-text-scale-ratio));
-  --du-text-4xl: calc(var(--du-text-3xl) * var(--du-text-scale-ratio));
+  --un-text-scale-ratio: 1.2;
+  --un-text-lg: calc(1rem * var(--un-text-scale-ratio));
+  --un-text-xl: calc(var(--un-text-lg) * var(--un-text-scale-ratio));
+  --un-text-2xl: calc(var(--un-text-xl) * var(--un-text-scale-ratio));
+  --un-text-3xl: calc(var(--un-text-2xl) * var(--un-text-scale-ratio));
+  --un-text-4xl: calc(var(--un-text-3xl) * var(--un-text-scale-ratio));
 
   // Project-specific spacing and sizing variables
-  --du-fluid-min-font-size: 16;
-  --du-fluid-max-font-size: 18;
-  --du-line-height-heading: 1.25; // calc(1ex / 0.2)
-  --du-prose-space-y: 1.5;
+  --un-fluid-min-font-size: 16;
+  --un-fluid-max-font-size: 18;
+  --un-line-height-heading: 1.25; // calc(1ex / 0.2)
+  --un-prose-space-y: 1.5;
 
-  // Project-specific due variables
-  --du-decoration-thickness: max(1px, 0.075em);
-  --du-decoration-offset: max(2px, 0.15em);
-  --du-frame-shadow-template: 3px 3px 0 var(--du-color-background), 4px 4px 0;
-  --du-frame-shadow: var(--du-frame-shadow-template) var(--du-color-border);
-  --du-prose-spacer: calc(1rem * var(--du-prose-space-y));
+  // Project-specific variables
+  --un-decoration-thickness: max(1px, 0.075em);
+  --un-decoration-offset: max(2px, 0.15em);
+  --un-frame-shadow-template: 3px 3px 0 var(--un-color-background), 4px 4px 0;
+  --un-frame-shadow: var(--un-frame-shadow-template) var(--un-color-border);
+  --un-prose-spacer: calc(1rem * var(--un-prose-space-y));
 }
 
 @media screen and (min-width: 1140px) {
   :root {
-    --du-fluid-screen: calc(var(--du-fluid-max-width) * 1px);
+    --un-fluid-screen: calc(var(--un-fluid-max-width) * 1px);
   }
 }
 
 :root:not([data-theme]),
 [data-theme="light"] {
   /* Shades (stone color from Tailwind CSS) */
-  --du-color-contrast-lowest: #f5f5f4; /* 100 */
-  --du-color-contrast-lower: #e7e5e4; /* 200 */
-  --du-color-contrast-low: #d6d3d1; /* 300 */
-  --du-color-contrast-medium: #78716c; /* 500 */
-  --du-color-contrast-high: #292524; /* 800 */
-  --du-color-contrast-higher: #1c1917; /* 900 */
+  --un-color-contrast-lowest: #f5f5f4; /* 100 */
+  --un-color-contrast-lower: #e7e5e4; /* 200 */
+  --un-color-contrast-low: #d6d3d1; /* 300 */
+  --un-color-contrast-medium: #78716c; /* 500 */
+  --un-color-contrast-high: #292524; /* 800 */
+  --un-color-contrast-higher: #1c1917; /* 900 */
 
   /* Semantic color definitions */
-  --du-color-background: #fefcf8;
-  --du-color-text: var(--du-color-contrast-higher);
-  --du-color-link: var(--du-color-text);
-  --du-color-link-hover: var(--du-color-primary);
+  --un-color-background: #fefcf8;
+  --un-color-text: var(--un-color-contrast-higher);
+  --un-color-link: var(--un-color-text);
+  --un-color-link-hover: var(--un-color-primary);
   // Project-specific due variables
-  --du-color-border: currentColor;
+  --un-color-border: currentColor;
 }
 
 [data-theme="dark"] {
   /* Shades (stone color from Tailwind CSS) */
-  --du-color-contrast-lowest: #292524; /* 800 */
-  --du-color-contrast-lower: #44403c; /* 700 */
-  --du-color-contrast-low: #57534e; /* 600 */
-  --du-color-contrast-medium: #a8a29e; /* 400 */
-  --du-color-contrast-high: #f5f5f4; /* 100 */
-  --du-color-contrast-higher: #fafaf9; /* 50 */
+  --un-color-contrast-lowest: #292524; /* 800 */
+  --un-color-contrast-lower: #44403c; /* 700 */
+  --un-color-contrast-low: #57534e; /* 600 */
+  --un-color-contrast-medium: #a8a29e; /* 400 */
+  --un-color-contrast-high: #f5f5f4; /* 100 */
+  --un-color-contrast-higher: #fafaf9; /* 50 */
 
   /* Semantic color definitions */
-  --du-color-background: #1c1917; /* 900 */
-  --du-color-text: white;
-  --du-color-link: var(--du-color-text);
-  --du-color-link-hover: var(--du-color-primary-400);
+  --un-color-background: #1c1917; /* 900 */
+  --un-color-text: white;
+  --un-color-link: var(--un-color-text);
+  --un-color-link-hover: var(--un-color-primary-400);
   // Project-specific due variables
-  --du-color-border: var(--du-color-contrast-lower);
+  --un-color-border: var(--un-color-contrast-lower);
 }
 
 [data-theme]:not(:root) {
-  color: var(--du-color-text);
-  background-color: var(--du-color-background);
+  color: var(--un-color-text);
+  background-color: var(--un-color-background);
 }
 
 html {
-  min-width: calc(1px * var(--du-fluid-min-width));
+  min-width: calc(1px * var(--un-fluid-min-width));
   font-size: calc(
-    ((var(--du-fluid-min-font-size, 16) / 16) * 1rem) +
-      (var(--du-fluid-max-font-size, 18) - var(--du-fluid-min-font-size, 16)) *
-      var(--du-fluid-bp)
+    ((var(--un-fluid-min-font-size, 16) / 16) * 1rem) +
+      (var(--un-fluid-max-font-size, 18) - var(--un-fluid-min-font-size, 16)) *
+      var(--un-fluid-bp)
   );
-  background-color: var(--du-color-background, white);
+  background-color: var(--un-color-background, white);
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
 body {
-  font-family: var(--du-font-family-normal);
-  line-height: var(--du-line-height-normal);
-  color: var(--du-color-text);
+  font-family: var(--un-font-family-normal);
+  line-height: var(--un-line-height-normal);
+  color: var(--un-color-text);
 }
 
 a {
   cursor: pointer;
-  color: var(--du-color-link);
+  color: var(--un-color-link);
   text-decoration-line: none;
   text-decoration-style: solid;
   text-decoration-color: currentcolor;
@@ -111,7 +111,7 @@ a {
 }
 
 a:hover {
-  color: var(--du-color-link-hover);
+  color: var(--un-color-link-hover);
 }
 
 svg:not([fill]) {
@@ -128,7 +128,7 @@ button {
 
 ::selection {
   color: black;
-  background: var(--du-color-primary-200);
+  background: var(--un-color-primary-200);
 }
 
 /* Hide focus styles if they're not needed, for example,

@@ -29,7 +29,7 @@
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'gallery'): ?>
   </div>
-  <div class="mt-[--du-prose-spacer]">
+  <div class="mt-[--un-prose-spacer]">
     <?= $block ?>
   </div>
   <div <?= $sectionAttrs ?>>

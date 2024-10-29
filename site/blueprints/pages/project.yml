@@ -86,8 +86,6 @@ tabs:
                       de: Locker
                       en: Loose
                 translate: false
-                when:
-                  galleryType: slider
                 width: 1/2
 
       - width: 2/3

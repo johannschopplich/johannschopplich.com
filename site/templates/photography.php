@@ -16,7 +16,7 @@
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'gallery'): ?>
   </div>
-  <div class="mt-[--du-prose-spacer] mb-8xl">
+  <div class="mt-[--un-prose-spacer] mb-8xl">
     <?= $block ?>
   </div>
   <div class="content prose max-w-prose">

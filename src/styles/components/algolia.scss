@@ -1,13 +1,13 @@
 :root:not([data-theme]),
 [data-theme="light"],
 [data-theme="dark"] {
-  --docsearch-primary-color: var(--du-color-primary) !important;
-  --docsearch-text-color: var(--du-color-contrast-high) !important;
-  --docsearch-muted-color: var(--du-color-contrast-medium) !important;
-  --docsearch-searchbox-background: var(--du-color-contrast-lowest) !important;
-  --docsearch-searchbox-focus-background: var(--du-color-background) !important;
-  --docsearch-modal-background: var(--du-color-contrast-lowest) !important;
-  --docsearch-footer-background: var(--du-color-contrast-lowest) !important;
+  --docsearch-primary-color: var(--un-color-primary) !important;
+  --docsearch-text-color: var(--un-color-contrast-high) !important;
+  --docsearch-muted-color: var(--un-color-contrast-medium) !important;
+  --docsearch-searchbox-background: var(--un-color-contrast-lowest) !important;
+  --docsearch-searchbox-focus-background: var(--un-color-background) !important;
+  --docsearch-modal-background: var(--un-color-contrast-lowest) !important;
+  --docsearch-footer-background: var(--un-color-contrast-lowest) !important;
 }
 
 .DocSearch-Container {
@@ -19,7 +19,7 @@
 .DocSearch-Hit-source,
 .DocSearch-Hit-title,
 .DocSearch-Footer {
-  font-family: var(--du-font-family-heading);
+  font-family: var(--un-font-family-heading);
 }
 
 .DocSearch-Button {

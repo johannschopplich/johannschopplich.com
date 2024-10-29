@@ -9,8 +9,8 @@
     <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="
       relative p-xl
-      before:content-empty before:absolute before:inset-x-5 before:bottom-0 before:h-1px before:bg-current du-dark:before:bg-contrast-lower
-      after:content-empty after:absolute after:inset-y-5 after:right-0 after:w-1px after:bg-current du-dark:after:bg-contrast-lower
+      before:content-empty before:absolute before:inset-x-5 before:bottom-0 before:h-1px before:bg-current un-dark:before:bg-contrast-lower
+      after:content-empty after:absolute after:inset-y-5 after:right-0 after:w-1px after:bg-current un-dark:after:bg-contrast-lower
     ">
       <p class="text-contrast-medium text-sm font-500 uppercase">
         <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">

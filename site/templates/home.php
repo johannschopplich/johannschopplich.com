@@ -11,7 +11,7 @@
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
-        <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);">
+        <h1 class="headline" style="--un-decoration-offset: max(2px, 0.1em);">
           <?php
           $words = explode(' ', $block->text());
           $lastWord = array_pop($words);
@@ -41,11 +41,11 @@
 </div>
 
 <div class="content max-w-screen-lg">
-  <h2 class="title text-primary-500 text-2xl text-center mb-lg du-dark:text-primary-400">
+  <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('articles.latest') ?>
   </h2>
 
-  <div class="overflow-hidden border-y border-y-solid du-dark:border-contrast-lower">
+  <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
     <?php snippet('articles', [
       'query' => $kirby->collection('articles')->paginate(4)
     ]) ?>
@@ -69,7 +69,7 @@
   <div class="content max-w-screen-lg">
     <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-    <h2 class="title text-primary-500 text-2xl text-center mb-lg du-dark:text-primary-400">
+    <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
       <?= t('photography') ?>
     </h2>
   </div>
@@ -97,11 +97,11 @@
 <div class="content max-w-screen-lg">
   <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
-  <h2 class="title text-primary-500 text-2xl text-center mb-lg du-dark:text-primary-400">
+  <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('contact') ?>
   </h2>
 
-  <div class="border-t border-t-solid du-dark:border-contrast-lower pt-lg">
+  <div class="border-t border-t-solid un-dark:border-contrast-lower pt-lg">
     <div class="prose max-w-prose text-contrast-medium">
       <?= $page->contactText()->toBlocks() ?>
       <div class="space-y-2">

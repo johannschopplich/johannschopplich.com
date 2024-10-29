@@ -10,7 +10,7 @@
   <div class="gap-5xl sm:gap-6xl sm:pr-lg md:pr-3xl grid max-w-screen-xl sm:grid-cols-2">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="unselectable relative md:shadow-$du-frame-shadow">
+        <figure class="unselectable relative md:shadow-$un-frame-shadow">
           <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
           <img
             srcset="<?= $image->srcset() ?>"
@@ -51,17 +51,17 @@
 
 <div class="pb-8xl">
   <div class="content max-w-screen-xl">
-    <div class="pt-5xl border-t border-t-solid du-dark:border-contrast-lower">
+    <div class="pt-5xl border-t border-t-solid un-dark:border-contrast-lower">
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div
           class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8"
-          style="--du-prose-space-y: 1.25">
+          style="--un-prose-space-y: 1.25">
           <?php foreach ($layout->columns() as $column): ?>
             <div class="prose">
               <?php foreach ($column->blocks() as $block): ?>
                 <?php /** @var \Kirby\Cms\Block $block */ ?>
                 <?php if ($block->type() === 'heading'): ?>
-                  <h2 class="text-sm uppercase tracking-[0.125ch] du-dark:text-contrast-medium"><?= $block->text() ?></h2>
+                  <h2 class="text-sm uppercase tracking-[0.125ch] un-dark:text-contrast-medium"><?= $block->text() ?></h2>
                 <?php elseif ($block->type() === 'text'): ?>
                   <?= preg_replace(
                     '/<code>(.*?)<\/code>/',

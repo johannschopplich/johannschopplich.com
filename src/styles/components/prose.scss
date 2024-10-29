@@ -4,33 +4,33 @@
 .prose {
   @include breakpoints.media-below(sm) {
     font-size: 0.875rem;
-    line-height: var(--du-line-height-normal);
+    line-height: var(--un-line-height-normal);
   }
 
   &.is-article {
     :where(p) {
-      line-height: calc(var(--du-line-height-normal) / 0.875);
+      line-height: calc(var(--un-line-height-normal) / 0.875);
     }
   }
 
   :where(figure:not(:first-child)) {
-    margin-top: calc(2rem * var(--du-prose-space-y));
+    margin-top: calc(2rem * var(--un-prose-space-y));
   }
 
   :where(figure:not(:last-child)) {
-    margin-bottom: calc(2rem * var(--du-prose-space-y));
+    margin-bottom: calc(2rem * var(--un-prose-space-y));
   }
 
   :where(h1) {
-    font-size: var(--du-text-2xl);
+    font-size: var(--un-text-2xl);
   }
 
   :where(h2) {
-    font-size: var(--du-text-xl);
+    font-size: var(--un-text-xl);
   }
 
   :where(h3) {
-    font-size: var(--du-text-lg);
+    font-size: var(--un-text-lg);
   }
 
   :where(h4) {
@@ -39,7 +39,7 @@
 
   :where(h1, h2, h3, h4, h5, h6) {
     font-weight: 700;
-    font-family: var(--du-font-family-heading);
+    font-family: var(--un-font-family-heading);
 
     a:not([href^="http"]) {
       color: inherit;
@@ -50,11 +50,11 @@
   :where(blockquote) {
     border-left-width: 3px;
     border-left-style: double;
-    border-left-color: var(--du-color-primary);
+    border-left-color: var(--un-color-primary);
     padding-left: 1rem;
 
     footer {
-      line-height: calc(var(--du-line-height-normal) * 0.875);
+      line-height: calc(var(--un-line-height-normal) * 0.875);
       font-size: 0.75rem;
       font-weight: 500;
       font-style: normal;
@@ -63,7 +63,7 @@
   }
 
   :where(pre) {
-    background-color: var(--du-color-contrast-lowest);
+    background-color: var(--un-color-contrast-lowest);
   }
 
   :where(ol, ul) {
@@ -75,7 +75,7 @@
   }
 
   :where(figure) {
-    box-shadow: var(--du-frame-shadow-template) var(--du-color-border);
+    box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
 
     @include breakpoints.media-below(sm) {
       margin-left: -1.125rem;
@@ -112,7 +112,7 @@
   }
 
   :where(figcaption) {
-    line-height: calc(var(--du-line-height-normal) * 0.875);
+    line-height: calc(var(--un-line-height-normal) * 0.875);
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0 3px 0.25rem;
@@ -136,16 +136,16 @@
   }
 
   :where(summary) {
-    font-family: var(--du-font-family-heading);
+    font-family: var(--un-font-family-heading);
     font-weight: 500;
   }
 
   :where(.note) {
-    border: 1px solid var(--du-color-primary-500);
+    border: 1px solid var(--un-color-primary-500);
     padding: 1rem;
     margin-left: -1rem;
     margin-right: -1rem;
-    box-shadow: var(--du-frame-shadow-template) var(--du-color-primary-500);
+    box-shadow: var(--un-frame-shadow-template) var(--un-color-primary-500);
 
     @include breakpoints.media-above(sm) {
       padding-left: 1.25rem;

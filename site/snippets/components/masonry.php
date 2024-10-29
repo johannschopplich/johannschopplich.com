@@ -25,7 +25,7 @@
         alt="<?= $image->alt()->or('')->escape() ?>">
 
       <?php if ($image->caption()->isNotEmpty()): ?>
-        <figcaption class="content text-size-xs leading-[calc(var(--du-line-height-normal)*0.875)] font-500 py-2 text-center">
+        <figcaption class="content text-size-xs leading-[calc(var(--un-line-height-normal)*0.875)] font-500 py-2 text-center">
           <?= $image->caption() ?>
         </figcaption>
       <?php endif ?>

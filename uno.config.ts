@@ -42,49 +42,49 @@ export default defineConfig<Theme>({
         "900": "#451C1E",
       },
       link: {
-        DEFAULT: "var(--du-color-link)",
-        hover: "var(--du-color-link-hover)",
+        DEFAULT: "var(--un-color-link)",
+        hover: "var(--un-color-link-hover)",
       },
       theme: {
-        base: "var(--du-color-text)",
-        background: "var(--du-color-background)",
+        base: "var(--un-color-text)",
+        background: "var(--un-color-background)",
       },
       contrast: {
-        lowest: "var(--du-color-contrast-lowest)",
-        lower: "var(--du-color-contrast-lower)",
-        low: "var(--du-color-contrast-low)",
-        medium: "var(--du-color-contrast-medium)",
-        high: "var(--du-color-contrast-high)",
-        higher: "var(--du-color-contrast-higher)",
+        lowest: "var(--un-color-contrast-lowest)",
+        lower: "var(--un-color-contrast-lower)",
+        low: "var(--un-color-contrast-low)",
+        medium: "var(--un-color-contrast-medium)",
+        high: "var(--un-color-contrast-high)",
+        higher: "var(--un-color-contrast-higher)",
       },
     },
     borderRadius: {
       DEFAULT: "0.125rem",
     },
     fontSize: {
-      xs: ["0.75rem", "var(--du-line-height-normal)"],
-      sm: ["0.875rem", "var(--du-line-height-normal)"],
-      base: ["1rem", "var(--du-line-height-normal)"],
-      lg: ["var(--du-text-lg)", "var(--du-line-height-heading)"],
-      xl: ["var(--du-text-xl)", "var(--du-line-height-heading)"],
-      "2xl": ["var(--du-text-2xl)", "var(--du-line-height-heading)"],
-      "3xl": ["var(--du-text-3xl)", "var(--du-line-height-heading)"],
-      "4xl": ["var(--du-text-4xl)", "var(--du-line-height-heading)"],
+      xs: ["0.75rem", "var(--un-line-height-normal)"],
+      sm: ["0.875rem", "var(--un-line-height-normal)"],
+      base: ["1rem", "var(--un-line-height-normal)"],
+      lg: ["var(--un-text-lg)", "var(--un-line-height-heading)"],
+      xl: ["var(--un-text-xl)", "var(--un-line-height-heading)"],
+      "2xl": ["var(--un-text-2xl)", "var(--un-line-height-heading)"],
+      "3xl": ["var(--un-text-3xl)", "var(--un-line-height-heading)"],
+      "4xl": ["var(--un-text-4xl)", "var(--un-line-height-heading)"],
     },
     fontFamily: {
-      normal: "var(--du-font-family-normal)",
-      heading: "var(--du-font-family-heading)",
+      normal: "var(--un-font-family-normal)",
+      heading: "var(--un-font-family-heading)",
     },
     lineHeight: {
-      normal: "var(--du-line-height-normal)",
-      heading: "var(--du-line-height-heading)",
+      normal: "var(--un-line-height-normal)",
+      heading: "var(--un-line-height-heading)",
     },
   },
   variants: [
-    variantMatcher("du-light", (input) => ({
+    variantMatcher("un-light", (input) => ({
       prefix: `:root[data-theme="light"] $$ ${input.prefix}`,
     })),
-    variantMatcher("du-dark", (input) => ({
+    variantMatcher("un-dark", (input) => ({
       prefix: `:root[data-theme="dark"] $$ ${input.prefix}`,
     })),
   ],
@@ -106,9 +106,9 @@ export default defineConfig<Theme>({
       icon: "inline-block w-[1.25em] h-[1.25em] align-text-bottom [&>svg]:w-full [&>svg]:h-full",
       "cta-button":
         "text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
-      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 du-dark:border-contrast-low",
+      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
       headline:
-        "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--du-text-4xl)+0.5vw)] md:leading-[1.05]",
+        "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
       "filter-blur": "[filter:url(#blur-and-scale)]",

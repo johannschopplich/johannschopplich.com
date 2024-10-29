@@ -11,7 +11,7 @@
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
-        <h1 class="headline" style="--du-decoration-offset: max(2px, 0.1em);"><?= $block->text() ?></h1>
+        <h1 class="headline" style="--un-decoration-offset: max(2px, 0.1em);"><?= $block->text() ?></h1>
       <?php else: ?>
         <div class="max-w-prose text-contrast-medium">
           <?= $block ?>
@@ -27,7 +27,7 @@
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
-      <div class="group content relative pt-xl mb-xl border-t border-t-solid du-dark:border-contrast-lower">
+      <div class="group content relative pt-xl mb-xl border-t border-t-solid un-dark:border-contrast-lower">
         <p class="text-sm font-500 text-contrast-medium">
           <?= $project->subtitle()->escape() ?>
         </p>
@@ -36,7 +36,7 @@
           <a
             href="<?= $project->url() ?>"
             class="text-underline !text-current"
-            style="--text-underline-color: var(--du-color-contrast-lower)">
+            style="--text-underline-color: var(--un-color-contrast-lower)">
             <span class="absolute inset-0" aria-hidden="true"></span>
             <?= $project->title()->escape() ?>
           </a>

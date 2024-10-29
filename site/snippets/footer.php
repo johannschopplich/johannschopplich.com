@@ -7,7 +7,7 @@ $inactiveLanguage = $kirby
   ->filter(fn($language) => $language->code() !== $kirby->language()->code())
   ->first();
 ?>
-<footer class="content sticky top-100vh bg-contrast-lower font-heading border-t border-$du-color-border py-3xl du-dark:bg-contrast-lowest">
+<footer class="content sticky top-100vh bg-contrast-lower font-heading border-t border-$un-color-border py-3xl un-dark:bg-contrast-lowest">
   <?php /*
   <div class="mb-8xl">
     <a href="<?= $site->url() ?>" class="inline-block -ml-2" aria-label="<?= t('home') ?>">
@@ -29,13 +29,13 @@ $inactiveLanguage = $kirby
       <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
     </a>
     <button
-      class="w-max hover:text-primary-500 du-dark:hover:text-primary-400"
+      class="w-max hover:text-primary-500 un-dark:hover:text-primary-400"
       data-theme-switcher>
-      <span class="mr-1 icon du-dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
-      <span class="du-dark:hidden"><?= t('theme.switch.off') ?></span>
+      <span class="mr-1 icon un-dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
+      <span class="un-dark:hidden"><?= t('theme.switch.off') ?></span>
 
-      <span class="mr-1 icon du-light:hidden" aria-hidden="true"><?= icon('moon-stars.svg') ?></span>
-      <span class="du-light:hidden"><?= t('theme.switch.on') ?></span>
+      <span class="mr-1 icon un-light:hidden" aria-hidden="true"><?= icon('moon-stars.svg') ?></span>
+      <span class="un-light:hidden"><?= t('theme.switch.on') ?></span>
     </button>
   </div>
 

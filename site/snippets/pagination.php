@@ -4,8 +4,8 @@
 <nav
   class="font-heading font-700 flex justify-center text-xl"
   style="
-    --du-color-link: var(--du-color-primary);
-    --du-color-link-hover: var(--du-color-text);
+    --un-color-link: var(--un-color-primary);
+    --un-color-link-hover: var(--un-color-text);
   ">
   <?php if ($pagination->hasPrevPage()): ?>
     <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-bx-left-arrow-alt" aria-label="Previous page"></a>

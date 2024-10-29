@@ -13,7 +13,7 @@
       <?= t('articles.all') ?>
     </h1>
 
-    <div class="overflow-hidden border-y border-y-solid du-dark:border-contrast-lower">
+    <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
       <?php snippet('articles', ['query' => $query]) ?>
     </div>
   </div>
