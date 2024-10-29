@@ -900,16 +900,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.0.3",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8"
+                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
-                "reference": "6ea8dd08867a2a42619d65c3deb2c0fcbf81c8f8",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/f9c436286ab2892c7db7be8c8da4ef61ccf7b455",
+                "reference": "f9c436286ab2892c7db7be8c8da4ef61ccf7b455",
                 "shasum": ""
             },
             "require": {
@@ -963,7 +963,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.0.3"
+                "source": "https://github.com/guzzle/promises/tree/2.0.4"
             },
             "funding": [
                 {
@@ -979,7 +979,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-07-18T10:29:17+00:00"
+            "time": "2024-10-17T10:06:22+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1156,16 +1156,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "2.2.2",
+            "version": "2.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "2ee3bab565bb393ec19f65896fe0acb238c0ea24"
+                "reference": "04449ac9c6aa3f274b29b7452d27c062845536b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/2ee3bab565bb393ec19f65896fe0acb238c0ea24",
-                "reference": "2ee3bab565bb393ec19f65896fe0acb238c0ea24",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/04449ac9c6aa3f274b29b7452d27c062845536b1",
+                "reference": "04449ac9c6aa3f274b29b7452d27c062845536b1",
                 "shasum": ""
             },
             "require": {
@@ -1211,7 +1211,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.2.2"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.3.5"
             },
             "funding": [
                 {
@@ -1219,7 +1219,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-10-02T11:27:31+00:00"
+            "time": "2024-10-20T12:22:20+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -2148,16 +2148,16 @@
         },
         {
             "name": "srwiez/thumbhash",
-            "version": "v1.2.1",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SRWieZ/thumbhash.git",
-                "reference": "2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66"
+                "reference": "3983c6f1aec32d8a037cc66175c0550f12c3f9e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66",
-                "reference": "2d5c6237fb16b79e9bd5d0d2a1571f9d6d3f1f66",
+                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/3983c6f1aec32d8a037cc66175c0550f12c3f9e2",
+                "reference": "3983c6f1aec32d8a037cc66175c0550f12c3f9e2",
                 "shasum": ""
             },
             "require": {
@@ -2190,9 +2190,9 @@
             "description": "A brief description of your package",
             "support": {
                 "issues": "https://github.com/SRWieZ/thumbhash/issues",
-                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.2.1"
+                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.3.0"
             },
-            "time": "2024-02-11T11:22:22+00:00"
+            "time": "2024-10-16T06:10:12+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
