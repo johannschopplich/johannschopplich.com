@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",
+    "@byjohann/utils": "^0.7.1",
     "@docsearch/css": "^3.6.2",
     "@docsearch/js": "^3.6.2",
     "@iconify-json/bx": "^1.2.1",

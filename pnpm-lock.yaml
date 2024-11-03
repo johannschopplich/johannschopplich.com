@@ -11,6 +11,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^3.8.0
         version: 3.8.0(@typescript-eslint/utils@8.11.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3))(@unocss/eslint-plugin@0.63.6(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3))(@vue/compiler-sfc@3.5.12)(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
+      '@byjohann/utils':
+        specifier: ^0.7.1
+        version: 0.7.1
       '@docsearch/css':
         specifier: ^3.6.2
         version: 3.6.2
@@ -230,6 +233,9 @@ packages:
   '@babel/types@7.26.0':
     resolution: {integrity: sha512-Z/yiTPj+lDVnF7lWeKCIJzaIkI0vYO87dMpZ4bg4TDrFe4XXLFWL1TbXU27gBP3QccxV9mZICCrnjnYlJjXHOA==}
     engines: {node: '>=6.9.0'}
+
+  '@byjohann/utils@0.7.1':
+    resolution: {integrity: sha512-H8vxo4B6B8rPDKrWbVU8gYsujYKS90267ePcOX1UZOudRtgq4jsw8Gvi1gly0eOj/cfvuyrQ/2z5DMA+FyrRbw==}
 
   '@clack/core@0.3.4':
     resolution: {integrity: sha512-H4hxZDXgHtWTwV3RAVenqcC4VbJZNegbBjlPvzOzCouXtS2y3sDvlO3IsbrPNWuLWPPlYVYPghQdSF64683Ldw==}
@@ -2747,6 +2753,8 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
+
+  '@byjohann/utils@0.7.1': {}
 
   '@clack/core@0.3.4':
     dependencies:

@@ -3,7 +3,7 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
-/** @var bool|null $links */
+/** @var bool $links */
 
 $heightMap = [
   'tight' => [
