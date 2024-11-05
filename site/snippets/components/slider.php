@@ -31,29 +31,27 @@ $cssVars = implode(';', array_map(
 ?>
 <div
   class="w-full flex gap-xs snap-x snap-mandatory overflow-x-auto py-px"
-  style="<?= $cssVars ?>">
+  style="<?= $cssVars ?>"
+  data-slider>
   <?php foreach ($query as $image): ?>
     <?php
     /** @var \Kirby\Cms\File $image */
     $settings = $image->gallery()->toObject();
     $mockup = $settings->mockup()->or('none')->value();
-    $target = $links && $settings->link()->isNotEmpty() ? $settings->link()->value() : null;
-    $tag = $target ? 'a' : 'div';
+    // $target = $links && $settings->link()->isNotEmpty() ? $settings->link()->value() : null;
+    // $tag = $target ? 'a' : 'div';
     $isDocument = $mockup === 'document';
     $isMobile = $mockup === 'mobile';
     $isDesktop = $mockup === 'desktop';
     ?>
-    <<?= $tag . ' ' . attr([
-        'class' => trim(implode(' ', [
-          'shrink-0 snap-center snap-always first:snap-start',
-          $target ? 'group' : '',
-        ]), ' '),
-        'href' => $target,
-        'target' => $target ? '_blank' : null
-      ]) ?>>
+    <div <?= attr([
+            'class' => 'group shrink-0 snap-center snap-always border border-solid border-transparent transition-border hover:border-theme-base first:snap-start',
+            // 'href' => $target,
+            // 'target' => $target ? '_blank' : null
+          ]) ?>>
       <div
         class="<?= trim(implode(' ', [
-                  'overflow-hidden group-hover:ring-1 group-hover:ring-theme-base',
+                  'overflow-hidden cursor-grab active:cursor-grabbing',
                   $mockup !== 'none' ? 'relative bg-$bg h-$cell-base md:h-$cell-md' : '',
                   ($isDocument || $isMobile) ? 'px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
                   $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
@@ -72,7 +70,7 @@ $cssVars = implode(';', array_map(
         <img
           loading="lazy"
           class="<?= trim(implode(' ', [
-                    'object-contain w-auto transition-transform duration-300 group-hover:brightness-85',
+                    'pointer-events-none object-contain w-auto',
                     $mockup === 'none' ? 'max-w-[calc(100vw-2.25rem)] h-$cell-base md:h-$cell-md' : 'border border-solid border-stone-900',
                     $isMobile ? 'h-full rounded-xl md:rounded-2xl' : '',
                     $isDocument ? 'h-full' : '',
@@ -86,7 +84,7 @@ $cssVars = implode(';', array_map(
           style="<?= $mockup === 'none' ? 'aspect-ratio:' . $image->width() . '/' . $image->height() : '' ?>"
           alt="<?= $image->alt()->or('')->escape() ?>">
       </div>
-    </<?= $tag ?>>
+    </div>
   <?php endforeach ?>
 
   <?= $slot ?>
