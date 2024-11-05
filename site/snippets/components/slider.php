@@ -45,7 +45,7 @@ $cssVars = implode(';', array_map(
     $isDesktop = $mockup === 'desktop';
     ?>
     <div <?= attr([
-            'class' => 'group shrink-0 snap-center snap-always border border-solid border-transparent transition-border hover:border-theme-base first:snap-start',
+            'class' => 'group shrink-0 snap-center snap-always border border-solid border-transparent transition-border hover:border-theme-base',
             // 'href' => $target,
             // 'target' => $target ? '_blank' : null
           ]) ?>>
