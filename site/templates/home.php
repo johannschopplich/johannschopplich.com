@@ -35,11 +35,11 @@
       <?php endif ?>
     <?php endforeach ?>
   </div>
-
-  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 </div>
 
 <div class="content max-w-screen-lg">
+  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
+
   <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('articles.latest') ?>
   </h2>
@@ -57,7 +57,41 @@
   </div>
 </div>
 
-<?php if ($photography = page('photography')): ?>
+<div class="content max-w-screen-lg">
+  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
+
+  <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
+    <?= t('home.references') ?>
+  </h2>
+
+  <div class="relative [--gap:3rem] md:[--gap:6rem] py-xl">
+    <?php snippet('components/marquee', slots: true) ?>
+    <?php foreach ($kirby->page('work')->files()->template('logo')->filter('extension', 'svg') as $logo): ?>
+      <div class="h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-full">
+        <?= $logo->asset()->read() ?>
+      </div>
+      <span class="sr-only">
+        <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
+      </span>
+    <?php endforeach ?>
+    <?php endsnippet() ?>
+    <div class="absolute inset-0" style="background-image: linear-gradient(
+      to right,
+      var(--un-color-background) 0%,
+      transparent 5%,
+      transparent 95%,
+      var(--un-color-background) 100%
+    )"></div>
+  </div>
+
+  <div class="text-center mt-lg">
+    <a href="<?= page('work')->url() ?>" class="cta-button">
+      <?= page('work')->title()->escape() ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+    </a>
+  </div>
+</div>
+
+<?php if ($photography = page('_photography')): ?>
   <?php $query = $photography
     ->files()
     ->shuffle()
@@ -97,7 +131,7 @@
   <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
   <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
-    <?= t('contact') ?>
+    <?= t('generic.contact') ?>
   </h2>
 
   <div class="border-t border-t-solid un-dark:border-contrast-lower pt-lg">
