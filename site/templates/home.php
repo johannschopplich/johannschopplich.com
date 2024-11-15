@@ -66,7 +66,7 @@
 
   <div class="relative [--gap:3rem] md:[--gap:6rem] py-xl">
     <?php snippet('components/marquee', slots: true) ?>
-    <?php foreach ($kirby->page('work')->files()->template('logo')->filter('extension', 'svg') as $logo): ?>
+    <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
       <div class="h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-full">
         <?= $logo->asset()->read() ?>
       </div>

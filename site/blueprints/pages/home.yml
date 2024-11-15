@@ -20,7 +20,26 @@ tabs:
           content:
             type: fields
             fields:
+              headline01:
+                label: Intro
+                type: headline
               text: fields/blocks
+              headline02:
+                label:
+                  de: Referenzen
+                  en: Work
+                type: headline
+              logos:
+                label: Logos
+                type: files
+                query: kirby.page("work").files.template("logo")
+                uploads: false
+                translate: false
+              headline03:
+                label:
+                  de: Kontakt
+                  en: Contact
+                type: headline
               contactText:
                 label:
                   de: Kontakt-Text

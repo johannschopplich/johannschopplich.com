@@ -72,9 +72,9 @@ tabs:
 
   usage:
     label:
-      de: Verwendung
-      en: Usage
-    icon: cart
+      de: Kundenlogos
+      en: Client Logos
+    icon: globe
     sections:
       logos:
         type: files
