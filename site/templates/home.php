@@ -91,7 +91,7 @@
   </div>
 </div>
 
-<?php if ($photography = page('_photography')): ?>
+<?php if ($photography = page('photography')): ?>
   <?php $query = $photography
     ->files()
     ->shuffle()
