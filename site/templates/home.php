@@ -64,10 +64,10 @@
     <?= t('home.references') ?>
   </h2>
 
-  <div class="relative [--gap:3rem] md:[--gap:6rem] py-xl">
+  <div class="relative [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s] py-xl">
     <?php snippet('components/marquee', slots: true) ?>
     <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
-      <a href="<?= $logo->website() ?>" target="_blank" class="h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-auto">
+      <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-auto">
         <?= $logo->asset()->read() ?>
         <span class="sr-only">
           <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
@@ -75,7 +75,7 @@
       </a>
     <?php endforeach ?>
     <?php endsnippet() ?>
-    <div class="absolute inset-0" style="background-image: linear-gradient(
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(
       to right,
       var(--un-color-background) 0%,
       transparent 5%,
