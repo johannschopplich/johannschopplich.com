@@ -64,7 +64,9 @@
     <?= t('home.references') ?>
   </h2>
 
-  <div class="relative [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s] py-xl">
+  <div
+    class="relative [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s] py-xl"
+    style="--un-color-link-hover: currentColor">
     <?php snippet('components/marquee', slots: true) ?>
     <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
       <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-auto">
