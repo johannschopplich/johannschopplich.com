@@ -67,12 +67,12 @@
   <div class="relative [--gap:3rem] md:[--gap:6rem] py-xl">
     <?php snippet('components/marquee', slots: true) ?>
     <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
-      <div class="h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-full">
+      <a href="<?= $logo->website() ?>" target="_blank" class="h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-auto">
         <?= $logo->asset()->read() ?>
-      </div>
-      <span class="sr-only">
-        <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
-      </span>
+        <span class="sr-only">
+          <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
+        </span>
+      </a>
     <?php endforeach ?>
     <?php endsnippet() ?>
     <div class="absolute inset-0" style="background-image: linear-gradient(
