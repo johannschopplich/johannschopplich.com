@@ -20,12 +20,14 @@
           ?>
           <span class="whitespace-nowrap">
             <?= $lastWord ?>
-            <span
-              class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:w-auto [&>svg]:h-full"
+            <a
+              href="<?= page('about')->url() ?>"
+              class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto"
               style="--un-animated-duration: 800ms"
               data-sticker="svg">
               <?= icon('johann.svg') ?>
-            </span>
+              <span class="sr-only"><?= page('about')->title()->escape() ?></span>
+            </a>
           </span>
         </h1>
       <?php else: ?>
