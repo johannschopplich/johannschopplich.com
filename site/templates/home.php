@@ -67,7 +67,7 @@
   </h2>
 
   <div
-    class="relative [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s]"
+    class="relative py-xl [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s]"
     style="--un-color-link-hover: currentColor">
     <?php snippet('components/marquee', slots: true) ?>
     <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
@@ -79,6 +79,7 @@
       </a>
     <?php endforeach ?>
     <?php endsnippet() ?>
+
     <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(
       to right,
       var(--un-color-background) 0%,
