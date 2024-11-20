@@ -12,19 +12,18 @@
     <h1 class="headline mb-5xl">
       <?= t('articles.all') ?>
     </h1>
+  </div>
 
-    <div class="relative">
-      <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
+  <div class="border-y border-y-solid un-dark:border-contrast-lower">
+    <div class="content max-w-screen-lg">
+      <div class="overflow-hidden">
         <?php snippet('articles', ['query' => $query]) ?>
       </div>
-
-      <?php foreach (['top-0', 'bottom-0'] as $position): ?>
-        <div class="pointer-events-none absolute <?= $position ?> left-0 content-empty w-screen h-px bg-current hidden lg:block un-dark:bg-contrast-lower"></div>
-      <?php endforeach; ?>
     </div>
   </div>
 
-  <div class="content max-w-screen-lg">
+
+  <div class="content max-w-screen-lg pt-5xl">
     <?php snippet('pagination', ['pagination' => $query->pagination()]) ?>
   </div>
 </div>

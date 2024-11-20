@@ -56,19 +56,19 @@
   <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('articles.latest') ?>
   </h2>
+</div>
 
-  <div class="relative">
-    <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
+<div class="border-y border-y-solid un-dark:border-contrast-lower">
+  <div class="content max-w-screen-lg">
+    <div class="overflow-hidden">
       <?php snippet('articles', [
         'query' => $kirby->collection('articles')->paginate(4)
       ]) ?>
     </div>
-
-    <?php foreach (['top-0', 'bottom-0'] as $position): ?>
-      <div class="pointer-events-none absolute <?= $position ?> left-0 content-empty w-screen h-px bg-current hidden lg:block un-dark:bg-contrast-lower"></div>
-    <?php endforeach; ?>
   </div>
+</div>
 
+<div class="content max-w-screen-lg">
   <div class="text-center mt-lg">
     <a href="<?= page('blog')->url() ?>" class="cta-button">
       <?= t('articles.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
@@ -145,27 +145,25 @@
   </div>
 <?php endif ?>
 
-<div class="relative content max-w-screen-lg">
+<div class="content max-w-screen-lg">
   <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
   <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('generic.contact') ?>
   </h2>
+</div>
 
-  <div class="relative">
-    <div class="pointer-events-none absolute top-0 left-0 content-empty w-screen h-px bg-current hidden lg:block un-dark:bg-contrast-lower"></div>
-
-    <div class="border-t border-t-solid un-dark:border-contrast-lower pt-lg">
-      <div class="prose max-w-prose text-contrast-medium">
-        <?= $page->contactText()->toBlocks() ?>
-        <div class="space-y-2">
-          <?php foreach ($page->contact()->toStructure() as $item): ?>
-            <div class="flex gap-xl justify-between">
-              <p><?= $item->title()->escape() ?></p>
-              <p><?= $item->link()->permalinksToUrls() ?></p>
-            </div>
-          <?php endforeach ?>
-        </div>
+<div class="border-t border-t-solid un-dark:border-contrast-lower">
+  <div class="content pt-lg">
+    <div class="prose max-w-prose text-contrast-medium">
+      <?= $page->contactText()->toBlocks() ?>
+      <div class="space-y-2">
+        <?php foreach ($page->contact()->toStructure() as $item): ?>
+          <div class="flex gap-xl justify-between">
+            <p><?= $item->title()->escape() ?></p>
+            <p><?= $item->link()->permalinksToUrls() ?></p>
+          </div>
+        <?php endforeach ?>
       </div>
     </div>
   </div>
