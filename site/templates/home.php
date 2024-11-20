@@ -145,23 +145,27 @@
   </div>
 <?php endif ?>
 
-<div class="content max-w-screen-lg">
+<div class="relative content max-w-screen-lg">
   <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 
   <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('generic.contact') ?>
   </h2>
 
-  <div class="border-t border-t-solid un-dark:border-contrast-lower pt-lg">
-    <div class="prose max-w-prose text-contrast-medium">
-      <?= $page->contactText()->toBlocks() ?>
-      <div class="space-y-2">
-        <?php foreach ($page->contact()->toStructure() as $item): ?>
-          <div class="grid grid-cols-[auto_1fr] gap-xl md:grid-cols-3">
-            <p><?= $item->title()->escape() ?></p>
-            <p class="text-right md:text-left md:col-start-2 md:col-end-3"><?= $item->link()->permalinksToUrls() ?></p>
-          </div>
-        <?php endforeach ?>
+  <div class="relative">
+    <div class="pointer-events-none absolute top-0 left-0 content-empty w-screen h-px bg-current hidden lg:block un-dark:bg-contrast-lower"></div>
+
+    <div class="border-t border-t-solid un-dark:border-contrast-lower pt-lg">
+      <div class="prose max-w-prose text-contrast-medium">
+        <?= $page->contactText()->toBlocks() ?>
+        <div class="space-y-2">
+          <?php foreach ($page->contact()->toStructure() as $item): ?>
+            <div class="flex gap-xl justify-between">
+              <p><?= $item->title()->escape() ?></p>
+              <p><?= $item->link()->permalinksToUrls() ?></p>
+            </div>
+          <?php endforeach ?>
+        </div>
       </div>
     </div>
   </div>
