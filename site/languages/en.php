@@ -18,7 +18,7 @@ return [
         'home.references' => 'My Plugins at Work',
         'generic.search' => 'Search',
         'generic.uses' => 'uses',
-        'generic.contact' => 'Contact',
+        'generic.contact' => 'Say hello',
         'articles.all' => 'All Articles',
         'articles.latest' => 'Writing',
         'articles.more' => 'Prior Articles',

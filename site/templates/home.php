@@ -160,7 +160,7 @@
         <?php foreach ($page->contact()->toStructure() as $item): ?>
           <div class="grid grid-cols-[auto_1fr] gap-xl md:grid-cols-3">
             <p><?= $item->title()->escape() ?></p>
-            <p class="md:col-start-2 md:col-end-2"><?= $item->link()->permalinksToUrls() ?></p>
+            <p class="text-right md:text-left md:col-start-2 md:col-end-3"><?= $item->link()->permalinksToUrls() ?></p>
           </div>
         <?php endforeach ?>
       </div>

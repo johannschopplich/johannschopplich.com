@@ -24,7 +24,7 @@
     "@unocss/eslint-plugin": "^0.64.1",
     "@unocss/preset-mini": "^0.64.1",
     "@unocss/preset-wind": "^0.64.1",
-    "animere": "^3.0.1",
+    "animere": "^3.0.3",
     "concurrently": "^9.1.0",
     "drauu": "^0.4.2",
     "es-toolkit": "^1.27.0",

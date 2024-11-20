@@ -52,8 +52,8 @@ importers:
         specifier: ^0.64.1
         version: 0.64.1
       animere:
-        specifier: ^3.0.1
-        version: 3.0.1
+        specifier: ^3.0.3
+        version: 3.0.3
       concurrently:
         specifier: ^9.1.0
         version: 9.1.0
@@ -1272,8 +1272,8 @@ packages:
     resolution: {integrity: sha512-Yf3Swz1s63hjvBVZ/9f2P1Uu48GjmjCN+Esxb6MAONMGtZB1fRX8/S1AhUTtsuTlcGovbYLxpHgc7wEzstDZBw==}
     engines: {node: '>= 14.0.0'}
 
-  animere@3.0.1:
-    resolution: {integrity: sha512-2qpCFsfxH1cswIypeKDKZr7AwuWH6Y4WThaDp1lE2cMKD1lHF7QVOATLIaxij6CS0LUBwAjkp/YrMlX0eZmyrw==}
+  animere@3.0.3:
+    resolution: {integrity: sha512-lpexGzKHyz8wdAuK86UG0pi4UuZzeoeOB8Yo+trynQDr61gq6G6Dh8QMQj88DV5VBOovrGYSV2vMm/enjiA5Gg==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -3696,7 +3696,7 @@ snapshots:
       '@algolia/requester-fetch': 5.15.0
       '@algolia/requester-node-http': 5.15.0
 
-  animere@3.0.1: {}
+  animere@3.0.3: {}
 
   ansi-regex@5.0.1: {}
 
