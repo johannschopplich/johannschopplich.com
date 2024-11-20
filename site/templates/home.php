@@ -34,10 +34,7 @@
         <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
           <div class="flex gap-lg">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
-              <a href="<?= $social->url() ?>" target="_blank" style="
-                --un-color-link: var(--un-color-contrast-low);
-                --un-color-link-hover: var(--un-color-text);
-              ">
+              <a href="<?= $social->url() ?>" target="_blank" style="--un-color-link: var(--un-color-contrast-low); --un-color-link-hover: var(--un-color-text);">
                 <span class="size-[1.5em] <?= $social->icon() ?>"></span>
                 <span class="sr-only"><?= $social->platform()->escape() ?></span>
               </a>
@@ -60,10 +57,16 @@
     <?= t('articles.latest') ?>
   </h2>
 
-  <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
-    <?php snippet('articles', [
-      'query' => $kirby->collection('articles')->paginate(4)
-    ]) ?>
+  <div class="relative">
+    <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
+      <?php snippet('articles', [
+        'query' => $kirby->collection('articles')->paginate(4)
+      ]) ?>
+    </div>
+
+    <?php foreach (['top-0', 'bottom-0'] as $position): ?>
+      <div class="pointer-events-none absolute <?= $position ?> left-0 content-empty w-screen h-px bg-current hidden lg:block un-dark:bg-contrast-lower"></div>
+    <?php endforeach; ?>
   </div>
 
   <div class="text-center mt-lg">
@@ -79,30 +82,26 @@
   <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
     <?= t('home.references') ?>
   </h2>
+</div>
 
-  <div
-    class="relative py-xl [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s]"
-    style="--un-color-link-hover: currentColor">
-    <?php snippet('components/marquee', slots: true) ?>
-    <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
-      <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,4rem)] [&>svg]:h-full [&>svg]:w-auto">
-        <?= $logo->asset()->read() ?>
-        <span class="sr-only">
-          <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
-        </span>
-      </a>
-    <?php endforeach ?>
-    <?php endsnippet() ?>
+<div
+  class="relative py-xl [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s]"
+  style="--un-color-link-hover: currentColor">
+  <?php snippet('components/marquee', slots: true) ?>
+  <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
+    <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,4rem)] [&>svg]:h-full [&>svg]:w-auto">
+      <?= $logo->asset()->read() ?>
+      <span class="sr-only">
+        <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
+      </span>
+    </a>
+  <?php endforeach ?>
+  <?php endsnippet() ?>
 
-    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(
-      to right,
-      var(--un-color-background) 0%,
-      transparent 5%,
-      transparent 95%,
-      var(--un-color-background) 100%
-    )"></div>
-  </div>
+  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, var(--un-color-background) 0%, transparent 5%, transparent 95%, var(--un-color-background) 100%)"></div>
+</div>
 
+<div class="content max-w-screen-lg">
   <div class="text-center mt-lg">
     <a href="<?= page('work')->url() ?>" class="cta-button">
       <?= page('work')->title()->escape() ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>

@@ -13,8 +13,14 @@
       <?= t('articles.all') ?>
     </h1>
 
-    <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
-      <?php snippet('articles', ['query' => $query]) ?>
+    <div class="relative">
+      <div class="overflow-hidden border-y border-y-solid un-dark:border-contrast-lower">
+        <?php snippet('articles', ['query' => $query]) ?>
+      </div>
+
+      <?php foreach (['top-0', 'bottom-0'] as $position): ?>
+        <div class="pointer-events-none absolute <?= $position ?> left-0 content-empty w-screen h-px bg-current hidden lg:block un-dark:bg-contrast-lower"></div>
+      <?php endforeach; ?>
     </div>
   </div>
 
