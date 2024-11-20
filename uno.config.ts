@@ -9,6 +9,12 @@ import {
 import { rules } from "./src/unocss";
 
 export default defineConfig<Theme>({
+  cli: {
+    entry: {
+      patterns: ["site/{snippets,templates}/**/*"],
+      outFile: "src/styles/uno.css",
+    },
+  },
   theme: {
     maxWidth: {
       prose: "70ch",
@@ -114,7 +120,17 @@ export default defineConfig<Theme>({
       "filter-blur": "[filter:url(#blur-and-scale)]",
     },
   ],
-  safelist: ["sr-only", "invisible", "animated", "animated-tada"],
+  safelist: [
+    "sr-only",
+    "invisible",
+    "animated",
+    "animated-tada",
+    "i-bx-bxl-github",
+    "i-bx-bxl-instagram",
+    "i-bx-bxl-youtube",
+    "i-bx-bxl-twitter",
+    "i-bx-bxl-linkedin",
+  ],
   transformers: [transformerDirectives()],
   presets: [
     presetWind(),

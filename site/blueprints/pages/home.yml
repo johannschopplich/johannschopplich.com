@@ -23,6 +23,30 @@ tabs:
               headline01:
                 label: Intro
                 type: headline
+              socialLinks:
+                label:
+                  de: Soziale Netzwerke
+                  en: Social Links
+                type: structure
+                translate: false
+                fields:
+                  platform:
+                    label:
+                      de: Plattform
+                      en: Platform
+                    type: text
+                    required: true
+                  url:
+                    label: URL
+                    type: url
+                    required: true
+                  icon:
+                    label:
+                      de: Icon-Klasse
+                      en: Icon Class
+                    type: text
+                    required: true
+                    help: e.g., `i-bx-bxl-github`
               text: fields/blocks
               headline02:
                 label:
