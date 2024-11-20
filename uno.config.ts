@@ -126,7 +126,7 @@ export default defineConfig<Theme>({
     "animated",
     "animated-tada",
     "i-bx-bxl-github",
-    "i-bx-bxl-instagram",
+    "i-bx-bxl-instagram-alt",
     "i-bx-bxl-youtube",
     "i-bx-bxl-twitter",
     "i-bx-bxl-linkedin",
