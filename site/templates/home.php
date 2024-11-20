@@ -85,7 +85,7 @@
     style="--un-color-link-hover: currentColor">
     <?php snippet('components/marquee', slots: true) ?>
     <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
-      <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,5rem)] [&>svg]:h-full [&>svg]:w-auto">
+      <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,4rem)] [&>svg]:h-full [&>svg]:w-auto">
         <?= $logo->asset()->read() ?>
         <span class="sr-only">
           <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
