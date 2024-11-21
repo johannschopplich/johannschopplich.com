@@ -49,34 +49,32 @@
   </div>
 </div>
 
-<div class="pb-8xl">
-  <div class="content max-w-screen-xl">
-    <div class="pt-5xl border-t border-t-solid un-dark:border-contrast-lower">
-      <?php foreach ($page->cv()->toLayouts() as $layout): ?>
-        <div
-          class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8"
-          style="--un-prose-space-y: 1.25">
-          <?php foreach ($layout->columns() as $column): ?>
-            <div class="prose">
-              <?php foreach ($column->blocks() as $block): ?>
-                <?php /** @var \Kirby\Cms\Block $block */ ?>
-                <?php if ($block->type() === 'heading'): ?>
-                  <h2 class="text-sm uppercase tracking-[0.125ch] un-dark:text-contrast-medium"><?= $block->text() ?></h2>
-                <?php elseif ($block->type() === 'text'): ?>
-                  <?= preg_replace(
-                    '/<code>(.*?)<\/code>/',
-                    '<sparkly-text style="--sparkly-text-size: 2em; --sparkly-text-color: gold">$1</sparkly-text>',
-                    $block->toHtml()
-                  ) ?>
-                <?php else: ?>
-                  <?= $block ?>
-                <?php endif ?>
-              <?php endforeach ?>
-            </div>
-          <?php endforeach ?>
-        </div>
-      <?php endforeach ?>
-    </div>
+<div class="pb-8xl border-t border-t-solid un-dark:border-contrast-lower">
+  <div class="content max-w-screen-xl pt-5xl">
+    <?php foreach ($page->cv()->toLayouts() as $layout): ?>
+      <div
+        class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8 md:grid-cols-[repeat(3,minmax(0,auto))]"
+        style="--un-prose-space-y: 1.25">
+        <?php foreach ($layout->columns() as $column): ?>
+          <div class="prose">
+            <?php foreach ($column->blocks() as $block): ?>
+              <?php /** @var \Kirby\Cms\Block $block */ ?>
+              <?php if ($block->type() === 'heading'): ?>
+                <h2 class="text-sm uppercase tracking-[0.125ch] un-dark:text-contrast-medium"><?= $block->text() ?></h2>
+              <?php elseif ($block->type() === 'text'): ?>
+                <?= preg_replace(
+                  '/<code>(.*?)<\/code>/',
+                  '<sparkly-text style="--sparkly-text-size: 2em; --sparkly-text-color: gold">$1</sparkly-text>',
+                  $block->toHtml()
+                ) ?>
+              <?php else: ?>
+                <?= $block ?>
+              <?php endif ?>
+            <?php endforeach ?>
+          </div>
+        <?php endforeach ?>
+      </div>
+    <?php endforeach ?>
   </div>
 </div>
 <?php endsnippet() ?>

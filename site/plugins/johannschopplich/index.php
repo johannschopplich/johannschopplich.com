@@ -42,7 +42,7 @@ if (!function_exists('dateFormatter')) {
     function dateFormatter()
     {
         static $dateFormatter;
-        return $dateFormatter ??= new IntlDateFormatter(
+        return $dateFormatter ??= IntlDateFormatter::create(
             App::instance()->languageCode(),
             IntlDateFormatter::LONG,
             IntlDateFormatter::NONE
