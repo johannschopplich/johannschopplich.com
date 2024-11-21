@@ -3,13 +3,15 @@
 /** @var \Kirby\Cms\Page $page */ ?>
 
 <section class="pt-5xl pb-8xl md:pt-8xl">
-  <div class="content max-w-prose pb-5xl">
+  <div class="content max-w-prose">
     <h1 class="headline">
       <?= $page->title()->escape() ?>
     </h1>
+  </div>
 
+  <div class="pl-lg pb-5xl md:pl-3xl">
     <?php if ($page->published()->isNotEmpty()): ?>
-      <div class="flex gap-1 items-center after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-medium">
+      <div class="flex gap-1 items-center after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-lower">
         <p class="shrink-0 text-sm font-500 text-contrast-medium">
           <?= t('article.publishedAt') ?>
           <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">

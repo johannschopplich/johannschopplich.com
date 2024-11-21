@@ -6,13 +6,15 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-<div class="pt-5xl pb-5xl space-y-5xl md:pt-8xl">
-  <div class="content w-fit max-w-prose">
-    <h1 class="headline inline-block">
+<div class="pt-5xl pb-5xl md:pt-8xl">
+  <div class="content max-w-prose">
+    <h1 class="headline">
       <?= $page->title()->escape() ?>
     </h1>
+  </div>
 
-    <div class="flex gap-1 items-center after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-medium">
+  <div class="pl-lg pb-5xl md:pl-3xl">
+    <div class="flex gap-1 items-center after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-lower">
       <p class="shrink-0 text-sm font-500 text-contrast-medium">
         <?= $page->subtitle()->escape() ?>
       </p>
