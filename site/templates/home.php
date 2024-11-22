@@ -89,7 +89,7 @@
   style="--un-color-link-hover: currentColor">
   <?php snippet('components/marquee', slots: true) ?>
   <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
-    <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,4rem)] transition-opacity duration-100 group-has-[a:hover]:not-hover:opacity-50 [&>svg]:h-full [&>svg]:w-auto">
+    <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,4rem)] transition-opacity duration-100 [&>svg]:h-full [&>svg]:w-auto [@media(hover:hover)]:group-has-[a:hover]:not-hover:opacity-50">
       <?= $logo->asset()->read() ?>
       <span class="sr-only">
         <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
