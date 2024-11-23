@@ -9,8 +9,7 @@ export default async function () {
     el: "#drauu-canvas",
     brush: {
       mode: "stylus",
-      // color: getPrimaryColor(),
-      color: "white",
+      color: getPrimaryColor(),
       size: 3,
     },
   });
@@ -88,9 +87,8 @@ function registerKeyboardShortcuts(drauu: Drauu) {
   });
 }
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 function getPrimaryColor() {
   return getComputedStyle(document.documentElement).getPropertyValue(
-    "--un-color-primary",
+    "--un-color-primary-400",
   );
 }
