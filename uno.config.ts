@@ -108,8 +108,8 @@ export default defineConfig<Theme>({
     },
     // Project-specific shortcuts
     {
-      content: "px-lg md:px-3xl",
-      "content-l": "pl-lg md:pl-3xl",
+      content: "px-lg md:px-[max(4vw,1.875rem)]",
+      "content-l": "pl-lg md:pl-[max(4vw,1.875rem)]",
       icon: "inline-block w-[1.25em] h-[1.25em] align-text-bottom [&>svg]:w-full [&>svg]:h-full",
       "cta-button":
         "text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
