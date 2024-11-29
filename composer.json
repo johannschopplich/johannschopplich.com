@@ -8,8 +8,15 @@
     "johannschopplich/kirby-algolia-docsearch": "^0.6",
     "johannschopplich/kirby-content-translator": "^2",
     "bnomei/kirby3-feed": "^1",
-    "tobimori/kirby-thumbhash": "^1"
+    "tobimori/kirby-thumbhash": "^1",
+    "philippoehrlein/typo-and-paste": "dev-main"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/johannschopplich/typo-and-paste-fork.git"
+    }
+  ],
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",
