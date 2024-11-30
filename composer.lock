@@ -1637,12 +1637,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/typo-and-paste-fork.git",
-                "reference": "fb039fbe4655fb92e52e5fb9e15f54aa12037a86"
+                "reference": "111500c5f813566c994726ae0bdec7ceb9519ae3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/fb039fbe4655fb92e52e5fb9e15f54aa12037a86",
-                "reference": "fb039fbe4655fb92e52e5fb9e15f54aa12037a86",
+                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/111500c5f813566c994726ae0bdec7ceb9519ae3",
+                "reference": "111500c5f813566c994726ae0bdec7ceb9519ae3",
                 "shasum": ""
             },
             "require": {
@@ -1683,7 +1683,7 @@
             "support": {
                 "source": "https://github.com/johannschopplich/typo-and-paste-fork/tree/main"
             },
-            "time": "2024-11-29T17:41:41+00:00"
+            "time": "2024-11-29T18:53:45+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
