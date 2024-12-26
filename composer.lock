@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35de65e2a3dd1c98eb2c3c55cdcd3041",
+    "content-hash": "482ab67eabc5bf44721b9c2e2ad3cb29",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1156,21 +1156,21 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "2.4.1",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "4a10db6bc8dce4d149709c88dc600ae6c65210e2"
+                "reference": "441dde0e59ba1341d0cbc743db0cc0b0bd119d18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/4a10db6bc8dce4d149709c88dc600ae6c65210e2",
-                "reference": "4a10db6bc8dce4d149709c88dc600ae6c65210e2",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/441dde0e59ba1341d0cbc743db0cc0b0bd119d18",
+                "reference": "441dde0e59ba1341d0cbc743db0cc0b0bd119d18",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1.2",
-                "johannschopplich/kirby-tools-licensing": "^0.5"
+                "johannschopplich/kirby-tools-licensing": "^0.7"
             },
             "require-dev": {
                 "getkirby/cli": "^1.5",
@@ -1211,7 +1211,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.4.1"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.5.1"
             },
             "funding": [
                 {
@@ -1219,7 +1219,61 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-11-14T14:27:34+00:00"
+            "time": "2024-12-26T17:00:38+00:00"
+        },
+        {
+            "name": "johannschopplich/kirby-copilot",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kirby-tools/kirby-copilot.git",
+                "reference": "26b22427bd91f413cedf68ba65a1ac45040d6679"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/26b22427bd91f413cedf68ba65a1ac45040d6679",
+                "reference": "26b22427bd91f413cedf68ba65a1ac45040d6679",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2",
+                "johannschopplich/kirby-tools-licensing": "^0.7"
+            },
+            "require-dev": {
+                "getkirby/cms": "^4",
+                "vlucas/phpdotenv": "^5.6"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "hello@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                }
+            ],
+            "description": "AI-powered content generation for Kirby CMS",
+            "homepage": "https://kirbycopilot.com",
+            "keywords": [
+                "ai",
+                "content",
+                "generation",
+                "gpt",
+                "kirby",
+                "mistral",
+                "openai"
+            ],
+            "support": {
+                "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.1.2"
+            },
+            "time": "2024-12-26T16:29:22+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1345,16 +1399,16 @@
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
-            "version": "0.5.2",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/licensing-backend.git",
-                "reference": "b84ddceed0a5e54380391bb7438612a56863a888"
+                "reference": "d8b469f7ab0f38b9540c2f20d85ed3a962b5f343"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/b84ddceed0a5e54380391bb7438612a56863a888",
-                "reference": "b84ddceed0a5e54380391bb7438612a56863a888",
+                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/d8b469f7ab0f38b9540c2f20d85ed3a962b5f343",
+                "reference": "d8b469f7ab0f38b9540c2f20d85ed3a962b5f343",
                 "shasum": ""
             },
             "require-dev": {
@@ -1384,9 +1438,9 @@
             "homepage": "https://github.com/kirby-tools/licensing-backend#readme",
             "support": {
                 "issues": "https://github.com/kirby-tools/licensing-backend/issues",
-                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.5.2"
+                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.7.0"
             },
-            "time": "2024-09-11T07:58:50+00:00"
+            "time": "2024-12-26T09:48:09+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -1637,12 +1691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/typo-and-paste-fork.git",
-                "reference": "111500c5f813566c994726ae0bdec7ceb9519ae3"
+                "reference": "eb34c530270ea79a19c6ff38dee4bf19f59ca741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/111500c5f813566c994726ae0bdec7ceb9519ae3",
-                "reference": "111500c5f813566c994726ae0bdec7ceb9519ae3",
+                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/eb34c530270ea79a19c6ff38dee4bf19f59ca741",
+                "reference": "eb34c530270ea79a19c6ff38dee4bf19f59ca741",
                 "shasum": ""
             },
             "require": {
@@ -1683,7 +1737,7 @@
             "support": {
                 "source": "https://github.com/johannschopplich/typo-and-paste-fork/tree/main"
             },
-            "time": "2024-11-29T18:53:45+00:00"
+            "time": "2024-12-26T17:10:41+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -2342,8 +2396,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2419,8 +2473,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2501,8 +2555,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2585,8 +2639,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2659,8 +2713,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -2939,7 +2993,7 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
