@@ -2,7 +2,7 @@ type: serp-preview
 defaultLanguagePrefix: true
 faviconUrl: /assets/icon.svg
 siteTitle: "{{ site.title.value }}"
-siteUrl: "{{ site.url }}"
+siteUrl: "{{ kirby.url }}"
 titleSeparator: "-"
 titleContentKey: customTitle
 descriptionContentKey: description
