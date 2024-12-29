@@ -94,7 +94,7 @@ tabs:
 
       - width: 1/3
         sections:
-          contentTranslator: sections/content-translator
+          serpPreview: sections/serp-preview
 
   images: tabs/images
   files: tabs/files

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "482ab67eabc5bf44721b9c2e2ad3cb29",
+    "content-hash": "6d4222d4c8aee445992763f53f873ae1",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1156,16 +1156,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "2.5.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "441dde0e59ba1341d0cbc743db0cc0b0bd119d18"
+                "reference": "d6f6bb79b4b7c587a53357b6efc0ab7f13dc9a67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/441dde0e59ba1341d0cbc743db0cc0b0bd119d18",
-                "reference": "441dde0e59ba1341d0cbc743db0cc0b0bd119d18",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/d6f6bb79b4b7c587a53357b6efc0ab7f13dc9a67",
+                "reference": "d6f6bb79b4b7c587a53357b6efc0ab7f13dc9a67",
                 "shasum": ""
             },
             "require": {
@@ -1211,7 +1211,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v2.5.1"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.0.0"
             },
             "funding": [
                 {
@@ -1219,20 +1219,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-12-26T17:00:38+00:00"
+            "time": "2024-12-28T11:39:43+00:00"
         },
         {
             "name": "johannschopplich/kirby-copilot",
-            "version": "2.1.2",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-copilot.git",
-                "reference": "26b22427bd91f413cedf68ba65a1ac45040d6679"
+                "reference": "3295072f859089fc8bee3ec21e48e3444221b223"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/26b22427bd91f413cedf68ba65a1ac45040d6679",
-                "reference": "26b22427bd91f413cedf68ba65a1ac45040d6679",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/3295072f859089fc8bee3ec21e48e3444221b223",
+                "reference": "3295072f859089fc8bee3ec21e48e3444221b223",
                 "shasum": ""
             },
             "require": {
@@ -1271,9 +1271,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
-                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.1.2"
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.2.0"
             },
-            "time": "2024-12-26T16:29:22+00:00"
+            "time": "2024-12-29T19:01:44+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1396,6 +1396,66 @@
                 "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.1.1"
             },
             "time": "2024-02-08T08:54:12+00:00"
+        },
+        {
+            "name": "johannschopplich/kirby-serp-preview",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johannschopplich/kirby-serp-preview.git",
+                "reference": "8251b6794dab9189d66905dd75d12fcba81ff749"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-serp-preview/zipball/8251b6794dab9189d66905dd75d12fcba81ff749",
+                "reference": "8251b6794dab9189d66905dd75d12fcba81ff749",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1.2"
+            },
+            "require-dev": {
+                "getkirby/cms": "^4"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "pkg@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                },
+                {
+                    "name": "Dennis Baum",
+                    "homepage": "https://github.com/dennisbaum"
+                }
+            ],
+            "description": "Kirby Panel plugin for search engine result page previews",
+            "homepage": "https://github.com/johannschopplich/kirby-serp-preview#readme",
+            "keywords": [
+                "SERP",
+                "google",
+                "kirby",
+                "search-engine",
+                "seo"
+            ],
+            "support": {
+                "issues": "https://github.com/johannschopplich/kirby-serp-preview/issues",
+                "source": "https://github.com/johannschopplich/kirby-serp-preview/tree/v1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/jschopplich",
+                    "type": "custom"
+                }
+            ],
+            "time": "2024-12-16T12:59:06+00:00"
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
@@ -1691,12 +1751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/typo-and-paste-fork.git",
-                "reference": "eb34c530270ea79a19c6ff38dee4bf19f59ca741"
+                "reference": "6278dd3a867f61b4252a335b133180b59681d830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/eb34c530270ea79a19c6ff38dee4bf19f59ca741",
-                "reference": "eb34c530270ea79a19c6ff38dee4bf19f59ca741",
+                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/6278dd3a867f61b4252a335b133180b59681d830",
+                "reference": "6278dd3a867f61b4252a335b133180b59681d830",
                 "shasum": ""
             },
             "require": {
@@ -1737,7 +1797,7 @@
             "support": {
                 "source": "https://github.com/johannschopplich/typo-and-paste-fork/tree/main"
             },
-            "time": "2024-12-26T17:10:41+00:00"
+            "time": "2024-12-27T10:50:41+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
@@ -2322,12 +2382,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {

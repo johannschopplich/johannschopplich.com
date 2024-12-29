@@ -81,9 +81,8 @@ tabs:
           text: sections/text
 
       - width: 1/3
-        sticky: true
+        # sticky: true
         sections:
-          contentTranslator: sections/content-translator
-          # serpPreview: sections/serp-preview
+          serpPreview: sections/serp-preview
 
   images: tabs/images
