@@ -1156,16 +1156,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "0fd8244ea0568579ed376b9898db272d0e08e940"
+                "reference": "8a4a46d40ad2c0c871a566aafa0618c37496781f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/0fd8244ea0568579ed376b9898db272d0e08e940",
-                "reference": "0fd8244ea0568579ed376b9898db272d0e08e940",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/8a4a46d40ad2c0c871a566aafa0618c37496781f",
+                "reference": "8a4a46d40ad2c0c871a566aafa0618c37496781f",
                 "shasum": ""
             },
             "require": {
@@ -1211,7 +1211,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.0.1"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.0.2"
             },
             "funding": [
                 {
@@ -1219,7 +1219,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-12-30T09:56:38+00:00"
+            "time": "2024-12-30T18:50:35+00:00"
         },
         {
             "name": "johannschopplich/kirby-copilot",
