@@ -11,14 +11,8 @@
     "johannschopplich/kirby-content-translator": "^3",
     "bnomei/kirby3-feed": "^1",
     "tobimori/kirby-thumbhash": "^1",
-    "philippoehrlein/typo-and-paste": "dev-main"
+    "philippoehrlein/typo-and-paste": "^2.2"
   },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/johannschopplich/typo-and-paste-fork.git"
-    }
-  ],
   "scripts": {
     "start": [
       "Composer\\Config::disableProcessTimeout",

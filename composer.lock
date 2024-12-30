@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d4222d4c8aee445992763f53f873ae1",
+    "content-hash": "4215548b4db5a503f05c0db9b45be2f5",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -1156,16 +1156,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "d6f6bb79b4b7c587a53357b6efc0ab7f13dc9a67"
+                "reference": "0fd8244ea0568579ed376b9898db272d0e08e940"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/d6f6bb79b4b7c587a53357b6efc0ab7f13dc9a67",
-                "reference": "d6f6bb79b4b7c587a53357b6efc0ab7f13dc9a67",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/0fd8244ea0568579ed376b9898db272d0e08e940",
+                "reference": "0fd8244ea0568579ed376b9898db272d0e08e940",
                 "shasum": ""
             },
             "require": {
@@ -1211,7 +1211,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.0.0"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.0.1"
             },
             "funding": [
                 {
@@ -1219,7 +1219,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2024-12-28T11:39:43+00:00"
+            "time": "2024-12-30T09:56:38+00:00"
         },
         {
             "name": "johannschopplich/kirby-copilot",
@@ -1746,15 +1746,15 @@
         },
         {
             "name": "philippoehrlein/typo-and-paste",
-            "version": "dev-main",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
-                "url": "https://github.com/johannschopplich/typo-and-paste-fork.git",
+                "url": "https://github.com/philippoehrlein/typo-and-paste.git",
                 "reference": "6278dd3a867f61b4252a335b133180b59681d830"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/typo-and-paste-fork/zipball/6278dd3a867f61b4252a335b133180b59681d830",
+                "url": "https://api.github.com/repos/philippoehrlein/typo-and-paste/zipball/6278dd3a867f61b4252a335b133180b59681d830",
                 "reference": "6278dd3a867f61b4252a335b133180b59681d830",
                 "shasum": ""
             },
@@ -1765,23 +1765,17 @@
             "require-dev": {
                 "getkirby/cms": "^4.0 || ^5.0"
             },
-            "default-branch": true,
             "type": "kirby-plugin",
             "extra": {
-                "kirby-cms-path": false,
-                "installer-name": "typo-and-paste"
+                "installer-name": "typo-and-paste",
+                "kirby-cms-path": false
             },
             "autoload": {
                 "psr-4": {
                     "Philippoehrlein\\TypoAndPaste\\": "src/"
                 }
             },
-            "scripts": {
-                "dev": [
-                    "Composer\\Config::disableProcessTimeout",
-                    "@php -S localhost:8000 -t playground/public vendor/getkirby/cms/router.php"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1794,7 +1788,8 @@
             "description": "A Kirby plugin for managing and inserting special characters with multi-language support.",
             "homepage": "https://github.com/philippoehrlein/typo-and-paste",
             "support": {
-                "source": "https://github.com/johannschopplich/typo-and-paste-fork/tree/main"
+                "issues": "https://github.com/philippoehrlein/typo-and-paste/issues",
+                "source": "https://github.com/philippoehrlein/typo-and-paste/tree/v2.2.5"
             },
             "time": "2024-12-27T10:50:41+00:00"
         },
@@ -3047,9 +3042,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "philippoehrlein/typo-and-paste": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {},
