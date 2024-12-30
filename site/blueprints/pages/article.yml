@@ -18,22 +18,6 @@ tabs:
           info:
             type: fields
             fields:
-              customTitle:
-                label:
-                  de: Titel (Überschreiben)
-                  en: Title (Override)
-                type: text
-                icon: title
-                placeholder: "{{ page.title }} – {{ site.title }}"
-                width: 2/3
-              published:
-                label:
-                  de: Veröffentlichungsdatum
-                  en: Publishing Date
-                type: date
-                default: today
-                translate: false
-                width: 1/3
               thumbnail:
                 label:
                   de: Vorschaubild
@@ -52,6 +36,22 @@ tabs:
                 type: text
                 icon: tag
                 width: 1/3
+              published:
+                label:
+                  de: Veröffentlichungsdatum
+                  en: Publishing Date
+                type: date
+                default: today
+                translate: false
+                width: 1/3
+              customTitle:
+                label:
+                  de: Titel (Überschreiben)
+                  en: Title (Override)
+                type: text
+                icon: title
+                placeholder: "{{ page.title }} – {{ site.title }}"
+                width: 2/3
               author:
                 label:
                   de: Autor
@@ -60,12 +60,6 @@ tabs:
                 multiple: false
                 translate: false
                 width: 1/3
-
-      - width: 1/3
-        sections:
-          meta:
-            type: fields
-            fields:
               description:
                 label:
                   de: Beschreibung (Überschreiben)
@@ -76,13 +70,13 @@ tabs:
                   de: Eine kurze Beschreibung für Suchmaschinen.
                   en: A short description for search engines.
 
+      - width: 1/3
+        sticky: true
+        sections:
+          serpPreview: sections/serp-preview
+
       - width: 2/3
         sections:
           text: sections/text
-
-      - width: 1/3
-        # sticky: true
-        sections:
-          serpPreview: sections/serp-preview
 
   images: tabs/images
