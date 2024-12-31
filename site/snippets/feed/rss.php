@@ -14,7 +14,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
     <?php foreach ($items as $item): ?>
       <item>
         <title><?= Xml::encode($item->{$titlefield}()) ?></title>
-        <link><?= Xml::encode($item->{$urlfield}()) ?></link>
+        <link><?= Xml::encode($item->url()) ?></link>
         <guid><?= Xml::encode($item->url()) ?></guid>
         <pubDate><?= $datefield === 'modified' ? $item->modified('r', 'date') : date('r', $item->{$datefield}()->toTimestamp()) ?></pubDate>
         <description>

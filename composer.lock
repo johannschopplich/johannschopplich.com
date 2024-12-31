@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4215548b4db5a503f05c0db9b45be2f5",
+    "content-hash": "1e5cf7e4f9e303a622349fc9d6c95660",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -79,88 +79,6 @@
                 "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.4.1"
             },
             "time": "2023-08-28T14:34:04+00:00"
-        },
-        {
-            "name": "bnomei/kirby3-feed",
-            "version": "1.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bnomei/kirby3-feed.git",
-                "reference": "1bb0078638f75395e3dbb64d010c6ae1aa252349"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bnomei/kirby3-feed/zipball/1bb0078638f75395e3dbb64d010c6ae1aa252349",
-                "reference": "1bb0078638f75395e3dbb64d010c6ae1aa252349",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1.2",
-                "php": ">=8.1"
-            },
-            "require-dev": {
-                "getkirby/cms": "^4.0",
-                "php-coveralls/php-coveralls": "^2.4",
-                "phpunit/phpunit": "^9.5"
-            },
-            "suggest": {
-                "bnomei/kirby3-htmlhead": "Best-practice HTML Head Element extendable with snippets.",
-                "bnomei/kirby3-robots-txt": "Automatic robots.txt. Detects xmlsitemap.",
-                "bnomei/kirby3-security-headers": "CPS headers to make the the web a saver place. Sensible defaults with zero configuration."
-            },
-            "type": "kirby-plugin",
-            "extra": {
-                "kirby-cms-path": "tests/kirby"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Bnomei\\": "classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Bruno Meilick",
-                    "email": "b@bnomei.com"
-                }
-            ],
-            "description": "Generate a RSS/JSON/Sitemap-Feed from a Pages-Collection",
-            "keywords": [
-                "Sitemap",
-                "feed",
-                "json",
-                "kirby",
-                "kirby-cms",
-                "kirby-plugin",
-                "rss",
-                "rss-feed"
-            ],
-            "support": {
-                "issues": "https://github.com/bnomei/kirby3-feed/issues",
-                "source": "https://github.com/bnomei/kirby3-feed/tree/v1.7.0"
-            },
-            "funding": [
-                {
-                    "url": "https://buymeacoff.ee/bnomei",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://paypal.me/bnomei",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/bnomei",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/bnomei",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2024-08-19T08:18:07+00:00"
         },
         {
             "name": "christian-riesen/base32",

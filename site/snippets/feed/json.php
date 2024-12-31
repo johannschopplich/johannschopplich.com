@@ -4,7 +4,7 @@ $entries = [];
 foreach ($items as $item) {
   $entries[] = [
     'id'             => $item->url(),
-    'url'            => $item->{$urlfield}(),
+    'url'            => $item->url(),
     'title'          => $item->{$titlefield}()->value(),
     'content_html'   => $item->{$textfield}()->toBlocks()->toHtml(),
     'date_published' => date('c', $item->{$datefield}()->toTimestamp()),
