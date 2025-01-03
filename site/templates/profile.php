@@ -6,7 +6,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-<div class="pt-5xl pb-8xl md:pt-8xl">
+<div class="pt-5xl pb-5xl md:pt-8xl md:pb-8xl">
   <div class="grid max-w-screen-xl gap-5xl sm:gap-6xl sm:pr-lg md:grid-cols-2 md:pr-3xl md:px-[max(4vw,1.875rem)]">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
@@ -50,7 +50,7 @@
 </div>
 
 <div class="pb-8xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
-  <div class="content pt-8xl">
+  <div class="content pt-5xl md:pt-8xl">
     <div class="max-w-screen-xl">
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div

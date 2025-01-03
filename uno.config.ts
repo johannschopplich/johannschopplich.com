@@ -118,7 +118,7 @@ export default defineConfig<Theme>({
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
       "filter-blur": "[filter:url(#blur-and-scale)]",
-      "section-divider": "h-[min(25svh,10rem)]",
+      "section-divider": "h-[min(20svh,8rem)]",
     },
   ],
   safelist: [
