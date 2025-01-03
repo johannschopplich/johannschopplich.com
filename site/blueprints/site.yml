@@ -68,10 +68,32 @@ tabs:
                   cover: true
                   back: white
                 translate: false
+              headlineFooter:
+                label:
+                  de: Fußzeile
+                  en: Footer
+                type: headline
+              footerLinks:
+                label: Links
+                type: structure
+                fields:
+                  category:
+                    label:
+                      de: Kategorie
+                      en: Category
+                    type: text
+                  title:
+                    label:
+                      de: Titel
+                      en: Title
+                    type: text
+                  url:
+                    label: URL
+                    type: text
               footerPages:
                 label:
-                  de: Fußzeilenlinks
-                  en: Footer Pages
+                  de: Verlinkte Seiten
+                  en: Linked Pages
                 type: pages
                 image:
                   query: page.thumbnail.toFile

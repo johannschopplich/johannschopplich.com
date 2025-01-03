@@ -2,6 +2,8 @@
 @use "../plugins/typography";
 
 .prose {
+  --un-decoration-color: var(--un-color-primary);
+
   @include breakpoints.media-below(sm) {
     font-size: 0.875rem;
     line-height: var(--un-line-height-normal);

@@ -5,16 +5,18 @@
 /** @var \Kirby\Cms\Blocks $blocks */
 
 $sectionAttrs = attr([
-  'class' => 'content prose max-w-prose is-article',
+  'class' => 'content',
   'lang' => $textLanguageCode
 ]);
 ?>
 
 <section class="pt-5xl pb-8xl md:pt-8xl">
-  <div class="content max-w-prose">
-    <h1 class="headline">
-      <?= $page->title()->escape() ?>
-    </h1>
+  <div class="content">
+    <div class="max-w-prose">
+      <h1 class="headline">
+        <?= $page->title()->escape() ?>
+      </h1>
+    </div>
   </div>
 
   <div class="content-l pb-5xl">
@@ -31,21 +33,24 @@ $sectionAttrs = attr([
   </div>
 
   <div <?= $sectionAttrs ?>>
-    <?php foreach ($blocks as $block): ?>
-      <?php /** @var \Kirby\Cms\Block $block */ ?>
-      <?php if ($block->type() === 'gallery'): ?>
+    <div class="prose max-w-prose is-article">
+      <?php foreach ($blocks as $block): ?>
+        <?php /** @var \Kirby\Cms\Block $block */ ?>
+        <?php if ($block->type() === 'gallery'): ?>
+    </div>
   </div>
-  <div class="mt-[--un-prose-spacer]">
+  <div class="mt-$un-prose-spacer">
     <?= $block ?>
   </div>
   <div <?= $sectionAttrs ?>>
-  <?php else: ?>
-    <?= $block ?>
-  <?php endif ?>
-<?php endforeach ?>
+    <div class="prose max-w-prose is-article">
+    <?php else: ?>
+      <?= $block ?>
+    <?php endif ?>
+  <?php endforeach ?>
 
-<?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>
-  <?= $page->parent()->articleFooter()->toBlocks() ?>
-<?php endif ?>
-  </div>
+  <?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>
+    <?= $page->parent()->articleFooter()->toBlocks() ?>
+  <?php endif ?>
+    </div>
 </section>

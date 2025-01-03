@@ -34,8 +34,8 @@
         <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
           <div class="flex gap-lg">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
-              <a href="<?= $social->url() ?>" target="_blank" style="--un-color-link: var(--un-color-contrast-low); --un-color-link-hover: var(--un-color-text);">
-                <span class="size-[1.5em] <?= $social->icon() ?>"></span>
+              <a href="<?= $social->url() ?>" target="_blank" class="hover:text-current" style="--un-color-link: var(--un-color-contrast-low)">
+                <span class="size-[1.75em] <?= $social->icon() ?>"></span>
                 <span class="sr-only"><?= $social->platform()->escape() ?></span>
               </a>
             <?php endforeach ?>
@@ -50,17 +50,25 @@
   </div>
 </div>
 
-<div class="content max-w-screen-lg">
-  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
+<div class="section-divider"></div>
 
-  <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
-    <?= t('articles.latest') ?>
-  </h2>
+<div class="content mb-lg">
+  <div class="max-w-screen-lg flex gap-xl justify-between items-center">
+    <h2 class="title text-primary-500 text-2xl un-dark:text-primary-400">
+      <?= t('articles.latest') ?>
+    </h2>
+
+    <a href="<?= page('blog')->url() ?>" class="cta-button link-default">
+      <span class="sm:hidden"><?= t('generic.more') ?></span>
+      <span class="hidden sm:inline"><?= t('articles.more') ?></span>
+      <span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+    </a>
+  </div>
 </div>
 
 <div class="border-y border-y-solid un-dark:border-contrast-lower">
-  <div class="content max-w-screen-lg">
-    <div class="overflow-hidden">
+  <div class="content">
+    <div class="max-w-screen-lg overflow-hidden">
       <?php snippet('articles', [
         'query' => $kirby->collection('articles')->paginate(4)
       ]) ?>
@@ -68,20 +76,15 @@
   </div>
 </div>
 
-<div class="content max-w-screen-lg">
-  <div class="text-center mt-lg">
-    <a href="<?= page('blog')->url() ?>" class="cta-button">
-      <?= t('articles.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
-    </a>
+<?php /*
+<div class="section-divider"></div>
+
+<div class="content">
+  <div class="max-w-screen-lg">
+    <h2 class="title text-primary-500 text-2xl mb-lg un-dark:text-primary-400">
+      <?= t('home.references') ?>
+    </h2>
   </div>
-</div>
-
-<div class="content max-w-screen-lg">
-  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
-
-  <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
-    <?= t('home.references') ?>
-  </h2>
 </div>
 
 <div
@@ -100,14 +103,7 @@
 
   <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, var(--un-color-background) 0%, transparent 5%, transparent 95%, var(--un-color-background) 100%)"></div>
 </div>
-
-<div class="content max-w-screen-lg">
-  <div class="text-center mt-lg">
-    <a href="<?= page('work')->url() ?>" class="cta-button">
-      <?= page('work')->title()->escape() ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
-    </a>
-  </div>
-</div>
+*/ ?>
 
 <?php if ($photography = page('photography')): ?>
   <?php $query = $photography
@@ -117,57 +113,33 @@
     ->limit(4)
   ?>
 
-  <div class="content max-w-screen-lg">
-    <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
+  <div class="section-divider"></div>
 
-    <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
-      <?= t('photography') ?>
-    </h2>
+  <div class="content mb-3xl">
+    <div class="max-w-screen-lg flex gap-xl justify-between items-center">
+      <h2 class="title text-primary-500 text-2xl un-dark:text-primary-400">
+        <?= t('photography') ?>
+      </h2>
+
+      <a href="<?= $photography->url() ?>" class="cta-button link-default">
+        <span class="sm:hidden"><?= t('generic.more') ?></span>
+        <span class="hidden sm:inline"><?= t('photography.more') ?></span>
+        <span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+      </a>
+    </div>
   </div>
 
   <?php snippet('components/slider', ['query' => $query, 'links' => false], slots: true) ?>
   <div class="pr-xs shrink-0 snap-end snap-always">
     <div class="relative h-$cell-base aspect-square flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
-      <a href="<?= $query->first()->parent()->url() ?>" class="cta-button hover:text-theme-base">
+      <a href="<?= $query->first()->parent()->url() ?>" class="cta-button link-default">
         <span class="absolute inset-0" aria-hidden="true"></span>
-        <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+        <?= t('photography.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
       </a>
     </div>
-  </div>
-  <?php endsnippet() ?>
-
-  <div class="content max-w-screen-lg">
-    <div class="text-center mt-lg">
-      <a href="<?= $photography->url() ?>" class="cta-button">
-        <?= t('photography.morePhotos') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
-      </a>
-    </div>
+    <?php endsnippet() ?>
   </div>
 <?php endif ?>
-
-<div class="content max-w-screen-lg">
-  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
-
-  <h2 class="title text-primary-500 text-2xl text-center mb-lg un-dark:text-primary-400">
-    <?= t('generic.contact') ?>
-  </h2>
-</div>
-
-<div class="border-t border-t-solid un-dark:border-contrast-lower">
-  <div class="content pt-lg">
-    <div class="prose max-w-prose text-contrast-medium">
-      <?= $page->contactText()->toBlocks() ?>
-      <div class="space-y-2">
-        <?php foreach ($page->contact()->toStructure() as $item): ?>
-          <div class="flex gap-xl justify-between">
-            <p><?= $item->title()->escape() ?></p>
-            <p><?= $item->link()->permalinksToUrls() ?></p>
-          </div>
-        <?php endforeach ?>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="pb-8xl"></div>
 <?php endsnippet() ?>

@@ -9,7 +9,7 @@ https://github.com/johannschopplich/johannschopplich.com
 -->
 <!doctype html>
 <html
-  class="var-color-primary var-color-primary-400 var-color-primary-500 var-color-primary-200"
+  class="var-color-primary var-color-primary-400 var-color-primary-500 var-color-primary-600 var-color-primary-200"
   data-theme="light"
   lang="<?= $kirby->languageCode() ?>">
 
@@ -64,9 +64,11 @@ https://github.com/johannschopplich/johannschopplich.com
 <body class="min-h-[100svh] md:pt-sm" data-template="<?= $page->intendedTemplate()->name() ?>">
 
   <header
-    class="content sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 py-2 bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-current md:py-xs un-dark:[&.is-pinned]:border-contrast-lower un-dark:bg-stone-900 un-dark:bg-opacity-40"
+    class="sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-current un-dark:[&.is-pinned]:border-contrast-lower un-dark:bg-stone-900 un-dark:bg-opacity-40"
     style="--gradient: radial-gradient(rgba(255, 255, 255, 0) 1px, var(--un-color-background) 1px)">
-    <?php snippet('navigation') ?>
+    <div class="content py-2 md:py-xs">
+      <?php snippet('navigation') ?>
+    </div>
   </header>
 
   <main class="relative">

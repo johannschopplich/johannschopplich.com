@@ -6,8 +6,8 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-<div class="content max-w-screen-lg pt-5xl md:pt-8xl">
-  <div class="prose">
+<div class="content pt-5xl md:pt-8xl">
+  <div class="prose max-w-screen-lg">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
@@ -19,9 +19,9 @@
       <?php endif ?>
     <?php endforeach ?>
   </div>
-
-  <div class="section-divider my-lg" data-animere="GrowSectionDivider"></div>
 </div>
+
+<div class="section-divider"></div>
 
 <div class="pb-8xl space-y-5xl md:space-y-8xl">
   <?php foreach ($children = $page->children()->listed() as $project): ?>
@@ -35,8 +35,7 @@
         <h2 class="title text-2xl font-700">
           <a
             href="<?= $project->url() ?>"
-            class="text-underline !text-current"
-            style="--text-underline-color: var(--un-color-contrast-lower)">
+            class="link-default">
             <span class="absolute inset-0" aria-hidden="true"></span>
             <?= $project->title()->escape() ?>
           </a>
@@ -46,14 +45,14 @@
       <div class="mb-lg">
         <?php snippet('components/slider', [
           'query' => $project->gallery()->toFiles(),
-          'height' => $project->galleryHeight()->value(),
-          'links' => true
+          'height' => $project->galleryHeight()->value()
         ]) ?>
       </div>
 
       <div class="content">
-        <a href="<?= $project->url() ?>" class="cta-button inline-block w-full">
-          <?= t('projects.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+        <a href="<?= $project->url() ?>" class="cta-button w-full link-default">
+          <span><?= t('projects.more') ?></span>
+          <span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
         </a>
       </div>
     </div>
