@@ -5,7 +5,6 @@
     "getkirby/kql": "^2",
     "johannschopplich/kirby-helpers": "^6",
     "johannschopplich/kirby-headless": "^4",
-    "johannschopplich/kirby-algolia-docsearch": "^0.6",
     "johannschopplich/kirby-serp-preview": "^1",
     "johannschopplich/kirby-copilot": "^2",
     "johannschopplich/kirby-content-translator": "^3",

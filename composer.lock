@@ -4,82 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e5cf7e4f9e303a622349fc9d6c95660",
+    "content-hash": "f17b8cdb33f3f5fac4e118530c892cbc",
     "packages": [
-        {
-            "name": "algolia/algoliasearch-client-php",
-            "version": "3.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/algolia/algoliasearch-client-php.git",
-                "reference": "cf87b649f745479c0800299481d91dc303e23cea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/algolia/algoliasearch-client-php/zipball/cf87b649f745479c0800299481d91dc303e23cea",
-                "reference": "cf87b649f745479c0800299481d91dc303e23cea",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "php": "^7.3 || ^8.0",
-                "psr/http-message": "^1.1 || ^2.0",
-                "psr/log": "^1.0 || ^2.0 || ^3.0",
-                "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.0",
-                "fzaninotto/faker": "^1.8",
-                "phpunit/phpunit": "^8.0 || ^9.0",
-                "symfony/yaml": "^2.0 || ^4.0"
-            },
-            "suggest": {
-                "guzzlehttp/guzzle": "If you prefer to use Guzzle HTTP client instead of the Http Client implementation provided by the package"
-            },
-            "bin": [
-                "bin/algolia-doctor"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.0": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/Http/Psr7/functions.php",
-                    "src/functions.php"
-                ],
-                "psr-4": {
-                    "Algolia\\AlgoliaSearch\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Algolia Team",
-                    "email": "contact@algolia.com"
-                }
-            ],
-            "description": "Algolia Search API Client for PHP",
-            "keywords": [
-                "algolia",
-                "api",
-                "client",
-                "php",
-                "search"
-            ],
-            "support": {
-                "issues": "https://github.com/algolia/algoliasearch-client-php/issues",
-                "source": "https://github.com/algolia/algoliasearch-client-php/tree/3.4.1"
-            },
-            "time": "2023-08-28T14:34:04+00:00"
-        },
         {
             "name": "christian-riesen/base32",
             "version": "1.6.0",
@@ -1014,63 +940,6 @@
                 }
             ],
             "time": "2024-07-18T11:15:46+00:00"
-        },
-        {
-            "name": "johannschopplich/kirby-algolia-docsearch",
-            "version": "0.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/johannschopplich/kirby-algolia-docsearch.git",
-                "reference": "50504b9258f6a8b316a234642247e4d4c7b6b46c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-algolia-docsearch/zipball/50504b9258f6a8b316a234642247e4d4c7b6b46c",
-                "reference": "50504b9258f6a8b316a234642247e4d4c7b6b46c",
-                "shasum": ""
-            },
-            "require": {
-                "algolia/algoliasearch-client-php": "^3.4",
-                "getkirby/composer-installer": "^1.2"
-            },
-            "require-dev": {
-                "getkirby/cms": "^4"
-            },
-            "type": "kirby-plugin",
-            "extra": {
-                "kirby-cms-path": false
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Johann Schopplich",
-                    "email": "pkg@johannschopplich.com",
-                    "homepage": "https://johannschopplich.com"
-                }
-            ],
-            "description": "Algolia DocSearch plugin for Kirby CMS",
-            "homepage": "https://github.com/johannschopplich/kirby-algolia-docsearch#readme",
-            "keywords": [
-                "algola",
-                "docsearch",
-                "index",
-                "kirby",
-                "search"
-            ],
-            "support": {
-                "issues": "https://github.com/johannschopplich/kirby-algolia-docsearch/issues",
-                "source": "https://github.com/johannschopplich/kirby-algolia-docsearch/tree/v0.6.1"
-            },
-            "funding": [
-                {
-                    "url": "https://paypal.me/jschopplich",
-                    "type": "custom"
-                }
-            ],
-            "time": "2024-05-03T05:50:17+00:00"
         },
         {
             "name": "johannschopplich/kirby-content-translator",
@@ -2076,57 +1945,6 @@
                 "source": "https://github.com/php-fig/log/tree/3.0.2"
             },
             "time": "2024-09-11T13:17:53+00:00"
-        },
-        {
-            "name": "psr/simple-cache",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-fig/simple-cache.git",
-                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/764e0b3939f5ca87cb904f570ef9be2d78a07865",
-                "reference": "764e0b3939f5ca87cb904f570ef9be2d78a07865",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.0.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Psr\\SimpleCache\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PHP-FIG",
-                    "homepage": "https://www.php-fig.org/"
-                }
-            ],
-            "description": "Common interfaces for simple caching",
-            "keywords": [
-                "cache",
-                "caching",
-                "psr",
-                "psr-16",
-                "simple-cache"
-            ],
-            "support": {
-                "source": "https://github.com/php-fig/simple-cache/tree/3.0.0"
-            },
-            "time": "2021-10-29T13:26:27+00:00"
         },
         {
             "name": "ralouphie/getallheaders",

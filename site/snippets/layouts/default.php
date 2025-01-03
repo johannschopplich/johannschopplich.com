@@ -81,8 +81,6 @@ https://github.com/johannschopplich/johannschopplich.com
 </is-land>
 <?php */ ?>
 
-  <?php snippet('site-data') ?>
-
 </body>
 
 </html>

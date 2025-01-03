@@ -83,46 +83,4 @@ return [
         ]
     ],
 
-    'johannschopplich.algolia-docsearch' => [
-        'appId' => env('ALGOLIA_APP_ID'),
-        'apiKey' => env('ALGOLIA_API_KEY'),
-        'index' => 'johannschopplich',
-        'hooks' => true,
-        'content' => [
-            'default' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
-                return strip_tags($page->content($languageCode)->text()->toBlocks()->toHtml());
-            },
-            'profile' => function (\Kirby\Cms\Page $page, string|null $languageCode) {
-                return strip_tags($page->content($languageCode)->bio()->toBlocks()->toHtml()) .
-                    strip_tags($page->content($languageCode)->cv()->toLayouts()->toBlocks()->toHtml());
-            }
-        ],
-        // Templates which should be indexed
-        'templates' => [
-            'article',
-            'default',
-            'home',
-            'photography',
-            'profile',
-            'project'
-        ],
-        // Define the search hit label
-        'label' => [
-            'default' => [
-                'de' => 'Seite',
-                'en' => 'Page'
-            ],
-            'templates' => [
-                'article' => [
-                    'de' => 'Artikel',
-                    'en' => 'Article'
-                ],
-                'project' => [
-                    'de' => 'Projekt',
-                    'en' => 'Project'
-                ]
-            ]
-        ]
-    ]
-
 ];

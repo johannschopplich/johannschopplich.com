@@ -16,7 +16,6 @@ return [
         'theme.switch.off' => 'Lights off',
         'home' => 'Homepage',
         'home.references' => 'My Plugins at Work',
-        'generic.search' => 'Search',
         'generic.uses' => 'uses',
         'generic.contact' => 'Say hello',
         'articles.all' => 'All Articles',

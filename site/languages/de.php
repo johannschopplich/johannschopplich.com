@@ -16,7 +16,6 @@ return [
         'theme.switch.off' => 'Licht aus',
         'home' => 'Startseite',
         'home.references' => 'Meine Plugins im Einsatz',
-        'generic.search' => 'Suchen',
         'generic.uses' => 'nutzt',
         'generic.contact' => 'Sag Hallo',
         'articles.all' => 'Alle Artikel',
