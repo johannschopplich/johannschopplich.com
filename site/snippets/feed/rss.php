@@ -6,7 +6,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
 ?><rss version="2.0">
   <channel>
     <title><?= Xml::encode($title) ?></title>
-    <link><?= Xml::encode($link) ?></link>
+    <link><?= Xml::encode($url) ?></link>
     <lastBuildDate><?= $modified ?></lastBuildDate>
     <?php if ($description && is_string($description) && strlen(trim($description)) > 0): ?>
       <description><?= Xml::encode($description) ?></description>
