@@ -36,7 +36,7 @@ $inactiveLanguage = $kirby
         <a
           href="<?= $page->url($inactiveLanguage->code()) ?>"
           hreflang="<?= $inactiveLanguage->code() ?>"
-          class="inline-flex gap-2 items-center link-default">
+          class="inline-flex gap-2 items-center text-sm font-500 link-default">
           <span class="icon" aria-hidden="true">
             <?= icon('earth.svg') ?>
           </span>
@@ -45,13 +45,13 @@ $inactiveLanguage = $kirby
           </span>
         </a>
         <button
-          class="w-max inline-flex gap-2 items-center link-default"
+          class="w-max inline-flex gap-2 items-center text-sm link-default"
           data-theme-switcher>
           <span class="icon un-dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
-          <span class="font-heading font-500 un-dark:hidden"><?= t('theme.switch.off') ?></span>
+          <span class="font-500 un-dark:hidden"><?= t('theme.switch.off') ?></span>
 
           <span class="icon un-light:hidden" aria-hidden="true"><?= icon('moon-stars.svg') ?></span>
-          <span class="font-heading font-500 un-light:hidden"><?= t('theme.switch.on') ?></span>
+          <span class="font-500 un-light:hidden"><?= t('theme.switch.on') ?></span>
         </button>
       </div>
     </div>
@@ -65,7 +65,7 @@ $inactiveLanguage = $kirby
         </p>
 
         <?php foreach ($site->footerPages()->toPages() as $p): ?>
-          <a href="<?= $p->url() ?>">
+          <a href="<?= $p->url() ?>" style="--un-decoration-color: var(--un-color-primary)">
             <?= $p->title() ?>
           </a>
         <?php endforeach ?>

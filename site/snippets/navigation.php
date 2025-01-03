@@ -6,7 +6,7 @@
 ?>
 <nav class="gap-x-lg font-heading flex flex-wrap items-center">
   <div class="mr-auto basis-full sm:basis-auto">
-    <a href="<?= $site->url() ?>" class="font-600" <?php e($page->isHomePage(), ' aria-current="page"') ?>>
+    <a href="<?= $site->url() ?>" class="font-600 link-default" <?php e($page->isHomePage(), ' aria-current="page"') ?>>
       <?= $site->title()->escape() ?>
     </a>
   </div>
