@@ -8,10 +8,10 @@
 $heightMap = [
   'tight' => [
     'base' => 'clamp(25svh, 50vw, 25svh)',
-    'md' => 'clamp(25svh, 50vw, 25svh)'
+    'md' => 'clamp(25svh, 50vw, 37.5svh)'
   ],
   'normal' => [
-    'base' => 'clamp(36.5svh, 50vw, 50svh)',
+    'base' => 'clamp(37.5svh, 50vw, 50svh)',
     'md' => 'clamp(25svh, 50vw, 50svh)'
   ],
   'loose' => [
