@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="border-y border-y-solid un-dark:border-contrast-lower">
+  <div class="border-y border-y-solid border-contrast-low un-dark:border-contrast-lower">
     <div class="content">
       <div class="max-w-screen-lg overflow-hidden">
         <?php snippet('articles', ['query' => $query]) ?>

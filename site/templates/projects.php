@@ -27,7 +27,7 @@
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
-      <div class="group content relative pt-xl mb-xl border-t border-t-solid un-dark:border-contrast-lower">
+      <div class="group content relative pt-xl mb-xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
         <p class="text-sm font-500 text-contrast-medium">
           <?= $project->subtitle()->escape() ?>
         </p>

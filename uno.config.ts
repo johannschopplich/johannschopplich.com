@@ -108,7 +108,7 @@ export default defineConfig<Theme>({
       content: "px-lg md:px-[max(4vw,1.875rem)]",
       "content-l": "pl-lg md:pl-[max(4vw,1.875rem)]",
       "underline-default":
-        "underline decoration-current decoration-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
+        "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
       icon: "w-[1.25em] h-[1.25em] [&>svg]:w-full [&>svg]:h-full",
       "cta-button":
         "inline-flex items-center text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
