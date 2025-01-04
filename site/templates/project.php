@@ -16,7 +16,7 @@ $isMasonry = $page->galleryType()->value() === 'masonry';
   </div>
 
   <div class="content-l pb-5xl">
-    <div class="flex gap-1 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:bg-current un-dark:after:bg-contrast-lower">
+    <div class="flex gap-1 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-low un-dark:after:bg-contrast-lower">
       <p class="shrink-0 text-sm font-500">
         <?= $page->subtitle()->escape() ?>
       </p>
