@@ -44,11 +44,7 @@ $cssVars = implode(';', array_map(
     $isMobile = $mockup === 'mobile';
     $isDesktop = $mockup === 'desktop';
     ?>
-    <div <?= attr([
-            'class' => 'group shrink-0 snap-center snap-always border border-solid border-transparent transition-border hover:border-theme-base',
-            // 'href' => $target,
-            // 'target' => $target ? '_blank' : null
-          ]) ?>>
+    <div class="group shrink-0 snap-center snap-always md:border md:border-solid md:border-transparent md:transition-border md:hover:border-theme-base">
       <div
         class="<?= trim(implode(' ', [
                   'overflow-hidden cursor-grab active:cursor-grabbing',
