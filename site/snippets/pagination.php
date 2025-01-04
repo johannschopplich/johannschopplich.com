@@ -18,8 +18,8 @@
         class="group flex flex-col items-center"
         aria-label="Go to page <?= $r ?>"
         <?php e($pagination->page() === $r, 'aria-current="page"') ?>>
-        <span class="<?= $pagination->page() === $r ? 'text-primary' : 'text-current' ?>">o</span>
-        <span class="text-base font-500 mt-2 <?= $pagination->page() === $r ? 'text-current' : 'text-primary group-hover:underline-default' ?>">
+        <span class="<?= $pagination->page() === $r ? 'text-link-hover' : 'text-current' ?>">o</span>
+        <span class="text-base font-500 mt-2 <?= $pagination->page() === $r ? 'text-current' : 'text-link-hover group-hover:underline-default' ?>">
           <?= $r ?>
         </span>
       </a>
