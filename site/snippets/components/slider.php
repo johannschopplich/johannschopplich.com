@@ -44,10 +44,10 @@ $cssVars = implode(';', array_map(
     $isMobile = $mockup === 'mobile';
     $isDesktop = $mockup === 'desktop';
     ?>
-    <div class="group shrink-0 snap-center snap-always md:border md:border-solid md:border-transparent md:transition-border md:hover:border-theme-base">
+    <div class="group shrink-0 snap-center snap-always">
       <div
         class="<?= trim(implode(' ', [
-                  'overflow-hidden cursor-grab active:cursor-grabbing',
+                  'overflow-hidden', // cursor-grab active:cursor-grabbing
                   $mockup !== 'none' ? 'relative bg-$bg h-$cell-base md:h-$cell-md' : '',
                   ($isDocument || $isMobile) ? 'px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
                   $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''

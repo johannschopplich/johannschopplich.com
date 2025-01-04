@@ -109,7 +109,7 @@
   <?php $query = $photography
     ->files()
     ->shuffle()
-    ->filterBy('ratio', '<', '1')
+    ->filterBy('ratio', '>=', '1')
     ->limit(5)
   ?>
 
