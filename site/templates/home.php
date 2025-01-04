@@ -109,8 +109,8 @@
   <?php $query = $photography
     ->files()
     ->shuffle()
-    // ->filterBy('ratio', '>=', '1')
-    ->limit(4)
+    ->filterBy('ratio', '<', '1')
+    ->limit(5)
   ?>
 
   <div class="section-divider"></div>
