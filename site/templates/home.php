@@ -131,7 +131,7 @@
 
   <?php snippet('components/slider', ['query' => $query, 'links' => false], slots: true) ?>
   <div class="pr-xs shrink-0 snap-end snap-always">
-    <div class="relative h-$cell-base aspect-square flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
+    <div class="relative h-$cell-base aspect-[2/3] flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
       <a href="<?= $query->first()->parent()->url() ?>" class="cta-button link-default">
         <span class="absolute inset-0" aria-hidden="true"></span>
         <?= t('photography.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
