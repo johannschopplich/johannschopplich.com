@@ -10,7 +10,7 @@
   <div class="grid max-w-screen-xl gap-5xl sm:gap-6xl sm:pr-lg md:grid-cols-2 md:pr-3xl md:px-[max(4vw,1.875rem)]">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="unselectable relative md:shadow-$un-frame-shadow">
+        <figure class="relative unselectable md:shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
           <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
           <img
             srcset="<?= $image->srcset() ?>"

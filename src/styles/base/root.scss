@@ -20,17 +20,15 @@
   --un-text-3xl: calc(var(--un-text-2xl) * var(--un-text-scale-ratio));
   --un-text-4xl: calc(var(--un-text-3xl) * var(--un-text-scale-ratio));
 
-  // Project-specific spacing and sizing variables
+  // Project-specific CSS custom properties
   --un-fluid-min-font-size: 16;
   --un-fluid-max-font-size: 18;
   --un-line-height-heading: 1.25; // calc(1ex / 0.2)
   --un-prose-space-y: 1.5;
 
-  // Project-specific variables
   --un-decoration-thickness: max(1px, 0.075em);
   --un-decoration-offset: max(2px, 0.15em);
   --un-frame-shadow-template: 3px 3px 0 var(--un-color-background), 4px 4px 0;
-  --un-frame-shadow: var(--un-frame-shadow-template) var(--un-color-border);
   --un-prose-spacer: calc(1rem * var(--un-prose-space-y));
 }
 
@@ -53,10 +51,9 @@
   /* Semantic color definitions */
   --un-color-background: #fefcf8;
   --un-color-text: var(--un-color-contrast-higher);
+  --un-color-border: currentColor;
   --un-color-link: var(--un-color-text);
   --un-color-link-hover: var(--un-color-primary-500);
-  // Project-specific due variables
-  --un-color-border: currentColor;
 }
 
 [data-theme="dark"] {
@@ -71,10 +68,9 @@
   /* Semantic color definitions */
   --un-color-background: #1c1917; /* 900 */
   --un-color-text: white;
+  --un-color-border: var(--un-color-contrast-lower);
   --un-color-link: var(--un-color-text);
   --un-color-link-hover: var(--un-color-primary-400);
-  // Project-specific due variables
-  --un-color-border: var(--un-color-contrast-lower);
 }
 
 [data-theme]:not(:root) {
@@ -120,10 +116,6 @@ svg:not([fill]) {
 
 button {
   touch-action: manipulation;
-}
-
-[id] {
-  scroll-margin-top: 2ex;
 }
 
 ::selection {
