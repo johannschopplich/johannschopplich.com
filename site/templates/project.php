@@ -26,8 +26,7 @@ $isMasonry = $page->galleryType()->value() === 'masonry';
   <?php if ($page->galleryType()->value() === 'slider'): ?>
     <?php snippet('components/slider', [
       'query' => $page->gallery()->toFiles(),
-      'height' => $page->galleryHeight()->value(),
-      'links' => true
+      'height' => $page->galleryHeight()->value()
     ]) ?>
   <?php endif ?>
 </div>

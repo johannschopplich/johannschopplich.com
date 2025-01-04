@@ -3,7 +3,6 @@
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
-/** @var bool $links */
 
 $heightMap = [
   'tight' => [
@@ -38,8 +37,6 @@ $cssVars = implode(';', array_map(
     /** @var \Kirby\Cms\File $image */
     $settings = $image->gallery()->toObject();
     $mockup = $settings->mockup()->or('none')->value();
-    // $target = $links && $settings->link()->isNotEmpty() ? $settings->link()->value() : null;
-    // $tag = $target ? 'a' : 'div';
     $isDocument = $mockup === 'document';
     $isMobile = $mockup === 'mobile';
     $isDesktop = $mockup === 'desktop';
