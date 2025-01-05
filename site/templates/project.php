@@ -3,8 +3,6 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
-
-$isMasonry = $page->galleryType()->value() === 'masonry';
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -23,24 +21,14 @@ $isMasonry = $page->galleryType()->value() === 'masonry';
     </div>
   </div>
 
-  <?php if ($page->galleryType()->value() === 'slider'): ?>
-    <?php snippet('components/slider', [
-      'query' => $page->gallery()->toFiles(),
-      'height' => $page->galleryHeight()->value()
-    ]) ?>
-  <?php endif ?>
+
+  <?php snippet('components/slider', [
+    'query' => $page->gallery()->toFiles(),
+    'height' => $page->galleryHeight()->value()
+  ]) ?>
 </div>
 
-<div class="pb-8xl <?= e($isMasonry, 'lg:flex lg:flex-wrap lg:gap-5xl') ?>">
-  <?php if ($isMasonry): ?>
-    <div class="mb-5xl w-auto flex-1 lg:max-w-prose lg:order-last">
-      <?php snippet('components/masonry', [
-        'query' => $page->gallery()->toFiles(),
-        'width' => 'min(15rem, 50vw)'
-      ]) ?>
-    </div>
-  <?php endif ?>
-
+<div class="pb-8xl">
   <div class="content">
     <div class="max-w-prose">
       <?php if ($page->text()->isNotEmpty()): ?>
@@ -49,7 +37,7 @@ $isMasonry = $page->galleryType()->value() === 'masonry';
         </div>
       <?php endif ?>
 
-      <div class="pt-lg border-t border-t-solid un-dark:border-contrast-lower">
+      <div class="pt-lg border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
         <div class="-ml-1">
           <a href="<?= $page->parent()->url() ?>" class="cta-button link-default">
             <span class="i-bx-left-arrow-alt mr-1" aria-hidden="true"></span>

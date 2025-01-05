@@ -53,19 +53,6 @@ tabs:
                 translate: false
                 required: true
                 width: 1/2
-              galleryType:
-                label:
-                  de: Galerietyp
-                  en: Gallery Type
-                type: toggles
-                default: slider
-                options:
-                  - value: slider
-                    text: Slider
-                  - value: masonry
-                    text: Masonry
-                translate: false
-                width: 1/2
               galleryHeight:
                 label:
                   de: Galeriehöhe
