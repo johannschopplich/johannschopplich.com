@@ -109,16 +109,15 @@ export default defineConfig<Theme>({
       "content-l": "pl-lg md:pl-[max(4vw,1.875rem)]",
       "underline-default":
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
-      icon: "w-[1.25em] h-[1.25em] [&>svg]:w-full [&>svg]:h-full",
-      "cta-button":
-        "inline-flex items-center text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
-      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
       headline:
         "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-900 md:text-size-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
+      "section-divider": "h-[min(20svh,8rem)]",
+      icon: "w-[1.25em] h-[1.25em] [&>svg]:w-full [&>svg]:h-full",
+      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
+      "cta-button":
+        "inline-flex items-center text-size-xs leading-[1.05] font-heading font-500 -m-2 p-2 uppercase tracking-[0.125ch]",
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
-      "filter-blur": "[filter:url(#blur-and-scale)]",
-      "section-divider": "h-[min(20svh,8rem)]",
     },
   ],
   safelist: [
