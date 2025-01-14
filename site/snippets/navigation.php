@@ -18,7 +18,7 @@
              md:[&[aria-current]]:before:bg-current
              max-md:hover:underline-default max-md:[&[aria-current]]:underline-default
              font-500"
-      <?php e($item->isOpen(), ' aria-current="page"') ?>>
+      <?php e($item->isOpen(), 'aria-current="page"') ?>>
       <?= $item->title() ?>
     </a>
   <?php endforeach ?>
