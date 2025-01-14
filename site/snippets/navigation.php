@@ -16,7 +16,8 @@
       class="flex items-center md:before:content-empty md:before:w-[0.5em] md:before:h-[0.5em] md:before:rounded-full md:before:bg-contrast-lower md:before:mr-1 lg:before:mr-2
              md:hover:text-current md:hover:before:bg-primary md:focus:before:bg-primary
              md:[&[aria-current]]:before:bg-current
-             max-md:hover:underline-default max-md:[&[aria-current]]:underline-default
+             underline decoration-transparent decoration-size-[max(2px,0.15em)] underline-offset-[var(--un-decoration-offset)]
+             max-md:hover:decoration-primary-500 max-md:[&[aria-current]]:decoration-primary-500
              font-500"
       <?php e($item->isOpen(), 'aria-current="page"') ?>>
       <?= $item->title() ?>
