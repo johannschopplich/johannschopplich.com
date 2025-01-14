@@ -64,7 +64,7 @@ https://github.com/johannschopplich/johannschopplich.com
 <body class="min-h-[100svh] md:pt-sm" data-template="<?= $page->intendedTemplate()->name() ?>">
 
   <header
-    class="sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-contrast-lower un-dark:bg-stone-900 un-dark:bg-opacity-40"
+    class="sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20 bg-white bg-opacity-40 bg-image-$gradient bg-[length:4px_4px] backdrop-blur-[8px] [&.is-pinned]:border-contrast-lower un-dark:bg-stone-900 un-dark:bg-opacity-40 un-dark:[&.is-pinned]:border-contrast-lowest"
     style="--gradient: radial-gradient(rgba(255, 255, 255, 0) 1px, var(--un-color-background) 1px)">
     <div class="content py-2 md:py-xs">
       <?php snippet('navigation') ?>
