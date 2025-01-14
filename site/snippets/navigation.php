@@ -4,7 +4,7 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 ?>
-<nav class="gap-x-lg font-heading flex flex-wrap items-center">
+<nav class="gap-x-lg font-heading flex flex-wrap items-center" style="--un-decoration-thickness: max(2px, 0.15em)">
   <div class="mr-auto basis-full sm:basis-auto">
     <a href="<?= $site->url() ?>" class="font-600 link-default" <?php e($page->isHomePage(), ' aria-current="page"') ?>>
       <?= $site->title()->escape() ?>
