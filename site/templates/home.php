@@ -76,35 +76,6 @@
   </div>
 </div>
 
-<?php /*
-<div class="section-divider"></div>
-
-<div class="content">
-  <div class="max-w-screen-lg">
-    <h2 class="title text-primary-500 text-2xl mb-lg un-dark:text-primary-400">
-      <?= t('home.references') ?>
-    </h2>
-  </div>
-</div>
-
-<div
-  class="relative py-xl [--gap:3rem] [--duration:50s] md:[--gap:6rem] md:[--duration:70s]"
-  style="--un-color-link-hover: currentColor">
-  <?php snippet('components/marquee', slots: true) ?>
-  <?php foreach ($page->logos()->toFiles()->filter('extension', 'svg') as $logo): ?>
-    <a href="<?= $logo->website() ?>" target="_blank" class="block h-[clamp(3rem,5vw,4rem)] transition-opacity duration-100 [&>svg]:h-full [&>svg]:w-auto [@media(hover:hover)]:group-has-[a:hover]:not-hover:opacity-50">
-      <?= $logo->asset()->read() ?>
-      <span class="sr-only">
-        <?= $logo->brand()->escape() . ' ' . t('generic.uses')  . ' ' . $logo->usage() ?>
-      </span>
-    </a>
-  <?php endforeach ?>
-  <?php endsnippet() ?>
-
-  <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(to right, var(--un-color-background) 0%, transparent 5%, transparent 95%, var(--un-color-background) 100%)"></div>
-</div>
-*/ ?>
-
 <?php if ($photography = page('photography')): ?>
   <?php $query = $photography
     ->files()
