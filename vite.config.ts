@@ -35,6 +35,10 @@ export default defineConfig(({ mode }) => {
     },
 
     plugins: [FullReload("site/{snippets,templates}/**/*")],
+
+    server: {
+      cors: true,
+    },
   };
 });
 
