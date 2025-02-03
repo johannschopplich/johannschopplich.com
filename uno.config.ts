@@ -31,19 +31,6 @@ export default defineConfig<Theme>({
         900: "#171914",
         950: "#080907",
       },
-      secondary: {
-        DEFAULT: "#C9787C",
-        "50": "#FDFBFB",
-        "100": "#F8EDED",
-        "200": "#ECCFD1",
-        "300": "#E0B2B5",
-        "400": "#D59598",
-        "500": "#C9787C",
-        "600": "#B95055",
-        "700": "#953C40",
-        "800": "#6D2C2F",
-        "900": "#451C1E",
-      },
       link: {
         DEFAULT: "var(--un-color-link)",
         hover: "var(--un-color-link-hover)",
@@ -94,7 +81,6 @@ export default defineConfig<Theme>({
   rules,
   shortcuts: [
     [/^column-(\d+)$/, ([, d]) => `flex-none w-${d}/12`],
-    // Generic shortcuts
     {
       title: "text-contrast-higher font-heading font-600 leading-heading",
       columns: "flex flex-wrap",
@@ -102,9 +88,6 @@ export default defineConfig<Theme>({
       "column-narrow": "block flex-[0_0_auto] w-auto",
       "column-auto": "block flex-1 w-auto",
       "column-full": "block flex-none w-full",
-    },
-    // Project-specific shortcuts
-    {
       content: "px-lg md:px-[max(4vw,1.875rem)]",
       "content-l": "pl-lg md:pl-[max(4vw,1.875rem)]",
       "underline-default":

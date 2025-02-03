@@ -1,3 +1,5 @@
+@use "../abstracts/breakpoints";
+
 :root {
   --un-fluid-min-width: 320;
   --un-fluid-max-width: 1140;
@@ -11,7 +13,8 @@
   --un-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
     sans-serif;
   --un-line-height-normal: calc(1ex / 0.32);
-  --un-line-height-heading: calc(1ex / 0.42);
+  // --un-line-height-heading: calc(1ex / 0.42);
+  --un-line-height-heading: 1.25; // calc(1ex / 0.2)
 
   --un-text-scale-ratio: 1.2;
   --un-text-lg: calc(1rem * var(--un-text-scale-ratio));
@@ -22,7 +25,6 @@
 
   --un-fluid-min-font-size: 16;
   --un-fluid-max-font-size: 18;
-  --un-line-height-heading: 1.25; // calc(1ex / 0.2)
   --un-prose-space-y: 1.5;
 
   --un-decoration-thickness: max(1px, 0.1em);
@@ -140,4 +142,26 @@ button {
 :focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
+}
+
+a:not([class]),
+.link-default {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: var(--un-decoration-color, transparent);
+  text-decoration-thickness: var(--un-decoration-thickness);
+  text-underline-offset: var(--un-decoration-offset);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+[id] {
+  // Compensate for the sticky header
+  scroll-margin-top: 5rem;
+
+  @include breakpoints.media-above(sm) {
+    scroll-margin-top: 4rem;
+  }
 }
