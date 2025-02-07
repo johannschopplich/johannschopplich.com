@@ -106,10 +106,6 @@ export class Island extends HTMLElement {
   }
 
   forceFallback() {
-    // if ((window as any).Island) {
-    //   Object.assign(Island.fallback, (window as any).Island.fallback);
-    // }
-
     for (const selector in Island.fallback) {
       // Reverse here as a cheap way to get the deepest nodes first
       const components = Array.from(
@@ -309,7 +305,7 @@ class Conditions {
       }
 
       for (const name of events) {
-        el.addEventListener(name, resolveFn, { once: true });
+        el.addEventListener(name, resolveFn, { once: true, passive: true });
       }
     });
   }
