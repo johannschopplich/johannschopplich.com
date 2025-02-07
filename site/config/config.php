@@ -45,7 +45,6 @@ return [
         ]
     ],
 
-    // Default to token-based authentication
     'kql' => [
         'auth' => 'bearer'
     ],

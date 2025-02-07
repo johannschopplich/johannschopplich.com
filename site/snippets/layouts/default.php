@@ -53,8 +53,7 @@ https://github.com/johannschopplich/johannschopplich.com
   <link rel="preload" href="/assets/fonts/woff2/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>
-    <?php $srcDir = vite()->isDev() ? '../src' : 'dist/assets' ?>
-    <?= asset($srcDir . '/head.js')->read() ?>
+    <?= asset(vite()->isDev() ? '../src' : 'dist/assets' . '/head.js')->read() ?>
   </script>
 
   <script defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
