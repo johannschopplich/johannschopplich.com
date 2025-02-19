@@ -65,10 +65,25 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     this.addNoscriptIframe();
 
-    playBtnEl.removeAttribute("href");
+    // For the PE pattern, change anchor's semantics to button
+    if (playBtnEl.nodeName === "A") {
+      playBtnEl.removeAttribute("href");
+      playBtnEl.setAttribute("tabindex", "0");
+      playBtnEl.setAttribute("role", "button");
+      // Fake button needs keyboard help
+      playBtnEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          this.activate();
+        }
+      });
+    }
 
     // On hover (or tap), warm up the TCP connections we're (likely) about to use.
     this.addEventListener("pointerover", LiteYouTubeEmbed.warmConnections, {
+      once: true,
+    });
+    this.addEventListener("focusin", LiteYouTubeEmbed.warmConnections, {
       once: true,
     });
 
