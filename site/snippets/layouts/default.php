@@ -77,12 +77,6 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <?php snippet('footer') ?>
 
-  <?php /*: ?>
-<is-land on:media="(prefers-reduced-motion: no-preference)">
-  <snow-fall count="25" style="--snow-fall-color: var(--un-color-contrast-low)"></snow-fall>
-</is-land>
-<?php */ ?>
-
 </body>
 
 </html>
