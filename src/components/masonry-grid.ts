@@ -7,7 +7,8 @@ const supportsConstructableStylesheets =
 export class MasonryGrid extends HTMLElement {
   #gap: number = 16;
   #columns: number = 0;
-  #count: number = 0;
+  #needsUpdate: boolean = false;
+  #resizeObserver: ResizeObserver;
 
   #css = `
 :host {
@@ -24,6 +25,11 @@ export class MasonryGrid extends HTMLElement {
   align-self: flex-start;
 }
 `;
+
+  constructor() {
+    super();
+    this.#resizeObserver = new ResizeObserver(this.debouncedUpdateGridItems);
+  }
 
   generateCss() {
     if (!sheet) {
@@ -51,12 +57,20 @@ export class MasonryGrid extends HTMLElement {
     }
 
     this.#gap = Number.parseFloat(getComputedStyle(this).rowGap);
+
+    // Observe the container itself
+    this.#resizeObserver.observe(this);
+
+    // Observe all children
+    for (const child of [...this.children]) {
+      this.#resizeObserver.observe(child);
+    }
+
     this.updateGridItems();
-    window.addEventListener("resize", this.debouncedUpdateGridItems);
   }
 
   disconnectedCallback() {
-    window.removeEventListener("resize", this.debouncedUpdateGridItems);
+    this.#resizeObserver.disconnect();
   }
 
   debouncedUpdateGridItems = debounce(() => {
@@ -68,37 +82,43 @@ export class MasonryGrid extends HTMLElement {
       getComputedStyle(this).gridTemplateColumns.split(" ").length;
     const items = [...this.children] as HTMLElement[];
 
+    // Check if any items have changed height
     for (const item of items) {
       const { height } = item.getBoundingClientRect();
-      const h = height.toString();
+      const currentHeight = height.toString();
 
-      if (h !== item.dataset.h) {
-        item.dataset.h = h;
-        this.#count++;
+      if (currentHeight !== item.dataset.h) {
+        item.dataset.h = currentHeight;
+        this.#needsUpdate = true;
       }
     }
 
-    // Bail if the number of columns hasn't changed
-    if (this.#columns === columns && !this.#count) return;
+    // Bail if the number of columns hasn't changed and no heights changed
+    if (this.#columns === columns && !this.#needsUpdate) return;
 
     // Update the number of columns
     this.#columns = columns;
 
     // Revert to initial positioning and remove margin
-    for (const { style } of items) style.removeProperty("margin-top");
+    items.forEach((item) => item.style.removeProperty("margin-top"));
 
+    // Apply masonry layout if we have more than one column
     if (this.#columns > 1) {
+      // Skip the first row of items
       for (const [index, item] of items.slice(columns).entries()) {
+        const itemAbove = items[index];
         // Bottom edge of item above
-        const { bottom: prevBottom } = items[index].getBoundingClientRect();
+        const prevBottom = itemAbove.getBoundingClientRect().bottom;
         // Top edge of current item
-        const { top } = item.getBoundingClientRect();
+        const currentTop = item.getBoundingClientRect().top;
 
-        item.style.marginTop = `${prevBottom + this.#gap - top}px`;
+        // Set margin to create the masonry effect
+        const marginTop = prevBottom + this.#gap - currentTop;
+        item.style.marginTop = `${marginTop}px`;
       }
     }
 
-    this.#count = 0;
+    this.#needsUpdate = false;
   }
 }
 

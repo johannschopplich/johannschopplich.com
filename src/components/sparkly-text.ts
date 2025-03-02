@@ -7,12 +7,13 @@ let sparkleTemplate: Node;
 const supportsConstructableStylesheets =
   "replaceSync" in CSSStyleSheet.prototype;
 
-const motionOK = window.matchMedia("(prefers-reduced-motion: no-preference)");
+const prefersMotion = window.matchMedia(
+  "(prefers-reduced-motion: no-preference)",
+);
 
 export class SparklyText extends HTMLElement {
   #numberOfSparkles = 3;
-  #sparkleSvg = `
-<svg width="1200" height="1200" viewBox="0 0 1200 1200" aria-hidden="true">
+  #sparkleSvg = `<svg width="1200" height="1200" viewBox="0 0 1200 1200" aria-hidden="true">
   <path fill="red" d="m611.04 866.16c17.418-61.09 50.25-116.68 95.352-161.42 45.098-44.742 100.94-77.133 162.17-94.062l38.641-10.68-38.641-10.68c-61.227-16.93-117.07-49.32-162.17-94.062-45.102-44.738-77.934-100.33-95.352-161.42l-11.039-38.641-11.039 38.641c-17.418 61.09-50.25 116.68-95.352 161.42-45.098 44.742-100.94 77.133-162.17 94.062l-38.641 10.68 38.641 10.68c61.227 16.93 117.07 49.32 162.17 94.062 45.102 44.738 77.934 100.33 95.352 161.42l11.039 38.641z"/>
 </svg>`;
 
@@ -37,12 +38,26 @@ svg {
 
 @media (prefers-reduced-motion: no-preference) {
   svg {
-    animation: sparkle-spin var(--_sparkle-base-animation-length) linear 1;
+    animation: sparkle-spin var(--_sparkle-base-animation-length) linear infinite;
+  }
+
+  svg.rainbow path {
+    animation: rainbow-colors calc(var(--_sparkle-base-animation-length) * 2) linear infinite;
   }
 }
 
 svg path {
   fill: var(--_sparkle-base-color);
+}
+
+@keyframes rainbow-colors {
+  0%, 100% { fill: #ff0000; }
+  14% { fill: #ff8000; }
+  28% { fill: #ffff00; }
+  42% { fill: #00ff00; }
+  56% { fill: #0000ff; }
+  70% { fill: #4b0082; }
+  84% { fill: #8f00ff; }
 }
 
 @keyframes sparkle-spin {
@@ -65,6 +80,12 @@ svg path {
 }
 `;
 
+  static register() {
+    if ("customElements" in window) {
+      window.customElements.define("sparkly-text", SparklyText);
+    }
+  }
+
   generateCss() {
     if (!sheet) {
       if (supportsConstructableStylesheets) {
@@ -84,7 +105,7 @@ svg path {
   }
 
   connectedCallback() {
-    const needsSparkles = motionOK.matches || !this.shadowRoot;
+    const needsSparkles = prefersMotion.matches || !this.shadowRoot;
 
     if (!this.shadowRoot) {
       this.attachShadow({ mode: "open" });
@@ -101,19 +122,49 @@ svg path {
       if (Number.isNaN(this.#numberOfSparkles)) {
         throw new TypeError(`Invalid number-of-sparkles value`);
       }
+      this.cleanupSparkles();
       this.addSparkles();
     }
 
-    motionOK.addEventListener("change", this.motionOkChange);
+    prefersMotion.addEventListener("change", this.handleMotionPreferenceChange);
+    window.addEventListener("popstate", this.handleNavigation);
+    window.addEventListener("pageshow", this.handlePageShow);
   }
 
   disconnectedCallback() {
-    motionOK.removeEventListener("change", this.motionOkChange);
+    prefersMotion.removeEventListener(
+      "change",
+      this.handleMotionPreferenceChange,
+    );
+    window.removeEventListener("popstate", this.handleNavigation);
+    window.removeEventListener("pageshow", this.handlePageShow);
+    this.cleanupSparkles();
   }
 
-  // Declare as an arrow function to get the appropriate 'this'
-  motionOkChange = () => {
-    if (motionOK.matches) {
+  handleNavigation = () => {
+    if (prefersMotion.matches) {
+      this.cleanupSparkles();
+      this.addSparkles();
+    }
+  };
+
+  handlePageShow = (event: PageTransitionEvent) => {
+    // If the page is being loaded from the bfcache
+    if (event.persisted && prefersMotion.matches) {
+      this.cleanupSparkles();
+      this.addSparkles();
+    }
+  };
+
+  cleanupSparkles() {
+    // Remove all existing sparkle SVGs
+    const sparkles = this.shadowRoot!.querySelectorAll("svg");
+    sparkles.forEach((sparkle) => sparkle.remove());
+  }
+
+  // Declare as an arrow function to get the appropriate `this`
+  handleMotionPreferenceChange = () => {
+    if (prefersMotion.matches) {
       this.addSparkles();
     }
   };
@@ -121,12 +172,19 @@ svg path {
   addSparkles() {
     for (let i = 0; i < this.#numberOfSparkles; i++) {
       setTimeout(() => {
-        this.addSparkle();
+        this.addSparkle((sparkle) => {
+          sparkle.style.top = `calc(${
+            Math.random() * 110 - 5
+          }% - var(--_sparkle-base-size) / 2)`;
+          sparkle.style.left = `calc(${
+            Math.random() * 110 - 5
+          }% - var(--_sparkle-base-size) / 2)`;
+        });
       }, i * 500);
     }
   }
 
-  addSparkle() {
+  addSparkle(update: (sparkle: HTMLElement) => void) {
     if (!sparkleTemplate) {
       const span = document.createElement("span");
       span.innerHTML = this.#sparkleSvg;
@@ -134,24 +192,18 @@ svg path {
     }
 
     const sparkleWrapper = sparkleTemplate.cloneNode(true) as HTMLElement;
-    sparkleWrapper.style.top = `calc(${
-      Math.random() * 110 - 5
-    }% - var(--_sparkle-base-size) / 2)`;
-    sparkleWrapper.style.left = `calc(${
-      Math.random() * 110 - 5
-    }% - var(--_sparkle-base-size) / 2)`;
 
+    // Add rainbow class if `--sparkly-text-color` is set to `rainbow`
+    const styles = getComputedStyle(this);
+    if (styles.getPropertyValue("--sparkly-text-color").trim() === "rainbow") {
+      sparkleWrapper.classList.add("rainbow");
+    }
+
+    update(sparkleWrapper);
     this.shadowRoot!.appendChild(sparkleWrapper);
-    sparkleWrapper.addEventListener("animationend", () => {
-      sparkleWrapper.remove();
+    sparkleWrapper.addEventListener("animationiteration", () => {
+      update(sparkleWrapper);
     });
-
-    setTimeout(
-      () => {
-        if (motionOK.matches && this.isConnected) this.addSparkle();
-      },
-      2000 + Math.random() * 1000,
-    );
   }
 }
 
