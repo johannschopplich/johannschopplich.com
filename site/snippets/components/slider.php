@@ -21,7 +21,6 @@ $heightMap = [
 
 $selectedHeight = $height ?? 'loose';
 
-// Generate CSS variable style string
 $cssVars = implode(';', array_map(
   fn($breakpoint) => "--cell-{$breakpoint}: {$heightMap[$selectedHeight][$breakpoint]}",
   array_keys($heightMap[$selectedHeight])
@@ -44,7 +43,7 @@ $cssVars = implode(';', array_map(
     <div class="group shrink-0 snap-center snap-always">
       <div
         class="<?= trim(implode(' ', [
-                  'overflow-hidden', // cursor-grab active:cursor-grabbing
+                  'overflow-hidden',
                   $mockup !== 'none' ? 'relative bg-$bg h-$cell-base md:h-$cell-md' : '',
                   ($isDocument || $isMobile) ? 'px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
                   $isDesktop ? 'flex flex-col p-3xl md:p-5xl' : ''
@@ -63,7 +62,7 @@ $cssVars = implode(';', array_map(
         <img
           loading="lazy"
           class="<?= trim(implode(' ', [
-                    'pointer-events-none object-contain w-auto',
+                    'pointer-events-none object-cover w-auto',
                     $mockup === 'none' ? 'max-w-[calc(100vw-2.25rem)] h-$cell-base md:h-$cell-md' : 'border border-solid border-stone-900',
                     $isMobile ? 'h-full rounded-xl md:rounded-2xl' : '',
                     $isDocument ? 'h-full' : '',
