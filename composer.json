@@ -8,8 +8,7 @@
     "johannschopplich/kirby-serp-preview": "^1",
     "johannschopplich/kirby-copilot": "^2",
     "johannschopplich/kirby-content-translator": "^3",
-    "tobimori/kirby-thumbhash": "^1",
-    "philippoehrlein/typo-and-paste": "^2.2"
+    "tobimori/kirby-thumbhash": "^1"
   },
   "scripts": {
     "start": [
