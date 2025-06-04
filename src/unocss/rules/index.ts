@@ -1,5 +1,5 @@
 import type { Rule } from "@unocss/core";
-import type { Theme } from "@unocss/preset-mini";
+import type { Theme } from "@unocss/preset-wind3";
 import { animated } from "./animated";
 import { hyphenate } from "./hyphenate";
 import { unselectable } from "./unselectable";

@@ -1,9 +1,9 @@
-import type { Theme } from "@unocss/preset-wind";
-import { variantMatcher } from "@unocss/preset-mini/utils";
+import type { Theme } from "@unocss/preset-wind3";
+import { variantMatcher } from "@unocss/preset-wind3/utils";
 import {
   defineConfig,
   presetIcons,
-  presetWind,
+  presetWind3,
   transformerDirectives,
 } from "unocss";
 import { rules } from "./src/unocss";
@@ -116,7 +116,7 @@ export default defineConfig<Theme>({
   ],
   transformers: [transformerDirectives()],
   presets: [
-    presetWind(),
+    presetWind3(),
     presetIcons({
       extraProperties: {
         display: "inline-block",

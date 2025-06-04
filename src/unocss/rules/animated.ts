@@ -1,4 +1,4 @@
-import type { Theme } from "@unocss/preset-mini";
+import type { Theme } from "@unocss/preset-wind3";
 import type { CSSObject, Rule } from "unocss";
 import { handler } from "@unocss/preset-mini/utils";
 import animatedJSON from "./animated.json";
