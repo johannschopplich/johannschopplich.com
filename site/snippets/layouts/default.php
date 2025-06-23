@@ -56,8 +56,6 @@ https://github.com/johannschopplich/johannschopplich.com
     <?= asset((vite()->isDev() ? '../src' : 'dist/assets') . '/head.js')->read() ?>
   </script>
 
-  <script defer data-domain="johannschopplich.com" src="https://plausible.io/js/plausible.js"></script>
-
 </head>
 
 <body class="min-h-[100svh] md:pt-sm" data-template="<?= $page->intendedTemplate()->name() ?>">
