@@ -7,7 +7,7 @@ export class MasonryGrid extends HTMLElement {
   #columns: number = 0;
   #needsUpdate: boolean = false;
   #resizeObserver: ResizeObserver;
-  #itemHeights: Map<HTMLElement, number> = new Map();
+  #itemHeights = new WeakMap<HTMLElement, number>();
 
   #css = `
 :host {
@@ -78,39 +78,33 @@ export class MasonryGrid extends HTMLElement {
       getComputedStyle(this).gridTemplateColumns.split(" ").length;
     const items = [...this.children] as HTMLElement[];
 
-    // Detect height changes in a batch to minimize reflows
     let hasHeightChanges = false;
-    const currentHeights = new Map<HTMLElement, number>();
 
-    // First pass: collect all heights in one batch to minimize reflows
+    // Check each item for height changes
     for (const item of items) {
       const height = Math.round(item.getBoundingClientRect().height);
-      currentHeights.set(item, height);
-
       const previousHeight = this.#itemHeights.get(item);
+
       if (previousHeight === undefined || previousHeight !== height) {
         hasHeightChanges = true;
+        this.#itemHeights.set(item, height);
       }
     }
 
-    // Update stored heights
-    this.#itemHeights = currentHeights;
-
-    // Bail if the number of columns hasn't changed and no heights changed
+    // Bail if the number of columns hasn't changed and no heights have changed
     if (this.#columns === columns && !hasHeightChanges && !this.#needsUpdate)
       return;
 
     // Update the number of columns
     this.#columns = columns;
 
-    // Revert to initial positioning and reset all items' top margin
+    // Revert to initial positioning and reset all item margins
     requestAnimationFrame(() => {
       items.forEach((item) => item.style.removeProperty("margin-top"));
 
       // Apply masonry layout if we have more than one column
       if (this.#columns > 1) {
-        // Delay the positioning calculation slightly to ensure
-        // the margin removal has been applied
+        // Slight delay to ensure the margin removal has been applied
         requestAnimationFrame(() => {
           // Skip the first row of items
           for (const [index, item] of items.slice(columns).entries()) {
