@@ -2,6 +2,12 @@ title:
   de: Seite
   en: Site
 
+buttons:
+  - copilot
+  - open
+  - preview
+  - languages
+
 tabs:
   dashboard:
     label:

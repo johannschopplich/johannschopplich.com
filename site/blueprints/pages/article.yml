@@ -6,6 +6,13 @@ num: '{{ page.published.toDate("YMMdd") }}'
 
 icon: 📝
 
+buttons:
+  - copilot
+  - open
+  - settings
+  - languages
+  - status
+
 tabs:
   content:
     label:

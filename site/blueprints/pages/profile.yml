@@ -4,6 +4,13 @@ title:
 
 icon: 👤
 
+buttons:
+  - copilot
+  - open
+  - settings
+  - languages
+  - status
+
 tabs:
   content:
     label:

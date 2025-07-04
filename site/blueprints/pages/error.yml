@@ -6,6 +6,12 @@ title:
 
 icon: ⚠️
 
+buttons:
+  - copilot
+  - open
+  - settings
+  - languages
+
 options:
   changeSlug: false
   changeStatus: false

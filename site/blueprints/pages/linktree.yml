@@ -7,6 +7,12 @@ options:
   delete: false
   preview: "https://byjohann.link"
 
+buttons:
+  - copilot
+  - open
+  - settings
+  - languages
+
 tabs:
   content:
     label:

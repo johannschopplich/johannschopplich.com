@@ -8,6 +8,12 @@ options:
 
 icon: 👨‍💻
 
+buttons:
+  - copilot
+  - open
+  - settings
+  - languages
+
 tabs:
   projects:
     label:

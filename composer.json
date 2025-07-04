@@ -1,6 +1,6 @@
 {
   "require": {
-    "getkirby/cms": "^4",
+    "getkirby/cms": "^5",
     "getkirby/cli": "^1",
     "getkirby/kql": "^2",
     "johannschopplich/kirby-helpers": "^6",

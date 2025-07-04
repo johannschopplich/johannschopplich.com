@@ -2,6 +2,13 @@ title:
   de: Projekt
   en: Project
 
+buttons:
+  - copilot
+  - open
+  - settings
+  - languages
+  - status
+
 tabs:
   content:
     label:
