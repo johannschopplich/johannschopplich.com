@@ -2,7 +2,7 @@
   "require": {
     "getkirby/cms": "^5",
     "getkirby/cli": "^1",
-    "getkirby/kql": "^2",
+    "getkirby/kql": "^3",
     "johannschopplich/kirby-helpers": "^6",
     "johannschopplich/kirby-headless": "^5",
     "johannschopplich/kirby-serp-preview": "^1",
