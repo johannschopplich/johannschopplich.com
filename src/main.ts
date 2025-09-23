@@ -10,12 +10,12 @@ if (import.meta.env.DEV) {
 }
 
 // Auto-load modules
-for (const m of Object.values(
+for (const mod of Object.values(
   import.meta.glob<{ install?: () => void | Promise<void> }>("./modules/*.ts", {
     eager: true,
   }),
 )) {
-  m.install?.();
+  mod.install?.();
 }
 
 // Auto-load templates
@@ -28,4 +28,4 @@ const templates = Object.fromEntries(
 );
 
 const { template = "default" } = document.body.dataset;
-templates[template]?.().then((m) => m.default?.());
+templates[template]?.().then((mod) => mod.default?.());
