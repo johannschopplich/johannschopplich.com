@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
 
     build: {
       outDir: path.resolve(currentDir, "public/dist"),
+      copyPublicDir: false,
       emptyOutDir: true,
       manifest: true,
       rollupOptions: {

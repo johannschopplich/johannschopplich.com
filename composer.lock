@@ -1115,24 +1115,24 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "6.2.0",
+            "version": "6.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "46a8b6d60d05c55a3e3e01b1e92c176e5a34dc31"
+                "reference": "7502bb0f00b463b7e0658ba0bb8a376cf9db6618"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/46a8b6d60d05c55a3e3e01b1e92c176e5a34dc31",
-                "reference": "46a8b6d60d05c55a3e3e01b1e92c176e5a34dc31",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/7502bb0f00b463b7e0658ba0bb8a376cf9db6618",
+                "reference": "7502bb0f00b463b7e0658ba0bb8a376cf9db6618",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1.2",
-                "vlucas/phpdotenv": "^5.6"
+                "getkirby/composer-installer": "^1",
+                "vlucas/phpdotenv": "^5"
             },
             "require-dev": {
-                "getkirby/cms": "^4"
+                "getkirby/cms": "^5"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1153,11 +1153,11 @@
             "authors": [
                 {
                     "name": "Johann Schopplich",
-                    "email": "pkg@johannschopplich.com",
+                    "email": "hello@johannschopplich.com",
                     "homepage": "https://johannschopplich.com"
                 }
             ],
-            "description": "Dotenv support, meta tag generation and more for Kirby CMS",
+            "description": "Environment, SEO, and build utilities for Kirby CMS",
             "homepage": "https://github.com/johannschopplich/kirby-helpers#readme",
             "keywords": [
                 "dotenv",
@@ -1172,9 +1172,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.2.0"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.3.1"
             },
-            "time": "2024-12-30T09:33:49+00:00"
+            "time": "2025-09-25T05:53:37+00:00"
         },
         {
             "name": "johannschopplich/kirby-serp-preview",
