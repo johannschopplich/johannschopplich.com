@@ -11,9 +11,8 @@ $images = $block->images()->toFiles();
 if ($images->count() > 2) {
   $imageArray = $images->values();
   $firstImage = array_shift($imageArray);
-  $lastImage = array_pop($imageArray);
 
-  // Separate middle images by orientation
+  // Separate remaining images by orientation
   $verticalImages = [];
   $horizontalImages = [];
 
@@ -28,53 +27,41 @@ if ($images->count() > 2) {
     }
   }
 
-  // Create a balanced distribution
+  // Create a balanced distribution using alternating pattern
   $sortedMiddle = [];
-  $totalMiddle = count($verticalImages) + count($horizontalImages);
+  $verticalCount = count($verticalImages);
+  $horizontalCount = count($horizontalImages);
 
-  if ($totalMiddle > 0) {
+  if ($verticalCount === 0) {
+    // No vertical images, just use horizontal ones
+    $sortedMiddle = $horizontalImages;
+  } elseif ($horizontalCount === 0) {
+    // No horizontal images, just use vertical ones
+    $sortedMiddle = $verticalImages;
+  } else {
+    // Calculate how often to place a vertical image
+    $ratio = $horizontalCount / $verticalCount;
     $verticalIndex = 0;
     $horizontalIndex = 0;
+    $nextVerticalAt = $ratio / 2; // Start placing verticals at half the ratio
 
-    // If we have vertical images, distribute them evenly
-    if (count($verticalImages) > 0) {
-      $verticalSpacing = $totalMiddle / count($verticalImages);
+    for ($i = 0; $i < ($verticalCount + $horizontalCount); $i++) {
+      $shouldPlaceVertical = $verticalIndex < $verticalCount &&
+        ($i >= $nextVerticalAt || $horizontalIndex >= $horizontalCount);
 
-      for ($i = 0; $i < $totalMiddle; $i++) {
-        // Place vertical image if we're at the right interval or ran out of horizontal images
-        $shouldPlaceVertical = count($verticalImages) > $verticalIndex &&
-          ((fmod($i, $verticalSpacing) < 1) || count($horizontalImages) <= $horizontalIndex);
-
-        if ($shouldPlaceVertical) {
-          $sortedMiddle[] = $verticalImages[$verticalIndex];
-          $verticalIndex++;
-        } elseif (count($horizontalImages) > $horizontalIndex) {
-          $sortedMiddle[] = $horizontalImages[$horizontalIndex];
-          $horizontalIndex++;
-        }
+      if ($shouldPlaceVertical) {
+        $sortedMiddle[] = $verticalImages[$verticalIndex];
+        $verticalIndex++;
+        $nextVerticalAt += $ratio; // Next vertical placement
+      } else {
+        $sortedMiddle[] = $horizontalImages[$horizontalIndex];
+        $horizontalIndex++;
       }
-    } else {
-      // No vertical images, just add all horizontal ones
-      $sortedMiddle = $horizontalImages;
-    }
-
-    // Add any remaining images (fallback)
-    while ($verticalIndex < count($verticalImages)) {
-      $sortedMiddle[] = $verticalImages[$verticalIndex];
-      $verticalIndex++;
-    }
-    while ($horizontalIndex < count($horizontalImages)) {
-      $sortedMiddle[] = $horizontalImages[$horizontalIndex];
-      $horizontalIndex++;
     }
   }
 
-  // Reconstruct the final array with first, sorted middle, and last
-  $finalImages = [$firstImage];
-  $finalImages = array_merge($finalImages, $sortedMiddle);
-  $finalImages[] = $lastImage;
 
-  $images = new Files($finalImages);
+  $images = new Files([$firstImage, ...$sortedMiddle]);
 }
 
 snippet('components/masonry', [
