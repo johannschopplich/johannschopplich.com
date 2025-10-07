@@ -334,16 +334,16 @@
         },
         {
             "name": "getkirby/cms",
-            "version": "5.1.1",
+            "version": "5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/getkirby/kirby.git",
-                "reference": "fb11f5e3ec422e948fb1a52f16988335bb3489b4"
+                "reference": "0f916becac8a2bc824a72cdb70066ed56b50c0f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/getkirby/kirby/zipball/fb11f5e3ec422e948fb1a52f16988335bb3489b4",
-                "reference": "fb11f5e3ec422e948fb1a52f16988335bb3489b4",
+                "url": "https://api.github.com/repos/getkirby/kirby/zipball/0f916becac8a2bc824a72cdb70066ed56b50c0f4",
+                "reference": "0f916becac8a2bc824a72cdb70066ed56b50c0f4",
                 "shasum": ""
             },
             "require": {
@@ -435,7 +435,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-09-16T13:06:53+00:00"
+            "time": "2025-09-30T08:56:15+00:00"
         },
         {
             "name": "getkirby/composer-installer",
@@ -941,16 +941,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "3.7.1",
+            "version": "3.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "aa34e93a901ca1fd19761f154ef9f3bb61e203ff"
+                "reference": "ae2a7e89953a21ef61b6f0e6bf7f46e3695982ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/aa34e93a901ca1fd19761f154ef9f3bb61e203ff",
-                "reference": "aa34e93a901ca1fd19761f154ef9f3bb61e203ff",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/ae2a7e89953a21ef61b6f0e6bf7f46e3695982ed",
+                "reference": "ae2a7e89953a21ef61b6f0e6bf7f46e3695982ed",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.7.1"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.8.0"
             },
             "funding": [
                 {
@@ -1004,20 +1004,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-09-23T11:22:29+00:00"
+            "time": "2025-10-06T13:58:00+00:00"
         },
         {
             "name": "johannschopplich/kirby-copilot",
-            "version": "2.6.2",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-copilot.git",
-                "reference": "a02b6b9729b3f4c15cdffce90c7d246b192ca23a"
+                "reference": "6c01e61ef3c59bdd63081209f1fb42b053ee801a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/a02b6b9729b3f4c15cdffce90c7d246b192ca23a",
-                "reference": "a02b6b9729b3f4c15cdffce90c7d246b192ca23a",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/6c01e61ef3c59bdd63081209f1fb42b053ee801a",
+                "reference": "6c01e61ef3c59bdd63081209f1fb42b053ee801a",
                 "shasum": ""
             },
             "require": {
@@ -1056,9 +1056,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
-                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.6.2"
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.7.0"
             },
-            "time": "2025-08-25T08:12:51+00:00"
+            "time": "2025-10-01T07:51:39+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1115,16 +1115,16 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "6.3.1",
+            "version": "6.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "7502bb0f00b463b7e0658ba0bb8a376cf9db6618"
+                "reference": "6be0b4c73088b9e83fe8a6228499a3069ff8bc0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/7502bb0f00b463b7e0658ba0bb8a376cf9db6618",
-                "reference": "7502bb0f00b463b7e0658ba0bb8a376cf9db6618",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/6be0b4c73088b9e83fe8a6228499a3069ff8bc0d",
+                "reference": "6be0b4c73088b9e83fe8a6228499a3069ff8bc0d",
                 "shasum": ""
             },
             "require": {
@@ -1172,9 +1172,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.3.1"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.4.0"
             },
-            "time": "2025-09-25T05:53:37+00:00"
+            "time": "2025-09-26T12:16:03+00:00"
         },
         {
             "name": "johannschopplich/kirby-serp-preview",
