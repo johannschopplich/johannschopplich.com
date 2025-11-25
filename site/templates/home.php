@@ -32,7 +32,7 @@
         </h1>
 
         <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
-          <div class="flex gap-lg">
+          <div class="flex gap-lg items-center">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
               <a href="<?= $social->url() ?>" target="_blank" class="hover:text-current" style="--un-color-link: var(--un-color-contrast-low)">
                 <span class="<?= str_contains($social->icon(), 'size-') ? '' : 'size-[1.75em] ' ?><?= $social->icon() ?>"></span>
