@@ -108,6 +108,7 @@ export default defineConfig<Theme>({
     "invisible",
     "animated",
     "animated-tada",
+    "size-[1.5em]",
     "i-simple-icons-github",
     "i-simple-icons-instagram",
     "i-simple-icons-youtube",
