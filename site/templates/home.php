@@ -35,7 +35,7 @@
           <div class="flex gap-lg items-center">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
               <a href="<?= $social->url() ?>" target="_blank" class="hover:text-current" style="--un-color-link: var(--un-color-contrast-low)">
-                <span class="size-[2em] <?= socialIcon($social->url()) ?>"></span>
+                <span class="size-[1.875em] <?= socialIcon($social->url()) ?>"></span>
                 <span class="sr-only"><?= $social->platform()->escape() ?></span>
               </a>
             <?php endforeach ?>
