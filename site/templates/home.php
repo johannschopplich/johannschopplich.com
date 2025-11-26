@@ -35,7 +35,7 @@
           <div class="flex gap-lg items-center">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
               <a href="<?= $social->url() ?>" target="_blank" class="hover:text-current" style="--un-color-link: var(--un-color-contrast-low)">
-                <span class="<?= str_contains($social->icon(), 'size-') ? '' : 'size-[1.75em] ' ?><?= $social->icon() ?>"></span>
+                <span class="size-[2em] <?= socialIcon($social->url()) ?>"></span>
                 <span class="sr-only"><?= $social->platform()->escape() ?></span>
               </a>
             <?php endforeach ?>
@@ -61,7 +61,7 @@
     <a href="<?= page('blog')->url() ?>" class="cta-button link-default">
       <span class="sm:hidden"><?= t('generic.more') ?></span>
       <span class="hidden sm:inline"><?= t('articles.more') ?></span>
-      <span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+      <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
     </a>
   </div>
 </div>
@@ -95,7 +95,7 @@
       <a href="<?= $photography->url() ?>" class="cta-button link-default">
         <span class="sm:hidden"><?= t('generic.more') ?></span>
         <span class="hidden sm:inline"><?= t('photography.more') ?></span>
-        <span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+        <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
       </a>
     </div>
   </div>
@@ -105,7 +105,7 @@
     <div class="relative h-$cell-base aspect-[4/5] flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
       <a href="<?= $query->first()->parent()->url() ?>" class="cta-button link-default">
         <span class="absolute inset-0" aria-hidden="true"></span>
-        <?= t('photography.more') ?><span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+        <?= t('photography.more') ?><span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
       </a>
     </div>
     <?php endsnippet() ?>

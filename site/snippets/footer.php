@@ -23,7 +23,7 @@ $inactiveLanguage = $kirby
                   <span class="col-start-1 col-end-4 font-bold sm:col-start-1 sm:col-end-3 lg:col-start-1 lg:col-end-4"><?= $item->category()->escape() ?></span>
                   <span class="col-start-1 col-end-4 sm:col-start-3 sm:col-end-5 lg:col-start-4 lg:col-end-7"><?= $item->title()->escape() ?></span>
                   <span class="col-start-4 col-end-4 justify-self-end transition -rotate-45 group-hover:rotate-0 sm:col-start-5 sm:col-end-7 lg:col-start-7 lg:col-end-10">
-                    <span class="i-bx-right-arrow-alt" aria-hidden="true"></span>
+                    <span class="i-tabler-arrow-right" aria-hidden="true"></span>
                   </span>
                 </a>
               </li>

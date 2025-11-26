@@ -46,13 +46,6 @@ tabs:
                     label: URL
                     type: url
                     required: true
-                  icon:
-                    label:
-                      de: Icon-Klasse
-                      en: Icon Class
-                    type: text
-                    required: true
-                    help: e.g., `i-simple-icons-github`
               text: fields/blocks
               headline02:
                 label:

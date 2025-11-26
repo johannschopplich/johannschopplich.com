@@ -52,7 +52,7 @@
       <div class="content">
         <a href="<?= $project->url() ?>" class="cta-button w-full link-default">
           <span><?= t('projects.more') ?></span>
-          <span class="i-bx-right-arrow-alt ml-1" aria-hidden="true"></span>
+          <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
         </a>
       </div>
     </div>

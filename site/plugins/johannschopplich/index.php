@@ -49,3 +49,35 @@ if (!function_exists('dateFormatter')) {
         );
     }
 }
+
+if (!function_exists('socialIcon')) {
+    /**
+     * Generates a UnoCSS icon class from a social media URL
+     */
+    function socialIcon(string $url): string
+    {
+        static $platformsRegistry = [
+            'x.com' => 'x',
+            'twitter.com' => 'x',
+            'youtu.be' => 'youtube',
+        ];
+
+        $host = Url::host($url);
+        if (!$host) {
+            return '';
+        }
+
+        // Remove `www.` prefix
+        $domain = preg_replace('/^www\./', '', $host);
+
+        // Check for mapped platforms first
+        if (isset($platformsRegistry[$domain])) {
+            $platform = $platformsRegistry[$domain];
+        } else {
+            // Extract platform name from domain
+            $platform = explode('.', $domain)[0];
+        }
+
+        return 'i-tabler-brand-' . $platform;
+    }
+}
