@@ -2,6 +2,6 @@
   "recommendations": [
     "antfu.unocss",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode"
+    "prettier.prettier-vscode"
   ]
 }
