@@ -7,9 +7,9 @@ title:
 icon: ⚠️
 
 buttons:
-  - copilot
   - open
   - settings
+  - copilot
   - languages
 
 options:

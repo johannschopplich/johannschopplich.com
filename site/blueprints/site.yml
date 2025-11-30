@@ -3,9 +3,9 @@ title:
   en: Site
 
 buttons:
-  - copilot
   - open
   - preview
+  - copilot
   - languages
 
 tabs:

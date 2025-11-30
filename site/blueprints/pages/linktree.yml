@@ -8,9 +8,9 @@ options:
   preview: "https://byjohann.link"
 
 buttons:
-  - copilot
   - open
   - settings
+  - copilot
   - languages
 
 tabs:

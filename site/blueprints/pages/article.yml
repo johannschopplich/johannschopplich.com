@@ -7,9 +7,9 @@ num: '{{ page.published.toDate("YMMdd") }}'
 icon: 📝
 
 buttons:
-  - copilot
   - open
   - settings
+  - copilot
   - content-translator
   - languages
   - status

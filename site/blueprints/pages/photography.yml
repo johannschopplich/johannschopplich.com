@@ -9,9 +9,9 @@ options:
   delete: false
 
 buttons:
-  - copilot
   - open
   - settings
+  - copilot
   - languages
 
 tabs:

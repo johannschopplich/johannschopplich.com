@@ -3,9 +3,9 @@ title:
   en: Project
 
 buttons:
-  - copilot
   - open
   - settings
+  - copilot
   - languages
   - status
 
