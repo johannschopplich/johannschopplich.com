@@ -941,16 +941,16 @@
         },
         {
             "name": "johannschopplich/kirby-content-translator",
-            "version": "3.8.3",
+            "version": "3.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "4a68d267934895ab304e7096b58f35d3ba3d0bf5"
+                "reference": "2a8456e00ae255262edd077c85d51e7650f01f2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/4a68d267934895ab304e7096b58f35d3ba3d0bf5",
-                "reference": "4a68d267934895ab304e7096b58f35d3ba3d0bf5",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/2a8456e00ae255262edd077c85d51e7650f01f2a",
+                "reference": "2a8456e00ae255262edd077c85d51e7650f01f2a",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.8.3"
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.8.4"
             },
             "funding": [
                 {
@@ -1004,20 +1004,20 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-11-03T08:41:19+00:00"
+            "time": "2025-11-27T12:48:22+00:00"
         },
         {
             "name": "johannschopplich/kirby-copilot",
-            "version": "2.7.2",
+            "version": "2.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-copilot.git",
-                "reference": "0ae8b46a6633f3dbf3c5f1c3dda20f647f6e78ef"
+                "reference": "42e658ec92c13af4305afc804b720e3f8bc1f7ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/0ae8b46a6633f3dbf3c5f1c3dda20f647f6e78ef",
-                "reference": "0ae8b46a6633f3dbf3c5f1c3dda20f647f6e78ef",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/42e658ec92c13af4305afc804b720e3f8bc1f7ad",
+                "reference": "42e658ec92c13af4305afc804b720e3f8bc1f7ad",
                 "shasum": ""
             },
             "require": {
@@ -1056,9 +1056,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
-                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.7.2"
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v2.8.1"
             },
-            "time": "2025-11-24T20:57:54+00:00"
+            "time": "2025-11-30T14:12:04+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1991,16 +1991,16 @@
         },
         {
             "name": "srwiez/thumbhash",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SRWieZ/thumbhash.git",
-                "reference": "c84f0b3768bca785636b95999c25f86f46e5b5c6"
+                "reference": "56f4ed1ca361ba39b243b33e5f47867a833b4973"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/c84f0b3768bca785636b95999c25f86f46e5b5c6",
-                "reference": "c84f0b3768bca785636b95999c25f86f46e5b5c6",
+                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/56f4ed1ca361ba39b243b33e5f47867a833b4973",
+                "reference": "56f4ed1ca361ba39b243b33e5f47867a833b4973",
                 "shasum": ""
             },
             "require": {
@@ -2009,7 +2009,7 @@
             "require-dev": {
                 "ext-gd": "*",
                 "ext-imagick": "*",
-                "pestphp/pest": "^1.0|^2.0|^3.0"
+                "pestphp/pest": "^1.0|^2.0|^3.0|^4.0"
             },
             "type": "library",
             "autoload": {
@@ -2033,7 +2033,7 @@
             "description": "A brief description of your package",
             "support": {
                 "issues": "https://github.com/SRWieZ/thumbhash/issues",
-                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.4.0"
+                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.5.0"
             },
             "funding": [
                 {
@@ -2041,7 +2041,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-05-26T17:51:42+00:00"
+            "time": "2025-11-27T16:03:46+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
