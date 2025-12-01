@@ -13,7 +13,7 @@
 
   <?php foreach ($site->children()->listed() as $item): ?>
     <a href="<?= $item->url() ?>"
-      class="flex items-center text-sm font-500 uppercase bg-theme-background px-[0.125em] mx-[-0.125em]
+      class="flex items-center text-sm font-500 uppercase bg-theme-background px-[0.25em] mx-[-0.25em]
              md:before:content-empty md:before:w-[0.5em] md:before:h-[0.5em] md:before:rounded-full md:before:bg-contrast-lower md:before:mr-1 lg:before:mr-2
              md:hover:text-current md:hover:before:bg-primary md:focus:before:bg-primary
              md:[&[aria-current]]:before:bg-current
