@@ -53,7 +53,7 @@
 <div class="section-divider"></div>
 
 <div class="content mb-lg">
-  <div class="max-w-screen-lg flex gap-xl justify-between items-center">
+  <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
     <h2 class="title text-primary-500 text-2xl un-dark:text-primary-400">
       <?= t('articles.latest') ?>
     </h2>
@@ -87,7 +87,7 @@
   <div class="section-divider"></div>
 
   <div class="content mb-3xl">
-    <div class="max-w-screen-lg flex gap-xl justify-between items-center">
+    <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
       <h2 class="title text-primary-500 text-2xl un-dark:text-primary-400">
         <?= t('photography') ?>
       </h2>
