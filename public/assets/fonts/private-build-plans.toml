@@ -6,9 +6,6 @@ noCvSs = true
 exportGlyphNames = false
 webfontFormats = ['woff2']
 
-[buildPlans.IosevkaAile.variants]
-inherits = "ss14"
-
 [buildPlans.IosevkaAile.ligations]
 inherits = "dlig"
 
