@@ -6,6 +6,9 @@ noCvSs = true
 exportGlyphNames = false
 webfontFormats = ['woff2']
 
+[buildPlans.IosevkaAile.variants]
+inherits = "ss14"
+
 [buildPlans.IosevkaAile.ligations]
 inherits = "dlig"
 
@@ -30,7 +33,7 @@ menu = 700
 css = 700
 
 [buildPlans.IosevkaAile.widths.Normal]
-shape = 600
+shape = 572
 menu = 5
 css = "normal"
 
