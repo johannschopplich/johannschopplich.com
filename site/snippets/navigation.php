@@ -17,7 +17,7 @@
              md:hover:text-current md:hover:before:bg-primary md:focus:before:bg-primary
              md:[&[aria-current]]:before:bg-current
              max-md:hover:underline-default max-md:[&[aria-current]]:underline-default
-             font-500 tracking-tighter max-sm:text-sm"
+             font-500 tracking-tighter"
       <?php e($item->isOpen(), 'aria-current="page"') ?>>
       <?= $item->title() ?>
     </a>
