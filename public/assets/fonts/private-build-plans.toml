@@ -32,6 +32,11 @@ shape = 700
 menu = 700
 css = 700
 
+[buildPlans.IosevkaAile.widths.Normal]
+shape = 600
+menu = 5
+css = "normal"
+
 [buildPlans.IosevkaAile.slopes.Upright]
 angle = 0
 shape = "upright"
