@@ -4,9 +4,9 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 ?>
-<nav class="gap-x-lg font-heading flex flex-wrap items-center" style="--un-decoration-thickness: max(2px, 0.125em)">
+<nav class="gap-x-lg flex flex-wrap items-center" style="--un-decoration-thickness: max(2px, 0.125em)">
   <div class="mr-auto basis-full sm:basis-auto">
-    <a href="<?= $site->url() ?>" class="font-600 link-default" <?php e($page->isHomePage(), ' aria-current="page"') ?>>
+    <a href="<?= $site->url() ?>" class="font-heading font-600 link-default" <?php e($page->isHomePage(), ' aria-current="page"') ?>>
       <?= $site->title()->escape() ?>
     </a>
   </div>
@@ -17,7 +17,7 @@
              md:hover:text-current md:hover:before:bg-primary md:focus:before:bg-primary
              md:[&[aria-current]]:before:bg-current
              max-md:hover:underline-default max-md:[&[aria-current]]:underline-default
-             font-500"
+             font-500 tracking-tighter max-sm:text-sm"
       <?php e($item->isOpen(), 'aria-current="page"') ?>>
       <?= $item->title() ?>
     </a>

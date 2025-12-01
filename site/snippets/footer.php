@@ -2,7 +2,7 @@
 
 use Kirby\Toolkit\I18n;
 
-$inactiveLanguage = $kirby
+$complementaryLanguage = $kirby
   ->languages()
   ->filter(fn($language) => $language->code() !== $kirby->language()->code())
   ->first();
@@ -34,14 +34,14 @@ $inactiveLanguage = $kirby
 
       <div class="flex gap-lg justify-between">
         <a
-          href="<?= $page->url($inactiveLanguage->code()) ?>"
-          hreflang="<?= $inactiveLanguage->code() ?>"
+          href="<?= $page->url($complementaryLanguage->code()) ?>"
+          hreflang="<?= $complementaryLanguage->code() ?>"
           class="inline-flex gap-2 items-center text-sm font-500 link-default">
           <span class="icon" aria-hidden="true">
             <?= icon('earth.svg') ?>
           </span>
           <span>
-            <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $inactiveLanguage->code())]) ?>
+            <?= I18n::template('languages.switch', null, ['language' => t('languages.' . $complementaryLanguage->code())]) ?>
           </span>
         </a>
         <button
