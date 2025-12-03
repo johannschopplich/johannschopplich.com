@@ -23,14 +23,22 @@
   }
 
   :where(h1) {
-    font-size: var(--un-text-2xl);
+    font-size: var(--un-text-4xl);
   }
 
   :where(h2) {
-    font-size: var(--un-text-xl);
+    font-size: var(--un-text-3xl);
   }
 
   :where(h3) {
+    font-size: var(--un-text-2xl);
+  }
+
+  :where(h4) {
+    font-size: var(--un-text-xl);
+  }
+
+  :where(h4) {
     font-size: var(--un-text-lg);
   }
 
@@ -39,7 +47,6 @@
   }
 
   :where(h1, h2, h3, h4, h5, h6) {
-    font-weight: 700;
     font-family: var(--un-font-family-heading);
     scroll-margin-top: 5rem;
 
