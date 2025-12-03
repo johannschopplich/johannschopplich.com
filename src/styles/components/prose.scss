@@ -23,23 +23,38 @@
   }
 
   :where(h1) {
-    font-size: var(--un-text-4xl);
+    font-size: var(--un-text-3xl);
+    @include breakpoints.media-above(md) {
+      font-size: var(--un-text-4xl);
+    }
   }
 
   :where(h2) {
-    font-size: var(--un-text-3xl);
+    font-size: var(--un-text-2xl);
+    @include breakpoints.media-above(md) {
+      font-size: var(--un-text-3xl);
+    }
   }
 
   :where(h3) {
-    font-size: var(--un-text-2xl);
-  }
-
-  :where(h4) {
     font-size: var(--un-text-xl);
+    @include breakpoints.media-above(md) {
+      font-size: var(--un-text-2xl);
+    }
   }
 
   :where(h4) {
     font-size: var(--un-text-lg);
+    @include breakpoints.media-above(md) {
+      font-size: var(--un-text-xl);
+    }
+  }
+
+  :where(h4) {
+    font-size: 1rem;
+    @include breakpoints.media-above(md) {
+      font-size: var(--un-text-lg);
+    }
   }
 
   :where(h4) {
