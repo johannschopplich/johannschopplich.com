@@ -36,7 +36,7 @@ lite-youtube {
     box-sizing: border-box;
   }
 
-  > iframe {
+  & > iframe {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -45,7 +45,7 @@ lite-youtube {
     border: 0;
   }
 
-  > .lty-playbtn {
+  & > .lty-playbtn {
     display: block;
     position: absolute;
     width: 100%;
@@ -61,7 +61,7 @@ lite-youtube {
   }
 
   &:hover > .lty-playbtn,
-  .lty-playbtn:focus {
+  & .lty-playbtn:focus {
     filter: none;
   }
 
@@ -69,7 +69,7 @@ lite-youtube {
     cursor: unset;
 
     &::before,
-    > .lty-playbtn {
+    & > .lty-playbtn {
       opacity: 0;
       pointer-events: none;
     }

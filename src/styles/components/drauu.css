@@ -1,5 +1,5 @@
 .drauu-controls {
-  button {
+  & button {
     width: 2rem;
     height: 2rem;
     padding-top: 0.25em;
@@ -18,7 +18,7 @@
     }
   }
 
-  select {
+  & select {
     -webkit-appearance: none;
     appearance: none;
     height: 2rem;

@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-import "./styles/main.scss";
+import "./styles/main.css";
 
 interface AppModule {
   install?: () => void | Promise<void>;

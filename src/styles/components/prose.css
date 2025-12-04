@@ -1,83 +1,81 @@
-@use "../abstracts/breakpoints";
-
 .prose {
   --un-decoration-color: var(--un-color-primary);
 
-  @include breakpoints.media-below(sm) {
+  @media (--below-sm) {
     font-size: 0.875rem;
     line-height: var(--un-line-height-normal);
   }
 
   &.is-article {
-    :where(p) {
+    & :where(p) {
       line-height: calc(var(--un-line-height-normal) / 0.875);
     }
   }
 
-  :where(figure:not(:first-child)) {
+  & :where(figure:not(:first-child)) {
     margin-top: calc(2rem * var(--un-prose-space-y));
   }
 
-  :where(figure:not(:last-child)) {
+  & :where(figure:not(:last-child)) {
     margin-bottom: calc(2rem * var(--un-prose-space-y));
   }
 
-  :where(h1) {
+  & :where(h1) {
     font-size: var(--un-text-3xl);
-    @include breakpoints.media-above(md) {
+    @media (--md) {
       font-size: var(--un-text-4xl);
     }
   }
 
-  :where(h2) {
+  & :where(h2) {
     font-size: var(--un-text-2xl);
-    @include breakpoints.media-above(md) {
+    @media (--md) {
       font-size: var(--un-text-3xl);
     }
   }
 
-  :where(h3) {
+  & :where(h3) {
     font-size: var(--un-text-xl);
-    @include breakpoints.media-above(md) {
+    @media (--md) {
       font-size: var(--un-text-2xl);
     }
   }
 
-  :where(h4) {
+  & :where(h4) {
     font-size: var(--un-text-lg);
-    @include breakpoints.media-above(md) {
+    @media (--md) {
       font-size: var(--un-text-xl);
     }
   }
 
-  :where(h4) {
+  & :where(h4) {
     font-size: 1rem;
-    @include breakpoints.media-above(md) {
+    @media (--md) {
       font-size: var(--un-text-lg);
     }
   }
 
-  :where(h4) {
+  & :where(h4) {
     font-size: 1rem;
   }
 
-  :where(h1, h2, h3, h4, h5, h6) {
+  & :where(h1, h2, h3, h4, h5, h6) {
     font-family: var(--un-font-family-heading);
     scroll-margin-top: 5rem;
 
-    a:not([href^="http"]) {
+    & a:not([href^="http"]) {
       color: inherit;
       text-decoration-line: none;
     }
   }
 
-  :where(blockquote) {
+  & :where(blockquote) {
     border-left-width: 3px;
     border-left-style: double;
     border-left-color: var(--un-color-primary);
     padding-left: 1rem;
 
-    footer {
+    & footer {
       line-height: calc(var(--un-line-height-normal) * 0.875);
       font-size: 0.75rem;
       font-weight: 500;
@@ -86,28 +84,28 @@
     }
   }
 
-  :where(pre) {
+  & :where(pre) {
     background-color: var(--un-color-contrast-lowest);
   }
 
-  :where(ol, ul) {
+  & :where(ol, ul) {
     padding-left: 1rem;
   }
 
-  :where(hr) {
+  & :where(hr) {
     border-bottom: none;
   }
 
-  :where(figure) {
+  & :where(figure) {
     box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
 
-    @include breakpoints.media-below(sm) {
+    @media (--below-sm) {
       margin-left: -1.125rem;
       margin-right: -1.125rem;
     }
 
-    @include breakpoints.media-above(sm) {
-      img {
+    @media (--sm) {
+      & img {
         position: relative;
         z-index: 50;
       }
@@ -120,7 +118,7 @@
       }
     }
 
-    @include breakpoints.media-above(lg) {
+    @media (--lg) {
       &.is-pulled-right {
         width: 50%;
       }
@@ -135,7 +133,7 @@
     }
   }
 
-  :where(figcaption) {
+  & :where(figcaption) {
     line-height: calc(var(--un-line-height-normal) * 0.875);
     font-size: 0.75rem;
     font-weight: 500;
@@ -143,13 +141,13 @@
     margin-top: calc(0.25rem + 3px);
     text-align: left;
 
-    @include breakpoints.media-below(sm) {
+    @media (--below-sm) {
       margin-left: calc(1.125rem - 3px);
       margin-right: calc(1.125rem - 3px);
     }
   }
 
-  :where(details) {
+  & :where(details) {
     padding: 0.5rem 1rem;
     margin-left: -1rem;
     background-color: unset;
@@ -159,23 +157,19 @@
     }
   }
 
-  :where(summary) {
+  & :where(summary) {
     font-family: var(--un-font-family-heading);
     font-weight: 500;
   }
 
-  :where(.note) {
+  & :where(.note) {
     border: 1px solid var(--un-color-primary-500);
     padding: 1rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
     box-shadow: var(--un-frame-shadow-template) var(--un-color-primary-500);
 
-    @include breakpoints.media-above(sm) {
+    @media (--sm) {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
-      margin-left: 0;
-      margin-right: 0;
     }
   }
 }

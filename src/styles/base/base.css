@@ -1,5 +1,3 @@
-@use "../abstracts/breakpoints";
-
 :root {
   --un-fluid-min-width: 320;
   --un-fluid-max-width: 1140;
@@ -10,11 +8,11 @@
   );
 
   --un-font-family-normal: "Iosevka Aile", monospace;
-  --un-font-family-heading: "Cooper Hewitt", ui-sans-serif, system-ui,
-    sans-serif;
+  --un-font-family-heading:
+    "Cooper Hewitt", ui-sans-serif, system-ui, sans-serif;
   --un-line-height-normal: calc(1ex / 0.32);
-  // --un-line-height-heading: calc(1ex / 0.42);
-  --un-line-height-heading: 1.25; // calc(1ex / 0.2)
+  /* --un-line-height-heading: calc(1ex / 0.42); */
+  --un-line-height-heading: 1.25; /* calc(1ex / 0.2) */
 
   --un-text-scale-ratio: 1.2;
   --un-text-lg: calc(1rem * var(--un-text-scale-ratio));
@@ -115,9 +113,11 @@ a {
   text-decoration-skip-ink: auto;
 }
 
-// a:hover {
-//   color: var(--un-color-link-hover);
-// }
+/*
+a:hover {
+  color: var(--un-color-link-hover);
+}
+*/
 
 svg:not([fill]) {
   fill: currentColor;
