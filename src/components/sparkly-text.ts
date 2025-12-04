@@ -1,15 +1,9 @@
 // Forked from: https://github.com/stefanjudis/sparkly-text
 
-let sheet: CSSStyleSheet | HTMLStyleElement;
+import { adoptStyles, prefersReducedMotion } from "./_shared";
+
+let sharedSheet: CSSStyleSheet | HTMLStyleElement | undefined;
 let sparkleTemplate: Node;
-
-// https://caniuse.com/mdn-api_cssstylesheet_replacesync
-const supportsConstructableStylesheets =
-  "replaceSync" in CSSStyleSheet.prototype;
-
-const prefersMotion = window.matchMedia(
-  "(prefers-reduced-motion: no-preference)",
-);
 
 export class SparklyText extends HTMLElement {
   #numberOfSparkles = 3;
@@ -80,36 +74,15 @@ svg path {
 }
 `;
 
-  static register() {
-    if ("customElements" in window) {
-      window.customElements.define("sparkly-text", SparklyText);
-    }
-  }
-
-  generateCss() {
-    if (!sheet) {
-      if (supportsConstructableStylesheets) {
-        sheet = new CSSStyleSheet();
-        sheet.replaceSync(this.#css);
-      } else {
-        sheet = document.createElement("style");
-        sheet.textContent = this.#css;
-      }
-    }
-
-    if (supportsConstructableStylesheets) {
-      this.shadowRoot!.adoptedStyleSheets = [sheet as CSSStyleSheet];
-    } else {
-      this.shadowRoot!.append((sheet as HTMLStyleElement).cloneNode(true));
-    }
-  }
-
   connectedCallback() {
-    const needsSparkles = prefersMotion.matches || !this.shadowRoot;
+    const needsSparkles = !prefersReducedMotion.matches || !this.shadowRoot;
 
     if (!this.shadowRoot) {
       this.attachShadow({ mode: "open" });
-      this.generateCss();
+    }
+
+    sharedSheet = adoptStyles(this.shadowRoot!, this.#css, sharedSheet);
+    if (!this.shadowRoot!.querySelector("slot")) {
       this.shadowRoot!.append(document.createElement("slot"));
     }
 
@@ -126,13 +99,16 @@ svg path {
       this.addSparkles();
     }
 
-    prefersMotion.addEventListener("change", this.handleMotionPreferenceChange);
+    prefersReducedMotion.addEventListener(
+      "change",
+      this.handleMotionPreferenceChange,
+    );
     window.addEventListener("popstate", this.handleNavigation);
     window.addEventListener("pageshow", this.handlePageShow);
   }
 
   disconnectedCallback() {
-    prefersMotion.removeEventListener(
+    prefersReducedMotion.removeEventListener(
       "change",
       this.handleMotionPreferenceChange,
     );
@@ -142,7 +118,7 @@ svg path {
   }
 
   handleNavigation = () => {
-    if (prefersMotion.matches) {
+    if (!prefersReducedMotion.matches) {
       this.cleanupSparkles();
       this.addSparkles();
     }
@@ -150,7 +126,7 @@ svg path {
 
   handlePageShow = (event: PageTransitionEvent) => {
     // If the page is being loaded from the bfcache
-    if (event.persisted && prefersMotion.matches) {
+    if (event.persisted && !prefersReducedMotion.matches) {
       this.cleanupSparkles();
       this.addSparkles();
     }
@@ -164,7 +140,7 @@ svg path {
 
   // Declare as an arrow function to get the appropriate `this`
   handleMotionPreferenceChange = () => {
-    if (prefersMotion.matches) {
+    if (!prefersReducedMotion.matches) {
       this.addSparkles();
     }
   };

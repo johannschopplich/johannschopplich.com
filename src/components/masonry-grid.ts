@@ -1,6 +1,6 @@
-let sheet: CSSStyleSheet | HTMLStyleElement;
-const supportsConstructableStylesheets =
-  "replaceSync" in CSSStyleSheet.prototype;
+import { adoptStyles } from "./_shared";
+
+let sharedSheet: CSSStyleSheet | HTMLStyleElement | undefined;
 
 export class MasonryGrid extends HTMLElement {
   #gap: number = 16;
@@ -30,28 +30,10 @@ export class MasonryGrid extends HTMLElement {
     this.#resizeObserver = new ResizeObserver(this.updateGridItems.bind(this));
   }
 
-  generateCss() {
-    if (!sheet) {
-      if (supportsConstructableStylesheets) {
-        sheet = new CSSStyleSheet();
-        sheet.replaceSync(this.#css);
-      } else {
-        sheet = document.createElement("style");
-        sheet.textContent = this.#css;
-      }
-    }
-
-    if (supportsConstructableStylesheets) {
-      this.shadowRoot!.adoptedStyleSheets = [sheet as CSSStyleSheet];
-    } else {
-      this.shadowRoot!.append((sheet as HTMLStyleElement).cloneNode(true));
-    }
-  }
-
   connectedCallback() {
     if (!this.shadowRoot) {
       this.attachShadow({ mode: "open" });
-      this.generateCss();
+      sharedSheet = adoptStyles(this.shadowRoot!, this.#css, sharedSheet);
       this.shadowRoot!.append(document.createElement("slot"));
     }
 

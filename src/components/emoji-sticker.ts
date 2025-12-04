@@ -1,6 +1,6 @@
-let sheet: CSSStyleSheet | HTMLStyleElement;
-const supportsConstructableStylesheets =
-  "replaceSync" in CSSStyleSheet.prototype;
+import { adoptStyles } from "./_shared";
+
+let sharedSheet: CSSStyleSheet | HTMLStyleElement | undefined;
 
 export class EmojiSticker extends HTMLElement {
   #css = `
@@ -26,27 +26,9 @@ export class EmojiSticker extends HTMLElement {
     this.#emoji = this.textContent || "😀";
   }
 
-  generateCss() {
-    if (!sheet) {
-      if (supportsConstructableStylesheets) {
-        sheet = new CSSStyleSheet();
-        sheet.replaceSync(this.#css);
-      } else {
-        sheet = document.createElement("style");
-        sheet.textContent = this.#css;
-      }
-    }
-
-    if (supportsConstructableStylesheets) {
-      this.shadowRoot!.adoptedStyleSheets = [sheet as CSSStyleSheet];
-    } else {
-      this.shadowRoot!.append((sheet as HTMLStyleElement).cloneNode(true));
-    }
-  }
-
   connectedCallback() {
     this.attachShadow({ mode: "open" });
-    this.generateCss();
+    sharedSheet = adoptStyles(this.shadowRoot!, this.#css, sharedSheet);
 
     const filterSvg = document.createElementNS(
       "http://www.w3.org/2000/svg",

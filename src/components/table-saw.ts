@@ -1,8 +1,6 @@
 // Forked from: https://github.com/zachleat/table-saw
 
-// https://caniuse.com/mdn-api_cssstylesheet_replacesync
-const supportsConstructableStylesheets =
-  "replaceSync" in CSSStyleSheet.prototype;
+import { SUPPORTS_CONSTRUCTABLE_STYLESHEETS } from "./_shared";
 
 export class Tablesaw extends HTMLElement {
   static identifiers: Record<string, boolean> = {};
@@ -29,10 +27,6 @@ export class Tablesaw extends HTMLElement {
     ratio: "--table-saw-ratio",
     bold: "--table-saw-header-bold",
   };
-
-  constructor() {
-    super();
-  }
 
   generateCss(breakpoint: string, type: string) {
     return `
@@ -76,7 +70,7 @@ table-saw.${this._identifier} {
   }
 
   connectedCallback() {
-    if (!supportsConstructableStylesheets) return;
+    if (!SUPPORTS_CONSTRUCTABLE_STYLESHEETS) return;
 
     this.addHeaders();
     this.setRatio();
@@ -111,7 +105,7 @@ table-saw.${this._identifier} {
     const labels = Array.from(headerCells).map((cell, index) => {
       // Set headers to be bold (if headers are bold)
       if (index === 0) {
-        const styles = window.getComputedStyle(cell);
+        const styles = getComputedStyle(cell);
         if (styles) {
           // Copy other styles?
           const bold = styles.getPropertyValue("font-weight");
