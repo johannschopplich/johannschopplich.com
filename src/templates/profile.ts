@@ -1,10 +1,8 @@
 import type { Brush, Drauu } from "drauu";
 import { downloadFile, isBelow } from "../utils";
 
-interface ModeConfig {
-  el: HTMLElement | null;
-  brush: Partial<Brush>;
-}
+const DRAW_COLOR = "#fff";
+const EXPORT_COLOR = "#000";
 
 type KeyboardAction = (drauu: Drauu) => void;
 
@@ -27,7 +25,7 @@ export default async function () {
     el: "#drauu-canvas",
     brush: {
       mode: "stylus",
-      color: "#fff",
+      color: DRAW_COLOR,
       size: 3,
     },
   });
@@ -42,7 +40,14 @@ export default async function () {
     if (!drauu.el) return;
 
     drauu.el.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    const data = drauu.el.outerHTML;
+
+    // Change all white strokes to black for export
+    const clone = drauu.el.cloneNode(true) as SVGElement;
+    for (const el of clone.querySelectorAll(`[stroke="${DRAW_COLOR}"]`)) {
+      el.setAttribute("stroke", EXPORT_COLOR);
+    }
+
+    const data = clone.outerHTML;
     const filename = `johann-${new Date().toJSON().slice(0, 10)}.svg`;
     downloadFile(data, filename, "image/svg+xml");
   });
@@ -71,7 +76,10 @@ function $(id: string) {
   return document.getElementById(id);
 }
 
-function createModeConfigs(): ModeConfig[] {
+function createModeConfigs(): {
+  el: HTMLElement | null;
+  brush: Partial<Brush>;
+}[] {
   return [
     { el: $("m-stylus"), brush: { mode: "stylus" } },
     { el: $("m-eraser"), brush: { mode: "eraseLine" } },
