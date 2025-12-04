@@ -39,13 +39,25 @@ export default async function () {
   $("download")?.addEventListener("click", () => {
     if (!drauu.el) return;
 
-    drauu.el.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-
-    // Change all white strokes to black for export
     const clone = drauu.el.cloneNode(true) as SVGElement;
-    for (const el of clone.querySelectorAll(`[stroke="${DRAW_COLOR}"]`)) {
-      el.setAttribute("stroke", EXPORT_COLOR);
+
+    for (const el of clone.querySelectorAll(`[fill="${DRAW_COLOR}"]`)) {
+      el.setAttribute("fill", EXPORT_COLOR);
     }
+
+    const rect = drauu.el.getBoundingClientRect();
+    const width = Math.round(rect.width);
+    const height = Math.round(rect.height);
+
+    // Set proper SVG attributes for export
+    clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    clone.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    clone.setAttribute("width", String(width));
+    clone.setAttribute("height", String(height));
+
+    // Remove unnecessary attributes
+    clone.removeAttribute("id");
+    clone.removeAttribute("class");
 
     const data = clone.outerHTML;
     const filename = `johann-${new Date().toJSON().slice(0, 10)}.svg`;
