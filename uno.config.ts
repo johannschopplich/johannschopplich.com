@@ -109,8 +109,6 @@ export default defineConfig<Theme>({
   safelist: [
     "sr-only",
     "invisible",
-    "animated",
-    "animated-tada",
     "i-tabler-brand-github",
     "i-tabler-brand-instagram",
     "i-tabler-brand-youtube",

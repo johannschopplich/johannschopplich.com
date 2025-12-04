@@ -1,5 +1,23 @@
 import type { Brush, Drauu } from "drauu";
-import { isBelow } from "../utils";
+import { downloadFile, isBelow } from "../utils";
+
+interface ModeConfig {
+  el: HTMLElement | null;
+  brush: Partial<Brush>;
+}
+
+type KeyboardAction = (drauu: Drauu) => void;
+
+const KEYBOARD_ACTIONS: Record<string, KeyboardAction> = {
+  KeyL: (drauu) => (drauu.mode = "line"),
+  KeyD: (drauu) => (drauu.mode = "draw"),
+  KeyS: (drauu) => (drauu.mode = "stylus"),
+  KeyR: (drauu) => (drauu.mode = "rectangle"),
+  KeyE: (drauu) => (drauu.mode = "ellipse"),
+  KeyC: (drauu) => drauu.clear(),
+  Equal: (drauu) => (drauu.brush.size += 0.5),
+  Minus: (drauu) => (drauu.brush.size -= 0.5),
+};
 
 export default async function () {
   if (isBelow("md")) return;
@@ -9,7 +27,7 @@ export default async function () {
     el: "#drauu-canvas",
     brush: {
       mode: "stylus",
-      color: getPrimaryColor(),
+      color: "#fff",
       size: 3,
     },
   });
@@ -22,34 +40,29 @@ export default async function () {
 
   $("download")?.addEventListener("click", () => {
     if (!drauu.el) return;
+
     drauu.el.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    const data = drauu.el.outerHTML || "";
-    const blob = new Blob([data], { type: "image/svg+xml" });
-    const el = window.document.createElement("a");
-    el.href = window.URL.createObjectURL(blob);
-    el.download = `johann-${new Date().toJSON().slice(0, 10)}.svg`;
-    document.body.appendChild(el);
-    el.click();
-    document.body.removeChild(el);
+    const data = drauu.el.outerHTML;
+    const filename = `johann-${new Date().toJSON().slice(0, 10)}.svg`;
+    downloadFile(data, filename, "image/svg+xml");
   });
 
-  $("size")?.addEventListener("input", (evt) => {
-    drauu.brush.size = +(evt.target as HTMLSelectElement).value;
+  $("size")?.addEventListener("input", (event) => {
+    drauu.brush.size = Number((event.target as HTMLSelectElement).value);
   });
 
-  const modes: { el: HTMLElement | null; brush: Partial<Brush> }[] = [
-    { el: $("m-stylus"), brush: { mode: "stylus" } },
-    { el: $("m-eraser"), brush: { mode: "eraseLine" } },
-    { el: $("m-draw"), brush: { mode: "draw" } },
-    { el: $("m-line"), brush: { mode: "line" } },
-  ];
+  const modes = createModeConfigs();
 
   for (const { el, brush } of modes) {
     el?.addEventListener("click", () => {
       modes.forEach(({ el }) => el?.classList.remove("is-active"));
       el.classList.add("is-active");
-      drauu.brush.arrowEnd = brush.arrowEnd;
-      drauu.mode = brush.mode!;
+      if (brush.arrowEnd !== undefined) {
+        drauu.brush.arrowEnd = brush.arrowEnd;
+      }
+      if (brush.mode) {
+        drauu.mode = brush.mode;
+      }
     });
   }
 }
@@ -58,36 +71,34 @@ function $(id: string) {
   return document.getElementById(id);
 }
 
+function createModeConfigs(): ModeConfig[] {
+  return [
+    { el: $("m-stylus"), brush: { mode: "stylus" } },
+    { el: $("m-eraser"), brush: { mode: "eraseLine" } },
+    { el: $("m-draw"), brush: { mode: "draw" } },
+    { el: $("m-line"), brush: { mode: "line" } },
+  ];
+}
+
 function registerKeyboardShortcuts(drauu: Drauu) {
-  window.addEventListener("keydown", (evt) => {
-    if (evt.code === "KeyZ" && (evt.ctrlKey || evt.metaKey)) {
-      if (evt.shiftKey) {
+  window.addEventListener("keydown", (event) => {
+    if (event.code === "KeyZ" && (event.ctrlKey || event.metaKey)) {
+      if (event.shiftKey) {
         drauu.redo();
       } else {
         drauu.undo();
       }
-
       return;
     }
 
-    if (evt.shiftKey || evt.ctrlKey || evt.metaKey || evt.altKey) return;
+    if (event.shiftKey || event.ctrlKey || event.metaKey || event.altKey)
+      return;
 
-    const actions: Record<string, () => void> = {
-      KeyL: () => (drauu.mode = "line"),
-      KeyD: () => (drauu.mode = "draw"),
-      KeyS: () => (drauu.mode = "stylus"),
-      KeyR: () => (drauu.mode = "rectangle"),
-      KeyE: () => (drauu.mode = "ellipse"),
-      KeyC: () => drauu.clear(),
-      Equal: () => (drauu.brush.size += 0.5),
-      Minus: () => (drauu.brush.size -= 0.5),
-    };
-
-    actions[evt.code]?.();
+    KEYBOARD_ACTIONS[event.code]?.(drauu);
   });
 }
 
-function getPrimaryColor() {
+function _getPrimaryColor() {
   return getComputedStyle(document.documentElement).getPropertyValue(
     "--un-color-primary-400",
   );

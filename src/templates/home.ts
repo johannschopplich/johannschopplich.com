@@ -1,36 +1,24 @@
+const TADA_KEYFRAMES: Keyframe[] = [
+  { transform: "scaleX(1)", offset: 0 },
+  { transform: "scale3d(0.9, 0.9, 0.9) rotate(-3deg)", offset: 0.1 },
+  { transform: "scale3d(0.9, 0.9, 0.9) rotate(-3deg)", offset: 0.2 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(3deg)", offset: 0.3 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(-3deg)", offset: 0.4 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(3deg)", offset: 0.5 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(-3deg)", offset: 0.6 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(3deg)", offset: 0.7 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(-3deg)", offset: 0.8 },
+  { transform: "scale3d(1.1, 1.1, 1.1) rotate(3deg)", offset: 0.9 },
+  { transform: "scaleX(1)", offset: 1 },
+];
+
 export default async function () {
-  const elements = [
-    ...document.querySelectorAll<HTMLElement>('[data-sticker="svg"]'),
-  ];
-  if (elements.length === 0) return;
+  const sticker = document.querySelector<HTMLElement>('[data-sticker="svg"]');
+  if (!sticker) return;
 
-  for (const [index, element] of elements.entries()) {
-    const animationDuration = Number.parseInt(
-      getPropertyValue(element, "--un-animated-duration"),
-      10,
-    );
-
-    if (index === 0) {
-      setTimeout(() => {
-        animateBounce(element, animationDuration);
-      }, 100);
-    }
-  }
-}
-
-function animateBounce(element: HTMLElement, duration = 1000) {
-  return new Promise<void>((resolve) => {
-    // Trigger reflow to restart the animation
-    void element.offsetWidth;
-
-    element.classList.add("animated", "animated-tada");
-    setTimeout(() => {
-      element.classList.remove("animated", "animated-tada");
-      resolve();
-    }, duration);
-  });
-}
-
-function getPropertyValue(element: HTMLElement, property: string) {
-  return getComputedStyle(element).getPropertyValue(property).trim();
+  setTimeout(async () => {
+    await sticker.animate(TADA_KEYFRAMES, {
+      duration: 800,
+    }).finished;
+  }, 100);
 }
