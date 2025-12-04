@@ -84,6 +84,13 @@ export default defineConfig<Theme>({
   rules,
   shortcuts: [
     [/^column-(\d+)$/, ([, d]) => `flex-none w-${d}/12`],
+    [
+      /^content-(inset|offset)-([lrtbxy])$/,
+      ([, type, dir]) => {
+        const prefix = type === "inset" ? "p" : "m";
+        return `${prefix}${dir}-lg md:${prefix}${dir}-[max(4vw,1.875rem)]`;
+      },
+    ],
     {
       title: "text-contrast-higher font-heading font-600 leading-heading",
       columns: "flex flex-wrap",
@@ -92,7 +99,6 @@ export default defineConfig<Theme>({
       "column-auto": "block flex-1 w-auto",
       "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,1.875rem)]",
-      "content-l": "pl-lg md:pl-[max(4vw,1.875rem)]",
       "underline-default":
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
       headline:
