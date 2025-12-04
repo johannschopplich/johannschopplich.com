@@ -69,6 +69,9 @@ export default defineConfig<Theme>({
       normal: "var(--un-line-height-normal)",
       heading: "var(--un-line-height-heading)",
     },
+    maxWidth: {
+      prose: "70ch",
+    },
   },
   variants: [
     variantMatcher("un-light", (input) => ({

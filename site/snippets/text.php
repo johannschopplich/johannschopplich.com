@@ -21,7 +21,7 @@ $sectionAttrs = attr([
 
   <div class="content-l pb-5xl">
     <?php if ($page->published()->isNotEmpty()): ?>
-      <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-low un-dark:after:bg-contrast-lower">
+      <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:bg-contrast-low after:mr-lg md:after:mr-[max(4vw,1.875rem)] un-dark:after:bg-contrast-lower">
         <p class="shrink-0 text-sm font-500 text-contrast-medium">
           <?= t('article.publishedAt') ?>
           <time datetime="<?= $page->published()->toDate('Y-MM-dd') ?>">
