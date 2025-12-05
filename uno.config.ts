@@ -116,7 +116,7 @@ export default defineConfig<Theme>({
     "sr-only",
     "invisible",
     "i-ri-github-fill",
-    "i-ri-instagram-fill",
+    "i-ri-instagram-line",
     "i-ri-youtube-fill",
     "i-ri-twitter-x-fill",
     "i-ri-linkedin-box-fill",

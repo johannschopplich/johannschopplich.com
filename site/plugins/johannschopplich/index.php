@@ -58,7 +58,7 @@ if (!function_exists('socialIcon')) {
     {
         static $platformsRegistry = [
             'github.com' => 'i-ri-github-fill',
-            'instagram.com' => 'i-ri-instagram-fill',
+            'instagram.com' => 'i-ri-instagram-line',
             'youtube.com' => 'i-ri-youtube-fill',
             'youtu.be' => 'i-ri-youtube-fill',
             'x.com' => 'i-ri-twitter-x-fill',
