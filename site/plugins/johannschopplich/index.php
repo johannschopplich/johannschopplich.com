@@ -57,9 +57,12 @@ if (!function_exists('socialIcon')) {
     function socialIcon(string $url): string
     {
         static $platformsRegistry = [
-            'x.com' => 'x',
-            'twitter.com' => 'x',
-            'youtu.be' => 'youtube',
+            'github.com' => 'i-ri-github-fill',
+            'instagram.com' => 'i-ri-instagram-fill',
+            'youtube.com' => 'i-ri-youtube-fill',
+            'youtu.be' => 'i-ri-youtube-fill',
+            'x.com' => 'i-ri-twitter-x-fill',
+            'linkedin.com' => 'i-ri-linkedin-box-fill',
         ];
 
         $host = Url::host($url);
@@ -70,14 +73,13 @@ if (!function_exists('socialIcon')) {
         // Remove `www.` prefix
         $domain = preg_replace('/^www\./', '', $host);
 
-        // Check for mapped platforms first
+        // Check for mapped platforms
         if (isset($platformsRegistry[$domain])) {
-            $platform = $platformsRegistry[$domain];
-        } else {
-            // Extract platform name from domain
-            $platform = explode('.', $domain)[0];
+            return $platformsRegistry[$domain];
         }
 
-        return 'i-tabler-brand-' . $platform;
+        // Fallback to generic icon format
+        $platform = explode('.', $domain)[0];
+        return 'i-ri-' . $platform;
     }
 }

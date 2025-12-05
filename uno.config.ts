@@ -115,11 +115,11 @@ export default defineConfig<Theme>({
   safelist: [
     "sr-only",
     "invisible",
-    "i-tabler-brand-github",
-    "i-tabler-brand-instagram",
-    "i-tabler-brand-youtube",
-    "i-tabler-brand-x",
-    "i-tabler-brand-linkedin",
+    "i-ri-github-fill",
+    "i-ri-instagram-fill",
+    "i-ri-youtube-fill",
+    "i-ri-twitter-x-fill",
+    "i-ri-linkedin-box-fill",
   ],
   transformers: [transformerDirectives()],
   presets: [
