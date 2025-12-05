@@ -87,8 +87,8 @@ export default defineConfig<Theme>({
     [
       /^content-(inset|offset)-([lrtbxy])$/,
       ([, type, dir]) => {
-        const prefix = type === "inset" ? "p" : "m";
-        return `${prefix}${dir}-lg md:${prefix}${dir}-[max(4vw,1.875rem)]`;
+        const property = type === "inset" ? "p" : "m";
+        return `${property}${dir}-lg md:${property}${dir}-[max(4vw,1.875rem)]`;
       },
     ],
     {

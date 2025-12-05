@@ -71,7 +71,7 @@ if (!function_exists('socialIcon')) {
         }
 
         // Remove `www.` prefix
-        $domain = preg_replace('/^www\./', '', $host);
+        $domain = preg_replace('!^www\.!', '', $host);
 
         // Check for mapped platforms
         if (isset($platformsRegistry[$domain])) {
