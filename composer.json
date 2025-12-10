@@ -4,7 +4,7 @@
     "getkirby/cli": "^1",
     "getkirby/kql": "^3",
     "johannschopplich/kirby-helpers": "^6",
-    "johannschopplich/kirby-headless": "^5",
+    "johannschopplich/kirby-headless": "^6",
     "johannschopplich/kirby-serp-preview": "^1",
     "johannschopplich/kirby-copilot": "^2",
     "johannschopplich/kirby-content-translator": "^3",
