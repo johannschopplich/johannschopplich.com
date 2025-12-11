@@ -29,3 +29,6 @@ site/plugins/*
 public/assets/dev
 public/dist
 src/styles/uno.css
+
+# Content extractor
+scripts/content-extractor/data
