@@ -8,5 +8,5 @@ sections:
     label:
       de: Dateien
       en: Files
-    template: default
+    query: page.files.filterBy("template", "not in", ["image"])
     sortBy: filename desc
