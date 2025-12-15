@@ -112,15 +112,7 @@ export default defineConfig<Theme>({
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start", // grid-rows-[masonry]
     },
   ],
-  safelist: [
-    "sr-only",
-    "invisible",
-    "i-ri-github-fill",
-    "i-ri-instagram-line",
-    "i-ri-youtube-fill",
-    "i-ri-twitter-x-fill",
-    "i-ri-linkedin-box-fill",
-  ],
+  safelist: ["sr-only", "invisible"],
   transformers: [transformerDirectives()],
   presets: [
     presetWind3(),

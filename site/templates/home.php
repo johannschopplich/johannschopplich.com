@@ -31,12 +31,13 @@
         </h1>
 
         <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
-          <div class="flex gap-lg items-center">
+          <div class="flex items-center gap-sm">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
-              <a href="<?= $social->url() ?>" target="_blank" class="hover:text-current" style="--un-color-link: var(--un-color-contrast-low)">
-                <span class="size-[1.875em] <?= socialIcon($social->url()) ?>"></span>
-                <span class="sr-only"><?= $social->platform()->escape() ?></span>
-              </a>
+              <span
+                class="not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low"
+                style="--un-decoration-color: transparent">
+                <a href="<?= $social->url() ?>" target="_blank"><?= $social->platform()->escape() ?></a>
+              </span>
             <?php endforeach ?>
           </div>
         <?php endif ?>
