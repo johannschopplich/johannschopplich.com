@@ -14,12 +14,12 @@
 
   <div class="flex items-center justify-end sm:order-last sm:ml-lg">
     <?php foreach ($kirby->languages() as $language): ?>
-      <span class="inline-flex text-contrast-medium text-sm font-500 uppercase px-0.5 not-last:after:content-['/'] not-last:after:text-contrast-low not-last:after:pl-1">
+      <span class="inline-flex text-contrast-medium text-sm font-500 uppercase px-0.5 not-last:after:content-['·'] not-last:after:text-contrast-low not-last:after:pl-1">
         <a
           href="<?= $page->urlForLanguage($language->code()) ?>"
           hreflang="<?= $language->code() ?>"
           class="link-default text-contrast-medium"
-          <?php e($language->code() === $kirby->languageCode(), 'style="--un-decoration-color: currentColor" aria-current="page"') ?>><?= $language->code() ?></a>
+          <?php e($language->code() === $kirby->languageCode(), 'style="--un-decoration-color: var(--un-color-contrast-low)" aria-current="page"') ?>><?= $language->code() ?></a>
       </span>
     <?php endforeach ?>
   </div>
