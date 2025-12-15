@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="content relative max-w-screen-lg pt-5xl md:pt-8xl">
-  <div class="prose">
+  <div class="prose" style="--un-decoration-color: transparent">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
@@ -33,9 +33,7 @@
         <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
           <div class="flex items-center gap-sm">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
-              <span
-                class="inline-flex not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low"
-                style="--un-decoration-color: transparent">
+              <span class="inline-flex not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low">
                 <a href="<?= $social->url() ?>" target="_blank"><?= $social->platform()->escape() ?></a>
               </span>
             <?php endforeach ?>
