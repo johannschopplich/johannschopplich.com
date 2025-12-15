@@ -34,7 +34,7 @@
           <div class="flex items-center gap-sm">
             <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
               <span
-                class="not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low"
+                class="inline-flex not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low"
                 style="--un-decoration-color: transparent">
                 <a href="<?= $social->url() ?>" target="_blank"><?= $social->platform()->escape() ?></a>
               </span>
