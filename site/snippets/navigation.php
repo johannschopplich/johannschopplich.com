@@ -18,8 +18,9 @@
         <a
           href="<?= $page->urlForLanguage($language->code()) ?>"
           hreflang="<?= $language->code() ?>"
-          class="relative <?php e($language->code() === $kirby->languageCode(), 'px-[0.25em] before:content-empty before:absolute before:inset-x-0 before:top-[0.15em] before:bottom-[0.175em] before:bg-contrast-lower before:rounded-sm before:z-[-1]', 'text-contrast-medium') ?>"
-          <?php e($language->code() === $kirby->languageCode(), 'aria-current="page"') ?>><?= $language->code() ?></a>
+          class="relative <?php e($language->code() === $kirby->languageCode(), 'px-[0.25em] before:content-empty before:absolute before:inset-x-0 before:top-[0.15em] before:bottom-[0.175em] before:bg-contrast-lower before:rounded-sm before:z-[-1]', 'link-default text-contrast-medium') ?>"
+          <?php e($language->code() === $kirby->languageCode(), 'aria-current="page"') ?>
+          aria-label="<?= $language->name() ?>"><?= $language->code() ?></a>
       </span>
     <?php endforeach ?>
   </div>
