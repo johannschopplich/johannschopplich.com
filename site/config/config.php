@@ -90,4 +90,14 @@ return [
         ]
     ],
 
+    'johannschopplich.copilot' => [
+        'provider' => 'google',
+        'providers' => [
+            'google' => [
+                'model' => 'gemini-3-flash-preview',
+                'apiKey' => env('GOOGLE_API_KEY', 'YOUR_API_KEY')
+            ]
+        ]
+    ]
+
 ];
