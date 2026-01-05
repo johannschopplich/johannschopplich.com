@@ -1,14 +1,19 @@
-let alpinePromise: Promise<void> | undefined;
+import Alpine from "alpinejs";
+
+let startScheduled = false;
+
+// Expose for DevTools debugging
+window.Alpine = Alpine;
 
 /**
- * Starts Alpine.js and returns a promise that resolves when Alpine is ready.
- * Ensures `Alpine.start()` is only called once, even if multiple modules
- * call this function. Await this before registering Alpine components.
+ * Returns the Alpine instance and schedules `Alpine.start()` to run
+ * after all synchronous code completes. Safe to call multiple times.
  */
-export function startAlpine(): Promise<void> {
-  alpinePromise ??= Promise.resolve().then(() => {
-    window.Alpine.start();
-  });
+export function useAlpine() {
+  if (!startScheduled) {
+    startScheduled = true;
+    queueMicrotask(() => Alpine.start());
+  }
 
-  return alpinePromise;
+  return Alpine;
 }

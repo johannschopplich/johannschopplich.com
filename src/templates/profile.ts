@@ -1,5 +1,5 @@
 import type { Drauu, DrawingMode } from "drauu";
-import { downloadFile, isBelow, startAlpine } from "../utils";
+import { downloadFile, isBelow, useAlpine } from "../utils";
 
 const DRAW_COLOR = "#fff";
 const EXPORT_COLOR = "#000";
@@ -17,10 +17,12 @@ const KEYBOARD_ACTIONS: Record<string, KeyboardAction> = {
   Minus: (drauu) => (drauu.brush.size -= 0.5),
 };
 
-export default async function () {
+export default function () {
   if (isBelow("md")) return;
 
-  window.Alpine.data("drauuControls", () => ({
+  const alpine = useAlpine();
+
+  alpine.data("drauuControls", () => ({
     drauu: null as Drauu | null,
     mode: "stylus" as DrawingMode,
     brushSize: 3,
@@ -112,6 +114,4 @@ export default async function () {
       });
     },
   }));
-
-  await startAlpine();
 }
