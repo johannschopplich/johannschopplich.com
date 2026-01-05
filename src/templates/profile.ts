@@ -1,5 +1,5 @@
-import type { Brush, Drauu } from "drauu";
-import { downloadFile, isBelow } from "../utils";
+import type { Drauu, DrawingMode } from "drauu";
+import { downloadFile, isBelow, startAlpine } from "../utils";
 
 const DRAW_COLOR = "#fff";
 const EXPORT_COLOR = "#000";
@@ -20,106 +20,98 @@ const KEYBOARD_ACTIONS: Record<string, KeyboardAction> = {
 export default async function () {
   if (isBelow("md")) return;
 
-  const { createDrauu } = await import("drauu");
-  const drauu = createDrauu({
-    el: "#drauu-canvas",
-    brush: {
-      mode: "stylus",
-      color: DRAW_COLOR,
-      size: 3,
+  window.Alpine.data("drauuControls", () => ({
+    drauu: null as Drauu | null,
+    mode: "stylus" as DrawingMode,
+    brushSize: 3,
+
+    async init() {
+      const { createDrauu } = await import("drauu");
+      this.drauu = createDrauu({
+        el: "#drauu-canvas",
+        brush: {
+          mode: "stylus",
+          color: DRAW_COLOR,
+          size: this.brushSize,
+        },
+      });
+
+      this.registerKeyboardShortcuts();
     },
-  });
 
-  registerKeyboardShortcuts(drauu);
-
-  $("undo")?.addEventListener("click", () => drauu.undo());
-  $("redo")?.addEventListener("click", () => drauu.redo());
-  $("clear")?.addEventListener("click", () => drauu.clear());
-
-  $("download")?.addEventListener("click", () => {
-    if (!drauu.el) return;
-
-    const clone = drauu.el.cloneNode(true) as SVGElement;
-
-    for (const el of clone.querySelectorAll(`[fill="${DRAW_COLOR}"]`)) {
-      el.setAttribute("fill", EXPORT_COLOR);
-    }
-
-    const rect = drauu.el.getBoundingClientRect();
-    const width = Math.round(rect.width);
-    const height = Math.round(rect.height);
-
-    // Set proper SVG attributes for export
-    clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    clone.setAttribute("viewBox", `0 0 ${width} ${height}`);
-    clone.setAttribute("width", String(width));
-    clone.setAttribute("height", String(height));
-
-    // Remove unnecessary attributes
-    clone.removeAttribute("id");
-    clone.removeAttribute("class");
-
-    const data = clone.outerHTML;
-    const filename = `johann-${new Date().toJSON().slice(0, 10)}.svg`;
-    downloadFile(data, filename, "image/svg+xml");
-  });
-
-  $("size")?.addEventListener("input", (event) => {
-    drauu.brush.size = Number((event.target as HTMLSelectElement).value);
-  });
-
-  const modes = createModeConfigs();
-
-  for (const { el, brush } of modes) {
-    el?.addEventListener("click", () => {
-      modes.forEach(({ el }) => el?.classList.remove("is-active"));
-      el.classList.add("is-active");
-      if (brush.arrowEnd !== undefined) {
-        drauu.brush.arrowEnd = brush.arrowEnd;
+    setMode(newMode: DrawingMode) {
+      this.mode = newMode;
+      if (this.drauu) {
+        this.drauu.mode = newMode as Drauu["mode"];
       }
-      if (brush.mode) {
-        drauu.mode = brush.mode;
+    },
+
+    updateBrushSize() {
+      if (this.drauu) {
+        this.drauu.brush.size = this.brushSize;
       }
-    });
-  }
-}
+    },
 
-function $(id: string) {
-  return document.getElementById(id);
-}
+    undo() {
+      this.drauu?.undo();
+    },
 
-function createModeConfigs(): {
-  el: HTMLElement | null;
-  brush: Partial<Brush>;
-}[] {
-  return [
-    { el: $("m-stylus"), brush: { mode: "stylus" } },
-    { el: $("m-eraser"), brush: { mode: "eraseLine" } },
-    { el: $("m-draw"), brush: { mode: "draw" } },
-    { el: $("m-line"), brush: { mode: "line" } },
-  ];
-}
+    redo() {
+      this.drauu?.redo();
+    },
 
-function registerKeyboardShortcuts(drauu: Drauu) {
-  window.addEventListener("keydown", (event) => {
-    if (event.code === "KeyZ" && (event.ctrlKey || event.metaKey)) {
-      if (event.shiftKey) {
-        drauu.redo();
-      } else {
-        drauu.undo();
+    clear() {
+      this.drauu?.clear();
+    },
+
+    download() {
+      if (!this.drauu?.el) return;
+
+      const clone = this.drauu.el.cloneNode(true) as SVGElement;
+
+      for (const el of clone.querySelectorAll(`[fill="${DRAW_COLOR}"]`)) {
+        el.setAttribute("fill", EXPORT_COLOR);
       }
-      return;
-    }
 
-    if (event.shiftKey || event.ctrlKey || event.metaKey || event.altKey)
-      return;
+      const rect = this.drauu.el.getBoundingClientRect();
+      const width = Math.round(rect.width);
+      const height = Math.round(rect.height);
 
-    KEYBOARD_ACTIONS[event.code]?.(drauu);
-  });
-}
+      // Set proper SVG attributes for export
+      clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      clone.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      clone.setAttribute("width", String(width));
+      clone.setAttribute("height", String(height));
 
-function _getPrimaryColor() {
-  return getComputedStyle(document.documentElement).getPropertyValue(
-    "--un-color-primary-400",
-  );
+      // Remove unnecessary attributes
+      clone.removeAttribute("id");
+      clone.removeAttribute("class");
+
+      const data = clone.outerHTML;
+      const filename = `johann-${new Date().toJSON().slice(0, 10)}.svg`;
+      downloadFile(data, filename, "image/svg+xml");
+    },
+
+    registerKeyboardShortcuts() {
+      window.addEventListener("keydown", (event) => {
+        if (!this.drauu) return;
+
+        if (event.code === "KeyZ" && (event.ctrlKey || event.metaKey)) {
+          if (event.shiftKey) {
+            this.drauu.redo();
+          } else {
+            this.drauu.undo();
+          }
+          return;
+        }
+
+        if (event.shiftKey || event.ctrlKey || event.metaKey || event.altKey)
+          return;
+
+        KEYBOARD_ACTIONS[event.code]?.(this.drauu as Drauu);
+      });
+    },
+  }));
+
+  await startAlpine();
 }

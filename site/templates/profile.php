@@ -20,18 +20,36 @@
             alt="<?= $image->alt() ?>">
         </figure>
 
-        <div class="drauu-controls mt-xs ml-[4px] hidden flex-wrap items-center gap-1 md:flex">
-          <button id="m-stylus" class="is-active" title="<?= t('drauu.stylus') ?>">✍️</button>
-          <button id="m-draw" title="<?= t('drauu.draw') ?>">✏️</button>
-          <!-- <button id="m-eraser" title="<?= t('drauu.eraser') ?>">⚪️</button> -->
-          <button id="m-line" title="<?= t('drauu.line') ?>">⁄</button>
-          <select id="size" title="<?= t('drauu.size') ?>">
+        <div
+          x-data="drauuControls"
+          class="drauu-controls mt-xs ml-[4px] hidden flex-wrap items-center gap-1 md:flex"
+        >
+          <button
+            @click="setMode('stylus')"
+            :class="{ 'is-active': mode === 'stylus' }"
+            title="<?= t('drauu.stylus') ?>"
+          >✍️</button>
+          <button
+            @click="setMode('draw')"
+            :class="{ 'is-active': mode === 'draw' }"
+            title="<?= t('drauu.draw') ?>"
+          >✏️</button>
+          <button
+            @click="setMode('line')"
+            :class="{ 'is-active': mode === 'line' }"
+            title="<?= t('drauu.line') ?>"
+          >⁄</button>
+          <select
+            x-model.number="brushSize"
+            @change="updateBrushSize()"
+            title="<?= t('drauu.size') ?>"
+          >
             <?php foreach (range(1, 9) as $number): ?>
               <option value="<?= $number ?>" <?php e($number === 3, ' selected') ?>><?= $number ?></option>
             <?php endforeach ?>
           </select>
-          <button id="clear" class="ml-auto" title="<?= t('drauu.clear') ?>">🗑</button>
-          <button id="download" title="Download">📥</button>
+          <button @click="clear()" class="ml-auto" title="<?= t('drauu.clear') ?>">🗑</button>
+          <button @click="download()" title="Download">📥</button>
         </div>
       </div>
     <?php endif ?>

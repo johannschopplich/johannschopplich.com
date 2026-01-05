@@ -1,0 +1,7 @@
+procs:
+  unocss:
+    cmd: [pnpm, unocss, --watch]
+    autostart: true
+  vite:
+    cmd: [pnpm, vite]
+    autostart: true

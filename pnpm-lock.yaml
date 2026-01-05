@@ -27,6 +27,9 @@ importers:
       '@iconify-json/tabler':
         specifier: ^1.2.23
         version: 1.2.23
+      '@types/alpinejs':
+        specifier: ^3.13.11
+        version: 3.13.11
       '@types/node':
         specifier: ^24.10.4
         version: 24.10.4
@@ -51,6 +54,9 @@ importers:
       '@unocss/reset':
         specifier: ^66.5.10
         version: 66.5.10
+      alpinejs:
+        specifier: ^3.15.3
+        version: 3.15.3
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
@@ -72,6 +78,9 @@ importers:
       medium-zoom:
         specifier: ^1.1.0
         version: 1.1.0
+      mprocs:
+        specifier: ^0.8.2
+        version: 0.8.2
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -825,6 +834,9 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
+  '@types/alpinejs@3.13.11':
+    resolution: {integrity: sha512-3KhGkDixCPiLdL3Z/ok1GxHwLxEWqQOKJccgaQL01wc0EVM2tCTaqlC3NIedmxAXkVzt/V6VTM8qPgnOHKJ1MA==}
+
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -1023,6 +1035,12 @@ packages:
   '@vue/compiler-ssr@3.5.25':
     resolution: {integrity: sha512-ritPSKLBcParnsKYi+GNtbdbrIE1mtuFEJ4U1sWeuOMlIziK5GtOL85t5RhsNy4uWIXPgk+OUdpnXiTdzn8o3A==}
 
+  '@vue/reactivity@3.1.5':
+    resolution: {integrity: sha512-1tdfLmNjWG6t/CsPldh+foumYFo3cpyCHgBYQ34ylaMsJ+SNHQ1kApMIa8jN+i593zQuaw3AdWH0nJTARzCFhg==}
+
+  '@vue/shared@3.1.5':
+    resolution: {integrity: sha512-oJ4F3TnvpXaQwZJNF3ZK+kLPHKarDmJjJ6jyzVNDKH9md1dptjC7lWR//jrGuLdek/U6iltWxqAnYOu8gCiOvA==}
+
   '@vue/shared@3.5.25':
     resolution: {integrity: sha512-AbOPdQQnAnzs58H2FrrDxYj/TJfmeS2jdfEEhgiKINy+bnOANmVizIEgq1r+C5zsbs6l1CCQxtcj71rwNQ4jWg==}
 
@@ -1038,6 +1056,9 @@ packages:
 
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
+
+  alpinejs@3.15.3:
+    resolution: {integrity: sha512-fSI6F5213FdpMC4IWaup92KhuH3jBX0VVqajRJ6cOTCy1cL6888KyXdGO+seAAkn+g6fnrxBqQEx6gRpQ5EZoQ==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -1831,6 +1852,11 @@ packages:
 
   mlly@1.8.0:
     resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
+
+  mprocs@0.8.2:
+    resolution: {integrity: sha512-0JM89at3JospulWOWsAoaFfkYE30E/nD24VyK3W4pWODO1FS7/X00NN3mfQvAzQn0npNlPChIouJGxizYsz+bw==}
+    engines: {node: '>=0.10.0'}
+    hasBin: true
 
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
@@ -2872,6 +2898,8 @@ snapshots:
       estraverse: 5.3.0
       picomatch: 4.0.3
 
+  '@types/alpinejs@3.13.11': {}
+
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 2.1.0
@@ -3185,6 +3213,12 @@ snapshots:
       '@vue/compiler-dom': 3.5.25
       '@vue/shared': 3.5.25
 
+  '@vue/reactivity@3.1.5':
+    dependencies:
+      '@vue/shared': 3.1.5
+
+  '@vue/shared@3.1.5': {}
+
   '@vue/shared@3.5.25': {}
 
   acorn-jsx@5.3.2(acorn@8.15.0):
@@ -3199,6 +3233,10 @@ snapshots:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+
+  alpinejs@3.15.3:
+    dependencies:
+      '@vue/reactivity': 3.1.5
 
   ansi-regex@5.0.1: {}
 
@@ -4227,6 +4265,8 @@ snapshots:
       pathe: 2.0.3
       pkg-types: 1.3.1
       ufo: 1.6.1
+
+  mprocs@0.8.2: {}
 
   mrmime@2.0.1: {}
 

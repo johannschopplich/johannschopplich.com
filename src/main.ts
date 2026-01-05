@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 
+import Alpine from "alpinejs";
 import "./styles/main.css";
 
 interface AppModule {
@@ -32,6 +33,9 @@ const templates = Object.fromEntries(
     ([key, value]) => [key.slice(12, -3), value],
   ),
 );
+
+// Make Alpine available globally (templates will initialize it)
+window.Alpine = Alpine;
 
 const { template = "default" } = document.body.dataset;
 templates[template]?.().then((mod) => mod.default?.());
