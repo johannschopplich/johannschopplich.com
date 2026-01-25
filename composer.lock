@@ -936,21 +936,21 @@
         },
         {
             "name": "johannschopplich/kirby-copilot",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-copilot.git",
-                "reference": "ded2dc9aa9de54bdb17c93da2b0e78daf0beecb8"
+                "reference": "c7041c09af01fd6585484ad6ccf20c31269ccbac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/ded2dc9aa9de54bdb17c93da2b0e78daf0beecb8",
-                "reference": "ded2dc9aa9de54bdb17c93da2b0e78daf0beecb8",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/c7041c09af01fd6585484ad6ccf20c31269ccbac",
+                "reference": "c7041c09af01fd6585484ad6ccf20c31269ccbac",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1",
-                "johannschopplich/kirby-tools-licensing": "^0.7"
+                "johannschopplich/kirby-tools-licensing": "^0.8"
             },
             "require-dev": {
                 "getkirby/cms": "^5",
@@ -989,9 +989,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
-                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v3.2.0"
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v3.3.0"
             },
-            "time": "2026-01-13T17:48:40+00:00"
+            "time": "2026-01-22T19:15:54+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1171,16 +1171,16 @@
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
-            "version": "0.7.5",
+            "version": "0.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/licensing-backend.git",
-                "reference": "bf7f5e5d540e44d3c86798d583821d88464a4c50"
+                "reference": "66ed0583848275dcaf792246ceccd1dd47f67ff0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/bf7f5e5d540e44d3c86798d583821d88464a4c50",
-                "reference": "bf7f5e5d540e44d3c86798d583821d88464a4c50",
+                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/66ed0583848275dcaf792246ceccd1dd47f67ff0",
+                "reference": "66ed0583848275dcaf792246ceccd1dd47f67ff0",
                 "shasum": ""
             },
             "require-dev": {
@@ -1211,9 +1211,9 @@
             "homepage": "https://github.com/kirby-tools/licensing-backend#readme",
             "support": {
                 "issues": "https://github.com/kirby-tools/licensing-backend/issues",
-                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.7.5"
+                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.8.2"
             },
-            "time": "2025-12-22T17:00:30+00:00"
+            "time": "2026-01-24T21:57:22+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
