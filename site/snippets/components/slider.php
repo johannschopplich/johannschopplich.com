@@ -47,13 +47,13 @@ $cssVars = implode(';', array_map(
                     'overflow-hidden',
                     $mockup !== 'none' ? 'relative bg-$bg' : '',
                     ($isDocument || $isMobile) ? 'h-$cell-base md:h-$cell-md px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
-                    $isDesktop ? 'p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto md:h-$cell-md' : ''
+                    $isDesktop ? 'flex flex-col items-center justify-center h-$cell-base md:h-$cell-md p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
                   ]), ' ') ?>"
           style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>">
           <?php if ($isMobile): ?>
             <div class="hidden absolute left-1/2 h-[1px] w-[14%] bg-stone-900 ml-[-7%] rounded-full translate-y-[-4px] md:block md:bottom-5xl md:h-[2px] md:translate-y-[-6px]"></div>
           <?php elseif ($isDesktop): ?>
-            <div class="flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
+            <div class="self-stretch flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
               <?php foreach (range(1, 3) as $i): ?>
                 <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
               <?php endforeach ?>
