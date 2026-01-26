@@ -26,13 +26,19 @@ $cssVars = implode(';', array_map(
   array_keys($heightMap[$selectedHeight])
 ));
 
+$totalSlides = $query->count();
+
 ?>
 <div
   class="overflow-hidden"
   style="<?= $cssVars ?>"
+  tabindex="0"
+  role="region"
+  aria-roledescription="<?= t('carousel.roledescription') ?>"
+  aria-label="<?= $ariaLabel ?? t('carousel.label') ?>"
   data-carousel>
-  <div class="flex gap-xs cursor-grab active:cursor-grabbing">
-    <?php foreach ($query as $image): ?>
+  <div class="flex gap-xs cursor-grab active:cursor-grabbing" aria-live="polite">
+    <?php foreach ($query->values() as $index => $image): ?>
       <?php
       /** @var \Kirby\Cms\File $image */
       $settings = $image->gallery()->toObject();
@@ -41,7 +47,11 @@ $cssVars = implode(';', array_map(
       $isMobile = $mockup === 'mobile';
       $isDesktop = $mockup === 'desktop';
       ?>
-      <div class="shrink-0 min-w-0 max-w-[100vw]">
+      <div
+        class="shrink-0 min-w-0 max-w-[100vw]"
+        role="group"
+        aria-roledescription="<?= t('carousel.slide') ?>"
+        aria-label="<?= $index + 1 ?> / <?= $totalSlides ?>">
         <div
           class="<?= trim(implode(' ', [
                     'overflow-hidden',
@@ -79,7 +89,7 @@ $cssVars = implode(';', array_map(
         </div>
       </div>
     <?php endforeach ?>
-  </div>
 
-  <?= $slot ?>
+    <?= $slot ?>
+  </div>
 </div>

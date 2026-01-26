@@ -34,7 +34,10 @@ return [
         'drauu.draw' => 'Draw',
         'drauu.line' => 'Line',
         'drauu.size' => 'Stroke Width',
-        'drauu.clear' => 'Clear'
+        'drauu.clear' => 'Clear',
+        'carousel.label' => 'Image gallery',
+        'carousel.roledescription' => 'carousel',
+        'carousel.slide' => 'slide'
     ]
 
 ];

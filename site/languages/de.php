@@ -34,7 +34,10 @@ return [
         'drauu.draw' => 'Frei Hand',
         'drauu.line' => 'Linie',
         'drauu.size' => 'Strichstärke',
-        'drauu.clear' => 'Löschen'
+        'drauu.clear' => 'Löschen',
+        'carousel.label' => 'Bildergalerie',
+        'carousel.roledescription' => 'Karussell',
+        'carousel.slide' => 'Folie'
     ]
 
 ];

@@ -29,6 +29,16 @@ function setupCarousel(node: HTMLElement) {
     skipSnaps: true,
   });
 
+  node.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      emblaApi.scrollPrev();
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      emblaApi.scrollNext();
+    }
+  });
+
   // Lazy load visible slides on init and scroll
   lazyLoadImages(emblaApi);
   emblaApi.on("slidesInView", lazyLoadImages);
