@@ -69,16 +69,12 @@ tabs:
                 options:
                   - value: tight
                     text:
-                      de: Eng
-                      en: Tight
-                  - value: normal
-                    text:
-                      de: Normal
-                      en: Normal
+                      de: Niedrig
+                      en: Short
                   - value: loose
                     text:
-                      de: Locker
-                      en: Loose
+                      de: Hoch
+                      en: Tall
                 translate: false
                 width: 1/2
 
