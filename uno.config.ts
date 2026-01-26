@@ -1,9 +1,9 @@
-import type { Theme } from "@unocss/preset-wind3";
-import { variantMatcher } from "@unocss/preset-wind3/utils";
+import type { Theme } from "@unocss/preset-wind4";
+import { variantMatcher } from "@unocss/preset-wind4/utils";
 import {
   defineConfig,
   presetIcons,
-  presetWind3,
+  presetWind4,
   transformerDirectives,
 } from "unocss";
 import { rules } from "./src/unocss";
@@ -48,28 +48,43 @@ export default defineConfig<Theme>({
         higher: "var(--un-color-contrast-higher)",
       },
     },
-    borderRadius: {
+    radius: {
       DEFAULT: "0.125rem",
     },
-    fontSize: {
-      xs: ["0.75rem", "var(--un-line-height-normal)"],
-      sm: ["0.875rem", "var(--un-line-height-normal)"],
-      base: ["1rem", "var(--un-line-height-normal)"],
-      lg: ["var(--un-text-lg)", "var(--un-line-height-heading)"],
-      xl: ["var(--un-text-xl)", "var(--un-line-height-heading)"],
-      "2xl": ["var(--un-text-2xl)", "var(--un-line-height-heading)"],
-      "3xl": ["var(--un-text-3xl)", "var(--un-line-height-heading)"],
-      "4xl": ["var(--un-text-4xl)", "var(--un-line-height-heading)"],
+    text: {
+      xs: { fontSize: "0.75rem", lineHeight: "var(--un-line-height-normal)" },
+      sm: { fontSize: "0.875rem", lineHeight: "var(--un-line-height-normal)" },
+      base: { fontSize: "1rem", lineHeight: "var(--un-line-height-normal)" },
+      lg: {
+        fontSize: "var(--un-text-lg)",
+        lineHeight: "var(--un-line-height-heading)",
+      },
+      xl: {
+        fontSize: "var(--un-text-xl)",
+        lineHeight: "var(--un-line-height-heading)",
+      },
+      "2xl": {
+        fontSize: "var(--un-text-2xl)",
+        lineHeight: "var(--un-line-height-heading)",
+      },
+      "3xl": {
+        fontSize: "var(--un-text-3xl)",
+        lineHeight: "var(--un-line-height-heading)",
+      },
+      "4xl": {
+        fontSize: "var(--un-text-4xl)",
+        lineHeight: "var(--un-line-height-heading)",
+      },
     },
-    fontFamily: {
+    font: {
       normal: "var(--un-font-family-normal)",
       heading: "var(--un-font-family-heading)",
     },
-    lineHeight: {
+    leading: {
       normal: "var(--un-line-height-normal)",
       heading: "var(--un-line-height-heading)",
     },
-    maxWidth: {
+    container: {
       prose: "70ch",
     },
   },
@@ -113,9 +128,10 @@ export default defineConfig<Theme>({
     },
   ],
   safelist: ["sr-only", "invisible"],
+  outputToCssLayers: true,
   transformers: [transformerDirectives()],
   presets: [
-    presetWind3(),
+    presetWind4(),
     presetIcons({
       extraProperties: {
         display: "inline-block",

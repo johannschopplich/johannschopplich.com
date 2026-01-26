@@ -1,6 +1,6 @@
-import type { Theme } from "@unocss/preset-wind3";
+import type { Theme } from "@unocss/preset-wind4";
 import type { CSSObject, Rule } from "unocss";
-import { handler } from "@unocss/preset-mini/utils";
+import { handler } from "@unocss/preset-wind4/utils";
 import animatedJSON from "./animated.json";
 
 export const durations = {

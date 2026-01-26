@@ -1,5 +1,5 @@
 import type { Rule } from "@unocss/core";
-import type { Theme } from "@unocss/preset-wind3";
+import type { Theme } from "@unocss/preset-wind4";
 
 export const hyphenate: Rule<Theme>[] = [
   [

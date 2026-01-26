@@ -1,175 +1,177 @@
-.prose {
-  --un-decoration-color: var(--un-color-primary);
+@layer components {
+  .prose {
+    --un-decoration-color: var(--un-color-primary);
 
-  @media (--below-sm) {
-    font-size: 0.875rem;
-    line-height: var(--un-line-height-normal);
-  }
-
-  &.is-article {
-    & :where(p) {
-      line-height: calc(var(--un-line-height-normal) / 0.875);
+    @media (--below-sm) {
+      font-size: 0.875rem;
+      line-height: var(--un-line-height-normal);
     }
-  }
 
-  & :where(figure:not(:first-child)) {
-    margin-top: calc(2rem * var(--un-prose-space-y));
-  }
-
-  & :where(figure:not(:last-child)) {
-    margin-bottom: calc(2rem * var(--un-prose-space-y));
-  }
-
-  & :where(h1) {
-    font-size: var(--un-text-3xl);
-    @media (--md) {
-      font-size: var(--un-text-4xl);
+    &.is-article {
+      & :where(p) {
+        line-height: calc(var(--un-line-height-normal) / 0.875);
+      }
     }
-  }
 
-  & :where(h2) {
-    font-size: var(--un-text-2xl);
-    @media (--md) {
+    & :where(figure:not(:first-child)) {
+      margin-top: calc(2rem * var(--un-prose-space-y));
+    }
+
+    & :where(figure:not(:last-child)) {
+      margin-bottom: calc(2rem * var(--un-prose-space-y));
+    }
+
+    & :where(h1) {
       font-size: var(--un-text-3xl);
+      @media (--md) {
+        font-size: var(--un-text-4xl);
+      }
     }
-  }
 
-  & :where(h3) {
-    font-size: var(--un-text-xl);
-    @media (--md) {
+    & :where(h2) {
       font-size: var(--un-text-2xl);
+      @media (--md) {
+        font-size: var(--un-text-3xl);
+      }
     }
-  }
 
-  & :where(h4) {
-    font-size: var(--un-text-lg);
-    @media (--md) {
+    & :where(h3) {
       font-size: var(--un-text-xl);
+      @media (--md) {
+        font-size: var(--un-text-2xl);
+      }
     }
-  }
 
-  & :where(h4) {
-    font-size: 1rem;
-    @media (--md) {
+    & :where(h4) {
       font-size: var(--un-text-lg);
+      @media (--md) {
+        font-size: var(--un-text-xl);
+      }
     }
-  }
 
-  & :where(h4) {
-    font-size: 1rem;
-  }
-
-  & :where(h1, h2, h3, h4, h5, h6) {
-    font-family: var(--un-font-family-heading);
-    scroll-margin-top: 5rem;
-
-    & a:not([href^="http"]) {
-      color: inherit;
-      text-decoration-line: none;
+    & :where(h4) {
+      font-size: 1rem;
+      @media (--md) {
+        font-size: var(--un-text-lg);
+      }
     }
-  }
 
-  & :where(blockquote) {
-    border-left-width: 3px;
-    border-left-style: double;
-    border-left-color: var(--un-color-primary);
-    padding-left: 1rem;
+    & :where(h4) {
+      font-size: 1rem;
+    }
 
-    & footer {
+    & :where(h1, h2, h3, h4, h5, h6) {
+      font-family: var(--un-font-family-heading);
+      scroll-margin-top: 5rem;
+
+      & a:not([href^="http"]) {
+        color: inherit;
+        text-decoration-line: none;
+      }
+    }
+
+    & :where(blockquote) {
+      border-left-width: 3px;
+      border-left-style: double;
+      border-left-color: var(--un-color-primary);
+      padding-left: 1rem;
+
+      & footer {
+        line-height: calc(var(--un-line-height-normal) * 0.875);
+        font-size: 0.75rem;
+        font-weight: 500;
+        font-style: normal;
+        margin-top: 0.5rem;
+      }
+    }
+
+    & :where(pre) {
+      background-color: var(--un-color-contrast-lowest);
+    }
+
+    & :where(ol, ul) {
+      padding-left: 1rem;
+    }
+
+    & :where(hr) {
+      border-bottom: none;
+    }
+
+    & :where(figure) {
+      box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
+
+      @media (--below-sm) {
+        margin-left: -1.125rem;
+        margin-right: -1.125rem;
+      }
+
+      @media (--sm) {
+        & img {
+          position: relative;
+          z-index: 50;
+        }
+
+        &.is-pulled-right {
+          width: 45%;
+          float: right;
+          margin-top: 0;
+          margin-left: 2rem;
+        }
+      }
+
+      @media (--lg) {
+        &.is-pulled-right {
+          width: 50%;
+        }
+
+        &.is-pulled-right {
+          margin-right: calc(-50% - 2rem);
+        }
+
+        &.is-outset {
+          margin-right: calc(-25% - 2rem);
+        }
+      }
+    }
+
+    & :where(figcaption) {
       line-height: calc(var(--un-line-height-normal) * 0.875);
       font-size: 0.75rem;
       font-weight: 500;
-      font-style: normal;
-      margin-top: 0.5rem;
-    }
-  }
+      padding: 0 3px 0.25rem;
+      margin-top: calc(0.25rem + 3px);
+      text-align: left;
 
-  & :where(pre) {
-    background-color: var(--un-color-contrast-lowest);
-  }
-
-  & :where(ol, ul) {
-    padding-left: 1rem;
-  }
-
-  & :where(hr) {
-    border-bottom: none;
-  }
-
-  & :where(figure) {
-    box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
-
-    @media (--below-sm) {
-      margin-left: -1.125rem;
-      margin-right: -1.125rem;
-    }
-
-    @media (--sm) {
-      & img {
-        position: relative;
-        z-index: 50;
-      }
-
-      &.is-pulled-right {
-        width: 45%;
-        float: right;
-        margin-top: 0;
-        margin-left: 2rem;
+      @media (--below-sm) {
+        margin-left: calc(1.125rem - 3px);
+        margin-right: calc(1.125rem - 3px);
       }
     }
 
-    @media (--lg) {
-      &.is-pulled-right {
-        width: 50%;
-      }
+    & :where(details) {
+      padding: 0.5rem 1rem;
+      margin-left: -1rem;
+      background-color: unset;
 
-      &.is-pulled-right {
-        margin-right: calc(-50% - 2rem);
-      }
-
-      &.is-outset {
-        margin-right: calc(-25% - 2rem);
+      &:not([open]) summary {
+        margin-bottom: 0;
       }
     }
-  }
 
-  & :where(figcaption) {
-    line-height: calc(var(--un-line-height-normal) * 0.875);
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0 3px 0.25rem;
-    margin-top: calc(0.25rem + 3px);
-    text-align: left;
-
-    @media (--below-sm) {
-      margin-left: calc(1.125rem - 3px);
-      margin-right: calc(1.125rem - 3px);
+    & :where(summary) {
+      font-family: var(--un-font-family-heading);
+      font-weight: 500;
     }
-  }
 
-  & :where(details) {
-    padding: 0.5rem 1rem;
-    margin-left: -1rem;
-    background-color: unset;
+    & :where(.note) {
+      border: 1px solid var(--un-color-primary-500);
+      padding: 1rem;
+      box-shadow: var(--un-frame-shadow-template) var(--un-color-primary-500);
 
-    &:not([open]) summary {
-      margin-bottom: 0;
-    }
-  }
-
-  & :where(summary) {
-    font-family: var(--un-font-family-heading);
-    font-weight: 500;
-  }
-
-  & :where(.note) {
-    border: 1px solid var(--un-color-primary-500);
-    padding: 1rem;
-    box-shadow: var(--un-frame-shadow-template) var(--un-color-primary-500);
-
-    @media (--sm) {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      @media (--sm) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
     }
   }
 }

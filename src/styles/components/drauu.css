@@ -1,42 +1,44 @@
-.drauu-controls {
-  & button {
-    width: 2rem;
-    height: 2rem;
-    padding-top: 0.25em;
+@layer components {
+  .drauu-controls {
+    & button {
+      width: 2rem;
+      height: 2rem;
+      padding-top: 0.25em;
 
-    &.is-active {
-      border: 1px solid;
+      &.is-active {
+        border: 1px solid;
 
-      [data-theme="dark"] & {
-        border-color: var(--un-color-contrast-lower);
+        [data-theme="dark"] & {
+          border-color: var(--un-color-contrast-lower);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--un-color-contrast-lowest);
       }
     }
 
-    &:hover,
-    &:focus {
-      background-color: var(--un-color-contrast-lowest);
-    }
-  }
-
-  & select {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 2rem;
-    font-family: var(--un-font-family-heading);
-    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
-      no-repeat right center / 1em;
-    border-radius: 0;
-    padding-left: 0.25rem;
-    padding-right: 1em;
-
-    [data-theme="dark"] & {
-      background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' fill='white'/%3E%3C/svg%3E")
+    & select {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 2rem;
+      font-family: var(--un-font-family-heading);
+      background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
         no-repeat right center / 1em;
-    }
+      border-radius: 0;
+      padding-left: 0.25rem;
+      padding-right: 1em;
 
-    &:hover,
-    &:focus {
-      background-color: var(--un-color-contrast-lowest);
+      [data-theme="dark"] & {
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4' fill='white'/%3E%3C/svg%3E")
+          no-repeat right center / 1em;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: var(--un-color-contrast-lowest);
+      }
     }
   }
 }

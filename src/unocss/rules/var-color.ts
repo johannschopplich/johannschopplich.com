@@ -1,6 +1,6 @@
 import type { Rule } from "@unocss/core";
-import type { Theme } from "@unocss/preset-wind3";
-import { parseColor } from "@unocss/preset-mini/utils";
+import type { Theme } from "@unocss/preset-wind4";
+import { parseColor } from "@unocss/preset-wind4/utils";
 
 export const varColor: Rule<Theme>[] = [
   [

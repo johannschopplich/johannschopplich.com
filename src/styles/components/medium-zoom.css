@@ -1,10 +1,12 @@
-.medium-zoom-image {
-  z-index: 50;
-}
+@layer components {
+  .medium-zoom-image {
+    z-index: 50;
+  }
 
-.medium-zoom-overlay {
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  /* Present just above the header */
-  z-index: 21;
+  .medium-zoom-overlay {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    /* Present just above the header */
+    z-index: 21;
+  }
 }
