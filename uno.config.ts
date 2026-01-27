@@ -18,18 +18,18 @@ export default defineConfig<Theme>({
   theme: {
     colors: {
       primary: {
-        DEFAULT: "#89937A",
-        50: "#E3E5DF",
-        100: "#D9DCD4",
-        200: "#C5CABE",
-        300: "#B1B8A7",
-        400: "#9DA591",
-        500: "#89937A",
-        600: "#6D755F",
-        700: "#505746",
-        800: "#33382D",
-        900: "#171914",
-        950: "#080907",
+        DEFAULT: "oklch(64.8% 0.055 125.2)", // #879570
+        50: "oklch(97.0% 0.014 125.2)", // #F3F7ED
+        100: "oklch(94.0% 0.022 125.2)", // #E8EEDE
+        200: "oklch(89.0% 0.035 125.2)", // #D5DFC6
+        300: "oklch(83.0% 0.045 125.2)", // #C0CDAD
+        400: "oklch(74.0% 0.052 125.2)", // #A3B18D
+        500: "oklch(64.8% 0.055 125.2)", // #879570
+        600: "oklch(55.0% 0.050 125.2)", // #6B7757
+        700: "oklch(46.0% 0.044 125.2)", // #525D42
+        800: "oklch(38.0% 0.038 125.2)", // #3E4630
+        900: "oklch(31.0% 0.032 125.2)", // #2C3321
+        950: "oklch(21.0% 0.025 125.2)", // #161A0E
       },
       link: {
         DEFAULT: "var(--un-color-link)",
@@ -131,7 +131,11 @@ export default defineConfig<Theme>({
   outputToCssLayers: true,
   transformers: [transformerDirectives()],
   presets: [
-    presetWind4(),
+    presetWind4({
+      preflights: {
+        reset: true,
+      },
+    }),
     presetIcons({
       extraProperties: {
         display: "inline-block",

@@ -1,6 +1,5 @@
 @layer base, components;
 
-@import "base/reset.css";
 @import "base/base.css";
 @import "base/typography.css";
 @import "base/vendor.css";
