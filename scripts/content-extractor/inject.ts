@@ -1,10 +1,10 @@
-import type { BlockFile, ContentBlock } from "./types";
+import type { BlockFile, ContentBlock } from "./types.ts";
 import * as fsp from "node:fs/promises";
 import * as path from "node:path";
 import process from "node:process";
 import consola from "consola";
-import { languages, templates } from "./constants";
-import { contentDir, dataDir } from "./utils";
+import { languages, templates } from "./constants.ts";
+import { contentDir, dataDir } from "./utils.ts";
 
 consola.start("Starting content block injection...");
 
