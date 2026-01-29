@@ -109,8 +109,8 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
       unlazy:
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
       unocss:
         specifier: ^66.6.0
         version: 66.6.0(postcss@8.5.6)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2))
@@ -797,8 +797,8 @@ packages:
     resolution: {integrity: sha512-VFlhGSl4opC0bprJiItPQ1RfUhGDIBokcPwaFH4yiBCaNPeld/9VeXbiPO1cLyorQi1G1vL+ecBk1x8o1axORA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@unlazy/core@1.0.0':
-    resolution: {integrity: sha512-xhdQywyEJMjx0RSZtLd1RYzUFWYlY1k8A17NnqWPBj9djYwDuOUUT/fLNYec1zQKdsLJBIoY2w6wC1j2Q8rEog==}
+  '@unlazy/core@1.1.0':
+    resolution: {integrity: sha512-ezCESX729KqtP2hud3i0ucepMx5/tz4V9Z4KKHInIgcoqOz/vP9LpEDVl3hkkRfPuuv33C2YUOApMJECEai1Dw==}
 
   '@unocss/astro@66.6.0':
     resolution: {integrity: sha512-HCDgZnoXv6pZGUK9N4ko7ZeBP1YTIP8IFj0Vr7pXVdv9sGR9CofoueFbclTvPQ065UHSsG+WI+JO5z9/BGd5fw==}
@@ -2104,8 +2104,8 @@ packages:
   unist-util-visit@5.0.0:
     resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
 
-  unlazy@1.0.0:
-    resolution: {integrity: sha512-fnTUBpnWlBpNFtl31adP6rXmex1Dm/CSagopeW7x8T09BITlEV58bcdV1dr3Z67Th9H24u0YClQWPzHagms+jQ==}
+  unlazy@1.1.0:
+    resolution: {integrity: sha512-uF2b6FL74e+EiUKywBWW+6ExLlZ0YrLEQFXromG1/eY1EfUh+AL1onEDv8WxRcDpDpOZyvtryQU4Unxhpb4Hvg==}
 
   unocss@66.6.0:
     resolution: {integrity: sha512-B5QsMJzFKeTHPzF5Ehr8tSMuhxzbCR9n+XP0GyhK9/2jTcBdI0/T+rCDDr9m6vUz+lku/coCVz7VAQ2BRAbZJw==}
@@ -2816,7 +2816,7 @@ snapshots:
       '@typescript-eslint/types': 8.54.0
       eslint-visitor-keys: 4.2.1
 
-  '@unlazy/core@1.0.0': {}
+  '@unlazy/core@1.1.0': {}
 
   '@unocss/astro@66.6.0(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2))':
     dependencies:
@@ -4389,9 +4389,9 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unlazy@1.0.0:
+  unlazy@1.1.0:
     dependencies:
-      '@unlazy/core': 1.0.0
+      '@unlazy/core': 1.1.0
 
   unocss@66.6.0(postcss@8.5.6)(vite@7.3.1(@types/node@24.10.9)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.8.2)):
     dependencies:
