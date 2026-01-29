@@ -68,7 +68,7 @@
       <?php foreach ($page->cv()->toLayouts() as $layout): ?>
         <div
           class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8 md:grid-cols-[repeat(3,minmax(0,auto))]"
-          style="--un-prose-space-y: 1.25">
+          style="--un-prose-space-y: 1.25rem">
           <?php foreach ($layout->columns() as $column): ?>
             <div class="prose">
               <?php foreach ($column->blocks() as $block): ?>

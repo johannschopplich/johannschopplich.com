@@ -18,7 +18,7 @@ svg {
   top: -100%;
   left: -100%;
   rotate: -20deg;
-  stroke: var(--click-spark-color, currentColor);
+  stroke: var(--click-spark-color, currentcolor);
 }
 
 line {

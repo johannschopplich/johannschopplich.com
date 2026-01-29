@@ -24,12 +24,11 @@
 
     --un-fluid-min-font-size: 16;
     --un-fluid-max-font-size: 18;
-    --un-prose-space-y: 1.5;
+    --un-prose-space-y: 1.5rem;
 
     --un-decoration-thickness: max(1px, 0.1em);
     --un-decoration-offset: max(2px, 0.15em);
     --un-frame-shadow-template: 3px 3px 0 var(--un-color-background), 4px 4px 0;
-    --un-prose-spacer: calc(1rem * var(--un-prose-space-y));
 
     --tw-color-stone-50: oklch(0.985 0.001 106.423);
     --tw-color-stone-100: oklch(0.97 0.001 106.424);
@@ -61,7 +60,7 @@
 
     --un-color-background: #fefcf8;
     --un-color-text: var(--un-color-contrast-higher);
-    --un-color-border: currentColor;
+    --un-color-border: currentcolor;
     --un-color-link: var(--un-color-text);
     --un-color-link-hover: var(--un-color-primary-500);
   }
@@ -110,10 +109,6 @@
     cursor: pointer;
     color: var(--un-color-link);
     text-decoration-line: none;
-    text-decoration-style: solid;
-    text-decoration-color: currentColor;
-    text-decoration-thickness: auto;
-    text-decoration-skip-ink: auto;
   }
 
   /*
@@ -123,11 +118,7 @@
   */
 
   svg:not([fill]) {
-    fill: currentColor;
-  }
-
-  button {
-    touch-action: manipulation;
+    fill: currentcolor;
   }
 
   ::selection {
@@ -143,7 +134,7 @@
 
   /* Show focus styles on keyboard focus */
   :focus-visible {
-    outline: 2px solid currentColor;
+    outline: 2px solid currentcolor;
     outline-offset: 2px;
   }
 
@@ -156,7 +147,7 @@
     text-underline-offset: var(--un-decoration-offset);
 
     &:hover {
-      text-decoration-color: currentColor;
+      text-decoration-color: currentcolor;
     }
   }
 }

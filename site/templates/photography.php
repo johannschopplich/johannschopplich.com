@@ -18,7 +18,7 @@
         <?php if ($block->type() === 'gallery'): ?>
     </div>
   </div>
-  <div class="mt-$un-prose-spacer mb-8xl">
+  <div class="mt-$un-prose-space-y mb-8xl">
     <?= $block ?>
   </div>
   <div class="content">

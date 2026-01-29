@@ -39,7 +39,7 @@ $sectionAttrs = attr([
         <?php if ($block->type() === 'gallery'): ?>
     </div>
   </div>
-  <div class="mt-$un-prose-spacer">
+  <div class="mt-$un-prose-space-y">
     <?= $block ?>
   </div>
   <div <?= $sectionAttrs ?>>
