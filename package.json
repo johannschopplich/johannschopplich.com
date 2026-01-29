@@ -17,7 +17,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^7.2.0",
     "@csstools/postcss-global-data": "^4.0.0",
-    "@iconify-json/ri": "^1.2.7",
+    "@iconify-json/ri": "^1.2.8",
     "@iconify-json/tabler": "^1.2.26",
     "@types/alpinejs": "^3.13.11",
     "@types/node": "^24.10.9",
@@ -56,12 +56,12 @@
       "hasown": "npm:@socketregistry/hasown@^1.0.7",
       "indent-string": "npm:@socketregistry/indent-string@^1.0.14",
       "is-core-module": "npm:@socketregistry/is-core-module@^1.0.11",
-      "path-parse": "npm:@socketregistry/path-parse@^1.0.8"
+      "path-parse": "npm:@socketregistry/path-parse@^1.0.8",
+      "shell-quote": "npm:shell-quote@^1.8.3"
     },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
-      "esbuild",
-      "unrs-resolver"
+      "esbuild"
     ]
   }
 }
