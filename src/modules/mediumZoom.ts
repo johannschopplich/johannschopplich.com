@@ -14,7 +14,5 @@ export async function install() {
   mediumZoom(elements, {
     background: "transparent",
     margin,
-    // https://github.com/francoischalifour/medium-zoom/issues/208
-    container: ".medium-zoom-overlay",
   });
 }
