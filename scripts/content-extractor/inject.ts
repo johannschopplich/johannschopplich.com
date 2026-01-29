@@ -52,8 +52,8 @@ async function findBlockFiles(): Promise<BlockFile[]> {
       files.push({
         path: fullPath,
         folder: relativePath,
-        template: match[1],
-        lang: match[2],
+        template: match[1]!,
+        lang: match[2]!,
       });
     }
   } catch (error) {

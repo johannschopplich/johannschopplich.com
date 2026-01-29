@@ -4,7 +4,7 @@ export function install() {
 
   const observer = new IntersectionObserver(
     ([entry]) =>
-      entry.target.classList.toggle("is-pinned", entry.intersectionRatio < 1),
+      entry!.target.classList.toggle("is-pinned", entry!.intersectionRatio < 1),
     { threshold: [1] },
   );
 

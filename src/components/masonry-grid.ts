@@ -91,6 +91,7 @@ export class MasonryGrid extends HTMLElement {
           // Skip the first row of items
           for (const [index, item] of items.slice(columns).entries()) {
             const itemAbove = items[index];
+            if (!itemAbove) continue;
             // Bottom edge of item above
             const prevBottom = itemAbove.getBoundingClientRect().bottom;
             // Top edge of current item

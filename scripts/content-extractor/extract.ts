@@ -55,8 +55,8 @@ async function findTemplateFiles(): Promise<ProjectFile[]> {
       files.push({
         path: fullPath,
         folder: relativePath,
-        template: match[1],
-        lang: match[2],
+        template: match[1]!,
+        lang: match[2]!,
       });
     }
   } catch (error) {
@@ -87,7 +87,7 @@ async function extractBlocks(filePath: string): Promise<ContentBlock[]> {
     throw new Error(`No Text field found in ${filePath}`);
   }
 
-  const jsonString = match[1];
+  const jsonString = match[1]!;
 
   try {
     return JSON.parse(jsonString) as ContentBlock[];

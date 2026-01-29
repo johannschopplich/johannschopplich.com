@@ -52,7 +52,7 @@ function lazyLoadImages(emblaApi: EmblaCarouselType) {
 
   for (const index of inView) {
     const slide = slides[index];
-    const images = slide.querySelectorAll<HTMLImageElement>(
+    const images = slide!.querySelectorAll<HTMLImageElement>(
       'img[loading="lazy"]',
     );
 

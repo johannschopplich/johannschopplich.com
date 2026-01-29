@@ -61,7 +61,7 @@ line {
 
   animateSpark() {
     const sparks = [...this.#svg!.children];
-    const size = Number.parseInt(sparks[0].getAttribute("y1") || "0");
+    const size = Number.parseInt(sparks[0]?.getAttribute("y1") || "0");
     const offset = `${size / 2}px`;
     const sparkCount = sparks.length;
 
