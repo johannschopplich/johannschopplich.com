@@ -10,7 +10,7 @@
   <div class="grid max-w-screen-xl gap-5xl sm:gap-6xl sm:pr-lg md:grid-cols-2 md:pr-3xl md:px-[max(4vw,1.875rem)]">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div>
-        <figure class="relative unselectable md:shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
+        <figure class="relative select-none md:shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
           <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
           <img
             srcset="<?= $image->srcset() ?>"
@@ -22,28 +22,23 @@
 
         <div
           x-data="drauuControls"
-          class="drauu-controls mt-xs ml-[4px] hidden flex-wrap items-center gap-1 md:flex"
-        >
+          class="drauu-controls mt-xs ml-[4px] hidden flex-wrap items-center gap-1 md:flex">
           <button
             @click="setMode('stylus')"
             :class="{ 'is-active': mode === 'stylus' }"
-            title="<?= t('drauu.stylus') ?>"
-          >✍️</button>
+            title="<?= t('drauu.stylus') ?>">✍️</button>
           <button
             @click="setMode('draw')"
             :class="{ 'is-active': mode === 'draw' }"
-            title="<?= t('drauu.draw') ?>"
-          >✏️</button>
+            title="<?= t('drauu.draw') ?>">✏️</button>
           <button
             @click="setMode('line')"
             :class="{ 'is-active': mode === 'line' }"
-            title="<?= t('drauu.line') ?>"
-          >⁄</button>
+            title="<?= t('drauu.line') ?>">⁄</button>
           <select
             x-model.number="brushSize"
             @change="updateBrushSize()"
-            title="<?= t('drauu.size') ?>"
-          >
+            title="<?= t('drauu.size') ?>">
             <?php foreach (range(1, 9) as $number): ?>
               <option value="<?= $number ?>" <?php e($number === 3, ' selected') ?>><?= $number ?></option>
             <?php endforeach ?>
