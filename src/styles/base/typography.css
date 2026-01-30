@@ -1,5 +1,5 @@
 @layer base {
-  /* Adapted from https://github.com/unocss/unocss/tree/main/packages/preset-typography */
+  /* Adapted from https://github.com/unocss/unocss/tree/main/packages-presets/preset-typography */
   .prose {
     --un-prose-font-mono:
       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -48,12 +48,6 @@
       font-style: italic;
       border-left: 0.25rem solid var(--un-prose-borders);
       padding-left: 1.25rem;
-    }
-
-    & :where(figure):not(:where(.not-prose, .not-prose *)) {
-      text-align: center;
-      margin-right: 0;
-      margin-left: 0;
     }
 
     & :where(figcaption):not(:where(.not-prose, .not-prose *)) {
