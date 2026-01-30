@@ -1,11 +1,11 @@
 @layer base, components;
 
 @import "base/base.css";
-@import "base/typography.css";
+@import "base/prose.css";
 @import "base/vendor.css";
 
 @import "components/drauu.css";
 @import "components/medium-zoom.css";
-@import "components/prose.css";
+@import "components/prose.custom.css";
 
 @import "uno.css";

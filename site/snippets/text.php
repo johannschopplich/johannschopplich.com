@@ -33,7 +33,7 @@ $sectionAttrs = attr([
   </div>
 
   <div <?= $sectionAttrs ?>>
-    <div class="prose max-w-prose is-article">
+    <div class="prose max-w-prose">
       <?php foreach ($blocks as $block): ?>
         <?php /** @var \Kirby\Cms\Block $block */ ?>
         <?php if ($block->type() === 'gallery'): ?>
@@ -43,7 +43,7 @@ $sectionAttrs = attr([
     <?= $block ?>
   </div>
   <div <?= $sectionAttrs ?>>
-    <div class="prose max-w-prose is-article">
+    <div class="prose max-w-prose">
     <?php else: ?>
       <?= $block ?>
     <?php endif ?>

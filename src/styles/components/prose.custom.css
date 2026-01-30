@@ -1,30 +1,14 @@
 @layer components {
   .prose {
+    --un-prose-code: var(--un-color-contrast-higher);
+    --un-prose-bg-soft: var(--un-color-contrast-lowest);
+    --un-prose-line-height: var(--un-line-height-normal);
     --un-decoration-color: var(--un-color-primary);
 
-    @media (--below-sm) {
-      font-size: 0.875rem;
-      line-height: var(--un-line-height-normal);
-    }
-
-    &.is-article {
-      & :where(p) {
-        line-height: calc(var(--un-line-height-normal) / 0.875);
+    & :where(p, ul, ol, pre) {
+      @media (--below-sm) {
+        font-size: 0.875rem;
       }
-    }
-
-    & :where(figure) {
-      text-align: center;
-      margin-right: 0;
-      margin-left: 0;
-    }
-
-    & :where(figure:not(:first-child)) {
-      margin-top: calc(2 * var(--un-prose-space-y));
-    }
-
-    & :where(figure:not(:last-child)) {
-      margin-bottom: calc(2 * var(--un-prose-space-y));
     }
 
     & :where(h1) {
@@ -49,25 +33,15 @@
     }
 
     & :where(h4) {
-      font-size: var(--un-text-lg);
-      @media (--md) {
-        font-size: var(--un-text-xl);
-      }
-    }
-
-    & :where(h4) {
       font-size: 1rem;
       @media (--md) {
         font-size: var(--un-text-lg);
       }
     }
 
-    & :where(h4) {
-      font-size: 1rem;
-    }
-
     & :where(h1, h2, h3, h4, h5, h6) {
       font-family: var(--un-font-family-heading);
+      line-height: var(--un-line-height-heading);
       scroll-margin-top: 5rem;
 
       & a:not([href^="http"]) {
@@ -92,7 +66,7 @@
     }
 
     & :where(pre) {
-      background-color: var(--un-color-contrast-lowest);
+      background-color: var(--un-prose-bg-soft);
     }
 
     & :where(ol, ul) {
@@ -104,7 +78,18 @@
     }
 
     & :where(figure) {
+      text-align: center;
+      margin-right: 0;
+      margin-left: 0;
       box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
+
+      &:not(:first-child) {
+        margin-top: calc(2 * var(--un-prose-space-y));
+      }
+
+      &:not(:last-child) {
+        margin-bottom: calc(2 * var(--un-prose-space-y));
+      }
 
       @media (--below-sm) {
         margin-left: -1.125rem;
@@ -128,9 +113,6 @@
       @media (--lg) {
         &.is-pulled-right {
           width: 50%;
-        }
-
-        &.is-pulled-right {
           margin-right: calc(-50% - 2rem);
         }
 

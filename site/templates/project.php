@@ -32,7 +32,7 @@
   <div class="content">
     <div class="max-w-prose">
       <?php if ($page->text()->isNotEmpty()): ?>
-        <div class="prose is-article mb-5xl">
+        <div class="prose mb-5xl">
           <?= $page->text()->toBlocks() ?>
         </div>
       <?php endif ?>
