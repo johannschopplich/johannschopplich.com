@@ -18,9 +18,9 @@
         <a
           href="<?= $page->urlForLanguage($language->code()) ?>"
           hreflang="<?= $language->code() ?>"
-          class="relative <?php e($language->code() === $kirby->languageCode(), 'px-[0.25em] before:content-empty before:absolute before:inset-x-0 before:top-[0.15em] before:bottom-[0.175em] before:bg-contrast-lower before:rounded-sm before:z-[-1]', 'link-default text-contrast-medium') ?>"
+          class="<?php e($language->code() !== $kirby->languageCode(), 'link-default text-contrast-medium') ?>"
           <?php e($language->code() === $kirby->languageCode(), 'aria-current="page"') ?>
-          aria-label="<?= $language->name() ?>"><?= $language->code() ?></a>
+          aria-label="<?= $language->name() ?>"><?php e($language->code() === $kirby->languageCode(), '[') ?><?= $language->code() ?><?php e($language->code() === $kirby->languageCode(), ']') ?></a>
       </span>
     <?php endforeach ?>
   </div>
@@ -29,9 +29,9 @@
     <?php foreach ($site->children()->listed() as $item): ?>
       <a href="<?= $item->url() ?>"
         class="flex items-center text-sm font-500 uppercase bg-theme-background px-[0.25em] mx-[-0.25em]
-               md:before:content-empty md:before:w-[0.5em] md:before:h-[0.5em] md:before:rounded-full md:before:bg-contrast-lower md:before:mr-1 lg:before:mr-2
+               md:before:content-empty md:before:size-[0.42em] md:before:bg-contrast-lower md:before:mr-1 lg:before:mr-2
                md:hover:text-current md:hover:before:bg-primary md:focus:before:bg-primary
-               md:aria-[current]:before:bg-current
+               md:aria-[current]:before:bg-current md:aria-[current]:hover:before:bg-current
                max-md:hover:underline-default max-md:aria-[current]:underline-default"
         <?php e($item->isOpen(), 'aria-current="page"') ?>>
         <?= $item->title() ?>
