@@ -54,6 +54,7 @@
     --un-color-contrast-lowest: var(--tw-color-stone-100);
     --un-color-contrast-lower: var(--tw-color-stone-200);
     --un-color-contrast-low: var(--tw-color-stone-300);
+    --un-color-contrast-soft: var(--tw-color-stone-400);
     --un-color-contrast-medium: var(--tw-color-stone-500);
     --un-color-contrast-high: var(--tw-color-stone-800);
     --un-color-contrast-higher: var(--tw-color-stone-900);
@@ -69,6 +70,7 @@
     --un-color-contrast-lowest: var(--tw-color-stone-800);
     --un-color-contrast-lower: var(--tw-color-stone-700);
     --un-color-contrast-low: var(--tw-color-stone-600);
+    --un-color-contrast-soft: var(--tw-color-stone-500);
     --un-color-contrast-medium: var(--tw-color-stone-400);
     --un-color-contrast-high: var(--tw-color-stone-100);
     --un-color-contrast-higher: var(--tw-color-stone-50);
@@ -105,18 +107,6 @@
     color: var(--un-color-text);
   }
 
-  a {
-    cursor: pointer;
-    color: var(--un-color-link);
-    text-decoration-line: none;
-  }
-
-  /*
-  a:hover {
-    color: var(--un-color-link-hover);
-  }
-  */
-
   svg:not([fill]) {
     fill: currentcolor;
   }
@@ -126,16 +116,17 @@
     background: var(--un-color-primary-200);
   }
 
-  /* Hide focus styles if they're not needed, for example,
-     when an element receives focus via the mouse */
   :focus:not(:focus-visible) {
     outline: none;
   }
 
-  /* Show focus styles on keyboard focus */
   :focus-visible {
     outline: 2px solid currentcolor;
     outline-offset: 2px;
+  }
+
+  a {
+    color: var(--un-color-link);
   }
 
   a:not([class]),

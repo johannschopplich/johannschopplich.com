@@ -11,7 +11,7 @@ $complementaryLanguage = $kirby
   <div class="content pt-8xl pb-3xl bg-contrast-lowest border-t border-contrast-low">
     <div class="max-w-screen-lg">
       <div class="mb-8xl">
-        <h3 class="title text-2xl font-700 mb-3xl">
+        <h3 class="title text-2xl font-600 mb-3xl">
           <?= t('generic.contact') ?>
         </h3>
 

@@ -2,7 +2,7 @@
 
 /** @var \Kirby\Cms\Pagination $pagination */ ?>
 <nav
-  class="font-heading font-700 flex justify-center text-xl">
+  class="font-heading font-600 flex justify-center text-xl">
   <?php if ($pagination->hasPrevPage()): ?>
     <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-tabler-arrow-left hover:text-link-hover" aria-label="Previous page"></a>
   <?php else: ?>

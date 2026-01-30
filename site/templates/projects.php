@@ -32,7 +32,7 @@
           <?= $project->subtitle()->escape() ?>
         </p>
 
-        <h2 class="title text-2xl font-700">
+        <h2 class="title text-2xl font-600">
           <a
             href="<?= $project->url() ?>"
             class="link-default">

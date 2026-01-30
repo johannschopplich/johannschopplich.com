@@ -42,6 +42,7 @@ export default defineConfig<Theme>({
         lowest: "var(--un-color-contrast-lowest)",
         lower: "var(--un-color-contrast-lower)",
         low: "var(--un-color-contrast-low)",
+        soft: "var(--un-color-contrast-soft)",
         medium: "var(--un-color-contrast-medium)",
         high: "var(--un-color-contrast-high)",
         higher: "var(--un-color-contrast-higher)",
@@ -148,7 +149,7 @@ export default defineConfig<Theme>({
       "underline-default":
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
       headline:
-        "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-700 md:text-size-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
+        "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-600 md:text-size-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
       "section-divider": "h-[min(20svh,8rem)]",
       icon: "w-[1.25em] h-[1.25em] [&>svg]:w-full [&>svg]:h-full",
       tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
