@@ -31,7 +31,7 @@ columns:
         type: fields
         fields:
           gallery:
-            label: Galerie
+            label: Darstellung
             type: object
             translate: false
             fields:
@@ -67,7 +67,7 @@ columns:
                 label:
                   de: Hintergrundfarbe
                   en: Background Color
-                type: text
+                type: color
                 help:
                   de: Findet nur Anwendung, wenn ein Mockup ausgewählt ist.
                   en: Only applies when a mockup is selected.
