@@ -47,22 +47,17 @@ tabs:
               cover: true
               back: "#6B7757"
 
-  info:
+  content:
     label:
-      de: Informationen
-      en: Information
-    icon: info
+      de: Inhalt
+      en: Content
+    icon: layers
     columns:
       - width: 1/2
         sections:
-          content:
+          popularArticles:
             type: fields
             fields:
-              headlineContent:
-                label:
-                  de: Inhalt
-                  en: Content
-                type: headline
               popularArticles:
                 label:
                   de: Beliebte Artikel
@@ -74,11 +69,12 @@ tabs:
                   cover: true
                   back: white
                 translate: false
-              headlineFooter:
-                label:
-                  de: Fußzeile
-                  en: Footer
-                type: headline
+
+      - width: 1/2
+        sections:
+          footer:
+            type: fields
+            fields:
               footerLinks:
                 label: Links
                 type: structure
@@ -107,21 +103,30 @@ tabs:
                   back: white
                 translate: false
 
-      - width: 1/2
-        sections:
-          metaHeadline:
-            type: fields
-            fields:
-              headlineMeta:
-                label: SEO
-                type: headline
-          meta:
-            extends: sections/meta
-            type: fields
-            fields:
-              customTitle: false
-              thumbnail:
-                query: kirby.page("photography").files.template("image")
-                uploads:
-                  parent: kirby.page("photography")
-                  template: image
+  seo:
+    label: SEO
+    icon: search
+    sections:
+      meta:
+        type: fields
+        fields:
+          description:
+            label:
+              de: Beschreibung (Überschreiben)
+              en: Description (Override)
+            type: textarea
+            buttons: false
+            help:
+              de: Eine kurze Beschreibung für Suchmaschinen.
+              en: A short description for search engines.
+          thumbnail:
+            label:
+              de: Vorschaubild
+              en: Thumbnail
+            type: files
+            query: kirby.page("photography").files.template("image")
+            uploads:
+              parent: kirby.page("photography")
+              template: image
+            multiple: false
+            translate: false

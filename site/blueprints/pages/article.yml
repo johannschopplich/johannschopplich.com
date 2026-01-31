@@ -60,14 +60,10 @@ tabs:
                 help:
                   de: Eine kurze Beschreibung für Suchmaschinen.
                   en: A short description for search engines.
+          text: sections/text
 
       - width: 1/3
-        # sticky: true
         sections:
           serpPreview: sections/serp-preview
-
-      - width: 2/3
-        sections:
-          text: sections/text
 
   images: tabs/images
