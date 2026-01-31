@@ -1048,16 +1048,16 @@
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "6.5.0",
+            "version": "6.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "974ecb07436c9c7dad574ff33e53813ac508cf98"
+                "reference": "9ec486a5e2d9fb4846d7f4ea00e07620fc243604"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/974ecb07436c9c7dad574ff33e53813ac508cf98",
-                "reference": "974ecb07436c9c7dad574ff33e53813ac508cf98",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/9ec486a5e2d9fb4846d7f4ea00e07620fc243604",
+                "reference": "9ec486a5e2d9fb4846d7f4ea00e07620fc243604",
                 "shasum": ""
             },
             "require": {
@@ -1065,7 +1065,8 @@
                 "vlucas/phpdotenv": "^5"
             },
             "require-dev": {
-                "getkirby/cms": "^5"
+                "getkirby/cms": "^5",
+                "phpunit/phpunit": "^12"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1105,9 +1106,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.5.0"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.7.1"
             },
-            "time": "2025-12-15T09:47:51+00:00"
+            "time": "2026-01-31T12:08:44+00:00"
         },
         {
             "name": "johannschopplich/kirby-serp-preview",
