@@ -17,8 +17,8 @@ return fn(App $kirby, Site $site, Page $page) => [
                 'gender' => 'male',
                 'sameAs' => [
                     'https://github.com/johannschopplich',
+                    'https://www.linkedin.com/in/johann-schopplich/',
                     'https://www.instagram.com/johannschopplich/',
-                    'https://www.youtube.com/@johannschopplich',
                     'https://x.com/jschopplich'
                 ]
             ]

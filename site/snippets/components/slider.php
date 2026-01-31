@@ -15,7 +15,7 @@ $heightMap = [
   ]
 ];
 
-$selectedHeight = $height ?? 'loose';
+$selectedHeight = !empty($height) && isset($heightMap[$height]) ? $height : 'loose';
 
 $cssVars = implode(';', array_map(
   fn($breakpoint) => "--cell-{$breakpoint}: {$heightMap[$selectedHeight][$breakpoint]}",
