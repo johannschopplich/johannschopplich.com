@@ -51,17 +51,24 @@
     }
 
     & :where(blockquote) {
-      border-left-width: 3px;
-      border-left-style: double;
-      border-left-color: var(--un-color-primary);
-      padding-left: 1rem;
+      position: relative;
+      border: none;
+      font-size: var(--un-text-lg);
+      font-style: italic;
+      text-align: center;
+      padding: 1.5rem 2rem;
+
+      @media (--md) {
+        font-size: var(--un-text-xl);
+      }
 
       & footer {
-        line-height: calc(var(--un-line-height-normal) * 0.875);
         font-size: 0.75rem;
         font-weight: 500;
+        font-family: var(--un-prose-font-mono);
+        line-height: calc(var(--un-line-height-normal) * 0.875);
         font-style: normal;
-        margin-top: 0.5rem;
+        margin-top: 0.75rem;
       }
     }
 
@@ -152,9 +159,10 @@
     }
 
     & :where(.note) {
-      border: 1px solid var(--un-color-primary-500);
+      background-color: var(--un-prose-bg-soft);
+      border: 1px solid var(--un-color-border);
       padding: 1rem;
-      box-shadow: var(--un-frame-shadow-template) var(--un-color-primary-500);
+      box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
 
       @media (--sm) {
         padding-left: 1.25rem;
