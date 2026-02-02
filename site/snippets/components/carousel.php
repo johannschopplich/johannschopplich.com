@@ -4,35 +4,18 @@
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 
-$heightMap = [
-  'tight' => [
-    'base' => 'clamp(25svh, 50vw, 25svh)',
-    'md' => 'clamp(25svh, 50vw, 37.5svh)'
-  ],
-  'loose' => [
-    'base' => 'clamp(50svh, 50vw, 75svh)',
-    'md' => 'clamp(25svh, 50vw, 75svh)'
-  ]
-];
-
-$selectedHeight = !empty($height) && isset($heightMap[$height]) ? $height : 'loose';
-
-$cssVars = implode(';', array_map(
-  fn($breakpoint) => "--cell-{$breakpoint}: {$heightMap[$selectedHeight][$breakpoint]}",
-  array_keys($heightMap[$selectedHeight])
-));
-
+$selectedHeight = !empty($height) && in_array($height, ['tight', 'loose'], true) ? $height : 'loose';
 $totalSlides = $query->count();
 
 ?>
 <div
   class="overflow-hidden"
-  style="<?= $cssVars ?>"
   tabindex="0"
   role="region"
   aria-roledescription="<?= t('carousel.roledescription') ?>"
   aria-label="<?= $ariaLabel ?? t('carousel.label') ?>"
-  data-carousel>
+  data-carousel
+  data-height="<?= $selectedHeight ?>">
   <div class="flex gap-xs cursor-grab active:cursor-grabbing" aria-live="polite">
     <?php foreach ($query->values() as $index => $image): ?>
       <?php
@@ -52,8 +35,8 @@ $totalSlides = $query->count();
           class="<?= trim(implode(' ', [
                     'overflow-hidden',
                     $mockup !== 'none' ? 'relative bg-$bg' : '',
-                    ($isDocument || $isMobile) ? 'h-$cell-base md:h-$cell-md px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
-                    $isDesktop ? 'flex flex-col items-center justify-center h-$cell-base md:h-$cell-md p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
+                    ($isDocument || $isMobile) ? 'h-$cell-h px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
+                    $isDesktop ? 'flex flex-col items-center justify-center h-$cell-h p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
                   ]), ' ') ?>"
           style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>">
           <?php if ($isMobile): ?>
@@ -66,11 +49,19 @@ $totalSlides = $query->count();
             </div>
           <?php endif ?>
 
+          <?php
+          $imgStyles = $mockup === 'none'
+            ? implode('; ', [
+              '--img-h: min(calc(100vw * ' . $image->height() . ' / ' . $image->width() . '), var(--cell-h))',
+              'aspect-ratio: ' . $image->width() . '/' . $image->height()
+            ])
+            : '';
+          ?>
           <img
             loading="lazy"
             class="<?= trim(implode(' ', [
                       'pointer-events-none select-none',
-                      $mockup === 'none' ? 'w-auto max-w-[100vw] h-auto max-h-$cell-base md:max-h-$cell-md' : '',
+                      $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
                       ($isMobile || $isDocument) ? 'w-auto h-full object-cover border border-solid border-stone-900' : '',
                       $isMobile ? 'rounded-xl md:rounded-2xl' : '',
                       $isDesktop ? 'w-full h-auto md:w-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
@@ -80,7 +71,7 @@ $totalSlides = $query->count();
             data-sizes="auto"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
-            style="aspect-ratio: <?= $image->width() ?>/<?= $image->height() ?>"
+            style="<?= $imgStyles ?>"
             alt="<?= $image->alt()->or('')->escape() ?>">
         </div>
       </div>

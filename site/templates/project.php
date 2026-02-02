@@ -22,7 +22,7 @@
   </div>
 
 
-  <?php snippet('components/slider', [
+  <?php snippet('components/carousel', [
     'query' => $page->gallery()->toFiles(),
     'height' => $page->galleryHeight()->value()
   ]) ?>

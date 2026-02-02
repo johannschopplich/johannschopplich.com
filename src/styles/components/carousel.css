@@ -1,0 +1,19 @@
+@layer components {
+  [data-carousel] {
+    --cell-h: clamp(50svh, 50vw, 75svh);
+  }
+
+  [data-carousel][data-height="tight"] {
+    --cell-h: clamp(25svh, 50vw, 25svh);
+  }
+
+  @media (--md) {
+    [data-carousel] {
+      --cell-h: clamp(25svh, 50vw, 75svh);
+    }
+
+    [data-carousel][data-height="tight"] {
+      --cell-h: clamp(25svh, 50vw, 37.5svh);
+    }
+  }
+}

@@ -43,7 +43,7 @@
       </div>
 
       <div class="mb-lg">
-        <?php snippet('components/slider', [
+        <?php snippet('components/carousel', [
           'query' => $project->gallery()->toFiles(),
           'height' => $project->galleryHeight()->value()
         ]) ?>

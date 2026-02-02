@@ -98,7 +98,7 @@
     </div>
   </div>
 
-  <?php snippet('components/slider', ['query' => $query], slots: true) ?>
+  <?php snippet('components/carousel', ['query' => $query], slots: true) ?>
   <div class="pr-xs shrink-0 snap-end snap-always">
     <div class="relative h-$cell-base aspect-[4/5] flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
       <a href="<?= $query->first()->parent()->url() ?>" class="cta-button link-default">

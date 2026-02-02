@@ -4,8 +4,9 @@
 @import "base/prose.css";
 @import "base/vendor.css";
 
+@import "components/prose.custom.css";
+@import "components/carousel.css";
 @import "components/drauu.css";
 @import "components/medium-zoom.css";
-@import "components/prose.custom.css";
 
 @import "uno.css";
