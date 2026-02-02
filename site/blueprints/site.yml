@@ -45,7 +45,7 @@ tabs:
             image:
               query: page.thumbnail.toFile
               cover: true
-              back: "#67794b"
+              back: light-dark(var(--color-gray-250), var(--color-gray-950))
 
   content:
     label:
