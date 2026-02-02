@@ -40,7 +40,7 @@ $totalSlides = $query->count();
                   ]), ' ') ?>"
           style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>">
           <?php if ($isMobile): ?>
-            <div class="absolute left-1/2 bottom-xl w-[20%] h-[1.5px] bg-stone-900 rounded-full translate-x-[-50%] translate-y-[-4px] md:bottom-5xl md:w-[12%] md:h-[2px] md:translate-y-[-6px]"></div>
+            <div class="absolute left-1/2 bottom-$spacing-xl w-[20%] h-[1.5px] bg-stone-900 rounded-full translate-x-[-50%] translate-y-[-4px] md:bottom-$spacing-5xl md:w-[12%] md:h-[2px] md:translate-y-[-6px]"></div>
           <?php elseif ($isDesktop): ?>
             <div class="self-stretch flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
               <?php foreach (range(1, 3) as $i): ?>

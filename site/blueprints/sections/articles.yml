@@ -5,4 +5,4 @@ sortBy: published desc
 image:
   query: page.thumbnail.toFile
   cover: true
-  back: "#6B7757"
+  back: "#67794b"

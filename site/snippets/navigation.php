@@ -18,7 +18,7 @@
         <a
           href="<?= $page->urlForLanguage($language->code()) ?>"
           hreflang="<?= $language->code() ?>"
-          class="<?php e($language->code() !== $kirby->languageCode(), 'link-default text-contrast-medium') ?>"
+          class="<?php e($language->code() !== $kirby->languageCode(), 'link-default text-contrast-soft') ?>"
           <?php e($language->code() === $kirby->languageCode(), 'aria-current="page"') ?>
           aria-label="<?= $language->name() ?>"><?php e($language->code() === $kirby->languageCode(), '[') ?><?= $language->code() ?><?php e($language->code() === $kirby->languageCode(), ']') ?></a>
       </span>
