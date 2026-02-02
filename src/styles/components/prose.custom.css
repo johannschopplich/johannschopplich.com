@@ -54,9 +54,39 @@
       position: relative;
       border: none;
       font-size: var(--un-text-lg);
+      line-height: var(--un-prose-line-height);
       font-style: italic;
       text-align: center;
       padding: 1.5rem 2rem;
+      quotes: "“" "”";
+
+      &:lang(de) {
+        quotes: "„" "“";
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        font-family: var(--un-font-family-heading);
+        font-size: var(--un-text-4xl);
+        font-style: normal;
+        color: var(--un-color-contrast-soft);
+        line-height: 1;
+      }
+
+      &::before {
+        content: open-quote;
+        top: 0;
+        left: 0.25rem;
+        transform: translate(-50%, -25%);
+      }
+
+      &::after {
+        content: close-quote;
+        bottom: 0;
+        right: 0.25rem;
+        transform: translate(50%, 25%);
+      }
 
       @media (--md) {
         font-size: var(--un-text-xl);
