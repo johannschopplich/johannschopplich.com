@@ -40,8 +40,8 @@ fields:
     icon: url
   properties:
     label:
-      de: Eigenschaften
-      en: Properties
+      de: Darstellung
+      en: Presentation
     type: toggles
     grow: false
     options:
