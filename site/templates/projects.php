@@ -28,10 +28,6 @@
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
       <div class="group content relative pt-xl mb-xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
-        <p class="text-sm font-500 text-contrast-medium">
-          <?= $project->subtitle()->escape() ?>
-        </p>
-
         <h2 class="title text-2xl font-600">
           <a
             href="<?= $project->url() ?>"
@@ -40,6 +36,10 @@
             <?= $project->title()->escape() ?>
           </a>
         </h2>
+
+        <p class="text-sm font-500 text-contrast-medium">
+          <?= $project->subtitle()->escape() ?>
+        </p>
       </div>
 
       <div class="mb-lg">
