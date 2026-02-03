@@ -72,7 +72,7 @@
               <?php foreach ($column->blocks() as $block): ?>
                 <?php /** @var \Kirby\Cms\Block $block */ ?>
                 <?php if ($block->type() === 'heading'): ?>
-                  <h2 class="text-sm uppercase tracking-[0.125ch] un-dark:text-contrast-medium"><?= $block->text() ?></h2>
+                  <h2 class="text-sm tracking-[0.25ch] uppercase un-dark:text-contrast-soft"><?= $block->text() ?></h2>
                 <?php elseif ($block->type() === 'text'): ?>
                   <?= preg_replace(
                     '/<code>(.*?)<\/code>/',

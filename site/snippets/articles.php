@@ -12,7 +12,7 @@
       before:content-empty before:absolute before:inset-x-5 before:bottom-0 before:h-[1px] before:bg-contrast-low un-dark:before:bg-contrast-lower
       after:content-empty after:absolute after:inset-y-5 after:right-0 after:w-[1px] after:bg-contrast-low un-dark:after:bg-contrast-lower
     ">
-      <p class="text-contrast-soft text-xs font-600 tracking-wider uppercase mb-[1px]">
+      <p class="text-contrast-soft text-xs font-600 tracking-[0.125ch] uppercase mb-[1px]">
         <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">
           <?= $article->published()->toDate(dateFormatter()) ?>
         </time>
