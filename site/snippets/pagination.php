@@ -9,7 +9,7 @@
     <span class="mr-auto text-contrast-low cursor-not-allowed i-tabler-arrow-left" aria-disabled="true"></span>
   <?php endif ?>
 
-  <div class="flex space-x-1">
+  <div class="flex gap-1">
     <span aria-hidden="true">J</span>
 
     <?php foreach ($pagination->range(6) as $r): ?>

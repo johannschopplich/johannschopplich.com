@@ -39,4 +39,3 @@
     <?php endforeach ?>
   </div>
 </nav>
-</nav>

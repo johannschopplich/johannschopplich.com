@@ -15,28 +15,26 @@ $complementaryLanguage = $kirby
           <?= t('generic.contact') ?>
         </h3>
 
-        <div class="col-span-full sm:col-start-3 sm:col-end-9 lg:col-start-4 lg:col-end-13 col-span-full sm:col-span-full col-span-full sm:col-span-full lg:col-span-full">
-          <ul>
-            <?php foreach ($site->footerLinks()->toStructure() as $item): ?>
-              <li class="group border-b border-contrast-low hover:border-current">
-                <a href="<?= $item->url() ?>" class="grid grid-cols-4 items-center py-sm sm:grid-cols-6 lg:grid-cols-9">
-                  <span class="col-start-1 col-end-4 font-bold sm:col-start-1 sm:col-end-3 lg:col-start-1 lg:col-end-4"><?= $item->category()->escape() ?></span>
-                  <span class="col-start-1 col-end-4 sm:col-start-3 sm:col-end-5 lg:col-start-4 lg:col-end-7"><?= $item->title()->escape() ?></span>
-                  <span class="col-start-4 col-end-4 justify-self-end transition -rotate-45 group-hover:rotate-0 sm:col-start-5 sm:col-end-7 lg:col-start-7 lg:col-end-10">
-                    <span class="i-tabler-arrow-right" aria-hidden="true"></span>
-                  </span>
-                </a>
-              </li>
-            <?php endforeach ?>
-          </ul>
-        </div>
+        <ul>
+          <?php foreach ($site->footerLinks()->toStructure() as $item): ?>
+            <li class="group border-b border-contrast-low hover:border-current">
+              <a href="<?= $item->url() ?>" class="grid grid-cols-4 items-center py-sm sm:grid-cols-6 lg:grid-cols-9">
+                <span class="col-start-1 col-end-4 font-bold sm:col-start-1 sm:col-end-3 lg:col-start-1 lg:col-end-4"><?= $item->category()->escape() ?></span>
+                <span class="col-start-1 col-end-4 sm:col-start-3 sm:col-end-5 lg:col-start-4 lg:col-end-7"><?= $item->title()->escape() ?></span>
+                <span class="col-start-4 col-end-4 justify-self-end transition -rotate-45 group-hover:rotate-0 sm:col-start-5 sm:col-end-7 lg:col-start-7 lg:col-end-10">
+                  <span class="i-tabler-arrow-right" aria-hidden="true"></span>
+                </span>
+              </a>
+            </li>
+          <?php endforeach ?>
+        </ul>
       </div>
 
       <div class="flex gap-lg justify-between">
         <a
           href="<?= $page->url($complementaryLanguage->code()) ?>"
           hreflang="<?= $complementaryLanguage->code() ?>"
-          class="inline-flex gap-2 items-center text-sm font-500 link-default">
+          class="inline-flex items-center gap-2 text-sm font-500 link-default">
           <span class="icon" aria-hidden="true">
             <?= icon('earth.svg') ?>
           </span>
@@ -45,7 +43,7 @@ $complementaryLanguage = $kirby
           </span>
         </a>
         <button
-          class="w-max inline-flex gap-2 items-center text-sm link-default"
+          class="inline-flex items-center gap-2 text-sm link-default"
           data-theme-switcher>
           <span class="icon un-dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
           <span class="font-500 un-dark:hidden"><?= t('theme.switch.off') ?></span>
