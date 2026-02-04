@@ -18,20 +18,9 @@ $frontmatter = [
 ];
 
 ?>
----
-<?php foreach ($frontmatter as $key => $value): ?>
-<?php if (is_array($value)): ?>
-<?= $key ?>:
-<?php foreach ($value as $item): ?>
-  - <?= $item . "\n" ?>
-<?php endforeach ?>
-<?php else: ?>
-<?= $key ?>: <?= \Kirby\Data\Json::encode($value) . "\n" ?>
-<?php endif ?>
-<?php endforeach ?>
----
+<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
 
-# <?= $page->title()->value() . "\n" ?>
+# <?= $page->title()->value() ?>
 
 <?php if ($page->subtitle()->isNotEmpty()): ?>
 *<?= $page->subtitle()->value() ?>*

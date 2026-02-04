@@ -13,11 +13,7 @@ $frontmatter = [
 ];
 
 ?>
----
-<?php foreach ($frontmatter as $key => $value): ?>
-<?= $key ?>: <?= \Kirby\Data\Json::encode($value) . "\n" ?>
-<?php endforeach ?>
----
+<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
 
 <?php snippet('md/blocks', ['blocks' => $page->bio()->toBlocks()]) ?>
 
@@ -33,7 +29,7 @@ $frontmatter = [
 
 <?php endif ?>
 <?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
-<?= snippet('md/blocks', ['blocks' => $entry->description()->toBlocks()], true) . "\n" ?>
+<?= snippet('md/blocks', ['blocks' => $entry->description()->toBlocks()], true) ?>
 
 <?php endif ?>
 <?php endforeach ?>

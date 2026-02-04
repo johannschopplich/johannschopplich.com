@@ -9,23 +9,14 @@ $kirby->response()->type('text/markdown');
 $frontmatter = [
   'title' => $page->title()->value(),
   'url' => '/' . $page->uid(),
-  'date' => $page->published()->toDate('Y-m-d'),
-  'author' => $site->title()->value(),
+  'date' => $page->published()->toDate('Y-MM-dd'),
   ...($page->categories()->isNotEmpty() ? ['categories' => array_map('trim', explode(',', $page->categories()->value()))] : []),
   ...($page->description()->isNotEmpty() ? ['description' => $page->description()->value()] : [])
 ];
 
 ?>
----
-<?php foreach ($frontmatter as $key => $value): ?>
-<?php if (is_array($value)): ?>
-<?= $key ?>: [<?= implode(', ', $value) ?>]
-<?php else: ?>
-<?= $key ?>: <?= \Kirby\Data\Json::encode($value) . "\n" ?>
-<?php endif ?>
-<?php endforeach ?>
----
+<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
 
-# <?= $page->title()->value() . "\n" ?>
+# <?= $page->title()->value() ?>
 
 <?php snippet('md/blocks', ['blocks' => $page->text()->toBlocks()]) ?>

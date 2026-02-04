@@ -13,12 +13,8 @@ $frontmatter = [
 ];
 
 ?>
----
-<?php foreach ($frontmatter as $key => $value): ?>
-<?= $key ?>: <?= \Kirby\Data\Json::encode($value) . "\n" ?>
-<?php endforeach ?>
----
+<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
 
-# <?= $page->title()->value() . "\n" ?>
+# <?= $page->title()->value() ?>
 
 <?php snippet('md/blocks', ['blocks' => $page->text()->toBlocks()]) ?>
