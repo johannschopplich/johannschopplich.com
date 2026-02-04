@@ -2,7 +2,6 @@
 
 use Kirby\Cms\App;
 use Kirby\Cms\Html;
-use Kirby\Http\Url;
 
 App::plugin('johannschopplich/website');
 
@@ -10,25 +9,25 @@ if (!function_exists('icon')) {
     /**
      * Returns an SVG icon from the `assets/icons` directory
      */
-    function icon(string $symbol, string|null $class = null)
+    function icon(string $symbol, string|null $class = null): string|null
     {
         static $iconDir;
-        if (!$iconDir) {
-            $kirby = App::instance();
-            $iconDir = $kirby->root('index') . '/assets/icons/';
-        }
+        static $svgCache = [];
 
-        $svg = Html::svg($iconDir . Url::path($symbol));
+        $iconDir ??= App::instance()->root('index') . '/assets/icons/';
+        $path = $iconDir . basename($symbol);
+
+        $svg = $svgCache[$path] ??= Html::svg($path);
 
         if (!$svg) {
-            return;
+            return null;
         }
 
-        $attributes = Html::attr([
+        $attributes = Html::attr(array_filter([
             'class' => $class,
             'aria-hidden' => 'true',
             'focusable' => 'false'
-        ]);
+        ], fn($v) => $v !== null));
 
         return preg_replace(
             '!^<svg([^>]*)>!i',
@@ -39,7 +38,7 @@ if (!function_exists('icon')) {
 }
 
 if (!function_exists('dateFormatter')) {
-    function dateFormatter()
+    function dateFormatter(): IntlDateFormatter
     {
         static $dateFormatter;
         return $dateFormatter ??= IntlDateFormatter::create(
