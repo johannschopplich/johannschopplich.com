@@ -79,22 +79,24 @@
             <hr class="border-contrast-low mt-3" aria-hidden="true">
 
             <dd class="max-w-prose">
-              <p class="text-lg font-600">
-                <?php if ($entry->url()->isNotEmpty()): ?>
-                  <a href="<?= $entry->url() ?>" class="link-default" target="_blank">
+              <div class="group relative">
+                <p class="text-lg font-600">
+                  <?php if ($entry->url()->isNotEmpty()): ?>
+                    <a href="<?= $entry->url() ?>" class="link-default" target="_blank">
+                      <span class="absolute inset-0" aria-hidden="true"></span>
+                      <?= $entry->company()->escape() ?>
+                    </a>
+                  <?php else: ?>
                     <?= $entry->company()->escape() ?>
-                  </a>
-                <?php else: ?>
-                  <?= $entry->company()->escape() ?>
-                <?php endif ?>
-              </p>
-
-              <p class="subtext text-primary-500 un-dark:text-primary-400">
-                <?= $entry->role()->escape() ?>
-              </p>
+                  <?php endif ?>
+                </p>
+                <p class="subtext text-primary-500 un-dark:text-primary-400">
+                  <?= $entry->role()->escape() ?>
+                </p>
+              </div>
 
               <?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
-                <div class="prose text-sm text-contrast-medium mt-sm">
+                <div class="prose text-sm mt-sm un-dark:text-contrast-medium">
                   <?php foreach ($entry->description()->toBlocks() as $block): ?>
                     <?= $block ?>
                   <?php endforeach ?>
