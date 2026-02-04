@@ -24,10 +24,5 @@
     "json",
     "jsonc",
     "yaml"
-  ],
-
-  // Use Intelephense as the default PHP formatter
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  }
+  ]
 }
