@@ -14,7 +14,7 @@
 
   <div class="flex items-center justify-end sm:order-last sm:ml-lg">
     <?php foreach ($kirby->languages() as $language): ?>
-      <span class="inline-flex text-contrast-medium text-sm font-500 uppercase not-last:after:content-['/'] not-last:after:text-contrast-low not-last:after:px-[0.25em]">
+      <span class="inline-flex text-sm font-500 uppercase text-contrast-medium not-last:after:content-['/'] not-last:after:text-contrast-low not-last:after:px-[0.25em]">
         <a
           href="<?= $page->urlForLanguage($language->code()) ?>"
           hreflang="<?= $language->code() ?>"
