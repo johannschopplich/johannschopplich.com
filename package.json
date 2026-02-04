@@ -3,9 +3,9 @@
   "private": true,
   "packageManager": "pnpm@10.28.2",
   "scripts": {
-    "assets:head": "esbuild src/head.js --format=esm --target=es2022 --minify --outdir=public/dist/assets",
+    "inline": "esbuild src/inline/*.js --minify --outdir=public/dist/inline",
     "dev": "rm -rf public/dist && mprocs",
-    "build": "unocss && vite build && npm run assets:head",
+    "build": "unocss && vite build && pnpm run inline",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test:types": "tsc --noEmit",

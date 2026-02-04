@@ -53,7 +53,9 @@ https://github.com/johannschopplich/johannschopplich.com
   <link rel="preload" href="/assets/fonts/woff2/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 
   <script>
-    <?= asset((vite()->isDev() ? '../src' : 'dist/assets') . '/head.js')->read() ?>
+    <?= vite()->isDev()
+      ? asset('src/inline/theme-init.js')->read()
+      : asset('dist/inline/theme-init.js')->read() ?>
   </script>
 
 </head>
