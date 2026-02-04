@@ -7,14 +7,14 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="pt-5xl pb-5xl md:pt-8xl md:pb-8xl">
-  <div class="grid max-w-screen-xl gap-5xl sm:gap-6xl sm:pr-lg md:grid-cols-2 md:pr-3xl md:px-[max(4vw,1.875rem)]">
+  <div class="max-w-screen-xl flex flex-col gap-5xl md:flex-row md:items-stretch md:px-[max(4vw,1.875rem)]">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
-      <div>
-        <figure class="relative select-none md:shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
+      <div class="grow min-w-0 md:min-w-min">
+        <figure class="relative select-none shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
           <svg id="drauu-canvas" class="absolute top-0 left-0 z-10 hidden h-full w-full cursor-crosshair touch-pinch-zoom md:block"></svg>
           <img
             srcset="<?= $image->srcset() ?>"
-            sizes="(min-width: 1280px) 640px, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 768px) 320px, 100vw"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
             alt="<?= $image->alt() ?>">
@@ -22,7 +22,7 @@
 
         <div
           x-data="drauuControls"
-          class="drauu-controls mt-xs ml-[4px] hidden flex-wrap items-center gap-1 md:flex">
+          class="drauu-controls mt-xs ml-[4px] hidden items-center gap-1 md:flex">
           <button
             @click="setMode('stylus')"
             :class="{ 'is-active': mode === 'stylus' }"
@@ -49,7 +49,7 @@
       </div>
     <?php endif ?>
 
-    <div class="prose px-lg md:px-0 xl:flex xl:flex-col xl:pb-[2.25rem]">
+    <div class="prose max-w-prose px-lg md:px-0 xl:flex xl:flex-col xl:pb-[2.25rem]">
       <?php foreach ($page->bio()->toBlocks() as $block): ?>
         <?php /** @var \Kirby\Cms\Block $block */ ?>
         <?php if ($block->type() === 'heading'): ?>
@@ -65,29 +65,45 @@
 <div class="pb-8xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
   <div class="content pt-5xl md:pt-8xl">
     <div class="max-w-screen-xl">
-      <?php foreach ($page->cv()->toLayouts() as $layout): ?>
-        <div class="gap-x-3xl grid grid-cols-[repeat(auto-fit,minmax(calc(22ch-1.875rem),1fr))] gap-y-8 md:grid-cols-[repeat(3,minmax(0,auto))]">
-          <?php foreach ($layout->columns() as $column): ?>
-            <div class="prose">
-              <?php foreach ($column->blocks() as $block): ?>
-                <?php /** @var \Kirby\Cms\Block $block */ ?>
-                <?php if ($block->type() === 'heading'): ?>
-                  <h2 class="text-sm tracking-[0.25ch] uppercase un-dark:text-contrast-soft"><?= $block->text() ?></h2>
-                <?php elseif ($block->type() === 'text'): ?>
-                  <?= preg_replace(
-                    '/<code>(.*?)<\/code>/',
-                    '<sparkly-text style="--sparkly-text-size: 2em; --sparkly-text-color: gold">$1</sparkly-text>',
-                    $block->toHtml()
-                  ) ?>
+      <section>
+        <h2 class="title text-2xl mb-3xl">
+          <?= t('cv.career') ?>
+        </h2>
+
+        <dl class="grid grid-cols-[auto_1fr_auto] gap-x-lg gap-y-5xl">
+          <?php foreach ($page->career()->toStructure() as $entry): ?>
+            <dt class="font-600 tracking-[0.125ch] uppercase text-contrast-medium">
+              <?= $entry->period()->escape() ?>
+            </dt>
+
+            <hr class="border-contrast-low mt-3" aria-hidden="true">
+
+            <dd class="max-w-prose">
+              <p class="text-lg font-600">
+                <?php if ($entry->url()->isNotEmpty()): ?>
+                  <a href="<?= $entry->url() ?>" class="link-default" target="_blank">
+                    <?= $entry->company()->escape() ?>
+                  </a>
                 <?php else: ?>
-                  <?= $block ?>
+                  <?= $entry->company()->escape() ?>
                 <?php endif ?>
-              <?php endforeach ?>
-            </div>
+              </p>
+
+              <p class="subtext text-primary-500 un-dark:text-primary-400">
+                <?= $entry->role()->escape() ?>
+              </p>
+
+              <?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
+                <div class="prose text-sm text-contrast-medium mt-sm">
+                  <?php foreach ($entry->description()->toBlocks() as $block): ?>
+                    <?= $block ?>
+                  <?php endforeach ?>
+                </div>
+              <?php endif ?>
+            </dd>
           <?php endforeach ?>
-        </div>
-      <?php endforeach ?>
+        </dl>
+      </section>
     </div>
   </div>
-</div>
-<?php endsnippet() ?>
+  <?php endsnippet() ?>

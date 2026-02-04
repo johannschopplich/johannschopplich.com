@@ -27,6 +27,7 @@ return [
         'project.allWorks' => 'All Works',
         'photography' => 'Photographs',
         'photography.more' => 'More Photographs',
+        'cv.career' => 'Career',
         'feed.title' => 'Johann’s Latest Articles',
         'feed.description' => 'Receive my latest posts when they come out.',
         'drauu.stylus' => 'Stylus',

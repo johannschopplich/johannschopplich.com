@@ -1,6 +1,7 @@
 @layer components {
   .prose {
     --un-prose-code: var(--un-color-contrast-higher);
+    --un-prose-hr: var(--un-color-border);
     --un-prose-bg-soft: var(--un-color-contrast-lowest);
     --un-prose-line-height: var(--un-line-height-normal);
     --un-decoration-color: var(--un-color-primary);
@@ -189,10 +190,21 @@
     }
 
     & :where(.note) {
+      position: relative;
       background-color: var(--un-prose-bg-soft);
       border: 1px solid var(--un-color-border);
       padding: 1rem;
       box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        width: 3px;
+        background-color: var(--un-color-primary);
+      }
 
       @media (--sm) {
         padding-left: 1.25rem;

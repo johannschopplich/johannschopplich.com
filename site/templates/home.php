@@ -52,7 +52,7 @@
 
 <div class="content mb-lg">
   <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
-    <h2 class="title text-primary-500 text-2xl un-dark:text-primary-400">
+    <h2 class="title text-2xl text-primary-500 un-dark:text-primary-400">
       <?= t('articles.latest') ?>
     </h2>
 
@@ -86,7 +86,7 @@
 
   <div class="content mb-3xl">
     <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
-      <h2 class="title text-primary-500 text-2xl un-dark:text-primary-400">
+      <h2 class="title text-2xl text-primary-500 un-dark:text-primary-400">
         <?= t('photography') ?>
       </h2>
 

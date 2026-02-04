@@ -28,7 +28,7 @@
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
       <div class="group content relative pt-xl mb-xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
-        <h2 class="title text-2xl font-600">
+        <h2 class="title text-2xl">
           <a
             href="<?= $project->url() ?>"
             class="link-default">
@@ -37,7 +37,7 @@
           </a>
         </h2>
 
-        <p class="text-sm font-500 text-contrast-medium">
+        <p class="subtext text-contrast-medium">
           <?= $project->subtitle()->escape() ?>
         </p>
       </div>
