@@ -1,6 +1,7 @@
 <?php
 
 use Kirby\Cms\Page;
+use Kirby\Query\Runners\DefaultRunner;
 
 return [
 
@@ -8,6 +9,10 @@ return [
 
     'yaml' => [
         'handler' => 'symfony'
+    ],
+
+    'query' => [
+        'runner' => DefaultRunner::class
     ],
 
     'date' => [
