@@ -72,7 +72,7 @@
 
         <dl class="grid grid-cols-[auto_1fr_auto] gap-x-lg gap-y-5xl">
           <?php foreach ($page->career()->toStructure() as $entry): ?>
-            <dt class="font-600 tracking-[0.125ch] uppercase text-contrast-medium">
+            <dt class="font-600 tracking-[0.075em] uppercase text-contrast-medium">
               <?= $entry->period()->escape() ?>
             </dt>
 
