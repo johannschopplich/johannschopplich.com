@@ -159,7 +159,7 @@ export default defineConfig<Theme>({
       // Components
       "underline-default":
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
-      icon: "w-[1.25em] h-[1.25em] [&>svg]:w-full [&>svg]:h-full",
+      icon: "size-[1.25em] [&>svg]:w-full [&>svg]:h-full",
       tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
       "button-callout":
         "inline-flex items-center text-size-xs leading-[1.05] font-heading font-500 uppercase tracking-[0.125ch] -m-2 p-2",
