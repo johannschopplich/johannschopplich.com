@@ -11,9 +11,9 @@
     --un-font-family-normal: "Iosevka Aile", monospace;
     --un-font-family-heading:
       "Cooper Hewitt", ui-sans-serif, system-ui, sans-serif;
-    --un-line-height-normal: calc(1ex / 0.32);
-    /* --un-line-height-heading: calc(1ex / 0.42); */
-    --un-line-height-heading: 1.25; /* calc(1ex / 0.2) */
+    --un-line-height-normal: 1.6;
+    --un-line-height-heading: 1.25;
+    --un-line-height-dense: calc(var(--un-line-height-normal) * 0.875);
 
     --un-text-scale-ratio: 1.2;
     --un-text-lg: calc(1rem * var(--un-text-scale-ratio));

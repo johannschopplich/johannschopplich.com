@@ -55,10 +55,10 @@
       position: relative;
       border: none;
       font-size: var(--un-text-lg);
-      line-height: var(--un-prose-line-height);
+      line-height: var(--un-line-height-dense);
       font-style: italic;
       text-align: center;
-      padding: 1.5rem 2rem;
+      padding: calc(2 * var(--un-prose-space-y)) 2rem;
       quotes: "“" "”";
 
       &:lang(de) {
@@ -68,25 +68,25 @@
       &::before,
       &::after {
         position: absolute;
-        font-family: var(--un-font-family-heading);
+        font-family: var(--un-font-family-normal);
         font-size: var(--un-text-4xl);
         font-style: normal;
-        color: var(--un-color-contrast-soft);
+        color: var(--un-color-primary);
         line-height: 1;
       }
 
       &::before {
         content: open-quote;
         top: 0;
-        left: 0.25rem;
-        transform: translate(-50%, -25%);
+        left: 0;
+        transform: translateY(-25%);
       }
 
       &::after {
         content: close-quote;
         bottom: 0;
-        right: 0.25rem;
-        transform: translate(50%, 25%);
+        right: 0;
+        transform: translateY(25%);
       }
 
       @media (--md) {
@@ -97,7 +97,7 @@
         font-size: 0.75rem;
         font-weight: 500;
         font-family: var(--un-prose-font-mono);
-        line-height: calc(var(--un-line-height-normal) * 0.875);
+        line-height: var(--un-line-height-dense);
         font-style: normal;
         margin-top: 0.75rem;
       }
@@ -161,7 +161,7 @@
     }
 
     & :where(figcaption) {
-      line-height: calc(var(--un-line-height-normal) * 0.875);
+      line-height: var(--un-line-height-dense);
       font-size: 0.75rem;
       font-weight: 500;
       padding: 0 3px 0.25rem;

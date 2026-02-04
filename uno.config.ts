@@ -83,6 +83,7 @@ export default defineConfig<Theme>({
     leading: {
       normal: "var(--un-line-height-normal)",
       heading: "var(--un-line-height-heading)",
+      dense: "var(--un-line-height-dense)",
     },
     container: {
       prose: "70ch",
