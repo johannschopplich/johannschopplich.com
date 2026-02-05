@@ -51,6 +51,18 @@
       }
     }
 
+    &
+      :where(
+        h1:not(:first-child),
+        h2:not(:first-child),
+        h3:not(:first-child),
+        h4:not(:first-child),
+        h5:not(:first-child),
+        h6:not(:first-child)
+      ) {
+      margin-top: calc(3 * var(--un-prose-space-y, 1rem));
+    }
+
     & :where(blockquote) {
       position: relative;
       border: none;

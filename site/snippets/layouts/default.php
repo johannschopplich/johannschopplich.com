@@ -54,7 +54,7 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <script>
     <?= vite()->isDev()
-      ? asset('src/inline/theme-init.js')->read()
+      ? asset('../src/inline/theme-init.js')->read()
       : asset('dist/inline/theme-init.js')->read() ?>
   </script>
 
