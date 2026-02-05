@@ -27,7 +27,7 @@ if (!function_exists('icon')) {
             'class' => $class,
             'aria-hidden' => 'true',
             'focusable' => 'false'
-        ], fn($v) => $v !== null));
+        ], fn ($v) => $v !== null));
 
         return preg_replace(
             '!^<svg([^>]*)>!i',
@@ -46,5 +46,15 @@ if (!function_exists('dateFormatter')) {
             IntlDateFormatter::LONG,
             IntlDateFormatter::NONE
         );
+    }
+}
+
+if (!function_exists('renderMarkdown')) {
+    /**
+     * Builds clean Markdown output for LLM consumption by joining non-empty parts
+     */
+    function renderMarkdown(string|null ...$parts): string
+    {
+        return implode("\n\n", array_filter($parts, fn ($p) => $p !== null && $p !== ''));
     }
 }

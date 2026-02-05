@@ -6,27 +6,20 @@
 
 $kirby->response()->type('text/markdown');
 
-$frontmatter = [
-  'title' => $page->title()->value(),
-  'url' => '/' . $page->uid(),
-  ...($page->description()->isNotEmpty() ? ['description' => $page->description()->value()] : [])
+$parts = [
+  snippet('llm/frontmatter', [], true),
+  '# ' . $page->title()->value(),
 ];
 
-?>
-<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
+foreach ($page->children()->listed()->sortBy('published', 'desc') as $article) {
+  $parts[] = '## ' . $article->title()->value();
+  $parts[] = implode("\n", [
+    '- **URL:** ' . $article->url(),
+    '- **Date:** ' . $article->published()->toDate('Y-MM-dd')
+  ]);
+  if ($article->description()->isNotEmpty()) {
+    $parts[] = $article->description()->value();
+  }
+}
 
-# <?= $page->title()->value() ?>
-
-<?php foreach ($page->children()->listed()->sortBy('published', 'desc') as $article): ?>
-
-## <?= $article->title()->value() ?>
-
-- **URL:** <?= $article->url() ?>
-
-- **Date:** <?= $article->published()->toDate('Y-MM-dd') ?>
-
-<?php if ($article->description()->isNotEmpty()): ?>
-<?= $article->description()->value() ?>
-
-<?php endif ?>
-<?php endforeach ?>
+echo renderMarkdown(...$parts);

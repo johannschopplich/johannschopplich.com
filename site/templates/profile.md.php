@@ -6,30 +6,22 @@
 
 $kirby->response()->type('text/markdown');
 
-$frontmatter = [
-  'title' => $page->title()->value(),
-  'url' => '/' . $page->uid(),
-  ...($page->description()->isNotEmpty() ? ['description' => $page->description()->value()] : [])
+$parts = [
+  snippet('llm/frontmatter', [], true),
+  '# ' . $page->title()->value(),
+  snippet('llm/blocks', ['blocks' => $page->bio()->toBlocks()], true),
+  '## Career',
 ];
 
-?>
-<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
+foreach ($page->career()->toStructure() as $entry) {
+  $parts[] = '### ' . $entry->company()->value() . ' – ' . $entry->role()->value();
+  $parts[] = '**Period:** ' . $entry->period()->value();
+  if ($entry->url()->isNotEmpty()) {
+    $parts[] = '**Website:** ' . $entry->url()->value();
+  }
+  if ($entry->description()->toBlocks()->isNotEmpty()) {
+    $parts[] = snippet('llm/blocks', ['blocks' => $entry->description()->toBlocks()], true);
+  }
+}
 
-<?php snippet('md/blocks', ['blocks' => $page->bio()->toBlocks()]) ?>
-
-## Career
-
-<?php foreach ($page->career()->toStructure() as $entry): ?>
-### <?= $entry->company()->value() ?> — <?= $entry->role()->value() ?>
-
-**Period:** <?= $entry->period()->value() ?>
-
-<?php if ($entry->url()->isNotEmpty()): ?>
-**Website:** <?= $entry->url()->value() ?>
-
-<?php endif ?>
-<?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
-<?= snippet('md/blocks', ['blocks' => $entry->description()->toBlocks()], true) ?>
-
-<?php endif ?>
-<?php endforeach ?>
+echo renderMarkdown(...$parts);

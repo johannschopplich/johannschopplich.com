@@ -36,7 +36,7 @@ return [
     'cache' => [
         'pages' => [
             'active' => env('KIRBY_CACHE', false),
-            'ignore' => fn(Page $page) => $page->kirby()->user() !== null
+            'ignore' => fn (Page $page) => $page->kirby()->user() !== null
         ]
     ],
 

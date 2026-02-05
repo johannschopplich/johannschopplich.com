@@ -14,7 +14,7 @@ $converter = new HtmlConverter([
   'strip_placeholder_links' => true,
   'use_autolinks' => false,
   'hard_break' => true,
-  'remove_nodes' => 'script style',
+  'remove_nodes' => 'script style figure',
 ]);
 
 $html = $blocks->toHtml();

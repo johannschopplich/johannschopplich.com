@@ -11,5 +11,8 @@ insert_final_newline = true
 [*.php]
 indent_size = 4
 
+[site/snippets/llm/frontmatter.php]
+insert_final_newline = false
+
 [site/{snippets,templates}/**/*.php]
 indent_size = 2

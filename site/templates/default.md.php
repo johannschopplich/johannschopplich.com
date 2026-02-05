@@ -6,15 +6,8 @@
 
 $kirby->response()->type('text/markdown');
 
-$frontmatter = [
-  'title' => $page->title()->value(),
-  'url' => '/' . $page->uid(),
-  ...($page->description()->isNotEmpty() ? ['description' => $page->description()->value()] : [])
-];
-
-?>
-<?php snippet('md/frontmatter', ['data' => $frontmatter]) ?>
-
-# <?= $page->title()->value() ?>
-
-<?php snippet('md/blocks', ['blocks' => $page->text()->toBlocks()]) ?>
+echo renderMarkdown(
+  snippet('llm/frontmatter', [], true),
+  '# ' . $page->title()->value(),
+  snippet('llm/blocks', ['blocks' => $page->text()->toBlocks()], true)
+);
