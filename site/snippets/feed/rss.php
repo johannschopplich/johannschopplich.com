@@ -8,7 +8,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';
     <title><?= Xml::encode($title) ?></title>
     <link><?= Xml::encode($url) ?></link>
     <lastBuildDate><?= $modified ?></lastBuildDate>
-    <?php if ($description && is_string($description) && strlen(trim($description)) > 0): ?>
+    <?php if (trim($description ?? '') !== ''): ?>
       <description><?= Xml::encode($description) ?></description>
     <?php endif ?>
     <?php foreach ($items as $item): ?>

@@ -2,23 +2,20 @@
 
 /** @var \Kirby\Cms\Block $block */
 
+if (!($image = $block->image()->toFile())) {
+  return;
+}
+
 $caption = $block->caption();
-$src = null;
 $size = $block->size()->or(50)->toInt();
 
-if ($image = $block->image()->toFile()) {
-  if ($caption->isEmpty()) {
-    $caption = $image->caption()->permalinksToUrls();
-  }
-
-  $src = $image->resize(1024)->url();
-} else {
-  return;
+if ($caption->isEmpty()) {
+  $caption = $image->caption()->permalinksToUrls();
 }
 
 ?>
 <figure class="is-outset">
-  <div class="h-64" style="background-image: url(<?= $src ?>); background-size: <?= $size ?>%;"></div>
+  <div class="h-64" style="background-image: url(<?= $image->resize(1024)->url() ?>); background-size: <?= $size ?>%;"></div>
 
   <?php if ($caption->isNotEmpty()): ?>
     <figcaption>

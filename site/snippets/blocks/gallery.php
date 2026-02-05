@@ -17,10 +17,8 @@ if ($images->count() > 2) {
   $horizontalImages = [];
 
   foreach ($imageArray as $image) {
-    $ratio = $image->width() / $image->height();
-
     // Consider images with ratio < 1 as vertical (portrait)
-    if ($ratio < 1) {
+    if ($image->width() / $image->height() < 1) {
       $verticalImages[] = $image;
     } else {
       $horizontalImages[] = $image;

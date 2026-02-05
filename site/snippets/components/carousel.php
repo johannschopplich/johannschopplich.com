@@ -4,7 +4,10 @@
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 
-$selectedHeight = !empty($height) && in_array($height, ['tight', 'loose'], true) ? $height : 'loose';
+$selectedHeight = match ($height ?? null) {
+  'tight', 'loose' => $height,
+  default => 'loose',
+};
 $totalSlides = $query->count();
 
 ?>

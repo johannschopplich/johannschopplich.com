@@ -4,7 +4,7 @@ use Kirby\Toolkit\I18n;
 
 $complementaryLanguage = $kirby
   ->languages()
-  ->filter(fn ($language) => $language->code() !== $kirby->language()->code())
+  ->filter(fn ($language) => $language->code() !== $kirby->languageCode())
   ->first();
 ?>
 <footer class="sticky top-100vh">
