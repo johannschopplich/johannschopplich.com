@@ -25,35 +25,35 @@ if ($images->count() > 2) {
     }
   }
 
-  // Create a balanced distribution using alternating pattern
-  $sortedMiddle = [];
+  // Create a balanced distribution using golden ratio spacing
   $verticalCount = count($verticalImages);
   $horizontalCount = count($horizontalImages);
+  $total = $verticalCount + $horizontalCount;
 
   if ($verticalCount === 0) {
-    // No vertical images, just use horizontal ones
     $sortedMiddle = $horizontalImages;
   } elseif ($horizontalCount === 0) {
-    // No horizontal images, just use vertical ones
     $sortedMiddle = $verticalImages;
   } else {
-    // Calculate how often to place a vertical image
-    $ratio = $horizontalCount / $verticalCount;
-    $verticalIndex = 0;
-    $horizontalIndex = 0;
-    $nextVerticalAt = $ratio / 2; // Start placing verticals at half the ratio
+    $phi = (1 + sqrt(5)) / 2; // Golden ratio ≈ 1.618
+    $sortedMiddle = array_fill(0, $total, null);
 
-    for ($i = 0; $i < ($verticalCount + $horizontalCount); $i++) {
-      $shouldPlaceVertical = $verticalIndex < $verticalCount &&
-        ($i >= $nextVerticalAt || $horizontalIndex >= $horizontalCount);
+    // Place vertical images using golden ratio distribution
+    for ($i = 0; $i < $verticalCount; $i++) {
+      $position = (int) floor(fmod($i / $phi, 1) * $total);
 
-      if ($shouldPlaceVertical) {
-        $sortedMiddle[] = $verticalImages[$verticalIndex];
-        $verticalIndex++;
-        $nextVerticalAt += $ratio; // Next vertical placement
-      } else {
-        $sortedMiddle[] = $horizontalImages[$horizontalIndex];
-        $horizontalIndex++;
+      // Find nearest empty slot if position is taken
+      while ($sortedMiddle[$position] !== null) {
+        $position = ($position + 1) % $total;
+      }
+      $sortedMiddle[$position] = $verticalImages[$i];
+    }
+
+    // Fill remaining slots with horizontal images
+    $hi = 0;
+    for ($i = 0; $i < $total; $i++) {
+      if ($sortedMiddle[$i] === null) {
+        $sortedMiddle[$i] = $horizontalImages[$hi++];
       }
     }
   }
