@@ -1,5 +1,5 @@
 import type { Theme } from "@unocss/preset-wind4";
-import { parseColor, variantMatcher } from "@unocss/preset-wind4/utils";
+import { variantMatcher } from "@unocss/preset-wind4/utils";
 import {
   defineConfig,
   presetIcons,
@@ -98,17 +98,6 @@ export default defineConfig<Theme>({
     })),
   ],
   rules: [
-    [
-      /^var-color-(.+)$/,
-      ([, body], { theme }) => {
-        const parsed = parseColor(body!, theme);
-        if (!parsed) return;
-
-        return {
-          [`--un-color-${body}`]: parsed.color,
-        };
-      },
-    ],
     [
       "hyphenate",
       {
