@@ -1,13 +1,12 @@
 <?php
 
 /** @var \Kirby\Cms\Page $page */
-/** @var string|null $textLanguageCode */
+/** @var string|null $lang */
 /** @var \Kirby\Cms\Blocks $blocks */
 
-$sectionAttrs = attr([
-  'class' => 'content',
-  'lang' => $textLanguageCode
-]);
+if ($page->parent()?->intendedTemplate()?->name() === 'articles') {
+    $blocks = $blocks->add($page->parent()->articleFooter()->toBlocks());
+}
 ?>
 
 <section class="pt-5xl pb-8xl md:pt-8xl">
@@ -32,25 +31,5 @@ $sectionAttrs = attr([
     <?php endif ?>
   </div>
 
-  <div <?= $sectionAttrs ?>>
-    <div class="prose max-w-prose">
-      <?php foreach ($blocks as $block): ?>
-        <?php /** @var \Kirby\Cms\Block $block */ ?>
-        <?php if ($block->type() === 'gallery'): ?>
-    </div>
-  </div>
-  <div class="mt-$un-prose-space-y">
-    <?= $block ?>
-  </div>
-  <div <?= $sectionAttrs ?>>
-    <div class="prose max-w-prose">
-    <?php else: ?>
-      <?= $block ?>
-    <?php endif ?>
-  <?php endforeach ?>
-
-  <?php if ($page->parent()?->intendedTemplate()?->name() === 'articles'): ?>
-    <?= $page->parent()->articleFooter()->toBlocks() ?>
-  <?php endif ?>
-    </div>
+  <?php snippet('components/prose-blocks', compact('blocks', 'lang')) ?>
 </section>

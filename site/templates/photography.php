@@ -12,21 +12,12 @@
       <h1 class="sr-only">
         <?= $page->title()->escape() ?>
       </h1>
+    </div>
+  </div>
 
-      <?php foreach ($page->text()->toBlocks() as $block): ?>
-        <?php /** @var \Kirby\Cms\Block $block */ ?>
-        <?php if ($block->type() === 'gallery'): ?>
-    </div>
-  </div>
-  <div class="mt-$un-prose-space-y mb-8xl">
-    <?= $block ?>
-  </div>
-  <div class="content">
-    <div class="prose max-w-prose">
-    <?php else: ?>
-      <?= $block ?>
-    <?php endif ?>
-  <?php endforeach ?>
-    </div>
-  </div>
-  <?php endsnippet() ?>
+  <?php snippet('components/prose-blocks', [
+      'blocks' => $page->text()->toBlocks(),
+      'breakoutClass' => 'mb-8xl'
+  ]) ?>
+</div>
+<?php endsnippet() ?>

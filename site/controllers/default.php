@@ -1,21 +1,21 @@
 <?php
 
 return function (\Kirby\Cms\App $kirby, \Kirby\Cms\Page $page) {
-    $textLanguageCode = null;
+    $lang = null;
     $blocks = $page->text()->toBlocks();
 
     if ($blocks->isEmpty()) {
-        $textLanguageCode = $kirby
+        $lang = $kirby
             ->languages()
             ->not($kirby->languageCode())
             ->first()
-            ->code();
+            ?->code();
 
         $blocks = $page
-            ->content($textLanguageCode)
+            ->content($lang)
             ->text()
             ->toBlocks();
     }
 
-    return compact('textLanguageCode', 'blocks');
+    return compact('lang', 'blocks');
 };

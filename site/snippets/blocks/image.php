@@ -4,6 +4,7 @@ use Kirby\Http\Url;
 use Kirby\Toolkit\Html;
 
 /** @var \Kirby\Cms\Block $block */
+
 $alt     = $block->alt();
 $caption = $block->caption();
 $link    = $block->link();
@@ -39,9 +40,7 @@ if ($block->location() === 'web') {
 }
 
 ?>
-<figure <?= attr([
-          'class' => $props ?? null
-        ]) ?>>
+<figure <?= attr(['class' => $props ?? null]) ?>>
   <?php if ($link->isNotEmpty()): ?>
     <a href="<?= $link->toUrl() ?>">
       <?= $img ?>

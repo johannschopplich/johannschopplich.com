@@ -33,7 +33,8 @@
                md:hover:text-current md:hover:before:bg-primary md:focus:before:bg-primary
                md:aria-[current]:before:bg-current md:aria-[current]:hover:before:bg-current
                max-md:hover:underline-default max-md:aria-[current]:underline-default"
-        <?php e($item->isOpen(), 'aria-current="page"') ?>>
+        <?php e($item->isOpen(), 'aria-current="page"') ?>
+      >
         <?= $item->title() ?>
       </a>
     <?php endforeach ?>

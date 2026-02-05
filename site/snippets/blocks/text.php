@@ -1,4 +1,6 @@
 <?php
 
-/** @var \Kirby\Cms\Block $block */ ?>
+/** @var \Kirby\Cms\Block $block */
+
+?>
 <?= $block->text()->permalinksToUrls();

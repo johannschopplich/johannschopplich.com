@@ -15,7 +15,8 @@ $totalSlides = $query->count();
   aria-roledescription="<?= t('carousel.roledescription') ?>"
   aria-label="<?= $ariaLabel ?? t('carousel.label') ?>"
   data-carousel
-  data-height="<?= $selectedHeight ?>">
+  data-height="<?= $selectedHeight ?>"
+>
   <div class="flex gap-xs cursor-grab active:cursor-grabbing" aria-live="polite">
     <?php foreach ($query->values() as $index => $image): ?>
       <?php
@@ -30,7 +31,8 @@ $totalSlides = $query->count();
         class="shrink-0 min-w-0 max-w-[100vw]"
         role="group"
         aria-roledescription="<?= t('carousel.slide') ?>"
-        aria-label="<?= $index + 1 ?> / <?= $totalSlides ?>">
+        aria-label="<?= $index + 1 ?> / <?= $totalSlides ?>"
+      >
         <div
           class="<?= trim(implode(' ', [
                     'overflow-hidden',
@@ -38,7 +40,8 @@ $totalSlides = $query->count();
                     ($isDocument || $isMobile) ? 'h-$cell-h px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
                     $isDesktop ? 'flex flex-col items-center justify-center h-$cell-h p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
                   ]), ' ') ?>"
-          style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>">
+          style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>"
+        >
           <?php if ($isMobile): ?>
             <div class="absolute left-1/2 bottom-$spacing-xl w-[20%] h-[1.5px] bg-stone-900 rounded-full translate-x-[-50%] translate-y-[-4px] md:bottom-$spacing-5xl md:w-[12%] md:h-[2px] md:translate-y-[-6px]"></div>
           <?php elseif ($isDesktop): ?>
@@ -72,7 +75,8 @@ $totalSlides = $query->count();
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
             style="<?= $imgStyles ?>"
-            alt="<?= $image->alt()->or('')->escape() ?>">
+            alt="<?= $image->alt()->or('')->escape() ?>"
+          >
         </div>
       </div>
     <?php endforeach ?>

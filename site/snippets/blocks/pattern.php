@@ -1,9 +1,10 @@
 <?php
 
 /** @var \Kirby\Cms\Block $block */
+
 $caption = $block->caption();
-$src     = null;
-$size    = $block->size()->or(50)->toInt();
+$src = null;
+$size = $block->size()->or(50)->toInt();
 
 if ($image = $block->image()->toFile()) {
   if ($caption->isEmpty()) {
@@ -17,9 +18,7 @@ if ($image = $block->image()->toFile()) {
 
 ?>
 <figure class="is-outset">
-  <div
-    class="h-64"
-    style="background-image: url(<?= $src ?>); background-size: <?= $size ?>%;"></div>
+  <div class="h-64" style="background-image: url(<?= $src ?>); background-size: <?= $size ?>%;"></div>
 
   <?php if ($caption->isNotEmpty()): ?>
     <figcaption>

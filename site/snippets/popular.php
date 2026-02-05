@@ -28,7 +28,8 @@ $year = null;
             'href' => $post->url(),
             'class' => 'gap-xs mb-xs flex items-start ' . (!$isActive ? ' link-default' : ''),
             'aria-current' => $isActive ? 'page' : null
-          ]) ?>>
+          ]) ?>
+      >
         <span class="w-max <?php e($isActive, 'underline-default') ?>">
           <?= $post->title()->escape() ?>
         </span>

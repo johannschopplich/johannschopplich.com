@@ -1,6 +1,8 @@
 <?php
 
-/** @var \Kirby\Cms\Block $block */ ?>
+/** @var \Kirby\Cms\Block $block */
+
+?>
 <div class="note">
   <?= $block->text()->permalinksToUrls() ?>
 </div>
