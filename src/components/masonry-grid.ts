@@ -3,11 +3,11 @@ import { adoptStyles } from "./_shared";
 let sharedSheet: CSSStyleSheet | HTMLStyleElement | undefined;
 
 export class MasonryGrid extends HTMLElement {
-  #gap: number = 16;
-  #columns: number = 0;
-  #needsUpdate: boolean = false;
-  #resizeObserver: ResizeObserver;
+  #gap = 16;
+  #columns = 0;
+  #needsUpdate = false;
   #itemHeights = new WeakMap<HTMLElement, number>();
+  #resizeObserver = new ResizeObserver(() => this.#updateGridItems());
 
   #css = `
 :host {
@@ -17,18 +17,12 @@ export class MasonryGrid extends HTMLElement {
     minmax(min(var(--masonry-column-max-width, 25rem), 100%), 1fr)
   );
   justify-content: center;
-  gap: var(--masonry-gap, 16px);
 }
 
 ::slotted(*) {
   align-self: flex-start;
 }
 `;
-
-  constructor() {
-    super();
-    this.#resizeObserver = new ResizeObserver(this.updateGridItems.bind(this));
-  }
 
   connectedCallback() {
     if (!this.shadowRoot) {
@@ -38,31 +32,75 @@ export class MasonryGrid extends HTMLElement {
     }
 
     this.#gap = Number.parseFloat(getComputedStyle(this).rowGap);
-
-    // Observe the container itself
     this.#resizeObserver.observe(this);
 
-    // Observe all children
     for (const child of [...this.children]) {
       this.#resizeObserver.observe(child);
     }
 
-    this.updateGridItems();
+    this.#updateGridItems();
   }
 
   disconnectedCallback() {
     this.#resizeObserver.disconnect();
   }
 
-  updateGridItems() {
-    // Get current column count from computed style
+  /**
+   * Greedy bin packing: assign each item to the column with the shortest height.
+   * Uses CSS `order` property to reorder items without DOM manipulation.
+   */
+  #optimizeOrder(items: HTMLElement[], columns: number): void {
+    if (columns <= 1 || items.length <= columns) {
+      for (const item of items) {
+        item.style.removeProperty("order");
+      }
+      return;
+    }
+
+    const heights = items.map(
+      (item) =>
+        this.#itemHeights.get(item) ?? item.getBoundingClientRect().height,
+    );
+
+    // Greedy assignment: place each item in the shortest column
+    const columnHeights = Array.from<number>({ length: columns }).fill(0);
+    const columnItems: number[][] = Array.from({ length: columns }, () => []);
+
+    for (let i = 0; i < items.length; i++) {
+      const minCol = columnHeights.indexOf(Math.min(...columnHeights));
+      columnItems[minCol]!.push(i);
+      columnHeights[minCol]! += heights[i]! + this.#gap;
+    }
+
+    // Build new order: row by row across columns
+    const maxRows = Math.max(...columnItems.map((c) => c.length));
+    const newOrder: number[] = [];
+
+    for (let row = 0; row < maxRows; row++) {
+      for (const column of columnItems) {
+        const itemIndex = column[row];
+        if (itemIndex !== undefined) {
+          newOrder.push(itemIndex);
+        }
+      }
+    }
+
+    // Apply CSS order property
+    for (let position = 0; position < newOrder.length; position++) {
+      const itemIndex = newOrder[position];
+      if (itemIndex !== undefined) {
+        items[itemIndex]!.style.order = String(position);
+      }
+    }
+  }
+
+  #updateGridItems() {
     const columns =
       getComputedStyle(this).gridTemplateColumns.split(" ").length;
     const items = [...this.children] as HTMLElement[];
 
     let hasHeightChanges = false;
 
-    // Check each item for height changes
     for (const item of items) {
       const height = Math.round(item.getBoundingClientRect().height);
       const previousHeight = this.#itemHeights.get(item);
@@ -73,40 +111,51 @@ export class MasonryGrid extends HTMLElement {
       }
     }
 
-    // Bail if the number of columns hasn't changed and no heights have changed
-    if (this.#columns === columns && !hasHeightChanges && !this.#needsUpdate)
+    if (this.#columns === columns && !hasHeightChanges && !this.#needsUpdate) {
       return;
+    }
 
-    // Update the number of columns
+    const hasColumnsChanged = this.#columns !== columns;
     this.#columns = columns;
 
-    // Revert to initial positioning and reset all item margins
+    if (hasColumnsChanged) {
+      this.#optimizeOrder(items, columns);
+    }
+
+    // Use nested rAF to ensure margin reset is applied before recalculating
     requestAnimationFrame(() => {
-      items.forEach((item) => item.style.removeProperty("margin-top"));
+      for (const item of items) {
+        item.style.removeProperty("margin-top");
+      }
 
-      // Apply masonry layout if we have more than one column
       if (this.#columns > 1) {
-        // Slight delay to ensure the margin removal has been applied
         requestAnimationFrame(() => {
-          // Skip the first row of items
-          for (const [index, item] of items.slice(columns).entries()) {
-            const itemAbove = items[index];
-            if (!itemAbove) continue;
-            // Bottom edge of item above
-            const prevBottom = itemAbove.getBoundingClientRect().bottom;
-            // Top edge of current item
-            const currentTop = item.getBoundingClientRect().top;
-
-            // Set margin to create the masonry effect
-            item.style.marginTop = `${prevBottom + this.#gap - currentTop}px`;
-          }
-
+          this.#applyMasonryMargins(items, columns);
           this.#needsUpdate = false;
         });
       } else {
         this.#needsUpdate = false;
       }
     });
+  }
+
+  #applyMasonryMargins(items: HTMLElement[], columns: number): void {
+    const sortedItems = [...items].sort((a, b) => {
+      const orderA = Number.parseInt(a.style.order || "0", 10);
+      const orderB = Number.parseInt(b.style.order || "0", 10);
+      return orderA - orderB;
+    });
+
+    // Skip the first row of items
+    for (const [index, item] of sortedItems.slice(columns).entries()) {
+      const itemAbove = sortedItems[index];
+      if (!itemAbove) continue;
+
+      const prevBottom = itemAbove.getBoundingClientRect().bottom;
+      const currentTop = item.getBoundingClientRect().top;
+
+      item.style.marginTop = `${prevBottom + this.#gap - currentTop}px`;
+    }
   }
 }
 

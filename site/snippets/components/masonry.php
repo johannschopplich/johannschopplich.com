@@ -23,7 +23,8 @@
         width="<?= $image->width() ?>"
         height="<?= $image->height() ?>"
         style="aspect-ratio: <?= $image->width() ?>/<?= $image->height() ?>"
-        alt="<?= $image->alt()->or('')->escape() ?>">
+        alt="<?= $image->alt()->or('')->escape() ?>"
+      >
 
       <?php if ($image->caption()->isNotEmpty()): ?>
         <figcaption class="content text-size-xs leading-dense font-500 py-2 text-center">
