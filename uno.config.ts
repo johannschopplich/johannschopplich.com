@@ -17,18 +17,18 @@ export default defineConfig<Theme>({
   theme: {
     colors: {
       primary: {
-        DEFAULT: "oklch(65% 0.078 125)", // #849863
-        50: "oklch(97% 0.015 118)", // #f4f7ec
-        100: "oklch(94% 0.022 120)", // #e9eedd
-        200: "oklch(89% 0.035 122)", // #d7dfc6
-        300: "oklch(83% 0.052 123)", // #c1cda8
-        400: "oklch(75% 0.068 124)", // #a5b686
-        500: "oklch(65% 0.078 125)", // #849863
-        600: "oklch(55% 0.070 126)", // #67794b
-        700: "oklch(46% 0.058 128)", // #4f5e3b
-        800: "oklch(38% 0.046 130)", // #3a472d
-        900: "oklch(31% 0.036 131)", // #2a3421
-        950: "oklch(21% 0.026 132)", // #141b0e
+        DEFAULT: "var(--un-color-primary)",
+        50: "var(--un-color-primary-50)",
+        100: "var(--un-color-primary-100)",
+        200: "var(--un-color-primary-200)",
+        300: "var(--un-color-primary-300)",
+        400: "var(--un-color-primary-400)",
+        500: "var(--un-color-primary-500)",
+        600: "var(--un-color-primary-600)",
+        700: "var(--un-color-primary-700)",
+        800: "var(--un-color-primary-800)",
+        900: "var(--un-color-primary-900)",
+        950: "var(--un-color-primary-950)",
       },
       link: {
         DEFAULT: "var(--un-color-link)",
