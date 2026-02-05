@@ -6,8 +6,8 @@
 
 snippet('layouts/default', slots: true);
 
-snippet('text');
-snippet('popular', [
+snippet('sections/text-section');
+snippet('components/article-list', [
   'query' => $kirby->collection('popularArticles'),
   'heading' => t('articles.popular')
 ]);

@@ -65,7 +65,7 @@ https://github.com/johannschopplich/johannschopplich.com
            [&.is-pinned]:border-contrast-lower un-dark:[&.is-pinned]:border-contrast-lowest"
   >
     <div class="content py-2 md:py-xs">
-      <?php snippet('navigation') ?>
+      <?php snippet('partials/navigation') ?>
     </div>
   </header>
 
@@ -73,7 +73,7 @@ https://github.com/johannschopplich/johannschopplich.com
     <?= $slot ?>
   </main>
 
-  <?php snippet('footer') ?>
+  <?php snippet('partials/footer') ?>
 
 </body>
 

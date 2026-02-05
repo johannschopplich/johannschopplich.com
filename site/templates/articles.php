@@ -19,14 +19,14 @@
   <div class="border-y border-y-solid border-contrast-low un-dark:border-contrast-lower">
     <div class="content">
       <div class="max-w-screen-lg overflow-hidden">
-        <?php snippet('articles', ['query' => $query]) ?>
+        <?php snippet('components/article-grid', ['query' => $query]) ?>
       </div>
     </div>
   </div>
 
   <div class="content pt-5xl">
     <div class="max-w-screen-lg">
-      <?php snippet('pagination', ['pagination' => $query->pagination()]) ?>
+      <?php snippet('components/pagination', ['pagination' => $query->pagination()]) ?>
     </div>
   </div>
 </div>

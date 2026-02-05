@@ -22,8 +22,9 @@
             <?= $lastWord ?>
             <a
               href="<?= page('about')->url() ?>"
-              class="relative inline-block h-[0.825em] select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto"
-              data-sticker="svg">
+              class="inline-block h-[0.825em] select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto"
+              data-sticker="svg"
+            >
               <?= icon('johann.svg') ?>
               <span class="sr-only"><?= page('about')->title()->escape() ?></span>
             </a>
@@ -67,7 +68,7 @@
 <div class="border-y border-y-solid border-contrast-low un-dark:border-contrast-lower">
   <div class="content">
     <div class="max-w-screen-lg overflow-hidden">
-      <?php snippet('articles', [
+      <?php snippet('components/article-grid', [
         'query' => $kirby->collection('articles')->paginate(4)
       ]) ?>
     </div>

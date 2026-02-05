@@ -6,6 +6,6 @@
 
 snippet('layouts/default', slots: true);
 
-snippet('text');
+snippet('sections/text-section');
 
 endsnippet();
