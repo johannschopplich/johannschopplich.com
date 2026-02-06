@@ -13,6 +13,9 @@ $complementaryLanguage = $kirby
       <div class="mb-8xl">
         <h3 class="title text-2xl mb-3xl">
           <?= t('generic.contact') ?>
+          <span class="icon-inline h-[1em] ml-1 translate-y-[2px]">
+            <?= icon('johann.svg') ?>
+          </span>
         </h3>
 
         <ul>

@@ -22,7 +22,7 @@
             <?= $lastWord ?>
             <a
               href="<?= page('about')->url() ?>"
-              class="inline-block h-[0.825em] select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto"
+              class="icon-inline h-[0.825em]"
               data-sticker="svg"
             >
               <?= icon('johann.svg') ?>
