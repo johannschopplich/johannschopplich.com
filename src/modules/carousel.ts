@@ -1,6 +1,7 @@
 import type { EmblaCarouselType } from "embla-carousel";
 import EmblaCarousel from "embla-carousel";
-import { loadImage } from "unlazy";
+import { triggerLoad } from "unlazy";
+import { isAbove } from "../utils/breakpoints";
 
 declare global {
   interface Window {
@@ -27,6 +28,7 @@ function setupCarousel(node: HTMLElement) {
     align: "start",
     containScroll: "trimSnaps",
     skipSnaps: true,
+    dragFree: isAbove("md"),
   });
 
   node.addEventListener("keydown", (event) => {
@@ -56,6 +58,6 @@ function lazyLoadImages(emblaApi: EmblaCarouselType) {
       'img[loading="lazy"]',
     );
 
-    for (const image of images) loadImage(image);
+    for (const image of images) triggerLoad(image);
   }
 }

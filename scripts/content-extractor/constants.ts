@@ -1,2 +1,2 @@
-export const templates = ["article"];
+export const templates = ["project"];
 export const languages = ["en", "de"];
