@@ -1,31 +1,8 @@
 type: fields
 fields:
   customTitle:
-    label:
-      de: Titel (Überschreiben)
-      en: Title (Override)
-    type: text
-    icon: title
-    placeholder: "{{ page.title }} – {{ site.title }}"
-    help:
-      de: Optionaler abweichender Titel für Suchmaschinen.
-      en: Optional different title for search engines.
+    extends: fields/customTitle
   description:
-    label:
-      de: Beschreibung (Überschreiben)
-      en: Description (Override)
-    type: textarea
-    buttons: false
-    help:
-      de: Eine kurze Beschreibung für Suchmaschinen.
-      en: A short description for search engines.
+    extends: fields/description
   thumbnail:
-    label:
-      de: Vorschaubild
-      en: Thumbnail
-    type: files
-    query: page.files.template(["image", "blocks/image"])
-    uploads:
-      template: image
-    multiple: false
-    translate: false
+    extends: fields/thumbnail

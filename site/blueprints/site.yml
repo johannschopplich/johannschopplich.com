@@ -111,22 +111,10 @@ tabs:
         type: fields
         fields:
           description:
-            label:
-              de: Beschreibung (Überschreiben)
-              en: Description (Override)
-            type: textarea
-            buttons: false
-            help:
-              de: Eine kurze Beschreibung für Suchmaschinen.
-              en: A short description for search engines.
+            extends: fields/description
           thumbnail:
-            label:
-              de: Vorschaubild
-              en: Thumbnail
-            type: files
+            extends: fields/thumbnail
             query: kirby.page("photography").files.template("image")
             uploads:
               parent: kirby.page("photography")
               template: image
-            multiple: false
-            translate: false

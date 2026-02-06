@@ -1,0 +1,8 @@
+label:
+  de: Beschreibung
+  en: Description
+type: textarea
+buttons: false
+help:
+  de: Eine kurze Beschreibung für Suchmaschinen und Social Media.
+  en: A short description for search engines and social media.

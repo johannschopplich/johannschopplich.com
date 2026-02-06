@@ -1,0 +1,9 @@
+label:
+  de: Titel (Überschreiben)
+  en: Title (Override)
+type: text
+icon: title
+placeholder: "{{ page.title }} – {{ site.title }}"
+help:
+  de: Optionaler abweichender Titel für Suchmaschinen.
+  en: Optional different title for search engines.
