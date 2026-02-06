@@ -7,7 +7,7 @@ export class MasonryGrid extends HTMLElement {
   #columns = 0;
   #needsUpdate = false;
   #itemHeights = new WeakMap<HTMLElement, number>();
-  #resizeObserver = new ResizeObserver(() => this.#updateGridItems());
+  #resizeObserver = new ResizeObserver(() => this.#layout());
 
   #css = `
 :host {
@@ -38,7 +38,7 @@ export class MasonryGrid extends HTMLElement {
       this.#resizeObserver.observe(child);
     }
 
-    this.#updateGridItems();
+    this.#layout();
   }
 
   disconnectedCallback() {
@@ -47,9 +47,8 @@ export class MasonryGrid extends HTMLElement {
 
   /**
    * Greedy bin packing: assign each item to the column with the shortest height.
-   * Uses CSS `order` property to reorder items without DOM manipulation.
    */
-  #optimizeOrder(items: HTMLElement[], columns: number): void {
+  #balanceColumns(items: HTMLElement[], columns: number): void {
     if (columns <= 1 || items.length <= columns) {
       for (const item of items) {
         item.style.removeProperty("order");
@@ -94,7 +93,7 @@ export class MasonryGrid extends HTMLElement {
     }
   }
 
-  #updateGridItems() {
+  #layout() {
     const columns =
       getComputedStyle(this).gridTemplateColumns.split(" ").length;
     const items = [...this.children] as HTMLElement[];
@@ -119,7 +118,7 @@ export class MasonryGrid extends HTMLElement {
     this.#columns = columns;
 
     if (hasColumnsChanged) {
-      this.#optimizeOrder(items, columns);
+      this.#balanceColumns(items, columns);
     }
 
     // Use nested rAF to ensure margin reset is applied before recalculating
