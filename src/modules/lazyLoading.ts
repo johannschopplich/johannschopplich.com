@@ -1,5 +1,5 @@
 import { lazyLoad } from "unlazy";
 
 export function install() {
-  lazyLoad();
+  lazyLoad('img[loading="lazy"]');
 }

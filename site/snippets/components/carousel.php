@@ -64,7 +64,6 @@ $totalSlides = $query->count();
             : '';
           ?>
           <img
-            loading="lazy"
             class="<?= trim(implode(' ', [
                       'pointer-events-none select-none',
                       $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',

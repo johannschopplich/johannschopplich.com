@@ -41,8 +41,9 @@ function setupCarousel(node: HTMLElement) {
     }
   });
 
-  // Lazy load visible slides on init and scroll
-  lazyLoadImages(emblaApi);
+  // Note: Carousel images must **not** use native `loading="lazy"` because the browser
+  // may briefly show alt text when lazy images scroll into view, causing layout
+  // shifts that trigger Embla's `reInit` and interrupt scrolling.
   emblaApi.on("slidesInView", lazyLoadImages);
 
   return emblaApi;
@@ -50,13 +51,11 @@ function setupCarousel(node: HTMLElement) {
 
 function lazyLoadImages(emblaApi: EmblaCarouselType) {
   const slides = emblaApi.slideNodes();
-  const inView = emblaApi.slidesInView();
+  const visibleSlides = emblaApi.slidesInView();
 
-  for (const index of inView) {
+  for (const index of visibleSlides) {
     const slide = slides[index];
-    const images = slide!.querySelectorAll<HTMLImageElement>(
-      'img[loading="lazy"]',
-    );
+    const images = slide!.querySelectorAll<HTMLImageElement>("img");
 
     for (const image of images) triggerLoad(image);
   }
