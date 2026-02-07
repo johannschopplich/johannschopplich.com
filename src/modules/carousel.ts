@@ -41,9 +41,8 @@ function setupCarousel(node: HTMLElement) {
     }
   });
 
-  // Note: Carousel images must **not** use native `loading="lazy"` because the browser
-  // may briefly show alt text when lazy images scroll into view, causing layout
-  // shifts that trigger Embla's `reInit` and interrupt scrolling.
+  // Note: Carousel images must NOT use native `loading="lazy"` to prevent:
+  // alt text flash → layout shift → Embla reInit → scroll interruption
   emblaApi.on("slidesInView", lazyLoadImages);
 
   return emblaApi;
