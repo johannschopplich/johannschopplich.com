@@ -8,7 +8,6 @@ $selectedHeight = match ($height ?? null) {
   'tight', 'loose' => $height,
   default => 'loose',
 };
-$totalSlides = $query->count();
 
 ?>
 <div
@@ -34,16 +33,17 @@ $totalSlides = $query->count();
         class="shrink-0 min-w-0 max-w-[100vw]"
         role="group"
         aria-roledescription="<?= t('carousel.slide') ?>"
-        aria-label="<?= $index + 1 ?> / <?= $totalSlides ?>"
+        aria-label="<?= $index + 1 . ' / ' . $query->count() ?>"
       >
         <div
           class="<?= trim(implode(' ', [
                     'overflow-hidden',
                     $mockup !== 'none' ? 'relative bg-$bg' : '',
                     ($isDocument || $isMobile) ? 'h-$cell-h px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
+                    $isDocument ? "before:content-empty before:absolute before:top-2 before:left-2 before:size-3 before:border-t before:border-l before:border-solid before:border-stone-900 before:pointer-events-none after:content-empty after:absolute after:bottom-2 after:right-2 after:size-3 after:border-b after:border-r after:border-solid after:border-stone-900 after:pointer-events-none" : '',
                     $isDesktop ? 'flex flex-col items-center justify-center h-$cell-h p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
                   ]), ' ') ?>"
-          style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)') ?>"
+          style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)')->value() ?>"
         >
           <?php if ($isMobile): ?>
             <div class="absolute left-1/2 bottom-$spacing-xl w-[20%] h-[1.5px] bg-stone-900 rounded-full translate-x-[-50%] translate-y-[-4px] md:bottom-$spacing-5xl md:w-[12%] md:h-[2px] md:translate-y-[-6px]"></div>
@@ -68,8 +68,8 @@ $totalSlides = $query->count();
             class="<?= trim(implode(' ', [
                       'pointer-events-none select-none',
                       $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
-                      ($isMobile || $isDocument) ? 'w-auto h-full object-cover border border-solid border-stone-900' : '',
-                      $isMobile ? 'rounded-xl md:rounded-2xl' : '',
+                      $isDocument ? 'w-auto h-full object-cover shadow-[0_0_0_1px_oklch(0_0_0/0.2),_3px_3px_0_var(--bg),_3px_3px_0_1px_oklch(0_0_0/0.2)] md:shadow-[0_0_0_1px_oklch(0_0_0/0.2),_3px_3px_0_var(--bg),_3px_3px_0_1px_oklch(0_0_0/0.2),_-2px_6px_0_var(--bg),_-2px_6px_0_1px_oklch(0_0_0/0.2)]' : '',
+                      $isMobile ? 'w-auto h-full object-cover border border-solid border-stone-900 rounded-xl md:rounded-2xl' : '',
                       $isDesktop ? 'w-full h-auto md:w-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
                     ]), ' ') ?>"
             src="<?= $image->thumbhashUri() ?>"

@@ -25,7 +25,7 @@ export function install() {
 
 function setupCarousel(node: HTMLElement) {
   const emblaApi = EmblaCarousel(node, {
-    align: "start",
+    align: "center",
     containScroll: "trimSnaps",
     skipSnaps: true,
     dragFree: isAbove("md"),
