@@ -33,7 +33,7 @@
     "consola": "^3.4.2",
     "culori": "^4.0.2",
     "drauu": "^1.0.0",
-    "embla-carousel": "^8.6.0",
+    "embla-carousel": "^9.0.0-rc01",
     "es-toolkit": "^1.44.0",
     "esbuild": "^0.27.2",
     "eslint": "^9.39.2",

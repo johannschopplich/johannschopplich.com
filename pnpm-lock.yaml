@@ -71,8 +71,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       embla-carousel:
-        specifier: ^8.6.0
-        version: 8.6.0
+        specifier: ^9.0.0-rc01
+        version: 9.0.0-rc01
       es-toolkit:
         specifier: ^1.44.0
         version: 1.44.0
@@ -1133,8 +1133,8 @@ packages:
   electron-to-chromium@1.5.282:
     resolution: {integrity: sha512-FCPkJtpst28UmFzd903iU7PdeVTfY0KAeJy+Lk0GLZRwgwYHn/irRcaCbQQOmr5Vytc/7rcavsYLvTM8RiHYhQ==}
 
-  embla-carousel@8.6.0:
-    resolution: {integrity: sha512-SjWyZBHJPbqxHOzckOfo8lHisEaJWmwd23XppYFYVh10bU66/Pn5tkVkbkCMZVdbUE5eTCI2nD8OyIP4Z+uwkA==}
+  embla-carousel@9.0.0-rc01:
+    resolution: {integrity: sha512-4BTERU1gAXgg4Vl0m7hQ1GzePGLNNfM2j030ww8i9idiPXumyRUpaNUDfT2zx1Hv8um1Ew7QKBy/HdNPz8L30g==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3196,7 +3196,7 @@ snapshots:
 
   electron-to-chromium@1.5.282: {}
 
-  embla-carousel@8.6.0: {}
+  embla-carousel@9.0.0-rc01: {}
 
   emoji-regex@8.0.0: {}
 

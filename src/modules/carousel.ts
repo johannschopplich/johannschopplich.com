@@ -34,28 +34,24 @@ function setupCarousel(node: HTMLElement) {
   node.addEventListener("keydown", (event) => {
     if (event.key === "ArrowLeft") {
       event.preventDefault();
-      emblaApi.scrollPrev();
+      emblaApi.goToPrev();
     } else if (event.key === "ArrowRight") {
       event.preventDefault();
-      emblaApi.scrollNext();
+      emblaApi.goToNext();
     }
   });
 
   // Note: Carousel images must NOT use native `loading="lazy"` to prevent:
-  // alt text flash → layout shift → Embla reInit → scroll interruption
-  emblaApi.on("slidesInView", lazyLoadImages);
+  // alt text flash → layout shift → Embla `reinit` → scroll interruption
+  emblaApi.on("slidesinview", (api, event) => {
+    const slides = api.slideNodes();
+
+    for (const index of event.detail.slidesEnterView) {
+      const image =
+        slides[index]!.querySelector<HTMLImageElement>("img[data-srcset]");
+      if (image) triggerLoad(image);
+    }
+  });
 
   return emblaApi;
-}
-
-function lazyLoadImages(emblaApi: EmblaCarouselType) {
-  const slides = emblaApi.slideNodes();
-  const visibleSlides = emblaApi.slidesInView();
-
-  for (const index of visibleSlides) {
-    const slide = slides[index];
-    const images = slide!.querySelectorAll<HTMLImageElement>("img");
-
-    for (const image of images) triggerLoad(image);
-  }
 }

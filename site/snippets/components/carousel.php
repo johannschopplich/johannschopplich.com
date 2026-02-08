@@ -56,12 +56,13 @@ $totalSlides = $query->count();
           <?php endif ?>
 
           <?php
+          $aspectRatio = 'aspect-ratio: ' . $image->width() . '/' . $image->height();
           $imgStyles = $mockup === 'none'
             ? implode('; ', [
               '--img-h: min(calc(100vw * ' . $image->height() . ' / ' . $image->width() . '), var(--cell-h))',
-              'aspect-ratio: ' . $image->width() . '/' . $image->height()
+              $aspectRatio
             ])
-            : '';
+            : $aspectRatio;
           ?>
           <img
             class="<?= trim(implode(' ', [
