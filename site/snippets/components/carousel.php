@@ -40,14 +40,11 @@ $selectedHeight = match ($height ?? null) {
                     'overflow-hidden',
                     $mockup !== 'none' ? 'relative bg-$bg' : '',
                     ($isDocument || $isMobile) ? 'h-$cell-h px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
-                    $isDocument ? "before:content-empty before:absolute before:top-2 before:left-2 before:size-3 before:border-t before:border-l before:border-solid before:border-stone-900 before:pointer-events-none after:content-empty after:absolute after:bottom-2 after:right-2 after:size-3 after:border-b after:border-r after:border-solid after:border-stone-900 after:pointer-events-none" : '',
                     $isDesktop ? 'flex flex-col items-center justify-center h-$cell-h p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
                   ]), ' ') ?>"
           style="--bg: <?= $settings->bgColor()->or('var(--un-color-contrast-lower)')->value() ?>"
         >
-          <?php if ($isMobile): ?>
-            <div class="absolute left-1/2 bottom-$spacing-xl w-[20%] h-[1.5px] bg-stone-900 rounded-full translate-x-[-50%] translate-y-[-4px] md:bottom-$spacing-5xl md:w-[12%] md:h-[2px] md:translate-y-[-6px]"></div>
-          <?php elseif ($isDesktop): ?>
+          <?php if ($isDesktop): ?>
             <div class="self-stretch flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
               <?php foreach (range(1, 3) as $i): ?>
                 <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
@@ -64,12 +61,15 @@ $selectedHeight = match ($height ?? null) {
             ])
             : $aspectRatio;
           ?>
+          <?php if ($isDocument): ?>
+            <div class="h-full w-fit p-2 border border-dashed border-[oklch(0_0_0/0.25)]">
+          <?php endif ?>
           <img
             class="<?= trim(implode(' ', [
                       'pointer-events-none select-none',
                       $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
-                      $isDocument ? 'w-auto h-full object-cover shadow-[0_0_0_1px_oklch(0_0_0/0.2),_3px_3px_0_var(--bg),_3px_3px_0_1px_oklch(0_0_0/0.2)] md:shadow-[0_0_0_1px_oklch(0_0_0/0.2),_3px_3px_0_var(--bg),_3px_3px_0_1px_oklch(0_0_0/0.2),_-2px_6px_0_var(--bg),_-2px_6px_0_1px_oklch(0_0_0/0.2)]' : '',
-                      $isMobile ? 'w-auto h-full object-cover border border-solid border-stone-900 rounded-xl md:rounded-2xl' : '',
+                      $isDocument ? 'w-auto h-full object-cover shadow-[0_0_0_1px_oklch(0_0_0/0.25)]' : '',
+                      $isMobile ? 'w-auto h-full object-cover rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_oklch(0_0_0/0.15),_0_2px_6px_oklch(0_0_0/0.1)] md:rounded-3xl' : '',
                       $isDesktop ? 'w-full h-auto md:w-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
                     ]), ' ') ?>"
             src="<?= $image->thumbhashUri() ?>"
@@ -80,6 +80,9 @@ $selectedHeight = match ($height ?? null) {
             style="<?= $imgStyles ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
           >
+          <?php if ($isDocument): ?>
+            </div>
+          <?php endif ?>
         </div>
       </div>
     <?php endforeach ?>
