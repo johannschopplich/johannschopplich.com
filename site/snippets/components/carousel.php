@@ -62,14 +62,14 @@ $selectedHeight = match ($height ?? null) {
             : $aspectRatio;
           ?>
           <?php if ($isDocument): ?>
-            <div class="h-full w-fit p-2 border border-dashed border-[oklch(0_0_0/0.25)]">
+            <div class="h-full w-fit p-2 border border-dashed border-[oklch(0_0_0/0.2)] shadow-[inset_0_0_0_1px_oklch(1_0_0/0.05)] md:p-3">
           <?php endif ?>
           <img
             class="<?= trim(implode(' ', [
                       'pointer-events-none select-none',
                       $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
-                      $isDocument ? 'w-auto h-full object-cover shadow-[0_0_0_1px_oklch(0_0_0/0.25)]' : '',
-                      $isMobile ? 'w-auto h-full object-cover rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_oklch(0_0_0/0.15),_0_2px_6px_oklch(0_0_0/0.1)] md:rounded-3xl' : '',
+                      $isDocument ? 'w-auto h-full object-cover rounded shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]' : '',
+                      $isMobile ? 'w-auto h-full object-cover rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]' : '',
                       $isDesktop ? 'w-full h-auto md:w-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
                     ]), ' ') ?>"
             src="<?= $image->thumbhashUri() ?>"
