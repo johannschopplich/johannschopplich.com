@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f75881f9e224b9de9f564f3f57043832",
+    "content-hash": "cf2a8c90bd5faa1f5293d6b587cdfc42",
     "packages": [
         {
             "name": "christian-riesen/base32",
@@ -1546,6 +1546,65 @@
                 "source": "https://github.com/michelf/php-smartypants/tree/1.8.1"
             },
             "time": "2016-12-13T01:01:17+00:00"
+        },
+        {
+            "name": "ozdemirburak/iris",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ozdemirburak/iris.git",
+                "reference": "5214cd2ce8dbce5220c36fdf980866cff8c71443"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ozdemirburak/iris/zipball/5214cd2ce8dbce5220c36fdf980866cff8c71443",
+                "reference": "5214cd2ce8dbce5220c36fdf980866cff8c71443",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.5|^11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "OzdemirBurak\\Iris\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Burak Özdemir",
+                    "homepage": "https://ozdemir.dev"
+                }
+            ],
+            "description": "PHP library for color manipulation and conversion.",
+            "homepage": "https://colorconverter.dev",
+            "keywords": [
+                "cmyk",
+                "color",
+                "conversion",
+                "hex",
+                "hexa",
+                "hsl",
+                "hsla",
+                "hsv",
+                "manipulation",
+                "oklch",
+                "rgb",
+                "rgba",
+                "transformation"
+            ],
+            "support": {
+                "issues": "https://github.com/ozdemirburak/iris/issues",
+                "source": "https://github.com/ozdemirburak/iris"
+            },
+            "time": "2025-12-05T13:15:59+00:00"
         },
         {
             "name": "phpmailer/phpmailer",
