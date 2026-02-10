@@ -142,7 +142,6 @@ export default defineConfig<Theme>({
       "column-auto": "block flex-1 w-auto",
       "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,1.875rem)]",
-      "section-divider": "h-[min(20svh,8rem)]",
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start",
 

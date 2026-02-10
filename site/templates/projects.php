@@ -27,7 +27,7 @@
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
-      <div class="group content relative pt-xl mb-xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
+      <div class="group content relative pt-xl mb-xl border-t border-dotted border-contrast-low un-dark:border-contrast-lower">
         <h2 class="title text-2xl">
           <a
             href="<?= $project->url() ?>"

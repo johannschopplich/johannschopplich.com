@@ -1,0 +1,32 @@
+@layer components {
+  .section-divider {
+    --_cross-size: 9px;
+    --_cross-thickness: 1px;
+
+    position: relative;
+    height: min(20svh, 8rem);
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: var(--_cross-size);
+      height: var(--_cross-size);
+      transform: translate(-50%, -50%);
+      background:
+        linear-gradient(
+            var(--un-color-contrast-low),
+            var(--un-color-contrast-low)
+          )
+          center / var(--_cross-thickness) 100% no-repeat,
+        linear-gradient(
+            var(--un-color-contrast-low),
+            var(--un-color-contrast-low)
+          )
+          center / 100% var(--_cross-thickness) no-repeat;
+    }
+  }
+}

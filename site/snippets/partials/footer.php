@@ -20,7 +20,7 @@ $complementaryLanguage = $kirby
 
         <ul>
           <?php foreach ($site->footerLinks()->toStructure() as $item): ?>
-            <li class="group border-b border-contrast-low hover:border-current">
+            <li class="group border-b border-dotted border-contrast-low hover:border-solid hover:border-current">
               <a href="<?= $item->url() ?>" class="grid grid-cols-4 items-center py-sm sm:grid-cols-6 lg:grid-cols-9">
                 <span class="col-start-1 col-end-4 text-sm font-500 tracking-[0.125ch] uppercase text-contrast-medium sm:col-start-1 sm:col-end-3 lg:col-start-1 lg:col-end-4"><?= $item->category()->escape() ?></span>
                 <span class="col-start-1 col-end-4 sm:col-start-3 sm:col-end-5 lg:col-start-4 lg:col-end-7"><?= $item->title()->escape() ?></span>

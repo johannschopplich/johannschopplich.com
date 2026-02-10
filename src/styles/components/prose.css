@@ -5,6 +5,7 @@
     --un-prose-bg-soft: var(--un-color-contrast-lowest);
     --un-prose-line-height: var(--un-line-height-normal);
     --un-decoration-color: var(--un-color-primary);
+    counter-reset: figure;
 
     & :where(p, ul, ol, pre):not(:where(.not-prose, .not-prose *)) {
       @media (--below-sm) {
@@ -132,6 +133,7 @@
       margin-right: 0;
       margin-left: 0;
       box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
+      counter-increment: figure;
 
       &:not(:first-child) {
         margin-top: calc(2 * var(--un-prose-space-y));
@@ -180,10 +182,25 @@
       margin-top: calc(0.25rem + 3px);
       text-align: left;
 
+      &::before {
+        content: "[ FIG. " counter(figure) " ] ";
+        font-family: var(--un-font-family-normal);
+        font-size: 0.875em;
+        color: var(--un-color-contrast-soft);
+      }
+
       @media (--below-sm) {
         margin-left: calc(1.125rem - 3px);
         margin-right: calc(1.125rem - 3px);
       }
+    }
+
+    & :where(figure.is-framed):not(:where(.not-prose, .not-prose *)) {
+      box-shadow: none;
+      border: 1px solid var(--un-color-contrast-low);
+      background-color: var(--un-color-contrast-lowest);
+      border-radius: 2px;
+      padding: 0.5rem;
     }
 
     & :where(details):not(:where(.not-prose, .not-prose *)) {
@@ -208,27 +225,29 @@
 
       &::before,
       &::after {
+        --_cross-size: 11px;
+        --_cross-thickness: 1.5px;
         content: "";
         position: absolute;
-        width: 12px;
-        height: 12px;
-        border-color: var(--un-color-primary);
-        border-style: solid;
-        border-width: 0;
+        width: var(--_cross-size);
+        height: var(--_cross-size);
+        background:
+          linear-gradient(var(--un-color-primary), var(--un-color-primary))
+            center / var(--_cross-thickness) 100% no-repeat,
+          linear-gradient(var(--un-color-primary), var(--un-color-primary))
+            center / 100% var(--_cross-thickness) no-repeat;
       }
 
       &::before {
         top: 0;
         left: 0;
-        border-top-width: 2px;
-        border-left-width: 2px;
+        transform: translate(-50%, -50%);
       }
 
       &::after {
         bottom: 0;
         right: 0;
-        border-bottom-width: 2px;
-        border-right-width: 2px;
+        transform: translate(50%, 50%);
       }
 
       @media (--sm) {
