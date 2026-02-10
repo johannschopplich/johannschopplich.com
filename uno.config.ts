@@ -170,7 +170,8 @@ ${selector} {
       "column-auto": "block flex-1 w-auto",
       "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,1.875rem)]",
-      "section-divider": "h-[min(20svh,8rem)]",
+      "section-divider":
+        "h-[calc(var(--spacing-5xl)+1rem)] md:h-[calc(var(--spacing-8xl)+1rem)]",
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start",
 

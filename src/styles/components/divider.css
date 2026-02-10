@@ -4,9 +4,13 @@
     --_cross-thickness: 1px;
 
     position: relative;
-    height: min(20svh, 8rem);
+    height: 4rem;
     display: flex;
     align-items: center;
+
+    @media (width >= 768px) {
+      height: 8rem;
+    }
 
     &::before {
       content: "";
