@@ -4,7 +4,7 @@
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 ?>
-<nav class="flex items-center gap-x-2 flex-wrap" style="--un-decoration-thickness: max(2px, 0.125em)">
+<nav class="flex items-center gap-x-3 flex-wrap" style="--un-decoration-thickness: max(2px, 0.125em)">
   <a
     href="<?= $site->url() ?>"
     class="
