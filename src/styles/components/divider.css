@@ -4,12 +4,12 @@
     --_cross-thickness: 1px;
 
     position: relative;
-    height: 4rem;
+    height: calc(var(--spacing-5xl) + 1rem);
     display: flex;
     align-items: center;
 
-    @media (width >= 768px) {
-      height: 8rem;
+    @media (--md) {
+      height: calc(var(--spacing-8xl) + 1rem);
     }
 
     &::before {
