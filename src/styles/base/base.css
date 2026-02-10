@@ -1,4 +1,4 @@
-@layer base {
+@layer foundations {
   :root {
     --un-fluid-min-width: 320;
     --un-fluid-max-width: 1140;

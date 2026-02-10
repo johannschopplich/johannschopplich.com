@@ -1,4 +1,6 @@
-@layer base, components;
+@layer properties, theme, base, icons, foundations, shortcuts, components, default;
+
+@import "uno.css";
 
 @import "base/base.css";
 @import "base/prose.css";
@@ -8,5 +10,3 @@
 @import "components/carousel.css";
 @import "components/drauu.css";
 @import "components/medium-zoom.css";
-
-@import "uno.css";

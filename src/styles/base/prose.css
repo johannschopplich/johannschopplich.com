@@ -1,4 +1,4 @@
-@layer base {
+@layer foundations {
   /* Adapted from https://github.com/unocss/unocss/tree/main/packages-presets/preset-typography */
   .prose {
     --un-prose-font-mono:
