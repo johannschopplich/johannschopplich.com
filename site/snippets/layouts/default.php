@@ -59,11 +59,12 @@ https://github.com/johannschopplich/johannschopplich.com
 
 <body class="min-h-[100svh] md:pt-sm" data-template="<?= $page->intendedTemplate()->name() ?>">
 
-  <header
-    class="sticky -top-px border-b border-b-transparent border-b-solid transition-border-color z-20
-           bg-[color-mix(in_srgb,var(--un-color-background)50%,transparent)] bg-[image:radial-gradient(rgba(255,255,255,0)_1px,_var(--un-color-background)_1px)] bg-[length:4px_4px] backdrop-blur-[8px]
-           [&.is-pinned]:border-contrast-lower un-dark:[&.is-pinned]:border-contrast-lowest"
-  >
+  <header class="
+    sticky -top-px pt-px z-20
+    border-b border-b-transparent border-b-solid transition-border-color
+    bg-theme-background/75 bg-[image:radial-gradient(rgba(255,255,255,0)_1px,_var(--un-color-background)_1px)] bg-[length:3px_3px] backdrop-blur-[8px]
+    [&.is-pinned]:border-contrast-lower un-dark:[&.is-pinned]:border-contrast-lowest
+  ">
     <div class="content py-2 md:py-xs">
       <?php snippet('partials/navigation') ?>
     </div>

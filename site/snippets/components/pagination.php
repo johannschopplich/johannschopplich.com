@@ -1,6 +1,8 @@
 <?php
 
-/** @var \Kirby\Cms\Pagination $pagination */ ?>
+/** @var \Kirby\Cms\Pagination $pagination */
+
+?>
 <nav class="flex justify-center text-xl font-heading font-600">
   <?php if ($pagination->hasPrevPage()): ?>
     <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-tabler-arrow-left hover:text-link-hover" aria-label="Previous page"></a>

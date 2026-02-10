@@ -4,6 +4,7 @@ import {
   defineConfig,
   presetIcons,
   presetWind4,
+  toEscapedSelector,
   transformerDirectives,
 } from "unocss";
 
@@ -118,6 +119,33 @@ export default defineConfig<Theme>({
         "hyphenate-limit-zone": "10%",
       },
     ],
+    [
+      /^halftone-bg$/,
+      ([,], { rawSelector }) => {
+        const selector = toEscapedSelector(rawSelector);
+        const from = "var(--un-dithered-from, var(--un-color-text))";
+        const to = "var(--un-dithered-to, var(--un-color-background))";
+        const textShadow = generateTextOutlineShadow(to, 2);
+        const dotSize = 5;
+        const dotSizeRetina = 4;
+
+        return `
+${selector} {
+  text-shadow: ${textShadow};
+  background-image: radial-gradient(${from} 20%, transparent 20%), radial-gradient(${from} 20%, transparent 20%);
+  background-position: 0px 0px, ${dotSize / 2}px ${dotSize / 2}px;
+  background-size: ${dotSize}px ${dotSize}px;
+}
+
+@media (min-resolution: 2dppx) {
+  ${selector} {
+    background-position: 0px 0px, ${dotSizeRetina / 2}px ${dotSizeRetina / 2}px;
+    background-size: ${dotSizeRetina}px ${dotSizeRetina}px;
+  }
+}
+`;
+      },
+    ],
   ],
   shortcuts: [
     [/^column-(\d+)$/, ([, d]) => `flex-none w-${d}/12`],
@@ -142,6 +170,7 @@ export default defineConfig<Theme>({
       "column-auto": "block flex-1 w-auto",
       "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,1.875rem)]",
+      "section-divider": "h-[min(20svh,8rem)]",
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start",
 
@@ -175,3 +204,18 @@ export default defineConfig<Theme>({
     }),
   ],
 });
+
+/**
+ * Generates a text-shadow that creates an outline effect around glyphs.
+ * Covers all positions in a box pattern up to the given radius.
+ */
+function generateTextOutlineShadow(color: string, radius = 2): string {
+  const shadows: string[] = [];
+  for (let x = -radius; x <= radius; x++) {
+    for (let y = -radius; y <= radius; y++) {
+      if (x === 0 && y === 0) continue;
+      shadows.push(`${x}px ${y}px 0 ${color}`);
+    }
+  }
+  return shadows.join(", ");
+}

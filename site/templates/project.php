@@ -14,7 +14,7 @@
   </div>
 
   <div class="content-inset-l pb-5xl">
-    <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:border-b after:border-dotted after:border-contrast-low un-dark:after:border-contrast-lower">
+    <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:border-b after:border-dotted after:border-contrast-soft">
       <p class="subtext text-contrast-medium shrink-0 max-md:text-sm">
         <?= $page->subtitle()->escape() ?>
       </p>

@@ -76,7 +76,7 @@
               <?= $entry->period()->escape() ?>
             </dt>
 
-            <hr class="border-dotted border-contrast-low mt-3" aria-hidden="true">
+            <hr class="border-dotted border-contrast-medium mt-3" aria-hidden="true">
 
             <dd class="max-w-prose">
               <div class="group relative">
