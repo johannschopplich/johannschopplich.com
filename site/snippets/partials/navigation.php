@@ -21,7 +21,8 @@
   </a>
 
   <?php foreach ($site->children()->listed() as $item): ?>
-    <a href="<?= $item->url() ?>"
+    <a
+      href="<?= $item->url() ?>"
       class="
         text-sm font-500 uppercase bg-theme-background halftone-bg px-1 py-0.5
         [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary
