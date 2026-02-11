@@ -25,8 +25,8 @@
       href="<?= $item->url() ?>"
       class="
         text-sm font-500 uppercase bg-theme-background halftone-bg px-1 py-0.5
-        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary
-        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:underline-default aria-[current]:decoration-primary
+        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary-500 un-dark:hover:decoration-primary-400
+        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:underline-default aria-[current]:decoration-primary-500 un-dark:aria-[current]:decoration-primary-400
       "
       <?php e($item->isOpen(), 'aria-current="page"') ?>
     >
