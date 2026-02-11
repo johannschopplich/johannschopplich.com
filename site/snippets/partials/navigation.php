@@ -8,7 +8,7 @@
   <a
     href="<?= $site->url() ?>"
     class="
-      inline-flex items-center bg-theme-background halftone-bg pl-0.5 pr-1 py-0.5
+      inline-flex items-center bg-theme-background halftone-bg pl-0.5 pr-1 py-0.75
       [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor]
       aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)]
     "
@@ -24,7 +24,8 @@
     <a
       href="<?= $item->url() ?>"
       class="
-        text-sm font-500 uppercase bg-theme-background halftone-bg px-1 py-0.5
+        bg-theme-background halftone-bg text-sm font-500 uppercase px-1 py-0.5
+        [@supports(text-box:trim-both_cap_alphabetic)]:[text-box:trim-both_cap_alphabetic] [@supports(text-box:trim-both_cap_alphabetic)]:py-2
         [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary-500 un-dark:hover:decoration-primary-400
         aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:underline-default aria-[current]:decoration-primary-500 un-dark:aria-[current]:decoration-primary-400
       "
