@@ -171,14 +171,14 @@ ${selector} {
       "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,1.875rem)]",
       "section-divider":
-        "h-[calc(var(--spacing-5xl)+1rem)] md:h-[calc(var(--spacing-8xl)+1rem)]",
+        "h-[calc(var(--spacing-5xl)*1.25)] md:h-[calc(var(--spacing-8xl)*1.25)]",
       "masonry-grid":
         "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start",
 
       // Components
       "underline-default":
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
-      icon: "size-[1.25em] [&>svg]:w-full [&>svg]:h-full",
+      icon: "size-[1.25em] [&>svg]:size-full",
       "icon-inline":
         "inline-block select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto",
       tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
