@@ -11,7 +11,7 @@ import {
 export default defineConfig<Theme>({
   cli: {
     entry: {
-      patterns: ["site/{snippets,templates}/**/*"],
+      patterns: ["site/{snippets,templates}/**/*", "src/modules/**/*"],
       outFile: "src/styles/uno.css",
     },
   },
