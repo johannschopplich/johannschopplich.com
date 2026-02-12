@@ -1,12 +1,39 @@
 <?php
 
+use Kirby\Cms\Language;
+use Kirby\Exception\NotFoundException;
 use Kirby\Http\Response;
 
 return [
+    // Serve .md.php content representations when `Accept: text/markdown` is requested
+    [
+        'pattern'  => '(:all)',
+        'language' => '*',
+        'method'   => 'GET',
+        'action'   => function (Language $language, string $path = '') {
+            $accept = kirby()->request()->header('Accept');
+
+            if (!$accept || !str_contains($accept, 'text/markdown')) {
+                $this->next();
+            }
+
+            $page = $path === '' ? site()->homePage() : page($path);
+
+            if (!$page) {
+                $this->next();
+            }
+
+            try {
+                return $page->render([], 'md');
+            } catch (NotFoundException) {
+                $this->next();
+            }
+        }
+    ],
     [
         'pattern' => 'feeds/(:alpha)',
-        'method' => 'GET',
-        'action' => function ($type) {
+        'method'  => 'GET',
+        'action'  => function ($type) {
             if (!in_array($type, ['rss', 'json'])) {
                 return false;
             }
@@ -36,7 +63,10 @@ return [
             );
 
             // Set appropriate content type
-            $contentType = $type === 'rss' ? 'application/rss+xml' : 'application/json';
+            $contentType = match ($type) {
+                'rss' => 'application/rss+xml',
+                'json' => 'application/json',
+            };
 
             return new Response(
                 $content,
