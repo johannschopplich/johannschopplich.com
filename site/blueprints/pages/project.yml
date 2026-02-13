@@ -79,7 +79,6 @@ tabs:
                     label: Label
                     type: text
                     width: 1/2
-                    required: true
                   value:
                     label:
                       de: Wert
