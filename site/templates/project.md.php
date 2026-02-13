@@ -9,9 +9,7 @@ $kirby->response()->type('text/markdown');
 $infobox = implode(
   "\n",
   $page->details()->toStructure()->map(
-    fn ($detail) => $detail->label()->isNotEmpty()
-      ? '- **' . $detail->label()->value() . ':** ' . $detail->value()->value()
-      : '- ' . $detail->value()->value()
+    fn ($detail) => '- **' . $detail->label()->value() . ':** ' . $detail->text()->value()
   )->values()
 );
 

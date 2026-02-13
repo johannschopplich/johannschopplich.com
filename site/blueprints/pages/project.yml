@@ -78,12 +78,11 @@ tabs:
                       de: Bezeichnung
                       en: Label
                     type: text
-                    width: 1/2
+                    required: true
                   text:
                     label: Text
                     type: writer
                     inline: true
-                    width: 1/2
                     required: true
 
   seo:
