@@ -20,7 +20,7 @@
         aria-label="Go to page <?= $r ?>"
         <?php e($pagination->page() === $r, 'aria-current="page"') ?>>
         <span class="<?= $pagination->page() === $r ? 'text-primary-accent' : 'text-current' ?>">o</span>
-        <span class="text-base font-500 mt-2 <?= $pagination->page() === $r ? 'text-current' : 'text-primary-accent group-hover:underline-default' ?>">
+        <span class="text-base font-500 mt-2 <?= $pagination->page() === $r ? 'text-current' : 'text-primary-accent group-hover:text-underline' ?>">
           <?= $r ?>
         </span>
       </a>

@@ -145,11 +145,17 @@ ${selector} {
       },
     ],
     {
-      // Typography hierarchy
-      title: "text-contrast-higher font-heading font-600 leading-heading",
+      // Text styles
       headline:
         "text-contrast-higher text-size-2xl leading-[1.15] font-heading font-600 md:text-size-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
+      title: "text-contrast-higher font-heading font-600 leading-heading",
+      overline: "text-sm font-500 tracking-[0.125ch] uppercase",
+      caption: "text-xs font-600 tracking-[0.125ch] uppercase",
       subtext: "text-sm font-500",
+
+      // Text utilities
+      "text-underline":
+        "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
 
       // Layout
       columns: "flex flex-wrap",
@@ -159,17 +165,13 @@ ${selector} {
       "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,1.875rem)]",
       "section-divider": "h-$spacing-8xl md:h-[calc(var(--spacing-8xl)*1.25)]",
-      "masonry-grid":
-        "grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] justify-center children:self-start",
 
       // Components
-      "underline-default":
-        "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
       icon: "size-[1.25em] [&>svg]:size-full",
       "icon-inline":
         "inline-block select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto",
       tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 dark:border-contrast-low",
-      "button-callout":
+      "action-link":
         "inline-flex items-center text-size-xs leading-[1.05] font-heading font-500 uppercase tracking-[0.125ch] -m-2 p-2",
     },
   ],

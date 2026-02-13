@@ -25,12 +25,11 @@ $year = null;
       <?php endif ?>
 
       <a <?= attr([
-            'href' => $post->url(),
-            'class' => 'gap-xs mb-xs flex items-start ' . (!$isActive ? ' link-default' : ''),
-            'aria-current' => $isActive ? 'page' : null
-          ]) ?>
-      >
-        <span class="w-max <?php e($isActive, 'underline-default') ?>">
+        'href' => $post->url(),
+        'class' => 'gap-xs mb-xs flex items-start ' . (!$isActive ? ' link-default' : ''),
+        'aria-current' => $isActive ? 'page' : null
+      ]) ?>>
+        <span class="w-max <?php e($isActive, 'text-underline') ?>">
           <?= $post->title()->escape() ?>
         </span>
         <?php if ($post->categories()->isNotEmpty()): ?>

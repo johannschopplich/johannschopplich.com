@@ -24,10 +24,10 @@
     <a
       href="<?= $item->url() ?>"
       class="
-        bg-theme-background halftone-bg text-sm font-500 uppercase px-1 py-0.5
+        bg-theme-background halftone-bg overline px-1 py-0.5
         [@supports(text-box:trim-both_cap_alphabetic)]:[text-box:trim-both_cap_alphabetic] [@supports(text-box:trim-both_cap_alphabetic)]:py-2
-        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary-accent
-        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:underline-default aria-[current]:decoration-primary-accent
+        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:text-underline hover:decoration-primary-accent
+        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:text-underline aria-[current]:decoration-primary-accent
       "
       <?php e($item->isOpen(), 'aria-current="page"') ?>
     >
@@ -35,7 +35,7 @@
     </a>
   <?php endforeach ?>
 
-  <div class="flex items-center ml-auto text-sm font-500 uppercase max-sm:hidden">
+  <div class="flex items-center ml-auto overline max-sm:hidden">
     <?php foreach (($languages = $kirby->languages()) as $language): ?>
       <?php if (!$language->isFirst($languages)): ?>
         <span class="text-contrast-soft px-1 select-none">/</span>

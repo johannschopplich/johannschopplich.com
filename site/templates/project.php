@@ -42,7 +42,7 @@ $details = $page->details()->toStructure();
           <?php foreach ($details as $detail): ?>
             <div>
               <?php if ($detail->label()->isNotEmpty()): ?>
-                <dt class="text-xs font-600 tracking-[0.125ch] uppercase text-contrast-medium"><?= $detail->label()->escape() ?></dt>
+                <dt class="caption text-contrast-medium"><?= $detail->label()->escape() ?></dt>
               <?php endif ?>
               <dd class="prose text-sm"><?= $detail->value() ?></dd>
             </div>
@@ -60,7 +60,7 @@ $details = $page->details()->toStructure();
 
       <div class="pt-lg border-t border-t-solid border-contrast-low dark:border-contrast-lower">
         <div class="-ml-1">
-          <a href="<?= $page->parent()->url() ?>" class="button-callout link-default">
+          <a href="<?= $page->parent()->url() ?>" class="action-link link-default">
             <span class="i-tabler-arrow-left mr-1" aria-hidden="true"></span>
             <span><?= t('project.allWorks') ?></span>
           </a>

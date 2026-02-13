@@ -50,7 +50,7 @@
       </div>
 
       <div class="content">
-        <a href="<?= $project->url() ?>" class="button-callout w-full link-default">
+        <a href="<?= $project->url() ?>" class="action-link w-full link-default">
           <span><?= t('projects.more') ?></span>
           <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
         </a>

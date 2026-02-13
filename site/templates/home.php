@@ -57,7 +57,7 @@
       <?= t('articles.latest') ?>
     </h2>
 
-    <a href="<?= page('blog')->url() ?>" class="button-callout link-default">
+    <a href="<?= page('blog')->url() ?>" class="action-link link-default">
       <span class="sm:hidden"><?= t('generic.more') ?></span>
       <span class="hidden sm:inline"><?= t('articles.more') ?></span>
       <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
@@ -91,7 +91,7 @@
         <?= t('photography') ?>
       </h2>
 
-      <a href="<?= $photography->url() ?>" class="button-callout link-default">
+      <a href="<?= $photography->url() ?>" class="action-link link-default">
         <span class="sm:hidden"><?= t('generic.more') ?></span>
         <span class="hidden sm:inline"><?= t('photography.more') ?></span>
         <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
@@ -102,7 +102,7 @@
   <?php snippet('components/carousel', ['query' => $query], slots: true) ?>
   <div class="pr-xs shrink-0 snap-end snap-always">
     <div class="relative h-$cell-base aspect-[4/5] flex items-center justify-center bg-contrast-lowest border border-transparent hover:border-current md:h-$cell-md">
-      <a href="<?= $query->first()->parent()->url() ?>" class="button-callout link-default">
+      <a href="<?= $query->first()->parent()->url() ?>" class="action-link link-default">
         <span class="absolute inset-0" aria-hidden="true"></span>
         <?= t('photography.more') ?><span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
       </a>

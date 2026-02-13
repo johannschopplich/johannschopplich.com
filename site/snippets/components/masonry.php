@@ -4,13 +4,11 @@
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $width */
 
-// Note: The `masonry-grid` class is only applied  as fallback until the web component is initialized
 ?>
 <masonry-grid <?= attr([
-  'class' => 'masonry-grid gap-5xl sm:gap-lg',
+  'class' => 'grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] gap-5xl justify-center children:self-start sm:gap-lg',
   'style' => $width ? '--masonry-column-max-width: ' . $width : null,
-]) ?>
->
+]) ?>>
   <?php foreach ($query as $image): ?>
     <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>
