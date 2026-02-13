@@ -1,5 +1,4 @@
 import type { Theme } from "@unocss/preset-wind4";
-import { variantMatcher } from "@unocss/preset-wind4/utils";
 import {
   defineConfig,
   presetIcons,
@@ -87,14 +86,6 @@ export default defineConfig<Theme>({
       prose: "70ch",
     },
   },
-  variants: [
-    variantMatcher("un-light", (input) => ({
-      prefix: `:root[data-theme="light"] $$ ${input.prefix}`,
-    })),
-    variantMatcher("un-dark", (input) => ({
-      prefix: `:root[data-theme="dark"] $$ ${input.prefix}`,
-    })),
-  ],
   rules: [
     [
       "hyphenate",
@@ -177,7 +168,7 @@ ${selector} {
       icon: "size-[1.25em] [&>svg]:size-full",
       "icon-inline":
         "inline-block select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto",
-      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 un-dark:border-contrast-low",
+      tag: "text-size-xs leading-[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 dark:border-contrast-low",
       "button-callout":
         "inline-flex items-center text-size-xs leading-[1.05] font-heading font-500 uppercase tracking-[0.125ch] -m-2 p-2",
     },
@@ -187,6 +178,10 @@ ${selector} {
   transformers: [transformerDirectives()],
   presets: [
     presetWind4({
+      dark: {
+        dark: '[data-theme="dark"]',
+        light: ':root:not([data-theme]), [data-theme="light"]',
+      },
       preflights: {
         reset: true,
       },

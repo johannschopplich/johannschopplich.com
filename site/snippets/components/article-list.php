@@ -34,7 +34,7 @@ $year = null;
           <?= $post->title()->escape() ?>
         </span>
         <?php if ($post->categories()->isNotEmpty()): ?>
-          <hr class="grow self-center border-dotted border-contrast-medium un-dark:border-contrast-low">
+          <hr class="grow self-center border-dotted border-contrast-medium dark:border-contrast-low">
           <span class="flex shrink-0 flex-wrap gap-1">
             <?php foreach ($post->categories()->split() as $category): ?>
               <span class="tag"><?= $category ?></span>

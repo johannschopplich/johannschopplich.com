@@ -62,7 +62,7 @@
   </div>
 </div>
 
-<div class="pb-8xl border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
+<div class="pb-8xl border-t border-t-solid border-contrast-low dark:border-contrast-lower">
   <div class="content pt-5xl md:pt-8xl">
     <div class="max-w-[72rem]">
       <section>
@@ -96,7 +96,7 @@
               </div>
 
               <?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
-                <div class="prose text-sm mt-sm un-dark:text-contrast-medium">
+                <div class="prose text-sm mt-sm dark:text-contrast-medium">
                   <?php foreach ($entry->description()->toBlocks() as $block): ?>
                     <?= $block ?>
                   <?php endforeach ?>

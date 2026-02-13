@@ -56,7 +56,7 @@ $details = $page->details()->toStructure();
         </div>
       <?php endif ?>
 
-      <div class="pt-lg border-t border-t-solid border-contrast-low un-dark:border-contrast-lower">
+      <div class="pt-lg border-t border-t-solid border-contrast-low dark:border-contrast-lower">
         <div class="-ml-1">
           <a href="<?= $page->parent()->url() ?>" class="button-callout link-default">
             <span class="i-tabler-arrow-left mr-1" aria-hidden="true"></span>

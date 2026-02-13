@@ -63,7 +63,7 @@ https://github.com/johannschopplich/johannschopplich.com
     sticky -top-px pt-px z-20
     border-b border-b-transparent border-b-solid transition-border-color
     bg-theme-background/75 bg-[image:radial-gradient(rgba(255,255,255,0)_1px,_var(--un-color-background)_1px)] bg-[length:3px_3px] backdrop-blur-[8px]
-    [&.is-pinned]:border-contrast-lower un-dark:[&.is-pinned]:border-contrast-lowest
+    [&.is-pinned]:border-contrast-lower dark:[&.is-pinned]:border-contrast-lowest
   ">
     <div class="content py-xs">
       <?php snippet('partials/navigation') ?>

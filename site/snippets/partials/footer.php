@@ -48,11 +48,11 @@ $complementaryLanguage = $kirby
         <button
           class="inline-flex items-center gap-2 text-sm link-default"
           data-theme-switcher>
-          <span class="icon un-dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
-          <span class="font-500 un-dark:hidden"><?= t('theme.switch.off') ?></span>
+          <span class="icon dark:hidden" aria-hidden="true"><?= icon('sun.svg') ?></span>
+          <span class="font-500 dark:hidden"><?= t('theme.switch.off') ?></span>
 
-          <span class="icon un-light:hidden" aria-hidden="true"><?= icon('moon-stars.svg') ?></span>
-          <span class="font-500 un-light:hidden"><?= t('theme.switch.on') ?></span>
+          <span class="icon light:hidden" aria-hidden="true"><?= icon('moon-stars.svg') ?></span>
+          <span class="font-500 light:hidden"><?= t('theme.switch.on') ?></span>
         </button>
       </div>
     </div>
