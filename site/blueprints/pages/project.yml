@@ -70,19 +70,17 @@ tabs:
               separator:
                 type: line
               details:
-                label:
-                  de: Infobox
-                  en: Infobox
+                label: Details
                 type: structure
                 fields:
                   label:
-                    label: Label
+                    label:
+                      de: Bezeichnung
+                      en: Label
                     type: text
                     width: 1/2
-                  value:
-                    label:
-                      de: Wert
-                      en: Value
+                  text:
+                    label: Text
                     type: writer
                     inline: true
                     width: 1/2
