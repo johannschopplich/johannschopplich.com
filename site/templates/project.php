@@ -41,10 +41,8 @@ $details = $page->details()->toStructure();
         <dl class="flex flex-col gap-2 m-0">
           <?php foreach ($details as $detail): ?>
             <div>
-              <?php if ($detail->label()->isNotEmpty()): ?>
-                <dt class="caption text-contrast-medium"><?= $detail->label()->escape() ?></dt>
-              <?php endif ?>
-              <dd class="prose text-sm"><?= $detail->value() ?></dd>
+              <dt class="caption text-contrast-medium"><?= $detail->label()->escape() ?></dt>
+              <dd class="prose text-sm"><?= $detail->text() ?></dd>
             </div>
           <?php endforeach ?>
         </dl>

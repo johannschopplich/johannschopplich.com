@@ -6,7 +6,7 @@
 
 $kirby->response()->type('text/markdown');
 
-$infobox = implode(
+$details = implode(
   "\n",
   $page->details()->toStructure()->map(
     fn ($detail) => '- **' . $detail->label()->value() . ':** ' . $detail->text()->value()
@@ -19,6 +19,6 @@ echo renderMarkdown(
   ]], true),
   '# ' . $page->title()->value(),
   $page->subtitle()->isNotEmpty() ? '*' . $page->subtitle()->value() . '*' : null,
-  $infobox,
+  $details,
   snippet('llm/blocks', ['blocks' => $page->text()->toBlocks()], true)
 );
