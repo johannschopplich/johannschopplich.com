@@ -10,7 +10,6 @@
   'style' => $width ? '--masonry-column-max-width: ' . $width : null,
 ]) ?>>
   <?php foreach ($query as $image): ?>
-    <?php /** @var \Kirby\Cms\File $image */ ?>
     <figure>
       <img
         src="<?= $image->thumbhashUri() ?>"

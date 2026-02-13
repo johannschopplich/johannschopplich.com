@@ -25,7 +25,6 @@
 
 <div class="pb-8xl space-y-5xl md:space-y-8xl">
   <?php foreach ($children = $page->children()->listed() as $project): ?>
-    <?php /** @var \Kirby\Cms\Page $project */ ?>
     <div>
       <div class="group content relative pt-xl mb-xl border-t border-solid border-contrast-low dark:border-contrast-lower">
         <h2 class="title text-2xl">

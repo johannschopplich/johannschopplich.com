@@ -1,6 +1,6 @@
 <?php
 
-/** @var \Kirby\Cms\Collection $query */
+/** @var \Kirby\Cms\Pages $query */
 
 ?>
 <div class="
@@ -8,7 +8,6 @@
   after:content-empty after:absolute after:inset-x-0 after:bottom-0 after:h-[1px] after:bg-theme-background
 ">
   <?php foreach ($query as $article): ?>
-    <?php /** @var \Kirby\Cms\Page $article */ ?>
     <div class="
       relative p-xl
       before:content-empty before:absolute before:inset-x-5 before:bottom-0 before:border-b before:border-solid before:border-contrast-low dark:before:border-contrast-lower

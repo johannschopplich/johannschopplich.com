@@ -12,7 +12,6 @@ $year = null;
     </h2>
 
     <?php foreach ($query as $post): ?>
-      <?php /** @var \Kirby\Cms\Page $post */ ?>
       <?php $postY = $post->published()->toDate('Y') ?>
       <?php $isActive = $post->isActive() || $post->is($page) ?>
 
