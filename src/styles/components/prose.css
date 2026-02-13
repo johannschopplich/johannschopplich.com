@@ -82,7 +82,7 @@
       &::after {
         position: absolute;
         font-family: var(--un-font-family-normal);
-        font-size: var(--un-text-4xl);
+        font-size: var(--un-text-3xl);
         font-style: normal;
         color: var(--un-color-primary);
         line-height: 1;
