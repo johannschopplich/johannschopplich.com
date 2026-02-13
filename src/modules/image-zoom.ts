@@ -7,6 +7,7 @@ export function install() {
   const overlay = document.createElement("div");
   overlay.className = "image-zoom";
   overlay.role = "dialog";
+  overlay.ariaModal = "true";
   overlay.tabIndex = -1;
   overlay.hidden = true;
 
@@ -25,7 +26,7 @@ export function install() {
     return document.startViewTransition(update).finished;
   }
 
-  function openZoom(image: HTMLImageElement) {
+  async function openZoom(image: HTMLImageElement) {
     activeImage = image;
     overlay.ariaLabel = image.alt || "Zoomed image";
 
@@ -50,53 +51,66 @@ export function install() {
 
     image.style.viewTransitionName = "zoom-image";
 
-    transition(() => {
+    await transition(() => {
       overlay.hidden = false;
-      document.documentElement.style.overflow = "hidden";
       // Hand transition name to zoomed image
       image.style.viewTransitionName = "";
       zoomedImg.style.viewTransitionName = "zoom-image";
-    }).then(() => {
-      overlay.focus();
-      // Upgrade to full-resolution srcset
-      const srcset = image.dataset.srcset || image.srcset;
-      if (srcset) {
-        zoomedImg.srcset = srcset;
-        zoomedImg.sizes = "100vw";
-      }
     });
+
+    overlay.focus();
+    // Upgrade to full-resolution srcset
+    const srcset = image.dataset.srcset || image.srcset;
+    if (srcset) {
+      zoomedImg.srcset = srcset;
+      zoomedImg.sizes = "100vw";
+    }
+
+    window.addEventListener("scroll", onScroll, { once: true, passive: true });
   }
 
-  function closeZoom() {
+  async function closeZoom(morphBack = true) {
     if (!activeImage) return;
 
     const image = activeImage;
     activeImage = null;
+    window.removeEventListener("scroll", onScroll);
 
     // Downgrade to cached source for clean transition
     zoomedImg.removeAttribute("srcset");
     zoomedImg.removeAttribute("sizes");
 
-    transition(() => {
+    await transition(() => {
       zoomedImg.style.viewTransitionName = "";
-      image.style.viewTransitionName = "zoom-image";
+      if (morphBack) {
+        image.style.viewTransitionName = "zoom-image";
+      }
       overlay.hidden = true;
-      document.documentElement.style.overflow = "";
       zoomedImg.style.width = "";
       zoomedImg.style.height = "";
-    }).then(() => {
-      image.style.viewTransitionName = "";
-      image.focus({ preventScroll: true });
     });
+
+    image.style.viewTransitionName = "";
+    image.focus({ preventScroll: true });
+  }
+
+  function onScroll() {
+    closeZoom(false);
   }
 
   for (const image of images) {
-    image.tabIndex = -1;
+    image.tabIndex = 0;
     image.classList.add("cursor-zoom-in");
     image.addEventListener("click", () => openZoom(image));
+    image.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openZoom(image);
+      }
+    });
   }
 
-  overlay.addEventListener("click", closeZoom);
+  overlay.addEventListener("click", () => closeZoom());
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && activeImage) closeZoom();
