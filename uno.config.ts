@@ -141,7 +141,7 @@ ${selector} {
       /^content-(inset|offset)-([lrtbxy])$/,
       ([, type, dir]) => {
         const property = type === "inset" ? "p" : "m";
-        return `${property}${dir}-lg md:${property}${dir}-[max(4vw,1.875rem)]`;
+        return `${property}${dir}-lg md:${property}${dir}-[max(4vw,var(--spacing-3xl))]`;
       },
     ],
     {
@@ -163,7 +163,7 @@ ${selector} {
       "column-narrow": "block flex-[0_0_auto] w-auto",
       "column-auto": "block flex-1 w-auto",
       "column-full": "block flex-none w-full",
-      content: "px-lg md:px-[max(4vw,1.875rem)]",
+      content: "px-lg md:px-[max(4vw,var(--spacing-3xl))]",
       "section-divider": "h-$spacing-8xl md:h-[calc(var(--spacing-8xl)*1.25)]",
 
       // Components

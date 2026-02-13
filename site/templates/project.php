@@ -38,7 +38,7 @@ $details = $page->details()->toStructure();
   ]), ' ') ?>">
     <?php if ($details->isNotEmpty()): ?>
       <aside class="cross-box bg-contrast-lowest py-5 px-4 sm:px-5 mb-5xl lg:sticky lg:top-16 lg:self-start lg:order-2 lg:mb-0 lg:max-w-sm">
-        <dl class="flex flex-col gap-2 m-0">
+        <dl class="flex flex-col gap-3 m-0">
           <?php foreach ($details as $detail): ?>
             <div>
               <dt class="caption text-contrast-medium"><?= $detail->label()->escape() ?></dt>
