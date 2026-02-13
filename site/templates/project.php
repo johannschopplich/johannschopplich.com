@@ -3,6 +3,9 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+
+$details = $page->details()->toStructure();
+
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -29,7 +32,23 @@
 </div>
 
 <div class="pb-8xl">
-  <div class="content">
+  <div class="<?= trim(implode(' ', [
+    'content',
+    $details->isNotEmpty() ? 'lg:grid lg:grid-cols-[minmax(0,var(--container-prose))_auto] lg:gap-5xl' : ''
+  ]), ' ') ?>">
+    <?php if ($details->isNotEmpty()): ?>
+      <aside class="cross-box bg-contrast-lowest py-5 px-4 sm:px-5 mb-5xl lg:sticky lg:top-16 lg:self-start lg:order-2 lg:mb-0 lg:max-w-sm">
+        <dl class="flex flex-col gap-2 m-0">
+          <?php foreach ($details as $detail): ?>
+            <div>
+              <dt class="text-xs font-600 tracking-[0.125ch] uppercase text-contrast-medium"><?= $detail->label()->escape() ?></dt>
+              <dd class="prose text-sm"><?= $detail->value() ?></dd>
+            </div>
+          <?php endforeach ?>
+        </dl>
+      </aside>
+    <?php endif ?>
+
     <div class="max-w-prose">
       <?php if ($page->text()->isNotEmpty()): ?>
         <div class="prose mb-5xl">

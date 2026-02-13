@@ -90,7 +90,7 @@
                     <?= $entry->company()->escape() ?>
                   <?php endif ?>
                 </p>
-                <p class="subtext text-primary-500 un-dark:text-primary-400">
+                <p class="subtext text-primary-accent">
                   <?= $entry->role()->escape() ?>
                 </p>
               </div>

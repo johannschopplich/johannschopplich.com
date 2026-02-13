@@ -5,7 +5,7 @@
 ?>
 <nav class="flex justify-center text-xl font-heading font-600">
   <?php if ($pagination->hasPrevPage()): ?>
-    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-tabler-arrow-left hover:text-link-hover" aria-label="Previous page"></a>
+    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-tabler-arrow-left hover:text-primary-accent" aria-label="Previous page"></a>
   <?php else: ?>
     <span class="mr-auto text-contrast-low cursor-not-allowed i-tabler-arrow-left" aria-disabled="true"></span>
   <?php endif ?>
@@ -19,8 +19,8 @@
         class="group flex flex-col items-center"
         aria-label="Go to page <?= $r ?>"
         <?php e($pagination->page() === $r, 'aria-current="page"') ?>>
-        <span class="<?= $pagination->page() === $r ? 'text-link-hover' : 'text-current' ?>">o</span>
-        <span class="text-base font-500 mt-2 <?= $pagination->page() === $r ? 'text-current' : 'text-link-hover group-hover:underline-default' ?>">
+        <span class="<?= $pagination->page() === $r ? 'text-primary-accent' : 'text-current' ?>">o</span>
+        <span class="text-base font-500 mt-2 <?= $pagination->page() === $r ? 'text-current' : 'text-primary-accent group-hover:underline-default' ?>">
           <?= $r ?>
         </span>
       </a>
@@ -33,7 +33,7 @@
   </div>
 
   <?php if ($pagination->hasNextPage()): ?>
-    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-tabler-arrow-right hover:text-link-hover" aria-label="Next page"></a>
+    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-tabler-arrow-right hover:text-primary-accent" aria-label="Next page"></a>
   <?php else: ?>
     <span class="ml-auto text-contrast-lower cursor-not-allowed i-tabler-arrow-right" aria-disabled="true"></span>
   <?php endif ?>

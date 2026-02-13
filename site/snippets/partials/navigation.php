@@ -26,8 +26,8 @@
       class="
         bg-theme-background halftone-bg text-sm font-500 uppercase px-1 py-0.5
         [@supports(text-box:trim-both_cap_alphabetic)]:[text-box:trim-both_cap_alphabetic] [@supports(text-box:trim-both_cap_alphabetic)]:py-2
-        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary-500 un-dark:hover:decoration-primary-400
-        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:underline-default aria-[current]:decoration-primary-500 un-dark:aria-[current]:decoration-primary-400
+        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:underline-default hover:decoration-primary-accent
+        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:underline-default aria-[current]:decoration-primary-accent
       "
       <?php e($item->isOpen(), 'aria-current="page"') ?>
     >

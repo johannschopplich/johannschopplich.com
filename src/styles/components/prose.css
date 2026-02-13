@@ -4,7 +4,7 @@
     --un-prose-hr: var(--un-color-border);
     --un-prose-bg-soft: var(--un-color-contrast-lowest);
     --un-prose-line-height: var(--un-line-height-normal);
-    --un-decoration-color: var(--un-color-primary);
+    --un-decoration-color: var(--un-color-primary-accent);
     counter-reset: figure;
 
     & :where(p, ul, ol, pre):not(:where(.not-prose, .not-prose *)) {
@@ -84,7 +84,7 @@
         font-family: var(--un-font-family-normal);
         font-size: var(--un-text-3xl);
         font-style: normal;
-        color: var(--un-color-primary);
+        color: var(--un-color-primary-accent);
         line-height: 1;
       }
 
@@ -219,36 +219,8 @@
     }
 
     & :where(.note):not(:where(.not-prose, .not-prose *)) {
-      position: relative;
       background-color: var(--un-prose-bg-soft);
       padding: 1.25rem 1rem;
-
-      &::before,
-      &::after {
-        --_cross-size: 11px;
-        --_cross-thickness: 1.5px;
-        content: "";
-        position: absolute;
-        width: var(--_cross-size);
-        height: var(--_cross-size);
-        background:
-          linear-gradient(var(--un-color-primary), var(--un-color-primary))
-            center / var(--_cross-thickness) 100% no-repeat,
-          linear-gradient(var(--un-color-primary), var(--un-color-primary))
-            center / 100% var(--_cross-thickness) no-repeat;
-      }
-
-      &::before {
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-      }
-
-      &::after {
-        bottom: 0;
-        right: 0;
-        transform: translate(50%, 50%);
-      }
 
       @media (--sm) {
         padding-left: 1.25rem;

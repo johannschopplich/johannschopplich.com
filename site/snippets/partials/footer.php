@@ -66,7 +66,7 @@ $complementaryLanguage = $kirby
         </p>
 
         <?php foreach ($site->footerPages()->toPages() as $p): ?>
-          <a href="<?= $p->url() ?>" style="--un-decoration-color: var(--un-color-primary)">
+          <a href="<?= $p->url() ?>" style="--un-decoration-color: var(--un-color-primary-accent)">
             <?= $p->title() ?>
           </a>
         <?php endforeach ?>

@@ -3,6 +3,6 @@
 /** @var \Kirby\Cms\Block $block */
 
 ?>
-<div class="note">
+<div class="note cross-box">
   <?= $block->text()->permalinksToUrls() ?>
 </div>

@@ -75,8 +75,8 @@
     --un-color-background: #fefcf8;
     --un-color-text: var(--un-color-contrast-higher);
     --un-color-border: currentcolor;
+    --un-color-primary-accent: var(--un-color-primary-500);
     --un-color-link: var(--un-color-text);
-    --un-color-link-hover: var(--un-color-primary-500);
   }
 
   [data-theme="dark"] {
@@ -91,8 +91,8 @@
     --un-color-background: var(--tw-color-stone-900);
     --un-color-text: white;
     --un-color-border: var(--un-color-contrast-lower);
+    --un-color-primary-accent: var(--un-color-primary-400);
     --un-color-link: var(--un-color-text);
-    --un-color-link-hover: var(--un-color-primary-400);
   }
 
   [data-theme]:not(:root) {

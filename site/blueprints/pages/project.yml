@@ -67,6 +67,27 @@ tabs:
                       de: Hoch
                       en: Tall
                 translate: false
+              separator:
+                type: line
+              details:
+                label:
+                  de: Infobox
+                  en: Infobox
+                type: structure
+                fields:
+                  label:
+                    label: Label
+                    type: text
+                    width: 1/2
+                    required: true
+                  value:
+                    label:
+                      de: Wert
+                      en: Value
+                    type: writer
+                    inline: true
+                    width: 1/2
+                    required: true
 
   seo:
     label: SEO

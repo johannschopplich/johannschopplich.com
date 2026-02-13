@@ -1,0 +1,32 @@
+@layer components {
+  .cross-box {
+    position: relative;
+
+    &::before,
+    &::after {
+      --_cross-size: 11px;
+      --_cross-thickness: 1.5px;
+      content: "";
+      position: absolute;
+      width: var(--_cross-size);
+      height: var(--_cross-size);
+      background:
+        linear-gradient(var(--un-color-primary), var(--un-color-primary))
+          center / var(--_cross-thickness) 100% no-repeat,
+        linear-gradient(var(--un-color-primary), var(--un-color-primary))
+          center / 100% var(--_cross-thickness) no-repeat;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      transform: translate(50%, 50%);
+    }
+  }
+}
