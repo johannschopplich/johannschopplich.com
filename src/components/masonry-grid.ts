@@ -46,29 +46,42 @@ export class MasonryGrid extends HTMLElement {
   }
 
   /**
-   * Greedy bin packing: assign each item to the column with the shortest height.
+   * LPT (Longest Processing Time) bin packing: sort items by descending
+   * height, then greedily assign each to the shortest column. This is
+   * mathematically proven to produce the best greedy approximation for
+   * multi-way number partitioning and ensures tall items (e.g. portrait
+   * images) are spread evenly across columns before shorter items fill gaps.
+   *
+   * Within each column, items are re-sorted by their original DOM index to
+   * preserve the intended visual ordering.
    */
   #balanceColumns(items: HTMLElement[], columns: number): void {
     if (columns <= 1 || items.length <= columns) {
-      for (const item of items) {
-        item.style.removeProperty("order");
-      }
+      for (const item of items) item.style.removeProperty("order");
       return;
     }
 
-    const heights = items.map(
-      (item) =>
+    // Build index-height pairs and sort by height descending (LPT)
+    const indexedItems = items.map((item, i) => ({
+      index: i,
+      height:
         this.#itemHeights.get(item) ?? item.getBoundingClientRect().height,
-    );
+    }));
+    indexedItems.sort((a, b) => b.height - a.height);
 
-    // Greedy assignment: place each item in the shortest column
+    // Greedy assignment on sorted items: place each in the shortest column
     const columnHeights = Array.from<number>({ length: columns }).fill(0);
     const columnItems: number[][] = Array.from({ length: columns }, () => []);
 
-    for (let i = 0; i < items.length; i++) {
+    for (const { index, height } of indexedItems) {
       const minCol = columnHeights.indexOf(Math.min(...columnHeights));
-      columnItems[minCol]!.push(i);
-      columnHeights[minCol]! += heights[i]! + this.#gap;
+      columnItems[minCol]!.push(index);
+      columnHeights[minCol]! += height + this.#gap;
+    }
+
+    // Preserve relative DOM order within each column
+    for (const column of columnItems) {
+      column.sort((a, b) => a - b);
     }
 
     // Build new order: row by row across columns
@@ -117,7 +130,7 @@ export class MasonryGrid extends HTMLElement {
     const hasColumnsChanged = this.#columns !== columns;
     this.#columns = columns;
 
-    if (hasColumnsChanged) {
+    if (hasColumnsChanged || hasHeightChanges) {
       this.#balanceColumns(items, columns);
     }
 
