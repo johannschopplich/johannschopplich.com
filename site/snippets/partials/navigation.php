@@ -25,7 +25,7 @@
       href="<?= $item->url() ?>"
       class="
         bg-theme-background halftone-bg overline px-1 py-0.5
-        [@supports(text-box:trim-both_cap_alphabetic)]:[text-box:trim-both_cap_alphabetic] [@supports(text-box:trim-both_cap_alphabetic)]:py-2
+        <?php /* [@supports(text-box:trim-both_cap_alphabetic)]:[text-box:trim-both_cap_alphabetic] [@supports(text-box:trim-both_cap_alphabetic)]:py-2 */ ?>
         [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:text-underline hover:decoration-primary-accent
         aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:text-underline aria-[current]:decoration-primary-accent
       "
