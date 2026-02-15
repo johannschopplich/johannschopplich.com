@@ -136,7 +136,6 @@ ${selector} {
     ],
   ],
   shortcuts: [
-    [/^column-(\d+)$/, ([, d]) => `flex-none w-${d}/12`],
     [
       /^content-(inset|offset)-([lrtbxy])$/,
       ([, type, dir]) => {
@@ -158,11 +157,6 @@ ${selector} {
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
 
       // Layout
-      columns: "flex flex-wrap",
-      column: "block flex-1",
-      "column-narrow": "block flex-[0_0_auto] w-auto",
-      "column-auto": "block flex-1 w-auto",
-      "column-full": "block flex-none w-full",
       content: "px-lg md:px-[max(4vw,var(--spacing-3xl))]",
       "section-divider": "h-$spacing-8xl md:h-[calc(var(--spacing-8xl)*1.25)]",
 

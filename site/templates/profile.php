@@ -17,7 +17,8 @@
             sizes="(min-width: 768px) 320px, 100vw"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
-            alt="<?= $image->alt() ?>">
+            alt="<?= $image->alt() ?>"
+          >
         </figure>
 
         <div
@@ -80,7 +81,7 @@
 
             <dd class="max-w-prose">
               <div class="group relative">
-                <p class="text-lg font-600">
+                <p class="title text-lg">
                   <?php if ($entry->url()->isNotEmpty()): ?>
                     <a href="<?= $entry->url() ?>" class="link-default" target="_blank">
                       <span class="absolute inset-0" aria-hidden="true"></span>
