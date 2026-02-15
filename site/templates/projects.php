@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="content pt-5xl md:pt-8xl">
-  <div class="prose max-w-screen-lg">
+  <div class="prose max-w-screen-md">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
