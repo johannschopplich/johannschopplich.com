@@ -30,22 +30,23 @@
             </a>
           </span>
         </h1>
-
-        <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
-          <div class="flex items-center gap-sm">
-            <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
-              <span class="inline-flex not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low">
-                <a href="<?= $social->url() ?>" target="_blank"><?= $social->platform()->escape() ?></a>
-              </span>
-            <?php endforeach ?>
-          </div>
-        <?php endif ?>
       <?php else: ?>
         <div class="max-w-prose text-contrast-medium">
           <?= $block ?>
         </div>
       <?php endif ?>
     <?php endforeach ?>
+
+    <?php if ($page->socialLinks()->toStructure()->isNotEmpty()): ?>
+      <div class="flex items-center gap-sm">
+        <?php foreach ($page->socialLinks()->toStructure() as $social): ?>
+          <span class="inline-flex not-last:after:content-['/'] not-last:after:pl-sm not-last:after:text-contrast-low">
+            <a href="<?= $social->url() ?>" target="_blank"><?= $social->platform()->escape() ?></a>
+          </span>
+        <?php endforeach ?>
+      </div>
+    <?php endif ?>
+
   </div>
 </div>
 
