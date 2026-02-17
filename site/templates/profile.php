@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="pt-5xl pb-5xl md:pt-8xl md:pb-8xl">
-  <div class="max-w-[72rem] flex flex-col gap-5xl md:flex-row md:items-stretch md:px-[max(4vw,var(--spacing-3xl))]">
+  <div class="max-w-screen-xl flex flex-col gap-5xl md:flex-row md:items-stretch md:px-gutter">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div class="grow min-w-0 md:min-w-min">
         <figure class="relative select-none shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
@@ -64,7 +64,7 @@
 </div>
 
 <div class="pb-8xl border-t border-t-solid border-contrast-low dark:border-contrast-lower">
-  <div class="content pt-5xl md:pt-8xl">
+  <div class="px-lg pt-5xl md:px-gutter md:pt-8xl">
     <div class="max-w-[72rem]">
       <section>
         <h2 class="title text-2xl mb-3xl">

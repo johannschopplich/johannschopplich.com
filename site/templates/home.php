@@ -6,7 +6,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-<div class="content relative max-w-screen-lg pt-5xl md:pt-8xl">
+<div class="relative max-w-screen-lg px-lg pt-5xl md:px-gutter md:pt-8xl">
   <div class="prose" style="--un-decoration-color: transparent">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
@@ -52,7 +52,7 @@
 
 <div class="section-divider"></div>
 
-<div class="content mb-lg">
+<div class="px-lg mb-lg md:px-gutter">
   <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
     <h2 class="title text-xl text-primary-accent md:text-2xl">
       <?= t('articles.latest') ?>
@@ -67,7 +67,7 @@
 </div>
 
 <div class="border-y border-y-solid border-contrast-low dark:border-contrast-lower">
-  <div class="content">
+    <div class="px-lg md:px-gutter">
     <div class="max-w-screen-lg overflow-hidden">
       <?php snippet('components/article-grid', [
         'query' => $kirby->collection('articles')->paginate(4)
@@ -86,7 +86,7 @@
 
   <div class="section-divider"></div>
 
-  <div class="content mb-3xl">
+  <div class="px-lg mb-3xl md:px-gutter">
     <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
       <h2 class="title text-xl text-primary-accent md:text-2xl">
         <?= t('photography') ?>

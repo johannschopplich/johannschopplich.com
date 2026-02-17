@@ -26,6 +26,8 @@
     --un-fluid-max-font-size: 18;
     --un-prose-space-y: 1.25rem;
 
+    --un-content-gutter: max(4vw, var(--spacing-3xl));
+
     --un-decoration-thickness: max(1px, 0.1em);
     --un-decoration-offset: max(2px, 0.15em);
     --un-frame-shadow-template: 3px 3px 0 var(--un-color-background), 4px 4px 0;

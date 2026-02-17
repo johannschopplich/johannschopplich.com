@@ -10,13 +10,13 @@ $details = $page->details()->toStructure();
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="pt-5xl pb-5xl md:pt-8xl">
-  <div class="content">
+  <div class="px-lg md:px-gutter">
     <h1 class="headline max-w-prose">
       <?= $page->title()->escape() ?>
     </h1>
   </div>
 
-  <div class="content-inset-l pb-5xl">
+  <div class="pl-lg pb-5xl md:pl-gutter">
     <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:border-b after:border-dotted after:border-contrast-soft">
       <p class="subtext text-contrast-medium shrink-0 max-md:text-sm">
         <?= $page->subtitle()->escape() ?>
@@ -33,7 +33,7 @@ $details = $page->details()->toStructure();
 
 <div class="pb-8xl">
   <div class="<?= trim(implode(' ', [
-    'content',
+    'px-lg md:px-gutter',
     $details->isNotEmpty() ? 'lg:grid lg:grid-cols-[minmax(0,var(--container-prose))_auto] lg:gap-5xl' : ''
   ]), ' ') ?>">
     <?php if ($details->isNotEmpty()): ?>

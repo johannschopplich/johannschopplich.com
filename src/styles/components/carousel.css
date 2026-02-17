@@ -9,7 +9,7 @@
 
   @media (--md) {
     [data-carousel] {
-      --cell-h: clamp(25svh, 50vw, 75svh);
+      --cell-h: clamp(25svh, 50vw, 50svh);
     }
 
     [data-carousel][data-height="tight"] {

@@ -6,7 +6,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-<div class="content pt-5xl md:pt-8xl">
+<div class="px-lg pt-5xl md:px-gutter md:pt-8xl">
   <div class="prose max-w-screen-md">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
@@ -26,7 +26,7 @@
 <div class="pb-8xl space-y-5xl md:space-y-8xl">
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <div>
-      <div class="group content relative pt-xl mb-xl border-t border-solid border-contrast-low dark:border-contrast-lower">
+      <div class="group relative px-lg pt-xl mb-xl border-t border-solid border-contrast-low md:px-gutter dark:border-contrast-lower">
         <h2 class="title text-2xl">
           <a
             href="<?= $project->url() ?>"
@@ -48,7 +48,7 @@
         ]) ?>
       </div>
 
-      <div class="content">
+      <div class="px-lg md:px-gutter">
         <a href="<?= $project->url() ?>" class="action-link w-full link-default">
           <span><?= t('projects.more') ?></span>
           <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>

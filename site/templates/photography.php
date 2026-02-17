@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="pt-5xl pb-8xl md:pt-8xl">
-  <div class="content">
+  <div class="px-lg md:px-gutter">
     <div class="prose max-w-prose">
       <h1 class="sr-only">
         <?= $page->title()->escape() ?>

@@ -85,6 +85,9 @@ export default defineConfig<Theme>({
     container: {
       prose: "70ch",
     },
+    spacing: {
+      gutter: "var(--un-content-gutter)",
+    },
   },
   rules: [
     [
@@ -136,13 +139,6 @@ ${selector} {
     ],
   ],
   shortcuts: [
-    [
-      /^content-(inset|offset)-([lrtbxy])$/,
-      ([, type, dir]) => {
-        const property = type === "inset" ? "p" : "m";
-        return `${property}${dir}-lg md:${property}${dir}-[max(4vw,var(--spacing-3xl))]`;
-      },
-    ],
     {
       // Text styles
       headline:
@@ -157,7 +153,6 @@ ${selector} {
         "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
 
       // Layout
-      content: "px-lg md:px-[max(4vw,var(--spacing-3xl))]",
       "section-divider": "h-$spacing-8xl md:h-[calc(var(--spacing-8xl)*1.25)]",
 
       // Components

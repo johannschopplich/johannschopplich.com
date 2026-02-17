@@ -34,7 +34,7 @@ if ($proseBlocks) {
       <?= $section['block'] ?>
     </div>
   <?php else: ?>
-    <div <?= attr(['class' => 'content', 'lang' => $lang]) ?>>
+    <div <?= attr(['class' => 'px-lg md:px-gutter', 'lang' => $lang]) ?>>
       <div class="prose max-w-prose">
         <?php foreach ($section['blocks'] as $block): ?>
           <?= $block ?>
