@@ -9,11 +9,21 @@
 
   @media (--md) {
     [data-carousel] {
-      --cell-h: clamp(25svh, 50vw, 50svh);
+      --cell-h: clamp(25svh, 50vw, 75svh);
     }
 
     [data-carousel][data-height="tight"] {
       --cell-h: clamp(25svh, 50vw, 37.5svh);
+    }
+  }
+
+  @media (--2xl) {
+    [data-carousel] {
+      --cell-h: clamp(25svh, 50vw, 50svh);
+    }
+
+    [data-carousel][data-height="tight"] {
+      --cell-h: clamp(25svh, 50vw, 25svh);
     }
   }
 }
