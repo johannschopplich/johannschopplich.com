@@ -42,7 +42,14 @@ $details = $page->details()->toStructure();
           <?php foreach ($details as $detail): ?>
             <div>
               <dt class="caption text-contrast-medium"><?= $detail->label()->escape() ?></dt>
-              <dd class="prose text-sm"><?= $detail->text() ?></dd>
+              <dd class="prose text-sm">
+                <?php if ($detail->text()->isNotEmpty()): ?>
+                  <?= $detail->text() ?>
+                <?php endif ?>
+                <?php if ($file = $detail->file()->toFile()): ?>
+                  <a href="<?= $file->url() ?>" target="_blank" rel="noopener"><?= $file->filename() ?></a>
+                <?php endif ?>
+              </dd>
             </div>
           <?php endforeach ?>
         </dl>

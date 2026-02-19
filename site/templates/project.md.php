@@ -9,7 +9,16 @@ $kirby->response()->type('text/markdown');
 $details = implode(
   "\n",
   $page->details()->toStructure()->map(
-    fn ($detail) => '- **' . $detail->label()->value() . ':** ' . $detail->text()->value()
+    function ($detail) {
+      $parts = [];
+      if ($detail->text()->isNotEmpty()) {
+        $parts[] = $detail->text()->value();
+      }
+      if ($file = $detail->file()->toFile()) {
+        $parts[] = '[' . $file->filename() . '](' . $file->url() . ')';
+      }
+      return '- **' . $detail->label()->value() . ':** ' . implode(' ', $parts);
+    }
   )->values()
 );
 

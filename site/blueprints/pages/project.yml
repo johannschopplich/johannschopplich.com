@@ -83,7 +83,15 @@ tabs:
                     label: Text
                     type: writer
                     inline: true
-                    required: true
+                  file:
+                    label:
+                      de: Datei
+                      en: File
+                    type: files
+                    multiple: false
+                    query: page.files.filterBy("template", "not in", ["image"])
+                    uploads:
+                      template: document
 
   seo:
     label: SEO
