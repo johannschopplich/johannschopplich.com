@@ -30,7 +30,7 @@ $bgImage = $image?->thumb([
 ])->url();
 
 ?>
-<figure>
+<figure class="is-outset">
   <lite-youtube <?= attr([
     'videoid' => $id,
     'style' => implode(';', [
