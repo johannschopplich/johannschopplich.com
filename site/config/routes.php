@@ -5,7 +5,7 @@ use Kirby\Exception\NotFoundException;
 use Kirby\Http\Response;
 
 return [
-    // Serve .md.php content representations when `Accept: text/markdown` is requested
+    // Serve `md` content representations when `Accept: text/markdown` is requested
     [
         'pattern'  => '(:all)',
         'language' => '*',
@@ -24,7 +24,7 @@ return [
             }
 
             try {
-                return $page->render([], 'md');
+                return $page->render(contentType: 'md');
             } catch (NotFoundException) {
                 $this->next();
             }
@@ -34,7 +34,7 @@ return [
         'pattern' => 'feeds/(:alpha)',
         'method'  => 'GET',
         'action'  => function ($type) {
-            if (!in_array($type, ['rss', 'json'])) {
+            if (!in_array($type, ['rss', 'json'], true)) {
                 return false;
             }
 
