@@ -9,18 +9,28 @@
     padding: 2rem;
     cursor: zoom-out;
     background: oklch(0% 0 0 / 50%);
-    backdrop-filter: blur(8px);
-    opacity: 1;
-    transition: opacity 0.3s, backdrop-filter 0.3s, display 0.3s allow-discrete;
+    backdrop-filter: blur(0);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.3s,
+      backdrop-filter 0.3s;
 
     @starting-style {
       opacity: 0;
       backdrop-filter: blur(0);
     }
 
-    &[hidden] {
+    &[data-state="open"] {
+      opacity: 1;
+      backdrop-filter: blur(8px);
+      pointer-events: auto;
+    }
+
+    &[data-state="closing"] {
       opacity: 0;
       backdrop-filter: blur(0);
+      pointer-events: none;
     }
   }
 

@@ -1,3 +1,4 @@
+import { prefersReducedMotion } from "../components/_shared";
 import { isBelow } from "../utils";
 
 export function install() {
@@ -10,6 +11,7 @@ export function install() {
   overlay.ariaModal = "true";
   overlay.tabIndex = -1;
   overlay.hidden = true;
+  overlay.dataset.state = "closed";
 
   const zoomedImg = document.createElement("img");
   overlay.append(zoomedImg);
@@ -17,8 +19,32 @@ export function install() {
 
   let activeImage: HTMLImageElement | null = null;
 
+  function waitForOverlayFadeOut() {
+    if (prefersReducedMotion.matches) return Promise.resolve();
+
+    return new Promise<void>((resolve) => {
+      let isSettled = false;
+
+      function settle() {
+        if (isSettled) return;
+        isSettled = true;
+        overlay.removeEventListener("transitionend", onTransitionEnd);
+        resolve();
+      }
+
+      function onTransitionEnd(event: TransitionEvent) {
+        if (event.target === overlay && event.propertyName === "opacity") {
+          settle();
+        }
+      }
+
+      overlay.addEventListener("transitionend", onTransitionEnd);
+      setTimeout(settle, 400);
+    });
+  }
+
   /** Runs `update` inside a view transition when supported. */
-  function transition(update: () => void): Promise<void> {
+  function transition(update: () => void) {
     if (!document.startViewTransition) {
       update();
       return Promise.resolve();
@@ -53,6 +79,7 @@ export function install() {
 
     await transition(() => {
       overlay.hidden = false;
+      overlay.dataset.state = "open";
       // Hand transition name to zoomed image
       image.style.viewTransitionName = "";
       zoomedImg.style.viewTransitionName = "zoom-image";
@@ -80,15 +107,29 @@ export function install() {
     zoomedImg.removeAttribute("srcset");
     zoomedImg.removeAttribute("sizes");
 
-    await transition(() => {
-      zoomedImg.style.viewTransitionName = "";
-      if (morphBack) {
+    if (morphBack) {
+      await transition(() => {
+        zoomedImg.style.viewTransitionName = "";
+        zoomedImg.style.opacity = "0";
         image.style.viewTransitionName = "zoom-image";
-      }
-      overlay.hidden = true;
+        zoomedImg.style.width = "";
+        zoomedImg.style.height = "";
+      });
+
+      image.style.viewTransitionName = "";
+    } else {
+      zoomedImg.style.viewTransitionName = "";
+      zoomedImg.style.opacity = "0";
       zoomedImg.style.width = "";
       zoomedImg.style.height = "";
-    });
+    }
+
+    overlay.dataset.state = "closing";
+    await waitForOverlayFadeOut();
+
+    overlay.hidden = true;
+    overlay.dataset.state = "closed";
+    zoomedImg.style.opacity = "";
 
     image.style.viewTransitionName = "";
     image.focus({ preventScroll: true });
