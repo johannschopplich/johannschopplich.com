@@ -124,14 +124,14 @@ export function install() {
       await Promise.all([animation, waitForOverlayFadeOut()]);
     } else {
       zoomedImg.style.viewTransitionName = "";
-      zoomedImg.style.width = "";
-      zoomedImg.style.height = "";
       await waitForOverlayFadeOut();
     }
 
     overlay.hidden = true;
     overlay.dataset.state = "closed";
     zoomedImg.style.opacity = "";
+    zoomedImg.style.width = "";
+    zoomedImg.style.height = "";
 
     image.style.viewTransitionName = "";
     image.focus({ preventScroll: true });
