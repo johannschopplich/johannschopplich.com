@@ -175,6 +175,17 @@
       }
     }
 
+    &:is(.is-contained) {
+      @media (--lg) {
+        &
+          :where(figure.is-pulled-right, figure.is-outset):not(
+            :where(.not-prose, .not-prose *)
+          ) {
+          margin-right: 0;
+        }
+      }
+    }
+
     & :where(figcaption):not(:where(.not-prose, .not-prose *)) {
       line-height: var(--un-line-height-dense);
       font-size: 0.75rem;

@@ -58,7 +58,7 @@ $details = $page->details()->toStructure();
 
     <div class="max-w-prose">
       <?php if ($page->text()->isNotEmpty()): ?>
-        <div class="prose mb-5xl">
+        <div class="prose <?php e($details->isNotEmpty(), 'is-contained') ?> mb-5xl">
           <?= $page->text()->toBlocks() ?>
         </div>
       <?php endif ?>
