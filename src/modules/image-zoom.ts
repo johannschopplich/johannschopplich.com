@@ -96,7 +96,7 @@ export function install() {
     window.addEventListener("scroll", onScroll, { once: true, passive: true });
   }
 
-  async function closeZoom(morphBack = true) {
+  async function closeZoom(animate = true) {
     if (!activeImage) return;
 
     const image = activeImage;
@@ -107,25 +107,27 @@ export function install() {
     zoomedImg.removeAttribute("srcset");
     zoomedImg.removeAttribute("sizes");
 
-    if (morphBack) {
-      await transition(() => {
+    // Start overlay fade immediately, run morph in parallel
+    overlay.dataset.state = "closing";
+
+    if (animate) {
+      const animation = transition(() => {
         zoomedImg.style.viewTransitionName = "";
         zoomedImg.style.opacity = "0";
         image.style.viewTransitionName = "zoom-image";
         zoomedImg.style.width = "";
         zoomedImg.style.height = "";
+      }).then(() => {
+        image.style.viewTransitionName = "";
       });
 
-      image.style.viewTransitionName = "";
+      await Promise.all([animation, waitForOverlayFadeOut()]);
     } else {
       zoomedImg.style.viewTransitionName = "";
-      zoomedImg.style.opacity = "0";
       zoomedImg.style.width = "";
       zoomedImg.style.height = "";
+      await waitForOverlayFadeOut();
     }
-
-    overlay.dataset.state = "closing";
-    await waitForOverlayFadeOut();
 
     overlay.hidden = true;
     overlay.dataset.state = "closed";
