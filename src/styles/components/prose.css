@@ -93,14 +93,14 @@
       &::before {
         content: open-quote;
         top: 0;
-        left: 0;
+        inset-inline-start: 0;
         transform: translateY(-25%);
       }
 
       &::after {
         content: close-quote;
         bottom: 0;
-        right: 0;
+        inset-inline-end: 0;
         transform: translateY(25%);
       }
 
@@ -152,9 +152,9 @@
 
         &.is-pulled-right {
           width: 45%;
-          float: right;
+          float: inline-end;
           margin-top: 0;
-          margin-left: 2rem;
+          margin-inline-start: 2rem;
         }
       }
 
@@ -165,7 +165,7 @@
 
         &.is-pulled-right,
         &.is-outset {
-          margin-right: calc(-25% - 2rem);
+          margin-inline-end: calc(-25% - 2rem);
         }
       }
     }
@@ -176,7 +176,7 @@
           :where(figure.is-pulled-right, figure.is-outset):not(
             :where(.not-prose, .not-prose *)
           ) {
-          margin-right: 0;
+          margin-inline-end: 0;
         }
       }
     }
@@ -229,8 +229,7 @@
       padding: 1.25rem 1rem;
 
       @media (--sm) {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-inline: 1.25rem;
       }
     }
   }
