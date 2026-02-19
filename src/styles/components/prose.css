@@ -5,6 +5,7 @@
     --un-prose-bg-soft: var(--un-color-contrast-lowest);
     --un-prose-line-height: var(--un-line-height-normal);
     --un-decoration-color: var(--un-color-primary-accent);
+
     display: flow-root;
     counter-reset: figure;
 
@@ -122,17 +123,12 @@
     }
 
     & :where(ol, ul):not(:where(.not-prose, .not-prose *)) {
-      padding-left: 1rem;
-    }
-
-    & :where(hr):not(:where(.not-prose, .not-prose *)) {
-      border-bottom: none;
+      padding-inline-start: 1rem;
     }
 
     & :where(figure):not(:where(.not-prose, .not-prose *)) {
       text-align: center;
-      margin-right: 0;
-      margin-left: 0;
+      margin-inline: 0;
       box-shadow: var(--un-frame-shadow-template) var(--un-color-border);
       counter-increment: figure;
 
@@ -145,8 +141,7 @@
       }
 
       @media (--below-sm) {
-        margin-left: -1.125rem;
-        margin-right: -1.125rem;
+        margin-inline: -1.125rem;
       }
 
       @media (--sm) {
@@ -192,7 +187,7 @@
       font-weight: 500;
       padding: 0 3px 0.25rem;
       margin-top: calc(0.25rem + 3px);
-      text-align: left;
+      text-align: start;
 
       &::before {
         content: "[ FIG. " counter(figure) " ] ";
@@ -202,8 +197,7 @@
       }
 
       @media (--below-sm) {
-        margin-left: calc(1.125rem - 3px);
-        margin-right: calc(1.125rem - 3px);
+        margin-inline: calc(1.125rem - 3px);
       }
     }
 
@@ -217,8 +211,8 @@
 
     & :where(details):not(:where(.not-prose, .not-prose *)) {
       padding: 0.5rem 1rem;
-      margin-left: -1rem;
-      background-color: unset;
+      margin-inline-start: -1rem;
+      background-color: transparent;
 
       &:not([open]) summary {
         margin-bottom: 0;

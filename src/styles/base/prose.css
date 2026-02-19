@@ -1,5 +1,4 @@
 @layer foundations {
-  /* Adapted from https://github.com/unocss/unocss/tree/main/packages-presets/preset-typography */
   .prose {
     --un-prose-font-mono:
       ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
@@ -32,7 +31,7 @@
     }
 
     & :where(a code):not(:where(.not-prose, .not-prose *)) {
-      color: var(--un-prose-links, currentcolor);
+      color: inherit;
     }
 
     & :where(p, ul, ol, pre):not(:where(.not-prose, .not-prose *)) {
@@ -41,14 +40,12 @@
 
     & :where(blockquote):not(:where(.not-prose, .not-prose *)) {
       font-style: italic;
-      border-left: 0.25em solid var(--un-prose-borders, currentcolor);
-      padding-left: 1em;
+      border-inline-start-width: 0.25rem;
+      border-inline-start-color: var(--un-prose-borders, currentcolor);
+      padding-inline-start: 1em;
     }
 
-    /*
-     * Taking 16px as a base, we scale h1, h2, h3, and h4 like
-     * 16 (base) > 18 (h4) > 22 (h3) > 28 (h2) > 36 (h1)
-     */
+    /* 16 (base) > 18 (h4) > 22 (h3) > 28 (h2) > 36 (h1) */
     & :where(h1):not(:where(.not-prose, .not-prose *)) {
       font-size: 2.25em;
     }
@@ -63,6 +60,10 @@
 
     & :where(h4):not(:where(.not-prose, .not-prose *)) {
       font-size: 1.125em;
+    }
+
+    & :where(picture):not(:where(.not-prose, .not-prose *)) {
+      display: block;
     }
 
     & :where(figcaption):not(:where(.not-prose, .not-prose *)) {
@@ -95,20 +96,42 @@
       word-spacing: normal;
       word-break: normal;
       word-wrap: normal;
-      -moz-tab-size: 4;
       tab-size: 4;
-      -webkit-hyphens: none;
-      -moz-hyphens: none;
       hyphens: none;
       background: transparent;
     }
 
     & :where(pre code):not(:where(.not-prose, .not-prose *)) {
+      background-color: transparent;
+      border-width: 0;
+      border-radius: 0;
+      padding: 0;
       font-weight: inherit;
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+      line-height: inherit;
+    }
+
+    & :where(pre code):not(:where(.not-prose, .not-prose *))::before,
+    & :where(pre code):not(:where(.not-prose, .not-prose *))::after {
+      content: none;
+    }
+
+    &
+      :where(
+        h1 code,
+        h2 code,
+        h3 code,
+        h4 code,
+        blockquote code,
+        thead th code
+      ):not(:where(.not-prose, .not-prose *)) {
+      color: inherit;
     }
 
     & :where(ol, ul):not(:where(.not-prose, .not-prose *)) {
-      padding-left: 1.25em;
+      padding-inline-start: 1.25em;
     }
 
     & :where(ol):not(:where(.not-prose, .not-prose *)) {
@@ -117,6 +140,11 @@
 
     & :where(ul):not(:where(.not-prose, .not-prose *)) {
       list-style-type: disc;
+    }
+
+    & :where(dt):not(:where(.not-prose, .not-prose *)) {
+      color: var(--un-prose-headings, currentcolor);
+      font-weight: 600;
     }
 
     & :where(ol > li):not(:where(.not-prose, .not-prose *))::marker,
@@ -128,23 +156,53 @@
     & :where(hr):not(:where(.not-prose, .not-prose *)) {
       height: 0;
       margin: calc(2 * var(--un-prose-space-y, 1rem)) 0;
-      border: 1px solid var(--un-prose-hr, currentcolor);
+      border-top-width: 1px;
+      border-color: var(--un-prose-hr, currentcolor);
     }
 
     & :where(table):not(:where(.not-prose, .not-prose *)) {
-      display: block;
-      margin: 1em 0;
+      width: 100%;
+      table-layout: auto;
       border-collapse: collapse;
-      overflow-x: auto;
+    }
+
+    & :where(thead):not(:where(.not-prose, .not-prose *)) {
+      border-bottom-width: 1px;
+      border-bottom-color: var(
+        --un-prose-th-borders,
+        var(--un-prose-borders, currentcolor)
+      );
+    }
+
+    & :where(thead th):not(:where(.not-prose, .not-prose *)) {
+      color: var(--un-prose-headings, currentcolor);
+      font-weight: 600;
+      vertical-align: bottom;
+    }
+
+    & :where(tbody tr):not(:where(.not-prose, .not-prose *)) {
+      border-bottom-width: 1px;
+      border-bottom-color: var(
+        --un-prose-td-borders,
+        var(--un-prose-borders, currentcolor)
+      );
+    }
+
+    & :where(tbody tr:last-child):not(:where(.not-prose, .not-prose *)) {
+      border-bottom-width: 0;
+    }
+
+    & :where(tbody td):not(:where(.not-prose, .not-prose *)) {
+      vertical-align: baseline;
+    }
+
+    & :where(th, td):not(:where(.not-prose, .not-prose *)) {
+      text-align: start;
+      padding: 0.625em 1em;
     }
 
     & :where(tr:nth-child(2n)):not(:where(.not-prose, .not-prose *)) {
       background: var(--un-prose-bg-soft);
-    }
-
-    & :where(td, th):not(:where(.not-prose, .not-prose *)) {
-      border: 1px solid var(--un-prose-borders, currentcolor);
-      padding: 0.625em 1em;
     }
 
     & :where(abbr):not(:where(.not-prose, .not-prose *)) {
@@ -153,6 +211,8 @@
 
     & :where(kbd):not(:where(.not-prose, .not-prose *)) {
       color: var(--un-prose-code);
+      font-weight: 500;
+      font-family: inherit;
       border: 1px solid;
       font-size: 0.875em;
       padding: 0.25rem 0.5rem;
@@ -160,7 +220,6 @@
     }
 
     & :where(details):not(:where(.not-prose, .not-prose *)) {
-      margin: 1em 0;
       padding: 1.25rem 1.5rem;
       background: var(--un-prose-bg-soft);
     }
