@@ -95,4 +95,15 @@ $selectedHeight = match ($height ?? null) {
 
     <?= $slot ?>
   </div>
+
+  <?php if (($footer = $slots->footer()) || $query->count() > 1): ?>
+    <div class="flex items-center px-lg mt-lg md:px-gutter <?php e($footer, 'justify-between', 'md:hidden') ?>">
+      <?php if ($query->count() > 1): ?>
+        <span class="md:hidden text-xs font-medium tabular-nums tracking-[0.05em] text-contrast-medium" aria-hidden="true">
+          <span data-carousel-current>1</span> / <?= $query->count() ?>
+        </span>
+      <?php endif ?>
+      <?= $footer ?>
+    </div>
+  <?php endif ?>
 </div>

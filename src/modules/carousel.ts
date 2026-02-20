@@ -53,5 +53,17 @@ function setupCarousel(node: HTMLElement) {
     }
   });
 
+  const counterCurrent = node.querySelector<HTMLElement>(
+    "[data-carousel-current]",
+  );
+  if (counterCurrent) {
+    const updateCounter = () => {
+      counterCurrent.textContent = String(emblaApi.selectedSnap() + 1);
+    };
+    updateCounter();
+    emblaApi.on("select", updateCounter);
+    emblaApi.on("reinit", updateCounter);
+  }
+
   return emblaApi;
 }

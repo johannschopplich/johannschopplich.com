@@ -41,19 +41,17 @@
         </p>
       </div>
 
-      <div class="mb-lg">
-        <?php snippet('components/carousel', [
-          'query' => $project->gallery()->toFiles(),
-          'height' => $project->galleryHeight()->value()
-        ]) ?>
-      </div>
-
-      <div class="px-lg md:px-gutter">
-        <a href="<?= $project->url() ?>" class="action-link w-full link-default">
-          <span><?= t('projects.more') ?></span>
-          <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
-        </a>
-      </div>
+      <?php snippet('components/carousel', [
+        'query' => $project->gallery()->toFiles(),
+        'height' => $project->galleryHeight()->value()
+      ], slots: true) ?>
+        <?php slot('footer') ?>
+          <a href="<?= $project->url() ?>" class="action-link link-default md:w-full md:my-0">
+            <span><?= t('projects.more') ?></span>
+            <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
+          </a>
+        <?php endslot() ?>
+      <?php endsnippet() ?>
     </div>
   <?php endforeach ?>
 </div>
