@@ -88,6 +88,10 @@ return [
         ]
     ],
 
+    'johannschopplich.thumb-router' => [
+        'allowedPages' => ['uploads']
+    ],
+
     'johannschopplich.content-translator' => [
         'importFrom' => 'all',
         'DeepL' => [

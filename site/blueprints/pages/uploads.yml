@@ -1,0 +1,9 @@
+title:
+  en: Media
+  de: Medien
+
+icon: 🌁
+
+tabs:
+  images: tabs/images
+  files: tabs/files

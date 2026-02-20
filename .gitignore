@@ -25,6 +25,7 @@ site/config/.kirby-tools-licenses
 site/plugins/*
 !site/plugins/.gitkeep
 !site/plugins/johannschopplich
+!site/plugins/thumb-router
 
 # Build assets
 public/assets/dev
