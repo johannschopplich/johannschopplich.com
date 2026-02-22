@@ -72,8 +72,10 @@ export function install() {
     const nw = Number(image.getAttribute("width")) || image.naturalWidth;
     const nh = Number(image.getAttribute("height")) || image.naturalHeight;
     const scale = Math.min(vw / nw, vh / nh, 1);
-    zoomedImg.style.width = `${Math.round(nw * scale)}px`;
-    zoomedImg.style.height = `${Math.round(nh * scale)}px`;
+    const fittedWidth = Math.round(nw * scale);
+    const fittedHeight = Math.round(nh * scale);
+    zoomedImg.style.width = `${fittedWidth}px`;
+    zoomedImg.style.height = `${fittedHeight}px`;
 
     image.style.viewTransitionName = "zoom-image";
 
@@ -85,12 +87,15 @@ export function install() {
       zoomedImg.style.viewTransitionName = "zoom-image";
     });
 
+    // Guard against concurrent close (e.g. Escape pressed during transition)
+    if (!activeImage) return;
+
     overlay.focus();
     // Upgrade to full-resolution srcset
     const srcset = image.dataset.srcset || image.srcset;
     if (srcset) {
       zoomedImg.srcset = srcset;
-      zoomedImg.sizes = "100vw";
+      zoomedImg.sizes = `${fittedWidth}px`;
     }
 
     window.addEventListener("scroll", onScroll, { once: true, passive: true });
