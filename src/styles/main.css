@@ -1,4 +1,4 @@
-@layer properties, theme, base, icons, foundations, shortcuts, components, default;
+@layer properties, theme, base, icons, foundations, components, shortcuts, default;
 
 @import "uno.css";
 
