@@ -24,7 +24,7 @@
       >
 
       <?php if ($image->caption()->isNotEmpty()): ?>
-        <figcaption class="content prose text-size-xs leading-dense font-500 py-2 text-center">
+        <figcaption class="content prose text-xs/dense font-500 py-2 text-center">
           <?= $image->caption() ?>
         </figcaption>
       <?php endif ?>
