@@ -20,7 +20,8 @@ return [
     ],
 
     'content' => [
-        'fileRedirects' => true
+        'fileRedirects' => fn (\Kirby\Cms\File $file) =>
+            in_array($file->extension(), ['pdf', 'zip'])
     ],
 
     'routes' => require __DIR__ . '/routes.php',
