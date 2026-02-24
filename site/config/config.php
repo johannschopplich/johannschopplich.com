@@ -1,5 +1,6 @@
 <?php
 
+use Kirby\Cms\File;
 use Kirby\Cms\Page;
 use Kirby\Query\Runners\DefaultRunner;
 
@@ -20,8 +21,8 @@ return [
     ],
 
     'content' => [
-        'fileRedirects' => fn (\Kirby\Cms\File $file) =>
-            in_array($file->extension(), ['pdf', 'zip'])
+        'fileRedirects' => fn (File $file) =>
+            in_array($file->extension(), ['pdf', 'zip'], true)
     ],
 
     'routes' => require __DIR__ . '/routes.php',
