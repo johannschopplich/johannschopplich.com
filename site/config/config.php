@@ -19,6 +19,10 @@ return [
         'handler' => 'intl'
     ],
 
+    'content' => [
+        'fileRedirects' => true
+    ],
+
     'routes' => require __DIR__ . '/routes.php',
 
     'languages' => [
