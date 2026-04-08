@@ -114,7 +114,7 @@ tabs:
             extends: fields/description
           thumbnail:
             extends: fields/thumbnail
-            # query: kirby.page("photography").files.template("image")
-            # uploads:
-            #   parent: kirby.page("photography")
-            #   template: image
+            query: site.files.template("image")
+            uploads:
+              parent: site
+              template: image
