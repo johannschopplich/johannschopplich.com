@@ -89,11 +89,9 @@ Creative compound nouns ("Auf-den-neuesten-Stand-Bringen", "Altbau-Häuserschluc
 
 _Italics_ for key terms. **Bold** rarely, only for names or strong emphasis. Never ALL CAPS.
 
-## Project Description Style
+## Thematic Range
 
-**Pattern:** Why it matters personally -> how he got involved -> what he built -> appreciation for collaborators
-
-## Recurring Themes
+Subject matter Johann tends to return to. Useful grounding when drafting from scratch – suggested anecdotes and themes should fit this range.
 
 1. **Existenzangst vs. creative freedom** – core tension, treated honestly, never resolved
 2. **Perfectionism as obstacle** – joy of overcoming it through constraints

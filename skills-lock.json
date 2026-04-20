@@ -1,10 +1,10 @@
 {
   "version": 1,
   "skills": {
-    "writing-coach": {
+    "edit-an-article": {
       "source": "johannschopplich/skills",
       "sourceType": "github",
-      "computedHash": "19923aca8297c06c442936f69ed3a0f7093b597e77cbb637dfb962e2e97790dd"
+      "computedHash": "22ebb1855f9b3c458c739fec60842c3f114b0461046f7ae83c4f6ae8e3c7e891"
     }
   }
 }
