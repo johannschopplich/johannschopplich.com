@@ -937,16 +937,16 @@
         },
         {
             "name": "johannschopplich/kirby-copilot",
-            "version": "3.5.6",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-copilot.git",
-                "reference": "0e83370fcd6cbd6e4e6d867172fad71a79e428db"
+                "reference": "bafa5e3901de361863ccbb4bbe5c115495147d33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/0e83370fcd6cbd6e4e6d867172fad71a79e428db",
-                "reference": "0e83370fcd6cbd6e4e6d867172fad71a79e428db",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/bafa5e3901de361863ccbb4bbe5c115495147d33",
+                "reference": "bafa5e3901de361863ccbb4bbe5c115495147d33",
                 "shasum": ""
             },
             "require": {
@@ -962,11 +962,6 @@
             "type": "kirby-plugin",
             "extra": {
                 "kirby-cms-path": false
-            },
-            "autoload": {
-                "psr-4": {
-                    "JohannSchopplich\\": "src/classes/"
-                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -992,9 +987,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
-                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v3.5.6"
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v3.6.2"
             },
-            "time": "2026-03-30T05:55:13+00:00"
+            "time": "2026-04-20T06:19:11+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1175,16 +1170,16 @@
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
-            "version": "0.9.0",
+            "version": "0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/licensing-backend.git",
-                "reference": "c0e2e3adaa7d31d6d7bc13be9bfb22ef133fdc95"
+                "reference": "a0a684e0efaad11958b316a5e197b24b34ba10c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/c0e2e3adaa7d31d6d7bc13be9bfb22ef133fdc95",
-                "reference": "c0e2e3adaa7d31d6d7bc13be9bfb22ef133fdc95",
+                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/a0a684e0efaad11958b316a5e197b24b34ba10c8",
+                "reference": "a0a684e0efaad11958b316a5e197b24b34ba10c8",
                 "shasum": ""
             },
             "require-dev": {
@@ -1215,9 +1210,9 @@
             "homepage": "https://github.com/kirby-tools/licensing-backend#readme",
             "support": {
                 "issues": "https://github.com/kirby-tools/licensing-backend/issues",
-                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.9.0"
+                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.9.1"
             },
-            "time": "2026-03-30T05:26:06+00:00"
+            "time": "2026-04-09T12:14:41+00:00"
         },
         {
             "name": "johannschopplich/kirby-tools-utils",
@@ -2244,16 +2239,16 @@
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.33.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
+                "reference": "141046a8f9477948ff284fa65be2095baafb94f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
-                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/141046a8f9477948ff284fa65be2095baafb94f2",
+                "reference": "141046a8f9477948ff284fa65be2095baafb94f2",
                 "shasum": ""
             },
             "require": {
@@ -2303,7 +2298,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -2323,7 +2318,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-09T11:45:10+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -2414,7 +2409,7 @@
         },
         {
             "name": "symfony/polyfill-intl-normalizer",
-            "version": "v1.33.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
@@ -2475,7 +2470,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -2584,16 +2579,16 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.33.0",
+            "version": "v1.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608"
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
-                "reference": "0cc9dd0f17f61d8131e7df6b84bd344899fe2608",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
+                "reference": "dfb55726c3a76ea3b6459fcfda1ec2d80a682411",
                 "shasum": ""
             },
             "require": {
@@ -2644,7 +2639,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.33.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.36.0"
             },
             "funding": [
                 {
@@ -2664,7 +2659,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-02T08:10:11+00:00"
+            "time": "2026-04-10T16:19:22+00:00"
         },
         {
             "name": "symfony/yaml",
