@@ -40,10 +40,9 @@ line {
     svg.setAttribute("stroke-linejoin", "round");
     svg.setAttribute("stroke-width", "4");
 
-    svg.innerHTML = Array.from(
-      { length: 8 },
-      () => '<line x1="50" y1="30" x2="50" y2="4"/>',
-    ).join("");
+    svg.innerHTML = Array.from({ length: 8 })
+      .fill('<line x1="50" y1="30" x2="50" y2="4"/>')
+      .join("");
 
     this.shadowRoot!.append(svg);
     this.#svg = svg;
