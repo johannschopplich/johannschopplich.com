@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cf2a8c90bd5faa1f5293d6b587cdfc42",
+    "content-hash": "fe0a5cd8284d2662dab871baa8443342",
     "packages": [
         {
             "name": "christian-riesen/base32",
@@ -934,6 +934,74 @@
                 }
             ],
             "time": "2026-03-10T16:41:02+00:00"
+        },
+        {
+            "name": "johannschopplich/kirby-content-translator",
+            "version": "3.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kirby-tools/kirby-content-translator.git",
+                "reference": "ee94e1e0d4dcb09cecab11130153971e51b599af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/ee94e1e0d4dcb09cecab11130153971e51b599af",
+                "reference": "ee94e1e0d4dcb09cecab11130153971e51b599af",
+                "shasum": ""
+            },
+            "require": {
+                "getkirby/composer-installer": "^1",
+                "johannschopplich/kirby-tools-licensing": "^0.9",
+                "johannschopplich/kirby-tools-utils": "^0.1"
+            },
+            "require-dev": {
+                "getkirby/cli": "^1",
+                "getkirby/cms": "^5",
+                "phpunit/phpunit": "^12",
+                "vlucas/phpdotenv": "^5"
+            },
+            "type": "kirby-plugin",
+            "extra": {
+                "kirby-cms-path": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "JohannSchopplich\\": "src/classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Johann Schopplich",
+                    "email": "hello@johannschopplich.com",
+                    "homepage": "https://johannschopplich.com"
+                }
+            ],
+            "description": "DeepL & AI-powered content translation for Kirby CMS",
+            "homepage": "https://kirby.tools/content-translator",
+            "keywords": [
+                "content",
+                "deepl",
+                "i18n",
+                "kirby",
+                "language",
+                "translation",
+                "translator"
+            ],
+            "support": {
+                "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
+                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.10.0"
+            },
+            "funding": [
+                {
+                    "url": "https://kirby.tools/content-translator",
+                    "type": "custom"
+                }
+            ],
+            "time": "2026-04-30T16:31:38+00:00"
         },
         {
             "name": "johannschopplich/kirby-copilot",

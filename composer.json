@@ -7,6 +7,7 @@
     "johannschopplich/kirby-headless": "^6",
     "johannschopplich/kirby-serp-preview": "^1",
     "johannschopplich/kirby-copilot": "^3",
+    "johannschopplich/kirby-content-translator": "^3",
     "tobimori/kirby-thumbhash": "^1",
     "league/html-to-markdown": "^5.1",
     "ozdemirburak/iris": "^4.1"
