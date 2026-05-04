@@ -16,10 +16,14 @@
           $words = explode(' ', $block->text());
           $lastWord = array_pop($words);
           $rest = implode(' ', $words);
-          echo $rest;
+          $leadLines = $rest === '' ? [] : explode('<br>', $rest);
+          foreach ($leadLines as $i => $line) {
+            if ($i > 0) echo '<br>';
+            if ($line !== '') echo '<scramble-text from="left">' . $line . '</scramble-text>';
+          }
           ?>
           <span class="whitespace-nowrap">
-            <?= $lastWord ?>
+            <scramble-text from="random"><?= $lastWord ?></scramble-text>
             <a
               href="<?= page('about')->url() ?>"
               class="icon-inline h-[0.825em]"

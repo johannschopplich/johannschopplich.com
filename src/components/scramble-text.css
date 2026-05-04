@@ -1,0 +1,25 @@
+@layer components {
+  scramble-text {
+    display: inline;
+  }
+
+  /* `text-align: center` keeps wider random glyphs centered in narrower
+     cells, so e.g. an `m` rendered into an `i`-cell overflows symmetrically
+     rather than to the right. `white-space: pre` preserves literal spaces,
+     which would otherwise collapse to zero width. */
+  scramble-text > [data-scramble-cell] {
+    display: inline-block;
+    text-align: center;
+    overflow: visible;
+    white-space: pre;
+    width: var(--cell-w);
+  }
+
+  /* Scale cursor-glyph cells to the host font's cap-height so the block
+     reads at the same visual mass as letters; divide width by the same
+     factor so the cell's footprint on the line is unchanged. */
+  scramble-text > [data-scramble-cell].is-cursor {
+    font-size: calc(1em * var(--cursor-scale, 1));
+    width: calc(var(--cell-w) / var(--cursor-scale, 1));
+  }
+}
