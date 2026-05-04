@@ -24,6 +24,12 @@ export interface ScrambleOptions {
   perturbation?: number;
   settleDuration?: number;
   chars?: string;
+  /**
+   * Characters whose target glyph stays put for the whole animation –
+   * they don't scramble, don't flash the cursor, and don't consume a slot
+   * in the wave's timing.
+   */
+  ignore?: string;
   ease?: (t: number) => number;
   refreshRate?: number;
 }
@@ -40,6 +46,11 @@ export interface SetupOptions {
   cursorFontFamily?: string;
   /** Font weight to register the cursor font at. Defaults to "600". */
   cursorFontWeight?: string;
+  /**
+   * Project-wide default for the per-element `ignore` attribute. Override
+   * per element via `ignore="..."`; pass `ignore=""` to disable.
+   */
+  defaultIgnore?: string;
 }
 
 const DEFAULTS: Required<ScrambleOptions> = {
@@ -49,10 +60,24 @@ const DEFAULTS: Required<ScrambleOptions> = {
   perturbation: 0.2,
   settleDuration: 250,
   chars: "abcdefghijklmnopqrstuvwxyz0123456789",
+  ignore: "",
   // Quadratic ease-in-out
   ease: (t: number) => (t < 0.5 ? 2 * t * t : 1 - 2 * (1 - t) * (1 - t)),
   refreshRate: 30,
 };
+
+interface FrameContext {
+  cursorChars: string;
+  cursorLength: number;
+  cursorZone: number;
+  settleSpacing: number;
+  settleRatio: number;
+  charset: string;
+  charsetLength: number;
+  offsetScale: number;
+}
+
+let setupDefaultIgnore = "";
 
 /**
  * Renders text as a row of fixed-width per-character cells and animates a
@@ -76,7 +101,7 @@ export class ScrambleText extends HTMLElement {
   #built = false;
 
   static get observedAttributes() {
-    return ["from", "duration", "cursor", "perturbation"];
+    return ["from", "duration", "cursor", "perturbation", "ignore"];
   }
 
   connectedCallback() {
@@ -115,6 +140,7 @@ export class ScrambleText extends HTMLElement {
       perturbation: this.hasAttribute("perturbation")
         ? Number(this.getAttribute("perturbation"))
         : DEFAULTS.perturbation,
+      ignore: this.getAttribute("ignore") ?? setupDefaultIgnore,
       ...options,
     };
 
@@ -122,51 +148,29 @@ export class ScrambleText extends HTMLElement {
     const controller = new AbortController();
     this.#abort = controller;
 
-    const cellCount = this.#cells.length;
-    if (cellCount === 0) return Promise.resolve();
+    // Settle first so any leftover scrambled state from an aborted play
+    // doesn't bleed into cells that are now ignored by the new options.
+    this.#settle();
+
+    const ignoreSet = new Set([...resolvedOptions.ignore]);
+    const animatedCells = ignoreSet.size
+      ? this.#cells.filter((cell) => !ignoreSet.has(cell.target))
+      : this.#cells;
+
+    if (animatedCells.length === 0) return;
+
+    const ctx = buildFrameContext(resolvedOptions, animatedCells.length);
+    const cellPlans = buildCellPlans(animatedCells, resolvedOptions.from, ctx);
+    const stepRatio =
+      1000 / (resolvedOptions.refreshRate * resolvedOptions.duration);
 
     return new Promise<void>((resolve) => {
-      const settleRatio =
-        resolvedOptions.settleDuration / resolvedOptions.duration;
-      const settleSpacing = (1 - settleRatio) / cellCount;
-      const cursorChars = resolvedOptions.cursor;
-      const cursorLength = cursorChars.length;
-      const cursorZone = cursorLength * settleSpacing;
-      const order = buildOrder(cellCount, resolvedOptions.from);
-      const charset = resolvedOptions.chars;
-      const charsetLength = charset.length;
-      const offsetScale =
-        resolvedOptions.perturbation > 0
-          ? resolvedOptions.perturbation * settleRatio
-          : 0;
-
-      // Each cell gets a small random offset on `start` and `end` so the
-      // wave reads as organic rather than a perfect line. `scratch` seeds
-      // the random char shown in the scramble phase before the first step
-      // boundary refreshes it.
-      const cellPlans: CellPlan[] = this.#cells.map((cell, i) => {
-        const startOffset =
-          offsetScale > 0 ? (Math.random() - 0.5) * 2 * offsetScale : 0;
-        const endOffset =
-          offsetScale > 0 ? (Math.random() - 0.5) * 2 * offsetScale : 0;
-        const start = order[i]! * settleSpacing + startOffset;
-        return {
-          el: cell.el,
-          target: cell.target,
-          start,
-          end: start + settleRatio + endOffset,
-          scratch: charset[Math.floor(Math.random() * charsetLength)]!,
-        };
-      });
-
       // Refresh `scratch` only at step boundaries – gives the scramble
       // a discrete "ticking" cadence rather than a hyperactive per-frame
       // reroll.
-      const stepRatio =
-        1000 / (resolvedOptions.refreshRate * resolvedOptions.duration);
       let lastStep = -1;
-
       const startTime = performance.now();
+
       const tick = (now: number) => {
         if (controller.signal.aborted) return resolve();
 
@@ -181,26 +185,11 @@ export class ScrambleText extends HTMLElement {
         const shouldRefresh = currentStep !== lastStep;
         if (shouldRefresh) lastStep = currentStep;
 
-        for (const cell of cellPlans) {
-          let next: string;
-          let isCursor = false;
-          if (t >= cell.end || t < cell.start) {
-            next = cell.target;
-          } else if (t - cell.start < cursorZone) {
-            const index = ((t - cell.start) / settleSpacing) | 0;
-            next = cursorChars[cursorLength - 1 - index] ?? "";
-            isCursor = true;
-          } else {
-            if (shouldRefresh) {
-              cell.scratch =
-                charset[Math.floor(Math.random() * charsetLength)]!;
-            }
-            next = cell.scratch;
-          }
-
-          if (cell.el.firstChild?.nodeValue !== next)
-            cell.el.textContent = next;
-          cell.el.classList.toggle("is-cursor", isCursor);
+        for (const plan of cellPlans) {
+          const { nextChar, isCursor } = tickCell(t, plan, ctx, shouldRefresh);
+          if (plan.el.firstChild?.nodeValue !== nextChar)
+            plan.el.textContent = nextChar;
+          plan.el.classList.toggle("is-cursor", isCursor);
         }
 
         requestAnimationFrame(tick);
@@ -254,40 +243,41 @@ export class ScrambleText extends HTMLElement {
     this.replaceChildren(fragment);
 
     for (const cell of cells) {
-      const px = cell.el.getBoundingClientRect().width;
-      cell.el.style.setProperty("--cell-w", `${(px / fontSize).toFixed(4)}em`);
+      const widthPx = cell.el.getBoundingClientRect().width;
+      cell.el.style.setProperty(
+        "--cell-w",
+        `${(widthPx / fontSize).toFixed(4)}em`,
+      );
     }
 
     this.#cells = cells;
     this.#built = true;
   }
 
-  // Block-fill cursor glyphs tend to be visually taller than letters.
-  // Probe with "Hg" (cap-height + descender) and ▓ on a canvas, then expose
-  // the ratio so the cell can shrink cursor chars to match the line's
-  // visual mass. Force the cursor font to load before measuring – the
-  // browser hasn't rendered its codepoints yet, so canvas would otherwise
-  // fall back to a system font.
+  // Block-fill glyphs tend to be visually taller than letters; probe with
+  // "Hg" (cap-height + descender) and ▓ on a canvas to expose the ratio.
+  // Force the font to load first – its codepoints haven't been rendered
+  // yet, so canvas would otherwise fall back to a system font.
   async #measureCursorScale() {
-    const probe = this.#cells[0]?.el;
-    if (!probe) return;
+    const probeCell = this.#cells[0]?.el;
+    if (!probeCell) return;
 
-    const computedStyle = getComputedStyle(probe);
-    const font = `${computedStyle.fontStyle} ${computedStyle.fontWeight} ${computedStyle.fontSize} ${computedStyle.fontFamily}`;
+    const computedStyle = getComputedStyle(probeCell);
+    const fontShorthand = `${computedStyle.fontStyle} ${computedStyle.fontWeight} ${computedStyle.fontSize} ${computedStyle.fontFamily}`;
 
     try {
-      await document.fonts.load(font, "▓");
+      await document.fonts.load(fontShorthand, "▓");
     } catch {
       // Best-effort – fall through to measure with whatever's available
     }
 
-    const ctx = document.createElement("canvas").getContext("2d");
+    const canvasContext = document.createElement("canvas").getContext("2d");
 
-    if (!ctx) return;
-    ctx.font = font;
+    if (!canvasContext) return;
+    canvasContext.font = fontShorthand;
 
-    const hostMetrics = ctx.measureText("Hg");
-    const cursorMetrics = ctx.measureText("▓");
+    const hostMetrics = canvasContext.measureText("Hg");
+    const cursorMetrics = canvasContext.measureText("▓");
     const hostHeight =
       hostMetrics.actualBoundingBoxAscent +
       hostMetrics.actualBoundingBoxDescent;
@@ -321,6 +311,10 @@ declare global {
 export function setup(options: SetupOptions = {}) {
   injectStylesOnce();
 
+  if (options.defaultIgnore !== undefined) {
+    setupDefaultIgnore = options.defaultIgnore;
+  }
+
   if (!customElements.get("scramble-text")) {
     customElements.define("scramble-text", ScrambleText);
   }
@@ -353,6 +347,73 @@ function injectStylesOnce() {
     style.textContent = COMPONENT_CSS;
     document.head.append(style);
   }
+}
+
+function buildFrameContext(
+  options: Required<ScrambleOptions>,
+  cellCount: number,
+): FrameContext {
+  const settleRatio = options.settleDuration / options.duration;
+  const settleSpacing = (1 - settleRatio) / cellCount;
+  const cursorChars = options.cursor;
+  const cursorLength = cursorChars.length;
+  return {
+    cursorChars,
+    cursorLength,
+    cursorZone: cursorLength * settleSpacing,
+    settleSpacing,
+    settleRatio,
+    charset: options.chars,
+    charsetLength: options.chars.length,
+    offsetScale:
+      options.perturbation > 0 ? options.perturbation * settleRatio : 0,
+  };
+}
+
+// Random per-cell start/end offsets keep the wave from reading as a
+// perfect line.
+function buildCellPlans(
+  cells: Cell[],
+  from: ScrambleFrom,
+  ctx: FrameContext,
+): CellPlan[] {
+  const order = buildOrder(cells.length, from);
+  return cells.map((cell, i) => {
+    const startOffset =
+      ctx.offsetScale > 0 ? (Math.random() - 0.5) * 2 * ctx.offsetScale : 0;
+    const endOffset =
+      ctx.offsetScale > 0 ? (Math.random() - 0.5) * 2 * ctx.offsetScale : 0;
+    const start = order[i]! * ctx.settleSpacing + startOffset;
+    return {
+      el: cell.el,
+      target: cell.target,
+      start,
+      end: start + ctx.settleRatio + endOffset,
+      scratch: ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!,
+    };
+  });
+}
+
+function tickCell(
+  t: number,
+  plan: CellPlan,
+  ctx: FrameContext,
+  shouldRefresh: boolean,
+): { nextChar: string; isCursor: boolean } {
+  if (t >= plan.end || t < plan.start) {
+    return { nextChar: plan.target, isCursor: false };
+  }
+  if (t - plan.start < ctx.cursorZone) {
+    const index = ((t - plan.start) / ctx.settleSpacing) | 0;
+    return {
+      nextChar: ctx.cursorChars[ctx.cursorLength - 1 - index] ?? "",
+      isCursor: true,
+    };
+  }
+  if (shouldRefresh) {
+    plan.scratch = ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!;
+  }
+  return { nextChar: plan.scratch, isCursor: false };
 }
 
 function buildOrder(count: number, from: ScrambleFrom): Int32Array {

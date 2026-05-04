@@ -9,6 +9,7 @@ export function install() {
   setupScrambleText({
     cursorFontUrl: "/assets/fonts/woff2/IosevkaAile-SemiBold.woff2",
     cursorFontFamily: "Cooper Hewitt",
+    defaultIgnore: ".,!?:;",
   });
   setupSparklyText();
 }
