@@ -3,29 +3,30 @@
     display: inline;
   }
 
-  /* Word-spans are atomic line items; their `white-space: nowrap` keeps the
-     per-character cells inside from ever becoming soft-wrap opportunities,
-     so the browser can only break at the inter-word text-node spaces. */
-  scramble-text > [data-scramble-word] {
+  /* Each word is its own positioning context: the inner real text holds
+     the box width, the absolutely-positioned overlay paints on top.
+     `white-space: nowrap` keeps multi-character words from soft-wrapping;
+     line breaks may only fall on the inter-word text-node spaces. */
+  scramble-text [data-scramble-word] {
+    position: relative;
     display: inline-block;
     white-space: nowrap;
   }
 
-  /* `text-align: center` keeps wider random glyphs centered in narrower
-     cells, so e.g. an `m` rendered into an `i`-cell overflows symmetrically
-     rather than to the right. */
-  scramble-text [data-scramble-cell] {
-    display: inline-block;
-    text-align: center;
-    overflow: visible;
-    width: var(--cell-w);
+  /* The overlay is anchored to the word's top-left and renders out of
+     flow. Wider random glyphs overflow rightward into the inter-word
+     space – invisible at sub-second durations. */
+  scramble-text [data-scramble-overlay] {
+    position: absolute;
+    inset: 0 auto auto 0;
+    white-space: pre;
+    pointer-events: none;
   }
 
-  /* Scale cursor-glyph cells to the host font's cap-height so the block
-     reads at the same visual mass as letters; divide width by the same
-     factor so the cell's footprint on the line is unchanged. */
-  scramble-text [data-scramble-cell].is-cursor {
-    font-size: calc(1em * var(--cursor-scale, 1));
-    width: calc(var(--cell-w) / var(--cursor-scale, 1));
+  /* Cursor cells render at host cap-height (set via --scramble-cursor-scale).
+     Width is left to natural advance – the overlay is out of flow so any
+     compression in the cursor zone has no effect on outer layout. */
+  scramble-text [data-scramble-overlay] > .is-cursor {
+    font-size: calc(1em * var(--scramble-cursor-scale, 1));
   }
 }
