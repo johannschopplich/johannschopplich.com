@@ -66,6 +66,12 @@ const DEFAULTS: Required<ScrambleOptions> = {
   refreshRate: 30,
 };
 
+// 4 em-decimals stays sub-pixel at any reasonable font size
+const CSS_VALUE_PRECISION = 4;
+
+// Below this, the cursor block already reads at letter height
+const CURSOR_SCALE_THRESHOLD = 0.02;
+
 interface FrameContext {
   cursorChars: string;
   cursorLength: number;
@@ -181,7 +187,7 @@ export class ScrambleText extends HTMLElement {
         }
 
         const t = resolvedOptions.ease(progress);
-        const currentStep = (progress / stepRatio) | 0;
+        const currentStep = Math.floor(progress / stepRatio);
         const shouldRefresh = currentStep !== lastStep;
         if (shouldRefresh) lastStep = currentStep;
 
@@ -208,7 +214,7 @@ export class ScrambleText extends HTMLElement {
   // load so we don't measure against a fallback that mismatches after swap.
   async #build() {
     const computedStyle = getComputedStyle(this);
-    const fontShorthand = `${computedStyle.fontStyle} ${computedStyle.fontWeight} ${computedStyle.fontSize} ${computedStyle.fontFamily}`;
+    const fontShorthand = buildFontShorthand(computedStyle);
 
     try {
       await document.fonts.load(fontShorthand, this.#originalText);
@@ -216,54 +222,21 @@ export class ScrambleText extends HTMLElement {
       // Best-effort – fall through to measure with whatever's available
     }
 
-    const fontSize = Number.parseFloat(computedStyle.fontSize);
-    const cells: Cell[] = [];
-    const fragment = document.createDocumentFragment();
-    let currentWord: HTMLSpanElement | null = null;
-
-    for (const character of [...this.#originalText]) {
-      if (character === " ") {
-        currentWord = null;
-        fragment.appendChild(document.createTextNode(" "));
-        continue;
-      }
-      if (!currentWord) {
-        currentWord = document.createElement("span");
-        currentWord.dataset.scrambleWord = "";
-        fragment.appendChild(currentWord);
-      }
-      const el = document.createElement("span");
-      el.dataset.scrambleCell = "";
-      el.textContent = character;
-      el.setAttribute("aria-hidden", "true");
-      currentWord.appendChild(el);
-      cells.push({ el, target: character });
-    }
-
+    const { fragment, cells } = buildCellSpans(this.#originalText);
     this.replaceChildren(fragment);
-
-    for (const cell of cells) {
-      const widthPx = cell.el.getBoundingClientRect().width;
-      cell.el.style.setProperty(
-        "--cell-w",
-        `${(widthPx / fontSize).toFixed(4)}em`,
-      );
-    }
+    pinCellWidths(cells, Number.parseFloat(computedStyle.fontSize));
 
     this.#cells = cells;
     this.#built = true;
   }
 
-  // Block-fill glyphs tend to be visually taller than letters; probe with
-  // "Hg" (cap-height + descender) and ▓ on a canvas to expose the ratio.
-  // Force the font to load first – its codepoints haven't been rendered
-  // yet, so canvas would otherwise fall back to a system font.
+  // Force the cursor font to load before probing – its codepoints haven't
+  // been rendered yet, so canvas would otherwise fall back to a system font.
   async #measureCursorScale() {
     const probeCell = this.#cells[0]?.el;
     if (!probeCell) return;
 
-    const computedStyle = getComputedStyle(probeCell);
-    const fontShorthand = `${computedStyle.fontStyle} ${computedStyle.fontWeight} ${computedStyle.fontSize} ${computedStyle.fontFamily}`;
+    const fontShorthand = buildFontShorthand(getComputedStyle(probeCell));
 
     try {
       await document.fonts.load(fontShorthand, "▓");
@@ -271,25 +244,12 @@ export class ScrambleText extends HTMLElement {
       // Best-effort – fall through to measure with whatever's available
     }
 
-    const canvasContext = document.createElement("canvas").getContext("2d");
-
-    if (!canvasContext) return;
-    canvasContext.font = fontShorthand;
-
-    const hostMetrics = canvasContext.measureText("Hg");
-    const cursorMetrics = canvasContext.measureText("▓");
-    const hostHeight =
-      hostMetrics.actualBoundingBoxAscent +
-      hostMetrics.actualBoundingBoxDescent;
-    const cursorHeight =
-      cursorMetrics.actualBoundingBoxAscent +
-      cursorMetrics.actualBoundingBoxDescent;
-
-    if (!hostHeight || !cursorHeight) return;
-
-    const scale = hostHeight / cursorHeight;
-    if (Math.abs(scale - 1) > 0.02) {
-      this.style.setProperty("--cursor-scale", scale.toFixed(4));
+    const scale = computeCursorScale(fontShorthand);
+    if (scale && Math.abs(scale - 1) > CURSOR_SCALE_THRESHOLD) {
+      this.style.setProperty(
+        "--cursor-scale",
+        scale.toFixed(CSS_VALUE_PRECISION),
+      );
     }
   }
 
@@ -333,40 +293,31 @@ export function setup(options: SetupOptions = {}) {
   }
 }
 
-let hasInjectedStyles = false;
-function injectStylesOnce() {
-  if (hasInjectedStyles) return;
-  hasInjectedStyles = true;
-
-  if (SUPPORTS_CONSTRUCTABLE_STYLESHEETS) {
-    const sheet = new CSSStyleSheet();
-    sheet.replaceSync(COMPONENT_CSS);
-    document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
-  } else {
-    const style = document.createElement("style");
-    style.textContent = COMPONENT_CSS;
-    document.head.append(style);
+function tickCell(
+  t: number,
+  plan: CellPlan,
+  ctx: FrameContext,
+  shouldRefresh: boolean,
+): { nextChar: string; isCursor: boolean } {
+  if (t >= plan.end || t < plan.start) {
+    return { nextChar: plan.target, isCursor: false };
   }
-}
 
-function buildFrameContext(
-  options: Required<ScrambleOptions>,
-  cellCount: number,
-): FrameContext {
-  const settleRatio = options.settleDuration / options.duration;
-  const settleSpacing = (1 - settleRatio) / cellCount;
-  const cursorChars = options.cursor;
-  const cursorLength = cursorChars.length;
+  if (t - plan.start < ctx.cursorZone) {
+    const index = Math.floor((t - plan.start) / ctx.settleSpacing);
+    return {
+      nextChar: ctx.cursorChars[ctx.cursorLength - 1 - index] ?? "",
+      isCursor: true,
+    };
+  }
+
+  if (shouldRefresh) {
+    plan.scratch = ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!;
+  }
+
   return {
-    cursorChars,
-    cursorLength,
-    cursorZone: cursorLength * settleSpacing,
-    settleSpacing,
-    settleRatio,
-    charset: options.chars,
-    charsetLength: options.chars.length,
-    offsetScale:
-      options.perturbation > 0 ? options.perturbation * settleRatio : 0,
+    nextChar: plan.scratch,
+    isCursor: false,
   };
 }
 
@@ -394,26 +345,25 @@ function buildCellPlans(
   });
 }
 
-function tickCell(
-  t: number,
-  plan: CellPlan,
-  ctx: FrameContext,
-  shouldRefresh: boolean,
-): { nextChar: string; isCursor: boolean } {
-  if (t >= plan.end || t < plan.start) {
-    return { nextChar: plan.target, isCursor: false };
-  }
-  if (t - plan.start < ctx.cursorZone) {
-    const index = ((t - plan.start) / ctx.settleSpacing) | 0;
-    return {
-      nextChar: ctx.cursorChars[ctx.cursorLength - 1 - index] ?? "",
-      isCursor: true,
-    };
-  }
-  if (shouldRefresh) {
-    plan.scratch = ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!;
-  }
-  return { nextChar: plan.scratch, isCursor: false };
+function buildFrameContext(
+  options: Required<ScrambleOptions>,
+  cellCount: number,
+): FrameContext {
+  const settleRatio = options.settleDuration / options.duration;
+  const settleSpacing = (1 - settleRatio) / cellCount;
+  const cursorChars = options.cursor;
+  const cursorLength = cursorChars.length;
+  return {
+    cursorChars,
+    cursorLength,
+    cursorZone: cursorLength * settleSpacing,
+    settleSpacing,
+    settleRatio,
+    charset: options.chars,
+    charsetLength: options.chars.length,
+    offsetScale:
+      options.perturbation > 0 ? options.perturbation * settleRatio : 0,
+  };
 }
 
 function buildOrder(count: number, from: ScrambleFrom): Int32Array {
@@ -421,11 +371,14 @@ function buildOrder(count: number, from: ScrambleFrom): Int32Array {
 
   if (from === "random") {
     const indices = Array.from({ length: count }, (_, i) => i);
+
     for (let i = count - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [indices[i], indices[j]] = [indices[j]!, indices[i]!];
     }
+
     for (let i = 0; i < count; i++) order[indices[i]!] = i;
+
     return order;
   }
 
@@ -437,4 +390,89 @@ function buildOrder(count: number, from: ScrambleFrom): Int32Array {
   for (let i = 0; i < count; i++) order[indices[i]!] = i;
 
   return order;
+}
+
+// Cells must enter the DOM as plain inline spans for kerning to survive
+// long enough to measure; the inline-block this promotion adds would
+// otherwise close each glyph into its own formatting context first.
+function pinCellWidths(cells: Cell[], fontSize: number) {
+  const widths = cells.map((cell) => cell.el.getBoundingClientRect().width);
+  for (let i = 0; i < cells.length; i++) {
+    const cell = cells[i]!;
+    cell.el.style.setProperty(
+      "--cell-w",
+      `${(widths[i]! / fontSize).toFixed(CSS_VALUE_PRECISION)}em`,
+    );
+    cell.el.dataset.scrambleCell = "";
+  }
+}
+
+function buildCellSpans(text: string): {
+  fragment: DocumentFragment;
+  cells: Cell[];
+} {
+  const cells: Cell[] = [];
+  const fragment = document.createDocumentFragment();
+  let currentWord: HTMLSpanElement | null = null;
+
+  for (const character of [...text]) {
+    if (character === " ") {
+      currentWord = null;
+      fragment.appendChild(document.createTextNode(" "));
+      continue;
+    }
+
+    if (!currentWord) {
+      currentWord = document.createElement("span");
+      currentWord.dataset.scrambleWord = "";
+      fragment.appendChild(currentWord);
+    }
+
+    const el = document.createElement("span");
+    el.textContent = character;
+    el.setAttribute("aria-hidden", "true");
+    currentWord.appendChild(el);
+    cells.push({ el, target: character });
+  }
+
+  return { fragment, cells };
+}
+
+// Block-fill glyphs tend to be visually taller than letters; probe with
+// "Hg" (cap-height + descender) and ▓ to expose the ratio.
+function computeCursorScale(fontShorthand: string): number | null {
+  const canvasContext = document.createElement("canvas").getContext("2d");
+  if (!canvasContext) return null;
+  canvasContext.font = fontShorthand;
+
+  const hostMetrics = canvasContext.measureText("Hg");
+  const cursorMetrics = canvasContext.measureText("▓");
+  const hostHeight =
+    hostMetrics.actualBoundingBoxAscent + hostMetrics.actualBoundingBoxDescent;
+  const cursorHeight =
+    cursorMetrics.actualBoundingBoxAscent +
+    cursorMetrics.actualBoundingBoxDescent;
+
+  if (!hostHeight || !cursorHeight) return null;
+  return hostHeight / cursorHeight;
+}
+
+function buildFontShorthand(style: CSSStyleDeclaration): string {
+  return `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+}
+
+let hasInjectedStyles = false;
+function injectStylesOnce() {
+  if (hasInjectedStyles) return;
+  hasInjectedStyles = true;
+
+  if (SUPPORTS_CONSTRUCTABLE_STYLESHEETS) {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(COMPONENT_CSS);
+    document.adoptedStyleSheets = [...document.adoptedStyleSheets, sheet];
+  } else {
+    const style = document.createElement("style");
+    style.textContent = COMPONENT_CSS;
+    document.head.append(style);
+  }
 }
