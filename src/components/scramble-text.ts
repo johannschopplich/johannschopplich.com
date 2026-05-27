@@ -67,9 +67,12 @@ interface WaveContext {
 
 interface AnimationPlan {
   slot: CharSlot;
-  startTime: number;
-  endTime: number;
+  startProgress: number;
+  endProgress: number;
   scratchChar: string;
+  displayedChar: string;
+  isCursorDisplayed: boolean;
+  isSettled: boolean;
 }
 
 const DEFAULTS: Required<ScrambleOptions> = {
@@ -86,6 +89,7 @@ const DEFAULTS: Required<ScrambleOptions> = {
 };
 
 let setupDefaultIgnore = "";
+let hasRegisteredCursorFont = false;
 
 /**
  * Renders text as a per-word stack: the natural word stays in flow as a
@@ -109,15 +113,11 @@ export class ScrambleText extends HTMLElement {
   #originalText = "";
   #isWrapped = false;
 
-  static get observedAttributes() {
-    return ["from", "duration", "cursor", "perturbation", "ignore"];
-  }
-
   connectedCallback() {
     if (this.#isWrapped) return;
 
     this.#originalText = (this.textContent ?? "").replace(/\s+/g, " ").trim();
-    this.setAttribute("aria-label", this.#originalText);
+    if (this.#originalText) this.setAttribute("aria-label", this.#originalText);
 
     const { fragment, wordRoots } = buildWordTree(this.#originalText);
     this.replaceChildren(fragment);
@@ -126,8 +126,7 @@ export class ScrambleText extends HTMLElement {
   }
 
   disconnectedCallback() {
-    this.#abort?.abort();
-    this.#abort = null;
+    this.reset();
   }
 
   /**
@@ -225,7 +224,12 @@ export function setup(options: SetupOptions = {}) {
     customElements.define("scramble-text", ScrambleText);
   }
 
-  if (options.cursorFontUrl && options.cursorFontFamily) {
+  if (
+    options.cursorFontUrl &&
+    options.cursorFontFamily &&
+    !hasRegisteredCursorFont
+  ) {
+    hasRegisteredCursorFont = true;
     new FontFace(options.cursorFontFamily, `url(${options.cursorFontUrl})`, {
       unicodeRange: "U+2591-2593",
       weight: options.cursorFontWeight ?? "600",
@@ -241,23 +245,41 @@ export function setup(options: SetupOptions = {}) {
 
 // --- Option resolution ---
 
+const VALID_ORIGINS: readonly ScrambleOrigin[] = [
+  "left",
+  "right",
+  "center",
+  "random",
+];
+
 function resolveOptions(
   el: HTMLElement,
   overrides: ScrambleOptions,
 ): Required<ScrambleOptions> {
   return {
     ...DEFAULTS,
-    from: (el.getAttribute("from") as ScrambleOrigin | null) ?? DEFAULTS.from,
-    duration: el.hasAttribute("duration")
-      ? Number(el.getAttribute("duration"))
-      : DEFAULTS.duration,
+    from: parseOrigin(el.getAttribute("from")),
+    duration: parseFiniteNumber(el.getAttribute("duration"), DEFAULTS.duration),
     cursor: el.getAttribute("cursor") ?? DEFAULTS.cursor,
-    perturbation: el.hasAttribute("perturbation")
-      ? Number(el.getAttribute("perturbation"))
-      : DEFAULTS.perturbation,
+    perturbation: parseFiniteNumber(
+      el.getAttribute("perturbation"),
+      DEFAULTS.perturbation,
+    ),
     ignore: el.getAttribute("ignore") ?? setupDefaultIgnore,
     ...overrides,
   };
+}
+
+function parseOrigin(value: string | null): ScrambleOrigin {
+  return VALID_ORIGINS.includes(value as ScrambleOrigin)
+    ? (value as ScrambleOrigin)
+    : DEFAULTS.from;
+}
+
+function parseFiniteNumber(value: string | null, fallback: number): number {
+  if (value == null) return fallback;
+  const parsed = Number.parseFloat(value);
+  return Number.isFinite(parsed) ? parsed : fallback;
 }
 
 // --- DOM construction ---
@@ -355,21 +377,21 @@ function buildAnimationPlans(
   ctx: WaveContext,
 ): AnimationPlan[] {
   const order = buildWaveOrder(slots.length, origin);
+  const jitter = () =>
+    ctx.perturbationScale > 0
+      ? (Math.random() - 0.5) * 2 * ctx.perturbationScale
+      : 0;
+
   return slots.map((slot, i) => {
-    const startJitter =
-      ctx.perturbationScale > 0
-        ? (Math.random() - 0.5) * 2 * ctx.perturbationScale
-        : 0;
-    const endJitter =
-      ctx.perturbationScale > 0
-        ? (Math.random() - 0.5) * 2 * ctx.perturbationScale
-        : 0;
-    const startTime = order[i]! * ctx.settleSpacing + startJitter;
+    const startProgress = order[i]! * ctx.settleSpacing + jitter();
     return {
       slot,
-      startTime,
-      endTime: startTime + ctx.settleRatio + endJitter,
+      startProgress,
+      endProgress: startProgress + ctx.settleRatio + jitter(),
       scratchChar: ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!,
+      displayedChar: slot.targetChar,
+      isCursorDisplayed: false,
+      isSettled: false,
     };
   });
 }
@@ -403,42 +425,49 @@ function renderPlan(
   ctx: WaveContext,
   shouldRefresh: boolean,
 ) {
-  const { charEl, targetChar } = plan.slot;
+  if (plan.isSettled) return;
 
-  if (easedTime >= plan.endTime || easedTime < plan.startTime) {
-    setText(charEl, targetChar);
-    setCursor(charEl, false);
-    return;
+  let nextChar: string;
+  let nextIsCursor: boolean;
+
+  if (easedTime >= plan.endProgress) {
+    nextChar = plan.slot.targetChar;
+    nextIsCursor = false;
+    plan.isSettled = true;
+  } else if (easedTime < plan.startProgress) {
+    nextChar = plan.slot.targetChar;
+    nextIsCursor = false;
+  } else {
+    const localTime = easedTime - plan.startProgress;
+    if (localTime < ctx.cursorZone) {
+      const cursorIndex = Math.floor(localTime / ctx.settleSpacing);
+      nextChar = ctx.cursorChars[ctx.cursorLength - 1 - cursorIndex] ?? "";
+      nextIsCursor = true;
+    } else {
+      if (shouldRefresh) {
+        plan.scratchChar =
+          ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!;
+      }
+      nextChar = plan.scratchChar;
+      nextIsCursor = false;
+    }
   }
 
-  const localTime = easedTime - plan.startTime;
-  if (localTime < ctx.cursorZone) {
-    const cursorIndex = Math.floor(localTime / ctx.settleSpacing);
-    setText(charEl, ctx.cursorChars[ctx.cursorLength - 1 - cursorIndex] ?? "");
-    setCursor(charEl, true);
-    return;
+  const { charEl } = plan.slot;
+
+  if (plan.displayedChar !== nextChar) {
+    charEl.textContent = nextChar;
+    plan.displayedChar = nextChar;
   }
-
-  if (shouldRefresh) {
-    plan.scratchChar =
-      ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!;
+  if (plan.isCursorDisplayed !== nextIsCursor) {
+    charEl.classList.toggle("is-cursor", nextIsCursor);
+    plan.isCursorDisplayed = nextIsCursor;
   }
-  setText(charEl, plan.scratchChar);
-  setCursor(charEl, false);
-}
-
-function setText(el: HTMLSpanElement, value: string) {
-  if (el.firstChild?.nodeValue !== value) el.textContent = value;
-}
-
-function setCursor(el: HTMLSpanElement, isCursor: boolean) {
-  if (isCursor) el.classList.add("is-cursor");
-  else el.classList.remove("is-cursor");
 }
 
 // --- Cursor scale (one-time global probe) ---
 
-const CSS_VALUE_PRECISION = 4;
+const CURSOR_SCALE_DECIMALS = 4;
 
 // Below this, the cursor block already reads at letter height
 const CURSOR_SCALE_THRESHOLD = 0.02;
@@ -456,15 +485,23 @@ async function ensureCursorScale(referenceEl: HTMLElement): Promise<void> {
     } catch {
       // Best-effort – probe with whatever's available
     }
+
     const scale = computeCursorScale(
       buildFontShorthand(getComputedStyle(referenceEl)),
     );
-    if (scale && Math.abs(scale - 1) > CURSOR_SCALE_THRESHOLD) {
+
+    if (!scale) {
+      cursorScalePromise = null;
+      return;
+    }
+
+    if (Math.abs(scale - 1) > CURSOR_SCALE_THRESHOLD) {
       document.documentElement.style.setProperty(
         "--scramble-cursor-scale",
-        scale.toFixed(CSS_VALUE_PRECISION),
+        scale.toFixed(CURSOR_SCALE_DECIMALS),
       );
     }
+
     isCursorScaleProbed = true;
   })();
 
