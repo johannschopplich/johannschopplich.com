@@ -23,6 +23,11 @@
     "allow-plugins": {
       "getkirby/composer-installer": true,
       "php-http/discovery": true
+    },
+    "audit": {
+      "ignore": {
+        "PKSA-dwsq-ppd2-mb1x": "pinned transitively by getkirby/cms 5.4.x"
+      }
     }
   },
   "extra": {
