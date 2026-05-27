@@ -72,7 +72,6 @@ interface AnimationPlan {
   scratchChar: string;
   displayedChar: string;
   isCursorDisplayed: boolean;
-  isSettled: boolean;
 }
 
 const DEFAULTS: Required<ScrambleOptions> = {
@@ -245,13 +244,6 @@ export function setup(options: SetupOptions = {}) {
 
 // --- Option resolution ---
 
-const VALID_ORIGINS: readonly ScrambleOrigin[] = [
-  "left",
-  "right",
-  "center",
-  "random",
-];
-
 function resolveOptions(
   el: HTMLElement,
   overrides: ScrambleOptions,
@@ -271,9 +263,16 @@ function resolveOptions(
 }
 
 function parseOrigin(value: string | null): ScrambleOrigin {
-  return VALID_ORIGINS.includes(value as ScrambleOrigin)
-    ? (value as ScrambleOrigin)
-    : DEFAULTS.from;
+  return isScrambleOrigin(value) ? value : DEFAULTS.from;
+}
+
+function isScrambleOrigin(value: string | null): value is ScrambleOrigin {
+  return (
+    value === "left" ||
+    value === "right" ||
+    value === "center" ||
+    value === "random"
+  );
 }
 
 function parseFiniteNumber(value: string | null, fallback: number): number {
@@ -391,7 +390,6 @@ function buildAnimationPlans(
       scratchChar: ctx.charset[Math.floor(Math.random() * ctx.charsetLength)]!,
       displayedChar: slot.targetChar,
       isCursorDisplayed: false,
-      isSettled: false,
     };
   });
 }
@@ -425,15 +423,12 @@ function renderPlan(
   ctx: WaveContext,
   shouldRefresh: boolean,
 ) {
-  if (plan.isSettled) return;
-
   let nextChar: string;
   let nextIsCursor: boolean;
 
   if (easedTime >= plan.endProgress) {
     nextChar = plan.slot.targetChar;
     nextIsCursor = false;
-    plan.isSettled = true;
   } else if (easedTime < plan.startProgress) {
     nextChar = plan.slot.targetChar;
     nextIsCursor = false;
@@ -490,12 +485,7 @@ async function ensureCursorScale(referenceEl: HTMLElement): Promise<void> {
       buildFontShorthand(getComputedStyle(referenceEl)),
     );
 
-    if (!scale) {
-      cursorScalePromise = null;
-      return;
-    }
-
-    if (Math.abs(scale - 1) > CURSOR_SCALE_THRESHOLD) {
+    if (scale && Math.abs(scale - 1) > CURSOR_SCALE_THRESHOLD) {
       document.documentElement.style.setProperty(
         "--scramble-cursor-scale",
         scale.toFixed(CURSOR_SCALE_DECIMALS),
