@@ -142,15 +142,15 @@ ${selector} {
     {
       // Text styles
       headline:
-        "text-contrast-higher text-2xl/[1.15] font-heading font-600 md:text-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
-      title: "text-contrast-higher leading-heading font-heading font-600",
+        "text-2xl/[1.15] font-heading font-600 text-contrast-higher md:text-[calc(var(--un-text-4xl)+0.5vw)] md:leading-[1.05]",
+      title: "leading-heading font-heading font-600 text-contrast-higher",
       overline: "text-sm font-500 tracking-[0.125ch] uppercase",
       caption: "text-xs font-600 tracking-[0.125ch] uppercase",
       subtext: "text-sm font-500",
 
       // Text utilities
       "text-underline":
-        "underline decoration-current decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)]",
+        "underline decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)] decoration-current",
 
       // Layout
       "section-divider": "h-$spacing-8xl md:h-[calc(var(--spacing-8xl)*1.25)]",
@@ -159,9 +159,9 @@ ${selector} {
       icon: "size-[1.25em] [&>svg]:size-full",
       "icon-inline":
         "inline-block select-none touch-manipulation [&>svg]:h-full [&>svg]:w-auto",
-      tag: "text-xs/[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full px-2 py-1 dark:border-contrast-low",
+      tag: "px-2 py-1 text-xs/[1.05] font-heading font-500 whitespace-nowrap border-1 border-solid border-theme-base rounded-full dark:border-contrast-low",
       "action-link":
-        "inline-flex items-center text-xs/[1.05] font-heading font-500 uppercase tracking-[0.125ch] -m-2 p-2",
+        "inline-flex items-center -m-2 p-2 text-xs/[1.05] font-heading font-500 uppercase tracking-[0.125ch]",
     },
   ],
   safelist: ["sr-only", "invisible"],

@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="pt-5xl pb-5xl md:pt-8xl md:pb-8xl">
-  <div class="max-w-screen-xl flex flex-col gap-5xl md:flex-row md:items-stretch md:px-gutter">
+  <div class="flex flex-col gap-5xl max-w-screen-xl md:flex-row md:items-stretch md:px-gutter">
     <?php if ($image = $page->thumbnail()->toFile()): ?>
       <div class="grow min-w-0 md:min-w-min">
         <figure class="relative select-none shadow-[var(--un-frame-shadow-template)_var(--un-color-border)]">
@@ -23,7 +23,7 @@
 
         <div
           x-data="drauuControls"
-          class="drauu-controls mt-xs ml-[4px] hidden items-center gap-1 md:flex">
+          class="drauu-controls hidden items-center gap-1 mt-xs ml-[4px] md:flex">
           <button
             @click="setMode('stylus')"
             :class="{ 'is-active': mode === 'stylus' }"
@@ -50,7 +50,7 @@
       </div>
     <?php endif ?>
 
-    <div class="prose max-w-prose px-lg md:px-0 xl:flex xl:flex-col xl:pb-[2.25rem]">
+    <div class="prose px-lg max-w-prose md:px-0 xl:flex xl:flex-col xl:pb-[2.25rem]">
       <?php foreach ($page->bio()->toBlocks() as $block): ?>
         <?php /** @var \Kirby\Cms\Block $block */ ?>
         <?php if ($block->type() === 'heading'): ?>
@@ -67,7 +67,7 @@
   <div class="px-lg pt-5xl md:px-gutter md:pt-8xl">
     <div class="max-w-[72rem]">
       <section>
-        <h2 class="title text-2xl mb-3xl">
+        <h2 class="title mb-3xl text-2xl">
           <?= t('cv.career') ?>
         </h2>
 
@@ -77,7 +77,7 @@
               <?= $entry->period()->escape() ?>
             </dt>
 
-            <hr class="border-dotted border-contrast-medium mt-3" aria-hidden="true">
+            <hr class="mt-3 border-dotted border-contrast-medium" aria-hidden="true">
 
             <dd class="max-w-prose">
               <div class="group relative">
@@ -97,7 +97,7 @@
               </div>
 
               <?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
-                <div class="prose text-sm mt-sm dark:text-contrast-medium">
+                <div class="prose mt-sm text-sm dark:text-contrast-medium">
                   <?php foreach ($entry->description()->toBlocks() as $block): ?>
                     <?= $block ?>
                   <?php endforeach ?>

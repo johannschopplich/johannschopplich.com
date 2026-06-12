@@ -6,7 +6,7 @@
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
-<div class="relative max-w-screen-lg px-lg pt-5xl md:px-gutter md:pt-8xl">
+<div class="relative px-lg pt-5xl max-w-screen-lg md:px-gutter md:pt-8xl">
   <div class="prose" style="--un-decoration-color: transparent">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
@@ -57,7 +57,7 @@
 <div class="section-divider"></div>
 
 <div class="px-lg mb-lg md:px-gutter">
-  <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
+  <div class="flex gap-xl justify-between items-center max-w-screen-lg md:items-baseline">
     <h2 class="title text-xl text-primary-accent md:text-2xl">
       <?= t('articles.latest') ?>
     </h2>
@@ -72,7 +72,7 @@
 
 <div class="border-y border-y-solid border-contrast-low dark:border-contrast-lower">
     <div class="px-lg md:px-gutter">
-    <div class="max-w-screen-lg overflow-hidden">
+    <div class="overflow-hidden max-w-screen-lg">
       <?php snippet('components/article-grid', [
         'query' => $kirby->collection('articles')->paginate(4)
       ]) ?>
@@ -91,7 +91,7 @@
   <div class="section-divider"></div>
 
   <div class="px-lg mb-3xl md:px-gutter">
-    <div class="max-w-screen-lg flex gap-xl justify-between items-center md:items-baseline">
+    <div class="flex gap-xl justify-between items-center max-w-screen-lg md:items-baseline">
       <h2 class="title text-xl text-primary-accent md:text-2xl">
         <?= t('photography') ?>
       </h2>
@@ -106,7 +106,7 @@
 
   <?php snippet('components/carousel', ['query' => $query], slots: true) ?>
   <div class="shrink-0 min-w-0">
-    <div class="relative h-$cell-h aspect-[4/5] flex items-center justify-center bg-contrast-lowest outline outline-1 -outline-offset-2 outline-transparent hover:outline-current">
+    <div class="relative flex items-center justify-center h-$cell-h aspect-[4/5] bg-contrast-lowest outline outline-1 -outline-offset-2 outline-transparent hover:outline-current">
       <a href="<?= $query->first()->parent()->url() ?>" class="action-link link-default">
         <span class="absolute inset-0" aria-hidden="true"></span>
         <?= t('photography.more') ?><span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>

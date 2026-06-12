@@ -7,7 +7,7 @@ $year = null;
 ?>
 <section class="px-lg pb-8xl md:px-gutter">
   <div class="max-w-prose">
-    <h2 class="title text-2xl mb-3xl">
+    <h2 class="title mb-3xl text-2xl">
       <?= $heading ?>
     </h2>
 
@@ -25,14 +25,14 @@ $year = null;
 
       <a <?= attr([
         'href' => $post->url(),
-        'class' => 'gap-xs mb-xs flex items-start ' . (!$isActive ? ' link-default' : ''),
+        'class' => 'flex items-start gap-xs mb-xs ' . (!$isActive ? ' link-default' : ''),
         'aria-current' => $isActive ? 'page' : null
       ]) ?>>
         <span class="w-max <?php e($isActive, 'text-underline') ?>">
           <?= $post->title()->escape() ?>
         </span>
         <?php if ($post->categories()->isNotEmpty()): ?>
-          <hr class="grow self-center border-dotted border-contrast-medium dark:border-contrast-low">
+          <hr class="self-center grow border-dotted border-contrast-medium dark:border-contrast-low">
           <span class="flex shrink-0 flex-wrap gap-1">
             <?php foreach ($post->categories()->split() as $category): ?>
               <span class="tag"><?= $category ?></span>

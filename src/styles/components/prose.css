@@ -46,7 +46,7 @@
     & :where(h1, h2, h3, h4, h5, h6):not(:where(.not-prose, .not-prose *)) {
       font-family: var(--un-font-family-heading);
       line-height: var(--un-line-height-heading);
-      scroll-margin-top: 5rem;
+      scroll-margin-top: var(--spacing-5xl);
 
       & a:not([href^="http"]) {
         color: inherit;

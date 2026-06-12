@@ -26,7 +26,7 @@
 <div class="pb-8xl space-y-5xl md:space-y-8xl">
   <?php foreach ($children = $page->children()->listed() as $project): ?>
     <div>
-      <div class="group relative px-lg pt-xl mb-xl border-t border-solid border-contrast-low md:px-gutter dark:border-contrast-lower">
+      <div class="group relative px-lg pt-xl mb-xl border-t border-solid border-contrast-low dark:border-contrast-lower md:px-gutter">
         <h2 class="title text-2xl">
           <a
             href="<?= $project->url() ?>"
@@ -46,7 +46,7 @@
         'height' => $project->galleryHeight()->value()
       ], slots: true) ?>
         <?php slot('footer') ?>
-          <a href="<?= $project->url() ?>" class="action-link link-default md:w-full md:my-0">
+          <a href="<?= $project->url() ?>" class="action-link link-default md:my-0 md:w-full">
             <span><?= t('projects.more') ?></span>
             <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
           </a>

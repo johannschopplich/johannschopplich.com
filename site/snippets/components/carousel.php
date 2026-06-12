@@ -43,13 +43,13 @@ $selectedHeight = match ($height ?? null) {
           class="<?= trim(implode(' ', [
             'overflow-hidden',
             $mockup !== 'none' ? 'relative bg-$cell-bg' : '',
-            ($isDocument || $isMobile) ? 'h-$cell-h px-[4.5rem] py-xl md:px-8xl md:py-5xl xl:px-[9rem]' : '',
-            $isDesktop ? 'flex flex-col items-center justify-center h-$cell-h p-3xl md:p-5xl w-[calc(100vw-2.25rem)] md:w-auto' : ''
+            ($isDocument || $isMobile) ? 'px-[4.5rem] md:px-8xl xl:px-[9rem] py-xl md:py-5xl h-$cell-h' : '',
+            $isDesktop ? 'flex flex-col items-center justify-center p-3xl md:p-5xl h-$cell-h w-[calc(100vw-2.25rem)] md:w-auto' : ''
           ]), ' ') ?>"
           style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>"
         >
           <?php if ($isDesktop): ?>
-            <div class="self-stretch flex h-4 items-center gap-1 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg px-1.5">
+            <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg">
               <?php foreach (range(1, 3) as $i): ?>
                 <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
               <?php endforeach ?>
@@ -61,7 +61,7 @@ $selectedHeight = match ($height ?? null) {
             $borderColor = $bgColor ? ($bgColor->isDark() ? $bgColor->lighten(20) : $bgColor->darken(20)) : null;
           ?>
             <div
-              class="h-full w-fit p-2 border border-dashed border-$cell-border md:p-3"
+              class="p-2 h-full w-fit border border-dashed border-$cell-border md:p-3"
               style="--cell-border: <?= $borderColor ?? 'var(--un-color-contrast-low)' ?>"
             >
           <?php endif ?>
@@ -70,9 +70,9 @@ $selectedHeight = match ($height ?? null) {
             class="<?= trim(implode(' ', [
               'pointer-events-none select-none',
               $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
-              $isDocument ? 'w-auto h-full object-cover shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]' : '',
-              $isMobile ? 'w-auto h-full object-cover rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]' : '',
-              $isDesktop ? 'w-full h-auto md:w-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
+              $isDocument ? 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]' : '',
+              $isMobile ? 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]' : '',
+              $isDesktop ? 'w-full md:w-auto h-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
             ]), ' ') ?>"
             src="<?= $image->thumbhashUri() ?>"
             data-srcset="<?= $image->srcset() ?>"
@@ -99,7 +99,7 @@ $selectedHeight = match ($height ?? null) {
   <?php if (($footer = $slots->footer()) || $query->count() > 1): ?>
     <div class="flex items-center px-lg mt-lg md:px-gutter <?php e($footer, 'justify-between', 'md:hidden') ?>">
       <?php if ($query->count() > 1): ?>
-        <span class="md:hidden text-xs font-medium tabular-nums tracking-[0.05em] text-contrast-medium" aria-hidden="true">
+        <span class="text-xs font-medium tabular-nums tracking-[0.05em] text-contrast-medium md:hidden" aria-hidden="true">
           <span data-carousel-current>1</span> / <?= $query->count() ?>
         </span>
       <?php endif ?>

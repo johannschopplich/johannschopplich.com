@@ -6,7 +6,7 @@
 
 ?>
 <masonry-grid <?= attr([
-  'class' => 'grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] gap-5xl justify-center children:self-start sm:gap-lg',
+  'class' => 'grid grid-cols-[repeat(auto-fit,minmax(min(var(--masonry-column-max-width,25rem),100%),1fr))] gap-5xl sm:gap-lg justify-center children:self-start',
   'style' => $width ? '--masonry-column-max-width: ' . $width : null,
 ]) ?>>
   <?php foreach ($query as $image): ?>
@@ -24,7 +24,7 @@
       >
 
       <?php if ($image->caption()->isNotEmpty()): ?>
-        <figcaption class="content prose text-xs/dense font-500 py-2 text-center">
+        <figcaption class="content prose py-2 text-xs/dense font-500 text-center">
           <?= $image->caption() ?>
         </figcaption>
       <?php endif ?>

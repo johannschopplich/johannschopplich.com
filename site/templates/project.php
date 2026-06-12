@@ -18,7 +18,7 @@ $details = $page->details()->toStructure();
 
   <div class="pl-lg pb-5xl md:pl-gutter">
     <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:border-b after:border-dotted after:border-contrast-soft">
-      <p class="subtext text-contrast-medium shrink-0 max-md:text-sm">
+      <p class="subtext shrink-0 text-contrast-medium max-md:text-sm">
         <?= $page->subtitle()->escape() ?>
       </p>
     </div>
@@ -37,7 +37,7 @@ $details = $page->details()->toStructure();
     $details->isNotEmpty() ? 'lg:grid lg:grid-cols-[minmax(0,var(--container-prose))_auto] lg:gap-5xl' : ''
   ]), ' ') ?>">
     <?php if ($details->isNotEmpty()): ?>
-      <aside class="cross-box bg-contrast-lowest py-5 px-4 sm:px-5 mb-5xl lg:sticky lg:top-16 lg:self-start lg:order-2 lg:mb-0 lg:max-w-sm">
+      <aside class="cross-box py-5 px-4 mb-5xl bg-contrast-lowest sm:px-5 lg:sticky lg:top-16 lg:self-start lg:order-2 lg:mb-0 lg:max-w-sm">
         <dl class="flex flex-col gap-3 m-0">
           <?php foreach ($details as $detail): ?>
             <div>

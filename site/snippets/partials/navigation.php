@@ -8,8 +8,8 @@
   <a
     href="<?= $site->url() ?>"
     class="
-      inline-flex items-center bg-theme-background halftone-bg pl-0.5 pr-1 py-0.75
-      [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor]
+      [--un-dithered-from:var(--un-color-contrast-soft)] inline-flex items-center pl-0.5 pr-1 py-0.75 bg-theme-background halftone-bg
+      hover:[--un-dithered-from:currentcolor]
     "
     <?php e($page->isHomePage(), ' aria-current="page"') ?>
     aria-label="<?= $site->title()->escape() ?>"
@@ -23,9 +23,9 @@
     <a
       href="<?= $item->url() ?>"
       class="
-        bg-theme-background halftone-bg overline px-1 py-0.5
+        overline [--un-dithered-from:var(--un-color-contrast-soft)] px-1 py-0.5 bg-theme-background halftone-bg
         <?php /* [@supports(text-box:trim-both_cap_alphabetic)]:[text-box:trim-both_cap_alphabetic] [@supports(text-box:trim-both_cap_alphabetic)]:py-2 */ ?>
-        [--un-dithered-from:var(--un-color-contrast-soft)] hover:[--un-dithered-from:currentcolor] hover:text-underline hover:decoration-primary-accent
+        hover:[--un-dithered-from:currentcolor] hover:text-underline hover:decoration-primary-accent
         aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:text-underline aria-[current]:decoration-primary-accent
       "
       <?php e($item->isOpen(), 'aria-current="page"') ?>
@@ -34,10 +34,10 @@
     </a>
   <?php endforeach ?>
 
-  <div class="flex items-center ml-auto overline max-sm:hidden">
+  <div class="overline flex items-center ml-auto max-sm:hidden">
     <?php foreach (($languages = $kirby->languages()) as $language): ?>
       <?php if (!$language->isFirst($languages)): ?>
-        <span class="text-contrast-soft px-1 select-none">/</span>
+        <span class="px-1 text-contrast-soft select-none">/</span>
       <?php endif ?>
       <?php if ($language->code() === $kirby->languageCode()): ?>
         <a
