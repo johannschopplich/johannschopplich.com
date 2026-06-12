@@ -3,6 +3,8 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+/** @var mixed $slot */
+
 ?>
 <!--
 https://github.com/johannschopplich/johannschopplich.com

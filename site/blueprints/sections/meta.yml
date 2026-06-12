@@ -1,8 +1,5 @@
 type: fields
 fields:
-  customTitle:
-    extends: fields/customTitle
-  description:
-    extends: fields/description
-  thumbnail:
-    extends: fields/thumbnail
+  customTitle: fields/customTitle
+  description: fields/description
+  thumbnail: fields/thumbnail
