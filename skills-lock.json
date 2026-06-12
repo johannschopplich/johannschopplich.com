@@ -4,6 +4,7 @@
     "edit-an-article": {
       "source": "johannschopplich/skills",
       "sourceType": "github",
+      "skillPath": "edit-an-article/SKILL.md",
       "computedHash": "22ebb1855f9b3c458c739fec60842c3f114b0461046f7ae83c4f6ae8e3c7e891"
     }
   }
