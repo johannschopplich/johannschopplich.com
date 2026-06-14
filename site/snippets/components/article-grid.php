@@ -15,7 +15,7 @@
       after:content-empty after:absolute after:inset-y-5 after:right-0 after:border-r after:border-solid after:border-contrast-low dark:after:border-contrast-lower
     ">
       <p class="caption mb-[1px] text-contrast-soft">
-        <time datetime="<?= $article->published()->toDate('Y-MM-dd') ?>">
+        <time datetime="<?= $article->published()->toDate('yyyy-MM-dd') ?>">
           <?= $article->published()->toDate(dateFormatter()) ?>
         </time>
       </p>

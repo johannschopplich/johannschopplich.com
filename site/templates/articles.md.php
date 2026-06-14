@@ -15,7 +15,7 @@ foreach ($page->children()->listed()->sortBy('published', 'desc') as $article) {
   $parts[] = '## ' . $article->title()->value();
   $parts[] = implode("\n", [
     '- **URL:** ' . $article->url(),
-    '- **Date:** ' . $article->published()->toDate('Y-MM-dd')
+    '- **Date:** ' . $article->published()->toDate('yyyy-MM-dd')
   ]);
   if ($article->description()->isNotEmpty()) {
     $parts[] = $article->description()->value();
