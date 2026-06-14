@@ -6,22 +6,13 @@ use Kirby\Cms\Site;
 
 return fn (App $kirby, Site $site, Page $page) => [
     'jsonld' => [
+        'Person' => $site->person(),
         'WebSite' => [
             'name' => $site->title()->value(),
             'description' => $site->description()->value(),
-            'url' => url(),
-            'author' => [
-                '@type' => 'Person',
-                'name' => 'Johann Schopplich',
-                'url' => url(),
-                'gender' => 'male',
-                'sameAs' => [
-                    'https://github.com/johannschopplich',
-                    'https://www.linkedin.com/in/johann-schopplich/',
-                    'https://www.instagram.com/johannschopplich/',
-                    'https://x.com/jschopplich'
-                ]
-            ]
+            'url' => $site->url(),
+            'inLanguage' => $kirby->languageCode(),
+            'author' => $site->personReference()
         ]
     ]
 ];

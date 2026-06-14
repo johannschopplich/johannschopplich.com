@@ -4,11 +4,38 @@ class ArticlePage extends \Kirby\Cms\Page
 {
     public function metadata(): array
     {
+        $site = $this->site();
         $description = $this->description()->or($this->text()->toBlocks()->excerpt(140))->value();
         $author = $this->author()->toUser()?->name()->value()
             ?: $this->kirby()->users()->first()?->name()->value()
-            ?: $this->site()->title()->value();
+            ?: $site->title()->value();
         $thumbnail = $this->thumbnail()->toFile()?->resize(1200);
+        $published = $this->published()->toDate('yyyy-MM-dd');
+
+        $blogPosting = [
+            'headline' => $this->title()->value(),
+            'description' => $description,
+            'url' => $this->url(),
+            'mainEntityOfPage' => $this->url(),
+            'inLanguage' => $this->kirby()->languageCode(),
+            'author' => $site->personReference(),
+            'publisher' => $site->personReference(),
+            'datePublished' => $published,
+            'dateModified' => $this->modified('yyyy-MM-dd')
+        ];
+
+        if ($thumbnail) {
+            $blogPosting['image'] = [
+                '@type' => 'ImageObject',
+                'url' => $thumbnail->url(),
+                'width' => $thumbnail->width(),
+                'height' => $thumbnail->height()
+            ];
+        }
+
+        if ($this->categories()->isNotEmpty()) {
+            $blogPosting['keywords'] = $this->categories()->split(',');
+        }
 
         return [
             'description' => $description,
@@ -16,28 +43,12 @@ class ArticlePage extends \Kirby\Cms\Page
                 'type' => 'article',
                 'namespace:article' => [
                     'author' => $author,
-                    'published_time' => $this->published()->toDate('Y-MM-dd')
+                    'published_time' => $published
                 ]
             ],
             'jsonld' => [
-                'BlogPosting' => [
-                    'headline' => $this->title()->value(),
-                    'description' => $description,
-                    'url' => $this->url(),
-                    'image' => $thumbnail ? [
-                        '@type' => 'ImageObject',
-                        'url' => $thumbnail->url(),
-                        'width' => $thumbnail->width(),
-                        'height' => $thumbnail->height()
-                    ] : null,
-                    'author' => [
-                        '@type' => 'Person',
-                        'name' => $author,
-                        'url' => url()
-                    ],
-                    'datePublished' => $this->published()->toDate('Y-MM-dd'),
-                    'dateModified' => $this->modified('Y-MM-dd')
-                ]
+                'BlogPosting' => $blogPosting,
+                'BreadcrumbList' => $this->breadcrumbList()
             ]
         ];
     }

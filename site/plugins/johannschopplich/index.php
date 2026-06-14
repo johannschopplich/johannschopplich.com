@@ -3,7 +3,84 @@
 use Kirby\Cms\App;
 use Kirby\Cms\Html;
 
-App::plugin('johannschopplich/website');
+App::plugin('johannschopplich/website', [
+    'siteMethods' => [
+        // Single source of truth for the site's structured-data identity.
+        // Google processes JSON-LD per page and does not resolve a bare `@id`
+        // to a node on another page, so the full Person is emitted on every
+        // page (via the standalone `Person` node in config/meta.php) and
+        // everything else references it by the same, language-stable `@id`.
+        'personId' => function (): string {
+            return rtrim($this->kirby()->url('index'), '/') . '/#person';
+        },
+        // A bare `@id` reference to the canonical Person, for author/publisher/
+        // mainEntity slots that point back at the same entity.
+        'personReference' => function (): array {
+            return ['@id' => $this->personId()];
+        },
+        // The canonical Person node, emitted once per page.
+        'person' => function (): array {
+            $person = [
+                '@type' => 'Person',
+                '@id' => $this->personId(),
+                'name' => 'Johann Schopplich',
+                'url' => rtrim($this->kirby()->url('index'), '/') . '/',
+                'sameAs' => [
+                    'https://github.com/johannschopplich',
+                    'https://www.linkedin.com/in/johann-schopplich/',
+                    'https://www.instagram.com/johannschopplich/',
+                    'https://x.com/jschopplich'
+                ],
+                'knowsAbout' => [
+                    'Web Development',
+                    'TypeScript',
+                    'Vue.js',
+                    'Nuxt',
+                    'Open Source Software'
+                ]
+            ];
+
+            $aboutPage = $this->find('about');
+            $portrait = ($aboutPage?->thumbnail()->toFile() ?? $aboutPage?->image())?->resize(1200);
+            if ($portrait) {
+                $person['image'] = [
+                    '@type' => 'ImageObject',
+                    'url' => $portrait->url(),
+                    'width' => $portrait->width(),
+                    'height' => $portrait->height()
+                ];
+            }
+
+            return $person;
+        }
+    ],
+    'pageMethods' => [
+        'breadcrumbList' => function (): array {
+            $home = $this->site()->homePage();
+
+            $crumbs = $this->is($home) ? [] : [$home];
+            foreach ($this->parents()->flip() as $ancestor) {
+                if (!$ancestor->is($home)) {
+                    $crumbs[] = $ancestor;
+                }
+            }
+            $crumbs[] = $this;
+
+            $items = [];
+            $position = 1;
+            foreach ($crumbs as $crumb) {
+                $items[] = [
+                    '@type' => 'ListItem',
+                    'position' => $position++,
+                    'name' => $crumb->title()->value(),
+                    'item' => $crumb->url()
+                ];
+            }
+
+            return ['itemListElement' => $items];
+        }
+    ]
+]);
 
 if (!function_exists('icon')) {
     /**
