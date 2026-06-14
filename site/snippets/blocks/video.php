@@ -22,7 +22,7 @@ $videoIdPattern =
 $id = preg_match($videoIdPattern, $block->url()->value(), $matches) ? $matches[1] : null;
 if (!$id) return;
 
-/** @var \Kirby\Cms\File $image */
+/** @var \Kirby\Cms\File */
 $image = $block->thumbnail()->toFile();
 $bgImage = $image?->thumb([
   'width' => 1280,
