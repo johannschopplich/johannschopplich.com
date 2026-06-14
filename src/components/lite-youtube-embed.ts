@@ -1,19 +1,20 @@
+interface YTPlayerOptions {
+  width: string;
+  videoId: string;
+  playerVars: Record<string, string>;
+  events: {
+    onReady: (event: { target: { playVideo: () => void } }) => void;
+  };
+}
+
+interface YTNamespace {
+  ready: (callback: () => void) => void;
+  Player: new (el: HTMLElement, options: YTPlayerOptions) => unknown;
+}
+
 declare global {
   interface Window {
-    YT: {
-      ready: (callback: () => void) => void;
-      Player: new (
-        el: HTMLElement,
-        opts: {
-          width: string;
-          videoId: string;
-          playerVars: Record<string, string>;
-          events: {
-            onReady: (event: { target: { playVideo: () => void } }) => void;
-          };
-        },
-      ) => unknown;
-    };
+    YT: YTNamespace;
   }
 }
 

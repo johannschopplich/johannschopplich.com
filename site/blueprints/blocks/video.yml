@@ -7,6 +7,11 @@ fields:
     label: field.blocks.video.url.label
     type: url
     placeholder: field.blocks.video.url.placeholder
+  title:
+    label:
+      de: Titel
+      en: Title
+    type: text
   caption:
     label: field.blocks.video.caption
     type: writer

@@ -38,7 +38,8 @@ return [
         'drauu.clear' => 'Löschen',
         'carousel.label' => 'Bildergalerie',
         'carousel.roledescription' => 'Karussell',
-        'carousel.slide' => 'Folie'
+        'carousel.slide' => 'Folie',
+        'video.play' => 'Video abspielen'
     ]
 
 ];

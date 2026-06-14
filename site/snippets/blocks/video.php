@@ -23,7 +23,7 @@ $id = preg_match($videoIdPattern, $block->url()->value(), $matches) ? $matches[1
 if (!$id) return;
 
 /** @var \Kirby\Cms\File $image */
-$image   = $block->thumbnail()->toFile();
+$image = $block->thumbnail()->toFile();
 $bgImage = $image?->thumb([
   'width' => 1280,
   'quality' => 70
@@ -33,10 +33,12 @@ $bgImage = $image?->thumb([
 <figure class="is-outset">
   <lite-youtube <?= attr([
     'videoid' => $id,
-    'style' => implode(';', [
+    'title' => $block->title()->value(),
+    'playlabel' => $block->title()->or(t('video.play'))->value(),
+    'style' => implode(';', array_filter([
       $bgImage ? "background-image: url({$bgImage})" : null,
       'aspect-ratio: ' . $block->ratio()->or('16/9')->value()
-    ])
+    ]))
   ]) ?>></lite-youtube>
   <?php if ($block->caption()->isNotEmpty()): ?>
     <figcaption><?= $block->caption()->permalinksToUrls() ?></figcaption>

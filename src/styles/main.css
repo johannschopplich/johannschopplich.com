@@ -4,10 +4,10 @@
 
 @import "base/base.css";
 @import "base/prose.css";
-@import "base/vendor.css";
 
 @import "components/prose.css";
 @import "components/carousel.css";
 @import "components/drauu.css";
 @import "components/image-zoom.css";
 @import "components/cross-box.css";
+@import "components/lite-youtube.css";

@@ -38,7 +38,8 @@ return [
         'drauu.clear' => 'Clear',
         'carousel.label' => 'Image gallery',
         'carousel.roledescription' => 'carousel',
-        'carousel.slide' => 'slide'
+        'carousel.slide' => 'slide',
+        'video.play' => 'Play video'
     ]
 
 ];
