@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f72b4aa64ecdff941851c7c046292085",
+    "content-hash": "14adb2e5576e582ebf74ac500b2e98b4",
     "packages": [
         {
             "name": "anthropic-ai/sdk",
@@ -1133,23 +1133,25 @@
         },
         {
             "name": "johannschopplich/kirby-headless",
-            "version": "6.0.1",
+            "version": "7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-headless.git",
-                "reference": "a1bbf293aee7565c0d3242e3573416c2e965a3be"
+                "reference": "094135712d53ffffd03147039a61eab831166514"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/a1bbf293aee7565c0d3242e3573416c2e965a3be",
-                "reference": "a1bbf293aee7565c0d3242e3573416c2e965a3be",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-headless/zipball/094135712d53ffffd03147039a61eab831166514",
+                "reference": "094135712d53ffffd03147039a61eab831166514",
                 "shasum": ""
             },
             "require": {
-                "getkirby/composer-installer": "^1"
+                "getkirby/composer-installer": "^1",
+                "php": ">=8.3"
             },
             "require-dev": {
-                "getkirby/cms": "^5"
+                "getkirby/cms": "^5",
+                "phpunit/phpunit": "^12"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1166,7 +1168,7 @@
                     "homepage": "https://johannschopplich.com"
                 }
             ],
-            "description": "Kirby CMS plugin to enable headless mode",
+            "description": "API-first toolkit for Kirby CMS",
             "homepage": "https://kirby.tools/docs/headless",
             "keywords": [
                 "headless",
@@ -1174,7 +1176,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-headless/issues",
-                "source": "https://github.com/johannschopplich/kirby-headless/tree/v6.0.1"
+                "source": "https://github.com/johannschopplich/kirby-headless/tree/v7.0.0"
             },
             "funding": [
                 {
@@ -1182,24 +1184,25 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-01-21T07:11:47+00:00"
+            "time": "2026-06-14T20:49:10+00:00"
         },
         {
             "name": "johannschopplich/kirby-helpers",
-            "version": "6.7.1",
+            "version": "7.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-helpers.git",
-                "reference": "9ec486a5e2d9fb4846d7f4ea00e07620fc243604"
+                "reference": "22f5c0e7c91f8803303faabc95b6197641a01887"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/9ec486a5e2d9fb4846d7f4ea00e07620fc243604",
-                "reference": "9ec486a5e2d9fb4846d7f4ea00e07620fc243604",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-helpers/zipball/22f5c0e7c91f8803303faabc95b6197641a01887",
+                "reference": "22f5c0e7c91f8803303faabc95b6197641a01887",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1",
+                "php": ">=8.3",
                 "vlucas/phpdotenv": "^5"
             },
             "require-dev": {
@@ -1244,9 +1247,9 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-helpers/issues",
-                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v6.7.1"
+                "source": "https://github.com/johannschopplich/kirby-helpers/tree/v7.0.0"
             },
-            "time": "2026-01-31T12:08:44+00:00"
+            "time": "2026-06-14T20:19:27+00:00"
         },
         {
             "name": "johannschopplich/kirby-serp-preview",
