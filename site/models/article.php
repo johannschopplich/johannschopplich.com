@@ -16,7 +16,8 @@ class ArticlePage extends \Kirby\Cms\Page
             'headline' => $this->title()->value(),
             'description' => $description,
             'url' => $this->url(),
-            'mainEntityOfPage' => $this->url(),
+            'isPartOf' => ['@id' => $this->webPageId()],
+            'mainEntityOfPage' => ['@id' => $this->webPageId()],
             'inLanguage' => $this->kirby()->languageCode(),
             'author' => $site->personReference(),
             'publisher' => $site->personReference(),
@@ -47,6 +48,7 @@ class ArticlePage extends \Kirby\Cms\Page
                 ]
             ],
             'jsonld' => [
+                'WebPage' => ['breadcrumb' => ['@id' => $this->breadcrumbId()]],
                 'BlogPosting' => $blogPosting,
                 'BreadcrumbList' => $this->breadcrumbList()
             ]

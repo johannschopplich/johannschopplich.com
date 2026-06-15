@@ -6,7 +6,8 @@ class ProfilePage extends \Kirby\Cms\Page
     {
         return [
             'jsonld' => [
-                'ProfilePage' => [
+                'WebPage' => [
+                    '@type' => 'ProfilePage',
                     'mainEntity' => $this->site()->personReference(),
                     'dateModified' => $this->modified('yyyy-MM-dd')
                 ]

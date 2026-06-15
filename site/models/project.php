@@ -11,6 +11,8 @@ class ProjectPage extends \Kirby\Cms\Page
             'name' => $this->title()->value(),
             'description' => $description,
             'url' => $this->url(),
+            'isPartOf' => ['@id' => $this->webPageId()],
+            'mainEntityOfPage' => ['@id' => $this->webPageId()],
             'inLanguage' => $this->kirby()->languageCode(),
             'author' => $this->site()->personReference()
         ];
@@ -27,6 +29,7 @@ class ProjectPage extends \Kirby\Cms\Page
         return [
             'description' => $description,
             'jsonld' => [
+                'WebPage' => ['breadcrumb' => ['@id' => $this->breadcrumbId()]],
                 'CreativeWork' => $creativeWork,
                 'BreadcrumbList' => $this->breadcrumbList()
             ]

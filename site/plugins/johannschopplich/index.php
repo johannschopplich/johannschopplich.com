@@ -74,9 +74,25 @@ App::plugin('johannschopplich/website', [
             }
 
             return $person;
+        },
+        // The canonical WebSite identity – language-stable like `personId` – so
+        // every page node can declare itself `isPartOf` the one website entity.
+        'webSiteId' => function (): string {
+            return rtrim($this->kirby()->url('index'), '/') . '/#website';
+        },
+        'webSiteReference' => function (): array {
+            return ['@id' => $this->webSiteId()];
         }
     ],
     'pageMethods' => [
+        // Per-language `@id`s for this page's WebPage and breadcrumb nodes, so
+        // content entities can reference them within the page's entity graph.
+        'webPageId' => function (): string {
+            return $this->url() . '#webpage';
+        },
+        'breadcrumbId' => function (): string {
+            return $this->url() . '#breadcrumb';
+        },
         'breadcrumbList' => function (): array {
             $home = $this->site()->homePage();
 
@@ -99,7 +115,10 @@ App::plugin('johannschopplich/website', [
                 ];
             }
 
-            return ['itemListElement' => $items];
+            return [
+                '@id' => $this->breadcrumbId(),
+                'itemListElement' => $items
+            ];
         }
     ]
 ]);
