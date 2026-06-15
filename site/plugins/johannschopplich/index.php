@@ -25,6 +25,17 @@ App::plugin('johannschopplich/website', [
                 '@id' => $this->personId(),
                 'name' => 'Johann Schopplich',
                 'url' => rtrim($this->kirby()->url('index'), '/') . '/',
+                'jobTitle' => 'Lead Software Engineer',
+                'worksFor' => [
+                    '@type' => 'Organization',
+                    'name' => 'Finanzfluss',
+                    'url' => 'https://www.finanzfluss.de/'
+                ],
+                'alumniOf' => [
+                    '@type' => 'CollegeOrUniversity',
+                    'name' => 'University of Greifswald',
+                    'url' => 'https://www.uni-greifswald.de/'
+                ],
                 'sameAs' => [
                     'https://github.com/johannschopplich',
                     'https://www.linkedin.com/in/johann-schopplich/',
@@ -33,12 +44,23 @@ App::plugin('johannschopplich/website', [
                 ],
                 'knowsAbout' => [
                     'Web Development',
+                    'Frontend Architecture',
                     'TypeScript',
                     'Vue.js',
                     'Nuxt',
-                    'Open Source Software'
+                    'React',
+                    'Design Systems',
+                    'Open Source Software',
+                    'Laravel',
+                    'Flutter',
+                    'Cloudflare Workers',
+                    'Kirby CMS'
                 ]
             ];
+
+            if ($this->description()->isNotEmpty()) {
+                $person['description'] = $this->description()->value();
+            }
 
             $aboutPage = $this->find('about');
             $portrait = ($aboutPage?->thumbnail()->toFile() ?? $aboutPage?->image())?->resize(1200);
