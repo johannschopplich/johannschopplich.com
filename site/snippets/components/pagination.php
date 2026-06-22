@@ -5,9 +5,9 @@
 ?>
 <nav class="flex justify-center text-xl font-heading font-600">
   <?php if ($pagination->hasPrevPage()): ?>
-    <a href="<?= $pagination->prevPageUrl() ?>" class="mr-auto i-tabler-arrow-left hover:text-primary-accent" aria-label="Previous page"></a>
+    <a href="<?= $pagination->prevPageUrl() ?>" class="i-tabler-arrow-left mr-auto hover:text-primary-accent" aria-label="Previous page"></a>
   <?php else: ?>
-    <span class="mr-auto text-contrast-low cursor-not-allowed i-tabler-arrow-left" aria-disabled="true"></span>
+    <span class="i-tabler-arrow-left mr-auto text-contrast-low cursor-not-allowed" aria-disabled="true"></span>
   <?php endif ?>
 
   <div class="flex gap-1">
@@ -33,8 +33,8 @@
   </div>
 
   <?php if ($pagination->hasNextPage()): ?>
-    <a href="<?= $pagination->nextPageUrl() ?>" class="ml-auto i-tabler-arrow-right hover:text-primary-accent" aria-label="Next page"></a>
+    <a href="<?= $pagination->nextPageUrl() ?>" class="i-tabler-arrow-right ml-auto hover:text-primary-accent" aria-label="Next page"></a>
   <?php else: ?>
-    <span class="ml-auto text-contrast-lower cursor-not-allowed i-tabler-arrow-right" aria-disabled="true"></span>
+    <span class="i-tabler-arrow-right ml-auto text-contrast-lower cursor-not-allowed" aria-disabled="true"></span>
   <?php endif ?>
 </nav>
