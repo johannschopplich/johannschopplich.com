@@ -6,7 +6,7 @@ use Kirby\Query\Runners\DefaultRunner;
 
 return [
 
-    'debug' => env('KIRBY_MODE') === 'development' || env('KIRBY_DEBUG', false),
+    'debug' => env('KIRBY_DEBUG', false),
 
     'yaml' => [
         'handler' => 'symfony'
