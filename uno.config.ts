@@ -150,7 +150,7 @@ ${selector} {
 
       // Text utilities
       "text-underline":
-        "underline decoration-size-[var(--un-decoration-thickness)] underline-offset-[var(--un-decoration-offset)] decoration-current",
+        "underline decoration-size-$un-decoration-thickness underline-offset-$un-decoration-offset decoration-current",
 
       // Layout
       "section-divider": "h-$spacing-8xl md:h-[calc(var(--spacing-8xl)*1.25)]",
