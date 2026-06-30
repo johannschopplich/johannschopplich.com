@@ -4,7 +4,6 @@ import {
   presetIcons,
   presetWind4,
   toEscapedSelector,
-  transformerDirectives,
 } from "unocss";
 
 export default defineConfig<Theme>({
@@ -166,7 +165,6 @@ ${selector} {
   ],
   safelist: ["sr-only", "invisible"],
   outputToCssLayers: true,
-  transformers: [transformerDirectives()],
   presets: [
     presetWind4({
       dark: {
