@@ -1,0 +1,24 @@
+title:
+  de: Redakteur
+  en: Editor
+
+description:
+  de: Kann alle Inhalte verwalten und veröffentlichen.
+  en: Can manage and publish all content.
+
+permissions:
+  access:
+    languages: false
+    system: false
+    users: false
+  languages: false
+  user:
+    changeRole: false
+    delete: false
+  users: false
+
+sections:
+  info:
+    text:
+      de: Keine Felder zu bearbeiten.
+      en: No fields to edit.
