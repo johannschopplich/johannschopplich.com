@@ -1,5 +1,7 @@
 <?php
 
+use Kirby\Http\Url;
+
 /** @var \Kirby\Cms\Block $block */
 
 // Extract the YouTube video ID from the URL
@@ -29,17 +31,29 @@ $bgImage = $image?->thumb([
   'quality' => 70
 ])->url();
 
+// Feed readers don't know the <lite-youtube> element – link a thumbnail instead
+$isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
+
 ?>
 <figure class="is-outset">
-  <lite-youtube <?= attr([
-    'videoid' => $id,
-    'title' => $block->title()->value(),
-    'playlabel' => $block->title()->or(t('video.play'))->value(),
-    'style' => implode(';', array_filter([
-      $bgImage ? "background-image: url({$bgImage})" : null,
-      'aspect-ratio: ' . $block->ratio()->or('16/9')->value()
-    ]))
-  ]) ?>></lite-youtube>
+  <?php if ($isFeed): ?>
+    <a href="https://www.youtube.com/watch?v=<?= $id ?>">
+      <img <?= attr([
+        'src' => $bgImage ?? "https://img.youtube.com/vi/{$id}/hqdefault.jpg",
+        'alt' => $block->title()->or(t('video.play'))->value()
+      ]) ?>>
+    </a>
+  <?php else: ?>
+    <lite-youtube <?= attr([
+      'videoid' => $id,
+      'title' => $block->title()->value(),
+      'playlabel' => $block->title()->or(t('video.play'))->value(),
+      'style' => implode(';', array_filter([
+        $bgImage ? "background-image: url({$bgImage})" : null,
+        'aspect-ratio: ' . $block->ratio()->or('16/9')->value()
+      ]))
+    ]) ?>></lite-youtube>
+  <?php endif ?>
   <?php if ($block->caption()->isNotEmpty()): ?>
     <figcaption><?= $block->caption()->permalinksToUrls() ?></figcaption>
   <?php endif ?>

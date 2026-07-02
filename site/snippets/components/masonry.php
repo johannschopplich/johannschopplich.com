@@ -1,8 +1,13 @@
 <?php
 
+use Kirby\Http\Url;
+
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $width */
+
+// Disable blurry images for feeds
+$isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 
 ?>
 <masonry-grid <?= attr([
@@ -12,7 +17,7 @@
   <?php foreach ($query as $image): ?>
     <figure>
       <img
-        src="<?= $image->thumbhashUri() ?>"
+        src="<?= $isFeed ? $image->resize(1024)->url() : $image->thumbhashUri() ?>"
         loading="lazy"
         data-srcset="<?= $image->srcset() ?>"
         data-sizes="auto"
