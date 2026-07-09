@@ -12,7 +12,7 @@ $year = null;
     </h2>
 
     <?php foreach ($query as $post): ?>
-      <?php $postY = $post->published()->toDate('y') ?>
+      <?php $postY = $post->published()->toDate('Y') ?>
       <?php $isActive = $post->isActive() || $post->is($page) ?>
 
       <?php if ($postY !== $year): ?>

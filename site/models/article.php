@@ -10,7 +10,7 @@ class ArticlePage extends \Kirby\Cms\Page
             ?: $this->kirby()->users()->first()?->name()->value()
             ?: $site->title()->value();
         $thumbnail = $this->thumbnail()->toFile()?->resize(1200);
-        $published = $this->published()->toDate('yyyy-MM-dd');
+        $published = $this->published()->toDate('Y-m-d');
 
         $blogPosting = [
             'headline' => $this->title()->value(),

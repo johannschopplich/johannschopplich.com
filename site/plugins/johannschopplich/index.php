@@ -156,14 +156,14 @@ if (!function_exists('icon')) {
 }
 
 if (!function_exists('dateFormatter')) {
-    function dateFormatter(): IntlDateFormatter
-    {
-        static $dateFormatter;
-        return $dateFormatter ??= IntlDateFormatter::create(
-            App::instance()->languageCode(),
-            IntlDateFormatter::LONG,
-            IntlDateFormatter::NONE
-        );
+    function dateFormatter(
+        int $dateType = IntlDateFormatter::LONG,
+        int $timeType = IntlDateFormatter::NONE
+    ): IntlDateFormatter {
+        static $formatters = [];
+        $locale = App::instance()->languageCode() ?? 'en';
+        $key = "{$locale}:{$dateType}:{$timeType}";
+        return $formatters[$key] ??= IntlDateFormatter::create($locale, $dateType, $timeType);
     }
 }
 

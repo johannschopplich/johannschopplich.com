@@ -16,10 +16,6 @@ return [
         'runner' => DefaultRunner::class
     ],
 
-    'date' => [
-        'handler' => 'intl'
-    ],
-
     'content' => [
         'fileRedirects' => fn (File $file) =>
             in_array($file->extension(), ['pdf', 'zip'], true)

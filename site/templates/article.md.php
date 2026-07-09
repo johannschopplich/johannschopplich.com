@@ -8,7 +8,7 @@ $kirby->response()->type('text/markdown');
 
 echo renderMarkdown(
   snippet('llm/frontmatter', ['fields' => [
-    'date' => $page->published()->toDate('yyyy-MM-dd'),
+    'date' => $page->published()->toDate('Y-m-d'),
     ...($page->categories()->isNotEmpty() ? ['categories' => array_map('trim', explode(',', $page->categories()->value()))] : [])
   ]], true),
   '# ' . $page->title()->value(),
