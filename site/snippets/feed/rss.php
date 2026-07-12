@@ -3,10 +3,13 @@
 use Kirby\Toolkit\Xml;
 
 echo '<?xml version="1.0" encoding="utf-8"?>';
-?><rss version="2.0">
+echo "\n" . '<?xml-stylesheet type="text/xsl" href="/feeds/rss.xsl"?>';
+?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title><?= Xml::encode($title) ?></title>
     <link><?= Xml::encode($url) ?></link>
+    <atom:link href="<?= Xml::encode($feedurl) ?>" rel="self" type="application/rss+xml"/>
     <lastBuildDate><?= $modified ?></lastBuildDate>
     <?php if (trim($description ?? '') !== ''): ?>
       <description><?= Xml::encode($description) ?></description>

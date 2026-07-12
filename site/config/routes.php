@@ -5,6 +5,15 @@ use Kirby\Exception\NotFoundException;
 use Kirby\Http\Response;
 
 return [
+    [
+        'pattern'  => 'feeds/rss.xsl',
+        'language' => '*',
+        'method'   => 'GET',
+        'action'   => fn (Language $language) => new Response(
+            snippet('feed/rss.xsl', [], true),
+            'text/xml'
+        )
+    ],
     // Serve `md` content representations when `Accept: text/markdown` is requested
     [
         'pattern'  => '(:all)',
@@ -64,7 +73,7 @@ return [
 
             // Set appropriate content type
             $contentType = match ($type) {
-                'rss' => 'application/rss+xml',
+                'rss' => 'application/xml',
                 'json' => 'application/json',
             };
 
