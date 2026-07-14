@@ -789,22 +789,22 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.14.0",
+            "version": "7.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "aef242412e13128b5049864867bb49fc37dd39de"
+                "reference": "fa88c57803501ad0770f5cddb1e60525d49da9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/aef242412e13128b5049864867bb49fc37dd39de",
-                "reference": "aef242412e13128b5049864867bb49fc37dd39de",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/fa88c57803501ad0770f5cddb1e60525d49da9a1",
+                "reference": "fa88c57803501ad0770f5cddb1e60525d49da9a1",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^2.5.1",
-                "guzzlehttp/psr7": "^2.12.4",
+                "guzzlehttp/psr7": "^2.12.5",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.0",
@@ -897,7 +897,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.14.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.14.2"
             },
             "funding": [
                 {
@@ -913,7 +913,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T22:54:09+00:00"
+            "time": "2026-07-14T18:15:01+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1001,16 +1001,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.12.4",
+            "version": "2.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c"
+                "reference": "9365d578a9fd1552ad6ca9c3cb530708526feb09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c",
-                "reference": "51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9365d578a9fd1552ad6ca9c3cb530708526feb09",
+                "reference": "9365d578a9fd1552ad6ca9c3cb530708526feb09",
                 "shasum": ""
             },
             "require": {
@@ -1100,7 +1100,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.12.4"
+                "source": "https://github.com/guzzle/psr7/tree/2.12.5"
             },
             "funding": [
                 {
@@ -1116,7 +1116,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T15:56:20+00:00"
+            "time": "2026-07-13T01:27:20+00:00"
         },
         {
             "name": "johannschopplich/kirby-content-translator",
@@ -1372,23 +1372,23 @@
         },
         {
             "name": "johannschopplich/kirby-serp-preview",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-serp-preview.git",
-                "reference": "d6c28579aaccddcfda1046feb5a2c5d3de137e66"
+                "reference": "4d1d11e5a40cabee9681b3d4d7164be652bf20f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-serp-preview/zipball/d6c28579aaccddcfda1046feb5a2c5d3de137e66",
-                "reference": "d6c28579aaccddcfda1046feb5a2c5d3de137e66",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-serp-preview/zipball/4d1d11e5a40cabee9681b3d4d7164be652bf20f7",
+                "reference": "4d1d11e5a40cabee9681b3d4d7164be652bf20f7",
                 "shasum": ""
             },
             "require": {
                 "getkirby/composer-installer": "^1"
             },
             "require-dev": {
-                "getkirby/cms": "^4 || ^5"
+                "getkirby/cms": "^5"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -1420,7 +1420,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-serp-preview/issues",
-                "source": "https://github.com/johannschopplich/kirby-serp-preview/tree/v1.3.1"
+                "source": "https://github.com/johannschopplich/kirby-serp-preview/tree/v1.4.0"
             },
             "funding": [
                 {
@@ -1428,7 +1428,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-05-19T12:33:34+00:00"
+            "time": "2026-07-14T21:03:17+00:00"
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
