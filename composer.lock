@@ -1372,16 +1372,16 @@
         },
         {
             "name": "johannschopplich/kirby-serp-preview",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johannschopplich/kirby-serp-preview.git",
-                "reference": "4d1d11e5a40cabee9681b3d4d7164be652bf20f7"
+                "reference": "7c806711d3a3163997ddf4b12cd8e75306383d8d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johannschopplich/kirby-serp-preview/zipball/4d1d11e5a40cabee9681b3d4d7164be652bf20f7",
-                "reference": "4d1d11e5a40cabee9681b3d4d7164be652bf20f7",
+                "url": "https://api.github.com/repos/johannschopplich/kirby-serp-preview/zipball/7c806711d3a3163997ddf4b12cd8e75306383d8d",
+                "reference": "7c806711d3a3163997ddf4b12cd8e75306383d8d",
                 "shasum": ""
             },
             "require": {
@@ -1420,7 +1420,7 @@
             ],
             "support": {
                 "issues": "https://github.com/johannschopplich/kirby-serp-preview/issues",
-                "source": "https://github.com/johannschopplich/kirby-serp-preview/tree/v1.4.0"
+                "source": "https://github.com/johannschopplich/kirby-serp-preview/tree/v1.4.1"
             },
             "funding": [
                 {
@@ -1428,7 +1428,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-07-14T21:03:17+00:00"
+            "time": "2026-07-14T21:26:36+00:00"
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
