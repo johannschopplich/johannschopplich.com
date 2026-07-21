@@ -52,9 +52,6 @@ importers:
       alpinejs:
         specifier: ^3.15.12
         version: 3.15.12
-      consola:
-        specifier: ^3.4.2
-        version: 3.4.2
       culori:
         specifier: ^4.0.2
         version: 4.0.2
@@ -73,6 +70,9 @@ importers:
       eslint:
         specifier: ^10.6.0
         version: 10.6.0(jiti@2.7.0)
+      kirbyferry:
+        specifier: ^0.2.0
+        version: 0.2.0
       mprocs:
         specifier: ^0.9.6
         version: 0.9.6
@@ -1101,6 +1101,9 @@ packages:
     resolution: {integrity: sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg==}
     engines: {node: '>=8'}
 
+  citty@0.2.2:
+    resolution: {integrity: sha512-+6vJA3L98yv+IdfKGZHBNiGW5KHn22e/JwID0Strsz8h4S/csAu/OuICwxrg44k5MRiZHWIo8XXuJgQTriRP4w==}
+
   colorette@2.0.20:
     resolution: {integrity: sha512-IfEDxwoWIjkeXL1eXcDiow4UbKjhLdq6/EuSVR9GMN7KVH3r9gQ83e73hsz1Nd1T3ijd5xv1wcWRYO+D6kCI2w==}
 
@@ -1596,6 +1599,11 @@ packages:
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
+
+  kirbyferry@0.2.0:
+    resolution: {integrity: sha512-XQg78t1yz1+FxLaDd7yJ/oFBOpsIKmOBykGQaf3K9BqxKJFvvgqjgQ0kw4JiTWhx4sBnK/xC5Ho09Ry2sNMkXw==}
+    engines: {node: '>=22'}
+    hasBin: true
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -3203,6 +3211,8 @@ snapshots:
 
   ci-info@4.4.0: {}
 
+  citty@0.2.2: {}
+
   colorette@2.0.20: {}
 
   commander@8.3.0: {}
@@ -3717,6 +3727,11 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  kirbyferry@0.2.0:
+    dependencies:
+      ansis: 4.3.1
+      citty: 0.2.2
 
   levn@0.4.1:
     dependencies:
