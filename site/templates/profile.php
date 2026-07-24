@@ -97,7 +97,7 @@
               </div>
 
               <?php if ($entry->description()->toBlocks()->isNotEmpty()): ?>
-                <div class="prose mt-sm text-sm dark:text-contrast-medium">
+                <div class="prose mt-sm text-sm">
                   <?php foreach ($entry->description()->toBlocks() as $block): ?>
                     <?= $block ?>
                   <?php endforeach ?>
