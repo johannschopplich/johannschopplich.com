@@ -7,7 +7,7 @@
 
 <?php snippet('layouts/default', slots: true) ?>
 <div class="relative px-lg pt-5xl max-w-screen-lg md:px-gutter md:pt-8xl">
-  <div class="prose" style="--un-decoration-color: transparent">
+  <div class="prose" style="--un-decoration-color: transparent; --un-prose-links: var(--un-color-link);">
     <?php foreach ($page->text()->toBlocks() as $block): ?>
       <?php /** @var \Kirby\Cms\Block $block */ ?>
       <?php if ($block->type() === 'heading' && $block->content()->level()->value() === 'h1'): ?>
