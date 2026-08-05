@@ -35,7 +35,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     let playBtnEl = this.querySelector<HTMLButtonElement>(".lty-playbtn")!;
 
-    // A label for the button takes priority over a [playlabel] attribute on the custom-element
+    // A label for the button takes priority over a `playlabel` attribute on the custom element.
     this.playLabel =
       playBtnEl?.textContent?.trim() ||
       this.getAttribute("playlabel") ||
@@ -64,12 +64,12 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     this.addNoscriptIframe();
 
-    // Progressive-enhancement: an <a> child becomes the play button
+    // Progressive-enhancement: an `<a>` child becomes the play button.
     if (playBtnEl.nodeName === "A") {
       playBtnEl.removeAttribute("href");
       playBtnEl.setAttribute("tabindex", "0");
       playBtnEl.setAttribute("role", "button");
-      // Anchor-as-button needs keyboard activation
+      // Anchor-as-button needs keyboard activation.
       playBtnEl.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
@@ -78,7 +78,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
       });
     }
 
-    // Warm TCP connections to YouTube origins on first interaction
+    // Warm TCP connections to YouTube origins on first interaction.
     this.addEventListener("pointerover", LiteYouTubeEmbed.warmConnections, {
       once: true,
     });
@@ -112,12 +112,12 @@ export class LiteYouTubeEmbed extends HTMLElement {
   static warmConnections() {
     if (LiteYouTubeEmbed.isPreconnected) return;
 
-    // The iframe document and most of its subresources come right off youtube.com
+    // The iframe document and most of its subresources come right off youtube.com.
     LiteYouTubeEmbed.addPrefetch(
       "preconnect",
       "https://www.youtube-nocookie.com",
     );
-    // The botguard script is fetched off from google.com
+    // The botguard script is fetched off from google.com.
     LiteYouTubeEmbed.addPrefetch("preconnect", "https://www.google.com");
 
     LiteYouTubeEmbed.addPrefetch(
@@ -193,7 +193,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     const iframeEl = this.createBasicIframe();
     this.append(iframeEl);
 
-    // Set focus for a11y
+    // Set focus for a11y.
     iframeEl.focus();
   }
 
@@ -206,7 +206,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     iframeEl.allow =
       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
     iframeEl.allowFullscreen = true;
-    // Required by YouTube to fix Error 153
+    // Required by YouTube to fix Error 153.
     iframeEl.referrerPolicy = "strict-origin-when-cross-origin";
     // videoId is encoded defensively as a URL component; not strictly required for XSS.
     // https://stackoverflow.com/q/64959723/89484

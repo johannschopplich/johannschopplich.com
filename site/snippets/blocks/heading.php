@@ -11,7 +11,6 @@ $id = Str::slug(Str::unhtml($block->text()));
 $model = $block->parent();
 $text = $block->text();
 
-// Render anchor links only for allowed templates
 $anchorsInTemplates = ['article', 'project', 'photography'];
 if (in_array($model?->intendedTemplate()?->name(), $anchorsInTemplates, true)) {
   $text = Html::tag('a', [$text], ['href' => "#{$id}"]);

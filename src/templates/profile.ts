@@ -79,13 +79,12 @@ export default function () {
       const width = Math.round(rect.width);
       const height = Math.round(rect.height);
 
-      // Set proper SVG attributes for export
+      // Set proper SVG attributes for export.
       clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
       clone.setAttribute("viewBox", `0 0 ${width} ${height}`);
       clone.setAttribute("width", String(width));
       clone.setAttribute("height", String(height));
 
-      // Remove unnecessary attributes
       clone.removeAttribute("id");
       clone.removeAttribute("class");
 

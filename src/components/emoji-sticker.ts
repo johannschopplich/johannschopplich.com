@@ -54,12 +54,10 @@ export class EmojiSticker extends HTMLElement {
 
     this.shadowRoot!.append(filterSvg, span);
 
-    // Attach the light element for easy access
     this.#lightElement =
       this.shadowRoot!.querySelector<SVGFEPointLightElement>("fePointLight") ??
       undefined;
 
-    // Listen for mouse movement to update the light position
     window.addEventListener("mousemove", this.queueMouseMove);
   }
 

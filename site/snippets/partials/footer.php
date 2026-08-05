@@ -8,7 +8,7 @@ $complementaryLanguage = $kirby
   ->first();
 ?>
 <footer class="sticky top-100vh">
-  <div class="px-lg pt-8xl pb-3xl bg-contrast-lowest border-y border-contrast-low md:px-gutter <?php /* xl:max-w-[calc(64rem+2*var(--un-content-gutter))] xl:border-r */ ?>">
+  <div class="px-lg pt-8xl pb-3xl bg-contrast-lowest border-y border-contrast-low md:px-gutter">
     <div class="max-w-screen-lg">
       <div class="mb-8xl">
         <h3 class="title mb-3xl text-2xl">

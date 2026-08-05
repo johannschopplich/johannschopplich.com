@@ -103,11 +103,11 @@ table-saw.${this._identifier} {
   addHeaders() {
     const headerCells = this.querySelectorAll<HTMLTableCellElement>("thead th");
     const labels = Array.from(headerCells).map((cell, index) => {
-      // Set headers to be bold (if headers are bold)
+      // Mirror the first header cell's weight onto the stacked-view labels.
       if (index === 0) {
         const styles = getComputedStyle(cell);
         if (styles) {
-          // Copy other styles?
+          // TODO: Copy the remaining header cell styles, not just the weight.
           const bold = styles.getPropertyValue("font-weight");
           this.setBold(bold);
         }
@@ -131,7 +131,7 @@ table-saw.${this._identifier} {
 
       let nodeCount = 0;
       for (const n of cell.childNodes) {
-        // Text or element node
+        // Text or element node.
         if (n.nodeType === 3 || n.nodeType === 1) {
           nodeCount++;
         }

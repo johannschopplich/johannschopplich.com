@@ -14,7 +14,7 @@ return [
             'text/xml'
         )
     ],
-    // Serve `md` content representations when `Accept: text/markdown` is requested
+    // Serve `md` content representations when `Accept: text/markdown` is requested.
     [
         'pattern'  => '(:all)',
         'language' => '*',
@@ -66,12 +66,10 @@ return [
                         'items' => $items
                     ];
 
-                    // Generate feed content
                     return trim(snippet("feed/{$type}", $data, true));
                 }
             );
 
-            // Set appropriate content type
             $contentType = match ($type) {
                 'rss' => 'application/xml',
                 'json' => 'application/json',

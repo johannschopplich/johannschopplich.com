@@ -4,7 +4,6 @@ use Kirby\Http\Url;
 
 /** @var \Kirby\Cms\Block $block */
 
-// Extract the YouTube video ID from the URL
 $videoIdPattern =
   '%^# Match any youtube URL
     (?:https?://)?  # Optional scheme. Either http or https
@@ -31,7 +30,7 @@ $bgImage = $image?->thumb([
   'quality' => 70
 ])->url();
 
-// Feed readers don't know the <lite-youtube> element – link a thumbnail instead
+// Feed readers don't know the `<lite-youtube>` element – link a thumbnail instead.
 $isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 
 ?>

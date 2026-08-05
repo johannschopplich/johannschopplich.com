@@ -20,7 +20,7 @@ $converter = new HtmlConverter([
 $html = $blocks->toHtml();
 $markdown = $converter->convert($html);
 
-// Clean up excessive newlines
+// Clean up excessive newlines.
 $markdown = preg_replace('/\n{3,}/', "\n\n", $markdown);
 
 echo trim($markdown);

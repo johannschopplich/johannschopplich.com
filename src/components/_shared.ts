@@ -2,7 +2,7 @@ export const SUPPORTS_CONSTRUCTABLE_STYLESHEETS =
   "replaceSync" in CSSStyleSheet.prototype;
 
 /**
- * Apply CSS to a shadow root using constructable stylesheets when available
+ * Applies CSS to a shadow root, using constructable stylesheets when available.
  */
 export function adoptStyles(
   shadowRoot: ShadowRoot,
@@ -18,7 +18,6 @@ export function adoptStyles(
     return sharedSheet;
   }
 
-  // Create new stylesheet
   if (SUPPORTS_CONSTRUCTABLE_STYLESHEETS) {
     const sheet = new CSSStyleSheet();
     sheet.replaceSync(css);

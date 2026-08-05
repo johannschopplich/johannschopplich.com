@@ -53,7 +53,7 @@ export default defineConfig(({ mode }) => {
 });
 
 /**
- * Prevent FOUC in development mode before Vite injects the CSS into the page
+ * Prevents FOUC in development mode before Vite injects the CSS into the page.
  */
 function exportDevStyles(): PostCSSPlugin {
   return {

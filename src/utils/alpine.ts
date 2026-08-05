@@ -2,7 +2,7 @@ import Alpine from "alpinejs";
 
 let startScheduled = false;
 
-// Expose for DevTools debugging
+// Expose for DevTools debugging.
 window.Alpine = Alpine;
 
 /**

@@ -1,6 +1,3 @@
-/**
- * Triggers a download of a blob or file in the browser
- */
 export function downloadFile(
   data: Blob | string,
   filename: string,

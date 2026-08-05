@@ -15,7 +15,7 @@ if ($caption->isEmpty()) {
   $caption = $image->caption()->permalinksToUrls();
 }
 
-// Feed readers strip background images – show the pattern as a plain image there
+// Feed readers strip background images – show the pattern as a plain image there.
 $isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 
 ?>

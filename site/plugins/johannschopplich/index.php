@@ -125,7 +125,7 @@ App::plugin('johannschopplich/website', [
 
 if (!function_exists('icon')) {
     /**
-     * Returns an SVG icon from the `assets/icons` directory
+     * Returns an SVG icon from the `assets/icons` directory.
      */
     function icon(string $symbol, string|null $class = null): string|null
     {
@@ -169,7 +169,7 @@ if (!function_exists('dateFormatter')) {
 
 if (!function_exists('renderMarkdown')) {
     /**
-     * Builds clean Markdown output for LLM consumption by joining non-empty parts
+     * Builds clean Markdown output for LLM consumption by joining non-empty parts.
      */
     function renderMarkdown(string|null ...$parts): string
     {

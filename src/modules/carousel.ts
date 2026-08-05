@@ -42,7 +42,7 @@ function setupCarousel(node: HTMLElement) {
   });
 
   // Note: Carousel images must NOT use native `loading="lazy"` to prevent:
-  // alt text flash → layout shift → Embla `reinit` → scroll interruption
+  // alt text flash → layout shift → Embla `reinit` → scroll interruption.
   emblaApi.on("slidesinview", (api, event) => {
     const slides = api.slideNodes();
 

@@ -23,7 +23,7 @@ if ($block->location() === 'web') {
   }
 
   $img = Html::img(
-    // Disable blurry images images for feeds
+    // Disable blurry images for feeds.
     $isFeed ? $image->resize(1024)->url() : $image->thumbhashUri(),
     [
       'loading' => 'lazy',

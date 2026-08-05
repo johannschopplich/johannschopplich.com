@@ -8,9 +8,6 @@ export const breakpoints = {
 
 export type Breakpoint = keyof typeof breakpoints;
 
-/**
- * Indicates if the viewport is above the given breakpoint
- */
 export function isAbove(breakpoint: Breakpoint): boolean {
   if (!(breakpoint in breakpoints)) {
     throw new Error(`Unknown breakpoint "${breakpoint}"`);
@@ -19,9 +16,6 @@ export function isAbove(breakpoint: Breakpoint): boolean {
   return matchMedia(`(min-width: ${breakpoints[breakpoint]})`).matches;
 }
 
-/**
- * Indicates if the viewport is below the given breakpoint
- */
 export function isBelow(breakpoint: Breakpoint): boolean {
   return !isAbove(breakpoint);
 }

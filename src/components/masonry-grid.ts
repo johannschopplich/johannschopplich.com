@@ -46,11 +46,12 @@ export class MasonryGrid extends HTMLElement {
   }
 
   /**
-   * LPT (Longest Processing Time) bin packing: sort items by descending
-   * height, then greedily assign each to the shortest column. This is
-   * mathematically proven to produce the best greedy approximation for
-   * multi-way number partitioning and ensures tall items (e.g. portrait
-   * images) are spread evenly across columns before shorter items fill gaps.
+   * Packs items into columns by LPT (Longest Processing Time) bin packing:
+   * sorts them by descending height, then greedily assigns each to the
+   * shortest column. This is mathematically proven to produce the best
+   * greedy approximation for multi-way number partitioning and ensures tall
+   * items (e.g. portrait images) are spread evenly across columns before
+   * shorter items fill gaps.
    *
    * Within each column, items are re-sorted by their original DOM index to
    * preserve the intended visual ordering.
@@ -61,7 +62,6 @@ export class MasonryGrid extends HTMLElement {
       return;
     }
 
-    // Build index-height pairs and sort by height descending (LPT)
     const indexedItems = items.map((item, i) => ({
       index: i,
       height:
@@ -69,7 +69,6 @@ export class MasonryGrid extends HTMLElement {
     }));
     indexedItems.sort((a, b) => b.height - a.height);
 
-    // Greedy assignment on sorted items: place each in the shortest column
     const columnHeights = Array.from<number>({ length: columns }).fill(0);
     const columnItems: number[][] = Array.from({ length: columns }, () => []);
 
@@ -79,12 +78,12 @@ export class MasonryGrid extends HTMLElement {
       columnHeights[minCol]! += height + this.#gap;
     }
 
-    // Preserve relative DOM order within each column
+    // Preserve relative DOM order within each column.
     for (const column of columnItems) {
       column.sort((a, b) => a - b);
     }
 
-    // Build new order: row by row across columns
+    // Build new order: row by row across columns.
     const maxRows = Math.max(...columnItems.map((c) => c.length));
     const newOrder: number[] = [];
 
@@ -97,7 +96,6 @@ export class MasonryGrid extends HTMLElement {
       }
     }
 
-    // Apply CSS order property
     for (let position = 0; position < newOrder.length; position++) {
       const itemIndex = newOrder[position];
       if (itemIndex !== undefined) {
@@ -134,7 +132,7 @@ export class MasonryGrid extends HTMLElement {
       this.#balanceColumns(items, columns);
     }
 
-    // Use nested rAF to ensure margin reset is applied before recalculating
+    // Use nested rAF to ensure margin reset is applied before recalculating.
     requestAnimationFrame(() => {
       for (const item of items) {
         item.style.removeProperty("margin-top");
@@ -158,7 +156,7 @@ export class MasonryGrid extends HTMLElement {
       return orderA - orderB;
     });
 
-    // Skip the first row of items
+    // Skip the first row of items.
     for (const [index, item] of sortedItems.slice(columns).entries()) {
       const itemAbove = sortedItems[index];
       if (!itemAbove) continue;

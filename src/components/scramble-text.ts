@@ -82,7 +82,7 @@ const DEFAULTS: Required<ScrambleOptions> = {
   settleDuration: 250,
   chars: "abcdefghijklmnopqrstuvwxyz0123456789",
   ignore: "",
-  // Quadratic ease-in-out
+  // Quadratic ease-in-out.
   ease: (t: number) => (t < 0.5 ? 2 * t * t : 1 - 2 * (1 - t) * (1 - t)),
   refreshRate: 30,
 };
@@ -237,12 +237,12 @@ export function setup(options: SetupOptions = {}) {
       .load()
       .then((loaded) => document.fonts.add(loaded))
       .catch(() => {
-        // Best-effort – cells fall back to the inherited font's own glyphs
+        // Best-effort – cells fall back to the inherited font's own glyphs.
       });
   }
 }
 
-// --- Option resolution ---
+// #region Option resolution
 
 function resolveOptions(
   el: HTMLElement,
@@ -281,7 +281,9 @@ function parseFiniteNumber(value: string | null, fallback: number): number {
   return Number.isFinite(parsed) ? parsed : fallback;
 }
 
-// --- DOM construction ---
+// #endregion
+
+// #region DOM construction
 
 function buildWordTree(text: string): {
   fragment: DocumentFragment;
@@ -347,7 +349,9 @@ function unmountOverlays(wordRoots: WordRoot[]) {
   }
 }
 
-// --- Wave timing ---
+// #endregion
+
+// #region Wave timing
 
 function buildWaveContext(
   options: Required<ScrambleOptions>,
@@ -415,7 +419,9 @@ function buildWaveOrder(count: number, origin: ScrambleOrigin): Int32Array {
   return order;
 }
 
-// --- Frame rendering ---
+// #endregion
+
+// #region Frame rendering
 
 function renderPlan(
   plan: AnimationPlan,
@@ -460,11 +466,13 @@ function renderPlan(
   }
 }
 
-// --- Cursor scale (one-time global probe) ---
+// #endregion
+
+// #region Cursor scale (one-time global probe)
 
 const CURSOR_SCALE_DECIMALS = 4;
 
-// Below this, the cursor block already reads at letter height
+// Below this, the cursor block already reads at letter height.
 const CURSOR_SCALE_THRESHOLD = 0.02;
 
 let isCursorScaleProbed = false;
@@ -478,7 +486,7 @@ async function ensureCursorScale(referenceEl: HTMLElement): Promise<void> {
     try {
       await document.fonts.ready;
     } catch {
-      // Best-effort – probe with whatever's available
+      // Best-effort – probe with whatever's available.
     }
 
     const scale = computeCursorScale(
@@ -521,7 +529,9 @@ function buildFontShorthand(style: CSSStyleDeclaration): string {
   return `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
 }
 
-// --- Style injection ---
+// #endregion
+
+// #region Style injection
 
 let hasInjectedStyles = false;
 function injectStylesOnce() {
@@ -538,3 +548,5 @@ function injectStylesOnce() {
     document.head.append(style);
   }
 }
+
+// #endregion

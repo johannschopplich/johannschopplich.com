@@ -56,13 +56,13 @@ export function install() {
     activeImage = image;
     overlay.ariaLabel = image.alt || "Zoomed image";
 
-    // Start with cached source to avoid flicker
+    // Start with cached source to avoid flicker.
     zoomedImg.removeAttribute("srcset");
     zoomedImg.removeAttribute("sizes");
     zoomedImg.src = image.currentSrc || image.src;
     zoomedImg.alt = image.alt;
 
-    // Pre-compute fitted size for a stable view-transition snapshot
+    // Pre-compute fitted size for a stable view-transition snapshot.
     const rem = Number.parseFloat(
       getComputedStyle(document.documentElement).fontSize,
     );
@@ -82,16 +82,16 @@ export function install() {
     await transition(() => {
       overlay.hidden = false;
       overlay.dataset.state = "open";
-      // Hand transition name to zoomed image
+      // Hand transition name to zoomed image.
       image.style.viewTransitionName = "";
       zoomedImg.style.viewTransitionName = "zoom-image";
     });
 
-    // Guard against concurrent close (e.g. Escape pressed during transition)
+    // Guard against concurrent close (e.g. Escape pressed during transition).
     if (!activeImage) return;
 
     overlay.focus();
-    // Upgrade to full-resolution srcset
+    // Upgrade to full-resolution srcset.
     const srcset = image.dataset.srcset || image.srcset;
     if (srcset) {
       zoomedImg.srcset = srcset;
@@ -108,11 +108,11 @@ export function install() {
     activeImage = null;
     window.removeEventListener("scroll", onScroll);
 
-    // Downgrade to cached source for clean transition
+    // Downgrade to cached source for clean transition.
     zoomedImg.removeAttribute("srcset");
     zoomedImg.removeAttribute("sizes");
 
-    // Start overlay fade immediately, run morph in parallel
+    // Start overlay fade immediately, run morph in parallel.
     overlay.dataset.state = "closing";
 
     if (animate) {

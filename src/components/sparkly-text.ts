@@ -125,7 +125,7 @@ svg path {
   };
 
   handlePageShow = (event: PageTransitionEvent) => {
-    // If the page is being loaded from the bfcache
+    // If the page is being loaded from the bfcache.
     if (event.persisted && !prefersReducedMotion.matches) {
       this.cleanupSparkles();
       this.addSparkles();
@@ -133,12 +133,11 @@ svg path {
   };
 
   cleanupSparkles() {
-    // Remove all existing sparkle SVGs
     const sparkles = this.shadowRoot!.querySelectorAll("svg");
     sparkles.forEach((sparkle) => sparkle.remove());
   }
 
-  // Declare as an arrow function to get the appropriate `this`
+  // Declare as an arrow function to get the appropriate `this`.
   handleMotionPreferenceChange = () => {
     if (!prefersReducedMotion.matches) {
       this.addSparkles();
@@ -169,7 +168,6 @@ svg path {
 
     const sparkleWrapper = sparkleTemplate.cloneNode(true) as HTMLElement;
 
-    // Add rainbow class if `--sparkly-text-color` is set to `rainbow`
     const styles = getComputedStyle(this);
     if (styles.getPropertyValue("--sparkly-text-color").trim() === "rainbow") {
       sparkleWrapper.classList.add("rainbow");

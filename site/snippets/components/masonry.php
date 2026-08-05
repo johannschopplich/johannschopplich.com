@@ -6,7 +6,7 @@ use Kirby\Http\Url;
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $width */
 
-// Disable blurry images for feeds
+// Disable blurry images for feeds.
 $isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 
 ?>
