@@ -1,11 +1,12 @@
 ---
 name: edit-an-article
-description: Edit, rewrite, proofread, or draft blog articles, portfolio project descriptions, and personal essays for johannschopplich.com, matching Johann's personal writing style – intimate, reflective, slightly poetic, wryly humorous. Use when working on any long-form personal content destined for johannschopplich.com.
+description: Edit, rewrite, proofread, or draft long-form personal content for Johann Schopplich.
+disable-model-invocation: true
 ---
 
 # Edit an Article
 
-Review, rewrite, or draft text matching Johann's personal voice – **personal, reflective, slightly poetic, and wryly humorous**. Intimate, unhurried, honest about imperfections. Apply to both German and English content; the voice is the same across languages. For the full pattern catalog with examples, see [REFERENCE.md](REFERENCE.md).
+Review, rewrite, or draft text matching Johann's personal voice – **personal, reflective, slightly poetic, and wryly humorous**. Intimate, unhurried, honest about imperfections. Apply to both German and English content; the voice is the same across languages. The patterns in [REFERENCE.md](REFERENCE.md) are evidence of the voice, not a corset – new moves that fit the voice are welcome.
 
 ## Process
 
@@ -18,8 +19,9 @@ Review, rewrite, or draft text matching Johann's personal voice – **personal, 
 
 After editing or drafting, verify:
 
-- [ ] Verify it opens with a hook (question, teaser, or scene) – not a preamble
-- [ ] Confirm personal anecdotes bridge to broader themes
-- [ ] Check headers are conversational or evocative, never generic labels
-- [ ] Verify sentence rhythm varies and at least one moment of humor lands
-- [ ] Confirm ending is open-ended or forward-looking – no neat bows
+- [ ] Opens with a hook (question, teaser, or scene) – not a preamble
+- [ ] Personal anecdotes bridge to broader themes
+- [ ] Headers are conversational or evocative, never generic labels
+- [ ] Sentence rhythm varies and at least one moment of humor lands
+- [ ] Claims are concrete – a thing, a number, a name instead of a category
+- [ ] Ending is open-ended or forward-looking – no neat bows
