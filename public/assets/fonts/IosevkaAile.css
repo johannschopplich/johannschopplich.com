@@ -40,7 +40,7 @@
   font-weight: 600;
   font-stretch: normal;
   font-style: normal;
-  src: url("woff2/IosevkaAile-Semibold.woff2") format("woff2");
+  src: url("woff2/IosevkaAile-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -49,7 +49,7 @@
   font-weight: 600;
   font-stretch: normal;
   font-style: italic;
-  src: url("woff2/IosevkaAile-SemiboldItalic.woff2") format("woff2");
+  src: url("woff2/IosevkaAile-SemiBoldItalic.woff2") format("woff2");
 }
 
 @font-face {

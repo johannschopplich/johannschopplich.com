@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Iosevka Mono";
+  font-display: swap;
+  font-weight: 400;
+  font-stretch: normal;
+  font-style: normal;
+  src: url("woff2/IosevkaMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Iosevka Mono";
+  font-display: swap;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  src: url("woff2/IosevkaMono-Medium.woff2") format("woff2");
+}
