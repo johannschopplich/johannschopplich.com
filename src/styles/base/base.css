@@ -11,6 +11,7 @@
     --un-font-family-normal: "Iosevka Aile", monospace;
     --un-font-family-heading:
       "Cooper Hewitt", ui-sans-serif, system-ui, sans-serif;
+    --un-font-family-mono: "Iosevka Mono", monospace;
     --un-line-height-normal: 1.6;
     --un-line-height-heading: 1.25;
     --un-line-height-dense: calc(var(--un-line-height-normal) * 0.875);

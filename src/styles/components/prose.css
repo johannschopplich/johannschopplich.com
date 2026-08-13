@@ -1,6 +1,7 @@
 @layer components {
   .prose {
     --un-prose-code: var(--un-color-contrast-higher);
+    --un-prose-font-mono: var(--un-font-family-mono);
     --un-prose-hr: var(--un-color-border);
     --un-prose-bg-soft: var(--un-color-contrast-lowest);
     --un-prose-line-height: var(--un-line-height-normal);
@@ -9,10 +10,8 @@
     display: flow-root;
     counter-reset: figure;
 
-    & :where(p, ul, ol, pre):not(:where(.not-prose, .not-prose *)) {
-      @media (--below-sm) {
-        font-size: 0.875rem;
-      }
+    @media (--below-sm) {
+      font-size: 0.875rem;
     }
 
     & :where(h1):not(:where(.not-prose, .not-prose *)) {
