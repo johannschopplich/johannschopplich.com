@@ -1,5 +1,7 @@
 <?php
 
+use Kirby\Filesystem\F;
+
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
@@ -53,7 +55,7 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <script>
     <?= vite()->isDev()
-      ? asset('../src/inline/theme-init.js')->read()
+      ? F::read($kirby->root('base') . '/src/inline/theme-init.js')
       : asset('dist/inline/theme-init.js')->read() ?>
   </script>
 
