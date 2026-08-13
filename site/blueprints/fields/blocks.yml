@@ -21,6 +21,7 @@ fieldsets:
       - image
       - gallery
       - video
+      - tweet
   code:
     label: Code
     type: group

@@ -46,7 +46,8 @@ https://github.com/johannschopplich/johannschopplich.com
 
   <?= css([
     'assets/fonts/CooperHewitt.css',
-    'assets/fonts/IosevkaAile.css'
+    'assets/fonts/IosevkaAile.css',
+    'assets/fonts/IosevkaMono.css'
   ]) ?>
   <link rel="preload" href="/assets/fonts/woff2/CooperHewitt-Heavy.woff2" as="font" type="font/woff2" crossorigin>
 

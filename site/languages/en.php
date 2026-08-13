@@ -39,7 +39,10 @@ return [
         'carousel.label' => 'Image gallery',
         'carousel.roledescription' => 'carousel',
         'carousel.slide' => 'slide',
-        'video.play' => 'Play video'
+        'video.play' => 'Play video',
+        'tweet.retweets' => 'Retweets',
+        'tweet.likes' => 'Likes',
+        'tweet.viewOnX' => 'View on X'
     ]
 
 ];

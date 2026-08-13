@@ -1,0 +1,57 @@
+name: Tweet
+icon: website-x
+wysiwyg: true
+preview: fields
+fields:
+  url:
+    label:
+      de: Adresse
+      en: URL
+    type: url
+    icon: url
+    placeholder: https://x.com/user/status/<tweet_id>
+  text:
+    label: Text
+    type: writer
+    nodes: false
+    placeholder: field.blocks.text.placeholder
+  published:
+    label:
+      de: Veröffentlicht
+      en: Published
+    type: date
+    display: DD.MM.YYYY
+  retweets:
+    label: Retweets
+    type: number
+    min: 0
+    step: 1
+    width: 1/2
+  likes:
+    label: Likes
+    type: number
+    min: 0
+    step: 1
+    width: 1/2
+  author:
+    label:
+      de: Verfasser
+      en: Author
+    type: text
+    icon: user
+    help:
+      de: Nur nötig, wenn der Anzeigename vom Handle abweichen soll.
+      en: Only needed when the display name should differ from the handle.
+  image:
+    label: field.blocks.image.name
+    type: files
+    multiple: false
+    image:
+      back: black
+    uploads:
+      template: image
+  caption:
+    label: field.blocks.image.caption
+    type: writer
+    icon: text
+    inline: true
