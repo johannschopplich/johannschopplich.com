@@ -4,7 +4,6 @@ use Kirby\Http\Url;
 
 /** @var \Kirby\Cms\Block $block */
 
-$ownHandle = 'jschopplich';
 $ownName = 'Johann Schopplich';
 
 $url = $block->url()->value();
@@ -16,9 +15,11 @@ $handle = preg_match('%^https?://(?:www\.)?(?:x|twitter)\.com/([\w]{1,15})/statu
   ? $matches[1]
   : null;
 
-$isOwn = $handle === null || strtolower($handle) === $ownHandle;
-$author = $block->author()->or($isOwn ? $ownName : $handle)->value();
-$avatar = $isOwn ? page('linktree')?->files()->find('profile-image.png') : null;
+$isExternal = $block->external()->toBool();
+$author = $block->author()->or($isExternal ? $handle : $ownName)->value();
+$avatar = $isExternal
+  ? $block->avatar()->toFile()
+  : page('linktree')?->files()->find('profile-image.png');
 
 $text = $block->text()->permalinksToUrls();
 $caption = $block->caption();

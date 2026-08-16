@@ -32,7 +32,7 @@ if ($block->location() === 'web') {
       'width' => $image->width(),
       'height' => $image->height(),
       'style' => 'aspect-ratio: ' . $image->width() . '/' . $image->height(),
-      'alt' => $alt->isNotEmpty() ? $alt->escape() : null
+      'alt' => $alt->escape()
     ]
   );
 } else {

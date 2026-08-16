@@ -33,15 +33,37 @@ fields:
     min: 0
     step: 1
     width: 1/2
+  external:
+    label:
+      de: Verfasst von
+      en: Written by
+    type: toggle
+    default: false
+    text:
+      - de: Mir
+        en: Me
+      - de: Jemand anderem
+        en: Someone else
   author:
     label:
-      de: Verfasser
-      en: Author
+      de: Anzeigename
+      en: Display name
     type: text
     icon: user
-    help:
-      de: Nur nötig, wenn der Anzeigename vom Handle abweichen soll.
-      en: Only needed when the display name should differ from the handle.
+    width: 1/2
+    when:
+      external: true
+  avatar:
+    label:
+      de: Profilbild
+      en: Avatar
+    type: files
+    multiple: false
+    uploads:
+      template: image
+    width: 1/2
+    when:
+      external: true
   image:
     label: field.blocks.image.name
     type: files
