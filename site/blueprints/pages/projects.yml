@@ -75,5 +75,6 @@ tabs:
             fields:
               thumbnail:
                 query: page.children.files.template("image")
+                uploads: false
 
   images: tabs/images
