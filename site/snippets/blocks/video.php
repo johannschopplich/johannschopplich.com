@@ -34,7 +34,7 @@ $bgImage = $image?->thumb([
 $isFeed = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 
 ?>
-<figure class="is-outset">
+<figure <?= attr(['class' => $block->properties()]) ?>>
   <?php if ($isFeed): ?>
     <a href="https://www.youtube.com/watch?v=<?= $id ?>">
       <img <?= attr([

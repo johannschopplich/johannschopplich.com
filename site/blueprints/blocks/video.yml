@@ -29,3 +29,15 @@ fields:
     uploads:
       template: image
     multiple: false
+  properties:
+    label:
+      de: Darstellung
+      en: Presentation
+    type: toggles
+    grow: false
+    options:
+      - value: is-outset
+        text:
+          de: Hervorgehoben
+          en: Outset
+        icon: grid-bottom
