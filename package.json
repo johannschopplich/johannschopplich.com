@@ -10,9 +10,7 @@
     "lint:fix": "eslint . --fix",
     "test:types": "tsc --noEmit",
     "format": "prettier \"**/*.{css,html,json,md,mjs,ts,yml}\" --write",
-    "format:check": "prettier \"**/*.{css,html,json,md,mjs,ts,yml}\" --check",
-    "content:extract": "kirbyferry extract",
-    "content:inject": "kirbyferry inject"
+    "format:check": "prettier \"**/*.{css,html,json,md,mjs,ts,yml}\" --check"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",
