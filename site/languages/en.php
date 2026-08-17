@@ -22,7 +22,6 @@ return [
         'articles.more' => 'All Articles',
         'articles.popular' => 'Articles Which Are Important to Me',
         'article.publishedAt' => '',
-        'projects.title' => 'Projects of the Heart',
         'projects.more' => 'More About the Project',
         'project.allWorks' => 'All Works',
         'photography' => 'Photographs',
