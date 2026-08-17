@@ -1,32 +1,31 @@
+set -e
+
 cd {SITE_DIRECTORY}
 
-# Create .env file if it doesn't exist
+# Deploys are non-interactive: no purge prompt, no update notifier
+export CI=true
+
 if [ ! -f .env ] && [ -f .env.production.example ]; then
   cp .env.production.example .env
 fi
 
+# Discard build artifacts written on the server
+git reset --hard
 git pull origin main
 
-# Install Composer dependencies
-composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+composer install --no-interaction --prefer-dist --optimize-autoloader
 
 {RELOAD_PHP_FPM}
 
-# Ensure NVM is loaded
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Enable Corepack and install pnpm
 corepack enable
+corepack install
 
-# Install dependencies and build the project
-if [ -f package-lock.json ]; then
-  npm ci && npm run build
-elif [ -f pnpm-lock.yaml ]; then
-  pnpm i && pnpm run build
-fi
+pnpm install --frozen-lockfile
+pnpm run build
 
-# Clean Kirby cache
 rm -rf storage/cache/{SITE_DOMAIN}
 
 echo "🚀 Application deployed!"
