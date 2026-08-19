@@ -84,7 +84,9 @@ return [
             'enabled' => true,
             'exclude' => [
                 'templates' => [
-                    'linktree'
+                    'error',
+                    'linktree',
+                    'uploads'
                 ]
             ]
         ]
