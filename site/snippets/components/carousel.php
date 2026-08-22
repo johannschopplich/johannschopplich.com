@@ -2,13 +2,12 @@
 
 use OzdemirBurak\Iris\Color\Hex;
 
-/** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 
-// Height the row aims for: a mockup cell takes it as a fixed height, an image
-// without one is sized by width and only capped by it. Cells stretch to the
-// tallest, so a short image gets matted. `home.php` reads it as `h-$cell-h`.
+// A mockup cell takes this as a fixed height, an image without one is only
+// capped by it. Cells stretch to the tallest, so a short image gets matted.
+// The name is a contract: `home.php` sizes its slotted card with `h-$cell-h`.
 $cellHeight = match ($height ?? null) {
   'tight' => '[--cell-h:25svh] md:[--cell-h:min(50vw,37.5svh)] 2xl:[--cell-h:25svh]',
   default => '[--cell-h:clamp(50svh,50vw,75svh)] md:[--cell-h:min(50vw,75svh)] 2xl:[--cell-h:min(50vw,50svh)]'
@@ -33,8 +32,8 @@ $cellHeight = match ($height ?? null) {
       $bgHex = $settings->bgColor()->value() ?: null;
 
       // A mockup-less image is sized by width, so below `md` it can end shorter
-      // than the row and the cell shows through above and below it. The thumbhash
-      // is already in `src`; a `bgColor` suppresses it instead of layering on top.
+      // than the row and the cell shows through above and below it. A `bgColor`
+      // has to suppress the thumbhash – a background image cannot sit under it.
       $backdrop = $mockup === 'none' && $bgHex === null ? $image->thumbhashUri() : null;
       ?>
       <div
