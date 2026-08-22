@@ -41,7 +41,7 @@ $cellHeight = match ($height ?? null) {
         <div
           class="overflow-hidden bg-$cell-bg <?= match ($mockup) {
             'document', 'mobile' => 'px-[4.5rem] py-xl h-$cell-h md:px-8xl md:py-5xl xl:px-[9rem]',
-            'desktop' => 'flex flex-col items-center justify-center p-lg h-$cell-h w-screen md:p-5xl md:w-auto',
+            'desktop' => 'flex flex-col items-center justify-center p-lg h-$cell-h md:p-5xl',
             default => 'flex items-center justify-center h-full'
           } ?>"
           style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>"
