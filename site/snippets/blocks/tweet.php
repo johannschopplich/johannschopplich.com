@@ -54,8 +54,8 @@ if ($isFeed): ?>
   </blockquote>
 <?php return; endif ?>
 
-<figure class="text-start shadow-none">
-  <div class="hyphenate p-lg text-base border-1 border-contrast-lower border-solid rounded-2xl [&>*:not(:last-child)]:mb-xs sm:p-xl">
+<figure class="is-inset text-start shadow-none">
+  <div class="hyphenate p-lg border-1 border-contrast-lower border-solid rounded-2xl [&>*:not(:last-child)]:mb-xs sm:p-xl">
     <div class="flex gap-xs items-center">
       <?php if ($avatar): ?>
         <img
@@ -74,7 +74,7 @@ if ($isFeed): ?>
             <div class="title truncate"><?= html($author) ?></div>
           <?php endif ?>
           <?php if ($handle): ?>
-            <a href="https://x.com/<?= $handle ?>" class="block truncate text-sm font-400 text-contrast-medium">
+            <a href="https://x.com/<?= $handle ?>" class="block truncate text-[0.875em] font-400 text-contrast-medium">
               @<?= $handle ?>
             </a>
           <?php endif ?>
@@ -104,14 +104,14 @@ if ($isFeed): ?>
 
     <?php if ($published->isNotEmpty()): ?>
       <footer>
-        <a href="<?= $url ?>" class="text-sm text-contrast-medium">
+        <a href="<?= $url ?>" class="text-[0.875em] text-contrast-medium">
           <?= $published->toDate(dateFormatter()) ?>
         </a>
       </footer>
     <?php endif ?>
 
     <?php if ($retweets !== null || $likes !== null): ?>
-      <div class="flex gap-lg pt-xs text-sm text-contrast-medium border-t-1 border-contrast-lower border-solid">
+      <div class="flex gap-lg pt-xs text-[0.875em] text-contrast-medium border-t-1 border-contrast-lower border-solid">
         <?php if ($retweets !== null): ?>
           <span><span class="font-600 text-contrast-higher"><?= $formatCount($retweets) ?></span> <?= t('tweet.retweets') ?></span>
         <?php endif ?>
