@@ -54,7 +54,7 @@ if ($isFeed): ?>
   </blockquote>
 <?php return; endif ?>
 
-<figure class="is-inset text-start shadow-none">
+<figure class="is-card text-start shadow-none">
   <div class="hyphenate p-lg border-1 border-contrast-lower border-solid rounded-2xl [&>*:not(:last-child)]:mb-xs sm:p-xl">
     <div class="flex gap-xs items-center">
       <?php if ($avatar): ?>

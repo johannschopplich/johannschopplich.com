@@ -1,7 +1,6 @@
 @layer components {
   .prose {
     --un-prose-code: var(--un-color-contrast-higher);
-    --un-prose-code-bg: var(--un-prose-bg-soft);
     --un-prose-font-mono: var(--un-font-family-mono);
     --un-prose-hr: var(--un-color-border);
     --un-prose-bg-soft: var(--un-color-contrast-lowest);
@@ -123,12 +122,10 @@
     }
 
     & :where(:not(pre) > code):not(:where(.not-prose, .not-prose *)) {
-      background-color: var(--un-prose-code-bg);
+      background-color: var(--un-prose-bg-soft);
     }
 
-    &
-      :where(h1, h2, h3, h4, h5, h6, a)
-      code:not(:where(.not-prose, .not-prose *)) {
+    & :where(a, h1, h2, h3, h4) code:not(:where(.not-prose, .not-prose *)) {
       background-color: transparent;
     }
 
@@ -153,8 +150,12 @@
       @media (--below-sm) {
         margin-inline: -1.125rem;
 
-        &.is-inset {
+        &.is-card {
           margin-inline: 0;
+
+          & figcaption {
+            margin-inline: 0;
+          }
         }
       }
 
@@ -212,10 +213,6 @@
 
       @media (--below-sm) {
         margin-inline: calc(1.125rem - 3px);
-
-        figure.is-inset > & {
-          margin-inline: 0;
-        }
       }
     }
 
