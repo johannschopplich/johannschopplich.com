@@ -31,6 +31,11 @@ $cellHeight = match ($height ?? null) {
       $mockup = $settings->mockup()->or('none')->value();
       $isDocument = $mockup === 'document';
       $bgHex = $settings->bgColor()->value() ?: null;
+
+      // A mockup-less image is sized by width, so below `md` it can end shorter
+      // than the row and the cell shows through above and below it. The thumbhash
+      // is already in `src`; a `bgColor` suppresses it instead of layering on top.
+      $backdrop = $mockup === 'none' && $bgHex === null ? $image->thumbhashUri() : null;
       ?>
       <div
         class="shrink-0 max-w-[100vw]"
@@ -39,12 +44,12 @@ $cellHeight = match ($height ?? null) {
         aria-label="<?= $index + 1 . ' / ' . $query->count() ?>"
       >
         <div
-          class="overflow-hidden bg-$cell-bg <?= match ($mockup) {
+          class="overflow-hidden bg-$cell-bg bg-cover bg-center <?= match ($mockup) {
             'document', 'mobile' => 'px-[4.5rem] py-xl h-$cell-h md:px-8xl md:py-5xl xl:px-[9rem]',
             'desktop' => 'flex flex-col items-center justify-center p-lg h-$cell-h md:p-5xl',
             default => 'flex items-center justify-center h-full'
           } ?>"
-          style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>"
+          style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?><?= $backdrop ? '; background-image: url(' . $backdrop . ')' : '' ?>"
         >
           <?php if ($mockup === 'desktop'): ?>
             <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg">
