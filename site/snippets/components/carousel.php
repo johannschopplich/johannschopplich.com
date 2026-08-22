@@ -11,6 +11,29 @@ $selectedHeight = match ($height ?? null) {
   default => 'loose',
 };
 
+// Mockup slides are sized by height, images without a mockup by width, so a
+// landscape image ends short of `--cell-h` and the flex row keeps a gap below
+// it. Where both kinds meet the mockups dictate the row height anyway, so the
+// mockup-less images get a full-height cell and sit matted inside it.
+$hasMockups = false;
+$hasImagesWithoutMockup = false;
+
+foreach ($query->values() as $image) {
+  if ($image->gallery()->toObject()->mockup()->or('none')->value() === 'none') {
+    $hasImagesWithoutMockup = true;
+  } else {
+    $hasMockups = true;
+  }
+}
+
+$shouldMatImages = $hasMockups && $hasImagesWithoutMockup;
+
+// Widest a browser mockup may grow, as a multiple of the row height. Scaled to
+// the full cell height, a flat image turns into a slab several times wider than
+// the row is tall; the cap only binds past this ratio, so screenshots in the
+// usual 4:3 and 3:2 keep filling the cell.
+$maxMockupWidthRatio = 1.4;
+
 ?>
 <div
   class="overflow-hidden"
@@ -43,6 +66,7 @@ $selectedHeight = match ($height ?? null) {
           class="<?= trim(implode(' ', [
             'overflow-hidden',
             $mockup !== 'none' ? 'relative bg-$cell-bg' : '',
+            ($mockup === 'none' && $shouldMatImages) ? 'flex items-center justify-center h-$cell-h bg-$cell-bg' : '',
             ($isDocument || $isMobile) ? 'px-[4.5rem] md:px-8xl xl:px-[9rem] py-xl md:py-5xl h-$cell-h' : '',
             $isDesktop ? 'flex flex-col items-center justify-center p-3xl md:p-5xl h-$cell-h w-[calc(100vw-2.25rem)] md:w-auto' : ''
           ]), ' ') ?>"
@@ -72,7 +96,7 @@ $selectedHeight = match ($height ?? null) {
               $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
               $isDocument ? 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]' : '',
               $isMobile ? 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]' : '',
-              $isDesktop ? 'w-full md:w-auto h-auto md:h-[calc(100%-1rem)] border border-solid border-stone-900 rounded-b-lg' : ''
+              $isDesktop ? 'w-full md:w-auto h-auto md:h-$mockup-h border border-solid border-stone-900 rounded-b-lg' : ''
             ]), ' ') ?>"
             src="<?= $image->thumbhashUri() ?>"
             data-srcset="<?= $image->srcset() ?>"
@@ -81,6 +105,7 @@ $selectedHeight = match ($height ?? null) {
             height="<?= $image->height() ?>"
             style="<?= trim(implode('; ', [
               $mockup === 'none' ? '--img-h: min(calc(100vw * ' . $image->height() . ' / ' . $image->width() . '), var(--cell-h))' : '',
+              $isDesktop ? '--mockup-h: min(calc(100% - 1rem), calc(var(--cell-h) * ' . $maxMockupWidthRatio . ' * ' . $image->height() . ' / ' . $image->width() . '))' : '',
               'aspect-ratio: ' . $image->width() . '/' . $image->height()
             ]), ' ') ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
