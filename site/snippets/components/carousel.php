@@ -68,11 +68,12 @@ $cellHeight = match ($height ?? null) {
             class="pointer-events-none select-none aspect-[var(--ar)] <?= match ($mockup) {
               'document' => 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]',
               'mobile' => 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]',
-              // Sized by height from `md` up so it fills the row. Scaled that way a
-              // flat screenshot turns into a slab several times wider than the row
-              // is tall, which `1.4` caps – the usual 4:3 and 3:2 stay under it. The
-              // subtracted `1rem` is the chrome bar sitting above the image.
-              'desktop' => 'w-full h-auto border border-solid border-stone-900 rounded-b-lg md:w-auto md:h-[min(calc(100%-1rem),calc(var(--cell-h)*1.4/var(--ar)))]',
+              // Sized by height so it fills the row, under three bounds: the cell
+              // minus the `1rem` chrome bar, the viewport minus the `2.25rem` of
+              // padding the cell carries below `md` where it runs full width, and
+              // `1.4` row heights – uncapped, a flat screenshot scales into a slab
+              // several times wider than the row is tall.
+              'desktop' => 'w-auto h-[min(calc(100%-1rem),calc((100vw-2.25rem)/var(--ar)),calc(var(--cell-h)*1.4/var(--ar)))] border border-solid border-stone-900 rounded-b-lg',
               default => 'w-auto h-[min(calc(100vw/var(--ar)),var(--cell-h))]'
             } ?>"
             src="<?= $image->thumbhashUri() ?>"
