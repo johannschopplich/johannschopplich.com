@@ -30,11 +30,20 @@ $cellHeight = match ($height ?? null) {
       $mockup = $settings->mockup()->or('none')->value();
       $isDocument = $mockup === 'document';
       $bgHex = $settings->bgColor()->value() ?: null;
+      $borderHex = $settings->borderColor()->value() ?: null;
 
       // A mockup-less image is sized by width, so below `md` it can end shorter
       // than the row and the cell shows through above and below it. A `bgColor`
       // has to suppress the thumbhash – a background image cannot sit under it.
       $backdrop = $mockup === 'none' && $bgHex === null ? $image->thumbhashUri() : null;
+
+      // Only the document has to separate from its own mat; the browser outline
+      // is part of the drawing.
+      if ($borderHex === null && $isDocument && $bgHex !== null) {
+        $bg = new Hex($bgHex);
+        $borderHex = (string) ($bg->isDark() ? $bg->lighten(20) : $bg->darken(20));
+      }
+      $cellBorder = $borderHex ?? ($isDocument ? 'var(--un-color-contrast-low)' : 'var(--un-color-stone-900)');
       ?>
       <div
         class="shrink-0 max-w-[100vw]"
@@ -48,24 +57,18 @@ $cellHeight = match ($height ?? null) {
             'desktop' => 'flex flex-col items-center justify-center p-lg h-$cell-h md:p-5xl',
             default => 'flex items-center justify-center h-full'
           } ?>"
-          style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?><?= $backdrop ? '; background-image: url(' . $backdrop . ')' : '' ?>"
+          style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>; --cell-border: <?= $cellBorder ?><?= $backdrop ? '; background-image: url(' . $backdrop . ')' : '' ?>"
         >
           <?php if ($mockup === 'desktop'): ?>
-            <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg">
+            <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-x-solid border-t border-t-solid border-$cell-border rounded-t-lg">
               <?php foreach (range(1, 3) as $i): ?>
-                <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
+                <div class="h-1.5 w-1.5 border border-solid border-$cell-border rounded-full"></div>
               <?php endforeach ?>
             </div>
           <?php endif ?>
 
-          <?php if ($isDocument):
-            $bgColor = $bgHex ? new Hex($bgHex) : null;
-            $borderColor = $bgColor ? ($bgColor->isDark() ? $bgColor->lighten(20) : $bgColor->darken(20)) : null;
-          ?>
-            <div
-              class="p-2 h-full w-fit border border-dashed border-$cell-border md:p-3"
-              style="--cell-border: <?= $borderColor ?? 'var(--un-color-contrast-low)' ?>"
-            >
+          <?php if ($isDocument): ?>
+            <div class="p-2 h-full w-fit border border-dashed border-$cell-border md:p-3">
           <?php endif ?>
 
           <img
@@ -77,7 +80,7 @@ $cellHeight = match ($height ?? null) {
               // padding the cell carries below `md` where it runs full width, and
               // `1.4` row heights – uncapped, a flat screenshot scales into a slab
               // several times wider than the row is tall.
-              'desktop' => 'w-auto h-[min(calc(100%-1rem),calc((100vw-2.25rem)/var(--ar)),calc(var(--cell-h)*1.4/var(--ar)))] border border-solid border-stone-900 rounded-b-lg',
+              'desktop' => 'w-auto h-[min(calc(100%-1rem),calc((100vw-2.25rem)/var(--ar)),calc(var(--cell-h)*1.4/var(--ar)))] border border-solid border-$cell-border rounded-b-lg',
               default => 'w-auto h-[min(calc(100vw/var(--ar)),var(--cell-h))]'
             } ?>"
             src="<?= $image->thumbhashUri() ?>"

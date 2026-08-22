@@ -68,6 +68,16 @@ columns:
                   de: Hintergrundfarbe
                   en: Background Color
                 type: color
+                width: 1/2
                 help:
-                  de: Findet nur Anwendung, wenn ein Mockup ausgewählt ist.
-                  en: Only applies when a mockup is selected.
+                  de: Ohne Farbe zeigt die Zelle Grau, bei Bildern ohne Mockup deren Unschärfe.
+                  en: Without a color the cell shows gray, or the image's own blur if it has no mockup.
+              borderColor:
+                label:
+                  de: Rahmenfarbe
+                  en: Border Color
+                type: color
+                width: 1/2
+                help:
+                  de: Ohne Farbe folgt das Dokument der Hintergrundfarbe, der Browser bleibt dunkel.
+                  en: Without a color the document follows the background color, the browser stays dark.
