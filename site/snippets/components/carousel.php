@@ -6,20 +6,30 @@ use OzdemirBurak\Iris\Color\Hex;
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 
-$selectedHeight = match ($height ?? null) {
-  'tight', 'loose' => $height,
-  default => 'loose',
+// Height the row aims for. Mockup slides take it as their fixed height and so
+// pin the row; an image without a mockup is sized by width instead and stays
+// under it on a narrow screen, which is why every cell stretches to the row and
+// mats whatever falls short. `home.php` slots a cell of its own into the row
+// and reads the height through `h-$cell-h`.
+$cellHeight = match ($height ?? null) {
+  'tight' => '[--cell-h:25svh] md:[--cell-h:clamp(25svh,50vw,37.5svh)] 2xl:[--cell-h:25svh]',
+  default => '[--cell-h:clamp(50svh,50vw,75svh)] md:[--cell-h:clamp(25svh,50vw,75svh)] 2xl:[--cell-h:clamp(25svh,50vw,50svh)]'
 };
+
+// Widest a browser mockup may grow, as a multiple of the row height. Scaled to
+// the full cell height, a flat image turns into a slab several times wider than
+// the row is tall; the cap only binds past this ratio, so screenshots in the
+// usual 4:3 and 3:2 keep filling the cell.
+$maxMockupWidthRatio = 1.4;
 
 ?>
 <div
-  class="overflow-hidden"
+  class="overflow-hidden <?= $cellHeight ?>"
   tabindex="0"
   role="region"
   aria-roledescription="<?= t('carousel.roledescription') ?>"
   aria-label="<?= $ariaLabel ?? t('carousel.label') ?>"
   data-carousel
-  data-height="<?= $selectedHeight ?>"
 >
   <div class="flex gap-xs cursor-grab active:cursor-grabbing" aria-live="polite">
     <?php foreach ($query->values() as $index => $image): ?>
@@ -84,7 +94,7 @@ $selectedHeight = match ($height ?? null) {
             height="<?= $image->height() ?>"
             style="<?= trim(implode('; ', [
               $mockup === 'none' ? '--img-h: min(calc(100vw * ' . $image->height() . ' / ' . $image->width() . '), var(--cell-h))' : '',
-              $isDesktop ? '--mockup-h: min(calc(100% - 1rem), calc(var(--cell-h) * var(--mockup-max-ratio) * ' . $image->height() . ' / ' . $image->width() . '))' : '',
+              $isDesktop ? '--mockup-h: min(calc(100% - 1rem), calc(var(--cell-h) * ' . $maxMockupWidthRatio . ' * ' . $image->height() . ' / ' . $image->width() . '))' : '',
               'aspect-ratio: ' . $image->width() . '/' . $image->height()
             ]), ' ') ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
