@@ -18,7 +18,7 @@ $details = $page->details()->toStructure();
 
   <div class="pl-lg pb-5xl md:pl-gutter">
     <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:h-[1px] after:border-b after:border-dotted after:border-contrast-soft">
-      <p class="subtext shrink-0 text-contrast-medium max-md:text-sm">
+      <p class="subtext text-contrast-medium max-md:text-sm">
         <?= $page->subtitle()->escape() ?>
       </p>
     </div>
