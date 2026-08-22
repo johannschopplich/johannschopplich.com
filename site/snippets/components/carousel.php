@@ -6,21 +6,13 @@ use OzdemirBurak\Iris\Color\Hex;
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 
-// Height the row aims for. Mockup slides take it as their fixed height and so
-// pin the row; an image without a mockup is sized by width instead and stays
-// under it on a narrow screen, which is why every cell stretches to the row and
-// mats whatever falls short. `home.php` slots a cell of its own into the row
-// and reads the height through `h-$cell-h`.
+// Height the row aims for: a mockup cell takes it as a fixed height, an image
+// without one is sized by width and only capped by it. Cells stretch to the
+// tallest, so a short image gets matted. `home.php` reads it as `h-$cell-h`.
 $cellHeight = match ($height ?? null) {
-  'tight' => '[--cell-h:25svh] md:[--cell-h:clamp(25svh,50vw,37.5svh)] 2xl:[--cell-h:25svh]',
-  default => '[--cell-h:clamp(50svh,50vw,75svh)] md:[--cell-h:clamp(25svh,50vw,75svh)] 2xl:[--cell-h:clamp(25svh,50vw,50svh)]'
+  'tight' => '[--cell-h:25svh] md:[--cell-h:min(50vw,37.5svh)] 2xl:[--cell-h:25svh]',
+  default => '[--cell-h:clamp(50svh,50vw,75svh)] md:[--cell-h:min(50vw,75svh)] 2xl:[--cell-h:min(50vw,50svh)]'
 };
-
-// Widest a browser mockup may grow, as a multiple of the row height. Scaled to
-// the full cell height, a flat image turns into a slab several times wider than
-// the row is tall; the cap only binds past this ratio, so screenshots in the
-// usual 4:3 and 3:2 keep filling the cell.
-$maxMockupWidthRatio = 1.4;
 
 ?>
 <div
@@ -34,32 +26,27 @@ $maxMockupWidthRatio = 1.4;
   <div class="flex gap-xs cursor-grab active:cursor-grabbing" aria-live="polite">
     <?php foreach ($query->values() as $index => $image): ?>
       <?php
-      /** @var \Kirby\Content\Content */
+      /** @var \Kirby\Content\Content $settings */
       $settings = $image->gallery()->toObject();
       $mockup = $settings->mockup()->or('none')->value();
       $isDocument = $mockup === 'document';
-      $isDesktop = $mockup === 'desktop';
-      $hasBgColor = $settings->bgColor()->isNotEmpty();
-      $bgHex = $hasBgColor ? $settings->bgColor()->value() : null;
+      $bgHex = $settings->bgColor()->value() ?: null;
       ?>
       <div
-        class="shrink-0 min-w-0 max-w-[100vw]"
+        class="shrink-0 max-w-[100vw]"
         role="group"
         aria-roledescription="<?= t('carousel.slide') ?>"
         aria-label="<?= $index + 1 . ' / ' . $query->count() ?>"
       >
         <div
-          class="<?= trim(implode(' ', [
-            'relative overflow-hidden bg-$cell-bg',
-            match ($mockup) {
-              'document', 'mobile' => 'px-[4.5rem] md:px-8xl xl:px-[9rem] py-xl md:py-5xl h-$cell-h',
-              'desktop' => 'flex flex-col items-center justify-center p-3xl md:p-5xl h-$cell-h w-[calc(100vw-2.25rem)] md:w-auto',
-              default => 'flex items-center justify-center h-full'
-            }
-          ]), ' ') ?>"
+          class="overflow-hidden bg-$cell-bg <?= match ($mockup) {
+            'document', 'mobile' => 'px-[4.5rem] py-xl h-$cell-h md:px-8xl md:py-5xl xl:px-[9rem]',
+            'desktop' => 'flex flex-col items-center justify-center p-lg h-$cell-h w-screen md:p-5xl md:w-auto',
+            default => 'flex items-center justify-center h-full'
+          } ?>"
           style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>"
         >
-          <?php if ($isDesktop): ?>
+          <?php if ($mockup === 'desktop'): ?>
             <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-x-solid border-t border-t-solid border-stone-900 rounded-t-lg">
               <?php foreach (range(1, 3) as $i): ?>
                 <div class="h-1.5 w-1.5 border border-solid border-stone-900 rounded-full"></div>
@@ -68,7 +55,7 @@ $maxMockupWidthRatio = 1.4;
           <?php endif ?>
 
           <?php if ($isDocument):
-            $bgColor = $hasBgColor ? new Hex($bgHex) : null;
+            $bgColor = $bgHex ? new Hex($bgHex) : null;
             $borderColor = $bgColor ? ($bgColor->isDark() ? $bgColor->lighten(20) : $bgColor->darken(20)) : null;
           ?>
             <div
@@ -78,25 +65,22 @@ $maxMockupWidthRatio = 1.4;
           <?php endif ?>
 
           <img
-            class="<?= trim(implode(' ', [
-              'pointer-events-none select-none',
-              match ($mockup) {
-                'document' => 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]',
-                'mobile' => 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]',
-                'desktop' => 'w-full md:w-auto h-auto md:h-$mockup-h border border-solid border-stone-900 rounded-b-lg',
-                default => 'w-auto max-w-[100vw] h-$img-h'
-              }
-            ]), ' ') ?>"
+            class="pointer-events-none select-none aspect-[var(--ar)] <?= match ($mockup) {
+              'document' => 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]',
+              'mobile' => 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]',
+              // Sized by height from `md` up so it fills the row. Scaled that way a
+              // flat screenshot turns into a slab several times wider than the row
+              // is tall, which `1.4` caps – the usual 4:3 and 3:2 stay under it. The
+              // subtracted `1rem` is the chrome bar sitting above the image.
+              'desktop' => 'w-full h-auto border border-solid border-stone-900 rounded-b-lg md:w-auto md:h-[min(calc(100%-1rem),calc(var(--cell-h)*1.4/var(--ar)))]',
+              default => 'w-auto h-[min(calc(100vw/var(--ar)),var(--cell-h))]'
+            } ?>"
             src="<?= $image->thumbhashUri() ?>"
             data-srcset="<?= $image->srcset() ?>"
             data-sizes="auto"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
-            style="<?= trim(implode('; ', [
-              $mockup === 'none' ? '--img-h: min(calc(100vw * ' . $image->height() . ' / ' . $image->width() . '), var(--cell-h))' : '',
-              $isDesktop ? '--mockup-h: min(calc(100% - 1rem), calc(var(--cell-h) * ' . $maxMockupWidthRatio . ' * ' . $image->height() . ' / ' . $image->width() . '))' : '',
-              'aspect-ratio: ' . $image->width() . '/' . $image->height()
-            ]), ' ') ?>"
+            style="--ar: <?= round($image->width() / $image->height(), 6) ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"
           >
 
