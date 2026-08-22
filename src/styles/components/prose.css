@@ -125,7 +125,9 @@
       background-color: var(--un-prose-bg-soft);
     }
 
-    & :where(a, h1, h2, h3, h4) code:not(:where(.not-prose, .not-prose *)) {
+    &
+      :where(a, h1, h2, h3, h4, h5, h6)
+      code:not(:where(.not-prose, .not-prose *)) {
       background-color: transparent;
     }
 
