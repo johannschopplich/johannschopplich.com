@@ -11,29 +11,6 @@ $selectedHeight = match ($height ?? null) {
   default => 'loose',
 };
 
-// Mockup slides are sized by height, images without a mockup by width, so a
-// landscape image ends short of `--cell-h` and the flex row keeps a gap below
-// it. Where both kinds meet the mockups dictate the row height anyway, so the
-// mockup-less images get a full-height cell and sit matted inside it.
-$hasMockups = false;
-$hasImagesWithoutMockup = false;
-
-foreach ($query->values() as $image) {
-  if ($image->gallery()->toObject()->mockup()->or('none')->value() === 'none') {
-    $hasImagesWithoutMockup = true;
-  } else {
-    $hasMockups = true;
-  }
-}
-
-$shouldMatImages = $hasMockups && $hasImagesWithoutMockup;
-
-// Widest a browser mockup may grow, as a multiple of the row height. Scaled to
-// the full cell height, a flat image turns into a slab several times wider than
-// the row is tall; the cap only binds past this ratio, so screenshots in the
-// usual 4:3 and 3:2 keep filling the cell.
-$maxMockupWidthRatio = 1.4;
-
 ?>
 <div
   class="overflow-hidden"
@@ -51,7 +28,6 @@ $maxMockupWidthRatio = 1.4;
       $settings = $image->gallery()->toObject();
       $mockup = $settings->mockup()->or('none')->value();
       $isDocument = $mockup === 'document';
-      $isMobile = $mockup === 'mobile';
       $isDesktop = $mockup === 'desktop';
       $hasBgColor = $settings->bgColor()->isNotEmpty();
       $bgHex = $hasBgColor ? $settings->bgColor()->value() : null;
@@ -64,11 +40,12 @@ $maxMockupWidthRatio = 1.4;
       >
         <div
           class="<?= trim(implode(' ', [
-            'overflow-hidden',
-            $mockup !== 'none' ? 'relative bg-$cell-bg' : '',
-            ($mockup === 'none' && $shouldMatImages) ? 'flex items-center justify-center h-$cell-h bg-$cell-bg' : '',
-            ($isDocument || $isMobile) ? 'px-[4.5rem] md:px-8xl xl:px-[9rem] py-xl md:py-5xl h-$cell-h' : '',
-            $isDesktop ? 'flex flex-col items-center justify-center p-3xl md:p-5xl h-$cell-h w-[calc(100vw-2.25rem)] md:w-auto' : ''
+            'relative overflow-hidden bg-$cell-bg',
+            match ($mockup) {
+              'document', 'mobile' => 'px-[4.5rem] md:px-8xl xl:px-[9rem] py-xl md:py-5xl h-$cell-h',
+              'desktop' => 'flex flex-col items-center justify-center p-3xl md:p-5xl h-$cell-h w-[calc(100vw-2.25rem)] md:w-auto',
+              default => 'flex items-center justify-center h-full'
+            }
           ]), ' ') ?>"
           style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>"
         >
@@ -93,10 +70,12 @@ $maxMockupWidthRatio = 1.4;
           <img
             class="<?= trim(implode(' ', [
               'pointer-events-none select-none',
-              $mockup === 'none' ? 'w-auto max-w-[100vw] h-$img-h' : '',
-              $isDocument ? 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]' : '',
-              $isMobile ? 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]' : '',
-              $isDesktop ? 'w-full md:w-auto h-auto md:h-$mockup-h border border-solid border-stone-900 rounded-b-lg' : ''
+              match ($mockup) {
+                'document' => 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]',
+                'mobile' => 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]',
+                'desktop' => 'w-full md:w-auto h-auto md:h-$mockup-h border border-solid border-stone-900 rounded-b-lg',
+                default => 'w-auto max-w-[100vw] h-$img-h'
+              }
             ]), ' ') ?>"
             src="<?= $image->thumbhashUri() ?>"
             data-srcset="<?= $image->srcset() ?>"
@@ -105,7 +84,7 @@ $maxMockupWidthRatio = 1.4;
             height="<?= $image->height() ?>"
             style="<?= trim(implode('; ', [
               $mockup === 'none' ? '--img-h: min(calc(100vw * ' . $image->height() . ' / ' . $image->width() . '), var(--cell-h))' : '',
-              $isDesktop ? '--mockup-h: min(calc(100% - 1rem), calc(var(--cell-h) * ' . $maxMockupWidthRatio . ' * ' . $image->height() . ' / ' . $image->width() . '))' : '',
+              $isDesktop ? '--mockup-h: min(calc(100% - 1rem), calc(var(--cell-h) * var(--mockup-max-ratio) * ' . $image->height() . ' / ' . $image->width() . '))' : '',
               'aspect-ratio: ' . $image->width() . '/' . $image->height()
             ]), ' ') ?>"
             alt="<?= $image->alt()->or('')->escape() ?>"

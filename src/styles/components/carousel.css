@@ -1,10 +1,13 @@
 @layer components {
   [data-carousel] {
     --cell-h: clamp(50svh, 50vw, 75svh);
+
+    /* Widest a browser mockup may grow, as a multiple of the row height. */
+    --mockup-max-ratio: 1.4;
   }
 
   [data-carousel][data-height="tight"] {
-    --cell-h: clamp(25svh, 50vw, 25svh);
+    --cell-h: 25svh;
   }
 
   @media (--md) {
@@ -23,7 +26,7 @@
     }
 
     [data-carousel][data-height="tight"] {
-      --cell-h: clamp(25svh, 50vw, 25svh);
+      --cell-h: 25svh;
     }
   }
 }
