@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4bf8e8f75d2c0d6ffca3f572af833595",
+    "content-hash": "0423c9e69de6aab7242ff883ba0cf028",
     "packages": [
         {
             "name": "anthropic-ai/sdk",
@@ -1119,93 +1119,24 @@
             "time": "2026-07-16T22:23:49+00:00"
         },
         {
-            "name": "johannschopplich/kirby-content-translator",
-            "version": "3.13.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kirby-tools/kirby-content-translator.git",
-                "reference": "de2651681eb69251b1cdd0b69b641a160a9ddcdf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-content-translator/zipball/de2651681eb69251b1cdd0b69b641a160a9ddcdf",
-                "reference": "de2651681eb69251b1cdd0b69b641a160a9ddcdf",
-                "shasum": ""
-            },
-            "require": {
-                "getkirby/composer-installer": "^1",
-                "johannschopplich/kirby-tools-licensing": "^0.9",
-                "johannschopplich/kirby-tools-utils": "^0.1",
-                "php": ">=8.2"
-            },
-            "require-dev": {
-                "getkirby/cli": "^1",
-                "getkirby/cms": "^5",
-                "phpunit/phpunit": "^12",
-                "vlucas/phpdotenv": "^5"
-            },
-            "type": "kirby-plugin",
-            "extra": {
-                "kirby-cms-path": false
-            },
-            "autoload": {
-                "psr-4": {
-                    "JohannSchopplich\\": "src/classes/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Johann Schopplich",
-                    "email": "hello@johannschopplich.com",
-                    "homepage": "https://johannschopplich.com"
-                }
-            ],
-            "description": "DeepL & AI-powered content translation for Kirby CMS",
-            "homepage": "https://kirby.tools/content-translator",
-            "keywords": [
-                "content",
-                "deepl",
-                "i18n",
-                "kirby",
-                "language",
-                "translation",
-                "translator"
-            ],
-            "support": {
-                "issues": "https://github.com/kirby-tools/kirby-content-translator/issues",
-                "source": "https://github.com/kirby-tools/kirby-content-translator/tree/v3.13.1"
-            },
-            "funding": [
-                {
-                    "url": "https://kirby.tools/content-translator",
-                    "type": "custom"
-                }
-            ],
-            "time": "2026-08-06T12:11:53+00:00"
-        },
-        {
             "name": "johannschopplich/kirby-copilot",
-            "version": "3.9.1",
+            "version": "3.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/kirby-copilot.git",
-                "reference": "b335df72c49eda1d3d4081732d1d436e48186443"
+                "reference": "c3150432cbc8ee29259014dc01259a4130d6e69d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/b335df72c49eda1d3d4081732d1d436e48186443",
-                "reference": "b335df72c49eda1d3d4081732d1d436e48186443",
+                "url": "https://api.github.com/repos/kirby-tools/kirby-copilot/zipball/c3150432cbc8ee29259014dc01259a4130d6e69d",
+                "reference": "c3150432cbc8ee29259014dc01259a4130d6e69d",
                 "shasum": ""
             },
             "require": {
                 "anthropic-ai/sdk": "^0.17",
                 "getkirby/composer-installer": "^1",
                 "johannschopplich/kirby-tools-licensing": "^0.9",
-                "johannschopplich/kirby-tools-utils": "^0.1",
+                "johannschopplich/kirby-tools-utils": "^0.1.3",
                 "openai-php/client": "^0.19",
                 "php": ">=8.2"
             },
@@ -1248,9 +1179,9 @@
             ],
             "support": {
                 "issues": "https://github.com/kirby-tools/kirby-copilot/issues",
-                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v3.9.1"
+                "source": "https://github.com/kirby-tools/kirby-copilot/tree/v3.10.1"
             },
-            "time": "2026-08-06T12:11:08+00:00"
+            "time": "2026-08-22T10:52:26+00:00"
         },
         {
             "name": "johannschopplich/kirby-headless",
@@ -1436,17 +1367,20 @@
         },
         {
             "name": "johannschopplich/kirby-tools-licensing",
-            "version": "0.9.3",
+            "version": "0.9.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/licensing-backend.git",
-                "reference": "86cefcfab27ba721bb5ff0d8a5f47ca2168fa7b7"
+                "reference": "f54a1fe34b72b5c1843eac41e5c7ba93a640f03b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/86cefcfab27ba721bb5ff0d8a5f47ca2168fa7b7",
-                "reference": "86cefcfab27ba721bb5ff0d8a5f47ca2168fa7b7",
+                "url": "https://api.github.com/repos/kirby-tools/licensing-backend/zipball/f54a1fe34b72b5c1843eac41e5c7ba93a640f03b",
+                "reference": "f54a1fe34b72b5c1843eac41e5c7ba93a640f03b",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
             },
             "require-dev": {
                 "getkirby/cms": "^5",
@@ -1476,23 +1410,26 @@
             "homepage": "https://github.com/kirby-tools/licensing-backend#readme",
             "support": {
                 "issues": "https://github.com/kirby-tools/licensing-backend/issues",
-                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.9.3"
+                "source": "https://github.com/kirby-tools/licensing-backend/tree/v0.9.4"
             },
-            "time": "2026-08-03T09:54:18+00:00"
+            "time": "2026-08-21T19:25:48+00:00"
         },
         {
             "name": "johannschopplich/kirby-tools-utils",
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kirby-tools/utils.git",
-                "reference": "f36810328810a33d572422fc08d395d69b1b4113"
+                "reference": "795cfaf76158739dbcc1d81a1e2ed7165ce1fbbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kirby-tools/utils/zipball/f36810328810a33d572422fc08d395d69b1b4113",
-                "reference": "f36810328810a33d572422fc08d395d69b1b4113",
+                "url": "https://api.github.com/repos/kirby-tools/utils/zipball/795cfaf76158739dbcc1d81a1e2ed7165ce1fbbc",
+                "reference": "795cfaf76158739dbcc1d81a1e2ed7165ce1fbbc",
                 "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2"
             },
             "require-dev": {
                 "getkirby/cms": "^5",
@@ -1522,9 +1459,9 @@
             "homepage": "https://github.com/kirby-tools/kirby-tools-utils#readme",
             "support": {
                 "issues": "https://github.com/kirby-tools/utils/issues",
-                "source": "https://github.com/kirby-tools/utils/tree/v0.1.2"
+                "source": "https://github.com/kirby-tools/utils/tree/v0.1.3"
             },
-            "time": "2026-05-01T07:41:41+00:00"
+            "time": "2026-08-10T20:01:57+00:00"
         },
         {
             "name": "laminas/laminas-escaper",

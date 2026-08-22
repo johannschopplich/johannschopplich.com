@@ -96,13 +96,6 @@ return [
         'allowedPages' => ['uploads']
     ],
 
-    'johannschopplich.content-translator' => [
-        'importFrom' => 'all',
-        'DeepL' => [
-            'apiKey' => env('DEEPL_API_KEY')
-        ]
-    ],
-
     'johannschopplich.copilot' => [
         'provider' => 'google',
         'providers' => [
