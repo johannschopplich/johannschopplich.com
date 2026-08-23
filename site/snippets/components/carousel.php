@@ -2,6 +2,8 @@
 
 use OzdemirBurak\Iris\Color\Hex;
 
+/** @var \Kirby\Template\Slots $slots */
+/** @var \Kirby\Template\Slot $slot */
 /** @var \Kirby\Cms\Files $query */
 /** @var string|null $height */
 
@@ -33,9 +35,10 @@ $cellHeight = match ($height ?? null) {
       $borderHex = $settings->borderColor()->value() ?: null;
 
       // A mockup-less image is sized by width, so below `md` it can end shorter
-      // than the row and the cell shows through above and below it. A `bgColor`
-      // has to suppress the thumbhash – a background image cannot sit under it.
-      $backdrop = $mockup === 'none' && $bgHex === null ? $image->thumbhashUri() : null;
+      // than the row and the cell shows through above and below it.
+      $cellBg = $bgHex ?? ($mockup === 'none'
+        ? 'url(' . $image->thumbhashUri() . ') center/cover'
+        : 'var(--un-color-contrast-lower)');
 
       // Only the document has to separate from its own mat; the browser outline
       // is part of the drawing.
@@ -52,15 +55,15 @@ $cellHeight = match ($height ?? null) {
         aria-label="<?= $index + 1 . ' / ' . $query->count() ?>"
       >
         <div
-          class="overflow-hidden bg-$cell-bg bg-cover bg-center <?= match ($mockup) {
+          class="overflow-hidden [background:var(--cell-bg)] <?= match ($mockup) {
             'document', 'mobile' => 'px-5xl py-xl h-$cell-h md:px-8xl md:py-5xl xl:px-[9rem]',
             'desktop' => '[--max-ar:1.6] flex flex-col items-center justify-center p-lg h-$cell-h md:p-5xl',
             default => 'flex items-center justify-center h-full'
           } ?>"
-          style="--cell-bg: <?= $bgHex ?? 'var(--un-color-contrast-lower)' ?>; --cell-border: <?= $cellBorder ?><?= $backdrop ? '; background-image: url(' . $backdrop . ')' : '' ?>"
+          style="--cell-bg: <?= $cellBg ?>; --cell-border: <?= $cellBorder ?>"
         >
           <?php if ($mockup === 'desktop'): ?>
-            <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-x-solid border-t border-t-solid border-$cell-border rounded-t-lg">
+            <div class="self-stretch flex items-center gap-1 px-1.5 h-4 border-x border-t border-solid border-$cell-border rounded-t-lg">
               <?php foreach (range(1, 3) as $i): ?>
                 <div class="h-1.5 w-1.5 border border-solid border-$cell-border rounded-full"></div>
               <?php endforeach ?>
