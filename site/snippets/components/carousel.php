@@ -19,10 +19,10 @@ $cellHeight = match ($height ?? null) {
   tabindex="0"
   role="region"
   aria-roledescription="<?= t('carousel.roledescription') ?>"
-  aria-label="<?= $ariaLabel ?? t('carousel.label') ?>"
+  aria-label="<?= t('carousel.label') ?>"
   data-carousel
 >
-  <div class="flex gap-xs cursor-grab active:cursor-grabbing" aria-live="polite">
+  <div class="flex gap-xs cursor-grab active:cursor-grabbing">
     <?php foreach ($query->values() as $index => $image): ?>
       <?php
       /** @var \Kirby\Content\Content $settings */
