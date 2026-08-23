@@ -43,7 +43,7 @@ $cellHeight = match ($height ?? null) {
         $bg = new Hex($bgHex);
         $borderHex = (string) ($bg->isDark() ? $bg->lighten(20) : $bg->darken(20));
       }
-      $cellBorder = $borderHex ?? ($isDocument ? 'var(--un-color-contrast-low)' : 'var(--un-color-stone-900)');
+      $cellBorder = $borderHex ?? ($isDocument ? 'var(--un-color-contrast-low)' : 'var(--tw-color-stone-900)');
       ?>
       <div
         class="shrink-0 max-w-[100vw]"
