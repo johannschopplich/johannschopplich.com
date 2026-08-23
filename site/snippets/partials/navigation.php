@@ -8,7 +8,7 @@
   <a
     href="<?= $site->url() ?>"
     class="
-      [--un-dithered-from:var(--un-color-contrast-soft)] inline-flex items-center pl-0.5 pr-1 py-0.75 bg-theme-background halftone-bg
+      [--un-dithered-from:var(--un-color-contrast-soft)] inline-flex items-center pl-0.5 pr-1 py-0.75 bg-theme-background halftone-bg select-none
       hover:[--un-dithered-from:currentcolor]
     "
     <?php e($page->isHomePage(), ' aria-current="page"') ?>
@@ -23,7 +23,7 @@
     <a
       href="<?= $item->url() ?>"
       class="
-        overline [--un-dithered-from:var(--un-color-contrast-soft)] px-1 py-0.5 bg-theme-background halftone-bg
+        overline [--un-dithered-from:var(--un-color-contrast-soft)] px-1 py-0.5 bg-theme-background halftone-bg select-none
         hover:[--un-dithered-from:currentcolor] hover:text-underline hover:decoration-primary-accent
         aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:text-underline aria-[current]:decoration-primary-accent
       "
