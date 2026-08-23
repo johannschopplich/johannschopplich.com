@@ -122,12 +122,14 @@
     }
 
     & :where(:not(pre) > code):not(:where(.not-prose, .not-prose *)) {
+      padding: 0.125em 0.25em;
       background-color: var(--un-prose-bg-soft);
     }
 
     &
       :where(a, h1, h2, h3, h4, h5, h6)
       code:not(:where(.not-prose, .not-prose *)) {
+      padding: 0;
       background-color: transparent;
     }
 
