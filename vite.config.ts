@@ -48,6 +48,8 @@ export default defineConfig(({ mode }) => {
 
     server: {
       cors: true,
+      port: 5173,
+      strictPort: true,
     },
   };
 });
