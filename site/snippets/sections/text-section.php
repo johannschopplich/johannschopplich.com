@@ -20,7 +20,7 @@ if ($page->parent()?->intendedTemplate()?->name() === 'articles') {
 
   <div class="pl-lg pb-5xl md:pl-gutter">
     <?php if ($page->published()->isNotEmpty()): ?>
-      <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:mr-lg after:md:mr-gutter after:h-[1px] after:border-b after:border-dotted after:border-contrast-soft">
+      <div class="flex gap-2 items-center mt-1 after:content-empty after:flex-1 after:mr-lg after:h-[1px] after:border-b after:border-dotted after:border-contrast-soft md:after:mr-gutter">
         <p class="subtext shrink-0 text-contrast-soft max-md:text-sm">
           <?= t('article.publishedAt') ?>
           <time datetime="<?= $page->published()->toDate('Y-m-d') ?>">
