@@ -63,7 +63,7 @@
   </div>
 </div>
 
-<div class="pb-8xl border-t border-t-solid border-contrast-low dark:border-contrast-lower">
+<div class="pb-8xl border-t border-solid border-contrast-low dark:border-contrast-lower">
   <div class="px-lg pt-5xl md:px-gutter md:pt-8xl">
     <div class="max-w-[72rem]">
       <section>

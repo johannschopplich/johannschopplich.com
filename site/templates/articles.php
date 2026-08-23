@@ -18,7 +18,7 @@
 
   <div class="section-divider"></div>
 
-  <div class="border-y border-y-solid border-contrast-low dark:border-contrast-lower">
+  <div class="border-y border-solid border-contrast-low dark:border-contrast-lower">
     <div class="px-lg md:px-gutter">
       <div class="overflow-hidden max-w-screen-lg">
         <?php snippet('components/article-grid', ['query' => $query]) ?>
