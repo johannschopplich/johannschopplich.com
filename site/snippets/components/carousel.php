@@ -40,8 +40,6 @@ $cellHeight = match ($height ?? null) {
         ? 'url(' . $image->thumbhashUri() . ') center/cover'
         : 'var(--un-color-contrast-lower)');
 
-      // Only the document has to separate from its own mat; the browser outline
-      // is part of the drawing.
       if ($borderHex === null && $isDocument && $bgHex !== null) {
         $bg = new Hex($bgHex);
         $borderHex = (string) ($bg->isDark() ? $bg->lighten(20) : $bg->darken(20));
