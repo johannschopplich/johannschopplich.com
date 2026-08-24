@@ -15,7 +15,6 @@ return [
         'theme.switch.on' => 'Licht an',
         'theme.switch.off' => 'Licht aus',
         'home' => 'Startseite',
-        'error.restore' => 'Wieder aufbauen',
         'generic.more' => 'Mehr',
         'generic.contact' => 'Sag Hallo',
         'articles.all' => 'Alle Artikel',

@@ -14,24 +14,12 @@
   <div class="border-b border-solid border-contrast-low dark:border-contrast-lower">
     <div class="px-lg pb-5xl md:px-gutter">
       <div class="max-w-screen-lg">
-        <!-- Reserves the canvas box before the deferred module upgrades the
-             element. The ratio is the raster grid – re-measure it if the text
-             or the heading face changes. -->
         <pixel-text text="404" class="block aspect-[40/18] font-heading">
           <noscript>
-            <!-- Unlayered, so it outranks the reservation utility in `@layer default`. -->
             <style>pixel-text { aspect-ratio: auto }</style>
             <span class="headline">404</span>
           </noscript>
         </pixel-text>
-
-        <!-- The wrapper carries `hidden` because `action-link` would outrank it. -->
-        <div class="mt-lg" data-pixel-restore hidden>
-          <button type="button" class="action-link link-default">
-            <span class="i-tabler-refresh mr-1" aria-hidden="true"></span>
-            <span><?= t('error.restore') ?></span>
-          </button>
-        </div>
       </div>
     </div>
   </div>
