@@ -1,4 +1,4 @@
-import { ANIMATION_DELAY_MS, prefersReducedMotion } from "./_shared";
+import { prefersReducedMotion } from "./_shared";
 
 /** Drives the apparent pixel size. */
 const COLUMNS = 40;
@@ -8,7 +8,7 @@ const ACCENT_SHARE = 0.07;
 const DEFAULT_TEXT = "404";
 
 /** Time from a full field down to the decay floor. */
-const DECAY_DURATION = 60_000;
+const DECAY_DURATION = 120_000;
 /** Share of cells that survives, so the field never becomes an empty frame. */
 const DECAY_FLOOR = 0.28;
 /** Width of the crossfade band, in units of the alive fraction. */
@@ -88,11 +88,9 @@ function pseudoRandom(seed: number): number {
 }
 
 export class PixelText extends HTMLElement {
-  decayDelayMs = ANIMATION_DELAY_MS;
-
   #text = DEFAULT_TEXT;
-  #canvas?: HTMLCanvasElement;
-  #context?: CanvasRenderingContext2D;
+  #canvas = document.createElement("canvas");
+  #context = this.#canvas.getContext("2d")!;
   #cells: Cell[] = [];
   #cellSize = 0;
   #builtForWidth = 0;
@@ -113,15 +111,12 @@ export class PixelText extends HTMLElement {
   async connectedCallback() {
     this.#text = this.getAttribute("text")?.trim() || DEFAULT_TEXT;
 
-    const canvas = document.createElement("canvas");
-    canvas.style.display = "block";
-    canvas.style.width = "100%";
-    this.#canvas = canvas;
-    this.#context = canvas.getContext("2d")!;
+    this.#canvas.style.display = "block";
+    this.#canvas.style.width = "100%";
 
     // Drops the `<noscript>` fallback markup now that the canvas can take over.
     this.textContent = "";
-    this.append(canvas);
+    this.append(this.#canvas);
     this.setAttribute("aria-hidden", "true");
 
     this.#readStyles();
@@ -156,7 +151,7 @@ export class PixelText extends HTMLElement {
     const now = performance.now();
     this.#aliveFractionAtRestore = this.#aliveFractionAt(now);
     this.#rebuildFrom = now;
-    this.#decayFrom = now + REBUILD_TOTAL + this.decayDelayMs;
+    this.#decayFrom = now + REBUILD_TOTAL;
     this.#startAnimating();
   }
 
@@ -178,7 +173,7 @@ export class PixelText extends HTMLElement {
 
   #build() {
     const width = this.clientWidth;
-    if (!width || !this.#canvas || !this.#context) return;
+    if (!width) return;
 
     // Setting the canvas height changes this element's own box, which the
     // ResizeObserver reports right back. Only width may trigger a rebuild.
@@ -198,15 +193,15 @@ export class PixelText extends HTMLElement {
       for (let column = 0; column < COLUMNS; column++) {
         if (!mask[row * COLUMNS + column]) continue;
 
-        // Two independent draws: sharing one would make the accent pixels the
-        // longest-lived, leaving a ruin made almost entirely of accents.
+        // Two independent draws: with one, every accent would sit below the
+        // decay floor and never die, leaving the ruin three times as orange.
         const lifetime = pseudoRandom(column * 7919 + row * 104_729);
         const accentDraw = pseudoRandom(column * 31_337 + row * 15_485_863);
 
         this.#cells.push({
           x: column * this.#cellSize,
           y: row * this.#cellSize,
-          rebuildDelay: accentDraw * REBUILD_SPREAD,
+          rebuildDelay: (column / COLUMNS) * REBUILD_SPREAD,
           lifetime,
           isAccent: accentDraw < ACCENT_SHARE,
         });
@@ -214,8 +209,7 @@ export class PixelText extends HTMLElement {
     }
 
     // A resize mid-decay must not silently reset the clock.
-    if (!this.#decayFrom)
-      this.#decayFrom = performance.now() + this.decayDelayMs;
+    if (!this.#decayFrom) this.#decayFrom = performance.now();
     this.#startAnimating();
   }
 
@@ -255,10 +249,7 @@ export class PixelText extends HTMLElement {
 
   #draw(now: number) {
     const context = this.#context;
-    const canvas = this.#canvas;
-    if (!context || !canvas) return;
-
-    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
 
     const isReducedMotion = prefersReducedMotion.matches;
     const aliveFraction = isReducedMotion ? 1 : this.#aliveFractionAt(now);

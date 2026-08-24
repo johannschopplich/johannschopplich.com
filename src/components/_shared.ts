@@ -1,5 +1,3 @@
-export const ANIMATION_DELAY_MS = 750;
-
 export const SUPPORTS_CONSTRUCTABLE_STYLESHEETS =
   "replaceSync" in CSSStyleSheet.prototype;
 
