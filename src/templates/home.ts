@@ -1,5 +1,8 @@
 import type { ScrambleText } from "../components/scramble-text";
-import { prefersReducedMotion } from "../components/_shared";
+import {
+  ANIMATION_DELAY_MS,
+  prefersReducedMotion,
+} from "../components/_shared";
 
 const TADA_KEYFRAMES: Keyframe[] = [
   { transform: "scaleX(1)", offset: 0 },
@@ -15,7 +18,6 @@ const TADA_KEYFRAMES: Keyframe[] = [
   { transform: "scaleX(1)", offset: 1 },
 ];
 
-const INTRO_DELAY_MS = 700;
 const STAGGER_MS = 200;
 
 const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
@@ -28,7 +30,7 @@ export default async function () {
   );
   if (nodes.length === 0) return;
 
-  await sleep(INTRO_DELAY_MS);
+  await sleep(ANIMATION_DELAY_MS);
 
   await Promise.all(
     [...nodes].map((el, i) => sleep(i * STAGGER_MS).then(() => el.play())),
