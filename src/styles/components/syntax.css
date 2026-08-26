@@ -21,7 +21,7 @@
     background-color: var(--syntax-tint);
   }
 
-  ::highlight(syntax-punct),
+  ::highlight(syntax-punctuation),
   ::highlight(syntax-comment) {
     color: var(--un-color-contrast-soft);
   }

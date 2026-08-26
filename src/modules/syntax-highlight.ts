@@ -1,4 +1,7 @@
-type Category = "key" | "count" | "punct" | "comment";
+// Section references are to the TOON specification: https://github.com/toon-format/spec
+
+// Every member needs a `::highlight(syntax-…)` rule in `src/styles/components/syntax.css`.
+type Category = "key" | "count" | "punctuation" | "comment";
 
 interface Rule {
   pattern: RegExp;
@@ -7,12 +10,17 @@ interface Rule {
   rules?: Rule[];
 }
 
-// Field entries are keys (§6), split at every nesting level by the active
-// delimiter. A quoted name may carry a brace or a delimiter, so it has to match
-// before the punctuation – that is the brace matching §6 requires.
+interface Match {
+  rule: Rule;
+  indices: RegExpIndicesArray;
+}
+
+// Field entries are keys, split at every nesting level by the active delimiter
+// (§6). A quoted name may carry a brace or a delimiter, so it matches first –
+// §6 requires brace matching to ignore braces inside quoted names.
 const fieldRules: Rule[] = [
   { pattern: /"(?:\\.|[^"\\\r\n])*"/dg, category: "key" },
-  { pattern: /[{},|\t]/dg, category: "punct" },
+  { pattern: /[{},|\t]/dg, category: "punctuation" },
   { pattern: /[^{},|\t]+/dg, category: "key" },
 ];
 
@@ -21,14 +29,16 @@ const toonRules: Rule[] = [
   { pattern: /^ *#.*$/dgm, category: "comment" },
   // A quoted key is recognized by what follows it, not by its content (§5.2).
   { pattern: /"(?:\\.|[^"\\\r\n])*"(?=[^\S\r\n]*[:[])/dg, category: "key" },
-  // Bracket segment: length, keyed colon, delimiter (§6) – `[03]` is not one.
-  // Empty brackets are the array value form (§9.1), painted anyway.
+  // A bracket segment carries a length, the keyed colon and the delimiter (§6);
+  // `[03]` is none. The optional length is what paints the empty-array value
+  // form `key: []` (§9.1), and with it `key[]:` and `[:]`, which §6 rejects.
   { pattern: /\[(?:0|[1-9]\d*)?:?[|\t]?\]/dg, category: "count" },
   // Unquoted key, `^[A-Za-z_][A-Za-z0-9_.]*$` (§7.3), optionally behind a list
-  // marker. Hyphens are tolerated: §7.4 makes `foo-bar: 1` valid input.
+  // marker, plus the hyphen of `foo-bar: 1` (§7.4). The rest of §7.4's decoder
+  // tolerance is not followed: `2fa: true` keeps its key unpainted.
   {
     pattern: /^ *(- )?([a-z_][\w.-]*)(?=[^\S\r\n]*[:[])/dgim,
-    captures: { 1: "punct", 2: "key" },
+    captures: { 1: "punctuation", 2: "key" },
   },
   // A field list always follows the bracket segment, which is what the lookbehind
   // pins it to (§6). Its interior is scanned again so that nesting, which the
@@ -38,11 +48,12 @@ const toonRules: Rule[] = [
   // punctuation rule cannot reach a delimiter inside a string.
   { pattern: /"(?:\\.|[^"\\\r\n])*"/dg },
   // A list item carries `- ` or the bare marker (§5.2).
-  { pattern: /^ *(- |-$)/dgm, captures: { 1: "punct" } },
-  // Known limit: the active delimiter is declared per header (§6), so in a tab
-  // or pipe scope a literal comma in row content is data, not punctuation. That
-  // needs scope state this tokenizer does not carry.
-  { pattern: /[:,|{}]/dg, category: "punct" },
+  { pattern: /^ *(- |-$)/dgm, captures: { 1: "punctuation" } },
+  // Known limit: whether one of these is structural depends on position and on
+  // the header's active delimiter (§6), and this tokenizer carries no scope
+  // state. It paints the pipe in `tags[2]: a|b,c`, the second colon of
+  // `note: 12:30` and the braces of `key: {x}`, which are all data.
+  { pattern: /[:,|{}]/dg, category: "punctuation" },
 ];
 
 // Adapted from microlighter's `json.js` (MIT, Dave Rupert), which references
@@ -51,7 +62,7 @@ const toonRules: Rule[] = [
 const jsonRules: Rule[] = [
   { pattern: /"(?:\\.|[^"\\\r\n])*"(?=\s*:)/dg, category: "key" },
   { pattern: /"(?:\\.|[^"\\\r\n])*"/dg },
-  { pattern: /[{}[\],:]/dg, category: "punct" },
+  { pattern: /[{}[\],:]/dg, category: "punctuation" },
 ];
 
 const grammars: Record<string, Rule[]> = {
@@ -114,25 +125,27 @@ function tokenize(
     let cursor = 0;
 
     while (cursor < text.length) {
-      let bestMatch: { rule: Rule; indices: RegExpIndicesArray } | undefined;
+      let earliestMatch: Match | undefined;
 
       for (const rule of rules) {
         rule.pattern.lastIndex = cursor;
         const indices = rule.pattern.exec(text)?.indices;
         if (
           indices &&
-          (!bestMatch || indices[0]![0] < bestMatch.indices[0]![0])
+          (!earliestMatch || indices[0]![0] < earliestMatch.indices[0]![0])
         ) {
-          bestMatch = { rule, indices };
+          earliestMatch = { rule, indices };
         }
       }
 
-      if (!bestMatch) return;
+      if (!earliestMatch) return;
 
-      const { rule, indices } = bestMatch;
+      const { rule, indices } = earliestMatch;
       const [start, end] = indices[0]!;
+
       if (rule.category) addRange(indices[0]!, rule.category, offset);
       if (rule.rules) scan(text.slice(start, end), rule.rules, offset + start);
+
       for (const [groupIndex, category] of Object.entries(
         rule.captures ?? {},
       )) {
