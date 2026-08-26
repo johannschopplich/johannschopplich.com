@@ -165,7 +165,7 @@ export class PixelText extends HTMLElement {
   #readStyles() {
     const styles = getComputedStyle(this);
     this.#baseColor = styles.color;
-    this.#accentColor = styles.getPropertyValue("--un-color-secondary").trim();
+    this.#accentColor = styles.getPropertyValue("--un-color-primary").trim();
     // Heavy, well above the weight the headings use. The raster size is
     // arbitrary – only its ratio to the measured ink box matters.
     this.#font = `900 200px ${styles.fontFamily}`;
