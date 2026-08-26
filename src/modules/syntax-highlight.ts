@@ -4,7 +4,17 @@ interface Rule {
   pattern: RegExp;
   category?: Category;
   captures?: Record<number, Category>;
+  rules?: Rule[];
 }
+
+// Field entries are keys (§6), split at every nesting level by the active
+// delimiter. A quoted name may carry a brace or a delimiter, so it has to match
+// before the punctuation – that is the brace matching §6 requires.
+const fieldRules: Rule[] = [
+  { pattern: /"(?:\\.|[^"\\\r\n])*"/dg, category: "key" },
+  { pattern: /[{},|\t]/dg, category: "punct" },
+  { pattern: /[^{},|\t]+/dg, category: "key" },
+];
 
 const toonRules: Rule[] = [
   // Only spaces may precede the `#`, and there is no inline form (§5.1).
@@ -20,11 +30,10 @@ const toonRules: Rule[] = [
     pattern: /^ *(- )?([a-z_][\w.-]*)(?=[^\S\r\n]*[:[])/dgim,
     captures: { 1: "punct", 2: "key" },
   },
-  // The whole field list reads as one key (§6); a field list always follows the
-  // bracket segment, which is what the lookbehind pins it to. Painting field
-  // names individually would mean knowing whether a brace sits inside a quoted
-  // name, and §6 requires exactly that distinction.
-  { pattern: /(?<=\])\{[^\r\n]*\}(?=:[^\S\r\n]*$)/dgm, category: "key" },
+  // A field list always follows the bracket segment, which is what the lookbehind
+  // pins it to (§6). Its interior is scanned again so that nesting, which the
+  // ABNF allows to any depth, needs no rule of its own.
+  { pattern: /(?<=\])\{[^\r\n]*\}(?=:[^\S\r\n]*$)/dgm, rules: fieldRules },
   // Not a token: values carry no color, but the span has to be consumed so the
   // punctuation rule cannot reach a delimiter inside a string.
   { pattern: /"(?:\\.|[^"\\\r\n])*"/dg },
@@ -83,45 +92,56 @@ function tokenize(
   rules: Rule[],
   rangesByCategory: Map<Category, Range[]>,
 ) {
-  const text = node.data;
-  let cursor = 0;
+  scan(node.data, rules, 0);
 
-  const addRange = ([start, end]: [number, number], category: Category) => {
+  function addRange(
+    [start, end]: [number, number],
+    category: Category,
+    offset: number,
+  ) {
     if (start === end) return;
 
     const range = new Range();
-    range.setStart(node, start);
-    range.setEnd(node, end);
+    range.setStart(node, offset + start);
+    range.setEnd(node, offset + end);
 
     const existingRanges = rangesByCategory.get(category);
     if (existingRanges) existingRanges.push(range);
     else rangesByCategory.set(category, [range]);
-  };
+  }
 
-  while (cursor < text.length) {
-    let bestMatch: { rule: Rule; indices: RegExpIndicesArray } | undefined;
+  function scan(text: string, rules: Rule[], offset: number) {
+    let cursor = 0;
 
-    for (const rule of rules) {
-      rule.pattern.lastIndex = cursor;
-      const indices = rule.pattern.exec(text)?.indices;
-      if (
-        indices &&
-        (!bestMatch || indices[0]![0] < bestMatch.indices[0]![0])
-      ) {
-        bestMatch = { rule, indices };
+    while (cursor < text.length) {
+      let bestMatch: { rule: Rule; indices: RegExpIndicesArray } | undefined;
+
+      for (const rule of rules) {
+        rule.pattern.lastIndex = cursor;
+        const indices = rule.pattern.exec(text)?.indices;
+        if (
+          indices &&
+          (!bestMatch || indices[0]![0] < bestMatch.indices[0]![0])
+        ) {
+          bestMatch = { rule, indices };
+        }
       }
+
+      if (!bestMatch) return;
+
+      const { rule, indices } = bestMatch;
+      const [start, end] = indices[0]!;
+      if (rule.category) addRange(indices[0]!, rule.category, offset);
+      if (rule.rules) scan(text.slice(start, end), rule.rules, offset + start);
+      for (const [groupIndex, category] of Object.entries(
+        rule.captures ?? {},
+      )) {
+        const span = indices[Number(groupIndex)];
+        if (span) addRange(span, category, offset);
+      }
+
+      // Zero-width matches would otherwise stall the scan.
+      cursor = Math.max(end, cursor + 1);
     }
-
-    if (!bestMatch) return;
-
-    const { rule, indices } = bestMatch;
-    if (rule.category) addRange(indices[0]!, rule.category);
-    for (const [groupIndex, category] of Object.entries(rule.captures ?? {})) {
-      const span = indices[Number(groupIndex)];
-      if (span) addRange(span, category);
-    }
-
-    // Zero-width matches would otherwise stall the scan.
-    cursor = Math.max(indices[0]![1], cursor + 1);
   }
 }
