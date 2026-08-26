@@ -1,0 +1,28 @@
+@layer components {
+  :root:not([data-theme]),
+  [data-theme="light"] {
+    --syntax-accent: var(--un-color-primary-600);
+    --syntax-accent-on-tint: var(--un-color-primary-700);
+    --syntax-tint: var(--un-color-primary-200);
+  }
+
+  [data-theme="dark"] {
+    --syntax-accent: var(--un-color-primary-400);
+    --syntax-accent-on-tint: var(--syntax-accent);
+    --syntax-tint: var(--un-color-primary-800);
+  }
+
+  ::highlight(syntax-key) {
+    color: var(--syntax-accent);
+  }
+
+  ::highlight(syntax-count) {
+    color: var(--syntax-accent-on-tint);
+    background-color: var(--syntax-tint);
+  }
+
+  ::highlight(syntax-punct),
+  ::highlight(syntax-comment) {
+    color: var(--un-color-contrast-soft);
+  }
+}

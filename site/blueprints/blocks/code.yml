@@ -1,0 +1,19 @@
+name: field.blocks.code.name
+icon: code
+wysiwyg: true
+preview: code
+fields:
+  code:
+    label: field.blocks.code.name
+    type: textarea
+    placeholder: field.blocks.code.placeholder
+    buttons: false
+    font: monospace
+  language:
+    label: field.blocks.code.language
+    type: select
+    default: text
+    options:
+      toon: TOON
+      json: JSON
+      text: Plain Text

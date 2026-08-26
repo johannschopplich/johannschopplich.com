@@ -6,6 +6,7 @@
 @import "base/prose.css";
 
 @import "components/prose.css";
+@import "components/syntax.css";
 @import "components/drauu.css";
 @import "components/image-zoom.css";
 @import "components/cross-box.css";
