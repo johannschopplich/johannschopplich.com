@@ -1,4 +1,14 @@
-<?php echo '<?xml version="1.0" encoding="utf-8"?>' . "\n"; ?>
+<?php
+
+use Kirby\Data\Data;
+
+/** @var \Kirby\Cms\App $kirby */
+
+$stone = Data::read($kirby->root('base') . '/src/generated/tokens.json')['palette']['stone'];
+
+echo '<?xml version="1.0" encoding="utf-8"?>' . "\n";
+
+?>
 <xsl:stylesheet version="1.0"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:atom="http://www.w3.org/2005/Atom"
@@ -14,11 +24,11 @@
         <style>
           :root {
             color-scheme: light dark;
-            --fg:    light-dark(oklch(21.6% 0.006 56.043), oklch(97% 0.001 106.424));   /* stone-900 / 100 */
-            --muted: light-dark(oklch(55.3% 0.013 58.071), oklch(70.9% 0.01 56.259));   /* stone-500 / 400 */
-            --link:  light-dark(oklch(54.6% 0.245 262.881), oklch(70.7% 0.165 254.624)); /* blue-600 / 400 */
-            --line:  light-dark(oklch(92.3% 0.003 48.717), oklch(26.8% 0.007 34.298));   /* stone-200 / 800 */
-            --bg:    light-dark(#fff, oklch(14.7% 0.004 49.25));                         /* white / stone-950 */
+            --fg: light-dark(<?= $stone['900']['oklch'] ?>, <?= $stone['100']['oklch'] ?>);
+            --muted: light-dark(<?= $stone['500']['oklch'] ?>, <?= $stone['400']['oklch'] ?>);
+            --link: light-dark(oklch(54.6% 0.245 262.881), oklch(70.7% 0.165 254.624));
+            --line: light-dark(<?= $stone['200']['oklch'] ?>, <?= $stone['800']['oklch'] ?>);
+            --bg: light-dark(#fff, <?= $stone['950']['oklch'] ?>);
           }
           html { background: var(--bg); }
           body {

@@ -4,8 +4,11 @@
 
   if (themeSetting === "dark" || (prefersDark && themeSetting !== "light")) {
     document.documentElement.dataset.theme = "dark";
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", "#1c1917");
+
+    const meta = document.querySelector('meta[name="theme-color"]');
+
+    if (meta?.dataset.dark) {
+      meta.setAttribute("content", meta.dataset.dark);
+    }
   }
 })();

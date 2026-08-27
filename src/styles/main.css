@@ -1,6 +1,7 @@
 @layer properties, theme, base, icons, foundations, components, shortcuts, default;
 
 @import "uno.css";
+@import "../generated/tokens.css";
 
 @import "base/base.css";
 @import "base/prose.css";

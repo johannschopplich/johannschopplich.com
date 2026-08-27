@@ -1,11 +1,14 @@
 <?php
 
+use Kirby\Data\Data;
 use Kirby\Filesystem\F;
 
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
 /** @var \Kirby\Template\Slot|null $slot */
+
+$backgroundTokens = Data::read($kirby->root('base') . '/src/generated/tokens.json')['colors']['background'];
 
 ?>
 <!--
@@ -26,7 +29,7 @@ https://github.com/johannschopplich/johannschopplich.com
   <?= $meta->jsonld() ?>
   <?= $meta->social() ?>
 
-  <meta name="theme-color" content="#fefcf8">
+  <meta name="theme-color" content="<?= $backgroundTokens['light']['hex'] ?>" data-dark="<?= $backgroundTokens['dark']['hex'] ?>">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">

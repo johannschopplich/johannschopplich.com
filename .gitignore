@@ -31,6 +31,7 @@ site/plugins/*
 public/assets/dev
 public/dist
 src/styles/uno.css
+src/generated/tokens.css
 
 # kirbyferry
 content-fields
