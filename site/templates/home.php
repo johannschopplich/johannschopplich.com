@@ -100,7 +100,7 @@
   </div>
 
   <div class="border-y border-solid border-contrast-low dark:border-contrast-lower">
-    <div class="px-lg md:px-gutter">
+    <div class="max-sm:pl-lg sm:px-lg md:px-gutter">
       <div class="overflow-hidden max-w-screen-lg">
         <?php snippet('components/package-stats', ['packages' => $packages]) ?>
       </div>
