@@ -11,12 +11,12 @@ $complementaryLanguage = $kirby
   <div class="px-lg pt-8xl pb-3xl bg-contrast-lowest border-y border-contrast-low md:px-gutter">
     <div class="max-w-screen-lg">
       <div class="mb-8xl">
-        <h3 class="title mb-3xl text-2xl">
+        <h2 class="title mb-3xl text-2xl">
           <?= t('generic.contact') ?>
           <span class="icon-inline ml-1 h-[1em] translate-y-[2px]">
             <?= icon('johann.svg') ?>
           </span>
-        </h3>
+        </h2>
 
         <ul>
           <?php foreach ($site->footerLinks()->toStructure() as $item): ?>

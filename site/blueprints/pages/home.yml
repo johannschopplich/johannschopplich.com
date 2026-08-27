@@ -48,16 +48,29 @@ tabs:
                     required: true
               text: fields/blocks
               headline02:
-                label:
-                  de: Referenzen
-                  en: Work
+                label: Open Source
                 type: headline
-              logos:
-                label: Logos
-                type: files
-                query: kirby.page("work").files.template("logo")
-                uploads: false
-                translate: false
+              packages:
+                label: Packages
+                type: structure
+                max: 3
+                fields:
+                  name:
+                    label: Name
+                    type: text
+                    required: true
+                    translate: false
+                  url:
+                    label: URL
+                    type: url
+                    required: true
+                    translate: false
+                  description:
+                    label:
+                      de: Beschreibung
+                      en: Description
+                    type: text
+                    required: true
 
       - width: 1/3
         sections:

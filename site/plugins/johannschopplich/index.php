@@ -2,9 +2,88 @@
 
 use Kirby\Cms\App;
 use Kirby\Cms\Html;
+use Kirby\Http\Remote;
 
 App::plugin('johannschopplich/website', [
+    'options' => [
+        'cache.npm' => true
+    ],
     'siteMethods' => [
+        'npmDownloadStats' => function (array $packageNames): array {
+            $cache = $this->kirby()->cache('johannschopplich.website.npm');
+
+            // Sorted so the key stays the same no matter in which order the
+            // packages are listed – all languages share one cache entry.
+            sort($packageNames);
+            $cacheKey = 'stats-' . sha1(implode(',', $packageNames));
+
+            $fetch = function () use ($packageNames): array {
+                $stats = [];
+
+                foreach ($packageNames as $packageName) {
+                    try {
+                        $response = Remote::get(
+                            'https://api.npmjs.org/downloads/range/last-year/' . $packageName,
+                            ['timeout' => 5]
+                        );
+                        $dailyDownloads = $response->code() === 200
+                            ? array_column($response->json()['downloads'] ?? [], 'downloads')
+                            : [];
+                    } catch (Throwable) {
+                        $dailyDownloads = [];
+                    }
+
+                    if ($dailyDownloads === []) {
+                        continue;
+                    }
+
+                    // The API range ends mid-week, so a trailing partial chunk
+                    // would fake a download cliff at the end of the sparkline.
+                    $weeklyDownloads = array_map('array_sum', array_chunk($dailyDownloads, 7));
+                    if (count($dailyDownloads) % 7 !== 0) {
+                        array_pop($weeklyDownloads);
+                    }
+
+                    $stats[$packageName] = [
+                        'monthlyDownloads' => array_sum(array_slice($dailyDownloads, -30)),
+                        'weeklyDownloads' => $weeklyDownloads
+                    ];
+                }
+
+                return $stats;
+            };
+
+            $store = function (array $stats) use ($cache, $cacheKey, $packageNames): void {
+                if (count($stats) === count($packageNames)) {
+                    $cache->set($cacheKey, [
+                        'fetchedAt' => time(),
+                        'stats' => $stats
+                    ]);
+                }
+            };
+
+            $cachedEntry = $cache->get($cacheKey);
+
+            if (is_array($cachedEntry) && isset($cachedEntry['fetchedAt'], $cachedEntry['stats'])) {
+                // Stale-while-revalidate: expired stats are served instantly
+                // and refreshed after the response has been flushed.
+                if ($cachedEntry['fetchedAt'] < time() - 60 * 60 * 24 * 7) {
+                    register_shutdown_function(function () use ($fetch, $store): void {
+                        if (function_exists('fastcgi_finish_request')) {
+                            fastcgi_finish_request();
+                        }
+                        $store($fetch());
+                    });
+                }
+
+                return $cachedEntry['stats'];
+            }
+
+            $stats = $fetch();
+            $store($stats);
+
+            return $stats;
+        },
         // Single source of truth for the site's structured-data identity.
         // Google processes JSON-LD per page and does not resolve a bare `@id`
         // to a node on another page, so the full Person is emitted on every
@@ -164,6 +243,21 @@ if (!function_exists('dateFormatter')) {
         $locale = App::instance()->languageCode() ?? 'en';
         $key = "{$locale}:{$dateType}:{$timeType}";
         return $formatters[$key] ??= IntlDateFormatter::create($locale, $dateType, $timeType);
+    }
+}
+
+if (!function_exists('formatCount')) {
+    /**
+     * Compacts a count for display in the current language,
+     * e.g. `10.5M` in English and `10,5 Mio.` in German.
+     */
+    function formatCount(int $count): string
+    {
+        return MessageFormatter::formatMessage(
+            App::instance()->languageCode() ?? 'en',
+            '{0, number, :: compact-short .#}',
+            [$count]
+        ) ?: (string)$count;
     }
 }
 

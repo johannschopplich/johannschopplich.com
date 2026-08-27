@@ -1,6 +1,9 @@
 <?php
 
 /** @var \Kirby\Cms\Pages $query */
+/** @var int|null $level */
+
+$level ??= 2;
 
 ?>
 <div class="
@@ -20,14 +23,14 @@
         </time>
       </p>
 
-      <h2 class="title mb-xs text-size-xl">
+      <h<?= $level ?> class="title mb-xs text-size-xl">
         <a
           href="<?= $article->url() ?>"
           class="link-default hyphenate">
           <span class="absolute inset-0" aria-hidden="true"></span>
           <?= $article->title() ?>
         </a>
-      </h2>
+      </h<?= $level ?>>
 
       <div class="prose text-sm text-contrast-medium">
         <p><?= $article->description() ?></p>

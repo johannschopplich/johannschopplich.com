@@ -28,12 +28,6 @@ $published = $block->published();
 $retweets = $block->retweets()->isNotEmpty() ? $block->retweets()->toInt() : null;
 $likes = $block->likes()->isNotEmpty() ? $block->likes()->toInt() : null;
 
-$formatCount = fn (int $count): string => MessageFormatter::formatMessage(
-  kirby()->languageCode() ?? 'en',
-  '{0, number, :: compact-short .#}',
-  [$count]
-) ?: (string) $count;
-
 if ($caption->isEmpty() && $image) {
   $caption = $image->caption()->permalinksToUrls();
 }
@@ -113,10 +107,10 @@ if ($isFeed): ?>
     <?php if ($retweets !== null || $likes !== null): ?>
       <div class="flex gap-lg pt-xs text-[0.875em] text-contrast-medium border-t-1 border-contrast-lower border-solid">
         <?php if ($retweets !== null): ?>
-          <span><span class="font-600 text-contrast-higher"><?= $formatCount($retweets) ?></span> <?= t('tweet.retweets') ?></span>
+          <span><span class="font-600 text-contrast-higher"><?= formatCount($retweets) ?></span> <?= t('tweet.retweets') ?></span>
         <?php endif ?>
         <?php if ($likes !== null): ?>
-          <span><span class="font-600 text-contrast-higher"><?= $formatCount($likes) ?></span> <?= t('tweet.likes') ?></span>
+          <span><span class="font-600 text-contrast-higher"><?= formatCount($likes) ?></span> <?= t('tweet.likes') ?></span>
         <?php endif ?>
       </div>
     <?php endif ?>

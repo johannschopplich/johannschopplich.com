@@ -3,6 +3,7 @@
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
 /** @var \Kirby\Cms\Page $page */
+/** @var array $packages */
 ?>
 
 <?php snippet('layouts/default', slots: true) ?>
@@ -74,11 +75,38 @@
     <div class="px-lg md:px-gutter">
     <div class="overflow-hidden max-w-screen-lg">
       <?php snippet('components/article-grid', [
-        'query' => $kirby->collection('articles')->paginate(4)
+        'query' => $kirby->collection('articles')->paginate(4),
+        'level' => 3
       ]) ?>
     </div>
   </div>
 </div>
+
+<?php if ($packages !== []): ?>
+  <div class="section-divider"></div>
+
+  <div class="px-lg mb-lg md:px-gutter">
+    <div class="flex gap-xl justify-between items-center max-w-screen-lg md:items-baseline">
+      <h2 class="title text-xl text-primary-accent md:text-2xl">
+        <?= t('packages') ?>
+      </h2>
+
+      <a href="https://github.com/johannschopplich" target="_blank" class="action-link link-default">
+        <span class="sm:hidden"><?= t('generic.more') ?></span>
+        <span class="hidden sm:inline"><?= t('packages.more') ?></span>
+        <span class="i-tabler-arrow-right ml-1" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="border-y border-solid border-contrast-low dark:border-contrast-lower">
+    <div class="px-lg md:px-gutter">
+      <div class="overflow-hidden max-w-screen-lg">
+        <?php snippet('components/package-stats', ['packages' => $packages]) ?>
+      </div>
+    </div>
+  </div>
+<?php endif ?>
 
 <?php if ($photography = page('photography')): ?>
   <?php $query = $photography
