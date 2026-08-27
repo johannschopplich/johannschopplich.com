@@ -59,17 +59,18 @@ tabs:
                     label: Name
                     type: text
                     required: true
-                    translate: false
                   url:
                     label: URL
                     type: url
                     required: true
-                    translate: false
                   description:
                     label:
                       de: Beschreibung
                       en: Description
-                    type: text
+                    type: writer
+                    inline: true
+                    marks:
+                      - italic
                     required: true
 
       - width: 1/3

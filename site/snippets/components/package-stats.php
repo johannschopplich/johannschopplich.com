@@ -53,7 +53,7 @@ $sparklinePoints = function (array $weeklyDownloads): string {
       </h3>
 
       <div class="prose text-sm text-contrast-medium">
-        <p><?= esc($package['description']) ?></p>
+        <p><?= $package['description'] ?></p>
       </div>
     </div>
   <?php endforeach ?>
