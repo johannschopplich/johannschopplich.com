@@ -36,8 +36,8 @@ $sparklinePoints = function (array $weeklyDownloads): string {
 
       <div class="relative mb-lg">
         <svg class="absolute inset-0 w-full h-full text-primary-accent" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <polygon points="0,100 <?= $sparkline ?> 100,100" fill="currentColor" opacity="0.1" />
-          <polyline points="<?= $sparkline ?>" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" opacity="0.25" />
+          <polygon points="0,100 <?= $sparkline ?> 100,100" fill="currentColor" opacity="0.2" />
+          <polyline points="<?= $sparkline ?>" fill="none" stroke="currentColor" stroke-width="1.5" vector-effect="non-scaling-stroke" opacity="0.4" />
         </svg>
         <p class="title relative text-4xl tabular-nums md:text-5xl"><?= formatCount($package['monthlyDownloads']) ?></p>
       </div>
