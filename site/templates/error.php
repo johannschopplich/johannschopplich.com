@@ -13,7 +13,7 @@
 
   <div class="border-b border-solid border-contrast-low dark:border-contrast-lower">
     <div class="px-lg pb-5xl md:px-gutter">
-      <div class="max-w-screen-lg">
+      <div class="max-w-screen-md">
         <pixel-text text="404" class="block aspect-[40/18] font-heading">
           <noscript>
             <style>pixel-text { aspect-ratio: auto }</style>
