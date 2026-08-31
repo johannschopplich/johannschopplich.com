@@ -62,8 +62,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
       embla-carousel:
-        specifier: ^9.0.0-rc02
-        version: 9.0.0-rc02
+        specifier: 9.0.0-rc03
+        version: 9.0.0-rc03
       es-toolkit:
         specifier: ^1.49.0
         version: 1.49.0
@@ -1204,8 +1204,8 @@ packages:
   electron-to-chromium@1.5.380:
     resolution: {integrity: sha512-W6d5AbuEoRayO447cqrg6lKJIlscgRnnxOZl/08kfV71BQDoEBC7Wwis68z87LjyK6f4kWyTaubuDbhHKrZkbA==}
 
-  embla-carousel@9.0.0-rc02:
-    resolution: {integrity: sha512-GOQBX6v5cNk/ptfuHUoHhW9rvl5KeSGsBoppaUqtihu2kDmQAyzvnH/95r3TaSScFSJTj68V9AM6E5nq3jUVcQ==}
+  embla-carousel@9.0.0-rc03:
+    resolution: {integrity: sha512-f36OvPQVCJl54m4nEWfPRd2fe3NQNGY671RzWvvaz9Uai1dpNWO2A8YRUL4fj2KgcYizaO3Wxhu9p0dDPh8Mug==}
 
   empathic@2.0.1:
     resolution: {integrity: sha512-YGRs8knHhKHVShLkFET/rWAU8kmHbOV5LwN938RHI0pljAJ1Gf6SzXsSmRaEzcXTtOOmVqJ5+WtQPL5uigY50Q==}
@@ -3288,7 +3288,7 @@ snapshots:
 
   electron-to-chromium@1.5.380: {}
 
-  embla-carousel@9.0.0-rc02: {}
+  embla-carousel@9.0.0-rc03: {}
 
   empathic@2.0.1: {}
 

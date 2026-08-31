@@ -28,7 +28,7 @@ function setupCarousel(node: HTMLElement) {
     align: "center",
     containScroll: "trimSnaps",
     skipSnaps: true,
-    dragFree: isAbove("md"),
+    dragFree: isAbove("md") ? "snap" : false,
   });
 
   node.addEventListener("keydown", (event) => {
