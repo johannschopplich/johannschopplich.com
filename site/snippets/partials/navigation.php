@@ -8,13 +8,13 @@
   <a
     href="<?= $site->url() ?>"
     class="
-      [--un-dithered-from:var(--un-color-contrast-soft)] inline-flex items-center pl-0.5 pr-1 py-0.75 bg-theme-background halftone-bg select-none
-      hover:[--un-dithered-from:currentcolor]
+      halftone-bg [--un-halftone-color:var(--un-color-contrast-soft)] inline-flex items-center pl-0.5 pr-1 py-0.75 select-none
+      hover:[--un-halftone-color:currentColor]
     "
     <?php e($page->isHomePage(), ' aria-current="page"') ?>
     aria-label="<?= $site->title()->escape() ?>"
   >
-    <svg class="size-[1.25em]" viewBox="0 0 256 256" fill="currentColor" style="overflow: visible; stroke: var(--un-dithered-to, var(--un-color-background)); stroke-width: 44; paint-order: stroke fill;" aria-hidden="true">
+    <svg class="size-[1.25em]" viewBox="0 0 256 256" fill="currentColor" style="overflow: visible; stroke: var(--un-halftone-bg, var(--un-color-background)); stroke-width: 44; paint-order: stroke fill;" aria-hidden="true">
       <path d="M143.86 77.184c.901 10.29 2.081 23.271 2.005 37.816h94.748v38h-98.26c-6.709 34.892-24.858 72.751-69.427 102.657L48.41 219.12c28.748-19.29 42.607-42.564 48.847-66.12H37.708v-38h64.136c.059-11.986-.898-23.494-1.816-33.982zM116 0c13.807 0 25 11.193 25 25s-11.193 25-25 25-25-11.193-25-25 11.193-25 25-25" />
     </svg>
   </a>
@@ -23,9 +23,9 @@
     <a
       href="<?= $item->url() ?>"
       class="
-        overline [--un-dithered-from:var(--un-color-contrast-soft)] px-1 py-0.5 bg-theme-background halftone-bg select-none
-        hover:[--un-dithered-from:currentcolor] hover:text-underline hover:decoration-primary-accent
-        aria-[current]:[--un-dithered-from:var(--un-color-contrast-high)] aria-[current]:text-underline aria-[current]:decoration-primary-accent
+        overline halftone-bg [--un-halftone-color:var(--un-color-contrast-soft)] px-1 py-0.5 select-none
+        hover:[--un-halftone-color:currentColor] hover:text-underline hover:decoration-primary-accent
+        aria-[current]:[--un-halftone-color:var(--un-color-contrast-high)] aria-[current]:text-underline aria-[current]:decoration-primary-accent
       "
       <?php e($item->isOpen(), 'aria-current="page"') ?>
     >

@@ -1,0 +1,43 @@
+@layer components {
+  .halftone-bg {
+    --_halftone-pitch: 4px;
+    position: relative;
+    isolation: isolate;
+    background-color: var(--un-halftone-bg, var(--un-color-background));
+    text-shadow:
+      -2px -2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -2px -1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -2px 0px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -2px 1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -2px 2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -1px -2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -1px -1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -1px 0px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -1px 1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      -1px 2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      0px -2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      0px -1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      0px 1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      0px 2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      1px -2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      1px -1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      1px 0px 0 var(--un-halftone-bg, var(--un-color-background)),
+      1px 1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      1px 2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      2px -2px 0 var(--un-halftone-bg, var(--un-color-background)),
+      2px -1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      2px 0px 0 var(--un-halftone-bg, var(--un-color-background)),
+      2px 1px 0 var(--un-halftone-bg, var(--un-color-background)),
+      2px 2px 0 var(--un-halftone-bg, var(--un-color-background));
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-color: var(--un-halftone-color, currentColor);
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Ccircle cx='2.5' cy='2.5' r='1.5'/%3E%3Ccircle cx='7.5' cy='7.5' r='1.5'/%3E%3C/svg%3E");
+      mask-size: var(--_halftone-pitch) var(--_halftone-pitch);
+    }
+  }
+}
