@@ -13,8 +13,7 @@ App::plugin('johannschopplich/website', [
         'npmDownloadStats' => function (array $packageNames): array {
             $cache = $this->kirby()->cache('johannschopplich.website.npm');
 
-            // Sorted so the key stays the same no matter in which order the
-            // packages are listed – all languages share one cache entry.
+            // Sorted so the key ignores listing order and all languages share one entry.
             sort($packageNames);
             $cacheKey = 'stats-' . sha1(implode(',', $packageNames));
 
@@ -66,8 +65,7 @@ App::plugin('johannschopplich/website', [
             $cachedEntry = $cache->get($cacheKey);
 
             if (is_array($cachedEntry) && isset($cachedEntry['fetchedAt'], $cachedEntry['stats'])) {
-                // Stale-while-revalidate: expired stats are served instantly
-                // and refreshed after the response has been flushed.
+                // Stale-while-revalidate: refresh week-old stats once the response is flushed.
                 if ($cachedEntry['fetchedAt'] < time() - 60 * 60 * 24 * 7) {
                     register_shutdown_function(function () use ($fetch, $store): void {
                         if (function_exists('fastcgi_finish_request')) {
@@ -85,20 +83,14 @@ App::plugin('johannschopplich/website', [
 
             return $stats;
         },
-        // Single source of truth for the site's structured-data identity.
-        // Google processes JSON-LD per page and does not resolve a bare `@id`
-        // to a node on another page, so the full Person is emitted on every
-        // page (via the standalone `Person` node in config/meta.php) and
-        // everything else references it by the same, language-stable `@id`.
+        // Google doesn't resolve a bare `@id` to a node on another page, so every
+        // page emits the full Person and references it by this language-stable `@id`.
         'personId' => function (): string {
             return rtrim($this->kirby()->url('index'), '/') . '/#person';
         },
-        // A bare `@id` reference to the canonical Person, for author/publisher/
-        // mainEntity slots that point back at the same entity.
         'personReference' => function (): array {
             return ['@id' => $this->personId()];
         },
-        // The canonical Person node, emitted once per page.
         'person' => function (): array {
             $person = [
                 '@type' => 'Person',
@@ -155,8 +147,6 @@ App::plugin('johannschopplich/website', [
 
             return $person;
         },
-        // The canonical WebSite identity – language-stable like `personId` – so
-        // every page node can declare itself `isPartOf` the one website entity.
         'webSiteId' => function (): string {
             return rtrim($this->kirby()->url('index'), '/') . '/#website';
         },
@@ -165,8 +155,7 @@ App::plugin('johannschopplich/website', [
         }
     ],
     'pageMethods' => [
-        // Per-language `@id`s for this page's WebPage and breadcrumb nodes, so
-        // content entities can reference them within the page's entity graph.
+        // Each translation is its own WebPage, so these `@id`s use the language URL.
         'webPageId' => function (): string {
             return $this->url() . '#webpage';
         },
@@ -203,19 +192,17 @@ App::plugin('johannschopplich/website', [
         'hasMarkdownRepresentation' => function (): bool {
             return $this->kirby()->template($this->template()->name(), 'md')->exists();
         },
-        // Lets agents that don't send `Accept: text/markdown` still reach the Markdown.
-        // Kirby doesn't resolve `/en.md`, so the home page needs its slug in the path.
         'markdownUrl' => function (): string {
             if (!$this->hasMarkdownRepresentation()) {
                 return $this->url();
             }
 
+            // Kirby resolves `/en/home.md` for the home page, but not `/en.md`.
             return $this->url() . ($this->isHomePage() ? '/' . $this->slug() : '') . '.md';
         }
     ],
     'hooks' => [
-        // Representation renders such as `.md` URLs don't depend on `Accept`, and the
-        // negotiation route sets `Vary` for its Markdown responses itself.
+        // `.md` URLs ignore `Accept`; the route sets `Vary` on negotiated Markdown.
         'page.render:after' => function (string $contentType, Page $page): void {
             if ($contentType === 'html' && $page->hasMarkdownRepresentation()) {
                 varyOnAccept();
@@ -226,7 +213,7 @@ App::plugin('johannschopplich/website', [
 
 if (!function_exists('icon')) {
     /**
-     * Returns an SVG icon from the `assets/icons` directory.
+     * Returns the inline SVG of an icon in `assets/icons`, hidden from assistive technology.
      */
     function icon(string $symbol, string|null $class = null): string|null
     {
@@ -286,8 +273,8 @@ if (!function_exists('formatCount')) {
 if (!function_exists('varyOnAccept')) {
     /**
      * Adds `Accept` to the response's `Vary`, so caches keep a URL's HTML and Markdown
-     * apart. Setting `Vary` replaces the value Kirby derives from cookie, auth, and CORS
-     * usage, so this copies it first and has to run after the page has rendered.
+     * apart. Call it after rendering: it freezes the `Vary` Kirby has derived from
+     * cookie and auth usage by then.
      */
     function varyOnAccept(): void
     {
@@ -299,7 +286,7 @@ if (!function_exists('varyOnAccept')) {
 
 if (!function_exists('renderMarkdown')) {
     /**
-     * Builds clean Markdown output for LLM consumption by joining non-empty parts.
+     * Joins the non-empty parts with blank lines, so skipped sections leave no gaps.
      */
     function renderMarkdown(string|null ...$parts): string
     {
