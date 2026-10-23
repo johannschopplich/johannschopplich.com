@@ -2,6 +2,7 @@
 
 use Kirby\Cms\App;
 use Kirby\Cms\Html;
+use Kirby\Cms\Page;
 use Kirby\Http\Remote;
 
 App::plugin('johannschopplich/website', [
@@ -198,6 +199,27 @@ App::plugin('johannschopplich/website', [
                 '@id' => $this->breadcrumbId(),
                 'itemListElement' => $items
             ];
+        },
+        'hasMarkdownRepresentation' => function (): bool {
+            return $this->kirby()->template($this->template()->name(), 'md')->exists();
+        },
+        // Lets agents that don't send `Accept: text/markdown` still reach the Markdown.
+        // Kirby doesn't resolve `/en.md`, so the home page needs its slug in the path.
+        'markdownUrl' => function (): string {
+            if (!$this->hasMarkdownRepresentation()) {
+                return $this->url();
+            }
+
+            return $this->url() . ($this->isHomePage() ? '/' . $this->slug() : '') . '.md';
+        }
+    ],
+    'hooks' => [
+        // Representation renders such as `.md` URLs don't depend on `Accept`, and the
+        // negotiation route sets `Vary` for its Markdown responses itself.
+        'page.render:after' => function (string $contentType, Page $page): void {
+            if ($contentType === 'html' && $page->hasMarkdownRepresentation()) {
+                varyOnAccept();
+            }
         }
     ]
 ]);
@@ -258,6 +280,20 @@ if (!function_exists('formatCount')) {
             '{0, number, :: compact-short .#}',
             [$count]
         ) ?: (string)$count;
+    }
+}
+
+if (!function_exists('varyOnAccept')) {
+    /**
+     * Adds `Accept` to the response's `Vary`, so caches keep a URL's HTML and Markdown
+     * apart. Setting `Vary` replaces the value Kirby derives from cookie, auth, and CORS
+     * usage, so this copies it first and has to run after the page has rendered.
+     */
+    function varyOnAccept(): void
+    {
+        $response = App::instance()->response();
+        $vary = $response->header('Vary');
+        $response->header('Vary', $vary ? "{$vary}, Accept" : 'Accept');
     }
 }
 

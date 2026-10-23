@@ -7,7 +7,7 @@ use Kirby\Data\Json;
 
 $frontmatter = [
   'title' => $page->title()->value(),
-  'url' => '/' . $page->uid(),
+  'url' => $page->url(),
   ...($page->description()->isNotEmpty() ? ['description' => $page->description()->value()] : []),
   ...($fields ?? [])
 ];
@@ -15,10 +15,6 @@ $frontmatter = [
 ?>
 ---
 <?php foreach ($frontmatter as $key => $value): ?>
-<?php if (is_array($value)): ?>
-<?= $key ?>: [<?= implode(', ', $value) ?>]
-<?php else: ?>
 <?= $key ?>: <?= Json::encode($value) . "\n" ?>
-<?php endif ?>
 <?php endforeach ?>
 ---

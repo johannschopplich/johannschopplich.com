@@ -1,7 +1,6 @@
 <?php
 
 use Kirby\Cms\Language;
-use Kirby\Exception\NotFoundException;
 use Kirby\Http\Response;
 
 return [
@@ -18,7 +17,7 @@ return [
     [
         'pattern'  => '(:all)',
         'language' => '*',
-        'method'   => 'GET',
+        'method'   => 'GET|HEAD',
         'action'   => function (Language $language, string $path = '') {
             $accept = kirby()->request()->header('Accept');
 
@@ -28,15 +27,14 @@ return [
 
             $page = $path === '' ? site()->homePage() : page($path);
 
-            if (!$page) {
+            if (!$page?->hasMarkdownRepresentation()) {
                 $this->next();
             }
 
-            try {
-                return $page->render(contentType: 'md');
-            } catch (NotFoundException) {
-                $this->next();
-            }
+            $markdown = $page->render(contentType: 'md');
+            varyOnAccept();
+
+            return $markdown;
         }
     ],
     [

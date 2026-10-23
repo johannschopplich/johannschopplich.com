@@ -13,7 +13,7 @@ $parts = [
 
 foreach ($page->children()->listed() as $project) {
   $parts[] = '## ' . $project->title()->value();
-  $parts[] = '- **URL:** ' . $project->url();
+  $parts[] = '- **URL:** ' . $project->markdownUrl();
   if ($project->subtitle()->isNotEmpty()) {
     $parts[] = '*' . $project->subtitle()->value() . '*';
   }

@@ -18,6 +18,15 @@ $converter = new HtmlConverter([
 ]);
 
 $html = $blocks->toHtml();
+
+// Replace each `<br>` inside a heading with a space, since a line break would end
+// the ATX heading and push the rest into a paragraph.
+$html = preg_replace_callback(
+  '/<h([1-6])\b[^>]*>.*?<\/h\1>/s',
+  fn ($match) => preg_replace('/<br\s*\/?>/i', ' ', $match[0]),
+  $html
+);
+
 $markdown = $converter->convert($html);
 
 // Clean up excessive newlines.

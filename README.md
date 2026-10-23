@@ -27,7 +27,7 @@ There is no frontend bundle to speak of: [`src/main.ts`](./src/main.ts) installs
 
 ## Notable Details
 
-- **Markdown for LLMs.** Every page has a markdown representation: send an `Accept: text/markdown` header and [`routes.php`](./site/config/routes.php) serves clean frontmatter + blocks markdown rendered by `*.md.php` templates.
+- **Markdown for LLMs.** Every page with a `*.md.php` template has a markdown representation: send an `Accept: text/markdown` header and [`routes.php`](./site/config/routes.php) serves clean frontmatter + blocks markdown, or append `.md` to the URL.
 - **Structured data.** The [site plugin](./site/plugins/johannschopplich) emits a schema.org graph (Person, WebSite, WebPage, BreadcrumbList) with language-stable IDs from a single identity source in [`site/config/meta.php`](./site/config/meta.php).
 - **Feeds.** RSS and JSON feeds at `/feeds/rss` and `/feeds/json`, cached.
 - **Images.** WebP thumbs with device-tuned srcsets, ThumbHash placeholders ([kirby-thumbhash](https://github.com/tobimori/kirby-thumbhash) + [unlazy](https://unlazy.byjohann.dev)) and on-the-fly transforms via the [thumb-router plugin](./site/plugins/thumb-router).
