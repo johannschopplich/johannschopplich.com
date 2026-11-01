@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@11.9.0",
+  "packageManager": "pnpm@12.16.1",
   "scripts": {
     "tokens": "node scripts/build-tokens.ts",
     "inline": "esbuild src/inline/*.js --minify --outdir=public/dist/inline",
