@@ -66,6 +66,8 @@ https://github.com/johannschopplich/johannschopplich.com
 
 <body class="min-h-[100svh] md:pt-sm" data-template="<?= $page->intendedTemplate()->name() ?>">
 
+  <a href="#main" class="skip-link"><?= t('skip-link') ?></a>
+
   <header class="
     sticky -top-px z-20 pt-px
     bg-theme-background/75 bg-[image:radial-gradient(rgba(255,255,255,0)_1px,_var(--un-color-background)_1px)] bg-[length:3px_3px]
@@ -77,7 +79,7 @@ https://github.com/johannschopplich/johannschopplich.com
     </div>
   </header>
 
-  <main class="relative">
+  <main id="main" class="relative" tabindex="-1">
     <?= $slot ?>
   </main>
 

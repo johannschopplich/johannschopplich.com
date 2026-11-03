@@ -112,6 +112,11 @@
     outline-offset: 2px;
   }
 
+  /* A skip-link target such as `main` takes focus without being a control. */
+  [tabindex="-1"]:focus-visible {
+    outline: none;
+  }
+
   a {
     color: var(--un-color-link);
   }

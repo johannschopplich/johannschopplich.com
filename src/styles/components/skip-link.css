@@ -1,0 +1,30 @@
+@layer components {
+  .skip-link {
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--un-color-primary-600);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    z-index: 30;
+
+    &:hover {
+      background-color: var(--un-color-primary-800);
+      color: white;
+    }
+
+    &:not(:focus) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+  }
+}
