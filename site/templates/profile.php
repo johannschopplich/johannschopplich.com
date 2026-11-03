@@ -17,7 +17,7 @@
             sizes="(min-width: 768px) 320px, 100vw"
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
-            alt="<?= $image->alt() ?>"
+            alt="<?= $image->alt()->escape() ?>"
           >
         </figure>
 

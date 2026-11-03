@@ -32,7 +32,8 @@ if ($block->location() === 'web') {
       'width' => $image->width(),
       'height' => $image->height(),
       'style' => 'aspect-ratio: ' . $image->width() . '/' . $image->height(),
-      'alt' => $alt->escape()
+      // `null` would drop the attribute instead of marking the image decorative.
+      'alt' => $alt->value() ?? ''
     ]
   );
 } else {
