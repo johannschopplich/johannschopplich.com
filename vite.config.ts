@@ -59,7 +59,8 @@ export default defineConfig(({ mode }) => {
 function prependCustomMedia(): PostCSSPlugin {
   const rules = Object.entries(breakpoints).flatMap(([name, width]) => [
     `@custom-media --${name} (min-width: ${width}px);`,
-    `@custom-media --below-${name} (max-width: ${width - 0.02}px);`,
+    // 0.1px under the min-width, like UnoCSS's `max-*` variants.
+    `@custom-media --below-${name} (max-width: ${width - 0.1}px);`,
   ]);
 
   return {
