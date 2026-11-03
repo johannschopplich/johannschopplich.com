@@ -11,5 +11,11 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "include": ["scripts", "src", "eslint.config.ts", "vite.config.ts"]
+  "include": [
+    "scripts",
+    "src",
+    "eslint.config.ts",
+    "uno.config.ts",
+    "vite.config.ts"
+  ]
 }

@@ -1,5 +1,6 @@
 import type { Theme } from "@unocss/preset-wind4";
 import { defineConfig, presetIcons, presetWind4 } from "unocss";
+import { breakpoints } from "./src/breakpoints.ts";
 
 export default defineConfig<Theme>({
   cli: {
@@ -9,6 +10,9 @@ export default defineConfig<Theme>({
     },
   },
   theme: {
+    breakpoint: Object.fromEntries(
+      Object.entries(breakpoints).map(([name, width]) => [name, `${width}px`]),
+    ),
     colors: {
       primary: {
         DEFAULT: "var(--un-color-primary)",

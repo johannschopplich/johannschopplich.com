@@ -1,11 +1,11 @@
 import type { Plugin as PostCSSPlugin } from "postcss";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import postcssGlobalData from "@csstools/postcss-global-data";
 import postcssCustomMedia from "postcss-custom-media";
 import postcssNesting from "postcss-nesting";
 import { defineConfig } from "vite";
 import FullReload from "vite-plugin-full-reload";
+import { breakpoints } from "./src/breakpoints.ts";
 
 const currentDir = import.meta.dirname;
 
@@ -34,9 +34,7 @@ export default defineConfig(({ mode }) => {
     css: {
       postcss: {
         plugins: [
-          postcssGlobalData({
-            files: ["./src/styles/abstracts/breakpoints.css"],
-          }),
+          prependCustomMedia(),
           postcssCustomMedia(),
           postcssNesting(),
           ...(!isProd ? [exportDevStyles()] : []),
@@ -53,6 +51,24 @@ export default defineConfig(({ mode }) => {
     },
   };
 });
+
+/**
+ * Prepends the breakpoint custom media from `src/breakpoints.ts` to every
+ * stylesheet, so CSS and UnoCSS read the same px widths.
+ */
+function prependCustomMedia(): PostCSSPlugin {
+  const rules = Object.entries(breakpoints).flatMap(([name, width]) => [
+    `@custom-media --${name} (min-width: ${width}px);`,
+    `@custom-media --below-${name} (max-width: ${width - 0.02}px);`,
+  ]);
+
+  return {
+    postcssPlugin: "postcss-prepend-custom-media",
+    Once(root) {
+      root.prepend(rules.join("\n"));
+    },
+  };
+}
 
 /**
  * Prevents FOUC in development mode before Vite injects the CSS into the page.
