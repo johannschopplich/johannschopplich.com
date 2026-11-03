@@ -48,21 +48,7 @@ There is no frontend bundle to speak of: [`src/main.ts`](./src/main.ts) installs
    composer install
    ```
 
-3. Start the frontend watchers (Vite + UnoCSS, via mprocs):
-
-   ```bash
-   pnpm run dev
-   ```
-
-4. Run the PHP server in a second shell – or use a dev server of your choice (e.g. Laravel Valet):
-
-   ```bash
-   composer start
-   ```
-
-Build the production assets with `pnpm run build`. Pushes to `main` deploy through [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
-
-Content is not part of the repository – [`scripts/sync-content.sh`](./scripts/sync-content.sh) rsyncs `storage/content` between local and server (dry-run by default, `--apply` to execute).
+[`AGENTS.md`](./AGENTS.md) lists the commands. Pushes to `main` deploy through [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
 
 ## License
 
