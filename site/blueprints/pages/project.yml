@@ -27,7 +27,7 @@ tabs:
                   en: Gallery
                 type: files
                 layout: cards
-                query: page.files.template(["image", "blocks/image"])
+                query: page.files.template("image")
                 uploads:
                   template: image
                 translate: false
