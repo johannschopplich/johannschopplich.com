@@ -6,7 +6,7 @@ use Kirby\Toolkit\Html;
 /** @var \Kirby\Cms\Block $block */
 
 $alt     = $block->alt();
-$caption = $block->caption();
+$caption = $block->caption()->permalinksToUrls();
 $link    = $block->link();
 $props   = $block->properties();
 $isFeed  = preg_match('/feeds\/(?:rss|json)$/', Url::current());

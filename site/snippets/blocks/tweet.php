@@ -22,7 +22,7 @@ $avatar = $isExternal
   : page('linktree')?->files()->find('profile-image.png');
 
 $text = $block->text()->permalinksToUrls();
-$caption = $block->caption();
+$caption = $block->caption()->permalinksToUrls();
 $image = $block->image()->toFile();
 $published = $block->published();
 $retweets = $block->retweets()->isNotEmpty() ? $block->retweets()->toInt() : null;

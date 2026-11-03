@@ -8,7 +8,7 @@ if (!($image = $block->image()->toFile())) {
   return;
 }
 
-$caption = $block->caption();
+$caption = $block->caption()->permalinksToUrls();
 $size = $block->size()->or(50)->toInt();
 
 if ($caption->isEmpty()) {

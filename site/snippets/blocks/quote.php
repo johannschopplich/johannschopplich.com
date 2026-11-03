@@ -4,10 +4,10 @@
 
 ?>
 <blockquote>
-  <?= $block->text() ?>
+  <?= $block->text()->permalinksToUrls() ?>
   <?php if ($block->citation()->isNotEmpty()): ?>
     <footer>
-      <?= $block->citation() ?>
+      <?= $block->citation()->permalinksToUrls() ?>
     </footer>
   <?php endif ?>
 </blockquote>
