@@ -24,7 +24,6 @@ export class LiteYouTubeEmbed extends HTMLElement {
   requiresYTApi = false;
   #isInitialized = false;
 
-  static isPreconnected = false;
   static ytApiPromise: Promise<void> | undefined;
 
   connectedCallback() {
@@ -78,14 +77,6 @@ export class LiteYouTubeEmbed extends HTMLElement {
       });
     }
 
-    // Warm TCP connections to YouTube origins on first interaction.
-    this.addEventListener("pointerover", LiteYouTubeEmbed.warmConnections, {
-      once: true,
-    });
-    this.addEventListener("focusin", LiteYouTubeEmbed.warmConnections, {
-      once: true,
-    });
-
     this.addEventListener("click", () => {
       void this.activate();
     });
@@ -97,39 +88,6 @@ export class LiteYouTubeEmbed extends HTMLElement {
       this.hasAttribute("js-api") ||
       navigator.vendor.includes("Apple") ||
       navigator.userAgent.includes("Mobi");
-  }
-
-  static addPrefetch(kind: string, url: string, as?: string) {
-    const linkEl = document.createElement("link");
-    linkEl.rel = kind;
-    linkEl.href = url;
-    if (as) linkEl.as = as;
-    document.head.append(linkEl);
-  }
-
-  // Preconnects can't replace iframe-internal requests; the best we can do
-  // is warm origins on the critical path.
-  static warmConnections() {
-    if (LiteYouTubeEmbed.isPreconnected) return;
-
-    // The iframe document and most of its subresources come right off youtube.com.
-    LiteYouTubeEmbed.addPrefetch(
-      "preconnect",
-      "https://www.youtube-nocookie.com",
-    );
-    // The botguard script is fetched off from google.com.
-    LiteYouTubeEmbed.addPrefetch("preconnect", "https://www.google.com");
-
-    LiteYouTubeEmbed.addPrefetch(
-      "preconnect",
-      "https://googleads.g.doubleclick.net",
-    );
-    LiteYouTubeEmbed.addPrefetch(
-      "preconnect",
-      "https://static.doubleclick.net",
-    );
-
-    LiteYouTubeEmbed.isPreconnected = true;
   }
 
   static fetchYTPlayerApi() {
