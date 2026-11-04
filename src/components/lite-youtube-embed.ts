@@ -34,7 +34,6 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     let playBtnEl = this.querySelector<HTMLButtonElement>(".lty-playbtn")!;
 
-    // A label for the button takes priority over a `playlabel` attribute on the custom element.
     this.playLabel =
       playBtnEl?.textContent?.trim() ||
       this.getAttribute("playlabel") ||
@@ -63,7 +62,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     this.addNoscriptIframe();
 
-    // Progressive-enhancement: an `<a>` child becomes the play button.
+    // Progressive enhancement: an `<a>` child, the link to YouTube without JS, becomes the play button.
     if (playBtnEl.nodeName === "A") {
       playBtnEl.removeAttribute("href");
       playBtnEl.setAttribute("tabindex", "0");
@@ -81,9 +80,9 @@ export class LiteYouTubeEmbed extends HTMLElement {
       void this.activate();
     });
 
-    // Safari desktop and mobile browsers don't propagate the click gesture
-    // through iframe creation, so ?autoplay=1 is ignored. The YT JS API is
-    // the only reliable autoplay path on those browsers.
+    // Safari and mobile browsers don't carry the click gesture into a new
+    // iframe, so `autoplay=1` is ignored. The YT JS API is the only reliable
+    // autoplay path there.
     this.requiresYTApi =
       this.hasAttribute("js-api") ||
       navigator.vendor.includes("Apple") ||
@@ -123,11 +122,11 @@ export class LiteYouTubeEmbed extends HTMLElement {
     });
   }
 
-  // Add the iframe within <noscript> for indexability discoverability. See https://github.com/paulirish/lite-youtube-embed/issues/105
+  // Adds the iframe inside a `<noscript>` so crawlers find the video. See https://github.com/paulirish/lite-youtube-embed/issues/105
   addNoscriptIframe() {
     const iframeEl = this.createBasicIframe();
     const noscriptEl = document.createElement("noscript");
-    // noscript children behave differently when scripting is enabled – set innerHTML instead.
+    // With scripting enabled, `<noscript>` content is raw text, so the iframe goes in as markup.
     // See https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element
     noscriptEl.innerHTML = iframeEl.outerHTML;
     this.append(noscriptEl);
@@ -151,7 +150,6 @@ export class LiteYouTubeEmbed extends HTMLElement {
     const iframeEl = this.createBasicIframe();
     this.append(iframeEl);
 
-    // Set focus for a11y.
     iframeEl.focus();
   }
 
@@ -159,7 +157,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     const iframeEl = document.createElement("iframe");
     iframeEl.width = "560";
     iframeEl.height = "315";
-    // No encoding necessary as [title] is safe. https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#:~:text=Safe%20HTML%20Attributes%20include
+    // `title` is a safe attribute and needs no encoding. https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html#:~:text=Safe%20HTML%20Attributes%20include
     iframeEl.title = this.playLabel;
     iframeEl.allow =
       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
@@ -172,7 +170,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     return iframeEl;
   }
 
-  // After the hqdefault loads, opportunistically swap to sddefault.webp if available.
+  // Swaps the poster to `sddefault.webp` when YouTube has one.
   // See https://github.com/paulirish/lite-youtube-embed/blob/master/youtube-thumbnail-urls.md
   upgradePosterImage() {
     // Defer to reduce network contention.
