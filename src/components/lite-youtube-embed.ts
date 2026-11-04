@@ -32,7 +32,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     this.videoId = this.getAttribute("videoid")!;
 
-    let playBtnEl = this.querySelector<HTMLButtonElement>(".lty-playbtn")!;
+    let playBtnEl = this.querySelector<HTMLElement>(".lty-playbtn");
 
     this.playLabel =
       playBtnEl?.textContent?.trim() ||
@@ -47,10 +47,11 @@ export class LiteYouTubeEmbed extends HTMLElement {
     }
 
     if (!playBtnEl) {
-      playBtnEl = document.createElement("button");
-      playBtnEl.type = "button";
-      playBtnEl.classList.add("lty-playbtn");
-      this.append(playBtnEl);
+      const buttonEl = document.createElement("button");
+      buttonEl.type = "button";
+      buttonEl.classList.add("lty-playbtn");
+      this.append(buttonEl);
+      playBtnEl = buttonEl;
     }
 
     if (!playBtnEl.textContent) {
