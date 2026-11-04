@@ -1,6 +1,6 @@
 import Alpine from "alpinejs";
 
-let startScheduled = false;
+let isStartScheduled = false;
 
 // Expose for DevTools debugging.
 window.Alpine = Alpine;
@@ -10,8 +10,8 @@ window.Alpine = Alpine;
  * after all synchronous code completes. Safe to call multiple times.
  */
 export function useAlpine() {
-  if (!startScheduled) {
-    startScheduled = true;
+  if (!isStartScheduled) {
+    isStartScheduled = true;
     queueMicrotask(() => Alpine.start());
   }
 
