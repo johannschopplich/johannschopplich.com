@@ -147,7 +147,12 @@ export class LiteYouTubeEmbed extends HTMLElement {
     this.classList.add("lyt-activated");
 
     if (this.requiresYTApi) {
-      return this.addYTPlayerIframe();
+      try {
+        return await this.addYTPlayerIframe();
+      } catch {
+        // Without the API, say behind a content blocker, the plain iframe
+        // below still plays after a second tap.
+      }
     }
 
     const iframeEl = this.createBasicIframe();
