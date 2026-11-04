@@ -12,7 +12,9 @@ $model = $block->parent();
 $text = $block->text()->permalinksToUrls();
 
 $anchorsInTemplates = ['article', 'project', 'photography'];
-if (in_array($model?->intendedTemplate()?->name(), $anchorsInTemplates, true)) {
+// A link inside the heading would nest in the anchor, which HTML forbids.
+$hasLink = str_contains($text->value(), '<a ');
+if (!$hasLink && in_array($model?->intendedTemplate()?->name(), $anchorsInTemplates, true)) {
   $text = Html::tag('a', [$text], ['href' => "#{$id}"]);
 }
 
