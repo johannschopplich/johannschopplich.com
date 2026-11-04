@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0423c9e69de6aab7242ff883ba0cf028",
+    "content-hash": "dd69ee0c0b104fe6bd533f84e0242d8c",
     "packages": [
         {
             "name": "anthropic-ai/sdk",
@@ -2569,61 +2569,6 @@
             "time": "2020-12-15T21:32:01+00:00"
         },
         {
-            "name": "srwiez/thumbhash",
-            "version": "v1.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/SRWieZ/thumbhash.git",
-                "reference": "ef50e204c4f3adbea23e1ab8b70fd677569a3824"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/SRWieZ/thumbhash/zipball/ef50e204c4f3adbea23e1ab8b70fd677569a3824",
-                "reference": "ef50e204c4f3adbea23e1ab8b70fd677569a3824",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3 || ^8.0"
-            },
-            "require-dev": {
-                "ext-gd": "*",
-                "ext-imagick": "*",
-                "pestphp/pest": "^1.0|^2.0|^3.0|^4.0",
-                "phpbench/phpbench": "^1.2"
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Thumbhash\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Eser DENIZ",
-                    "email": "srwiez@gmail.com"
-                }
-            ],
-            "description": "A brief description of your package",
-            "support": {
-                "issues": "https://github.com/SRWieZ/thumbhash/issues",
-                "source": "https://github.com/SRWieZ/thumbhash/tree/v1.6.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/SRWieZ",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-10-20T12:16:03+00:00"
-        },
-        {
             "name": "symfony/deprecation-contracts",
             "version": "v3.7.1",
             "source": {
@@ -3196,25 +3141,30 @@
         },
         {
             "name": "tobimori/kirby-thumbhash",
-            "version": "1.1.1",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tobimori/kirby-thumbhash.git",
-                "reference": "9cd6c2d93f171a8cd484a686d267ff8adbb2b9fe"
+                "reference": "97af44a6ac17e9be402e77256eae17b43b7afcd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tobimori/kirby-thumbhash/zipball/9cd6c2d93f171a8cd484a686d267ff8adbb2b9fe",
-                "reference": "9cd6c2d93f171a8cd484a686d267ff8adbb2b9fe",
+                "url": "https://api.github.com/repos/tobimori/kirby-thumbhash/zipball/97af44a6ac17e9be402e77256eae17b43b7afcd5",
+                "reference": "97af44a6ac17e9be402e77256eae17b43b7afcd5",
                 "shasum": ""
             },
             "require": {
+                "ext-gd": "*",
                 "getkirby/composer-installer": "^1.2",
-                "php": ">=8.0.0",
-                "srwiez/thumbhash": "^1.1"
+                "php": ">=8.3.0"
             },
             "require-dev": {
-                "getkirby/cms": "^3.8"
+                "carthage-software/mago": "^1.59.0",
+                "getkirby/cms": "^5.6.1",
+                "phpunit/phpunit": "^12.0"
+            },
+            "suggest": {
+                "ext-imagick": "Faster sampling of large JPEG files"
             },
             "type": "kirby-plugin",
             "extra": {
@@ -3239,7 +3189,7 @@
             "homepage": "https://github.com/tobimori/kirby-thumbhash#readme",
             "support": {
                 "issues": "https://github.com/tobimori/kirby-thumbhash/issues",
-                "source": "https://github.com/tobimori/kirby-thumbhash/tree/1.1.1"
+                "source": "https://github.com/tobimori/kirby-thumbhash/tree/3.0.0"
             },
             "funding": [
                 {
@@ -3247,7 +3197,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-12T16:48:19+00:00"
+            "time": "2026-10-25T22:48:26+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
