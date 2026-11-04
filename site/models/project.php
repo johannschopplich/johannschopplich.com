@@ -4,7 +4,7 @@ class ProjectPage extends \Kirby\Cms\Page
 {
     public function metadata(): array
     {
-        $description = $this->description()->or($this->text()->toBlocks()->excerpt(140))->value();
+        $description = $this->description()->or($this->text()->toExcerpt(140))->value();
         $thumbnail = $this->thumbnail()->toFile()?->resize(1200);
 
         $creativeWork = [
