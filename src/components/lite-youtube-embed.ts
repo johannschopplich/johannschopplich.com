@@ -1,4 +1,5 @@
 interface YTPlayerOptions {
+  host: string;
   width: string;
   videoId: string;
   playerVars: Record<string, string>;
@@ -114,6 +115,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     const playerVars = Object.fromEntries(this.getParams().entries());
 
     void new window.YT.Player(videoPlaceholderEl, {
+      host: "https://www.youtube-nocookie.com",
       width: "100%",
       videoId: this.videoId,
       playerVars,
