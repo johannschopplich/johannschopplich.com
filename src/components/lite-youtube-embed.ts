@@ -22,7 +22,7 @@ declare global {
 export class LiteYouTubeEmbed extends HTMLElement {
   videoId = "";
   playLabel = "";
-  requiresYTApi = false;
+  shouldUseYTApi = false;
   #isInitialized = false;
 
   static ytApiPromise: Promise<void> | undefined;
@@ -85,7 +85,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     // Safari and mobile browsers don't carry the click gesture into a new
     // iframe, so `autoplay=1` is ignored. The YT JS API is the only reliable
     // autoplay path there.
-    this.requiresYTApi =
+    this.shouldUseYTApi =
       this.hasAttribute("js-api") ||
       navigator.vendor.includes("Apple") ||
       navigator.userAgent.includes("Mobi");
@@ -146,7 +146,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
     if (this.classList.contains("lyt-activated")) return;
     this.classList.add("lyt-activated");
 
-    if (this.requiresYTApi) {
+    if (this.shouldUseYTApi) {
       try {
         return await this.addYTPlayerIframe();
       } catch {
