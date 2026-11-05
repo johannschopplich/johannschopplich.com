@@ -17,7 +17,7 @@ When you visit this website, your browser necessarily sends data to the server, 
 {{/cloudflare}}
 
 {{#hetzner}}
-{{#cloudflare}}Texts and images are stored on a server{{/cloudflare}}{{^cloudflare}}The website runs on a server{{/cloudflare}} of Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany, in a data centre in Germany{{#itProvider}}, which an IT service provider operates for us{{/itProvider}}.{{#cloudflare}} Your browser loads the images directly from there, so this server receives your connection data as well.{{/cloudflare}} The server keeps no log of page visits. Only when an error occurs while delivering a page does it write an entry to an error log: date and time, IP address, the request and the error message. We use it to fix errors and fend off attacks; it is deleted automatically after 52 days.
+{{#cloudflare}}Texts and images are stored on a server{{/cloudflare}}{{^cloudflare}}The website runs on a server{{/cloudflare}} of Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany, in a data centre in Germany{{#itProvider}}, which an IT service provider operates for us{{/itProvider}}.{{#cloudflare}} Your browser loads the images directly from there, so this server receives your connection data as well.{{/cloudflare}} The server keeps no log of page visits. Only when an error occurs while delivering a page does it write an entry to an error log: date and time, IP address, the request and the error message. We use it to fix errors and fend off attacks; it is deleted automatically after 30 days.
 {{/hetzner}}
 
 You are not obliged to provide us with any data. Without the connection data, however, the website cannot be displayed.
