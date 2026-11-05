@@ -64,7 +64,7 @@ export class LiteYouTubeEmbed extends HTMLElement {
 
     this.addNoscriptIframe();
 
-    // Progressive enhancement: an `<a>` child, the link to YouTube without JS, becomes the play button.
+    // Progressive enhancement: an `<a class="lty-playbtn">`, the link to YouTube without JS, becomes the play button.
     if (playBtnEl.nodeName === "A") {
       playBtnEl.removeAttribute("href");
       playBtnEl.setAttribute("tabindex", "0");
@@ -149,9 +149,10 @@ export class LiteYouTubeEmbed extends HTMLElement {
     if (this.shouldUseYTApi) {
       try {
         return await this.addYTPlayerIframe();
-      } catch {
-        // Without the API, say behind a content blocker, the plain iframe
-        // below still plays after a second tap.
+      } catch (error) {
+        // When the API script fails to load, say behind a content blocker,
+        // the plain iframe below still plays after a second click.
+        console.warn(error);
       }
     }
 
