@@ -28,7 +28,7 @@ Wenn Sie diese Website aufrufen, überträgt Ihr Browser technisch bedingt Daten
 {{/cloudflare}}
 
 {{#hetzner}}
-{{#cloudflare}}Texte und Bilder liegen auf einem Server{{/cloudflare}}{{^cloudflare}}Die Website läuft auf einem Server{{/cloudflare}} der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, in einem Rechenzentrum in Deutschland{{#itProvider}}, den ein IT-Dienstleister für uns betreibt{{/itProvider}}.{{#cloudflare}} Die Bilder lädt Ihr Browser direkt von dort, sodass auch dieser Server Ihre Verbindungsdaten erhält.{{/cloudflare}} Ein Protokoll der Seitenaufrufe führt der Server nicht. Nur wenn beim Ausliefern ein Fehler auftritt, schreibt er einen Eintrag in ein Fehlerprotokoll: Datum und Uhrzeit, IP-Adresse, die Anfrage und die Fehlermeldung. Wir nutzen es, um Fehler zu beheben und Angriffe abzuwehren; nach 30 Tagen wird es automatisch gelöscht.
+{{#cloudflare}}Texte und Bilder liegen auf einem Server{{/cloudflare}}{{^cloudflare}}Die Website läuft auf einem Server{{/cloudflare}} der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, in einem Rechenzentrum in Deutschland{{#itProvider}}, den ein IT-Dienstleister für uns betreibt{{/itProvider}}.{{#cloudflare}} Auch die Bilder liefert Cloudflare aus. Nur wenn Cloudflare ein Bild noch nicht zwischengespeichert hat, holt es das Bild von diesem Server, der dabei Ihre IP-Adresse erhält.{{/cloudflare}} Ein Protokoll der Seitenaufrufe führt der Server nicht. Nur wenn beim Ausliefern ein Fehler auftritt, schreibt er einen Eintrag in ein Fehlerprotokoll: Datum und Uhrzeit, IP-Adresse, die aufgerufene Domain und Anfrage, gegebenenfalls die zuvor besuchte Seite und die Fehlermeldung. Wir nutzen es, um Fehler zu beheben und Angriffe abzuwehren; nach 30 Tagen wird es automatisch gelöscht.
 {{/hetzner}}
 
 Sie sind nicht verpflichtet, uns Daten bereitzustellen. Ohne die Verbindungsdaten lässt sich die Website aber nicht anzeigen.
@@ -45,7 +45,7 @@ Um zu sehen, wie oft unsere Seiten aufgerufen werden und wie schnell sie laden, 
 Beim Aufruf der Website setzen wir keine Cookies und speichern nichts auf Ihrem Gerät. Schriften und Skripte liefern wir selbst aus, nicht über fremde Anbieter{{#cloudflareAnalytics}} – mit Ausnahme des Messskripts von Cloudflare (siehe oben){{/cloudflareAnalytics}}.
 
 {{#colorScheme}}
-Wenn Sie zwischen hellem und dunklem Design wechseln, speichert Ihr Browser Ihre Wahl lokal (Local Storage), damit sie beim nächsten Besuch erhalten bleibt. Die Angabe verlässt Ihr Gerät nicht. Diese Speicherung ist für die von Ihnen gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG).
+Ihr Browser speichert lokal (Local Storage), ob Sie helles oder dunkles Design sehen, damit Ihre Wahl beim nächsten Besuch erhalten bleibt. Die Angabe verlässt Ihr Gerät nicht. Diese Speicherung ist für die von Ihnen gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG).
 {{/colorScheme}}
 
 {{#storageTriggers}}
@@ -89,7 +89,7 @@ Zum Schutz vor Spam nutzen wir Cloudflare Turnstile der Cloudflare, Inc., 101 To
 
 ## Kauf von Lizenzen
 
-Unsere Lizenzen verkaufen wir über Paddle. Ihr Vertragspartner beim Kauf ist die Paddle.com Market Limited, Judd House, 18–29 Mora Street, London EC1V 8BT, Vereinigtes Königreich, die als Händler (Merchant of Record) auftritt. Paddle verarbeitet Ihre Zahlungs-, Rechnungs- und Kontaktdaten als eigener Verantwortlicher; dafür gilt die [Datenschutzerklärung von Paddle](https://www.paddle.com/legal/privacy). Das Bezahlfenster von Paddle lädt erst, wenn Sie auf den Kaufen-Knopf klicken; Paddle kann dabei Cookies oder ähnliche Techniken einsetzen, die für die Bezahlung nötig sind. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).
+Unsere Lizenzen verkaufen wir über Paddle. Ihr Vertragspartner beim Kauf ist die Paddle.com Market Limited, Judd House, 18–29 Mora Street, London EC1V 8BT, Vereinigtes Königreich, die als Händler (Merchant of Record) auftritt. Paddle verarbeitet Ihre Zahlungs-, Rechnungs- und Kontaktdaten als eigener Verantwortlicher; dafür gilt die [Datenschutzerklärung von Paddle](https://www.paddle.com/legal/privacy). Das Bezahlfenster von Paddle lädt erst, wenn Sie auf den Kaufen-Knopf klicken, zusammen mit einem Skript von ProfitWell, einem Dienst von Paddle; Paddle kann dabei Cookies oder ähnliche Techniken einsetzen, die für die Bezahlung nötig sind. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO).
 
 Nach dem Kauf erhalten wir von Paddle die Angaben, die wir für Ihre Lizenz brauchen: Ihre E-Mail-Adresse, die Bestellnummer, das gekaufte Produkt und den Lizenzinhaber, den Sie angegeben haben. Wir nutzen sie, um Ihre Lizenz zu erstellen, zu prüfen und zu verwalten (Art. 6 Abs. 1 lit. b DSGVO). Die Lizenzdaten liegen in einer Datenbank bei Cloudflare (siehe oben); E-Mails zu Ihrer Lizenz, etwa Anmeldelinks, versenden wir über Resend der Plus Five Five, Inc., San Francisco, USA, die nach dem EU-US Data Privacy Framework zertifiziert ist (Art. 45 DSGVO). Beide handeln in unserem Auftrag (Art. 28 DSGVO). Wir bewahren die Lizenzdaten auf, solange Ihre Lizenz besteht, und darüber hinaus, soweit steuerliche Aufbewahrungspflichten es verlangen (§ 147 AO).
 
