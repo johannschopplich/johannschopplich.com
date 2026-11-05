@@ -6,12 +6,12 @@ Vorlage für die Datenschutzerklärungen aller Sites; en.md ist die Übersetzung
 - dachsbau-tautenhain.de: cloudflare, hetzner, itProvider, ionos
 - realtroll.de: hetzner, ionos, youtube, youtubePoster, comments
 - johannschopplich.com: hetzner, ionos, youtube, youtubePoster, colorScheme
-- kirby.tools: cloudflare, cloudflareEmail, ionos, colorScheme, paddle
+- kirby.tools: cloudflare, cloudflareAnalytics, cloudflareEmail, ionos, colorScheme, paddle
 -->
 
 Stand: {{date}}
 
-Diese Website setzt keine Analyse-, Tracking- oder Werbedienste ein. {{#youtube}}Videos von YouTube laden erst, wenn Sie sie starten. {{/youtube}}Personenbezogene Daten verarbeiten wir nur, soweit es für den Betrieb der Website{{#comments}}, für Ihre Kommentare{{/comments}}{{#paddle}}, für Ihre Lizenzen{{/paddle}} und für die Beantwortung Ihrer Anfragen nötig ist.
+Diese Website setzt keine {{^cloudflareAnalytics}}Analyse-, {{/cloudflareAnalytics}}Tracking- oder Werbedienste ein.{{#cloudflareAnalytics}} Zugriffe zählen wir nur mit Cloudflare Web Analytics, ohne Cookies.{{/cloudflareAnalytics}} {{#youtube}}Videos von YouTube laden erst, wenn Sie sie starten. {{/youtube}}Personenbezogene Daten verarbeiten wir nur, soweit es für den Betrieb der Website{{#cloudflareAnalytics}}, für die Reichweitenmessung{{/cloudflareAnalytics}}{{#comments}}, für Ihre Kommentare{{/comments}}{{#paddle}}, für Ihre Lizenzen{{/paddle}} und für die Beantwortung Ihrer Anfragen nötig ist.
 
 ## Verantwortlich
 
@@ -33,9 +33,16 @@ Wenn Sie diese Website aufrufen, überträgt Ihr Browser technisch bedingt Daten
 
 Sie sind nicht verpflichtet, uns Daten bereitzustellen. Ohne die Verbindungsdaten lässt sich die Website aber nicht anzeigen.
 
+{{#cloudflareAnalytics}}
+
+## Reichweitenmessung
+
+Um zu sehen, wie oft unsere Seiten aufgerufen werden und wie schnell sie laden, nutzen wir Cloudflare Web Analytics der Cloudflare, Inc. (siehe oben). Ein kleines Skript liest beim Laden einer Seite die Ladezeiten aus der Performance-Schnittstelle Ihres Browsers und meldet sie mit der Adresse der aufgerufenen Seite (ohne Parameter) und der Herkunftsseite an Cloudflare, sobald die Seite geladen ist, bei jedem Seitenwechsel und wenn Sie die Seite verlassen oder ausblenden. Aus Ihrer IP-Adresse und der Browserkennung leitet Cloudflare Land, Browser, Betriebssystem und Gerätetyp ab. Cookies oder andere Speicher auf Ihrem Gerät nutzt es nicht; Cloudflare erstellt dabei nach eigenen Angaben keine Fingerabdrücke einzelner Besucher. Wir sehen nur zusammengefasste Zahlen. Cloudflare bewahrt die einzelnen Messwerte sieben Tage auf und verdichtet sie danach; abrufbar sind sie für sechs Monate. Rechtsgrundlage ist unser berechtigtes Interesse, Reichweite und Ladezeiten unserer Website zu kennen (Art. 6 Abs. 1 lit. f DSGVO). Für die Übermittlung in die USA gilt das oben zu Cloudflare Gesagte.
+{{/cloudflareAnalytics}}
+
 ## Speicherung auf Ihrem Gerät
 
-Beim Aufruf der Website setzen wir keine Cookies und speichern nichts auf Ihrem Gerät. Schriften und Skripte liefern wir selbst aus, nicht über fremde Anbieter.
+Beim Aufruf der Website setzen wir keine Cookies und speichern nichts auf Ihrem Gerät. Schriften und Skripte liefern wir selbst aus, nicht über fremde Anbieter{{#cloudflareAnalytics}} – mit Ausnahme des Messskripts von Cloudflare (siehe oben){{/cloudflareAnalytics}}.
 
 {{#colorScheme}}
 Wenn Sie zwischen hellem und dunklem Design wechseln, speichert Ihr Browser Ihre Wahl lokal (Local Storage), damit sie beim nächsten Besuch erhalten bleibt. Die Angabe verlässt Ihr Gerät nicht. Diese Speicherung ist für die von Ihnen gewünschte Funktion unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG).
@@ -86,7 +93,7 @@ Unsere Lizenzen verkaufen wir über Paddle. Ihr Vertragspartner beim Kauf ist di
 
 Nach dem Kauf erhalten wir von Paddle die Angaben, die wir für Ihre Lizenz brauchen: Ihre E-Mail-Adresse, die Bestellnummer, das gekaufte Produkt und den Lizenzinhaber, den Sie angegeben haben. Wir nutzen sie, um Ihre Lizenz zu erstellen, zu prüfen und zu verwalten (Art. 6 Abs. 1 lit. b DSGVO). Die Lizenzdaten liegen in einer Datenbank bei Cloudflare (siehe oben); E-Mails zu Ihrer Lizenz, etwa Anmeldelinks, versenden wir über Resend der Plus Five Five, Inc., San Francisco, USA, die nach dem EU-US Data Privacy Framework zertifiziert ist (Art. 45 DSGVO). Beide handeln in unserem Auftrag (Art. 28 DSGVO). Wir bewahren die Lizenzdaten auf, solange Ihre Lizenz besteht, und darüber hinaus, soweit steuerliche Aufbewahrungspflichten es verlangen (§ 147 AO).
 
-Ihre Lizenzen verwalten Sie im Kundenportal hub.kirby.tools, das ebenfalls über Cloudflare läuft. Dort melden Sie sich mit Ihrer E-Mail-Adresse an, entweder über einen Anmeldelink, den wir Ihnen über Resend schicken, oder zusammen mit Ihrer Bestellnummer. Nach der Anmeldung setzen wir ein Sitzungs-Cookie, das Sie sieben Tage angemeldet hält; es ist für das von Ihnen gewünschte Portal unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Das Bezahlfenster von Paddle lädt dort ebenfalls erst, wenn Sie ein Upgrade kaufen.
+Ihre Lizenzen verwalten Sie im Kundenportal hub.kirby.tools, das ebenfalls über Cloudflare läuft. Dort melden Sie sich mit Ihrer E-Mail-Adresse an, entweder über einen Anmeldelink, den wir Ihnen über Resend schicken, oder zusammen mit Ihrer Bestellnummer. Nach der Anmeldung setzen wir ein Sitzungs-Cookie, das Sie sieben Tage angemeldet hält; es ist für das von Ihnen gewünschte Portal unbedingt erforderlich (§ 25 Abs. 2 Nr. 2 TDDDG). Das Bezahlfenster von Paddle lädt dort ebenfalls erst, wenn Sie ein Upgrade kaufen.{{#cloudflareAnalytics}} Auch dort zählen wir Zugriffe mit Cloudflare Web Analytics (siehe oben).{{/cloudflareAnalytics}}
 {{/paddle}}
 
 {{extra}}

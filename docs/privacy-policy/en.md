@@ -1,6 +1,6 @@
 Last updated: {{date}}
 
-This website uses no analytics, tracking or advertising services. {{#youtube}}YouTube videos load only when you start them. {{/youtube}}We process personal data only as far as it is needed to run the website{{#comments}}, for your comments{{/comments}}{{#paddle}}, for your licenses{{/paddle}} and to answer your enquiries.
+This website uses no {{^cloudflareAnalytics}}analytics, {{/cloudflareAnalytics}}tracking or advertising services.{{#cloudflareAnalytics}} We count visits only with Cloudflare Web Analytics, without cookies.{{/cloudflareAnalytics}} {{#youtube}}YouTube videos load only when you start them. {{/youtube}}We process personal data only as far as it is needed to run the website{{#cloudflareAnalytics}}, for reach measurement{{/cloudflareAnalytics}}{{#comments}}, for your comments{{/comments}}{{#paddle}}, for your licenses{{/paddle}} and to answer your enquiries.
 
 ## Controller
 
@@ -22,9 +22,16 @@ When you visit this website, your browser necessarily sends data to the server, 
 
 You are not obliged to provide us with any data. Without the connection data, however, the website cannot be displayed.
 
+{{#cloudflareAnalytics}}
+
+## Reach Measurement
+
+To see how often our pages are visited and how fast they load, we use Cloudflare Web Analytics from Cloudflare, Inc. (see above). When a page loads, a small script reads the load times from your browser's performance interface and reports them, together with the address of the page (without parameters) and the referring page, to Cloudflare once the page has loaded, on every page change and when you leave or hide the page. Cloudflare derives the country, browser, operating system and device type from your IP address and browser identifier. It uses no cookies or other storage on your device; according to Cloudflare, it does not fingerprint individual visitors. We only see aggregated figures. Cloudflare keeps the individual measurements for seven days and aggregates them after that; they remain available for six months. The legal basis is our legitimate interest in knowing the reach and load times of our website (Art. 6(1)(f) GDPR). For the transfer to the USA, what is said about Cloudflare above applies.
+{{/cloudflareAnalytics}}
+
 ## Storage on Your Device
 
-When you visit the website, we set no cookies and store nothing on your device. We serve fonts and scripts ourselves, not through third-party providers.
+When you visit the website, we set no cookies and store nothing on your device. We serve fonts and scripts ourselves, not through third-party providers{{#cloudflareAnalytics}} – except Cloudflare's measurement script (see above){{/cloudflareAnalytics}}.
 
 {{#colorScheme}}
 When you switch between the light and dark design, your browser stores your choice locally (local storage) so that it persists on your next visit. This setting never leaves your device. This storage is strictly necessary for the function you requested (Section 25(2) No. 2 TDDDG, the German Telecommunications Digital Services Data Protection Act).
@@ -75,7 +82,7 @@ We sell our licenses through Paddle. Your contractual partner for the purchase i
 
 After your purchase, we receive from Paddle the details we need for your license: your email address, the order number, the purchased product and the license holder you entered. We use them to create, verify and manage your license (Art. 6(1)(b) GDPR). The license data is stored in a database at Cloudflare (see above); we send emails about your license, such as sign-in links, through Resend from Plus Five Five, Inc., San Francisco, USA, which is certified under the EU-US Data Privacy Framework (Art. 45 GDPR). Both act on our behalf (Art. 28 GDPR). We keep the license data for as long as your license exists, and beyond that as far as tax retention obligations require (§ 147 AO, German Fiscal Code).
 
-You manage your licenses in the customer portal hub.kirby.tools, which also runs on Cloudflare. You sign in there with your email address, either through a sign-in link we send you via Resend or together with your order number. After you sign in, we set a session cookie that keeps you signed in for seven days; it is strictly necessary for the portal you requested (Section 25(2) No. 2 TDDDG). There, too, Paddle's checkout loads only when you buy an upgrade.
+You manage your licenses in the customer portal hub.kirby.tools, which also runs on Cloudflare. You sign in there with your email address, either through a sign-in link we send you via Resend or together with your order number. After you sign in, we set a session cookie that keeps you signed in for seven days; it is strictly necessary for the portal you requested (Section 25(2) No. 2 TDDDG). There, too, Paddle's checkout loads only when you buy an upgrade.{{#cloudflareAnalytics}} We also count visits there with Cloudflare Web Analytics (see above).{{/cloudflareAnalytics}}
 {{/paddle}}
 
 {{extra}}
