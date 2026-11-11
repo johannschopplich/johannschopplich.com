@@ -1,3 +1,5 @@
+import { colors as presetColors } from "@unocss/preset-wind4/colors";
+
 /** Warm orange brand color. The hue stays at 39 across every step. */
 const primary = {
   50: "oklch(97% 0.0145 39)",
@@ -31,20 +33,10 @@ const secondary = {
   950: "oklch(21% 0.0313 132)",
 };
 
-/** Tailwind's stone scale, copied verbatim so the neutrals match preset-wind4. */
-const stone = {
-  50: "oklch(0.985 0.001 106.423)",
-  100: "oklch(0.97 0.001 106.424)",
-  200: "oklch(0.923 0.003 48.717)",
-  300: "oklch(0.869 0.005 56.366)",
-  400: "oklch(0.709 0.01 56.259)",
-  500: "oklch(0.553 0.013 58.071)",
-  600: "oklch(0.444 0.011 73.639)",
-  700: "oklch(0.374 0.01 67.558)",
-  800: "oklch(0.268 0.007 34.298)",
-  900: "oklch(0.216 0.006 56.043)",
-  950: "oklch(0.147 0.004 49.25)",
-};
+const { DEFAULT: _, ...stone } =
+  presetColors.stone as typeof presetColors.stone & {
+    DEFAULT: string;
+  };
 
 /** Swatches, keyed by step. What a color is, before anything decides what it is for. */
 export const palette = { primary, secondary, stone };

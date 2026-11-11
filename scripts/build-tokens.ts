@@ -10,7 +10,7 @@ interface Token {
 }
 
 interface PropertyNaming {
-  /** Custom property namespace: `un-color` for our own groups, `tw-color` for copied ones. */
+  /** Custom property namespace: `un-color` for our own groups, `tw-color` for Tailwind's. */
   namespace: string;
   /**
    * Key whose value also becomes the unsuffixed property, such as
