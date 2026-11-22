@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.1.0",
+    "@blossom-carousel/core": "^1.1.10",
     "@iconify-json/ri": "^1.2.10",
     "@iconify-json/tabler": "^1.2.35",
     "@types/alpinejs": "^3.13.11",
@@ -28,7 +29,6 @@
     "alpinejs": "^3.15.12",
     "culori": "^4.0.2",
     "drauu": "^1.0.0",
-    "embla-carousel": "9.0.0-rc03",
     "es-toolkit": "^1.49.0",
     "esbuild": "^0.28.1",
     "eslint": "^10.6.0",

@@ -177,6 +177,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^9.1.0
         version: 9.1.0(@typescript-eslint/rule-tester@8.62.0(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.62.0(typescript@6.0.3))(@typescript-eslint/utils@8.62.0(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@unocss/eslint-plugin@66.7.3(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.39)(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)
+      '@blossom-carousel/core':
+        specifier: ^1.1.10
+        version: 1.1.10
       '@iconify-json/ri':
         specifier: ^1.2.10
         version: 1.2.10
@@ -216,9 +219,6 @@ importers:
       drauu:
         specifier: ^1.0.0
         version: 1.0.0
-      embla-carousel:
-        specifier: 9.0.0-rc03
-        version: 9.0.0-rc03
       es-toolkit:
         specifier: ^1.49.0
         version: 1.49.0
@@ -347,6 +347,13 @@ packages:
   '@babel/types@7.29.7':
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
     engines: {node: '>=6.9.0'}
+
+  '@blossom-carousel/core@1.1.10':
+    resolution: {integrity: sha512-nixyTKHQwHdzZFKUwJDsoXtfuz8WBgnaeRewC9z+YKMQt/DLcTAj+aqwQ5KF7QsrYbKgeeMZRIX7UnXg6h80pg==}
+
+  '@bramus/style-observer@2.0.2':
+    resolution: {integrity: sha512-oRKamZ9Z637pAZgNGJIbNGiFoYQSeA47PpU4K8hXZq9lQcPu35BCqMG9d9J/ab2CB/0XlXq6ToMnVhHF8mLNqg==}
+    engines: {node: '>=12'}
 
   '@clack/core@1.4.2':
     resolution: {integrity: sha512-0Ty/1Gfm+Kb07sXcuESjyKfwEhSy4Ns1AgeEisHb/bDY5fWme0tTeTkU14T1Gmcs17YIjB/teiDe4uaCghbYqQ==}
@@ -1349,9 +1356,6 @@ packages:
 
   electron-to-chromium@1.5.380:
     resolution: {integrity: sha512-W6d5AbuEoRayO447cqrg6lKJIlscgRnnxOZl/08kfV71BQDoEBC7Wwis68z87LjyK6f4kWyTaubuDbhHKrZkbA==}
-
-  embla-carousel@9.0.0-rc03:
-    resolution: {integrity: sha512-f36OvPQVCJl54m4nEWfPRd2fe3NQNGY671RzWvvaz9Uai1dpNWO2A8YRUL4fj2KgcYizaO3Wxhu9p0dDPh8Mug==}
 
   empathic@2.0.1:
     resolution: {integrity: sha512-YGRs8knHhKHVShLkFET/rWAU8kmHbOV5LwN938RHI0pljAJ1Gf6SzXsSmRaEzcXTtOOmVqJ5+WtQPL5uigY50Q==}
@@ -2519,6 +2523,12 @@ snapshots:
       '@babel/helper-string-parser': 7.29.7
       '@babel/helper-validator-identifier': 7.29.7
 
+  '@blossom-carousel/core@1.1.10':
+    dependencies:
+      '@bramus/style-observer': 2.0.2
+
+  '@bramus/style-observer@2.0.2': {}
+
   '@clack/core@1.4.2':
     dependencies:
       fast-wrap-ansi: 0.2.2
@@ -3427,8 +3437,6 @@ snapshots:
   duplexer@0.1.2: {}
 
   electron-to-chromium@1.5.380: {}
-
-  embla-carousel@9.0.0-rc03: {}
 
   empathic@2.0.1: {}
 

@@ -16,15 +16,15 @@ $cellHeight = match ($height ?? null) {
 };
 
 ?>
-<div
-  class="overflow-hidden <?= $cellHeight ?>"
-  tabindex="0"
-  role="region"
-  aria-roledescription="<?= t('carousel.roledescription') ?>"
-  aria-label="<?= t('carousel.label') ?>"
-  data-carousel
->
-  <div class="flex gap-xs cursor-grab active:cursor-grabbing">
+<div class="<?= $cellHeight ?>" data-carousel>
+  <div
+    class="relative flex gap-xs overflow-x-auto overscroll-x-contain snap-x snap-mandatory [scrollbar-width:none] children:snap-center"
+    tabindex="0"
+    role="region"
+    aria-roledescription="<?= t('carousel.roledescription') ?>"
+    aria-label="<?= t('carousel.label') ?>"
+    data-carousel-scroller
+  >
     <?php foreach ($query->values() as $index => $image): ?>
       <?php
       /** @var \Kirby\Content\Content $settings */
@@ -84,6 +84,7 @@ $cellHeight = match ($height ?? null) {
               default => 'w-auto h-[min(calc(100vw/var(--ar)),var(--cell-h))]'
             } ?>"
             src="<?= $image->thumbhashUri() ?>"
+            loading="lazy"
             data-srcset="<?= $image->srcset() ?>"
             data-sizes="auto"
             width="<?= $image->width() ?>"

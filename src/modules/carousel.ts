@@ -1,69 +1,70 @@
-import type { EmblaCarouselType } from "embla-carousel";
-import EmblaCarousel from "embla-carousel";
-import { triggerLoad } from "unlazy";
-import { isAbove } from "../utils/breakpoints";
+// Touch input scrolls the carousel natively; only a mouse needs Blossom's
+// drag engine, so touch devices never load it.
+const hasFinePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-declare global {
-  interface Window {
-    __carousels: EmblaCarouselType[];
+export async function install() {
+  const scrollers = [
+    ...document.querySelectorAll<HTMLElement>("[data-carousel-scroller]"),
+  ];
+  if (scrollers.length === 0) return;
+
+  for (const scroller of scrollers) {
+    syncCounter(scroller);
+  }
+
+  if (!hasFinePointer) return;
+
+  const { Blossom } = await import("@blossom-carousel/core");
+  for (const scroller of scrollers) {
+    Blossom(scroller).init();
   }
 }
 
-export function install() {
-  const carousels: EmblaCarouselType[] = [];
+function syncCounter(scroller: HTMLElement) {
+  const counterCurrent = scroller
+    .closest("[data-carousel]")
+    ?.querySelector<HTMLElement>("[data-carousel-current]");
+  if (!counterCurrent) return;
 
-  for (const node of document.querySelectorAll<HTMLElement>(
-    "[data-carousel]",
-  )) {
-    carousels.push(setupCarousel(node));
-  }
+  const slides = [
+    ...scroller.querySelectorAll<HTMLElement>(':scope > [role="group"]'),
+  ];
+  let pendingFrame = 0;
 
-  if (import.meta.env.DEV) {
-    window.__carousels = carousels;
-  }
-}
+  const updateCounter = () => {
+    pendingFrame = 0;
+    const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
+    // The last slide never reaches the center, so the scroll end selects it.
+    const index =
+      scroller.scrollLeft >= maxScrollLeft - 1
+        ? slides.length - 1
+        : findCenteredSlideIndex(scroller, slides);
+    counterCurrent.textContent = String(index + 1);
+  };
 
-function setupCarousel(node: HTMLElement) {
-  const emblaApi = EmblaCarousel(node, {
-    align: "center",
-    containScroll: "trimSnaps",
-    skipSnaps: true,
-    dragFree: isAbove("md") ? "snap" : false,
-  });
-
-  node.addEventListener("keydown", (event) => {
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      emblaApi.goToPrev();
-    } else if (event.key === "ArrowRight") {
-      event.preventDefault();
-      emblaApi.goToNext();
-    }
-  });
-
-  // Note: Carousel images must NOT use native `loading="lazy"` to prevent:
-  // alt text flash → layout shift → Embla `reinit` → scroll interruption.
-  emblaApi.on("slidesinview", (api, event) => {
-    const slides = api.slideNodes();
-
-    for (const index of event.detail.slidesEnterView) {
-      const image =
-        slides[index]!.querySelector<HTMLImageElement>("img[data-srcset]");
-      if (image) triggerLoad(image);
-    }
-  });
-
-  const counterCurrent = node.querySelector<HTMLElement>(
-    "[data-carousel-current]",
+  scroller.addEventListener(
+    "scroll",
+    () => {
+      pendingFrame ||= requestAnimationFrame(updateCounter);
+    },
+    { passive: true },
   );
-  if (counterCurrent) {
-    const updateCounter = () => {
-      counterCurrent.textContent = String(emblaApi.selectedSnap() + 1);
-    };
-    updateCounter();
-    emblaApi.on("select", updateCounter);
-    emblaApi.on("reinit", updateCounter);
+}
+
+function findCenteredSlideIndex(scroller: HTMLElement, slides: HTMLElement[]) {
+  const center = scroller.scrollLeft + scroller.clientWidth / 2;
+  let closestIndex = 0;
+  let closestDistance = Infinity;
+
+  for (const [index, slide] of slides.entries()) {
+    const distance = Math.abs(
+      slide.offsetLeft + slide.offsetWidth / 2 - center,
+    );
+    if (distance < closestDistance) {
+      closestIndex = index;
+      closestDistance = distance;
+    }
   }
 
-  return emblaApi;
+  return closestIndex;
 }
