@@ -16,9 +16,17 @@ export async function install() {
 
   if (!shouldLoadBlossom) return;
 
-  const { Blossom } = await import("@blossom-carousel/core");
+  // A failed chunk load, like a stale page after a deploy, leaves native
+  // scrolling in place.
+  const blossomModule = await import("@blossom-carousel/core").catch(
+    (error) => {
+      console.warn(error);
+    },
+  );
+  if (!blossomModule) return;
+
   for (const scroller of scrollers) {
-    Blossom(scroller).init();
+    blossomModule.Blossom(scroller).init();
   }
 }
 
