@@ -40,7 +40,7 @@
     "postcss-nesting": "^14.0.0",
     "prettier": "^3.9.1",
     "typescript": "^6.0.3",
-    "unlazy": "^2.0.1",
+    "unlazy": "^3.0.0",
     "unocss": "^66.7.3",
     "vite": "^8.1.0",
     "vite-plugin-full-reload": "^1.2.0"

@@ -28,7 +28,6 @@ export default defineConfig(({ mode }) => {
 
     define: {
       __UNLAZY_HASH_DECODING__: false,
-      __UNLAZY_LOGGING__: false,
     },
 
     css: {

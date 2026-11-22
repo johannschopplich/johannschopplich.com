@@ -253,8 +253,8 @@ importers:
         specifier: ^6.0.3
         version: 6.0.3
       unlazy:
-        specifier: ^2.0.1
-        version: 2.0.1
+        specifier: ^3.0.0
+        version: 3.0.0
       unocss:
         specifier: ^66.7.3
         version: 66.7.3(vite@8.1.0(@types/node@26.0.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0))
@@ -1070,9 +1070,6 @@ packages:
   '@typescript-eslint/visitor-keys@8.62.0':
     resolution: {integrity: sha512-CY3uyFSRbcQv3nnSv8S0+lDftMVz6P963PoRlxrV7ew/Md564g9ut60PYzdLM5qW4jFn93GBF+Soi90ISAN+GQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@unlazy/core@2.0.1':
-    resolution: {integrity: sha512-zARfhkFhALS5EGdym22E8OrNSEbHDhG8XBUFHr8I435U7JnM8r4Y8g6I+utdKMrxJARcAJx7WGDUo/h9CntWCg==}
 
   '@unocss/cli@66.7.3':
     resolution: {integrity: sha512-GBKAFgCw6gFebGRlRyC7K/61eSksUdDozay2Zu35a63uTfQteJiu1luoIwFmK9aEOa4+Jzft1wdfZzjTASRIVw==}
@@ -2328,8 +2325,8 @@ packages:
   unist-util-visit@5.1.0:
     resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
 
-  unlazy@2.0.1:
-    resolution: {integrity: sha512-BihVSf6XpmWzcXfkDFih+R2s2sbiyi5oJiH7ed3CzMZqXBmdbal5iTz77bglCL9jZJZ0i/7NP6oPU/JHx63mZA==}
+  unlazy@3.0.0:
+    resolution: {integrity: sha512-euWn+cjn0OC/4CoSzr3P63xfXoo/UxefgtO+mZMAlNvRN4a33MxhJZsX030av9x8JNDRmXpbVwnNFFAJxTbFWA==}
 
   unocss@66.7.3:
     resolution: {integrity: sha512-fxqGxDIAxzWhc6ZI6czx/xW/z8Z4UMiPs/XcwzR7WczTQjeHsrzvuk7UZLzMHUQRdLMEBCw1b1omUv9BpEzKOg==}
@@ -3111,8 +3108,6 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 8.62.0
       eslint-visitor-keys: 5.0.1
-
-  '@unlazy/core@2.0.1': {}
 
   '@unocss/cli@66.7.3':
     dependencies:
@@ -4652,9 +4647,7 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  unlazy@2.0.1:
-    dependencies:
-      '@unlazy/core': 2.0.1
+  unlazy@3.0.0: {}
 
   unocss@66.7.3(vite@8.1.0(@types/node@26.0.1)(esbuild@0.28.1)(jiti@2.7.0)(yaml@2.9.0)):
     dependencies:
