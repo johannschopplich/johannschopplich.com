@@ -1,6 +1,8 @@
-// Touch input scrolls the carousel natively; only a mouse needs Blossom's
-// drag engine, so touch devices never load it.
-const hasFinePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+// Blossom keeps its drag engine off wherever `ontouchmove` exists, so a
+// touchscreen laptop would download it for nothing.
+const shouldLoadBlossom =
+  matchMedia("(hover: hover) and (pointer: fine)").matches &&
+  !("ontouchmove" in window);
 
 export async function install() {
   const scrollers = [
@@ -12,7 +14,7 @@ export async function install() {
     syncCounter(scroller);
   }
 
-  if (!hasFinePointer) return;
+  if (!shouldLoadBlossom) return;
 
   const { Blossom } = await import("@blossom-carousel/core");
   for (const scroller of scrollers) {
