@@ -18,7 +18,7 @@ $cellHeight = match ($height ?? null) {
 ?>
 <div class="<?= $cellHeight ?>" data-carousel>
   <div
-    class="relative flex gap-xs overflow-x-auto overscroll-x-contain snap-x snap-mandatory [scrollbar-width:none] children:snap-center"
+    class="relative overflow-x-auto overscroll-x-contain flex gap-xs snap-x snap-mandatory [scrollbar-width:none] children:snap-center"
     tabindex="0"
     role="region"
     aria-roledescription="<?= t('carousel.roledescription') ?>"
