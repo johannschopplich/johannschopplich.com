@@ -34,11 +34,14 @@ function syncCounter(scroller: HTMLElement) {
   const updateCounter = () => {
     pendingFrame = 0;
     const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
-    // The last slide never reaches the center, so the scroll end selects it.
+    // The first and last slides may miss the center, so the scroll edges
+    // select them.
     const index =
-      scroller.scrollLeft >= maxScrollLeft - 1
-        ? slides.length - 1
-        : findCenteredSlideIndex(scroller, slides);
+      scroller.scrollLeft <= 1
+        ? 0
+        : scroller.scrollLeft >= maxScrollLeft - 1
+          ? slides.length - 1
+          : findCenteredSlideIndex(scroller, slides);
     counterCurrent.textContent = String(index + 1);
   };
 
