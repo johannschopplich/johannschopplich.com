@@ -12,8 +12,8 @@ $props   = $block->properties();
 $isFeed  = preg_match('/feeds\/(?:rss|json)$/', Url::current());
 $img     = null;
 
-if ($block->location() === 'web') {
-  $img = Html::img($block->src(), ['alt' => $alt]);
+if ($block->location()->value() === 'web' && $block->src()->isNotEmpty()) {
+  $img = Html::img($block->src()->value() ?? '', ['alt' => $alt->value() ?? '']);
 } elseif ($image = $block->image()->toFile()) {
   if ($alt->isEmpty()) {
     $alt = $image->alt();
