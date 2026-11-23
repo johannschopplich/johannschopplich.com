@@ -2,7 +2,7 @@
 
 /** @var \Kirby\Cms\App $kirby */
 /** @var \Kirby\Cms\Site $site */
-/** @var \Kirby\Cms\Page $page */
+/** @var \ProjectPage $page */
 
 $details = $page->details()->toStructure();
 
@@ -26,7 +26,7 @@ $details = $page->details()->toStructure();
 
 
   <?php snippet('components/carousel', [
-    'query' => $page->gallery()->toFiles(),
+    'query' => $page->galleryImages(),
     'height' => $page->galleryHeight()->value()
   ]) ?>
 </div>

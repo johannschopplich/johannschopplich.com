@@ -76,3 +76,17 @@ columns:
                 help:
                   de: Ohne Farbe folgt das Dokument der Hintergrundfarbe, der Browser bleibt dunkel.
                   en: Without a color the document follows the background color, the browser stays dark.
+              language:
+                label:
+                  de: Sprache
+                  en: Language
+                type: toggles
+                options:
+                  type: query
+                  query: kirby.languages
+                  text: "{{ item.name }}"
+                  value: "{{ item.code }}"
+                width: 1/2
+                help:
+                  de: Ohne Auswahl erscheint das Bild in allen Sprachen.
+                  en: Without a selection the image shows in every language.

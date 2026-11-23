@@ -2,6 +2,16 @@
 
 class ProjectPage extends \Kirby\Cms\Page
 {
+    public function galleryImages(): \Kirby\Cms\Files
+    {
+        $languageCode = $this->kirby()->languageCode();
+
+        return $this->gallery()->toFiles()->filter(function (\Kirby\Cms\File $image) use ($languageCode) {
+            $language = $image->gallery()->toObject()->language();
+            return $language->isEmpty() || $language->value() === $languageCode;
+        });
+    }
+
     public function metadata(): array
     {
         $description = $this->description()->or($this->text()->toExcerpt(140))->value();

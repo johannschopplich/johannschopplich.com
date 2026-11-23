@@ -25,6 +25,7 @@
 
 <div class="pb-8xl space-y-5xl md:space-y-8xl">
   <?php foreach ($children = $page->children()->listed() as $project): ?>
+    <?php /** @var \ProjectPage $project */ ?>
     <div>
       <div class="group relative px-lg pt-xl mb-xl border-t border-solid border-contrast-low dark:border-contrast-lower md:px-gutter">
         <h2 class="title text-2xl">
@@ -42,7 +43,7 @@
       </div>
 
       <?php snippet('components/carousel', [
-        'query' => $project->gallery()->toFiles(),
+        'query' => $project->galleryImages(),
         'height' => $project->galleryHeight()->value()
       ], slots: true) ?>
         <?php slot('footer') ?>
