@@ -54,7 +54,7 @@ $cellHeight = match ($height ?? null) {
       >
         <div
           class="overflow-hidden [background:var(--cell-bg)] <?= match ($mockup) {
-            'document', 'mobile' => 'px-5xl py-xl h-$cell-h md:px-8xl md:py-5xl xl:px-[9rem]',
+            'document' => 'px-5xl py-xl h-$cell-h md:px-8xl md:py-5xl xl:px-[9rem]',
             'desktop' => '[--max-ar:1.6] flex flex-col items-center justify-center p-lg h-$cell-h md:p-5xl',
             default => 'flex items-center justify-center h-full'
           } ?>"
@@ -75,7 +75,6 @@ $cellHeight = match ($height ?? null) {
           <img
             class="pointer-events-none select-none aspect-[var(--ar)] <?= match ($mockup) {
               'document' => 'object-cover w-auto h-full shadow-[0_1px_3px_0_oklch(0_0_0/0.1),_0_4px_12px_-2px_oklch(0_0_0/0.08)]',
-              'mobile' => 'object-cover w-auto h-full rounded-2xl shadow-[0_0_0_1px_oklch(1_0_0/0.1),_0_0_0_1px_oklch(0_0_0/0.1),_0_8px_24px_-4px_oklch(0_0_0/0.12),_0_2px_6px_-1px_oklch(0_0_0/0.1)]',
               // Fills the cell minus the `1rem` chrome bar, under two caps:
               // `--max-ar` is how wide the mockup may grow relative to its own
               // height – uncapped, a flat screenshot turns into a slab – and

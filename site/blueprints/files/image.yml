@@ -49,11 +49,6 @@ columns:
                       de: Dokument
                       en: Document
                     icon: document
-                  - value: mobile
-                    text:
-                      de: Mobil
-                      en: Mobile
-                    icon: mobile
                   - value: desktop
                     text: Desktop
                     icon: display
