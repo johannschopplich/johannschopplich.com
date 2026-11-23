@@ -1,13 +1,23 @@
 <?php
 
+use JohannSchopplich\Website\GalleryImageBlock;
 use Kirby\Cms\App;
 use Kirby\Cms\Html;
 use Kirby\Cms\Page;
 use Kirby\Http\Remote;
 
+load([
+    'JohannSchopplich\\Website\\GalleryImageBlock' => 'classes/GalleryImageBlock.php',
+    'JohannSchopplich\\Website\\RemoteImage' => 'classes/RemoteImage.php'
+], __DIR__);
+
 App::plugin('johannschopplich/website', [
     'options' => [
-        'cache.npm' => true
+        'cache.npm' => true,
+        'cache.remote-images' => true
+    ],
+    'blockModels' => [
+        'gallery-image' => GalleryImageBlock::class
     ],
     'siteMethods' => [
         'npmDownloadStats' => function (array $packageNames): array {

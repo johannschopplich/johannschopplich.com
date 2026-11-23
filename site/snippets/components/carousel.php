@@ -1,10 +1,11 @@
 <?php
 
+use JohannSchopplich\Website\GalleryImageBlock;
 use OzdemirBurak\Iris\Color\Hex;
 
 /** @var \Kirby\Template\Slots $slots */
 /** @var \Kirby\Template\Slot $slot */
-/** @var \Kirby\Cms\Files $query */
+/** @var \Kirby\Cms\Blocks|\Kirby\Cms\Files $query Gallery image blocks, or bare files that take the defaults */
 /** @var string|null $height */
 
 // A mockup cell takes this as a fixed height, an image without one is only
@@ -25,14 +26,16 @@ $cellHeight = match ($height ?? null) {
     aria-label="<?= t('carousel.label') ?>"
     data-carousel-scroller
   >
-    <?php foreach ($query->values() as $index => $image): ?>
+    <?php foreach ($query->values() as $index => $item): ?>
       <?php
-      /** @var \Kirby\Content\Content $settings */
-      $settings = $image->gallery()->toObject();
-      $mockup = $settings->mockup()->or('none')->value();
+      $slide = $item instanceof GalleryImageBlock ? $item : null;
+      /** @var \Kirby\Cms\File|\Kirby\Filesystem\Asset $image */
+      $image = $slide?->source() ?? $item;
+      $alt = $slide?->altText() ?? $image->alt()->value() ?? '';
+      $mockup = $slide?->mockup()->value() ?: 'none';
       $isDocument = $mockup === 'document';
-      $bgHex = $settings->bgColor()->value() ?: null;
-      $borderHex = $settings->borderColor()->value() ?: null;
+      $bgHex = $slide?->bgColor()->value() ?: null;
+      $borderHex = $slide?->borderColor()->value() ?: null;
 
       // A mockup-less image is sized by width, so below `md` it can end shorter
       // than the row and the cell shows through above and below it.
@@ -89,7 +92,7 @@ $cellHeight = match ($height ?? null) {
             width="<?= $image->width() ?>"
             height="<?= $image->height() ?>"
             style="--ar: <?= round($image->width() / $image->height(), 6) ?>"
-            alt="<?= $image->alt()->or('')->escape() ?>"
+            alt="<?= esc($alt, 'attr') ?>"
           >
 
           <?php if ($isDocument): ?>

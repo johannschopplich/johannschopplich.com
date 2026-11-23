@@ -5,88 +5,17 @@ title:
 accept:
   type: image
 
-columns:
-  - width: 1/2
-    sections:
-      content:
-        type: fields
-        fields:
-          alt:
-            label:
-              de: Alternativtext
-              en: Alternative Text
-            type: text
-            icon: title
-          caption:
-            label:
-              de: Beschriftung
-              en: Caption
-            type: writer
-            icon: text
-            inline: true
-
-  - width: 1/2
-    sections:
-      meta:
-        type: fields
-        fields:
-          gallery:
-            label: Darstellung
-            type: object
-            translate: false
-            fields:
-              link:
-                label: Link
-                type: url
-                width: 1/3
-              mockup:
-                label: Mockup
-                type: toggles
-                default: none
-                options:
-                  - value: document
-                    text:
-                      de: Dokument
-                      en: Document
-                    icon: document
-                  - value: desktop
-                    text: Desktop
-                    icon: display
-                  - value: none
-                    text:
-                      de: Keine
-                      en: None
-                    icon: cancel-small
-                width: 2/3
-              bgColor:
-                label:
-                  de: Hintergrundfarbe
-                  en: Background Color
-                type: color
-                width: 1/2
-                help:
-                  de: Ohne Farbe zeigt die Zelle Grau, bei Bildern ohne Mockup deren Unschärfe.
-                  en: Without a color the cell shows gray, or the image's own blur if it has no mockup.
-              borderColor:
-                label:
-                  de: Rahmenfarbe
-                  en: Border Color
-                type: color
-                width: 1/2
-                help:
-                  de: Ohne Farbe folgt das Dokument der Hintergrundfarbe, der Browser bleibt dunkel.
-                  en: Without a color the document follows the background color, the browser stays dark.
-              language:
-                label:
-                  de: Sprache
-                  en: Language
-                type: toggles
-                options:
-                  type: query
-                  query: kirby.languages
-                  text: "{{ item.name }}"
-                  value: "{{ item.code }}"
-                width: 1/2
-                help:
-                  de: Ohne Auswahl erscheint das Bild in allen Sprachen.
-                  en: Without a selection the image shows in every language.
+fields:
+  alt:
+    label:
+      de: Alternativtext
+      en: Alternative Text
+    type: text
+    icon: title
+  caption:
+    label:
+      de: Beschriftung
+      en: Caption
+    type: writer
+    icon: text
+    inline: true

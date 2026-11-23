@@ -25,16 +25,9 @@ tabs:
                 label:
                   de: Galerie
                   en: Gallery
-                type: files
-                layout: cards
-                query: page.files.template("image")
-                uploads:
-                  template: image
-                translate: false
-                image:
-                  cover: true
-                  ratio: 1/1
-                  back: white
+                type: blocks
+                fieldsets:
+                  - gallery-image
           text: sections/text
 
       - width: 1/3

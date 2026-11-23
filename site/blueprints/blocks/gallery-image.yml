@@ -1,0 +1,75 @@
+name:
+  de: Galeriebild
+  en: Gallery Image
+icon: image
+preview: image
+fields:
+  location:
+    label: field.blocks.image.location
+    type: radio
+    columns: 2
+    default: kirby
+    options:
+      kirby: Kirby
+      web: Web
+  image:
+    label: field.blocks.image.name
+    type: files
+    query: page.files.template("image")
+    multiple: false
+    uploads:
+      template: image
+    image:
+      back: white
+    when:
+      location: kirby
+  src:
+    label: field.blocks.image.url
+    type: url
+    when:
+      location: web
+    help:
+      de: Die URL muss auf .jpg, .jpeg, .png oder .webp enden, sonst fehlt das Bild in der Galerie. Kirby prüft sie höchstens täglich beim Rendern auf Änderungen.
+      en: The URL must end in .jpg, .jpeg, .png, or .webp, or the image is left out of the gallery. Kirby checks it for changes at most once a day, on render.
+  alt:
+    label: field.blocks.image.alt
+    type: text
+    icon: title
+    when:
+      location: web
+  mockup:
+    label: Mockup
+    type: toggles
+    default: none
+    options:
+      - value: document
+        text:
+          de: Dokument
+          en: Document
+        icon: document
+      - value: desktop
+        text: Desktop
+        icon: display
+      - value: none
+        text:
+          de: Keine
+          en: None
+        icon: cancel-small
+  bgColor:
+    label:
+      de: Hintergrundfarbe
+      en: Background Color
+    type: color
+    width: 1/2
+    help:
+      de: Ohne Farbe zeigt die Zelle Grau, bei Bildern ohne Mockup deren Unschärfe.
+      en: Without a color the cell shows gray, or the image's own blur if it has no mockup.
+  borderColor:
+    label:
+      de: Rahmenfarbe
+      en: Border Color
+    type: color
+    width: 1/2
+    help:
+      de: Ohne Farbe folgt das Dokument der Hintergrundfarbe, der Browser bleibt dunkel.
+      en: Without a color the document follows the background color, the browser stays dark.

@@ -1,15 +1,15 @@
 <?php
 
+use JohannSchopplich\Website\GalleryImageBlock;
+
 class ProjectPage extends \Kirby\Cms\Page
 {
-    public function galleryImages(): \Kirby\Cms\Files
+    public function galleryImages(): \Kirby\Cms\Blocks
     {
-        $languageCode = $this->kirby()->languageCode();
-
-        return $this->gallery()->toFiles()->filter(function (\Kirby\Cms\File $image) use ($languageCode) {
-            $language = $image->gallery()->toObject()->language();
-            return $language->isEmpty() || $language->value() === $languageCode;
-        });
+        return $this->gallery()->toBlocks()->filter(
+            fn (\Kirby\Cms\Block $block) => $block instanceof GalleryImageBlock
+                && $block->source() !== null
+        );
     }
 
     public function metadata(): array
