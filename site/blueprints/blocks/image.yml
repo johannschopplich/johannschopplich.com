@@ -26,6 +26,9 @@ fields:
     type: url
     when:
       location: web
+    help:
+      de: Endet die URL auf .jpg, .jpeg, .png oder .webp, spiegelt Kirby das Bild und prüft es höchstens täglich beim Rendern auf Änderungen. Andere URLs und solche, die Kirby nicht laden kann, lädt der Browser direkt.
+      en: If the URL ends in .jpg, .jpeg, .png, or .webp, Kirby mirrors the image and checks it for changes at most once a day, on render. Other URLs, or one Kirby can't download, load straight from the web.
   alt:
     label: field.blocks.image.alt
     type: text

@@ -1,25 +1,23 @@
 <?php
 
+use Kirby\Cms\File;
 use Kirby\Http\Url;
 use Kirby\Toolkit\Html;
 
-/** @var \Kirby\Cms\Block $block */
+/** @var \JohannSchopplich\Website\ImageBlock $block */
 
 $alt     = $block->alt();
 $caption = $block->caption()->permalinksToUrls();
 $link    = $block->link();
 $props   = $block->properties();
 $isFeed  = preg_match('/feeds\/(?:rss|json)$/', Url::current());
-$img     = null;
+$image   = $block->source();
 
-if ($block->location()->value() === 'web' && $block->src()->isNotEmpty()) {
-  $img = Html::img($block->src()->value() ?? '', ['alt' => $alt->value() ?? '']);
-} elseif ($image = $block->image()->toFile()) {
-  if ($alt->isEmpty()) {
-    $alt = $image->alt();
-  }
-  if ($caption->isEmpty()) {
-    $caption = $image->caption()->permalinksToUrls();
+if ($image) {
+  // A mirrored web image has no metadata of its own to fall back to.
+  if ($image instanceof File) {
+    $alt = $alt->or($image->alt());
+    $caption = $caption->or($image->caption()->permalinksToUrls());
   }
 
   $img = Html::img(
@@ -36,6 +34,8 @@ if ($block->location()->value() === 'web' && $block->src()->isNotEmpty()) {
       'alt' => $alt->value() ?? ''
     ]
   );
+} elseif ($block->isRemote() && $block->src()->isNotEmpty()) {
+  $img = Html::img($block->src()->value() ?? '', ['alt' => $alt->value() ?? '']);
 } else {
   return;
 }
