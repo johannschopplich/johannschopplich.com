@@ -77,12 +77,7 @@ App::plugin('johannschopplich/website', [
             if (is_array($cachedEntry) && isset($cachedEntry['fetchedAt'], $cachedEntry['stats'])) {
                 // Stale-while-revalidate: refresh week-old stats once the response is flushed.
                 if ($cachedEntry['fetchedAt'] < time() - 60 * 60 * 24 * 7) {
-                    register_shutdown_function(function () use ($fetch, $store): void {
-                        if (function_exists('fastcgi_finish_request')) {
-                            fastcgi_finish_request();
-                        }
-                        $store($fetch());
-                    });
+                    afterResponse(fn () => $store($fetch()));
                 }
 
                 return $cachedEntry['stats'];
@@ -277,6 +272,22 @@ if (!function_exists('formatCount')) {
             '{0, number, :: compact-short .#}',
             [$count]
         ) ?: (string)$count;
+    }
+}
+
+if (!function_exists('afterResponse')) {
+    /**
+     * Without PHP-FPM, the visitor waits for the task: PHP runs shutdown
+     * functions before it flushes the response.
+     */
+    function afterResponse(callable $task): void
+    {
+        register_shutdown_function(function () use ($task): void {
+            if (function_exists('fastcgi_finish_request')) {
+                fastcgi_finish_request();
+            }
+            $task();
+        });
     }
 }
 

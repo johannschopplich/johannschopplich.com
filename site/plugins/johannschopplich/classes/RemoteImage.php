@@ -51,12 +51,7 @@ class RemoteImage
             // Stamped before the request, so a failing remote is retried tomorrow, not on every render.
             $cache->set($key, [...$entry, 'checkedAt' => time()]);
 
-            register_shutdown_function(function () use ($url, $root, $cache, $key, $entry): void {
-                if (function_exists('fastcgi_finish_request')) {
-                    fastcgi_finish_request();
-                }
-                static::fetch($url, $root, $cache, $key, $entry['etag'] ?? null);
-            });
+            afterResponse(fn () => static::fetch($url, $root, $cache, $key, $entry['etag'] ?? null));
         }
 
         return new Asset($path);
