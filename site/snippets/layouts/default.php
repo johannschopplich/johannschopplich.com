@@ -12,7 +12,7 @@ $backgroundTokens = Data::read($kirby->root('base') . '/src/generated/tokens.jso
 
 ?>
 <!--
-https://github.com/johannschopplich/johannschopplich.com
+https://github.com/johannschopplich/johann.schopplich.com
 -->
 <!doctype html>
 <html data-theme="light" lang="<?= $kirby->languageCode() ?>">

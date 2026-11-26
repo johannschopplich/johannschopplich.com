@@ -1,4 +1,4 @@
-# johannschopplich.com
+# johann.schopplich.com
 
 Personal website of Johann Schopplich.
 

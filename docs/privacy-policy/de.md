@@ -5,7 +5,7 @@ Vorlage für die Datenschutzerklärungen aller Sites; en.md ist die Übersetzung
 - bildhauer-volkmar-kuehn.de: hetzner, itProvider, ionos
 - dachsbau-tautenhain.de: cloudflare, hetzner, itProvider, ionos
 - realtroll.de: hetzner, ionos, youtube, youtubePoster, comments
-- johannschopplich.com: hetzner, ionos, youtube, youtubePoster, colorScheme
+- johann.schopplich.com: hetzner, ionos, youtube, youtubePoster, colorScheme
 - kirby.tools: cloudflare, cloudflareAnalytics, cloudflareEmail, ionos, colorScheme, paddle
 -->
 

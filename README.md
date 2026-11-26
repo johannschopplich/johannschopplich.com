@@ -1,12 +1,12 @@
 <div align="center">
   <img src="./public/assets/icon.svg" alt="Johann Schopplich logo" width="120">
 
-# johannschopplich.com
+# johann.schopplich.com
 
 My personal website – writing, projects and photography.
 
-[Website](https://johannschopplich.com) •
-[Blog](https://johannschopplich.com/blog)
+[Website](https://johann.schopplich.com) •
+[Blog](https://johann.schopplich.com/blog)
 
 </div>
 

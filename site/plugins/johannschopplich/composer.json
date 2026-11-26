@@ -4,12 +4,12 @@
   "type": "kirby-plugin",
   "version": "1.0.0",
   "license": "MIT",
-  "homepage": "https://github.com/johannschopplich/johannschopplich.com#readme",
+  "homepage": "https://github.com/johannschopplich/johann.schopplich.com#readme",
   "authors": [
     {
       "name": "Johann Schopplich",
       "email": "hello@johannschopplich.com",
-      "homepage": "https://johannschopplich.com"
+      "homepage": "https://johann.schopplich.com"
     }
   ]
 }
